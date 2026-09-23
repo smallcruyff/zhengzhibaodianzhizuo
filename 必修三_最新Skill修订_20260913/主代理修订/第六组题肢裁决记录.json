@@ -1,0 +1,24 @@
+{
+  "parent_sha256": "d66c01bdaece5481d4035f3a53cb46b7e99f8f262f2838b35ea1bfbea56918dc",
+  "output_sha256": "9a48586ca9b37f728ef4b02332dddeb1b605444f795e89f0fa62b46d3b0a32c2",
+  "changes": [
+    {
+      "i": 4612,
+      "before": "449、全国统一的市场准入有利于促进民营经 济组织公平竞争",
+      "after": null
+    },
+    {
+      "i": 5851,
+      "before": "449、全国统一的市场准入有利于促进民营经 济组织公平竞争",
+      "after": null
+    }
+  ],
+  "decision": "449移出A1/A2：判定关键为统一市场准入促进民营经济公平竞争，属于必修二；不因同题另一肢考公民参与就成组收入。",
+  "source": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025丰台二模/试卷/试卷.pdf",
+  "page": 3,
+  "question": 8,
+  "option": "②",
+  "source_seen": "主代理已查看完整原页",
+  "retained_claims": 731,
+  "excluded_claims": 81
+}

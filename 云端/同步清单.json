@@ -1,0 +1,14 @@
+{
+ "exported_at": "2026-09-23T14:56:36-0700",
+ "local_project": "/Users/wanglifei/Desktop/gpt和claude共同的小窝",
+ "book3_working_head": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx",
+ "book3_working_head_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
+ "book3_owner": "claude:3bd4f1ab-82ef-482b-9938-ae3c518113e0",
+ "files": 637,
+ "local_only_too_big": [
+  {
+   "path": "00_共同资料/原材料/2026模拟题/2026各区期末和期中/2026东城期末/细则/细则.pptx",
+   "bytes": 312723506
+  }
+ ]
+}

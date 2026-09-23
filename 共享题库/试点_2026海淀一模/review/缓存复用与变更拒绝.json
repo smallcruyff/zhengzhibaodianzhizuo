@@ -1,0 +1,7 @@
+{
+  "repeat_assembly_same_bytes": true,
+  "same_packet_reused": true,
+  "changed_packet_rejected": true,
+  "original_source_sha_verified_by": "scripts/bank.py verify",
+  "scope": "只在自建临时副本测试篡改；未改源PDF。"
+}

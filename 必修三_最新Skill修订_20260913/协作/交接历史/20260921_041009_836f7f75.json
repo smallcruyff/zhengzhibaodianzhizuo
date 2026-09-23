@@ -1,0 +1,36 @@
+{
+  "saved_at": "2026-09-21T11:10:09.078069+00:00",
+  "owner": "claude:3b729a0b-0d10-408d-9fbb-37363303238b",
+  "note": "# 必修三第48批交接说明（claude:3b729a0b，2026-09-21）\n\n- 已发布：第48批阶段审查稿 583 页（`00_必修三最新审查稿/`，Word SHA 3ba37ae690d4296176bc91fed736ad871eaf2108d9791f8f127e77d6c964b8d7）；修订说明在 `必修三_最新Skill修订_20260913/本轮修订与审查说明.md`；第47批原样归档于 `必修三_人工审查历史/第47批_原样审阅_20260921_040835`。\n- 本批内容：班课讲义 134 条老师条目进各节常见表述并排最前、11 条方法进专题三导语、9 主体【答题骨架】；常见表述 470 条重新归属分组；删“五项优势”节，一、三统一为统帅；393 条主观题例题改【思维链条】＋“链：”行；例题归属整改 45 处、删 5 道必修一选择题；整段精确替换 226 条（DeepSeek 130 条审定并入 129 条、我方 71 条、补做 53 条、主代理 2 条）；题肢单练剔除“不选”126 条、去重 8 条；五轮逐页看图。\n- 工程：`协作/候选/Claude/R45候选_Claude_20260915/`：18_班课原料转写、19_班课原料整合、20_思维链条、21_归类审计、22_体检修正、构建/最终48、构建/wf_*.js（转写／总表／体检／06c-11c／思维链条／修正／审定／看图）。DeepSeek 接续目录 `必修三_第48批接续_WorkBuddy_20260918/` 只读保留，其 v6 接续稿不作成品。\n- Skill 已升 6.3.2（style-spec 思维链条/班课讲义/三统一统帅小节、AGENTS 修正机制、SRC-006、REQ-BX3-20260921-R48、活动快照 12），已 sync。\n- 未决：题号半角/全角口径；体检中/低严重度条目（`21_归类审计/体检汇总.json`）；党总体节 78 道例题可精选；Word 原生 PDF 未导出。\n- 下一动作：接收用户“第48批＋PDF页码”意见；Codex accept 后即可续做。Claude 侧无后台任务。",
+  "snapshot": {
+    "book": "必修三",
+    "ready": true,
+    "revision": "batch48",
+    "central_confirmed_revision": null,
+    "status": "stage_review_copy_not_final",
+    "pdf_pages": 583,
+    "files": {
+      "docx": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第48批_阶段审查稿.docx",
+        "sha256": "3ba37ae690d4296176bc91fed736ad871eaf2108d9791f8f127e77d6c964b8d7",
+        "size": 14421024
+      },
+      "pdf": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第48批_阶段审查稿.pdf",
+        "sha256": "63e42763e52d555102f354c4125fc6836893a6aa2b9f8a9dbac7b142dbc59e03",
+        "size": 16145259
+      }
+    },
+    "progress_fingerprints": {
+      "00_必修三最新审查稿/.review-manifest.json": "bd767b2c88fd6d4f7b50504fcb4d312a36c380d25982fda704723a6c5505425d",
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json": "47c425e61375e98f7d61eefb693a1941923169c6feeefa1bbd3e3a3e147f0f19",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md": "dc209638b12346d77cd46ea3d98878232dcd19e9f3c58491c89a1a63c10446f2"
+    },
+    "user_modified_review_copies": [],
+    "progress_files": [
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+    ],
+    "note": "revision为当前审阅版本；未渲染或更新中的候选须另读progress_files，不自动视为终稿"
+  }
+}

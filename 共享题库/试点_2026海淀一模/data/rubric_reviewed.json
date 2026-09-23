@@ -1,0 +1,851 @@
+{
+  "complete": true,
+  "answer_key": {
+    "1": "C",
+    "2": "B",
+    "3": "A",
+    "4": "B",
+    "5": "D",
+    "6": "B",
+    "7": "D",
+    "8": "A",
+    "9": "B",
+    "10": "D",
+    "11": "C",
+    "12": "C",
+    "13": "D",
+    "14": "A",
+    "15": "C"
+  },
+  "units": [
+    {
+      "id": "R16",
+      "question": 16,
+      "subquestion": null,
+      "source_pages": [
+        1,
+        2
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "16.（8分）",
+          "source_page": 1
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "可从发展的观点、社会存在与社会意识、价值观、文化的功能等角度作答。",
+          "source_page": 1
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "“人文学科在人工智能时代具有不可替代的价值”",
+          "source_page": 1
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "分值",
+            "标准",
+            "细则",
+            ""
+          ],
+          "rows": [
+            [
+              "2分\n（1+1）",
+              "紧扣主题论证有效\n（材料要落在“人文学科的价值”）",
+              "社会存在决定社会意识/物质决定意识/实践决定认识/发展是普遍的\n\n实践（经济、政治）决定文化",
+              "必要性\n（时代发展的必然产物/社会巨变的必要指引）"
+            ],
+            [
+              "4分\n（1+1）\n×2",
+              "",
+              "主观能动性（意识的能动作用）/矛盾分析法（全面/两重统一/普特统一）/认识反作用/价值观（判断选择）的作用\n\n文化特征/文化功能/（有利）提高思修",
+              "重要性\n（对个体冲突的辨析、对技术的正确态度、对时代问题的解决、对人类进步的使命）"
+            ],
+            [
+              "1分",
+              "综合性",
+              "不强调哲文“融合”，但需分别用哲学或文化阐释观点",
+              ""
+            ],
+            [
+              "1分",
+              "逻辑性",
+              "观点明确，分层清晰，无罗列知识之嫌",
+              ""
+            ]
+          ],
+          "source_page": 1,
+          "bbox_normalized": [
+            0.124,
+            0.441,
+            0.882,
+            0.742
+          ],
+          "caption": "“人文学科在人工智能时代具有不可替代的价值”",
+          "merged_cells": [
+            {
+              "section": "header",
+              "row": 0,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "细则"
+            },
+            {
+              "section": "body",
+              "row": 0,
+              "col": 1,
+              "rowspan": 2,
+              "colspan": 1,
+              "text": "紧扣主题论证有效（材料要落在“人文学科的价值”）"
+            },
+            {
+              "section": "body",
+              "row": 2,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "不强调哲文“融合”，但需分别用哲学或文化阐释观点"
+            },
+            {
+              "section": "body",
+              "row": 3,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "观点明确，分层清晰，无罗列知识之嫌"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p01_embedded01.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 2,
+          "asset": "rubric_assets/p02_embedded01.png",
+          "description": "Q16学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R17",
+      "question": 17,
+      "subquestion": null,
+      "source_pages": [
+        2,
+        3
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "17.（6分）",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "逻辑错误：划分标准不一；选言判断遗漏其他有选择价值的其他情况。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "建议：可从科学思维、遵循逻辑思维规则、辩证思维等角度，结合调研活动提出建议，措施具体可行。",
+          "source_page": 2
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "问题",
+            "逻辑错误",
+            "标准"
+          ],
+          "rows": [
+            [
+              "1",
+              "划分标准不一",
+              "任何一点得2分"
+            ],
+            [
+              "2",
+              "选言判断遗漏其他有选择价值的情况",
+              ""
+            ]
+          ],
+          "source_page": 2,
+          "bbox_normalized": [
+            0.126,
+            0.473,
+            0.832,
+            0.608
+          ],
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 2,
+              "rowspan": 2,
+              "colspan": 1,
+              "text": "任何一点得2分"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p02_embedded02.png"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "第2问评分细则",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "建议1分，知识1分，两条建议共4分。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "具体建议可从调研方案、调研方法（问卷法、访谈法、观察法、文献法）、数据分析等角度提出。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "（以上任意两个角度，建议与知识准确匹配，可得4分，一个角度2分）。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "只有知识，只有建议，只得一分。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从科学思维出发 示例：",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 科学思维追求认识的客观性，调研活动应该从实际出发，了解真实存在的问题和需求，再据此设计选项，确保问题来源于客观事实，而非主观想象。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 科学思维结果具有可检验性，调研结束后，通过实地测量、对比不同人群的回答、或与相关部门数据比对，检验结论是否可靠，经得起实践反复检验。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从逻辑思维规则出发 示例：",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 提高不完全归纳推理结论的可靠程度，需要在认识对象与有关现象之间寻找因果联系。比如运用求异法，选择条件相似的两个片区，设置不同的机制，对比两片区的效果。",
+          "source_page": 2
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从辩证思维出发 示例：",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 辩证思维用全面的观点看问题，综合运用观察法、访谈法、文献法与问卷法，先通过实地观察和深度访谈探索问题，再设计问卷验证，并从整体角度去思考如何解决问题。",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 运用矛盾分析法对比不同群体的回答差异，并通过预调查与正式调查的反复检验，寻找因果联系。",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从创新思维出发 示例：",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 发散思维与聚合思维是创新思维的两翼。运用发散思维广泛收集各类人群对无障碍设施的真实意见，再通过聚合思维聚焦核心问题，避免身份分类混乱和原因预设片面。",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 对已有的有关事物之间因果关系的认识作交换性思考。对这些好案例进行观察和访谈，归纳其成功原因，再将好案例的原因与原问卷预设的进行对比，从而反向推导出真正的问题根源。",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3
+        }
+      ],
+      "source_notes": [
+        "正文写作“选言判断遗漏其他有选择价值的其他情况”，表格第2行原文为“选言判断遗漏其他有选择价值的情况”，两处均按原件分别转录。"
+      ],
+      "uncertainties": []
+    },
+    {
+      "id": "R18-1",
+      "question": 18,
+      "subquestion": "1",
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "18.（15分）",
+          "source_page": 3
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（1）全国居民人均服务性消费支出总体上升，服务性消费占比不断提高，居民消费结构优化。（2分）",
+          "source_page": 3
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "材料分析"
+          ],
+          "rows": [
+            [
+              "消费支出 1分",
+              "全国居民人均服务性消费支出总体上升"
+            ],
+            [
+              "服务性消费占比 1分",
+              "服务性消费比重/占比不断提高"
+            ]
+          ],
+          "source_page": 3,
+          "bbox_normalized": [
+            0.122,
+            0.461,
+            0.866,
+            0.548
+          ],
+          "caption": "（1）评分细则",
+          "embedded_asset": "assets/pages/细则/p03_embedded01.png"
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R18-2",
+      "question": 18,
+      "subquestion": "2",
+      "source_pages": [
+        3,
+        4
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（2）提振消费，扩大内需，拉动经济增长，增强国内大循环的内生动力；引导和带动服务业以及相关产业发展，推动产业结构优化，推动供给侧结构性改革；满足人民群众多样化、多层次、多方面的需求，提升生活品质；同时创造更多就业岗位，改善民生福祉。（6分）",
+          "source_page": 3
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "学科分析"
+          ],
+          "rows": [
+            [
+              "消费",
+              "扩大内需/发挥消费对经济发展的基础性作用/拉动经济增长 2分"
+            ],
+            [
+              "供给",
+              "引领和带动相关产业发展/产业结构优化升级/推动供给侧结构性改革 2分"
+            ],
+            [
+              "民生",
+              "满足人民群众多样化、多层次、多方面的需求/提升生活品质/提高生活水平/增加就业岗位 2分"
+            ]
+          ],
+          "source_page": 3,
+          "bbox_normalized": [
+            0.122,
+            0.647,
+            0.858,
+            0.795
+          ],
+          "caption": "（2）评分细则",
+          "embedded_asset": "assets/pages/细则/p03_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 4,
+          "asset": "rubric_assets/p04_embedded01.png",
+          "description": "Q18（2）学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "注意：写“满足人民的幸福感、获得感、安全感”不给分",
+          "source_page": 4
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R18-3",
+      "question": 18,
+      "subquestion": "3",
+      "source_pages": [
+        4,
+        5
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（3）①支持原告诉讼请求。（1分）",
+          "source_page": 4
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "②根据民法典规定，任何组织或者个人不得以刺探、侵扰、泄露、公开等方式侵害他人的隐私权。消费者在经营者提供的包间内的活动具有私密性，商家在社交平台公开张某等人包厢内监控录像片段、网络聊天信息等，构成对消费者隐私权的侵害，应当承担停止侵权、赔礼道歉等侵权责任。商家的行为侵犯了消费者合法权益。（3分）",
+          "source_page": 4
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "③经营者应当保护消费者的知情权。根据消费者权益保护法规定，经营者向消费者提供有关商品或者服务的质量、性能、用途、有效期限等信息，应当真实、全面，不得作虚假或者引人误解的宣传。赵某虚假宣传其有“治疗糖尿病并发症”等功效，夸大功效，诱导消费，构成欺诈，应当退款并承担惩罚性赔偿责任。赵某行为不符合诚信等社会主义核心价值观。（3分）",
+          "source_page": 4
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "要点"
+          ],
+          "rows": [
+            [
+              "裁判结果（1分）",
+              "支持原告诉讼请求（1分）"
+            ],
+            [
+              "案件1（3分）",
+              "隐私权/肖像权/个人信息（1分）\n结合案情材料（举例：商家发布聊天记录侵犯隐私权/商家发布视频监控侵犯肖像权/商家不得公开隐私记录……）（1分）\n意义：保护消费者合法权益/诚信、公序良俗/社会主义核心价值观……（1分）"
+            ],
+            [
+              "案件2（3分）",
+              "《消费者权益保护法》/知情权（1分）\n结合案情材料（必须包含夸大功效/虚假宣传）（1分）\n意义：消费环境/市场秩序……（社会层面，个人层面不给分）（1分）"
+            ]
+          ],
+          "source_page": 4,
+          "bbox_normalized": [
+            0.122,
+            0.582,
+            0.88,
+            0.859
+          ],
+          "embedded_asset": "assets/pages/细则/p04_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 5,
+          "asset": "rubric_assets/p05_embedded01.png",
+          "description": "Q18（3）学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R19",
+      "question": 19,
+      "subquestion": null,
+      "source_pages": [
+        5,
+        6
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "19.（8分）",
+          "source_page": 5
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "全国人大常委会有权对地方政府规范性文件进行备案审查。地方政府规范性文件不得与宪法、法律、行政法规相抵触。该地政府部门制定的《实施细则》对从事网约车经营的车辆设置价格准入条件，事实上排除了部分价格低于这一准入条件但符合安全性能、服务品质的车辆车主平等参与市场活动、平等从事相关劳动的权利，属于国务院《公平竞争审查条例》规定的设置不合理市场准入条件的情形。纠正这一规定有利于维护社会主义法制的统一，推进法治政府建设，营造公平的市场竞争环境。",
+          "source_page": 5
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "评分细则",
+          "source_page": 5
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "具体要求",
+            "分值"
+          ],
+          "rows": [
+            [
+              "地位和职权",
+              "全国人大常委会有权对地方政府规范性文件进行备案审查。",
+              "2分"
+            ],
+            [
+              "法律层级",
+              "地方政府规范性文件不得与宪法、法律、行政法规相抵触。",
+              "1分"
+            ],
+            [
+              "案例分析",
+              "该地政府部门制定的《实施细则》对从事网约车经营的车辆设置价格准入条件，事实上排除了部分价格低于这一准入条件但符合安全性能、服务品质的车辆车主平等参与市场活动、平等从事相关劳动的权利，属于国务院《公平竞争审查条例》规定的设置不合理市场准入条件的情形。",
+              "2分"
+            ],
+            [
+              "意义",
+              "1. 市场角度：有利于维护全国统一大市场/促进公平竞争/维护市场秩序/促进资源优化配置/保护经营者合法权益等。\n2. 法治角度：有利于维护社会主义法制的统一／推进法治政府建设／有助于完善中国特色社会主义法治体系等。（推进国家治理体系和治理能力的现代化，可替代性给1分）\n（写出1个角度得2分；写出2个角度得3分）",
+              "3分"
+            ]
+          ],
+          "source_page": 5,
+          "bbox_normalized": [
+            0.119,
+            0.539,
+            0.872,
+            0.855
+          ],
+          "embedded_asset": "assets/pages/细则/p05_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 6,
+          "asset": "rubric_assets/p06_embedded01.png",
+          "description": "Q19学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R20",
+      "question": 20,
+      "subquestion": null,
+      "source_pages": [
+        6,
+        7
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "20.（8分）",
+          "source_page": 6
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "扩大制度型开放，增强我国产品、服务乃至产业链在全球的竞争力，推进高水平对外开放，更好利用国内国际两个市场、两种资源，推动构建新发展格局；我国在低碳能源、人工智能等领域推动贡献国际标准，促进全球范围内标准共通、技术共享，推动全球技术创新与绿色转型，同时，我国积极参与全球经济治理和规则制定，推动全球治理体制向着更加公正合理方向发展。",
+          "source_page": 6
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "具体要求"
+          ],
+          "rows": [
+            [
+              "角度1：\n对我国",
+              "扩大制度型开放，推进高水平对外开放/\n有利于更好利用国内国际两个市场、两种资源，畅通双循环（新发展格局）（3分）\n替代：推动我国技术、产品、服务走出国门/增强我国产品、服务乃至产业链在全球的竞争力（2分）"
+            ],
+            [
+              "角度2：\n对世界\n经济",
+              "推动经济全球化朝着开放、包容、普惠、平衡、共赢的方向发展/\n促进国际合作（互利共赢）/推动全球资源优化配置（2分）\n我国在低碳能源、人工智能等领域推动贡献国际标准，促进全球范围内标准共通、技术共享，推动全球技术创新与绿色转型（1分）【有在结合材料谈意义】"
+            ],
+            [
+              "角度3：\n对全球\n治理",
+              "我国积极参与全球经济治理和规则制定，推动全球治理体制向着更加公正合理方向发展/\n提升中国在国际标准制定中的话语权和国际影响力/\n推动构建国际经济新秩序（2分）"
+            ]
+          ],
+          "source_page": 6,
+          "bbox_normalized": [
+            0.121,
+            0.468,
+            0.881,
+            0.784
+          ],
+          "embedded_asset": "assets/pages/细则/p06_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 7,
+          "asset": "rubric_assets/p07_embedded01.png",
+          "description": "Q20学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        }
+      ],
+      "source_notes": [],
+      "uncertainties": []
+    },
+    {
+      "id": "R21",
+      "question": 21,
+      "subquestion": null,
+      "source_pages": [
+        7,
+        8
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "21.（10分）",
+          "source_page": 7
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "可从党的领导、马克思主义中国化时代化、制度优势、国家治理等角度作答。",
+          "source_page": 7
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "项目",
+            "要求"
+          ],
+          "rows": [
+            [
+              "逻辑1分",
+              "能够围绕“科学制定规划”和“有效执行规划”进行分析"
+            ],
+            [
+              "阐释9分",
+              "取三个维度，每个维度3分，知识准确1分+分析到位2分"
+            ],
+            [
+              "维度",
+              "可从制度优势、人民立场、思维方法、文化支撑等维度进行分析"
+            ]
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.454,
+            0.88,
+            0.616
+          ],
+          "caption": "21题评分细则",
+          "embedded_asset": "assets/pages/细则/p07_embedded02.png"
+        },
+        {
+          "type": "table",
+          "role": "official_example",
+          "headers": [
+            "维度",
+            "为什么我们总是能科学制定各种规划"
+          ],
+          "rows": [
+            [
+              "示例",
+              ""
+            ],
+            [
+              "制度优势",
+              "• 坚持党的领导：中国共产党的领导是中国特色社会主义制度的最大优势，党坚持科学执政，遵循客观规律，立足我国基本国情，把握时代发展大势，从根本上保障了规划的科学性、前瞻性与可行性。\n• 根本政治制度：人民代表大会制度是我国的根本政治制度，依托人民代表大会制度，通过法定程序将党的主张转化为国家意志，确保规划反映人民意志，保障规划制定的民主性与科学性。\n• 其它言之成理也可"
+            ],
+            [
+              "人民立场",
+              "• 人民群众是历史的创造者，在规划制定过程中，我们广泛听取社会各界呼声，凝聚共识使规划能够充分反映国情民意，使规划更具科学性和可行性。"
+            ],
+            [
+              "思维方法",
+              "• 科学思维：坚持运用系统思维等科学思维方法，通过系统性、整体性、协同性的科学谋划，确保规划目标清晰、路径可行、推进有序，确保规划的科学性和高效落实。\n• 其它言之成理也可"
+            ],
+            [
+              "文化支撑",
+              "中华文化源远流长、博大精深，“锐始者必图其终，成功者先计于始”正是中华民族绵延数千年的科学谋划传统的生动凝练，为我国始终能科学制定各类发展规划提供了深厚的文化滋养"
+            ]
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.617,
+            0.879,
+            0.911
+          ],
+          "caption": "科学制定规划",
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 0,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "示例"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p07_embedded03.png"
+        },
+        {
+          "type": "table",
+          "role": "official_example",
+          "headers": [
+            "维度",
+            "为什么各种规划总是能实现"
+          ],
+          "rows": [
+            [
+              "示例",
+              ""
+            ],
+            [
+              "制度优势",
+              "• 坚持党的领导：中国共产党发挥总揽全局、协调各方的领导核心作用，有效整合各方资源、协调各方利益、凝聚各方力量，集中力量办大事，推动各项发展规划能够有序推进和落实。\n• 根本政治制度：人民代表大会制度是我国的根本政治制度，确保规划反映人民意志，切实回应人民群众的期盼与需求，从而充分调动人民群众的积极性、主动性和创造性，为规划顺利实施提供了坚实的群众基础和强大的内生动力\n• 其它言之成理也可"
+            ],
+            [
+              "人民立场",
+              "人民群众是历史的创造者，规划始终把实现好、维护好、发展好最广大人民的根本利益作为出发点和落脚点，从而充分调动人民群众的积极性、主动性和创造性，为规划顺利实施提供了坚实的群众基础。"
+            ],
+            [
+              "思维方法",
+              "• 科学思维：坚持运用系统思维等科学思维方法，通过系统性、整体性、协同性的科学谋划，确保规划目标清晰、路径可行、推进有序，确保规划的科学性和高效落实。\n认识对实践具有能动的反作用，正确的认识能够推动实践的发展。科学制定的各项发展规划，是经过实践检验的、符合中国发展规律的正确认识，为实践发展提供了科学的行动指南。"
+            ],
+            [
+              "文化支撑",
+              "中华民族形成了以爱国主义为核心，团结统一、爱好和平、勤劳勇敢、自强不息的伟大民族精神，能够以坚韧不拔的毅力向着既定目标笃行，确保规划的科学性和高效落实"
+            ]
+          ],
+          "source_page": 8,
+          "bbox_normalized": [
+            0.12,
+            0.084,
+            0.88,
+            0.408
+          ],
+          "caption": "有效执行计划",
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 0,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "示例"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p08_embedded01.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 8,
+          "asset": "rubric_assets/p08_embedded02.png",
+          "description": "Q21学生作答批注图；仅作原图引用，不作为正式评分规则。"
+        }
+      ],
+      "source_notes": [
+        "p07_embedded03 原图引文第一个字按图像读取为“锐”（“锐始者必图其终”）；该字形与常见成语写法可能存在差异，未擅自改写，待主代理裁决。"
+      ],
+      "uncertainties": []
+    }
+  ],
+  "general_rules": [],
+  "reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "notes": [
+    "来源：LOCAL-149《细则.pdf》，对应2026海淀一模政治正式评分标准；原件与缓存仅作只读核验。",
+    "打印参考答案、正式评分说明、嵌入评分表和学生手写批注样卷已按题号分块；student_example仅引用原图，不升级为正式评分规则。",
+    "Q18（2）第4页印刷注意事项已归入R18-2；Q17细则及示例跨第2—3页，Q21评分细则及示例跨第7—8页。"
+  ],
+  "root_review": {
+    "parent_sha256": "ca055abdc5157242c66e34cd016d4d7160e68bb60b82b3ee7d5a6412f561ec56",
+    "source_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "changes": [
+      "R18-2跨页限制仅归本小问",
+      "表格使用原尺寸嵌入图作为复核图",
+      "Q21示例与总评分条件分别标示，表题与行数据分离",
+      "Q17原件措辞差异照录；Q21“锐”按可见原字保留，已消除转录待核"
+    ],
+    "status": "verified_against_all_pages"
+  }
+}

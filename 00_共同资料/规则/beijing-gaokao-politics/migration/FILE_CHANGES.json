@@ -1,0 +1,321 @@
+{
+  "base": "6.0.0-20260905",
+  "release": "6.0.1-20260905",
+  "functional_changed": 22,
+  "functional_unchanged": 15,
+  "functional_files": [
+    {
+      "path": "AGENTS.md",
+      "change": "modified",
+      "old_sha256": "89fe616b0a570d2ecfa13765c5fe5bba4b956e9bb888e81d3414a7d333e9f4a5",
+      "new_sha256": "5b1ef652079b10763050c5e66d0fd26bb81f50e0d0fe2375ac49a86d8fcbf6db",
+      "old_bytes": 9284,
+      "new_bytes": 11224
+    },
+    {
+      "path": "README.md",
+      "change": "modified",
+      "old_sha256": "6e7475c8f9f79a9b0a4ae0ef8c050968f2f92b2d38727e24a9fc424cc01e8377",
+      "new_sha256": "3352b4463bad989993688e35a9a516c942cb260e51c87d92faacd0d358616e4c",
+      "old_bytes": 2511,
+      "new_bytes": 3165
+    },
+    {
+      "path": "SKILL.md",
+      "change": "modified",
+      "old_sha256": "e3698433c6892272362b1275c0d2249ec41210c5905b20822495e560a0fa8970",
+      "new_sha256": "b223adf5b655310ed75036240ecd26e85ec57bcab9f3ed90db1836523a182d74",
+      "old_bytes": 7538,
+      "new_bytes": 8125
+    },
+    {
+      "path": "agents/openai.yaml",
+      "change": "modified",
+      "old_sha256": "c043808c3514a7552190a5668b470b2338fa44deed907340a3f3d915422510e1",
+      "new_sha256": "7949d2bfeba59d34149a7f0f01b07e8042373743ea63bdcc4a5bb506f1833a1c",
+      "old_bytes": 494,
+      "new_bytes": 508
+    },
+    {
+      "path": "assets/icon.svg",
+      "change": "unchanged",
+      "old_sha256": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6",
+      "new_sha256": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6",
+      "old_bytes": 2094,
+      "new_bytes": 2094
+    },
+    {
+      "path": "legacy/5.6/scripts/task_checkpoint.py",
+      "change": "unchanged",
+      "old_sha256": "ee1302a51039ffa0aa00262a577335bc6e68880bca602efa74f9848d23f8e9b7",
+      "new_sha256": "ee1302a51039ffa0aa00262a577335bc6e68880bca602efa74f9848d23f8e9b7",
+      "old_bytes": 78809,
+      "new_bytes": 78809
+    },
+    {
+      "path": "legacy/5.6/task-continuity.before.txt",
+      "change": "unchanged",
+      "old_sha256": "b37b54dfadb42050949b4822588afca27d9439bc329d8fd97b59d6d3203ea10c",
+      "new_sha256": "b37b54dfadb42050949b4822588afca27d9439bc329d8fd97b59d6d3203ea10c",
+      "old_bytes": 19305,
+      "new_bytes": 19305
+    },
+    {
+      "path": "legacy/5.6/tests/test_task_checkpoint.py",
+      "change": "unchanged",
+      "old_sha256": "05745898703a237967a59a329c5e5a5c871e48fbde812a96b658a42b3cd9e256",
+      "new_sha256": "05745898703a237967a59a329c5e5a5c871e48fbde812a96b658a42b3cd9e256",
+      "old_bytes": 56665,
+      "new_bytes": 56665
+    },
+    {
+      "path": "legacy/README.md",
+      "change": "unchanged",
+      "old_sha256": "618a2a55e7a19e48c77933a2c685e1429dc8d09fe9d2f8987fe944c4e9eb7781",
+      "new_sha256": "618a2a55e7a19e48c77933a2c685e1429dc8d09fe9d2f8987fe944c4e9eb7781",
+      "old_bytes": 402,
+      "new_bytes": 402
+    },
+    {
+      "path": "references/active/book-bixiu-2-current.md",
+      "change": "modified",
+      "old_sha256": "4f93bcae27118db2e8b5a7f2624453b238e498ec037c77eb53e3cb9f2e7754b3",
+      "new_sha256": "da9871a59b30cb880bf4c63161ec714860ed7cff0c47b52b5a0501ffedfa24be",
+      "old_bytes": 5633,
+      "new_bytes": 5775
+    },
+    {
+      "path": "references/active/book-bixiu-3-current.md",
+      "change": "modified",
+      "old_sha256": "da48700dca54925f3f66d240a9fc7f5509d583d4bfbbb0e82bc9811e38746fdb",
+      "new_sha256": "ac8920534c8e8ad8da543f593caa4cb2d1a0bfdc65607a9908c179ad4d287479",
+      "old_bytes": 5941,
+      "new_bytes": 6083
+    },
+    {
+      "path": "references/active/book-culture-current.md",
+      "change": "modified",
+      "old_sha256": "c52055f2bdef4066174410124b6a0b88a52ad9365fbed8fb6b4eec6eb84663d1",
+      "new_sha256": "e8e16a0832b99234c661a073caf4526cca6d1e9bb46f4436e8e6f297b3926ce1",
+      "old_bytes": 4306,
+      "new_bytes": 4448
+    },
+    {
+      "path": "references/active/book-philosophy-current.md",
+      "change": "modified",
+      "old_sha256": "2cc5fa82b77d95662619219643b17ad62f07ca64b191ef579de71486e03f8bc6",
+      "new_sha256": "5348ed55e24980b53be6d775ce05403b0f4ed1d05a4d6c2df6fbcec296b5682a",
+      "old_bytes": 7279,
+      "new_bytes": 7421
+    },
+    {
+      "path": "references/active/book-xuanbi-1-current.md",
+      "change": "modified",
+      "old_sha256": "5f43834746dd1c71d9462814b2cd0a4bcdfa864b3359868ce0d906f24cf4424a",
+      "new_sha256": "152212ba8b3682a8451ac6572b8c4d480d65d84584afbad9119825e36263df20",
+      "old_bytes": 4200,
+      "new_bytes": 4342
+    },
+    {
+      "path": "references/active/book-xuanbi-2-current.md",
+      "change": "modified",
+      "old_sha256": "d2fd464e6bfaa3ac0a61d8d302f49643b4456ce680eefeeafded99772550993c",
+      "new_sha256": "5c46258c47a75d274237cccaaafe279d23a79b8589a9b998d99fdb31637e2019",
+      "old_bytes": 5752,
+      "new_bytes": 5894
+    },
+    {
+      "path": "references/active/book-xuanbi-3-current.md",
+      "change": "modified",
+      "old_sha256": "64085caf8a6cc5e2ab3e5effb431bedec90701b0966354f4cffd3fe6680045ee",
+      "new_sha256": "0a64ad9a7ad6808c18cad965848f9a9d0d8a3fa92890936c87295168ab56e7a2",
+      "old_bytes": 6651,
+      "new_bytes": 6793
+    },
+    {
+      "path": "references/active/project-current.md",
+      "change": "modified",
+      "old_sha256": "6e69aba39431dec448c6b79eb0446920a315585c5e1ea858bad0a7bb181f734a",
+      "new_sha256": "24c9b762cecc7d075f25a82bc954fdbf96809f3798818b15fcfa357cb09c85bd",
+      "old_bytes": 3296,
+      "new_bytes": 3437
+    },
+    {
+      "path": "references/artifact-manifest.md",
+      "change": "unchanged",
+      "old_sha256": "3ddb952d472f1282e3de11b9fa866f62bd06f4f7cc6a8825411e7b6ec5b6db2e",
+      "new_sha256": "3ddb952d472f1282e3de11b9fa866f62bd06f4f7cc6a8825411e7b6ec5b6db2e",
+      "old_bytes": 146876,
+      "new_bytes": 146876
+    },
+    {
+      "path": "references/book-bixiu-2.md",
+      "change": "unchanged",
+      "old_sha256": "de6f77085c220bc92392fb967b520fc55610dd1108e4cfc712f35fff47e9fd1b",
+      "new_sha256": "de6f77085c220bc92392fb967b520fc55610dd1108e4cfc712f35fff47e9fd1b",
+      "old_bytes": 34184,
+      "new_bytes": 34184
+    },
+    {
+      "path": "references/book-bixiu-3.md",
+      "change": "unchanged",
+      "old_sha256": "facfc1a4953d355eb1759736a042626e4a86b193db82e875134b8160addfb56a",
+      "new_sha256": "facfc1a4953d355eb1759736a042626e4a86b193db82e875134b8160addfb56a",
+      "old_bytes": 74909,
+      "new_bytes": 74909
+    },
+    {
+      "path": "references/book-culture.md",
+      "change": "unchanged",
+      "old_sha256": "63f382962a0ec1962c240dcb6b5fc215953fcd92b494b46ac74787a66c142fce",
+      "new_sha256": "63f382962a0ec1962c240dcb6b5fc215953fcd92b494b46ac74787a66c142fce",
+      "old_bytes": 21566,
+      "new_bytes": 21566
+    },
+    {
+      "path": "references/book-philosophy.md",
+      "change": "unchanged",
+      "old_sha256": "3768d23b4cf6b25f0ae597c6d84f4399ceb844e4382f11cff7a417b2d9eb0d8f",
+      "new_sha256": "3768d23b4cf6b25f0ae597c6d84f4399ceb844e4382f11cff7a417b2d9eb0d8f",
+      "old_bytes": 36630,
+      "new_bytes": 36630
+    },
+    {
+      "path": "references/book-reasoning.md",
+      "change": "unchanged",
+      "old_sha256": "dcf95a1a21848e7e85122f3ab9fb783130d49b42f973e86ce8e5987b4bfb307d",
+      "new_sha256": "dcf95a1a21848e7e85122f3ab9fb783130d49b42f973e86ce8e5987b4bfb307d",
+      "old_bytes": 1736,
+      "new_bytes": 1736
+    },
+    {
+      "path": "references/book-xuanbi-1.md",
+      "change": "unchanged",
+      "old_sha256": "0483d9b651dd8432bee224a279834bbc2dd46d99f950606fa8122a038d73b8ba",
+      "new_sha256": "0483d9b651dd8432bee224a279834bbc2dd46d99f950606fa8122a038d73b8ba",
+      "old_bytes": 89339,
+      "new_bytes": 89339
+    },
+    {
+      "path": "references/book-xuanbi-2.md",
+      "change": "unchanged",
+      "old_sha256": "534c6b0da19a66d008959e7a51133255c201d2d0d22a143e231f9b1498ee0d51",
+      "new_sha256": "534c6b0da19a66d008959e7a51133255c201d2d0d22a143e231f9b1498ee0d51",
+      "old_bytes": 35571,
+      "new_bytes": 35571
+    },
+    {
+      "path": "references/book-xuanbi-3.md",
+      "change": "unchanged",
+      "old_sha256": "6675cf5f2442e536298a1d7d350aae5e0a63d8ac36939c639c7ca2fd9ad8efae",
+      "new_sha256": "6675cf5f2442e536298a1d7d350aae5e0a63d8ac36939c639c7ca2fd9ad8efae",
+      "old_bytes": 43176,
+      "new_bytes": 43176
+    },
+    {
+      "path": "references/correction-log.md",
+      "change": "modified",
+      "old_sha256": "ad11f546e7f7d04b3cd29d3315069cb635b9b8916291c882b9628c1abdf9ee02",
+      "new_sha256": "7f1e6da912f36d80ff6f93d1165e09c6425cdc1a70ffc55257577d45d94e5baf",
+      "old_bytes": 141762,
+      "new_bytes": 142749
+    },
+    {
+      "path": "references/counting-sorting-policy.md",
+      "change": "modified",
+      "old_sha256": "6e44625247c86fcfe2efd6e788a26cf98424cefe540bc3a570209f27a08e18c2",
+      "new_sha256": "08779c251048bc782aa1f72dc7aa9797b390955449ba12061d8a9a6311db09be",
+      "old_bytes": 20977,
+      "new_bytes": 21381
+    },
+    {
+      "path": "references/evidence-policy.md",
+      "change": "modified",
+      "old_sha256": "eabe86ba94e965e779260f7e65169da3f3fcfaca44bdbe2e4a8e1c7bff63cda9",
+      "new_sha256": "f033c0f95abaad16129c0f70e54d9eab4eb34dea3cf4dbd7314ef35c0856a9cd",
+      "old_bytes": 17019,
+      "new_bytes": 17593
+    },
+    {
+      "path": "references/original-fidelity-checklist.md",
+      "change": "unchanged",
+      "old_sha256": "a7ef8f857fe0c0250c72f6a7a21728d8f768dd49c50bc0ca18e2396b9c2d25c4",
+      "new_sha256": "a7ef8f857fe0c0250c72f6a7a21728d8f768dd49c50bc0ca18e2396b9c2d25c4",
+      "old_bytes": 11785,
+      "new_bytes": 11785
+    },
+    {
+      "path": "references/project-constitution.md",
+      "change": "modified",
+      "old_sha256": "bab4dde87dc99b18374aaa25d85393386421b3cf24125a1970046390618e1576",
+      "new_sha256": "961595f927f004a0d455469886c8ea94ba4ff76caea79f5edc3c5336705cf042",
+      "old_bytes": 11197,
+      "new_bytes": 13057
+    },
+    {
+      "path": "references/project-rules.md",
+      "change": "modified",
+      "old_sha256": "87d32864e778239e8dcfc700b29e5851679656ae0841ef73774347451be57c15",
+      "new_sha256": "80994b85099b7a9a4beb8e59296c1494079e8b331eede7a1aec74727e3b890e0",
+      "old_bytes": 39859,
+      "new_bytes": 40457
+    },
+    {
+      "path": "references/source-inventory.md",
+      "change": "modified",
+      "old_sha256": "46a94f40ebd22abb0fc47c38ae34937938c2f40b98c1919345ca91d7b5f55bb7",
+      "new_sha256": "dd18f9e237b68dd666f3d97a8f45ba33378ad3cca0736af81e3fd174536edfaa",
+      "old_bytes": 37402,
+      "new_bytes": 38105
+    },
+    {
+      "path": "references/style-spec.md",
+      "change": "modified",
+      "old_sha256": "a1bbf81929b0c5d0e676506ed38343d83caac7c16b456db7913ed28878a5772f",
+      "new_sha256": "d7e53eb8b7193674cce989815cb2cae52fe82df672ab53b38adae4ab44552f15",
+      "old_bytes": 26371,
+      "new_bytes": 26656
+    },
+    {
+      "path": "references/task-continuity.md",
+      "change": "modified",
+      "old_sha256": "520d8e815d6ea54cb609aeea977419290d130f6acbe00e20fa1a7a7f554ff750",
+      "new_sha256": "609f9122f40aa3e164545859f1a50dfce938b73860dd0bfcdde248b59d270e08",
+      "old_bytes": 2690,
+      "new_bytes": 2927
+    },
+    {
+      "path": "references/user-requirements-ledger.md",
+      "change": "modified",
+      "old_sha256": "62f07c381865bb267531fa333e4d7e540a8f188ae7eedbefe2fb2d431d70a8b3",
+      "new_sha256": "35ace57593cccb7ff0493777c68bcd2f92e38ef9fc24a03114da0af482850cda",
+      "old_bytes": 155292,
+      "new_bytes": 156630
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "change": "modified",
+      "old_sha256": "fde750bdd7143397b48629ac35f39888be9446349d72dda4536412da8373a4d6",
+      "new_sha256": "75f9cbcfaaadacb3fbbc79bcb52073a6ab3df2cb4174965b5d29cba42a0e3d9b",
+      "old_bytes": 3934,
+      "new_bytes": 5942
+    }
+  ],
+  "archived_maintenance": {
+    "path": "migration/history/6.0.0-maintenance.zip",
+    "members": [
+      "migration/APPLY_IN_WORK.txt",
+      "migration/CHANGELOG.md",
+      "migration/CHANGES.diff",
+      "migration/EVALS.md",
+      "migration/FILE_CHANGES.json",
+      "migration/PATCH_REPLAY.txt",
+      "migration/PROJECT_AGENTS_SNIPPET.md",
+      "migration/RELEASE_MANIFEST.json",
+      "migration/SOURCES.md",
+      "migration/VALIDATION.json",
+      "migration/VALIDATION.md"
+    ],
+    "sha256": "6544640a2184891b80c512768d984ccddef3966a9b7712e11e9a3a9dbe51953f"
+  }
+}

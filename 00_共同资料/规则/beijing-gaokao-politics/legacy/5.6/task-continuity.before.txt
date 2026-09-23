@@ -1,0 +1,109 @@
+# 北京高考政治长任务连续性协议
+
+`policy_revision: 14`
+`last_updated: 2026-09-03`
+`scope: 全部 Chat、Work、长工具会话与子代理任务`
+`default_mode: off；仅在适用范围章节命中时加载和启用`
+
+## 目的
+
+界面显示“正在思考”或“正在工作”不代表任务仍在推进。本协议用可验证检查点、有界租约和强制恢复动作判定任务是否活着，并把允许停止的条件限制为 `COMPLETED` 或 `STOPPED`。租约同时不能短到把逐页目检、连续短工具和真实分析误判为停工。
+
+## 适用范围与轻量默认
+
+本节是本协议的高优先级入口，优先于下文对长任务完整机制的历史性展开。默认不创建 checkpoint，不启动 `watch`，也不启用 Luna 监视。下文的检查点、租约、报警、恢复窗和终态机制只在本节明确命中时适用。
+
+1. 仅在出现以下任一条件时建立 checkpoint：工具已经返回可继续轮询的真实异步 session／cell ID；即将执行的单条命令预计持续超过 2 分钟；任务明确包含至少 3 个能够分别留下产物、计数、校验或退出码的长阶段。普通的多步任务、多个短工具调用或文件较大本身不构成启用条件。
+2. `watch` 只跟踪已经取得真实 ID、能够继续轮询的异步 session。仅因任务步骤多、预计耗时长、存在 checkpoint 或正在进行模型分析，不启动空转 `watch`，不得用虚构 ID 或后台无实体的状态充当监视会话。
+3. Luna 只用于有明确输入、输出和结束条件的独立内容、证据、结构或视觉审查，不承担保活、租约续期、watch 替代或主代理动作派发职责。没有独立审查需要时不启用 Luna。
+4. 短文件读取、规则或状态查询、简单回答、已有文件补发、局部小编辑、短命令、普通诊断及无需异步等待的任务，均直接执行，不建立 checkpoint，不启动 `watch` 或 Luna。
+5. checkpoint 的用途是保存最后安全产物、准确 `resume_token` 和下一动作，便于线程、工作区或回合中断后恢复；它不能延长模型回合、唤醒已经结束的代理，也不能作为任务仍在运行的证明。
+6. checkpoint 进入 `COMPLETED` 或 `STOPPED` 后，应从当前热路径移入冷归档。单书当前记录只保留最近终态摘要、最后安全产物身份和必要恢复指针，不持续追加完整工具、会话、报警与旧 checkpoint 历史。
+7. 父任务 checkpoint 只能由主代理写入。子代理不得继承或修改父 checkpoint；主代理统一登记、轮询和回收其真实 ID。子代理确需 checkpoint 时使用隔离路径，不能与父任务共享同一个 JSON。
+8. 用户明确要求 Luna 监督时，启用一个 `gpt-5.6-luna` 低推理只读完成门审查，输出允许结束前硬门槛与停滞风险。它是 `monitor=false` 的可失效辅助任务，不写父 checkpoint、不续租、不替代真实 session 轮询；主代理收到其结果后继续推进当前动作。
+
+## 检查点最小字段
+
+长任务第一条长运行命令前建立 JSON 检查点，至少包含：
+
+`schema_version`、`task_id`、`status`、`stage`、单调递增的 `heartbeat_seq`、`last_verified_action`、`next_action`、`observable_progress`、`artifact_delta`、`active_sessions`、`last_session_poll`、`last_exit_code`、`monitor_agent`、`monitor_alarm_count`、`recovery_attempt`、`recovery_failure_count`、`updated_at`、`lease_expires_at`、`resume_token`、`pending_tool`、`tool_call_history`、`session_history`、`alarm_events`、`terminal_evidence`、`monitor_exit_snapshot`。
+
+`status` 只允许 `RUNNING`、`COMPLETED`、`STOPPED`。时间统一为 UTC ISO-8601。`lease_expires_at` 默认并最多晚于 `updated_at` 600 秒。600秒用于容纳5—10分钟的逐页目检、连续短工具、原题比对和真实分析，不是固定等待时间；任何已登记会话的新输出仍应即时记录。
+
+`active_sessions` 的每一项至少包含真实 `id`、`purpose`、最近 `state` 和布尔型 `monitor`；ID 不得重复。工具会话、cell、运行中的内容子代理和监视代理都须登记；不得用“若干代理运行中”等不可轮询描述代替标识。`monitor_agent` 非空时必须与其中唯一一个 `monitor=true` 的会话 ID 完全相同。
+
+每条新报警还须写入 `evidence_window_start_at`，冻结 `tool_history_length`、`session_history_length`、`artifact_delta_length`，并维护 `recovery_evidence`。租约到期报警的证据窗从准确的 `lease_expires_at` 开始，工具和会话边界允许回看watch下一轮落盘报警前已经登记的窗内事件；没有边界的旧记录不得被推断成恢复证据。
+
+旧版检查点读取时确定性迁移到 schema v2，只补结构默认值，不改进度、时间、租约、会话或产物。已有唯一 `monitor_agent` 与同 ID 活动会话但缺少 `monitor` 时，匹配项补 `true`，其余项补 `false`；旧版非结构化报警数保存在 `legacy_alarm_count`。rev8 为旧报警保守补入工具历史、会话历史和产物差异边界：有时间戳的历史从第一个明确晚于报警的事件开始，同秒歧义项视作报警前；无时间戳的产物路径从迁移时已有长度开始，禁止把升级前事件冒充报警后进展。`check` 只读迁移，不写回；下一次合法写入才持久化。迁移不得创设会话、结果、报警或终态证据；身份缺失、重复或冲突仍须校验失败。
+
+## 新临时工作区的续作引导
+
+用户在上下文上限后发送“继续”，但当前临时工作区没有旧检查点、旧副本或旧会话时，先区分环境周转与证据缺失。临时副本消失只说明本地执行环境已更换，不能改写宝典题源、母本或阻断结论。
+
+1. 从当前宝典共享记录、母本清单和要求总账取得最后安全产物的持久身份、完整 SHA-256、准确 `resume_token`、冻结范围与未闭环目标；缺少任一关键身份时按真实缺口停止，不凭对话摘要补造。
+2. 为本轮建立新的任务 ID 与 schema v2 `RUNNING` 检查点，复用准确 `resume_token`，在 `last_verified_action` 中登记环境周转和恢复依据。旧检查点、旧watch或旧Luna会话不得被写成仍在运行。
+3. 按持久身份恢复最后安全产物并核验 SHA-256；哈希不符时停止实质写入。随后启动新的确定性watch，取得新的 `MONITOR_READY`，再登记真实会话和可选 Luna low 辅助层。
+4. 只执行共享记录中的未闭环目标。已冻结正文、计数、逐页视觉与已闭环证据不因临时工作区更换而重跑。
+
+## 什么才算真实进展
+
+只有下列事实可以续租：
+
+- 新文件、修改文件、页数、题数、校验项、SHA-256、退出码或可复现命中发生变化；
+- 已登记活动会话被轮询，并取得新的输出、状态或退出码；
+- 子代理返回新证据并已写入当前检查点；
+- 当前阶段发生可验证切换，并留下准确 `resume_token`。
+
+每次真实进展都将 `heartbeat_seq` 恰好加一。秒级时间戳允许同秒相同，事件顺序由 `heartbeat_seq` 决定；不得为制造时间单调而把逻辑时钟推到墙钟未来。重复同一句 `next_action`、更新纯时间戳、把相同 `running` 状态重复写入会话、口头说“继续处理”、界面状态、预计百分比、无输出等待均不能续租。
+
+## 活动会话
+
+工具返回 session ID、cell ID、yielded 状态或运行中的子代理时，立即把标识、用途和最近状态写入 `active_sessions`。每次等待不超过 60 秒。轮询取得新输出、不同状态或退出码时写入 `session_history` 并递增 `heartbeat_seq`；相同状态且没有新输出时只更新会话与全局轮询时间，不改变 `updated_at`、租约、最近动作或心跳序号。租约已过期或已有开放报警时，新输出只作为恢复证据留存，不得续租。会话完成、失败或丢失后从活动表移出，并把结论写入 `last_verified_action`。
+
+父任务的上述会话登记与状态写入均由主代理完成。分派子代理时，提示词必须明确禁止其触碰父 checkpoint；若发现父 checkpoint 出现无法对应主代理动作的并发写入，立即停止新工具准备，核对 `pending_tool` 与工具结果，再由主代理恢复一致状态。
+
+每个可能产生外部副作用或长时间运行的工具调用，先用 `prepare-tool --action prepare` 登记唯一 `call_id`、工具名和参数64位小写 SHA-256，再执行工具，返回后用 `prepare-tool --action result` 登记结果状态、64位小写结果 SHA-256 与退出码。准备、结果消费和重复回放均幂等；已有未消费调用时禁止准备第二个。报警前的旧结果不能恢复新的报警；`idempotent-rerun`只接受该报警创建后写入的RESULT，实务中通常对应原`pending_tool`的迟到结果，或报警后专门执行的一次只读、幂等恢复探针。
+
+开放报警且仍在120秒恢复窗口内时，允许登记且只允许登记 `call_id` 以 `recovery-` 开头的幂等恢复探针。该PREPARED和RESULT只形成恢复证据，不在登记瞬间续租；随后可用同一报警ID调用 `recover --evidence-type idempotent-rerun`，确定性 `watch` 也会识别报警后RESULT并自动恢复。普通调用、第二个并行调用、超过恢复截止的探针一律拒绝。这样既避免旧结果冒充进展，也避免“租约过期后禁止登记新证据”的恢复死锁。
+
+报警窗口内还可登记两类真实证据：一是已登记会话产生的新输出、状态或退出码；二是 `heartbeat --artifact` 指向报警创建后新建或修改的现存普通文件。后者由脚本核验文件修改时间、大小与SHA-256，只列旧路径、重复计数、口头说明或不存在的文件均拒绝。报警后的新会话允许先只登记而不续租，必须随后产生真实输出才算恢复证据。
+
+所有会改变检查点的 `init`、`heartbeat`、`prepare-tool`、`session`、`recover`、`terminal` 命令必须对同一检查点锁文件取得进程级排他锁，将完整的“读取、校验、修改、fsync 临时文件、原子替换、fsync 目录”串行化。`watch` 的每个观察周期使用同一锁。只做临时文件再替换不能防止两个并发写入相互覆盖；未取得锁时不得写入或声称会话、工具结果、报警或终态已经登记。
+
+## 监视、报警与强制恢复
+
+1. 只有 checkpoint 已启用且已经取得可持续轮询的真实异步 session／cell ID 时，才运行 `scripts/task_checkpoint.py watch` 并登记确定性监视进程；仅因任务包含至少三个长阶段而建立 checkpoint 时，不启动空转 `watch`。协作环境可用时可由 Luna low 低推理只读代理做有界独立审查。启动 watch 后必须取得 `MONITOR_READY`，再用 `session --action add --monitor` 登记真实会话。`init --monitor-agent` 一律拒绝，禁止在握手前伪造存活监视器。60秒内未握手即更换监视会话，同一任务最多重挂2次；Luna final或口头存活均不能替代确定性watch。握手完成后至多每45秒轮询一次。辅助 Luna 只能发送 `AUX_WARNING`，不得自行宣布检查点报警有效；权威报警只来自检查点 `unresolved_alarm_ids` 或确定性watch的 `MONITOR_ALARM`。
+2. `RUNNING` 的600秒进展租约到期时，监视进程创建持久、幂等的 `alarm_events` 记录并输出 `MONITOR_ALARM`，随后继续监视。固定120秒恢复窗从租约到期边界起算，不能因watch下一轮最多45秒后才落盘报警而顺延；脚本须把该轮询间隙中已经登记的工具RESULT和会话输出纳入同一窗口。若是租约仍有效时发生的 `MONITOR_EXIT`，恢复截止不得早于原租约到期再加120秒。仅达到自定义stale阈值而租约未到期时不得创建阻断报警或自动停止。
+3. 正式监视会话在 `RUNNING` 下结束、丢失或无法轮询时按 `MONITOR_EXIT` 报警处理。辅助 Luna 的提示词必须明确“警告通过运行中 `AUX_WARNING` 发送，发出后继续监看；仅在检查点终态或主代理明确取消时发送 final；不得自行制造或宣布权威报警”。若平台仍以 final 结束代理，主代理立即把该辅助代理登记为 completed／unexpected exit，从 `active_sessions` 移除真实 ID，并先用检查点与确定性watch核对其判断，再重挂不同的有效辅助层或明确由确定性watch独立继续；辅助退出本身不创建正式 `MONITOR_EXIT`，也不得让已结束代理停留在 running 清单。相同无效模式不得重复重挂；确定性watch继续承担唯一主存活判定。正式监视器退出时，主代理用 `session remove --unexpected-exit` 清除旧 ID并创建 `MONITOR_EXIT` 报警。替代监视器完成真实 `MONITOR_READY` 后，脚本允许在该开放报警下只登记新监视会话但不续租；随后在120秒窗口内用 `recover --alarm-id ... --evidence-type session-output` 把新握手输出 SHA-256 绑定到该报警。口头声称“仍在运行”无效。
+4. 报警可显式或自动恢复：已登记会话在报警后取得的新输出、状态或退出码，待执行工具在报警后返回的已记录RESULT，报警窗口内完成的 `recovery-*` 探针，以及经脚本核验的新文件产物，都会绑定报警。确定性watch在停止裁决前先扫描这些边界后的证据，命中即记录 `MONITOR_RECOVERED`、续租600秒并继续任务；报警前历史结果不得复用。显式恢复仍用 `recover --alarm-id`，可更新阶段和 `resume_token`，但阶段变更不重置累计恢复次数。
+5. 自动 `STOPPED` 必须同时满足：进展租约已经到期、120秒恢复窗已经结束、窗口内没有上述报警后工具结果、会话输出/状态或可验证产物变化。恢复失败累计2次只登记 `recovery_exhausted`，仍须等到同一停止条件成立后才写入 `STOPPED / RECOVERY_EXHAUSTED`；不得在租约有效或窗口内仍有真实活动时把RUNNING误封为STOPPED。报警、重复轮询和辅助代理存活声明本身均不算进展。
+
+`watch`必须容忍读取边界上的暂时缺失、半写或JSON不可读：同一连续故障只输出一次`MONITOR_READ_ERROR`，不得输出READY、不得修改检查点、不得自行终止任务；恢复到可读且有效后输出一次`MONITOR_READ_RECOVERED`并继续原循环。若启动时文件无效，必须等到第一次有效读取后才输出`MONITOR_READY`。`--max-cycles`只用于有界回归测试，正式监视不得使用。
+
+## 严格终态
+
+`COMPLETED` 必须同时满足：计划无 `pending`／`in_progress`；除监视会话外的活动会话已退出；`pending_tool` 为空；所有报警已解决；约定内容修订和证据裁定已完成；独立满分审查或学生通读已结算；全部约定成品已保存且可读；内容、结构、视觉、技术及后台账本门禁按任务范围通过；交付物已持久化；每个交付物有 SHA-256，每道门明确为 `passed`，用户可用真实链接已经准备。终态证据还须包含记录时间、完成结论、计划已清、会话快照和空的未决报警列表。终态命令原子回收唯一监视会话并清空会话；若仍有非监视会话、待消费工具、开放报警或缺少具体证据，脚本拒绝结算。进入终态后继续轮询监视进程，确认其读到终态并真实退出。
+
+手工 `STOPPED` 只用于权限、已穷尽全部授权附件／项目源／压缩包成员／持久文件后仍缺失的关键材料、必须由用户裁决的冲突或已确认不可恢复工具错误；自动 `STOPPED` 只允许按上节“租约到期＋120秒无新证据”或在该条件成立后的累计恢复失败写入。两类终态都必须记录阻断、类别、已核验来源边界、最后完成项、最后安全产物、准确 `resume_token`、恢复条件、下一动作、会话快照、待执行工具快照和监视退出快照；不得用“暂时没结果”“稍后继续”或单次静默退出冒充 `STOPPED`。单个落位的 `BLOCKED_EVIDENCE` 只是内容裁定，不是整轮终态；只要约定答案／细则修订、独立复核、成品生成、全量QA、共享记录或Skill更新、持久化或链接交付仍有一步可执行，状态必须保持 `RUNNING` 并继续推进。
+
+在 `RUNNING`、计划未清或仍有活动会话时，禁止发送结算 final、停止轮询或默默空闲。用户发送“继续”后，从检查点和 `resume_token` 恢复，不能重做已闭环阶段。
+
+## 回合退出与等待硬门
+
+主代理不能凭内部判断、界面状态或一段自然语言决定结束回合。准备发送结算 final 前，必须执行：
+
+`scripts/task_checkpoint.py turn-gate CHECKPOINT --intent final`
+
+该命令只读、不续租、不恢复、不改写。只有结构有效且状态为`COMPLETED`或`STOPPED`时返回0；结构有效但仍为`RUNNING`时返回4并输出`TURN_CONTINUE_REQUIRED`；无效检查点返回1。返回4时必须继续执行`next_action`，不得发送结算final。
+
+准备进入不执行任何主动作的等待前，必须执行：
+
+`scripts/task_checkpoint.py turn-gate CHECKPOINT --intent wait`
+
+只有结构有效、状态为`RUNNING`、租约未到期、无开放报警，且存在一个待返回的`pending_tool`或至少一个`monitor=false`活动工作会话时返回0并输出`WAIT_AUTHORIZED`。若只剩唯一确定性监视器且`pending_tool=null`，返回4并输出`MAIN_ACTION_REQUIRED`，表示出现主动作分派空洞，必须立即执行`next_action`。租约到期或开放报警返回2并输出`RECOVERY_REQUIRED`；终态不再授权等待，返回3并输出`WAIT_NOT_APPLICABLE`。
+
+唯一`monitor=true`会话只属于确定性watch。Luna low若启用，只作为`monitor=false`的只读辅助层；其final不产生正式watch退出证据。若同一任务中相同辅助模式连续两次提前final，停止重挂该模式，由确定性watch独立承担存活判定。
+
+## 确定性辅助脚本
+
+使用 `scripts/task_checkpoint.py` 的 `init`、`heartbeat`、`prepare-tool`、`session`、`watch`、`recover`、`check`、`turn-gate`、`terminal` 完成全生命周期。`heartbeat --recovery`已经废止，只能用`recover --alarm-id`。`watch` 首轮有效验证通过后输出 `MONITOR_READY`，持续报告进展或持久报警，只在检查点进入终态后正常退出；`--max-cycles`仅限测试，正式监视不得使用。常规流程先 `init`，再握手并用 `session --action add --monitor` 登记；`init --monitor-agent` 明确拒绝。`check`返回码固定为0＝有效且未过期RUNNING、1＝无效、2＝有效但租约已过期RUNNING、3＝有效终态，不能把所有非0都当作文件损坏。`turn-gate`固定执行回合退出或等待的只读判定。脚本负责证据结构、状态一致性、并发写入和租约校验，不能替代内容裁决；成品真实存在、可读及SHA匹配仍由主流程独立核验。检查点JSON禁止人工直接编辑；只能由上述写命令产生真实工具、会话、进展和交付证据。

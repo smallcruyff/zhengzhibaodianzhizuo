@@ -1,0 +1,229 @@
+{
+  "release": "6.0.1-20260905",
+  "status": "PASS",
+  "scope": "实际文件级验证；不代表模型行为或书稿质量",
+  "checks": [
+    {
+      "name": "功能文件完整保留",
+      "status": "PASS",
+      "detail": {
+        "original": 37,
+        "revised": 37,
+        "missing": []
+      }
+    },
+    {
+      "name": "确有正文级文件变更",
+      "status": "PASS",
+      "detail": {
+        "changed": 22,
+        "unchanged": 15
+      }
+    },
+    {
+      "name": "八份分册历史逐字节不变",
+      "status": "PASS",
+      "detail": [
+        "references/book-bixiu-2.md",
+        "references/book-bixiu-3.md",
+        "references/book-culture.md",
+        "references/book-philosophy.md",
+        "references/book-reasoning.md",
+        "references/book-xuanbi-1.md",
+        "references/book-xuanbi-2.md",
+        "references/book-xuanbi-3.md"
+      ]
+    },
+    {
+      "name": "成品清单保真协议图标与旧工具保全",
+      "status": "PASS",
+      "detail": [
+        "references/artifact-manifest.md",
+        "references/original-fidelity-checklist.md",
+        "assets/icon.svg",
+        "legacy/5.6/scripts/task_checkpoint.py",
+        "legacy/5.6/task-continuity.before.txt",
+        "legacy/5.6/tests/test_task_checkpoint.py",
+        "legacy/README.md"
+      ]
+    },
+    {
+      "name": "宪法专业正文与完整示范逐字节不变",
+      "status": "PASS",
+      "detail": "从宝典的定位和用途至文件末尾，包含四原则与两张示范图转录"
+    },
+    {
+      "name": "宪法原件身份字段保全",
+      "status": "PASS",
+      "detail": [
+        "constitution_revision",
+        "effective_date",
+        "source_file",
+        "source_library_identity",
+        "source_size_bytes",
+        "source_sha256"
+      ]
+    },
+    {
+      "name": "角色样式与分册专属样式原文保全",
+      "status": "PASS",
+      "detail": [
+        [
+          "### 项目统一语义角色字体系",
+          "## 全项目共同规则"
+        ],
+        [
+          "## 七本宝典专属样式",
+          "## 选择题 A1/A2 协议"
+        ]
+      ]
+    },
+    {
+      "name": "计数排序专业正文逐字节不变",
+      "status": "PASS",
+      "detail": "含四套口径、唯一标识、正文落位、排序、Excel与量化审查要求"
+    },
+    {
+      "name": "题源历史登记段落原文保全",
+      "status": "PASS",
+      "detail": "原登记资料至配对与披露规则之前，全部历史事实段落"
+    },
+    {
+      "name": "七份活动快照仅改控制引用",
+      "status": "PASS",
+      "detail": "角色、Artifact/Library身份、全部原计数、未决、next_action、resume_token原文保留"
+    },
+    {
+      "name": "活动快照既有SHA完整保全",
+      "status": "PASS",
+      "detail": "逐文件按顺序比较全部64位哈希"
+    },
+    {
+      "name": "历史追加保全 user-requirements-ledger.md",
+      "status": "PASS",
+      "detail": "REQ-PROJ-20260905-ASTRA-002 唯一；只修改原元数据并追加新事件"
+    },
+    {
+      "name": "历史追加保全 correction-log.md",
+      "status": "PASS",
+      "detail": "CORR-PROJ-20260905-ASTRA-002 唯一；只修改原元数据并追加新事件"
+    },
+    {
+      "name": "活动规则版本引用同步",
+      "status": "PASS",
+      "detail": "七份册快照及项目入口；原宪法修订2不变"
+    },
+    {
+      "name": "6.0.0维护历史原字节归档",
+      "status": "PASS",
+      "detail": {
+        "members": 11
+      }
+    },
+    {
+      "name": "历史归档无字体二进制",
+      "status": "PASS",
+      "detail": "仅保留上一版维护资料，不作为活动Skill发现入口"
+    },
+    {
+      "name": "Skill和UI元数据可解析",
+      "status": "PASS",
+      "detail": "PyYAML读取；技能名称保持不变"
+    },
+    {
+      "name": "所有Python文件语法检查",
+      "status": "PASS",
+      "detail": "仅静态解析，未执行旧监视脚本"
+    },
+    {
+      "name": "关键读取入口同步",
+      "status": "PASS",
+      "detail": "包含同一新轮重读、正文/示范、事务性豁免与同轮连续边界"
+    },
+    {
+      "name": "主动执行边界静态检查",
+      "status": "PASS",
+      "detail": "条款存在检查，不代替实际行为测试"
+    },
+    {
+      "name": "27个行为用例未伪称通过",
+      "status": "PASS",
+      "detail": "全部为用户真实宿主待执行用例"
+    },
+    {
+      "name": "逐行差分实际回放",
+      "status": "PASS",
+      "detail": {
+        "modified_files": 22,
+        "matched_functional_files": 37,
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "只读验证器正向检查",
+      "status": "PASS",
+      "detail": {
+        "status": "PASS",
+        "release": "6.0.1-20260905",
+        "manifest_files": 37,
+        "markdown_local_links": 77,
+        "errors": [],
+        "scope": "Static release integrity; maintenance archive bytes are checked separately during packaging.",
+        "not_tested": [
+          "host installation",
+          "model behavior",
+          "book content accuracy",
+          "runtime performance"
+        ]
+      }
+    },
+    {
+      "name": "验证器能发现意外字节变化",
+      "status": "PASS",
+      "detail": "在隔离副本追加测试行，验证器返回FAIL"
+    },
+    {
+      "name": "验证器能发现缺少宪法文件",
+      "status": "PASS",
+      "detail": "隔离副本缺文件，返回非零；不是模型行为测试"
+    },
+    {
+      "name": "完整压缩包逐成员回读",
+      "status": "PASS",
+      "detail": {
+        "members": 50,
+        "CRC": "PASS",
+        "byte_comparison": "all members"
+      }
+    },
+    {
+      "name": "全新解压副本验证",
+      "status": "PASS",
+      "detail": {
+        "status": "PASS",
+        "release": "6.0.1-20260905",
+        "manifest_files": 37,
+        "markdown_local_links": 77,
+        "errors": [],
+        "scope": "Static release integrity; maintenance archive bytes are checked separately during packaging.",
+        "not_tested": [
+          "host installation",
+          "model behavior",
+          "book content accuracy",
+          "runtime performance"
+        ]
+      }
+    }
+  ],
+  "functional_changed": 22,
+  "functional_unchanged": 15,
+  "functional_total": 37,
+  "zip_members": 50,
+  "not_run": [
+    "用户实际Work/Codex安装与生效链检查",
+    "27项真实模型行为用例",
+    "新旧规则的token/时间/成功率对照",
+    "任何宝典正文、宪法Word及原卷细则重新核验",
+    "Git提交、远端推送或持久库覆盖"
+  ]
+}

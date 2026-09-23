@@ -1,0 +1,59 @@
+{
+  "books": {
+    "必修二": {
+      "workspace": "必修二_Astra审核修订_20260913",
+      "review_manifest": "00_必修二最新审查稿/.review-manifest.json",
+      "progress_files": [
+        "必修二_周六成品冲刺_20260910/状态/当前基线.json",
+        "必修二_Astra审核修订_20260913/00_当前进度.md",
+        "必修二_Astra审核修订_20260913/网页版接续/当前接续.json"
+      ],
+      "skill_entry": "references/active/book-bixiu-2-current.md"
+    },
+    "必修三": {
+      "workspace": "必修三_最新Skill修订_20260913",
+      "review_manifest": "00_必修三最新审查稿/.review-manifest.json",
+      "progress_files": [
+        "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+        "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+      ],
+      "skill_entry": "references/active/book-bixiu-3-current.md"
+    },
+    "哲学": {
+      "workspace": "哲学_协作",
+      "skill_entry": "references/active/book-philosophy-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    },
+    "文化": {
+      "workspace": "文化_协作",
+      "skill_entry": "references/active/book-culture-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    },
+    "选必一": {
+      "workspace": "选必一_协作",
+      "skill_entry": "references/active/book-xuanbi-1-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    },
+    "选必二": {
+      "workspace": "选必二_协作",
+      "skill_entry": "references/active/book-xuanbi-2-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    },
+    "选必三思维": {
+      "workspace": "选必三思维_协作",
+      "skill_entry": "references/active/book-xuanbi-3-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    },
+    "选必三推理": {
+      "workspace": "选必三推理_协作",
+      "skill_entry": "references/active/book-xuanbi-3-current.md",
+      "review_manifest": null,
+      "status": "本轮未核定真实工作头；不从历史包自动开工"
+    }
+  }
+}

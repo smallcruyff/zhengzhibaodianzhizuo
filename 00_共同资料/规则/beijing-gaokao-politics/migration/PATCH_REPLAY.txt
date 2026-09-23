@@ -1,0 +1,25 @@
+patching file AGENTS.md
+patching file README.md
+patching file SKILL.md
+patching file agents/openai.yaml
+patching file references/active/book-bixiu-2-current.md
+patching file references/active/book-bixiu-3-current.md
+patching file references/active/book-culture-current.md
+patching file references/active/book-philosophy-current.md
+patching file references/active/book-xuanbi-1-current.md
+patching file references/active/book-xuanbi-2-current.md
+patching file references/active/book-xuanbi-3-current.md
+patching file references/active/project-current.md
+patching file references/correction-log.md
+patching file references/counting-sorting-policy.md
+patching file references/evidence-policy.md
+patching file references/project-constitution.md
+patching file references/project-rules.md
+patching file references/source-inventory.md
+patching file references/style-spec.md
+patching file references/task-continuity.md
+patching file references/user-requirements-ledger.md
+patching file scripts/validate_bundle.py
+
+exit_code=0
+Scope: 37 functional files; maintenance docs intentionally excluded.

@@ -1,0 +1,36 @@
+{
+  "saved_at": "2026-09-22T00:53:36.039870+00:00",
+  "owner": "codex:01a0c595-7b63-7052-be2d-9f60d06117af",
+  "note": "# 必修三第49批累计合稿断点\n\n第49批累计工作头已由第48批父稿重新构建。当前合入30处经独立复核PASS的既有落位，按证据删除1处错误三统一落位，并新增1处房山一模20题依法治国落位。全书393条独立“链：”行和分析正文误蓝已清零。\n\n当前仍有362处既有落位待逐题内容复核。该工作头是可恢复的累计候选，不是最终审查稿；固定审查入口仍保持第48批同版Word/PDF。后续只有独立复核PASS的补丁可以追加到累计清单，并由必修三主线程重建同一路径工作头。",
+  "snapshot": {
+    "book": "必修三",
+    "ready": true,
+    "revision": "batch48",
+    "central_confirmed_revision": null,
+    "status": "stage_review_copy_not_final",
+    "pdf_pages": 583,
+    "files": {
+      "docx": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第48批_阶段审查稿.docx",
+        "sha256": "3ba37ae690d4296176bc91fed736ad871eaf2108d9791f8f127e77d6c964b8d7",
+        "size": 14421024
+      },
+      "pdf": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第48批_阶段审查稿.pdf",
+        "sha256": "63e42763e52d555102f354c4125fc6836893a6aa2b9f8a9dbac7b142dbc59e03",
+        "size": 16145259
+      }
+    },
+    "progress_fingerprints": {
+      "00_必修三最新审查稿/.review-manifest.json": "bd767b2c88fd6d4f7b50504fcb4d312a36c380d25982fda704723a6c5505425d",
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json": "8b46a8ae5c1eaa0eaf3ffa5c6d5892cc39229d1826037221763694d8953fc44f",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md": "1184e782ba7f057bd2c921df655f0b481a309b00cb052d6016e5ee8bd5049e5a"
+    },
+    "user_modified_review_copies": [],
+    "progress_files": [
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+    ],
+    "note": "revision为当前审阅版本；未渲染或更新中的候选须另读progress_files，不自动视为终稿"
+  }
+}

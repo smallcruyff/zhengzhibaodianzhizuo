@@ -1,0 +1,11 @@
+{
+  "docx": "/Users/wanglifei/Desktop/gpt6/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.docx",
+  "docx_sha256": "3ba3585e9dc770f4b664b6e70f68b724fea1a8a4f5e69314488db08cdfeb2923",
+  "pdf": "/Users/wanglifei/Desktop/gpt6/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.pdf",
+  "pdf_sha256": "2426c6a9687c965f9f608ed8a7818756958325ec8e36cb594226e3a7da2bc860",
+  "pages": 532,
+  "png_count": 532,
+  "renderer": "installed documents/render_docx.py main + native-PDF conversion adapter",
+  "dpi": 120,
+  "visual_review_complete": false
+}

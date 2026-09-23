@@ -1,0 +1,409 @@
+[
+  {
+    "id": "Q1",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修一",
+      "必修四文化",
+      "必修三"
+    ],
+    "tags": [
+      "初心使命",
+      "长征精神"
+    ],
+    "source_pages": [
+      1
+    ]
+  },
+  {
+    "id": "Q2",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修四哲学",
+      "必修四文化"
+    ],
+    "tags": [
+      "意识",
+      "审美",
+      "自然"
+    ],
+    "source_pages": [
+      1
+    ]
+  },
+  {
+    "id": "Q3",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "选必三推理",
+      "选必一",
+      "必修四哲学"
+    ],
+    "tags": [
+      "思维的间接性",
+      "和平",
+      "国家利益"
+    ],
+    "source_pages": [
+      1
+    ]
+  },
+  {
+    "id": "Q4",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修四文化",
+      "必修四哲学"
+    ],
+    "tags": [
+      "文化载体",
+      "整体与部分"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "Q5",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修四哲学"
+    ],
+    "tags": [
+      "社会历史条件",
+      "价值判断"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "Q6",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "选必三推理"
+    ],
+    "tags": [
+      "演绎推理",
+      "三段论"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "Q7",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修四哲学",
+      "选必三思维"
+    ],
+    "tags": [
+      "辩证否定",
+      "客观条件",
+      "系统优化"
+    ],
+    "source_pages": [
+      3
+    ]
+  },
+  {
+    "id": "Q8",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修三",
+      "必修四哲学"
+    ],
+    "tags": [
+      "党的性质",
+      "政绩观",
+      "调查研究"
+    ],
+    "source_pages": [
+      3
+    ]
+  },
+  {
+    "id": "Q9",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修三",
+      "选必二"
+    ],
+    "tags": [
+      "政府公共服务",
+      "公共法律服务"
+    ],
+    "source_pages": [
+      3
+    ]
+  },
+  {
+    "id": "Q10",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "选必二"
+    ],
+    "tags": [
+      "土地经营权",
+      "侵权",
+      "合同形式",
+      "行政复议"
+    ],
+    "source_pages": [
+      3
+    ]
+  },
+  {
+    "id": "Q11",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "选必二"
+    ],
+    "tags": [
+      "夫妻财产",
+      "家务补偿",
+      "举证",
+      "上诉"
+    ],
+    "source_pages": [
+      4
+    ]
+  },
+  {
+    "id": "Q12",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修二"
+    ],
+    "tags": [
+      "人工智能",
+      "手搓经济",
+      "生产效率"
+    ],
+    "source_pages": [
+      4
+    ]
+  },
+  {
+    "id": "Q13",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修二"
+    ],
+    "tags": [
+      "能源结构",
+      "绿色发展",
+      "增长率"
+    ],
+    "source_pages": [
+      4
+    ]
+  },
+  {
+    "id": "Q14",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "必修二",
+      "选必一"
+    ],
+    "tags": [
+      "未来能源",
+      "新质生产力",
+      "能源安全"
+    ],
+    "source_pages": [
+      4
+    ]
+  },
+  {
+    "id": "Q15",
+    "kind": "choice",
+    "points": 3,
+    "modules": [
+      "选必一"
+    ],
+    "tags": [
+      "国际关系",
+      "联合国",
+      "全球治理"
+    ],
+    "source_pages": [
+      4
+    ]
+  },
+  {
+    "id": "Q16",
+    "kind": "subjective",
+    "points": 8,
+    "modules": [
+      "必修四哲学",
+      "必修四文化"
+    ],
+    "tags": [
+      "发展",
+      "社会存在与社会意识",
+      "价值观",
+      "文化的功能"
+    ],
+    "source_pages": [
+      5
+    ]
+  },
+  {
+    "id": "Q17-a",
+    "kind": "subjective",
+    "points": 2,
+    "modules": [
+      "选必三推理"
+    ],
+    "tags": [
+      "划分",
+      "选言判断"
+    ],
+    "source_pages": [
+      5
+    ]
+  },
+  {
+    "id": "Q17-b",
+    "kind": "subjective",
+    "points": 4,
+    "modules": [
+      "选必三思维",
+      "选必三推理"
+    ],
+    "tags": [
+      "科学思维",
+      "辩证思维",
+      "创新思维",
+      "逻辑思维规则"
+    ],
+    "source_pages": [
+      5
+    ]
+  },
+  {
+    "id": "Q18-1",
+    "kind": "subjective",
+    "points": 2,
+    "modules": [
+      "必修二"
+    ],
+    "tags": [
+      "消费结构",
+      "图表信息"
+    ],
+    "source_pages": [
+      6
+    ]
+  },
+  {
+    "id": "Q18-2",
+    "kind": "subjective",
+    "points": 6,
+    "modules": [
+      "必修二"
+    ],
+    "tags": [
+      "服务消费",
+      "高质量发展",
+      "内需",
+      "产业结构",
+      "民生"
+    ],
+    "source_pages": [
+      6
+    ]
+  },
+  {
+    "id": "Q18-3",
+    "kind": "subjective",
+    "points": 7,
+    "modules": [
+      "选必二"
+    ],
+    "tags": [
+      "隐私权",
+      "消费者权益",
+      "知情权",
+      "侵权责任"
+    ],
+    "source_pages": [
+      6
+    ]
+  },
+  {
+    "id": "Q19",
+    "kind": "subjective",
+    "points": 8,
+    "modules": [
+      "必修三",
+      "必修二"
+    ],
+    "tags": [
+      "备案审查",
+      "法律层级",
+      "法治政府",
+      "统一大市场",
+      "公平竞争"
+    ],
+    "source_pages": [
+      7
+    ]
+  },
+  {
+    "id": "Q20",
+    "kind": "subjective",
+    "points": 8,
+    "modules": [
+      "选必一",
+      "必修二"
+    ],
+    "tags": [
+      "制度型开放",
+      "新发展格局",
+      "经济全球化",
+      "全球治理"
+    ],
+    "source_pages": [
+      7
+    ]
+  },
+  {
+    "id": "Q21",
+    "kind": "subjective",
+    "points": 10,
+    "modules": [
+      "必修三",
+      "必修四哲学",
+      "必修四文化",
+      "选必三思维"
+    ],
+    "tags": [
+      "党的领导",
+      "人民代表大会制度",
+      "人民立场",
+      "科学思维",
+      "文化支撑",
+      "规划制定与执行"
+    ],
+    "source_pages": [
+      8
+    ]
+  }
+]

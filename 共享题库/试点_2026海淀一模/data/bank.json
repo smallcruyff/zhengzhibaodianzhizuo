@@ -1,0 +1,4353 @@
+{
+  "schema_version": "0.1-pilot",
+  "exam_id": "BJ-2026-HD-YIMO-POL",
+  "display_name": "2026海淀一模",
+  "source_title": "海淀区2025—2026学年第二学期期中练习 高三思想政治",
+  "exam_date": "2026-04",
+  "cohort": 2026,
+  "sources": [
+    {
+      "source_id": "LOCAL-150",
+      "role": "试卷",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区一模/2026海淀一模/试卷/试卷.pdf",
+      "sha256": "03e0412bb80579d817c36d81a80cbe3caaf6ba114b5ff7272a9ec5582696b547",
+      "cache_reused": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_03e0412bb805.json",
+      "pages": [
+        {
+          "page": 1,
+          "preview": "assets/pages/试卷/p01.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-1.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p01_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 2,
+          "preview": "assets/pages/试卷/p02.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-2.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p02_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 3,
+          "preview": "assets/pages/试卷/p03.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-3.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p03_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 4,
+          "preview": "assets/pages/试卷/p04.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-4.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p04_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 5,
+          "preview": "assets/pages/试卷/p05.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-5.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p05_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 6,
+          "preview": "assets/pages/试卷/p06.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-6.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p06_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 7,
+          "preview": "assets/pages/试卷/p07.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-7.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p07_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        },
+        {
+          "page": 8,
+          "preview": "assets/pages/试卷/p08.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-150_P-8.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/试卷/p08_embedded01.png",
+              "size": [
+                1190,
+                1684
+              ]
+            }
+          ],
+          "native_text": ""
+        }
+      ]
+    },
+    {
+      "source_id": "LOCAL-149",
+      "role": "细则",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区一模/2026海淀一模/细则/细则.pdf",
+      "sha256": "9b5ac8fd0cfe59cb5dd47ea200078c3342a8cfc212be1cbe8a8f13044a540111",
+      "cache_reused": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_9b5ac8fd0cfe.json",
+      "pages": [
+        {
+          "page": 1,
+          "preview": "assets/pages/细则/p01.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-1.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p01_embedded01.png",
+              "size": [
+                1220,
+                690
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 1 页\n26 海淀一模评分标准\n政治\n第一部分\n本部分共 15 题，每题 3 分，共 45 分。\n1．C 2．B 3．A 4．B 5．D\n6．B 7．D 8．A 9．B 10．D\n11．C 12．C 13．D 14．A 15．C\n第二部分\n本部分共 6 题，共 55 分。\n16. （8 分）\n可从发展的观点、社会存在与社会意识、价值观、文化的功能等角度作答。\n"
+        },
+        {
+          "page": 2,
+          "preview": "assets/pages/细则/p02.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-2.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p02_embedded01.png",
+              "size": [
+                1180,
+                634
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p02_embedded02.png",
+              "size": [
+                1029,
+                330
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 2 页\n17.（6 分）\n逻辑错误：划分标准不一；选言判断遗漏其他有选择价值的其他情况。\n建议：可从科学思维、遵循逻辑思维规则、辩证思维等角度，结合调研活动提出建议，措施具体可\n行。\n第 2 问评分细则\n建议 1 分，知识 1 分 ，两条建议共 4 分。\n具体建议可从调研方案、调研方法（问卷法、访谈法、观察法、文献法）、数据分析等角度提出。\n（以上任意两个角度，建议与知识准确匹配，可得 4 分，一个角度 2 分）。\n只有知识，只有建议，只得一分。\n从科学思维出发 示例：\n• 科学思维追求认识的客观性，调研活动应该从实际出发，了解真实存在的问题和需求，再据\n此设计选项，确保问题来源于客观事实，而非主观想象。\n• 科学思维结果具有可检验性，调研结束后，通过实地测量、对比不同人群的回答、或与相关\n部门数据比对，检验结论是否可靠，经得起实践反复检验。\n• ……\n从逻辑思维规则出发 示例：\n• 提高不完全归纳推理结论的可靠程度，需要在认识对象与有关现象之间寻找因果联系。比如\n运用求异法，选择条件相似的两个片区，设置不同的机制，对比两片区的效果。"
+        },
+        {
+          "page": 3,
+          "preview": "assets/pages/细则/p03.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-3.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p03_embedded01.png",
+              "size": [
+                1025,
+                264
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p03_embedded02.png",
+              "size": [
+                1120,
+                430
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 3 页\n• ……\n从辩证思维出发 示例：\n• 辩证思维用全面的观点看问题，综合运用观察法、访谈法、文献法与问卷法，先通过实地观\n察和深度访谈探索问题，再设计问卷验证，并从整体角度去思考如何解决问题。\n• 运用矛盾分析法对比不同群体的回答差异，并通过预调查与正式调查的反复检验，寻找因果\n联系。\n• ……\n从创新思维出发 示例：\n• 发散思维与聚合思维是创新思维的两翼。运用发散思维广泛收集各类人群对无障碍设施的真\n实意见，再通过聚合思维聚焦核心问题，避免身份分类混乱和原因预设片面。\n• 对已有的有关事物之间因果关系的认识作交换性思考。对这些好案例进行观察和访谈，归纳\n其成功原因，再将好案例的原因与原问卷预设的进行对比，从而反向推导出真正的问题根源。\n• ……\n18.（15 分）\n（1）全国居民人均服务性消费支出总体上升，服务性消费占比不断提高，居民消费结构优化。（2\n分）\n（2）提振消费，扩大内需，拉动经济增长，增强国内大循环的内生动力；引导和带动服务业以及相\n关产业发展，推动产业结构优化，推动供给侧结构性改革；满足人民群众多样化、多层次、多方面\n的需求，提升生活品质；同时创造更多就业岗位，改善民生福祉。（6 分）\n"
+        },
+        {
+          "page": 4,
+          "preview": "assets/pages/细则/p04.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-4.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p04_embedded01.png",
+              "size": [
+                1061,
+                425
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p04_embedded02.png",
+              "size": [
+                1129,
+                578
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 4 页\n（3）①支持原告诉讼请求。 (1 分）\n②根据民法典规定，任何组织或者个人不得以刺探、侵扰、泄露、公开等方式侵害他人的隐私权。\n消费者在经营者提供的包间内的活动具有私密性，商家在社交平台公开张某等人包厢内监控录像片\n段、网络聊天信息等，构成对消费者隐私权的侵害，应当承担停止侵权、赔礼道歉等侵权责任。商\n家的行为侵犯了消费者合法权益。（3 分）\n③经营者应当保护消费者的知情权。根据消费者权益保护法规定，经营者向消费者提供有关商品或\n者服务的质量、性能、用途、有效期限等信息，应当真实、全面，不得作虚假或者引人误解的宣传。\n赵某虚假宣传其有“治疗糖尿病并发症”等功效，夸大功效，诱导消费，构成欺诈，应当退款并承\n担惩罚性赔偿责任。赵某行为不符合诚信等社会主义核心价值观。（3 分）\n注意：写“满足人民的幸福感、获得感、安全感”不给分"
+        },
+        {
+          "page": 5,
+          "preview": "assets/pages/细则/p05.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-5.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p05_embedded01.png",
+              "size": [
+                1617,
+                867
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p05_embedded02.png",
+              "size": [
+                1189,
+                584
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 5 页\n19.（8 分）\n全国人大常委会有权对地方政府规范性文件进行备案审查。地方政府规范性文件不得与宪法、法律、\n行政法规相抵触。该地政府部门制定的《实施细则》对从事网约车经营的车辆设置价格准入条件，\n事实上排除了部分价格低于这一准入条件但符合安全性能、服务品质的车辆车主平等参与市场活动、\n平等从事相关劳动的权利，属于国务院《公平竞争审查条例》规定的设置不合理市场准入条件的情\n形。纠正这一规定有利于维护社会主义法制的统一，推进法治政府建设，营造公平的市场竞争环境。\n评分细则\n"
+        },
+        {
+          "page": 6,
+          "preview": "assets/pages/细则/p06.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-6.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p06_embedded01.png",
+              "size": [
+                1184,
+                585
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p06_embedded02.png",
+              "size": [
+                1160,
+                674
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 6 页\n20.（8 分）\n扩大制度型开放，增强我国产品、服务乃至产业链在全球的竞争力，推进高水平对外开放，更好利\n用国内国际两个市场、两种资源，推动构建新发展格局；我国在低碳能源、人工智能等领域推动贡\n献国际标准，促进全球范围内标准共通、技术共享，推动全球技术创新与绿色转型，同时，我国积\n极参与全球经济治理和规则制定，推动全球治理体制向着更加公正合理方向发展。\n"
+        },
+        {
+          "page": 7,
+          "preview": "assets/pages/细则/p07.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-7.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p07_embedded01.png",
+              "size": [
+                2149,
+                1350
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p07_embedded02.png",
+              "size": [
+                1055,
+                370
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p07_embedded03.png",
+              "size": [
+                1219,
+                699
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 7 页\n21.（10 分）\n可从党的领导、马克思主义中国化时代化、制度优势、国家治理等角度作答。\n"
+        },
+        {
+          "page": 8,
+          "preview": "assets/pages/细则/p08.png",
+          "preview_reused_from": "/Users/wanglifei/Desktop/2026模拟题/必修二_v25续作_20260908/核验/逐卷逆向核查/2026缓存/LOCAL-149_P-8.png",
+          "embedded_images": [
+            {
+              "path": "assets/pages/细则/p08_embedded01.png",
+              "size": [
+                1214,
+                728
+              ]
+            },
+            {
+              "path": "assets/pages/细则/p08_embedded02.png",
+              "size": [
+                1416,
+                1094
+              ]
+            }
+          ],
+          "native_text": "高三思想政治参考答案 第 8 页\n"
+        }
+      ]
+    }
+  ],
+  "parents": [
+    {
+      "number": 1,
+      "points": 3,
+      "source_pages": [
+        1
+      ],
+      "blocks": [
+        {
+          "id": "1.p0",
+          "type": "paragraph",
+          "text": "为纪念中国工农红军长征胜利90周年，某校组织开展主题为“追寻长征足迹，筑牢信仰根基”的研学活动，学生走进数字体验馆沉浸式“重走长征路”。通过这一活动，学生可以"
+        },
+        {
+          "id": "1.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "了解社会主义制度创立和发展历程，增进历史认知"
+            },
+            {
+              "label": "②",
+              "text": "重温革命岁月，深化对中国共产党的初心和使命的认识"
+            },
+            {
+              "label": "③",
+              "text": "借助数字技术，赋予长征精神新的时代内涵"
+            },
+            {
+              "label": "④",
+              "text": "感悟长征精神的时代价值，走好新时代长征路"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "1.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①②"
+            },
+            {
+              "label": "B",
+              "text": "①③"
+            },
+            {
+              "label": "C",
+              "text": "②④"
+            },
+            {
+              "label": "D",
+              "text": "③④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 1,
+          "bbox_normalized": [
+            0.103,
+            0.32,
+            0.896,
+            0.484
+          ],
+          "asset": "assets/crops/Q1-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 2,
+      "points": 3,
+      "source_pages": [
+        1
+      ],
+      "blocks": [
+        {
+          "id": "2.p0",
+          "type": "paragraph",
+          "text": "“插花不可太繁，亦不可太瘦。多不过二种三种，高低疏密，如画苑布置方妙。”中国传统插花艺术历史悠远，追求“虽由人作，宛若天成”之境。中国传统插花艺术"
+        },
+        {
+          "id": "2.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "注重自然简洁的布局给人以想象空间，以有限承载无限"
+            },
+            {
+              "label": "②",
+              "text": "强调物我合一的审美体验，实现了思维和存在的同一"
+            },
+            {
+              "label": "③",
+              "text": "源于创作者对生活的特殊理解，体现了审美的主体差异性"
+            },
+            {
+              "label": "④",
+              "text": "蕴含道法自然的理念，传递了创作者的主观情志"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "2.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①③"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "②④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 1,
+          "bbox_normalized": [
+            0.103,
+            0.49,
+            0.897,
+            0.65
+          ],
+          "asset": "assets/crops/Q2-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 3,
+      "points": 3,
+      "source_pages": [
+        1
+      ],
+      "blocks": [
+        {
+          "id": "3.box",
+          "type": "parallel_boxes",
+          "text": "",
+          "paragraphs": [
+            "一百多年来，人类经历了血腥的热战、冰冷的冷战，全人类的共同愿望就是和平与发展。历史告诉我们，正义的信念不可动摇，和平的期盼不可阻遏，人民的力量不可战胜！",
+            "在《和平是一棵树》这首诗中，诗人写道：“和平是白天鹅的翅膀，是翅膀掠过宁静的湖水，是水底映出的云彩；和平是开向四方的门，是门里圆桌上斟满的红酒，是酒上照耀的灯……”"
+          ],
+          "layout": {
+            "columns": 2
+          },
+          "asset": "assets/crops/Q3-box.png"
+        },
+        {
+          "id": "3.p2",
+          "type": "paragraph",
+          "text": "对上述两则材料分析正确的有"
+        },
+        {
+          "id": "3.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "人们在总结历史教训中展望发展前景，体现思维具有间接性"
+            },
+            {
+              "label": "②",
+              "text": "诗歌以感觉和知觉揭示和平的本质属性，表达对和平的追求"
+            },
+            {
+              "label": "③",
+              "text": "和平不仅关系人类社会存在和发展，也关系每个人的幸福生活"
+            },
+            {
+              "label": "④",
+              "text": "维护和平符合全人类共同价值，是各国对外活动的落脚点"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "3.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①③"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "②④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 1,
+          "bbox_normalized": [
+            0.105,
+            0.655,
+            0.897,
+            0.88
+          ],
+          "asset": "assets/crops/Q3-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 4,
+      "points": 3,
+      "source_pages": [
+        2
+      ],
+      "blocks": [
+        {
+          "caption": "",
+          "rows": [
+            [
+              "长城是中华民族的代表性符号和中华文明的重要象征。长城文化带承载着中华民族众志成城、坚韧不屈的精神。",
+              "大运河作为世界文化遗产，见证了中华民族的奋斗与兴盛。大运河文化带彰显了中国精神、中国价值和中国力量。",
+              "西山永定河自然风光灵秀天成，文化遗产厚重富集。西山永定河文化带凝聚着北京的历史记忆与生态智慧。"
+            ]
+          ],
+          "source_page": 2,
+          "bbox_normalized": [
+            0.141,
+            0.057,
+            0.895,
+            0.191
+          ],
+          "headers": [
+            "长城文化带",
+            "大运河文化带",
+            "西山永定河文化带"
+          ],
+          "merged_cells": [],
+          "id": "4.table0",
+          "type": "table",
+          "text": "",
+          "asset": "assets/crops/Q4-table0.png"
+        },
+        {
+          "id": "4.p0",
+          "type": "paragraph",
+          "text": "长城文化带、大运河文化带、西山永定河文化带各具特色。北京市“十五五”规划提出要统筹三条文化带传承发展。做好北京历史文化名城保护，推进三条文化带建设，共同构建北京作为历史文化名城的整体风貌。可见"
+        },
+        {
+          "id": "4.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "文化带是各种文化资源的空间呈现，拉近了历史和现实的距离"
+            },
+            {
+              "label": "②",
+              "text": "文化带的建设表明任何联系的形成都离不开人的社会实践活动"
+            },
+            {
+              "label": "③",
+              "text": "三条文化带的保护利用要服从和服务于北京历史文化名城建设"
+            },
+            {
+              "label": "④",
+              "text": "三条文化带承载着民族历史记忆，彰显了民族文化的优越性"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "4.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①②"
+            },
+            {
+              "label": "B",
+              "text": "①③"
+            },
+            {
+              "label": "C",
+              "text": "②④"
+            },
+            {
+              "label": "D",
+              "text": "③④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 2,
+          "bbox_normalized": [
+            0.117,
+            0.055,
+            0.9,
+            0.385
+          ],
+          "asset": "assets/crops/Q4-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 5,
+      "points": 3,
+      "source_pages": [
+        2
+      ],
+      "blocks": [
+        {
+          "id": "5.p0",
+          "type": "paragraph",
+          "text": "数字游民是指依托互联网技术进行远程工作的群体。近年来，被乡村宜人的生态环境、丰富的人文情怀所吸引，越来越多的数字游民选择入驻乡村，他们的到来也为乡村带来文化创意、运动休闲、科技体验等新业态，成为乡村蝶变的新动力。上述现象说明"
+        },
+        {
+          "id": "5.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "生产力与生产关系的相互转换推动了数字游民的兴起"
+            },
+            {
+              "label": "B",
+              "text": "人们的价值选择呈现出多样化特征，不再有客观标准"
+            },
+            {
+              "label": "C",
+              "text": "乡村新业态是在连续性和渐进性的统一中发展起来的"
+            },
+            {
+              "label": "D",
+              "text": "生态优势与发展优势的转化依赖于特定社会历史条件"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 2,
+          "bbox_normalized": [
+            0.117,
+            0.391,
+            0.9,
+            0.548
+          ],
+          "asset": "assets/crops/Q5-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 6,
+      "points": 3,
+      "source_pages": [
+        2
+      ],
+      "blocks": [
+        {
+          "id": "6.p0",
+          "type": "paragraph",
+          "text": "某市使用“无人驾驶AI巡逻车”辅助城市道路交通治理，利用大数据系统精准识别违法停车、非机动车逆行等交通违法行为，自动完成拍照取证、信息上传，大幅提升执法效率。"
+        },
+        {
+          "id": "6.box",
+          "type": "boxed_text",
+          "text": "",
+          "paragraphs": [
+            "• 无人驾驶AI巡逻车并非简单改装的普通无人驾驶汽车",
+            "• 无人驾驶AI巡逻车是针对警务实战需求定制的智能装备",
+            "• 有的无人驾驶AI巡逻车能进行AI分析决策"
+          ],
+          "layout": {
+            "border": "dotted"
+          },
+          "asset": "assets/crops/Q6-box.png"
+        },
+        {
+          "id": "6.p4",
+          "type": "paragraph",
+          "text": "运用演绎推理方法，从以上三个判断可以推出"
+        },
+        {
+          "id": "6.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "简单改装的普通无人驾驶汽车不能进行AI分析决策"
+            },
+            {
+              "label": "B",
+              "text": "有的针对警务实战需求定制的智能装备能进行AI分析决策"
+            },
+            {
+              "label": "C",
+              "text": "有的简单改装的普通无人驾驶汽车能进行AI分析决策"
+            },
+            {
+              "label": "D",
+              "text": "能进行AI分析决策的设备有的是简单改装的普通无人驾驶汽车，有的是无人驾驶AI巡逻车"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 2,
+          "bbox_normalized": [
+            0.116,
+            0.552,
+            0.897,
+            0.819
+          ],
+          "asset": "assets/crops/Q6-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 7,
+      "points": 3,
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "id": "7.p0",
+          "type": "paragraph",
+          "text": "健康是学生追梦的底气，是人生画卷的底色，没有身心健康作铺垫，再美的蓝图也无从落笔。如今，越来越多的行动让“健康第一”教育理念正成为校园里看得见、摸得着的日常。"
+        },
+        {
+          "id": "7.box",
+          "type": "boxed_text",
+          "text": "",
+          "paragraphs": [
+            "◇ 将利用率较低的空间改造成运动项目体验区，设置趣味游戏项目",
+            "◇ 引入机器人陪伴学生交流，辅助教师开展心理疏导",
+            "◇ 推进“互联网＋明厨亮灶”，实时公开餐饮服务食品加工全过程",
+            "……"
+          ],
+          "layout": {
+            "border": "dotted"
+          },
+          "asset": "assets/crops/Q7-box.png"
+        },
+        {
+          "id": "7.p5",
+          "type": "paragraph",
+          "text": "下列分析正确的是"
+        },
+        {
+          "id": "7.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "运动项目体验区的改造是对原有空间功能的彻底否定"
+            },
+            {
+              "label": "②",
+              "text": "结合现代科技可以助力学校摆脱现实制约，全面守护健康"
+            },
+            {
+              "label": "③",
+              "text": "只有坚持“健康第一”的理念，才能引领学生健康成长"
+            },
+            {
+              "label": "④",
+              "text": "学校应优化健康教育内容和形式，构建全方位育人生态"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "7.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①②"
+            },
+            {
+              "label": "B",
+              "text": "①③"
+            },
+            {
+              "label": "C",
+              "text": "②④"
+            },
+            {
+              "label": "D",
+              "text": "③④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 3,
+          "bbox_normalized": [
+            0.116,
+            0.063,
+            0.885,
+            0.295
+          ],
+          "asset": "assets/crops/Q7-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 8,
+      "points": 3,
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "id": "8.p0",
+          "type": "paragraph",
+          "text": "树立和践行正确政绩观学习教育正在全党开展。"
+        },
+        {
+          "id": "8.box",
+          "type": "boxed_text",
+          "text": "",
+          "paragraphs": [
+            "◇ 树牢正确政绩观，为官一任、造福一方，真抓实干、久久为功，把丰碑立在人民群众心中。",
+            "◇ 多做埋头苦干的实事，不求急功近利的“显绩”，创造造福后人的“潜绩”。",
+            "◇ 领导干部要深入基层一线，注意倾听不同声音，做到对实情心中有数。"
+          ],
+          "layout": {
+            "border": "dotted"
+          },
+          "asset": "assets/crops/Q8-box.png"
+        },
+        {
+          "id": "8.p4",
+          "type": "paragraph",
+          "text": "对上述论述解读正确的是"
+        },
+        {
+          "id": "8.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "党的性质决定了必须把为民办事、为民造福作为最重要的政绩"
+            },
+            {
+              "label": "②",
+              "text": "党员干部要有历史耐心，从成功经验出发破解当前发展难题"
+            },
+            {
+              "label": "③",
+              "text": "党员干部应在调查研究上下功夫，使自身主观世界更好符合客观实际"
+            },
+            {
+              "label": "④",
+              "text": "此次学习教育为坚持和加强党的全面领导提供可靠制度保障"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "8.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①③"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "②④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 3,
+          "bbox_normalized": [
+            0.117,
+            0.298,
+            0.879,
+            0.515
+          ],
+          "asset": "assets/crops/Q8-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 9,
+      "points": 3,
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "id": "9.p0",
+          "type": "paragraph",
+          "text": "右图为北京市司法局公布的2025年12348公共法律服务热线平台“成绩单”，其中，民事类咨询主要涉及与日常生活密切相关的劳动争议、合同纠纷、婚姻家庭继承纠纷等问题。该平台的高效运行"
+        },
+        {
+          "kind": "infographic",
+          "description": "成绩单：热线呼入总量223万+；群众满意率99.71%；服务人次152万+；民事类咨询量104万+。图标和原始分格以原图保留。",
+          "source_page": 3,
+          "bbox_normalized": [
+            0.722,
+            0.513,
+            0.875,
+            0.642
+          ],
+          "id": "9.visual0",
+          "type": "figure",
+          "text": "",
+          "alt": "成绩单：热线呼入总量223万+；群众满意率99.71%；服务人次152万+；民事类咨询量104万+。图标和原始分格以原图保留。",
+          "asset": "assets/crops/Q9-visual0.png"
+        },
+        {
+          "id": "9.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "为当事人提供司法救助，依法保障公民充分行使诉讼权利"
+            },
+            {
+              "label": "B",
+              "text": "是政府履行公共服务职能、提高法治水平实现善政的真实写照"
+            },
+            {
+              "label": "C",
+              "text": "丰富了纠纷解决方式，严守维护社会公平正义的最后一道防线"
+            },
+            {
+              "label": "D",
+              "text": "优化行政裁决方式，预防化解社会矛盾纠纷，推动法治社会建设"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 3,
+          "bbox_normalized": [
+            0.117,
+            0.515,
+            0.879,
+            0.645
+          ],
+          "asset": "assets/crops/Q9-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 10,
+      "points": 3,
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "id": "10.p0",
+          "type": "paragraph",
+          "text": "李某返乡创业经营。下列解读正确的是"
+        },
+        {
+          "caption": "",
+          "rows": [
+            [
+              "A",
+              "李某与王某签订协议，承租王某的承包地，用于苹果种植",
+              "王某有权将土地承包经营权依法流转交易"
+            ],
+            [
+              "B",
+              "李某利用无人机为自家果园喷洒农药时，不小心“误伤”相邻的稻田，给张某造成损失",
+              "李某因不可抗力给张某造成损失，可免除赔偿责任"
+            ],
+            [
+              "C",
+              "李某与收购商口头约定苹果收购价格、数量、交付时间等",
+              "未采取书面形式会导致合同部分无效"
+            ],
+            [
+              "D",
+              "李某以与其他品牌相似的图案申请注册商标，被商标局驳回",
+              "李某可以申请行政复议维护自身权益"
+            ]
+          ],
+          "source_page": 3,
+          "bbox_normalized": [
+            0.152,
+            0.665,
+            0.877,
+            0.853
+          ],
+          "headers": [
+            "",
+            "行为",
+            "解读"
+          ],
+          "merged_cells": [],
+          "id": "10.table0",
+          "type": "table",
+          "text": "",
+          "asset": "assets/crops/Q10-table0.png"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 3,
+          "bbox_normalized": [
+            0.117,
+            0.648,
+            0.88,
+            0.853
+          ],
+          "asset": "assets/crops/Q10-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 11,
+      "points": 3,
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "id": "11.p0",
+          "type": "paragraph",
+          "text": "姜某与苏某系夫妻，婚后姜某创作小说获20万元版权费。苏某承担主要家务、照料家庭。后双方诉讼离婚，法院判决该版权费由双方均分，同时判令姜某对负担较多家务的苏某给予相应补偿。下列说法正确的是"
+        },
+        {
+          "id": "11.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "该小说著作权及20万元版权费均为夫妻双方所有"
+            },
+            {
+              "label": "B",
+              "text": "苏某举证自己承担主要家务应获得补偿，属于举证责任倒置"
+            },
+            {
+              "label": "C",
+              "text": "苏某获得家务补偿款符合夫妻平等这一夫妻关系的核心"
+            },
+            {
+              "label": "D",
+              "text": "姜某若对判决结果不服，可在判决生效后15日内上诉"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 4,
+          "bbox_normalized": [
+            0.132,
+            0.072,
+            0.891,
+            0.213
+          ],
+          "asset": "assets/crops/Q11-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 12,
+      "points": 3,
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "id": "12.p0",
+          "type": "paragraph",
+          "text": "一位从未写过代码的开发者借助人工智能工具，仅耗时约一小时就完成了一款App开发；三位开发者花费一千元，便“手搓”出一款轻量化独居安全App……利用人工智能等新生产工具将一个新的创意转化为一个产品，这是“手搓经济”的典型场景。“手搓经济”"
+        },
+        {
+          "id": "12.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "降低市场准入门槛，激发创造性劳动"
+            },
+            {
+              "label": "B",
+              "text": "通过标准化生产摊薄成本，实现规模效应"
+            },
+            {
+              "label": "C",
+              "text": "周期短、省人力，投入产出比高"
+            },
+            {
+              "label": "D",
+              "text": "提高资源配置效率，容易催生行业垄断"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 4,
+          "bbox_normalized": [
+            0.132,
+            0.216,
+            0.891,
+            0.319
+          ],
+          "asset": "assets/crops/Q12-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 13,
+      "points": 3,
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "id": "13.shared",
+          "type": "paragraph",
+          "text": "能源安全事关经济社会发展全局。回答第13、14题。",
+          "shared_material_id": "energy-common"
+        },
+        {
+          "id": "13.p0",
+          "type": "paragraph",
+          "text": "“十四五”时期，我国建成全球最大、发展最快的可再生能源体系。对右图分析正确的是"
+        },
+        {
+          "kind": "line_chart",
+          "description": "折线图标题为“2021—2024年我国各能源类型发电装机容量同比增长率”；纵轴为“%”，刻度0、10、20、30、40、50、60；横轴为2021、2022、2023、2024年份。图例依次为水电（实心圆）、火电（实心方块）、核电（空心三角形）、风电（实心菱形）、太阳能发电（空心圆）；图中折线及标记按原图保留，未标具体数值。",
+          "source_page": 4,
+          "bbox_normalized": [
+            0.529,
+            0.339,
+            0.891,
+            0.505
+          ],
+          "id": "13.visual0",
+          "type": "figure",
+          "text": "",
+          "alt": "折线图标题为“2021—2024年我国各能源类型发电装机容量同比增长率”；纵轴为“%”，刻度0、10、20、30、40、50、60；横轴为2021、2022、2023、2024年份。图例依次为水电（实心圆）、火电（实心方块）、核电（空心三角形）、风电（实心菱形）、太阳能发电（空心圆）；图中折线及标记按原图保留，未标具体数值。",
+          "asset": "assets/crops/Q13-visual0.png"
+        },
+        {
+          "id": "13.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "太阳能发电快速发展，成为我国占比最大的能源类型"
+            },
+            {
+              "label": "②",
+              "text": "风电、核电装机容量不断增加，绿色能源发展动能强劲"
+            },
+            {
+              "label": "③",
+              "text": "火电装机容量持续下降，加速推进我国能源转型"
+            },
+            {
+              "label": "④",
+              "text": "我国能源结构优化升级，绿色低碳发展取得积极成效"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "13.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①③"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "②④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 4,
+          "bbox_normalized": [
+            0.132,
+            0.322,
+            0.891,
+            0.547
+          ],
+          "asset": "assets/crops/Q13-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 14,
+      "points": 3,
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "id": "14.shared",
+          "type": "paragraph",
+          "text": "能源安全事关经济社会发展全局。回答第13、14题。",
+          "shared_material_id": "energy-common"
+        },
+        {
+          "id": "14.p0",
+          "type": "paragraph",
+          "text": "“未来能源”由前沿技术驱动，是具有战略性、引领性、颠覆性的前瞻性能源新形态，重点包括核聚变、氢能、新型储能等。积极培育壮大未来能源产业"
+        },
+        {
+          "id": "14.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "是促进能源科技进步、培育新质生产力的战略选择"
+            },
+            {
+              "label": "②",
+              "text": "能够全面替代传统能源，助力构建新型能源体系"
+            },
+            {
+              "label": "③",
+              "text": "有利于维护国家能源安全，把能源的饭碗牢牢端在自己手中"
+            },
+            {
+              "label": "④",
+              "text": "要独立制定国际能源规则，抢占全球能源科技和产业制高点"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "14.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①③"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "②④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 4,
+          "bbox_normalized": [
+            0.132,
+            0.548,
+            0.891,
+            0.689
+          ],
+          "asset": "assets/crops/Q14-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 15,
+      "points": 3,
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "id": "15.p0",
+          "type": "paragraph",
+          "text": "《海洋生物多样性协定》是联合国框架下具有里程碑意义的国际条约，协定是以养护和可持续利用海洋生物多样性为目标。中国积极参与协定谈判，并成为首批签署并批准该协定的国家之一。下列说法正确的是"
+        },
+        {
+          "id": "15.statements",
+          "type": "statements",
+          "text": "",
+          "entries": [
+            {
+              "label": "①",
+              "text": "共同利益是国际关系的决定性因素，对生态安全的共识推动了国际合作"
+            },
+            {
+              "label": "②",
+              "text": "联合国作为最权威的国际组织，在应对非传统安全中发挥不可替代作用"
+            },
+            {
+              "label": "③",
+              "text": "中国作为全球生态文明建设的引领者，积极参与全球治理体系的完善"
+            },
+            {
+              "label": "④",
+              "text": "中国将协定作为本国海洋行动的依据，建立完备的社会主义法律体系"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        },
+        {
+          "id": "15.options",
+          "type": "options",
+          "text": "",
+          "entries": [
+            {
+              "label": "A",
+              "text": "①②"
+            },
+            {
+              "label": "B",
+              "text": "①④"
+            },
+            {
+              "label": "C",
+              "text": "②③"
+            },
+            {
+              "label": "D",
+              "text": "③④"
+            }
+          ],
+          "layout": {
+            "columns": 2,
+            "rows": 2,
+            "order": "row-major",
+            "book_display_rule": "AB/CD 或①②/③④；原卷布局另由题块截图保留。"
+          }
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 4,
+          "bbox_normalized": [
+            0.132,
+            0.691,
+            0.891,
+            0.86
+          ],
+          "asset": "assets/crops/Q15-source0.png"
+        }
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 16,
+      "points": 8,
+      "source_pages": [
+        5
+      ],
+      "blocks": [
+        {
+          "id": "16.m1",
+          "type": "paragraph",
+          "text": "纵观整个人类发展史，凡是社会大发展、大变革的时代，也是人文学科推陈出新的时代，比如我国春秋战国时期的百家争鸣、西方的文艺复兴等。当前，面对技术进步带来的社会巨变，人们迫切需要为这个充满机遇与挑战的时代注入新的思想活力。"
+        },
+        {
+          "id": "16.m2",
+          "type": "paragraph",
+          "text": "人工智能可以完成写作、翻译、分析信息等工作，人文学科能教人如何辨析价值冲突。技术再进步，“人何以为人”的思考永不过时。技术可以模拟语言，却未必理解语言背后的情感；算法可以识别图像，却无法体验图像所承载的历史记忆。当我们拥有足够的历史意识、伦理意识和文化理解时，技术才能真正成为文明进步的工具，而不是新的风险来源。人工智能为我们赋能，人文学科为人工智能赋魂。"
+        },
+        {
+          "id": "16.ask",
+          "type": "prompt",
+          "text": "有人说，人文学科在人工智能时代具有不可替代的价值。结合材料，运用《哲学与文化》知识，谈谈对这一观点的认识。"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 5,
+          "bbox_normalized": [
+            0.12,
+            0.135,
+            0.89,
+            0.375
+          ],
+          "asset": "assets/crops/Q16-source0.png"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "number": 17,
+      "points": 6,
+      "source_pages": [
+        5
+      ],
+      "blocks": [
+        {
+          "id": "17.m",
+          "type": "paragraph",
+          "text": "调查研究要讲求科学方法。某校“模拟政协”社团同学准备围绕本市无障碍环境建设情况展开调研。以下是同学们设计的调查问卷（节选）。"
+        },
+        {
+          "id": "17.survey",
+          "type": "boxed_text",
+          "text": "调查问卷（节选）",
+          "paragraphs": [
+            "问题1. 您的身份（单选）：",
+            "□老年人（60岁及以上）　□残障人士　□儿童（14岁以下）",
+            "□普通在职职工　□离退休人员",
+            "□相关行业从业者（如城市管理、物业等）",
+            "□其他________",
+            "问题2. 您认为本市无障碍设施存在的主要问题是（可多选）：",
+            "□设计不合理　□标识不清　□相关部门维护不到位"
+          ],
+          "source_page": 5,
+          "bbox_normalized": [
+            0.163,
+            0.527,
+            0.851,
+            0.752
+          ],
+          "layout": {
+            "option_rows": [
+              3,
+              2,
+              1,
+              1,
+              3
+            ],
+            "border": "dotted",
+            "preserve_checkbox": true
+          },
+          "asset": "assets/crops/17.survey.png"
+        },
+        {
+          "id": "17.ask_a",
+          "type": "prompt",
+          "text": "运用《逻辑与思维》知识，指出上述调查问卷中的逻辑错误。（2分）"
+        },
+        {
+          "id": "17.ask_b",
+          "type": "prompt",
+          "text": "为提高调研活动的科学性，提出具体可行的建议。（4分）"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 5,
+          "bbox_normalized": [
+            0.12,
+            0.455,
+            0.9,
+            0.802
+          ],
+          "asset": "assets/crops/Q17-source0.png"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "number": 18,
+      "points": 15,
+      "source_pages": [
+        6
+      ],
+      "blocks": [
+        {
+          "id": "18.intro",
+          "type": "paragraph",
+          "text": "消费是经济增长的持久动力，事关民生福祉。"
+        },
+        {
+          "id": "18.m1",
+          "type": "paragraph",
+          "text": "材料一　随着我国居民生活水平提高，服务消费日益成为经济高质量发展的重要引擎。"
+        },
+        {
+          "id": "18.chart",
+          "type": "figure",
+          "text": "",
+          "source_page": 6,
+          "bbox_normalized": [
+            0.178,
+            0.115,
+            0.78,
+            0.332
+          ],
+          "caption": "2021—2025年全国居民人均服务性消费支出及占比",
+          "alt": "双轴柱线图；左轴为人均服务性消费支出（元），右轴为占居民人均消费支出比重（%）；年份2021至2025。",
+          "layout": {
+            "width_fraction_of_content": 0.79,
+            "note_separate": true
+          },
+          "data_policy": "原图未标出各年精确数值；不由柱高或线点反推精确数据。扫描图部分线迹较浅，原图保留，可辨总体趋势。",
+          "asset": "assets/crops/18.chart.png"
+        },
+        {
+          "id": "18.note",
+          "type": "note",
+          "text": "注：服务性消费支出，是指住户用于各种生活服务的消费支出，包括餐饮服务、教育文化娱乐服务、医疗服务、居住服务、家庭服务、交通通信服务和其他服务。",
+          "layout": {
+            "relative_font_scale": 0.78,
+            "width_fraction_of_content": 0.93,
+            "keep_with": "18.chart"
+          }
+        },
+        {
+          "id": "18.ask1",
+          "type": "prompt",
+          "text": "（1）材料一反映了什么信息？（2分）"
+        },
+        {
+          "id": "18.ask2",
+          "type": "prompt",
+          "text": "（2）服务消费，一头连着经济，一头连着民生。结合材料一，运用《经济与社会》知识，说明服务消费在推动经济高质量发展方面的作用。（6分）"
+        },
+        {
+          "id": "18.m2",
+          "type": "paragraph",
+          "text": "材料二　聚焦新领域，人民法院以高质量司法维护消费者合法权益，营造放心消费环境。下列是人民法院受理的两个案件："
+        },
+        {
+          "id": "18.case1",
+          "type": "paragraph",
+          "text": "【案件1】张某等人因不满商家的“剧本杀”游戏服务，上网发布差评，随后商家在社交平台发布张某等人的游戏包厢监控视频录像片段、网络聊天信息等。张某等人起诉要求商家停止侵权、赔礼道歉及赔偿精神损失等。"
+        },
+        {
+          "id": "18.case2",
+          "type": "paragraph",
+          "text": "【案件2】赵某在网络平台宣传某理疗产品具有“治疗糖尿病并发症”等功效，孙某看到后至赵某经营的理疗店体验，并购买了10个疗程的理疗项目，4个疗程后并无效果。孙某与赵某协商退换未果，遂向法院提起诉讼，要求其返还已支付的费用并承担三倍价款的惩罚性赔偿责任。法院支持了原告诉讼请求。"
+        },
+        {
+          "id": "18.ask3",
+          "type": "prompt",
+          "text": "（3）阅读材料二，运用《法律与生活》知识，完成下表。（7分）"
+        },
+        {
+          "id": "18.table",
+          "type": "table",
+          "text": "",
+          "headers": [
+            "案件",
+            "裁判结果",
+            "裁判理由"
+          ],
+          "rows": [
+            [
+              "案件1",
+              "①",
+              "②"
+            ],
+            [
+              "案件2",
+              "支持原告诉讼请求",
+              "③"
+            ]
+          ],
+          "merged_cells": [],
+          "source_page": 6,
+          "bbox_normalized": [
+            0.154,
+            0.69,
+            0.879,
+            0.83
+          ],
+          "layout": {
+            "column_widths": [
+              0.18,
+              0.3,
+              0.52
+            ]
+          },
+          "asset": "assets/crops/18.table.png"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 6,
+          "bbox_normalized": [
+            0.12,
+            0.06,
+            0.89,
+            0.835
+          ],
+          "asset": "assets/crops/Q18-source0.png"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "number": 19,
+      "points": 8,
+      "source_pages": [
+        7
+      ],
+      "blocks": [
+        {
+          "id": "19.m1",
+          "type": "paragraph",
+          "text": "材料一　全国统一大市场建设正纵深推进。国务院发布的《公平竞争审查条例》规定，行政机关起草涉及经营者经济活动的法律、行政法规、地方性法规、规章、规范性文件以及具体政策措施应当依照条例规定开展公平竞争审查。该条例规定，起草政策措施，不得含有限制或者变相限制市场准入和退出、限制商品和要素自由流动、不当影响生产经营成本和影响生产经营行为的内容。"
+        },
+        {
+          "id": "19.m2",
+          "type": "paragraph",
+          "text": "材料一　为规范网络预约出租汽车经营服务行为，保障运营安全和乘客合法权益，交通运输部等七部门联合发布《网络预约出租汽车经营服务管理暂行办法》。"
+        },
+        {
+          "id": "19.reg",
+          "type": "boxed_text",
+          "text": "《网络预约出租汽车经营服务管理暂行办法》",
+          "paragraphs": [
+            "第十二条　拟从事网约车经营的车辆，应当符合以下条件：",
+            "（一）7座及以下乘用车；",
+            "（二）安装具有行驶记录功能的车辆卫星定位装置、应急报警装置；",
+            "（三）车辆技术性能符合运营安全相关标准要求。",
+            "车辆的具体标准和营运要求，由相应的出租汽车行政主管部门，按照高品质服务、差异化经营的发展原则，结合本地实际情况确定。"
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.175,
+            0.218,
+            0.869,
+            0.385
+          ],
+          "layout": {
+            "border": "dotted"
+          },
+          "asset": "assets/crops/19.reg.png"
+        },
+        {
+          "id": "19.m3",
+          "type": "paragraph",
+          "text": "某地政府部门依据《网络预约出租汽车经营服务管理暂行办法》制定了相应的《实施细则》。《实施细则》规定，拟从事网约车经营的车辆，应当符合车辆初次注册登记时的实际购置总价不低于12万元的条件。有公民对这一规定提出审查建议。全国人大法工委经审查认定《实施细则》的这一规定属于应予纠正的情形。"
+        },
+        {
+          "id": "19.ask",
+          "type": "prompt",
+          "text": "结合材料，运用《政治与法治》知识，说明全国人大法工委作出这一审查结论的理由。"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.064,
+            0.894,
+            0.498
+          ],
+          "asset": "assets/crops/Q19-source0.png"
+        }
+      ],
+      "notes": [
+        "原卷两段材料标签均为“材料一”，按可见原卷保留，不静默改成材料二。"
+      ]
+    },
+    {
+      "number": 20,
+      "points": 8,
+      "source_pages": [
+        7
+      ],
+      "blocks": [
+        {
+          "id": "20.m1",
+          "type": "paragraph",
+          "text": "国际标准是全球产业界的“通用语言”。从手机充电接口的统一，到食品包装上的营养成分标注；从电梯运行的安全规范，到空气质量的监测指标，背后都离不开“标准”的支撑。它让不同国家、不同企业的产品能互通兼容，让全球资源能更高效利用。"
+        },
+        {
+          "id": "20.m2",
+          "type": "paragraph",
+          "text": "近年来，从低碳能源到人工智能，从北斗导航到传统医学，越来越多的中国标准走出国门，融入全球产业发展体系，中国与世界深度互动、共享发展。2025年，我国在国际标准的制定与推广中交出了亮眼成绩单。"
+        },
+        {
+          "id": "20.cards",
+          "type": "parallel_boxes",
+          "text": "",
+          "paragraphs": [
+            "2025年我国在低碳能源、生物技术、人工智能、工业网络等前沿领域，共向ISO、IEC提交提案505项，较2024年增长15.83%。",
+            "2025年我国在新能源、智慧电网、传统医学、脑机接口等领域，牵头制定发布285项ISO、IEC国际标准，同比增长26.67%。"
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.162,
+            0.686,
+            0.856,
+            0.785
+          ],
+          "layout": {
+            "columns": 2,
+            "column_gap_fraction": 0.08,
+            "equal_width": true
+          },
+          "asset": "assets/crops/20.cards.png"
+        },
+        {
+          "id": "20.note",
+          "type": "note",
+          "text": "注：ISO（国际标准化组织）和IEC（国际电工委员会）是全球最具权威性的两大国际标准化机构。",
+          "layout": {
+            "relative_font_scale": 0.78
+          }
+        },
+        {
+          "id": "20.ask",
+          "type": "prompt",
+          "text": "结合材料，运用《当代国际政治与经济》知识，谈谈中国标准走出国门的意义。"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.53,
+            0.89,
+            0.835
+          ],
+          "asset": "assets/crops/Q20-source0.png"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "number": 21,
+      "points": 10,
+      "source_pages": [
+        8
+      ],
+      "blocks": [
+        {
+          "id": "21.m1",
+          "type": "paragraph",
+          "text": "锐始者必图其终，成功者先计于始。这是先贤治国理政、经世济民的智慧，也契合了中国共产党人一以贯之的战略思维和实干精神。"
+        },
+        {
+          "id": "21.m2",
+          "type": "paragraph",
+          "text": "“一五”到“十五五”，见证了新中国从工业化奠基到高质量发展的历史进程。回顾历史，中国共产党人始终把科学谋划与真抓实干有机结合。从“一辆汽车、一架飞机、一辆坦克、一辆拖拉机都不能造”到“铁路进青藏，公路密成网，高峡出平湖，港口连五洋，产业门类齐，稻麦遍地香，神舟遨太空，国防更坚强”的伟大飞跃……规划与执行相互促进，宏伟蓝图变为现实图景。"
+        },
+        {
+          "id": "21.aside",
+          "type": "boxed_text",
+          "text": "",
+          "paragraphs": [
+            "“锐始者必图其终，成功者先计于始”，出自明代张居正《答中丞孙槐溪》。这句话告诫人们做事要善始善终、谋定后动，唯有在开始时便胸怀全局、谋划长远，并以坚韧不拔的毅力向着既定目标笃行，方能成就事业。"
+          ],
+          "source_page": 8,
+          "bbox_normalized": [
+            0.526,
+            0.088,
+            0.893,
+            0.233
+          ],
+          "layout": {
+            "position": "float-right",
+            "width_fraction_of_content": 0.48,
+            "anchor": "21.m1",
+            "wrap_through": "21.m2",
+            "border": "dotted"
+          },
+          "asset": "assets/crops/21.aside.png"
+        },
+        {
+          "id": "21.ask",
+          "type": "prompt",
+          "text": "“中国有一大优势，总是制定各种规划，而且各种规划总是能实现。”结合材料，综合运用所学，阐述你对这一观点的理解。"
+        }
+      ],
+      "question_bbox": [
+        {
+          "page": 8,
+          "bbox_normalized": [
+            0.12,
+            0.064,
+            0.9,
+            0.35
+          ],
+          "asset": "assets/crops/Q21-source0.png"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "items": [
+    {
+      "id": "Q1",
+      "parent": 1,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "1.p0",
+        "1.statements",
+        "1.options"
+      ],
+      "modules": [
+        "必修一",
+        "必修四文化",
+        "必修三"
+      ],
+      "tags": [
+        "初心使命",
+        "长征精神"
+      ],
+      "answer": "C",
+      "rubric_ids": [],
+      "source_pages": [
+        1
+      ]
+    },
+    {
+      "id": "Q2",
+      "parent": 2,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "2.p0",
+        "2.statements",
+        "2.options"
+      ],
+      "modules": [
+        "必修四哲学",
+        "必修四文化"
+      ],
+      "tags": [
+        "意识",
+        "审美",
+        "自然"
+      ],
+      "answer": "B",
+      "rubric_ids": [],
+      "source_pages": [
+        1
+      ]
+    },
+    {
+      "id": "Q3",
+      "parent": 3,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "3.box",
+        "3.p2",
+        "3.statements",
+        "3.options"
+      ],
+      "modules": [
+        "选必三推理",
+        "选必一",
+        "必修四哲学"
+      ],
+      "tags": [
+        "思维的间接性",
+        "和平",
+        "国家利益"
+      ],
+      "answer": "A",
+      "rubric_ids": [],
+      "source_pages": [
+        1
+      ]
+    },
+    {
+      "id": "Q4",
+      "parent": 4,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "4.table0",
+        "4.p0",
+        "4.statements",
+        "4.options"
+      ],
+      "modules": [
+        "必修四文化",
+        "必修四哲学"
+      ],
+      "tags": [
+        "文化载体",
+        "整体与部分"
+      ],
+      "answer": "B",
+      "rubric_ids": [],
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "id": "Q5",
+      "parent": 5,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "5.p0",
+        "5.options"
+      ],
+      "modules": [
+        "必修四哲学"
+      ],
+      "tags": [
+        "社会历史条件",
+        "价值判断"
+      ],
+      "answer": "D",
+      "rubric_ids": [],
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "id": "Q6",
+      "parent": 6,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "6.p0",
+        "6.box",
+        "6.p4",
+        "6.options"
+      ],
+      "modules": [
+        "选必三推理"
+      ],
+      "tags": [
+        "演绎推理",
+        "三段论"
+      ],
+      "answer": "B",
+      "rubric_ids": [],
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "id": "Q7",
+      "parent": 7,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "7.p0",
+        "7.box",
+        "7.p5",
+        "7.statements",
+        "7.options"
+      ],
+      "modules": [
+        "必修四哲学",
+        "选必三思维"
+      ],
+      "tags": [
+        "辩证否定",
+        "客观条件",
+        "系统优化"
+      ],
+      "answer": "D",
+      "rubric_ids": [],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "id": "Q8",
+      "parent": 8,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "8.p0",
+        "8.box",
+        "8.p4",
+        "8.statements",
+        "8.options"
+      ],
+      "modules": [
+        "必修三",
+        "必修四哲学"
+      ],
+      "tags": [
+        "党的性质",
+        "政绩观",
+        "调查研究"
+      ],
+      "answer": "A",
+      "rubric_ids": [],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "id": "Q9",
+      "parent": 9,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "9.p0",
+        "9.visual0",
+        "9.options"
+      ],
+      "modules": [
+        "必修三",
+        "选必二"
+      ],
+      "tags": [
+        "政府公共服务",
+        "公共法律服务"
+      ],
+      "answer": "B",
+      "rubric_ids": [],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "id": "Q10",
+      "parent": 10,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "10.p0",
+        "10.table0"
+      ],
+      "modules": [
+        "选必二"
+      ],
+      "tags": [
+        "土地经营权",
+        "侵权",
+        "合同形式",
+        "行政复议"
+      ],
+      "answer": "D",
+      "rubric_ids": [],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "id": "Q11",
+      "parent": 11,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "11.p0",
+        "11.options"
+      ],
+      "modules": [
+        "选必二"
+      ],
+      "tags": [
+        "夫妻财产",
+        "家务补偿",
+        "举证",
+        "上诉"
+      ],
+      "answer": "C",
+      "rubric_ids": [],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "Q12",
+      "parent": 12,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "12.p0",
+        "12.options"
+      ],
+      "modules": [
+        "必修二"
+      ],
+      "tags": [
+        "人工智能",
+        "手搓经济",
+        "生产效率"
+      ],
+      "answer": "C",
+      "rubric_ids": [],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "Q13",
+      "parent": 13,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "13.shared",
+        "13.p0",
+        "13.visual0",
+        "13.statements",
+        "13.options"
+      ],
+      "modules": [
+        "必修二"
+      ],
+      "tags": [
+        "能源结构",
+        "绿色发展",
+        "增长率"
+      ],
+      "answer": "D",
+      "rubric_ids": [],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "Q14",
+      "parent": 14,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "14.shared",
+        "14.p0",
+        "14.statements",
+        "14.options"
+      ],
+      "modules": [
+        "必修二",
+        "选必一"
+      ],
+      "tags": [
+        "未来能源",
+        "新质生产力",
+        "能源安全"
+      ],
+      "answer": "A",
+      "rubric_ids": [],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "Q15",
+      "parent": 15,
+      "kind": "choice",
+      "points": 3,
+      "depends_on": [
+        "15.p0",
+        "15.statements",
+        "15.options"
+      ],
+      "modules": [
+        "选必一"
+      ],
+      "tags": [
+        "国际关系",
+        "联合国",
+        "全球治理"
+      ],
+      "answer": "C",
+      "rubric_ids": [],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "id": "Q16",
+      "points": 8,
+      "depends_on": [
+        "16.m1",
+        "16.m2",
+        "16.ask"
+      ],
+      "modules": [
+        "必修四哲学",
+        "必修四文化"
+      ],
+      "tags": [
+        "发展",
+        "社会存在与社会意识",
+        "价值观",
+        "文化的功能"
+      ],
+      "rubric_ids": [
+        "R16"
+      ],
+      "parent": 16,
+      "kind": "subjective",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "id": "Q17-a",
+      "points": 2,
+      "depends_on": [
+        "17.m",
+        "17.survey",
+        "17.ask_a"
+      ],
+      "modules": [
+        "选必三推理"
+      ],
+      "tags": [
+        "划分",
+        "选言判断"
+      ],
+      "rubric_ids": [
+        "R17-a"
+      ],
+      "original_subquestion_number": null,
+      "task_note": "原卷连续设问，a为后台任务键，不在原题中添加（1）。",
+      "parent": 17,
+      "kind": "subjective",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "id": "Q17-b",
+      "points": 4,
+      "depends_on": [
+        "17.m",
+        "17.survey",
+        "17.ask_a",
+        "17.ask_b"
+      ],
+      "modules": [
+        "选必三思维",
+        "选必三推理"
+      ],
+      "tags": [
+        "科学思维",
+        "辩证思维",
+        "创新思维",
+        "逻辑思维规则"
+      ],
+      "rubric_ids": [
+        "R17-b"
+      ],
+      "original_subquestion_number": null,
+      "task_note": "保留前一设问提供的知识限定；b为后台任务键，不在原题中添加（2）。",
+      "parent": 17,
+      "kind": "subjective",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "id": "Q18-1",
+      "points": 2,
+      "depends_on": [
+        "18.intro",
+        "18.m1",
+        "18.chart",
+        "18.note",
+        "18.ask1"
+      ],
+      "modules": [
+        "必修二"
+      ],
+      "tags": [
+        "消费结构",
+        "图表信息"
+      ],
+      "rubric_ids": [
+        "R18-1"
+      ],
+      "parent": 18,
+      "kind": "subjective",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "id": "Q18-2",
+      "points": 6,
+      "depends_on": [
+        "18.intro",
+        "18.m1",
+        "18.chart",
+        "18.note",
+        "18.ask2"
+      ],
+      "modules": [
+        "必修二"
+      ],
+      "tags": [
+        "服务消费",
+        "高质量发展",
+        "内需",
+        "产业结构",
+        "民生"
+      ],
+      "rubric_ids": [
+        "R18-2"
+      ],
+      "parent": 18,
+      "kind": "subjective",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "id": "Q18-3",
+      "points": 7,
+      "depends_on": [
+        "18.intro",
+        "18.m2",
+        "18.case1",
+        "18.case2",
+        "18.ask3",
+        "18.table"
+      ],
+      "modules": [
+        "选必二"
+      ],
+      "tags": [
+        "隐私权",
+        "消费者权益",
+        "知情权",
+        "侵权责任"
+      ],
+      "rubric_ids": [
+        "R18-3"
+      ],
+      "parent": 18,
+      "kind": "subjective",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "id": "Q19",
+      "points": 8,
+      "depends_on": [
+        "19.m1",
+        "19.m2",
+        "19.reg",
+        "19.m3",
+        "19.ask"
+      ],
+      "modules": [
+        "必修三",
+        "必修二"
+      ],
+      "primary_modules": [
+        "必修三"
+      ],
+      "cross_module_note": "设问限定政治与法治；正式细则意义项明确允许市场角度（统一大市场、公平竞争、资源配置）。经济仅为评分角度索引，不改写设问或把整题当纯经济题。",
+      "tags": [
+        "备案审查",
+        "法律层级",
+        "法治政府",
+        "统一大市场",
+        "公平竞争"
+      ],
+      "rubric_ids": [
+        "R19"
+      ],
+      "parent": 19,
+      "kind": "subjective",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "id": "Q20",
+      "points": 8,
+      "depends_on": [
+        "20.m1",
+        "20.m2",
+        "20.cards",
+        "20.note",
+        "20.ask"
+      ],
+      "modules": [
+        "选必一",
+        "必修二"
+      ],
+      "primary_modules": [
+        "选必一"
+      ],
+      "cross_module_note": "保留设问限定；正式细则的制度型开放、国内国际两个市场两种资源与新发展格局可供必修二跨模块索引。",
+      "tags": [
+        "制度型开放",
+        "新发展格局",
+        "经济全球化",
+        "全球治理"
+      ],
+      "rubric_ids": [
+        "R20"
+      ],
+      "parent": 20,
+      "kind": "subjective",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "id": "Q21",
+      "points": 10,
+      "depends_on": [
+        "21.m1",
+        "21.m2",
+        "21.aside",
+        "21.ask"
+      ],
+      "modules": [
+        "必修三",
+        "必修四哲学",
+        "必修四文化",
+        "选必三思维"
+      ],
+      "tags": [
+        "党的领导",
+        "人民代表大会制度",
+        "人民立场",
+        "科学思维",
+        "文化支撑",
+        "规划制定与执行"
+      ],
+      "rubric_ids": [
+        "R21"
+      ],
+      "cross_module_note": "知识范围为综合运用所学；选三维度评分，不将四类示例全部当必答，也不把其中单册角度当整题全部得分。",
+      "parent": 21,
+      "kind": "subjective",
+      "source_pages": [
+        8
+      ]
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "R16",
+      "question": 16,
+      "carrier_pages": [
+        1,
+        2
+      ],
+      "source_pages": [
+        1
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "16.（8分）",
+          "source_page": 1,
+          "id": "R16.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "可从发展的观点、社会存在与社会意识、价值观、文化的功能等角度作答。",
+          "source_page": 1,
+          "id": "R16.b1"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "“人文学科在人工智能时代具有不可替代的价值”",
+          "source_page": 1,
+          "id": "R16.b2"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "分值",
+            "标准",
+            "细则",
+            ""
+          ],
+          "rows": [
+            [
+              "2分\n（1+1）",
+              "紧扣主题论证有效\n（材料要落在“人文学科的价值”）",
+              "社会存在决定社会意识/物质决定意识/实践决定认识/发展是普遍的\n\n实践（经济、政治）决定文化",
+              "必要性\n（时代发展的必然产物/社会巨变的必要指引）"
+            ],
+            [
+              "4分\n（1+1）\n×2",
+              "",
+              "主观能动性（意识的能动作用）/矛盾分析法（全面/两重统一/普特统一）/认识反作用/价值观（判断选择）的作用\n\n文化特征/文化功能/（有利）提高思修",
+              "重要性\n（对个体冲突的辨析、对技术的正确态度、对时代问题的解决、对人类进步的使命）"
+            ],
+            [
+              "1分",
+              "综合性",
+              "不强调哲文“融合”，但需分别用哲学或文化阐释观点",
+              ""
+            ],
+            [
+              "1分",
+              "逻辑性",
+              "观点明确，分层清晰，无罗列知识之嫌",
+              ""
+            ]
+          ],
+          "source_page": 1,
+          "bbox_normalized": [
+            0.124,
+            0.441,
+            0.882,
+            0.742
+          ],
+          "caption": "“人文学科在人工智能时代具有不可替代的价值”",
+          "merged_cells": [
+            {
+              "section": "header",
+              "row": 0,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "细则"
+            },
+            {
+              "section": "body",
+              "row": 0,
+              "col": 1,
+              "rowspan": 2,
+              "colspan": 1,
+              "text": "紧扣主题论证有效（材料要落在“人文学科的价值”）"
+            },
+            {
+              "section": "body",
+              "row": 2,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "不强调哲文“融合”，但需分别用哲学或文化阐释观点"
+            },
+            {
+              "section": "body",
+              "row": 3,
+              "col": 2,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "观点明确，分层清晰，无罗列知识之嫌"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p01_embedded01.png",
+          "id": "R16.b3",
+          "text": "",
+          "asset": "assets/pages/细则/p01_embedded01.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 2,
+          "asset": "assets/pages/细则/p02_embedded01.png",
+          "description": "Q16学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R16.b4",
+          "text": ""
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 2,
+          "asset": "assets/pages/细则/p02_embedded01.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    },
+    {
+      "id": "R17-a",
+      "question": 17,
+      "carrier_pages": [
+        2,
+        3
+      ],
+      "source_pages": [
+        2
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "17.（6分）",
+          "source_page": 2,
+          "id": "R17-a.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "逻辑错误：划分标准不一；选言判断遗漏其他有选择价值的其他情况。",
+          "source_page": 2,
+          "id": "R17-a.b1"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "问题",
+            "逻辑错误",
+            "标准"
+          ],
+          "rows": [
+            [
+              "1",
+              "划分标准不一",
+              "任何一点得2分"
+            ],
+            [
+              "2",
+              "选言判断遗漏其他有选择价值的情况",
+              ""
+            ]
+          ],
+          "source_page": 2,
+          "bbox_normalized": [
+            0.126,
+            0.473,
+            0.832,
+            0.608
+          ],
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 2,
+              "rowspan": 2,
+              "colspan": 1,
+              "text": "任何一点得2分"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p02_embedded02.png",
+          "id": "R17-a.b2",
+          "text": "",
+          "asset": "assets/pages/细则/p02_embedded02.png"
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": []
+    },
+    {
+      "id": "R17-b",
+      "question": 17,
+      "carrier_pages": [
+        2,
+        3
+      ],
+      "source_pages": [
+        2,
+        3
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "建议：可从科学思维、遵循逻辑思维规则、辩证思维等角度，结合调研活动提出建议，措施具体可行。",
+          "source_page": 2,
+          "id": "R17-b.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "第2问评分细则",
+          "source_page": 2,
+          "id": "R17-b.b1"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "建议1分，知识1分，两条建议共4分。",
+          "source_page": 2,
+          "id": "R17-b.b2"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "具体建议可从调研方案、调研方法（问卷法、访谈法、观察法、文献法）、数据分析等角度提出。",
+          "source_page": 2,
+          "id": "R17-b.b3"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "（以上任意两个角度，建议与知识准确匹配，可得4分，一个角度2分）。",
+          "source_page": 2,
+          "id": "R17-b.b4"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "只有知识，只有建议，只得一分。",
+          "source_page": 2,
+          "id": "R17-b.b5"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从科学思维出发 示例：",
+          "source_page": 2,
+          "id": "R17-b.b6"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 科学思维追求认识的客观性，调研活动应该从实际出发，了解真实存在的问题和需求，再据此设计选项，确保问题来源于客观事实，而非主观想象。",
+          "source_page": 2,
+          "id": "R17-b.b7"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 科学思维结果具有可检验性，调研结束后，通过实地测量、对比不同人群的回答、或与相关部门数据比对，检验结论是否可靠，经得起实践反复检验。",
+          "source_page": 2,
+          "id": "R17-b.b8"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 2,
+          "id": "R17-b.b9"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从逻辑思维规则出发 示例：",
+          "source_page": 2,
+          "id": "R17-b.b10"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 提高不完全归纳推理结论的可靠程度，需要在认识对象与有关现象之间寻找因果联系。比如运用求异法，选择条件相似的两个片区，设置不同的机制，对比两片区的效果。",
+          "source_page": 2,
+          "id": "R17-b.b11"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3,
+          "id": "R17-b.b12"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从辩证思维出发 示例：",
+          "source_page": 3,
+          "id": "R17-b.b13"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 辩证思维用全面的观点看问题，综合运用观察法、访谈法、文献法与问卷法，先通过实地观察和深度访谈探索问题，再设计问卷验证，并从整体角度去思考如何解决问题。",
+          "source_page": 3,
+          "id": "R17-b.b14"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 运用矛盾分析法对比不同群体的回答差异，并通过预调查与正式调查的反复检验，寻找因果联系。",
+          "source_page": 3,
+          "id": "R17-b.b15"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3,
+          "id": "R17-b.b16"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "从创新思维出发 示例：",
+          "source_page": 3,
+          "id": "R17-b.b17"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 发散思维与聚合思维是创新思维的两翼。运用发散思维广泛收集各类人群对无障碍设施的真实意见，再通过聚合思维聚焦核心问题，避免身份分类混乱和原因预设片面。",
+          "source_page": 3,
+          "id": "R17-b.b18"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• 对已有的有关事物之间因果关系的认识作交换性思考。对这些好案例进行观察和访谈，归纳其成功原因，再将好案例的原因与原问卷预设的进行对比，从而反向推导出真正的问题根源。",
+          "source_page": 3,
+          "id": "R17-b.b19"
+        },
+        {
+          "type": "paragraph",
+          "role": "official_example",
+          "text": "• ……",
+          "source_page": 3,
+          "id": "R17-b.b20"
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": []
+    },
+    {
+      "id": "R18-1",
+      "question": 18,
+      "carrier_pages": [
+        3
+      ],
+      "source_pages": [
+        3
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "18.（15分）",
+          "source_page": 3,
+          "id": "R18-1.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（1）全国居民人均服务性消费支出总体上升，服务性消费占比不断提高，居民消费结构优化。（2分）",
+          "source_page": 3,
+          "id": "R18-1.b1"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "材料分析"
+          ],
+          "rows": [
+            [
+              "消费支出 1分",
+              "全国居民人均服务性消费支出总体上升"
+            ],
+            [
+              "服务性消费占比 1分",
+              "服务性消费比重/占比不断提高"
+            ]
+          ],
+          "source_page": 3,
+          "bbox_normalized": [
+            0.122,
+            0.461,
+            0.866,
+            0.548
+          ],
+          "caption": "（1）评分细则",
+          "embedded_asset": "assets/pages/细则/p03_embedded01.png",
+          "id": "R18-1.b2",
+          "text": "",
+          "asset": "assets/pages/细则/p03_embedded01.png"
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": []
+    },
+    {
+      "id": "R18-2",
+      "question": 18,
+      "carrier_pages": [
+        3,
+        4
+      ],
+      "source_pages": [
+        3,
+        4
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（2）提振消费，扩大内需，拉动经济增长，增强国内大循环的内生动力；引导和带动服务业以及相关产业发展，推动产业结构优化，推动供给侧结构性改革；满足人民群众多样化、多层次、多方面的需求，提升生活品质；同时创造更多就业岗位，改善民生福祉。（6分）",
+          "source_page": 3,
+          "id": "R18-2.b0"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "学科分析"
+          ],
+          "rows": [
+            [
+              "消费",
+              "扩大内需/发挥消费对经济发展的基础性作用/拉动经济增长 2分"
+            ],
+            [
+              "供给",
+              "引领和带动相关产业发展/产业结构优化升级/推动供给侧结构性改革 2分"
+            ],
+            [
+              "民生",
+              "满足人民群众多样化、多层次、多方面的需求/提升生活品质/提高生活水平/增加就业岗位 2分"
+            ]
+          ],
+          "source_page": 3,
+          "bbox_normalized": [
+            0.122,
+            0.647,
+            0.858,
+            0.795
+          ],
+          "caption": "（2）评分细则",
+          "embedded_asset": "assets/pages/细则/p03_embedded02.png",
+          "id": "R18-2.b1",
+          "text": "",
+          "asset": "assets/pages/细则/p03_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 4,
+          "asset": "assets/pages/细则/p04_embedded01.png",
+          "description": "Q18（2）学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R18-2.b2",
+          "text": ""
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "注意：写“满足人民的幸福感、获得感、安全感”不给分",
+          "source_page": 4,
+          "id": "R18-2.b3"
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 4,
+          "asset": "assets/pages/细则/p04_embedded01.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    },
+    {
+      "id": "R18-3",
+      "question": 18,
+      "carrier_pages": [
+        4,
+        5
+      ],
+      "source_pages": [
+        4
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "（3）①支持原告诉讼请求。（1分）",
+          "source_page": 4,
+          "id": "R18-3.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "②根据民法典规定，任何组织或者个人不得以刺探、侵扰、泄露、公开等方式侵害他人的隐私权。消费者在经营者提供的包间内的活动具有私密性，商家在社交平台公开张某等人包厢内监控录像片段、网络聊天信息等，构成对消费者隐私权的侵害，应当承担停止侵权、赔礼道歉等侵权责任。商家的行为侵犯了消费者合法权益。（3分）",
+          "source_page": 4,
+          "id": "R18-3.b1"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "③经营者应当保护消费者的知情权。根据消费者权益保护法规定，经营者向消费者提供有关商品或者服务的质量、性能、用途、有效期限等信息，应当真实、全面，不得作虚假或者引人误解的宣传。赵某虚假宣传其有“治疗糖尿病并发症”等功效，夸大功效，诱导消费，构成欺诈，应当退款并承担惩罚性赔偿责任。赵某行为不符合诚信等社会主义核心价值观。（3分）",
+          "source_page": 4,
+          "id": "R18-3.b2"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "要点"
+          ],
+          "rows": [
+            [
+              "裁判结果（1分）",
+              "支持原告诉讼请求（1分）"
+            ],
+            [
+              "案件1（3分）",
+              "隐私权/肖像权/个人信息（1分）\n结合案情材料（举例：商家发布聊天记录侵犯隐私权/商家发布视频监控侵犯肖像权/商家不得公开隐私记录……）（1分）\n意义：保护消费者合法权益/诚信、公序良俗/社会主义核心价值观……（1分）"
+            ],
+            [
+              "案件2（3分）",
+              "《消费者权益保护法》/知情权（1分）\n结合案情材料（必须包含夸大功效/虚假宣传）（1分）\n意义：消费环境/市场秩序……（社会层面，个人层面不给分）（1分）"
+            ]
+          ],
+          "source_page": 4,
+          "bbox_normalized": [
+            0.122,
+            0.582,
+            0.88,
+            0.859
+          ],
+          "embedded_asset": "assets/pages/细则/p04_embedded02.png",
+          "id": "R18-3.b3",
+          "text": "",
+          "asset": "assets/pages/细则/p04_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 5,
+          "asset": "assets/pages/细则/p05_embedded01.png",
+          "description": "Q18（3）学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R18-3.b4",
+          "text": ""
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 5,
+          "asset": "assets/pages/细则/p05_embedded01.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    },
+    {
+      "id": "R19",
+      "question": 19,
+      "carrier_pages": [
+        5,
+        6
+      ],
+      "source_pages": [
+        5
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "19.（8分）",
+          "source_page": 5,
+          "id": "R19.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "全国人大常委会有权对地方政府规范性文件进行备案审查。地方政府规范性文件不得与宪法、法律、行政法规相抵触。该地政府部门制定的《实施细则》对从事网约车经营的车辆设置价格准入条件，事实上排除了部分价格低于这一准入条件但符合安全性能、服务品质的车辆车主平等参与市场活动、平等从事相关劳动的权利，属于国务院《公平竞争审查条例》规定的设置不合理市场准入条件的情形。纠正这一规定有利于维护社会主义法制的统一，推进法治政府建设，营造公平的市场竞争环境。",
+          "source_page": 5,
+          "id": "R19.b1"
+        },
+        {
+          "type": "paragraph",
+          "role": "scoring_rule",
+          "text": "评分细则",
+          "source_page": 5,
+          "id": "R19.b2"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "具体要求",
+            "分值"
+          ],
+          "rows": [
+            [
+              "地位和职权",
+              "全国人大常委会有权对地方政府规范性文件进行备案审查。",
+              "2分"
+            ],
+            [
+              "法律层级",
+              "地方政府规范性文件不得与宪法、法律、行政法规相抵触。",
+              "1分"
+            ],
+            [
+              "案例分析",
+              "该地政府部门制定的《实施细则》对从事网约车经营的车辆设置价格准入条件，事实上排除了部分价格低于这一准入条件但符合安全性能、服务品质的车辆车主平等参与市场活动、平等从事相关劳动的权利，属于国务院《公平竞争审查条例》规定的设置不合理市场准入条件的情形。",
+              "2分"
+            ],
+            [
+              "意义",
+              "1. 市场角度：有利于维护全国统一大市场/促进公平竞争/维护市场秩序/促进资源优化配置/保护经营者合法权益等。\n2. 法治角度：有利于维护社会主义法制的统一／推进法治政府建设／有助于完善中国特色社会主义法治体系等。（推进国家治理体系和治理能力的现代化，可替代性给1分）\n（写出1个角度得2分；写出2个角度得3分）",
+              "3分"
+            ]
+          ],
+          "source_page": 5,
+          "bbox_normalized": [
+            0.119,
+            0.539,
+            0.872,
+            0.855
+          ],
+          "embedded_asset": "assets/pages/细则/p05_embedded02.png",
+          "id": "R19.b3",
+          "text": "",
+          "asset": "assets/pages/细则/p05_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 6,
+          "asset": "assets/pages/细则/p06_embedded01.png",
+          "description": "Q19学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R19.b4",
+          "text": ""
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 6,
+          "asset": "assets/pages/细则/p06_embedded01.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    },
+    {
+      "id": "R20",
+      "question": 20,
+      "carrier_pages": [
+        6,
+        7
+      ],
+      "source_pages": [
+        6
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "20.（8分）",
+          "source_page": 6,
+          "id": "R20.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "扩大制度型开放，增强我国产品、服务乃至产业链在全球的竞争力，推进高水平对外开放，更好利用国内国际两个市场、两种资源，推动构建新发展格局；我国在低碳能源、人工智能等领域推动贡献国际标准，促进全球范围内标准共通、技术共享，推动全球技术创新与绿色转型，同时，我国积极参与全球经济治理和规则制定，推动全球治理体制向着更加公正合理方向发展。",
+          "source_page": 6,
+          "id": "R20.b1"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "角度",
+            "具体要求"
+          ],
+          "rows": [
+            [
+              "角度1：\n对我国",
+              "扩大制度型开放，推进高水平对外开放/\n有利于更好利用国内国际两个市场、两种资源，畅通双循环（新发展格局）（3分）\n替代：推动我国技术、产品、服务走出国门/增强我国产品、服务乃至产业链在全球的竞争力（2分）"
+            ],
+            [
+              "角度2：\n对世界\n经济",
+              "推动经济全球化朝着开放、包容、普惠、平衡、共赢的方向发展/\n促进国际合作（互利共赢）/推动全球资源优化配置（2分）\n我国在低碳能源、人工智能等领域推动贡献国际标准，促进全球范围内标准共通、技术共享，推动全球技术创新与绿色转型（1分）【有在结合材料谈意义】"
+            ],
+            [
+              "角度3：\n对全球\n治理",
+              "我国积极参与全球经济治理和规则制定，推动全球治理体制向着更加公正合理方向发展/\n提升中国在国际标准制定中的话语权和国际影响力/\n推动构建国际经济新秩序（2分）"
+            ]
+          ],
+          "source_page": 6,
+          "bbox_normalized": [
+            0.121,
+            0.468,
+            0.881,
+            0.784
+          ],
+          "embedded_asset": "assets/pages/细则/p06_embedded02.png",
+          "id": "R20.b2",
+          "text": "",
+          "asset": "assets/pages/细则/p06_embedded02.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 7,
+          "asset": "assets/pages/细则/p07_embedded01.png",
+          "description": "Q20学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R20.b3",
+          "text": ""
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 7,
+          "asset": "assets/pages/细则/p07_embedded01.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    },
+    {
+      "id": "R21",
+      "question": 21,
+      "carrier_pages": [
+        7,
+        8
+      ],
+      "source_pages": [
+        7,
+        8
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "21.（10分）",
+          "source_page": 7,
+          "id": "R21.b0"
+        },
+        {
+          "type": "paragraph",
+          "role": "reference_answer",
+          "text": "可从党的领导、马克思主义中国化时代化、制度优势、国家治理等角度作答。",
+          "source_page": 7,
+          "id": "R21.b1"
+        },
+        {
+          "type": "table",
+          "role": "scoring_rule",
+          "headers": [
+            "项目",
+            "要求"
+          ],
+          "rows": [
+            [
+              "逻辑1分",
+              "能够围绕“科学制定规划”和“有效执行规划”进行分析"
+            ],
+            [
+              "阐释9分",
+              "取三个维度，每个维度3分，知识准确1分+分析到位2分"
+            ],
+            [
+              "维度",
+              "可从制度优势、人民立场、思维方法、文化支撑等维度进行分析"
+            ]
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.454,
+            0.88,
+            0.616
+          ],
+          "caption": "21题评分细则",
+          "embedded_asset": "assets/pages/细则/p07_embedded02.png",
+          "id": "R21.b2",
+          "text": "",
+          "asset": "assets/pages/细则/p07_embedded02.png"
+        },
+        {
+          "type": "table",
+          "role": "official_example",
+          "headers": [
+            "维度",
+            "为什么我们总是能科学制定各种规划"
+          ],
+          "rows": [
+            [
+              "示例",
+              ""
+            ],
+            [
+              "制度优势",
+              "• 坚持党的领导：中国共产党的领导是中国特色社会主义制度的最大优势，党坚持科学执政，遵循客观规律，立足我国基本国情，把握时代发展大势，从根本上保障了规划的科学性、前瞻性与可行性。\n• 根本政治制度：人民代表大会制度是我国的根本政治制度，依托人民代表大会制度，通过法定程序将党的主张转化为国家意志，确保规划反映人民意志，保障规划制定的民主性与科学性。\n• 其它言之成理也可"
+            ],
+            [
+              "人民立场",
+              "• 人民群众是历史的创造者，在规划制定过程中，我们广泛听取社会各界呼声，凝聚共识使规划能够充分反映国情民意，使规划更具科学性和可行性。"
+            ],
+            [
+              "思维方法",
+              "• 科学思维：坚持运用系统思维等科学思维方法，通过系统性、整体性、协同性的科学谋划，确保规划目标清晰、路径可行、推进有序，确保规划的科学性和高效落实。\n• 其它言之成理也可"
+            ],
+            [
+              "文化支撑",
+              "中华文化源远流长、博大精深，“锐始者必图其终，成功者先计于始”正是中华民族绵延数千年的科学谋划传统的生动凝练，为我国始终能科学制定各类发展规划提供了深厚的文化滋养"
+            ]
+          ],
+          "source_page": 7,
+          "bbox_normalized": [
+            0.12,
+            0.617,
+            0.879,
+            0.911
+          ],
+          "caption": "科学制定规划",
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 0,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "示例"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p07_embedded03.png",
+          "id": "R21.b3",
+          "text": "",
+          "asset": "assets/pages/细则/p07_embedded03.png"
+        },
+        {
+          "type": "table",
+          "role": "official_example",
+          "headers": [
+            "维度",
+            "为什么各种规划总是能实现"
+          ],
+          "rows": [
+            [
+              "示例",
+              ""
+            ],
+            [
+              "制度优势",
+              "• 坚持党的领导：中国共产党发挥总揽全局、协调各方的领导核心作用，有效整合各方资源、协调各方利益、凝聚各方力量，集中力量办大事，推动各项发展规划能够有序推进和落实。\n• 根本政治制度：人民代表大会制度是我国的根本政治制度，确保规划反映人民意志，切实回应人民群众的期盼与需求，从而充分调动人民群众的积极性、主动性和创造性，为规划顺利实施提供了坚实的群众基础和强大的内生动力\n• 其它言之成理也可"
+            ],
+            [
+              "人民立场",
+              "人民群众是历史的创造者，规划始终把实现好、维护好、发展好最广大人民的根本利益作为出发点和落脚点，从而充分调动人民群众的积极性、主动性和创造性，为规划顺利实施提供了坚实的群众基础。"
+            ],
+            [
+              "思维方法",
+              "• 科学思维：坚持运用系统思维等科学思维方法，通过系统性、整体性、协同性的科学谋划，确保规划目标清晰、路径可行、推进有序，确保规划的科学性和高效落实。\n认识对实践具有能动的反作用，正确的认识能够推动实践的发展。科学制定的各项发展规划，是经过实践检验的、符合中国发展规律的正确认识，为实践发展提供了科学的行动指南。"
+            ],
+            [
+              "文化支撑",
+              "中华民族形成了以爱国主义为核心，团结统一、爱好和平、勤劳勇敢、自强不息的伟大民族精神，能够以坚韧不拔的毅力向着既定目标笃行，确保规划的科学性和高效落实"
+            ]
+          ],
+          "source_page": 8,
+          "bbox_normalized": [
+            0.12,
+            0.084,
+            0.88,
+            0.408
+          ],
+          "caption": "有效执行计划",
+          "merged_cells": [
+            {
+              "section": "body",
+              "row": 0,
+              "col": 0,
+              "rowspan": 1,
+              "colspan": 2,
+              "text": "示例"
+            }
+          ],
+          "embedded_asset": "assets/pages/细则/p08_embedded01.png",
+          "id": "R21.b4",
+          "text": "",
+          "asset": "assets/pages/细则/p08_embedded01.png"
+        },
+        {
+          "type": "student_example",
+          "role": "student_example",
+          "source_page": 8,
+          "asset": "assets/pages/细则/p08_embedded02.png",
+          "description": "Q21学生作答批注图；仅作原图引用，不作为正式评分规则。",
+          "id": "R21.b5",
+          "text": ""
+        }
+      ],
+      "uncertainties": [],
+      "student_examples": [
+        {
+          "type": "student_example_image",
+          "source_page": 8,
+          "asset": "assets/pages/细则/p08_embedded02.png",
+          "evidence_status": "学生样卷及阅卷批注；不可把学生原话直接认作通用评分规则"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "Q1:①",
+      "parent_id": "Q1",
+      "label": "①",
+      "text": "了解社会主义制度创立和发展历程，增进历史认知",
+      "modules": [
+        "必修一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q1:②",
+      "parent_id": "Q1",
+      "label": "②",
+      "text": "重温革命岁月，深化对中国共产党的初心和使命的认识",
+      "modules": [
+        "必修一",
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q1:③",
+      "parent_id": "Q1",
+      "label": "③",
+      "text": "借助数字技术，赋予长征精神新的时代内涵",
+      "modules": [
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q1:④",
+      "parent_id": "Q1",
+      "label": "④",
+      "text": "感悟长征精神的时代价值，走好新时代长征路",
+      "modules": [
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q2:①",
+      "parent_id": "Q2",
+      "label": "①",
+      "text": "注重自然简洁的布局给人以想象空间，以有限承载无限",
+      "modules": [
+        "必修四哲学",
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q2:②",
+      "parent_id": "Q2",
+      "label": "②",
+      "text": "强调物我合一的审美体验，实现了思维和存在的同一",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q2:③",
+      "parent_id": "Q2",
+      "label": "③",
+      "text": "源于创作者对生活的特殊理解，体现了审美的主体差异性",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q2:④",
+      "parent_id": "Q2",
+      "label": "④",
+      "text": "蕴含道法自然的理念，传递了创作者的主观情志",
+      "modules": [
+        "必修四哲学",
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q3:①",
+      "parent_id": "Q3",
+      "label": "①",
+      "text": "人们在总结历史教训中展望发展前景，体现思维具有间接性",
+      "modules": [
+        "选必三推理"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q3:②",
+      "parent_id": "Q3",
+      "label": "②",
+      "text": "诗歌以感觉和知觉揭示和平的本质属性，表达对和平的追求",
+      "modules": [
+        "选必三推理",
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q3:③",
+      "parent_id": "Q3",
+      "label": "③",
+      "text": "和平不仅关系人类社会存在和发展，也关系每个人的幸福生活",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q3:④",
+      "parent_id": "Q3",
+      "label": "④",
+      "text": "维护和平符合全人类共同价值，是各国对外活动的落脚点",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q4:①",
+      "parent_id": "Q4",
+      "label": "①",
+      "text": "文化带是各种文化资源的空间呈现，拉近了历史和现实的距离",
+      "modules": [
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q4:②",
+      "parent_id": "Q4",
+      "label": "②",
+      "text": "文化带的建设表明任何联系的形成都离不开人的社会实践活动",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q4:③",
+      "parent_id": "Q4",
+      "label": "③",
+      "text": "三条文化带的保护利用要服从和服务于北京历史文化名城建设",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q4:④",
+      "parent_id": "Q4",
+      "label": "④",
+      "text": "三条文化带承载着民族历史记忆，彰显了民族文化的优越性",
+      "modules": [
+        "必修四文化"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q5:A",
+      "parent_id": "Q5",
+      "label": "A",
+      "text": "生产力与生产关系的相互转换推动了数字游民的兴起",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q5:B",
+      "parent_id": "Q5",
+      "label": "B",
+      "text": "人们的价值选择呈现出多样化特征，不再有客观标准",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q5:C",
+      "parent_id": "Q5",
+      "label": "C",
+      "text": "乡村新业态是在连续性和渐进性的统一中发展起来的",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q5:D",
+      "parent_id": "Q5",
+      "label": "D",
+      "text": "生态优势与发展优势的转化依赖于特定社会历史条件",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q6:A",
+      "parent_id": "Q6",
+      "label": "A",
+      "text": "简单改装的普通无人驾驶汽车不能进行AI分析决策",
+      "modules": [
+        "选必三推理"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q6:B",
+      "parent_id": "Q6",
+      "label": "B",
+      "text": "有的针对警务实战需求定制的智能装备能进行AI分析决策",
+      "modules": [
+        "选必三推理"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q6:C",
+      "parent_id": "Q6",
+      "label": "C",
+      "text": "有的简单改装的普通无人驾驶汽车能进行AI分析决策",
+      "modules": [
+        "选必三推理"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q6:D",
+      "parent_id": "Q6",
+      "label": "D",
+      "text": "能进行AI分析决策的设备有的是简单改装的普通无人驾驶汽车，有的是无人驾驶AI巡逻车",
+      "modules": [
+        "选必三推理"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q7:①",
+      "parent_id": "Q7",
+      "label": "①",
+      "text": "运动项目体验区的改造是对原有空间功能的彻底否定",
+      "modules": [
+        "必修四哲学",
+        "选必三思维"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q7:②",
+      "parent_id": "Q7",
+      "label": "②",
+      "text": "结合现代科技可以助力学校摆脱现实制约，全面守护健康",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q7:③",
+      "parent_id": "Q7",
+      "label": "③",
+      "text": "只有坚持“健康第一”的理念，才能引领学生健康成长",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q7:④",
+      "parent_id": "Q7",
+      "label": "④",
+      "text": "学校应优化健康教育内容和形式，构建全方位育人生态",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q8:①",
+      "parent_id": "Q8",
+      "label": "①",
+      "text": "党的性质决定了必须把为民办事、为民造福作为最重要的政绩",
+      "modules": [
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q8:②",
+      "parent_id": "Q8",
+      "label": "②",
+      "text": "党员干部要有历史耐心，从成功经验出发破解当前发展难题",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q8:③",
+      "parent_id": "Q8",
+      "label": "③",
+      "text": "党员干部应在调查研究上下功夫，使自身主观世界更好符合客观实际",
+      "modules": [
+        "必修四哲学"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q8:④",
+      "parent_id": "Q8",
+      "label": "④",
+      "text": "此次学习教育为坚持和加强党的全面领导提供可靠制度保障",
+      "modules": [
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q9:A",
+      "parent_id": "Q9",
+      "label": "A",
+      "text": "为当事人提供司法救助，依法保障公民充分行使诉讼权利",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q9:B",
+      "parent_id": "Q9",
+      "label": "B",
+      "text": "是政府履行公共服务职能、提高法治水平实现善政的真实写照",
+      "modules": [
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q9:C",
+      "parent_id": "Q9",
+      "label": "C",
+      "text": "丰富了纠纷解决方式，严守维护社会公平正义的最后一道防线",
+      "modules": [
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q9:D",
+      "parent_id": "Q9",
+      "label": "D",
+      "text": "优化行政裁决方式，预防化解社会矛盾纠纷，推动法治社会建设",
+      "modules": [
+        "必修三"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q10:A",
+      "parent_id": "Q10",
+      "label": "A",
+      "text": "李某与王某签订协议，承租王某的承包地，用于苹果种植；王某有权将土地承包经营权依法流转交易",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。",
+      "source_cells": {
+        "行为": "李某与王某签订协议，承租王某的承包地，用于苹果种植",
+        "解读": "王某有权将土地承包经营权依法流转交易"
+      },
+      "text_is_search_join": true
+    },
+    {
+      "id": "Q10:B",
+      "parent_id": "Q10",
+      "label": "B",
+      "text": "李某利用无人机为自家果园喷洒农药时，不小心“误伤”相邻的稻田，给张某造成损失；李某因不可抗力给张某造成损失，可免除赔偿责任",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。",
+      "source_cells": {
+        "行为": "李某利用无人机为自家果园喷洒农药时，不小心“误伤”相邻的稻田，给张某造成损失",
+        "解读": "李某因不可抗力给张某造成损失，可免除赔偿责任"
+      },
+      "text_is_search_join": true
+    },
+    {
+      "id": "Q10:C",
+      "parent_id": "Q10",
+      "label": "C",
+      "text": "李某与收购商口头约定苹果收购价格、数量、交付时间等；未采取书面形式会导致合同部分无效",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。",
+      "source_cells": {
+        "行为": "李某与收购商口头约定苹果收购价格、数量、交付时间等",
+        "解读": "未采取书面形式会导致合同部分无效"
+      },
+      "text_is_search_join": true
+    },
+    {
+      "id": "Q10:D",
+      "parent_id": "Q10",
+      "label": "D",
+      "text": "李某以与其他品牌相似的图案申请注册商标，被商标局驳回；李某可以申请行政复议维护自身权益",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。",
+      "source_cells": {
+        "行为": "李某以与其他品牌相似的图案申请注册商标，被商标局驳回",
+        "解读": "李某可以申请行政复议维护自身权益"
+      },
+      "text_is_search_join": true
+    },
+    {
+      "id": "Q11:A",
+      "parent_id": "Q11",
+      "label": "A",
+      "text": "该小说著作权及20万元版权费均为夫妻双方所有",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q11:B",
+      "parent_id": "Q11",
+      "label": "B",
+      "text": "苏某举证自己承担主要家务应获得补偿，属于举证责任倒置",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q11:C",
+      "parent_id": "Q11",
+      "label": "C",
+      "text": "苏某获得家务补偿款符合夫妻平等这一夫妻关系的核心",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q11:D",
+      "parent_id": "Q11",
+      "label": "D",
+      "text": "姜某若对判决结果不服，可在判决生效后15日内上诉",
+      "modules": [
+        "选必二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q12:A",
+      "parent_id": "Q12",
+      "label": "A",
+      "text": "降低市场准入门槛，激发创造性劳动",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q12:B",
+      "parent_id": "Q12",
+      "label": "B",
+      "text": "通过标准化生产摊薄成本，实现规模效应",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q12:C",
+      "parent_id": "Q12",
+      "label": "C",
+      "text": "周期短、省人力，投入产出比高",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q12:D",
+      "parent_id": "Q12",
+      "label": "D",
+      "text": "提高资源配置效率，容易催生行业垄断",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q13:①",
+      "parent_id": "Q13",
+      "label": "①",
+      "text": "太阳能发电快速发展，成为我国占比最大的能源类型",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q13:②",
+      "parent_id": "Q13",
+      "label": "②",
+      "text": "风电、核电装机容量不断增加，绿色能源发展动能强劲",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q13:③",
+      "parent_id": "Q13",
+      "label": "③",
+      "text": "火电装机容量持续下降，加速推进我国能源转型",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q13:④",
+      "parent_id": "Q13",
+      "label": "④",
+      "text": "我国能源结构优化升级，绿色低碳发展取得积极成效",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q14:①",
+      "parent_id": "Q14",
+      "label": "①",
+      "text": "是促进能源科技进步、培育新质生产力的战略选择",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q14:②",
+      "parent_id": "Q14",
+      "label": "②",
+      "text": "能够全面替代传统能源，助力构建新型能源体系",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q14:③",
+      "parent_id": "Q14",
+      "label": "③",
+      "text": "有利于维护国家能源安全，把能源的饭碗牢牢端在自己手中",
+      "modules": [
+        "必修二"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q14:④",
+      "parent_id": "Q14",
+      "label": "④",
+      "text": "要独立制定国际能源规则，抢占全球能源科技和产业制高点",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q15:①",
+      "parent_id": "Q15",
+      "label": "①",
+      "text": "共同利益是国际关系的决定性因素，对生态安全的共识推动了国际合作",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q15:②",
+      "parent_id": "Q15",
+      "label": "②",
+      "text": "联合国作为最权威的国际组织，在应对非传统安全中发挥不可替代作用",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q15:③",
+      "parent_id": "Q15",
+      "label": "③",
+      "text": "中国作为全球生态文明建设的引领者，积极参与全球治理体系的完善",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    },
+    {
+      "id": "Q15:④",
+      "parent_id": "Q15",
+      "label": "④",
+      "text": "中国将协定作为本国海洋行动的依据，建立完备的社会主义法律体系",
+      "modules": [
+        "选必一"
+      ],
+      "drill_admission": "not_decided_for_any_book",
+      "truth_status": "not_inferred_from_answer_key",
+      "review_note": "这是知识归属索引，正式题肢单练仍须按册逐条审核；未入选不自动表示错误。"
+    }
+  ],
+  "global_rules": [],
+  "coverage_note": "本卷试点，21大题、24取用单元；不是全库完成。"
+}

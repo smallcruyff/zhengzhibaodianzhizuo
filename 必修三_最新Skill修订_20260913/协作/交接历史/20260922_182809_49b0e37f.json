@@ -1,0 +1,36 @@
+{
+  "saved_at": "2026-09-23T01:28:09.962410+00:00",
+  "owner": "claude:7106db47-1ab5-4462-ad31-abf60a1797ac",
+  "note": "# 必修三第50批已发布：Claude交回Codex\n\n- 输出：中央工作头与审阅入口为 必修三政治与法治宝典_R31续修_第50批_阶段审查稿.docx，SHA 4868b238097a12952aa7ed3035f16b857f3e53d132ecc49289891499760239c1；同版PDF 616页，SHA 35f5b20446dc09e64186c89966d87a0cb9134e381976eeeefbfd0f28c2dadd43。第49批原样归档在 必修三_人工审查历史/第49批_原样审阅_20260922_182740。\n- 内容：全书开头【总括答题点】（主线、过程总述、结果总述并列）；三统一和19节常见表述去重，“怎么体现／做法”改为按材料结构的类型（材料样子、关系、怎么写），考法按类型重组；“四、依法治国”开头新增常见表述。617个例题块的正文与第49批逐字相同。规则见 Skill 6.3.13—6.3.14（style-spec“必修三总括答题点与按材料结构的类型分类”、book-production-workflow“答题点出现规律的同步归纳”）。\n- 工程：本目录 build_b50.py（定稿/*.json → 改版）、render_b50.py、promote_b50.py、publish_b50.py；各节定稿在 定稿/，分析草稿在 草稿/。\n- 检查：目录零差异、例题块逐字比对、四栏目385处、无后台用语；按用户“阶段稿先给初稿”只亲看改动页（p4—5、15、321）。\n- 模型：19节分析与压缩用Fable（约380万token），用户嫌耗量太大，之后改用Opus；AGENTS已写入。\n- 待用户：审第50批；第二轮专题提案（第二轮专题提案.md）三个选择。无后台任务在写稿。",
+  "snapshot": {
+    "book": "必修三",
+    "ready": true,
+    "revision": "batch50",
+    "central_confirmed_revision": null,
+    "status": "stage_review_copy_not_final",
+    "pdf_pages": 616,
+    "files": {
+      "docx": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第50批_阶段审查稿.docx",
+        "sha256": "4868b238097a12952aa7ed3035f16b857f3e53d132ecc49289891499760239c1",
+        "size": 15321302
+      },
+      "pdf": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第50批_阶段审查稿.pdf",
+        "sha256": "35f5b20446dc09e64186c89966d87a0cb9134e381976eeeefbfd0f28c2dadd43",
+        "size": 17268539
+      }
+    },
+    "progress_fingerprints": {
+      "00_必修三最新审查稿/.review-manifest.json": "3d1fd662b7923daabbeb52306d372ab6aab2d254443c196c9b01ce44ab947612",
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json": "569dc4e807d6c7c6d377f6260cd81e94a9a2009938e04d68bd108dd4bfa6e9ab",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md": "9c32cd619a32ae04270c86c9f91ffc1f69b16b6f4828aabf5f5dbedf36559b43"
+    },
+    "user_modified_review_copies": [],
+    "progress_files": [
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+    ],
+    "note": "revision为当前审阅版本；未渲染或更新中的候选须另读progress_files，不自动视为终稿"
+  }
+}

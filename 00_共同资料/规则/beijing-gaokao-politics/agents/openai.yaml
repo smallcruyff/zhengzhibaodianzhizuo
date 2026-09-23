@@ -1,0 +1,13 @@
+interface:
+  display_name: "北京高考政治教研"
+  short_description: "北京高考政治宝典增量修订，保留完整原题、真细则与已确认结构"
+  default_prompt: "使用 $beijing-gaokao-politics，从本册真实工作头完成本轮修订、验证及交付。"
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

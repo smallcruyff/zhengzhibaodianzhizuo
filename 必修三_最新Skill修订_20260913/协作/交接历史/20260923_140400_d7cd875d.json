@@ -1,0 +1,36 @@
+{
+  "saved_at": "2026-09-23T21:04:00.914452+00:00",
+  "owner": "claude:3bd4f1ab-82ef-482b-9938-ae3c518113e0",
+  "note": "# 必修三第51批发布交接说明（Claude 3bd4f1ab）\n\n- 审阅入口：00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx/.pdf（776页，同版绑定，目录32行零差异）。第50批已归档到 必修三_人工审查历史/第50批_原样审阅_20260923_140327。\n- 本批内容：专题三换成第二轮主体专题（党、人大、政府、政协、法院与检察院、基层自治组织、人民与公民、社会主体），源稿在 第50批工程/专题小样/{主体}_主体专题小样.md，政府另有 政府_来源核对.md；第一部分四权一串写（08、17定稿规格＋5处例题）。\n- 工程：本目录 build_b51_step1.py（沿用第50批定稿）、fix_b51_fourrights.py、insert_topics.py（md→书稿段落，替换专题三）、render_b51.py、promote_b51.py、publish_b51.py；技术验收在 构建/最终主代理技术验收.json。\n- 未决：用户审第51批内容（尤其七个新主体专题）；材料翻译、概念辨析仍为小样；七个新专题未经逐轮人工修改。",
+  "snapshot": {
+    "book": "必修三",
+    "ready": true,
+    "revision": "batch51",
+    "central_confirmed_revision": null,
+    "status": "stage_review_copy_not_final",
+    "pdf_pages": 776,
+    "files": {
+      "docx": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx",
+        "sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
+        "size": 15547969
+      },
+      "pdf": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.pdf",
+        "sha256": "c8cf2528bbbe78bf0f1cf1b19834c42bfee8de2544725c6642dd1f4c57a53840",
+        "size": 20085909
+      }
+    },
+    "progress_fingerprints": {
+      "00_必修三最新审查稿/.review-manifest.json": "cf130f635587dd2c9aa0bc3708a147d4ff151e5007044d197f90fc07ae34f1ae",
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json": "974f8c8c5adccc719bd81eea1ee4cf2006e106380690190a09b9477c6ab273ec",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md": "ed495ea77c5de2eae85a40de0ed299c506c9566e7b7475708e2b046334d69563"
+    },
+    "user_modified_review_copies": [],
+    "progress_files": [
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+    ],
+    "note": "revision为当前审阅版本；未渲染或更新中的候选须另读progress_files，不自动视为终稿"
+  }
+}

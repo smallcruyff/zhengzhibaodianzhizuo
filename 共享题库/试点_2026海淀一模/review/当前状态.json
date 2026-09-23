@@ -1,0 +1,25 @@
+{
+  "status": "pilot_complete",
+  "scope": "2026海淀一模整卷题库及使用模拟",
+  "main_questions": 21,
+  "retrieval_units": 24,
+  "choice": 15,
+  "subjective_units": 9,
+  "rubric_units": 9,
+  "claims": 60,
+  "source_pdfs": 2,
+  "source_pages": 16,
+  "source_fingerprints_verified": true,
+  "machine_checks_passed": true,
+  "cold_start_test_completed": true,
+  "teaching_examples_by_root": 2,
+  "existing_books_modified": false,
+  "installed_skill_modified": false,
+  "full_corpus_processed": false,
+  "limitations": [
+    "扫描图局部线迹偏浅，不推测精确数值",
+    "手写学生样卷按图片保留",
+    "本卷适配，不是任意格式全自动处理器",
+    "教材标签不等于逐册准入"
+  ]
+}

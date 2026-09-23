@@ -1,0 +1,41 @@
+{
+  "time": "2026-09-13T22:37:30.032285-07:00",
+  "moves": [
+    {
+      "from": "/Users/wanglifei/Desktop/gpt6/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第42批_当前工作稿.docx",
+      "to": "/Users/wanglifei/Desktop/gpt6/必修三_人工审查历史/第42批_原样审阅_20260913_223730/必修三政治与法治宝典_R31续修_第42批_当前工作稿.docx",
+      "sha256": "f4d5b295e73bebfa67cf86eb8cf3719c91752ff9a7d80ac6381e2c0298359946"
+    },
+    {
+      "from": "/Users/wanglifei/Desktop/gpt6/00_必修三最新审查稿/先看这里.md",
+      "to": "/Users/wanglifei/Desktop/gpt6/必修三_人工审查历史/第42批_原样审阅_20260913_223730/先看这里.md",
+      "sha256": "2bb20cd94881785c6bf0539bc50e66b182b14cb5b4ca8d5defe6fbe3b401e88d"
+    },
+    {
+      "from": "/Users/wanglifei/Desktop/gpt6/00_必修三最新审查稿/.review-manifest.json",
+      "to": "/Users/wanglifei/Desktop/gpt6/必修三_人工审查历史/第42批_原样审阅_20260913_223730/.review-manifest.json",
+      "sha256": "51290f83f9b9dde2b79f29ded22e38523849eef86141ce8cc594a50a065e0eea"
+    }
+  ],
+  "published": {
+    "copied_at": "2026-09-13T22:37:30.032285-07:00",
+    "source_state": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+    "source_docx": "/Users/wanglifei/Desktop/gpt6/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.docx",
+    "source_pdf": "/Users/wanglifei/Desktop/gpt6/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.pdf",
+    "docx": "/Users/wanglifei/Desktop/gpt6/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.docx",
+    "docx_sha256": "dbf1ceae6b11b4c4711eef8f5d1bd8f088c5db35115b193d4b121d3e08fa5cb7",
+    "bytes": 29068010,
+    "pdf": "/Users/wanglifei/Desktop/gpt6/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第43批_阶段审查稿.pdf",
+    "pdf_sha256": "3fd96736abc7e2a67f0aa27eb77e48742ff851dc2c51a007c432cfe8e1e30624",
+    "pdf_pages": 532,
+    "status": "stage_review_copy_not_final",
+    "latest_batch": "batch43",
+    "body_changed": true,
+    "verified": "native Word same-version export; ZIP and structure checked; 32 navigation pages matched; 532 visual pages covered with disclosed limitations",
+    "review_record": "/Users/wanglifei/Desktop/gpt6/必修三_最新Skill修订_20260913/页面检查/整书页面验收.json",
+    "previous_review_archive": "/Users/wanglifei/Desktop/gpt6/必修三_人工审查历史/第42批_原样审阅_20260913_223730"
+  },
+  "unregistered_files_preserved": [
+    "~$三政治与法治宝典_R31续修_第42批_当前工作稿.docx"
+  ]
+}

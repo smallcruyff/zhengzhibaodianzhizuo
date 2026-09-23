@@ -1,0 +1,72 @@
+{
+  "groups": [
+    {
+      "source": "/Users/wanglifei/Desktop/2023模拟题",
+      "targets": [
+        "00_共同资料/原材料/2023模拟题"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2024模拟题",
+      "targets": [
+        "00_共同资料/原材料/2024模拟题"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2025模拟题",
+      "targets": [
+        "00_共同资料/原材料/2025模拟题"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/历年高考题及细则",
+      "targets": [
+        "00_共同资料/原材料/历年高考题及细则"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/宝典制作原料",
+      "targets": [
+        "00_共同资料/原材料/宝典制作原料"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2026模拟题/2026各区一模",
+      "targets": [
+        "00_共同资料/原材料/2026模拟题/2026各区一模"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2026模拟题/2026各区二模",
+      "targets": [
+        "00_共同资料/原材料/2026模拟题/2026各区二模"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中",
+      "targets": [
+        "00_共同资料/原材料/2026模拟题/2026各区期末和期中"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2026模拟题/只有答案没有细则的",
+      "targets": [
+        "00_共同资料/原材料/2026模拟题/只有答案没有细则的"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/Desktop/2026模拟题/B",
+      "targets": [
+        "00_共同资料/原材料/2026模拟题/B"
+      ]
+    },
+    {
+      "source": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics",
+      "targets": [
+        "00_共同资料/规则/beijing-gaokao-politics",
+        ".claude/skills/beijing-gaokao-politics"
+      ],
+      "rules": true
+    }
+  ]
+}

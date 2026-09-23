@@ -1,0 +1,23 @@
+{
+  "sample_revision": 3,
+  "status": "approved_for_rollout",
+  "scope": "同一道2026房山一模第20题，党与依法治国两个一级标题样稿，各一页；未推广、未合入整册",
+  "parent_revision": "batch48",
+  "parent_sha256": "3ba37ae690d4296176bc91fed736ad871eaf2108d9791f8f127e77d6c964b8d7",
+  "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/单题样稿/必修三_房山一模20_党与依法治国_样稿修订3.docx",
+  "docx_sha256": "41913f455efd0211f77dec20a8dc649d56c4eddb982477d08647670dabc444dc",
+  "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/单题样稿/必修三_房山一模20_党与依法治国_样稿修订3.pdf",
+  "pdf_sha256": "0465baf5f261a8ec96f27e10fb7a5b37f70d142ed1125fcbc9fa0225dd0a44e3",
+  "pdf_pages": 2,
+  "pages": {
+    "1": "二、党的领导",
+    "2": "四、依法治国：法治角度，必修三部分"
+  },
+  "render_engine": "bundled LibreOffice via documents/render_docx.py",
+  "visual_review": "主代理实际打开最终page-1.png、page-2.png并核验完整页面；正文黑色、双入口同级对齐、原题完整、无裁切溢出、无等级评分套话、无独立链行。",
+  "skill": "6.3.5-20260921",
+  "withdrawn_previous_sample": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/单题样稿_修订2_已撤回_20260921_144520",
+  "updated_at": "2026-09-21T14:45:20.711309-07:00",
+  "approved_at": "2026-09-21T22:00:49.888044+00:00",
+  "approval": "用户明确：可以，我们可以开始推广了；附后续括号标分规则。"
+}

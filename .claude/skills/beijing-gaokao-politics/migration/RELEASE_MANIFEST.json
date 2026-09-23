@@ -1,0 +1,198 @@
+{
+  "release": "6.0.3-20260908",
+  "local_student_standard_revision": 4,
+  "local_update": "2026-09-08 user feedback: remove visible materials and question labels including brackets throughout Bixiu2, including native table cells. Preserve original text, scores, Kaiti typography and teaching labels. Base execution compilation unchanged; not a new packaged release.",
+  "scope": "All functional files including legacy; migration maintenance excluded to avoid self-reference. This is an integrity snapshot, not a signed authenticity guarantee.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 12491,
+      "sha256": "138803007b8753c3f61b2bc64037e5b1cb7a11b4097fd13f165609dddaa4122e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3687,
+      "sha256": "0482f59ed19f2c387852175e65abbfc871676ee881c4589127566d563b1ad542"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 9679,
+      "sha256": "571e6af4cd9b6c1116cbfb3ce19d73a92d66f1b217feb799046c41913ddbbf6b"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 652,
+      "sha256": "7b80d5a0e90c0751e360c6efc75723afdc8452de5c76114951e3116af0670e0b"
+    },
+    {
+      "path": "assets/icon.svg",
+      "bytes": 2094,
+      "sha256": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6"
+    },
+    {
+      "path": "legacy/5.6/scripts/task_checkpoint.py",
+      "bytes": 78809,
+      "sha256": "ee1302a51039ffa0aa00262a577335bc6e68880bca602efa74f9848d23f8e9b7"
+    },
+    {
+      "path": "legacy/5.6/task-continuity.before.txt",
+      "bytes": 19305,
+      "sha256": "b37b54dfadb42050949b4822588afca27d9439bc329d8fd97b59d6d3203ea10c"
+    },
+    {
+      "path": "legacy/5.6/tests/test_task_checkpoint.py",
+      "bytes": 56665,
+      "sha256": "05745898703a237967a59a329c5e5a5c871e48fbde812a96b658a42b3cd9e256"
+    },
+    {
+      "path": "legacy/README.md",
+      "bytes": 402,
+      "sha256": "618a2a55e7a19e48c77933a2c685e1429dc8d09fe9d2f8987fe944c4e9eb7781"
+    },
+    {
+      "path": "references/active/book-bixiu-2-current.md",
+      "bytes": 6860,
+      "sha256": "b84c56fb201dded4e4d9a52e0ac048dc14f1b3b9af7eead80cf3f81ab38730ca"
+    },
+    {
+      "path": "references/active/book-bixiu-3-current.md",
+      "bytes": 6083,
+      "sha256": "ac8920534c8e8ad8da543f593caa4cb2d1a0bfdc65607a9908c179ad4d287479"
+    },
+    {
+      "path": "references/active/book-culture-current.md",
+      "bytes": 4448,
+      "sha256": "e8e16a0832b99234c661a073caf4526cca6d1e9bb46f4436e8e6f297b3926ce1"
+    },
+    {
+      "path": "references/active/book-philosophy-current.md",
+      "bytes": 7421,
+      "sha256": "5348ed55e24980b53be6d775ce05403b0f4ed1d05a4d6c2df6fbcec296b5682a"
+    },
+    {
+      "path": "references/active/book-xuanbi-1-current.md",
+      "bytes": 4342,
+      "sha256": "152212ba8b3682a8451ac6572b8c4d480d65d84584afbad9119825e36263df20"
+    },
+    {
+      "path": "references/active/book-xuanbi-2-current.md",
+      "bytes": 5894,
+      "sha256": "5c46258c47a75d274237cccaaafe279d23a79b8589a9b998d99fdb31637e2019"
+    },
+    {
+      "path": "references/active/book-xuanbi-3-current.md",
+      "bytes": 6793,
+      "sha256": "0a64ad9a7ad6808c18cad965848f9a9d0d8a3fa92890936c87295168ab56e7a2"
+    },
+    {
+      "path": "references/active/project-current.md",
+      "bytes": 3805,
+      "sha256": "14f26e1dd9dc622584056a1020d370e74075b0c666129d10de861eef5a6de5e6"
+    },
+    {
+      "path": "references/artifact-manifest.md",
+      "bytes": 146876,
+      "sha256": "3ddb952d472f1282e3de11b9fa866f62bd06f4f7cc6a8825411e7b6ec5b6db2e"
+    },
+    {
+      "path": "references/book-bixiu-2.md",
+      "bytes": 34184,
+      "sha256": "de6f77085c220bc92392fb967b520fc55610dd1108e4cfc712f35fff47e9fd1b"
+    },
+    {
+      "path": "references/book-bixiu-3.md",
+      "bytes": 74909,
+      "sha256": "facfc1a4953d355eb1759736a042626e4a86b193db82e875134b8160addfb56a"
+    },
+    {
+      "path": "references/book-culture.md",
+      "bytes": 21566,
+      "sha256": "63f382962a0ec1962c240dcb6b5fc215953fcd92b494b46ac74787a66c142fce"
+    },
+    {
+      "path": "references/book-philosophy.md",
+      "bytes": 36630,
+      "sha256": "3768d23b4cf6b25f0ae597c6d84f4399ceb844e4382f11cff7a417b2d9eb0d8f"
+    },
+    {
+      "path": "references/book-reasoning.md",
+      "bytes": 1736,
+      "sha256": "dcf95a1a21848e7e85122f3ab9fb783130d49b42f973e86ce8e5987b4bfb307d"
+    },
+    {
+      "path": "references/book-xuanbi-1.md",
+      "bytes": 89339,
+      "sha256": "0483d9b651dd8432bee224a279834bbc2dd46d99f950606fa8122a038d73b8ba"
+    },
+    {
+      "path": "references/book-xuanbi-2.md",
+      "bytes": 35571,
+      "sha256": "534c6b0da19a66d008959e7a51133255c201d2d0d22a143e231f9b1498ee0d51"
+    },
+    {
+      "path": "references/book-xuanbi-3.md",
+      "bytes": 43176,
+      "sha256": "6675cf5f2442e536298a1d7d350aae5e0a63d8ac36939c639c7ca2fd9ad8efae"
+    },
+    {
+      "path": "references/correction-log.md",
+      "bytes": 144184,
+      "sha256": "1e746937e3e9d67707cc83551eb4b6b1feb668d2ac4ea9e84e4c4d62acc67700"
+    },
+    {
+      "path": "references/counting-sorting-policy.md",
+      "bytes": 21381,
+      "sha256": "08779c251048bc782aa1f72dc7aa9797b390955449ba12061d8a9a6311db09be"
+    },
+    {
+      "path": "references/evidence-policy.md",
+      "bytes": 16176,
+      "sha256": "abf3f737c79c44d3d9f7837edbaabf063835a95b02c7fc78ec2d594c7f3f9759"
+    },
+    {
+      "path": "references/original-fidelity-checklist.md",
+      "bytes": 11785,
+      "sha256": "a7ef8f857fe0c0250c72f6a7a21728d8f768dd49c50bc0ca18e2396b9c2d25c4"
+    },
+    {
+      "path": "references/project-constitution.md",
+      "bytes": 14412,
+      "sha256": "a3407fe66e27558bc8cd08fc664c2c27b71a1a2c947a9ba48261090e7747eaf2"
+    },
+    {
+      "path": "references/project-rules.md",
+      "bytes": 41168,
+      "sha256": "347d262fb6e11395214a3d1aa47c4a7a3312e0e8e4b528d41cc4a6b71fdcd424"
+    },
+    {
+      "path": "references/source-inventory.md",
+      "bytes": 39023,
+      "sha256": "ffe7bb310fdc3a0d3387b329da0d5f221df31a4a0284a48a752a52b28eb4a406"
+    },
+    {
+      "path": "references/student-rubric-standard.md",
+      "bytes": 6106,
+      "sha256": "c6eef087a25e3f3a3509a3ce40fb5bac8693ae1a72e29fda2262656809276fe8"
+    },
+    {
+      "path": "references/style-spec.md",
+      "bytes": 27999,
+      "sha256": "002188ff832938d030f284dba22f5c149cdf35197eefa9470d12ba598e81514c"
+    },
+    {
+      "path": "references/task-continuity.md",
+      "bytes": 2927,
+      "sha256": "609f9122f40aa3e164545859f1a50dfce938b73860dd0bfcdde248b59d270e08"
+    },
+    {
+      "path": "references/user-requirements-ledger.md",
+      "bytes": 158342,
+      "sha256": "dd419ffce7e04651cfd5c816700b254e669268a0c3cb3be821600c2608ac99e9"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 5942,
+      "sha256": "5952bcfb0ec71adace850c97e2f3e96303b15405463f8491dccc5d3bd0c981b3"
+    }
+  ]
+}

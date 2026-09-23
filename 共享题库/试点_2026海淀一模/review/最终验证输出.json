@@ -1,0 +1,156 @@
+{
+  "checks": [
+    {
+      "name": "21大题题号连续",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "24个取用单元、总分100",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "选择题15、主观单元9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "60条题肢均有独立归属、未自动准入",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "全部材料及细则依赖可解",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "第18题经济与法律材料分离",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "第21题跨页完整",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "第18题第2问跨页限制未漏",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "第17题不伪造原小问号",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "跨模块题不按设问教材机械排除",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "第14题④不随整题入经济题肢",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "表格行列保留",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "共同导语每包恰好一次",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "原卷与全部产物指纹完整",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "all_passed": true,
+  "measurements": [
+    {
+      "id": "Q12",
+      "packet_characters_including_metadata": 737,
+      "packet_utf8_bytes": 1439,
+      "full_unique_transcript_characters": 11647,
+      "fraction_of_full_transcript": 0.0633,
+      "median_cli_ms_including_process_start": 21.96,
+      "fresh_ocr_calls": 0,
+      "source_pdf_content_opens_during_get": 0,
+      "images_not_counted_as_text_tokens": true
+    },
+    {
+      "id": "Q18-2",
+      "packet_characters_including_metadata": 1793,
+      "packet_utf8_bytes": 3463,
+      "full_unique_transcript_characters": 11647,
+      "fraction_of_full_transcript": 0.1539,
+      "median_cli_ms_including_process_start": 22.02,
+      "fresh_ocr_calls": 0,
+      "source_pdf_content_opens_during_get": 0,
+      "images_not_counted_as_text_tokens": true
+    },
+    {
+      "id": "Q18-3",
+      "packet_characters_including_metadata": 1935,
+      "packet_utf8_bytes": 4147,
+      "full_unique_transcript_characters": 11647,
+      "fraction_of_full_transcript": 0.1661,
+      "median_cli_ms_including_process_start": 21.6,
+      "fresh_ocr_calls": 0,
+      "source_pdf_content_opens_during_get": 0,
+      "images_not_counted_as_text_tokens": true
+    },
+    {
+      "id": "Q19",
+      "packet_characters_including_metadata": 2247,
+      "packet_utf8_bytes": 5223,
+      "full_unique_transcript_characters": 11647,
+      "fraction_of_full_transcript": 0.1929,
+      "median_cli_ms_including_process_start": 22.09,
+      "fresh_ocr_calls": 0,
+      "source_pdf_content_opens_during_get": 0,
+      "images_not_counted_as_text_tokens": true
+    },
+    {
+      "id": "Q21",
+      "packet_characters_including_metadata": 3269,
+      "packet_utf8_bytes": 7071,
+      "full_unique_transcript_characters": 11647,
+      "fraction_of_full_transcript": 0.2807,
+      "median_cli_ms_including_process_start": 21.75,
+      "fresh_ocr_calls": 0,
+      "source_pdf_content_opens_during_get": 0,
+      "images_not_counted_as_text_tokens": true
+    }
+  ],
+  "measurement_caveat": "字符与UTF-8字节，非API实际token/账单；图像和教学推理成本未计入。基线为完整去重转录，不是重复题包拼接。仅本机少量试跑，不外推全库总节省。",
+  "source_page_visual_review": {
+    "root_paper": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "root_rubric": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "independent_agents": "Luna/max 原文提取及评分表转录；主代理复核配对及图文"
+  }
+}
