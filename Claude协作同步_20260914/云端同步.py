@@ -101,7 +101,10 @@ def cmd_export():
     kept, too_big = set(), []
     for src, rel in files:
         if src.stat().st_size > GITHUB_LIMIT:
-            too_big.append({'path': rel, 'bytes': src.stat().st_size})
+            # 替代版由本地 LibreOffice（中文 fontconfig）转成 PDF 后手工放入，文本已核可读
+            sub = f'云端/大文件PDF版/{rel}.pdf'
+            too_big.append({'path': rel, 'bytes': src.stat().st_size,
+                            'cloud_substitute': sub if (REPO / sub).exists() else None})
             continue
         copy_if_changed(src, REPO / rel, stats)
         kept.add(rel)
