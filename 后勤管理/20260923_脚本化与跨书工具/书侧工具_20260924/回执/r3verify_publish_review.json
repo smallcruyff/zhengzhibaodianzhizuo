@@ -1,0 +1,72 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "回滚会整目录删除一个“发布前就已存在”的历史归档目录。do_apply 在第1步先把 archive_dir 赋值，然后才检查 archive_dir.exists() 并 raise Gate；这个 Gate 在 try 内，被 except BaseException 接住后调用 _rollback，第3步 `if archive_dir and archive_dir.exists(): shutil.rmtree(archive_dir)` 把原有归档连同里面的旧审阅稿一并删掉，回滚文案还写成“删除本次新建的归档目录”。dry-run 不检查归档目录是否已存在（write_targets PASS、退出码 0）。触发条件：publish.archive_to 模板不含 {stamp}（新书配置可能这样写），或同一秒内 stamp 撞名。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N1a：archive_to='review_history/第{prev}批_原样审阅'，预置 review_history/第51批_原样审阅/用户历史审阅稿.docx(b'PRECIOUS-HISTORY')；dry_rc=0，write_targets PASS；apply_rc=2，history_dir_exists_after=false，diff.removed=['review_history/第51批_原样审阅','review_history/第51批_原样审阅/用户历史审阅稿.docx']。stderr：'门未通过，中止：发布中途失败，已回滚：Gate: 归档目录已存在：<SB>/review_history/第51批_原样审阅；回滚详情：删除本次新建的归档目录 <SB>/review_history/第51批_原样审阅；…'。N1b（默认带 {stamp} 的模板，把 pr.stamp 固定为 '20990101_000000' 模拟同秒撞名）：diff.removed=['review_history/第51批_原样审阅_20990101_000000', '…/另一次发布的归档.docx']。代码 publish_review.py:740-747（先赋值、后判存在、try 内抛），953-956（无条件 rmtree）。",
+   "fix": "用 archive_created 标记，只有本次 mkdir(exist_ok=False) 成功之后才让 _rollback 删除；归档目录已存在的检查挪到 try 之前，或在 compute_targets 里预检，让 dry-run 的 write_targets 门直接 FAIL；_rollback 只删除本次写进归档目录的具体文件，不要 rmtree 整个目录。"
+  },
+  {
+   "severity": "major",
+   "desc": "符号链接防护只看路径最后一级。paths.review_entry（以及 workspace、review_history、清单、先看这里、中央状态）路径中间某一级是指向 paths.root 外的符号链接时，_reject_symlink 不会拦；_confine 又拿已经 resolve 的目录跟自己比，containment 检查形同虚设（compute_targets:484-486 的 `_confine(p, [p.parent])` 也一样）。结果 --apply 退出码 0，新的 docx/pdf、清单和先看这里全部写到根外。上一轮 major#4 只修了“目录本身是链接”这一种情况。（冻结册目录不受影响：_frozen_hits 查的是 resolve 后的路径，见 N5。）",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N4_review_entry：沙盒根里 lnk_review_entry -> r3_run/outside_N4/review_entry，配置 paths.review_entry='lnk_review_entry/entry'；dry_rc=0，全部门 PASS；apply_rc=0；new_files_outside_root=['entry/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx','entry/…第52批_阶段审查稿.pdf']，targets.review_entry=…/outside_N4/review_entry/entry（在 paths.root 之外）。代码 publish_review.py:202-212（只查最后一级）、275-277、484-486、540。",
+   "fix": "配置里的相对路径（review_entry/workspace/review_history/review_manifest）resolve 后必须仍在 realpath(paths.root) 之内，否则 GuardRefusal；从 root 往下逐级检查每一级是不是符号链接。中央状态这类配置成绝对路径的，比较 realpath 和配置的绝对路径是否一致（逐级 os.path.islink），不一致就拒绝。"
+  },
+  {
+   "severity": "major",
+   "desc": "中央状态没有更新 status 和 active_revision_round，而前身 publish_b52 这两项都会改。拿真实必修三中央状态的副本发布下一批后，latest_batch/working_head 已经是新批次，status 仍是“第51批完成，待人工审阅…”，active_revision_round.revision 仍是旧批次、.docx 仍指向旧工作头。主代理和 collab 读中央状态判断当前轮次时会被误导。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N7（真实 必修三续作_20260908/当前状态.json 只读复制进沙盒，把 latest_batch/status/active_revision_round.revision 改成 batch51 口径后 --apply batch52）：rc=0，latest_batch='batch52'，review_entry 与 latest_rendered_pages 已更新，但 status='第51批完成，待人工审阅；整书教研终审未完成'，active_revision_round.revision='batch51'，active_revision_round.docx 仍是旧路径。前身 publish_b52.py:519-537 更新了 status 和 active_revision_round（revision/owner/docx/sha/pdf/pages/status）。publish_review.py:834-860 没有这两项。",
+   "fix": "central_state_fields 增加 status（配置模板，例如 '第{n}批完成，待人工审阅'）和 active_revision_round（仿 publish_b52 更新 revision/owner/docx/docx_sha256/pdf/pdf_sha256/pages/status）；配置里不写的字段在计划和回执中列为“未更新字段”，让主代理明确知道。"
+  },
+  {
+   "severity": "minor",
+   "desc": "审阅入口里已有、被 publish.preserve 放行、又恰好与新 stem 同名的文件：dry-run 全部 PASS，--apply 第3步 copy2 直接覆盖；因为 is_new=False，这个文件不进 created，也没有备份，回滚时恢复不了。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N3：stem_tpl='审阅稿_第{n}批'，preserve 增加 '审阅稿_*.pdf'，预置 review_entry/审阅稿_第52批.pdf=b'USER-ANNOTATED-PDF'；dry_rc=0；第6步注入故障后 apply_rc=2，diff.changed=['review_entry/审阅稿_第52批.pdf']，victim_now 以 b'%PDF-1.3' 开头（已是候选 PDF）。代码 publish_review.py:537-542（不检查目标是否已存在）、784-787。",
+   "fix": "compute_targets 中，审阅入口的写入目标若已存在、又不是本次要归档的登记文件，write_targets 门就 FAIL。"
+  },
+  {
+   "severity": "minor",
+   "desc": "dry-run 计划仍不完整，也可能与 --apply 实际行为不一致：①归档只列一个 archive_dir，没有逐文件列出要搬走的 docx/pdf/先看这里（含 SHA）、清单副本和指纹文件；②备份目标写死为 {candidate}/发布准备/状态备份，没有按 publish.central_state_backup 模板渲染，模板越界或缺占位符时 dry-run 仍退出 0，到 --apply 才分别以 3 或 2 拒绝（虽然此时尚未写入）。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N6a：backup_tpl='{candidate}/../../../../逃逸备份/{stamp}'，dry_rc=0，全部门 PASS，plan_backup_entries 只显示 …/发布准备/状态备份；apply_rc=3（'中央状态备份目录 解析后不在配置声明的位置内'），diff 为空。N6b：backup_tpl 含 {who}，dry_rc=0，apply_rc=2（'缺少占位符取值：[\"who\"]'）。orig_run A15 的 targets.files 中归档只有一条 {action:'archive_dir'}。代码 publish_review.py:518、550、695-699。",
+   "fix": "compute_targets 按模板渲染备份目录，并做同样的 _confine/占位符检查；归档计划逐条列出 {action:'archive_move', src, dst, sha256}，以及清单副本、指纹文件。"
+  },
+  {
+   "severity": "minor",
+   "desc": "候选目录形态门只用通用正则 /协作/候选/<a>/<b>/ 判断，而且只要求在 paths.root 内。候选放在 review_history/协作/候选/…、另一本书的 协作/候选/… 或项目根的 协作/候选/… 都会 PASS，--apply 时的状态备份和晋升回执就写进这些位置（包括人工审查历史目录）。返修回执 known_limits 已声明这一点，这里用用例确认。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N8_inside_history（候选位于 review_history/协作/候选/x/y/构建）：dry_rc=0，candidate_root PASS，没有任何门 FAIL；N8_other_book_candidate（otherbook/协作/候选/x/第52批_t）、N8_root_level_candidate（协作/候选/x/第52批_t）：dry_rc=0，candidate_root PASS。代码 publish_review.py:226-239。",
+   "fix": "配置有 paths.candidate_dir_pattern 时，按它的前缀（workspace/协作/候选/）逐段匹配；至少要求候选不在 review_entry/review_history 之内。"
+  },
+  {
+   "severity": "minor",
+   "desc": "归档目录名里的 {prev} 仍取 latest_batch 字符串中的第一个数字（run:614、compute_targets:506、do_apply:738），和已修好的 _parse_batch_num 口径不一致：latest_batch='R31续修_batch51' 时，归档目录名成了“第31批_原样审阅”。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N9：batch_monotonic PASS '51 → 52'，但 archive_dst=…/review_history/第31批_原样审阅_20260924_041525。",
+   "fix": "prev 改用 _parse_batch_num(latest_batch)；解析不出唯一数字时由 write_targets 门报告。"
+  },
+  {
+   "severity": "minor",
+   "desc": "双重故障（第6步失败后，回滚里的 rmtree 又失败）时，归档目录连同清单副本、先看这里、指纹文件都留在历史目录。回滚文案只写“警告：…未能完全删除”，没有并入“回滚不完整，需要人工核查”的汇总结论。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify && /usr/bin/python3 -B r3_attacks.py（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run.log）。N2_shutil_rmtree_1：rc=2，diff.added=['review_history/第51批_原样审阅_20260924_041523/{.review-manifest.json,先看这里.md,归档实物指纹.json}']，says_incomplete=false；stderr 末尾为 '警告：归档目录 <SB>/review_history/第51批_原样审阅_20260924_041602 未能完全删除：rmtree故障；恢复 …'。代码 publish_review.py:953-958、987-988。",
+   "fix": "rmtree 失败时把归档目录加入 incomplete。"
+  },
+  {
+   "severity": "minor",
+   "desc": "（不是本工具的缺陷，属于工作纪律问题）Skill 母版 scripts/ 下还留着审查者脚本 drill_tool_verify.py（2026-09-24 03:22），和上一轮 publish_review_verify.py 被同步发布是同一类问题。本次复审没有动它，也没有删除。",
+   "evidence": "ls ~/.codex/skills/beijing-gaokao-politics/scripts/ | grep -i verify → drill_tool_verify.py；ls -la 显示 22649 字节，Sep 24 03:22。",
+   "fix": "由主代理把它移到 后勤管理/…/测试/审查者辅助脚本/，并在 sync 前确认 scripts/ 下没有 *_verify.py。"
+  }
+ ],
+ "checked": [
+  "上轮 3 个 blocker 与 5 个 major 逐条复现：把上一轮审查者的 publish_review_verify.py 复制到 scratch（只把 S 改指 Skill scripts/），对修好的工具原样重跑 31 例：/usr/bin/python3 -B /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/orig_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/orig_run（结果 orig_run/results.json）。blocker1 工作区覆盖：A4_ok/A4_fault 退出码 2，write_targets FAIL，手改稿 SHA 384bdad70724c862 不变 → 已修。blocker2 同名回滚：A3 被 write_targets 门提前拦下，diff 为空；另在自建 N2 扫描中，固定 stem 以外的各步晚期故障回滚都干净 → 已修。blocker3 冻结册 frozen=false 副本绕过：A7 与 A7_real_bixiu2_dry 均退出 3（'中央状态 落在冻结册目录'），A7_real_bixiu2_apply 退出 3 → 已修",
+  "major 复现：A1/A2 晚期故障后 diff 只多出候选 发布准备/状态备份（明示保留），晋升回执维持 OLD_RECEIPT → 已修；A5a/A5b/A5c 目录本身或写入目标是链接 → 退出 3，根外无新文件 → 已修（中间一级是链接仍可逃逸，见新 major）；A6 --label '../' 和 A13 缺 review_history：dry-run 即 write_targets FAIL → 已修；A10 中央状态 review_entry/review_manifest/latest_rendered_* 与清单 previous_review_archive 已更新 → 已修（status/active_revision_round 仍缺，见新 major）；A8/A8b 候选在工作区根 → candidate_root FAIL，工作区根没有新建 发布准备 → 已修",
+  "minor 复现：A11 --report 被拒 → 退出 3、无 traceback；A9/A9b 别名键与工作头磁盘 SHA 核对生效；A14 'R31续修_batch52' 解析为 52；A16 旧备份不被覆盖；A12 六种畸形输入均退出 2、无 traceback；A17 health 门与 bh.run_health 一致（48 FAIL/6 条规则）",
+  "新攻击用例（/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_attacks.py，共 18 条记录，其中 N2 扫描含 22 个注入配置）：N1a/N1b 归档目录预先存在（blocker）；N2 故障注入扫描，shutil.copy2 #1-8、shutil.move #1-3、atomic_write_json #1-4、atomic_write_text #1 共 16 个会实际触发的注入点，回滚后全树（除候选 发布准备/状态备份）与发布前逐 SHA 一致；copy2 #1-3 落在备份阶段、try 之外，只留下部分备份目录；超出实际调用次数的 k（copy2 #9-11、move #4、write_text #2）没有触发故障，属于正常发布；N2b --note 指向审阅入口的 先看这里.md（第1步被搬走，第5步读取失败）→ 退出 2，全树一致；N2_rmtree 双重故障（minor）；N3 preserve 同名覆盖（minor）；N4 中间一级符号链接（major；workspace 变体被 candidate_root 门拦下）；N5 冻结册路径级识别；N6a/N6b 备份模板 dry/apply 不一致（minor）；N7 中央状态字段（major）；N8 候选目录形态（minor）；N9 prev 解析（minor）；N10 真实数据 dry-run",
+  "冻结册路径级识别（只调判定函数或只 dry-run）：_check_frozen_target 对 必修二 aux 候选路径、大小写变体 '必修二_ASTRA审核修订_20260913/…'、当前基线.json、00_必修二最新审查稿、必修二_人工审查历史 全部 GuardRefusal；对照 00_必修三最新审查稿 放行。frozen=false 配置副本经沙盒内指向真实项目根的链接，把 review_entry/review_history/workspace 指到真实必修二，或把 central_state 写成真实必修二绝对路径：4 个变体 CLI dry-run 均退出 3。真实必修二四个目录的列表前后一致",
+  "真实数据只 dry-run：bixiu3 --batch 52 → 退出 2，ownership FAIL（phase=offered）、batch_monotonic FAIL（52→52）、review_entry FAIL（已是此版）、其余 PASS；--batch 53 → acceptance FAIL（batch 不符）、batch_monotonic PASS。上一轮报告的 __verify_never_written__.json 已不在真实审阅入口（已移到 测试/误写残留_20260924/），review_entry 门现在只报“已是此版”。--report 只写到 scratch",
+  "编写者测试：把 测试/run_tests_publish_review.py 复制到 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/rerun/ 运行（原脚本按自身目录写 out/，直接跑项目内那份会把沙盒写进 后勤管理/），74/74 [PASS]，退出码 0，约 15 秒",
+  "真实文件保护：测试前后对 20260 项做 SHA+mtime 快照（/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/snap.py，snap_before.json 与 snap_after.json），覆盖两册审阅入口全树、必修三中央状态目录全树、必修二 状态/、第52批候选的 发布准备/、两册 接管.json、B3_52 docx/pdf/同版身份、publish_review.py/docx_lib/batch_health/profile_lib、profiles/、__pycache__，以及项目根、工作区、历史目录和 scripts/ 的目录列表：DIFF 0",
+  "__pycache__：前后都只有 book_incremental/check_drill_admission/source_intake 三个 cpython-312 旧文件，没有新增。scripts/ 目录 mtime 在 04:16:32 变化，原因是 apply_patch.py 同一时刻被另一个并行会话改写，不是本次复审造成；本次没有在 Skill 目录写任何文件",
+  "不适用：跨 run 文字、表格单元格、题面区保护。publish_review 只复制文件、不改 DOCX 内容"
+ ],
+ "receipt": "r3 复审：上一轮 3 个 blocker 与 5 个 major 按原证据命令复现，全部确认已修（代码本身修好，不只是改了测试）；编写者测试 74/74 通过；真实文件快照 DIFF 0。新发现 1 个 blocker：归档目录预先存在时，回滚会 rmtree 删掉历史归档。另有 2 个 major：路径中间一级是符号链接时会写到根外；中央状态 status/active_revision_round 未更新。其余为 6 个 minor。结论 FAIL。"
+}

@@ -1,0 +1,98 @@
+{
+  "tool": "style_roles",
+  "version": "0.1.0",
+  "author": "Claude Sonnet 5（子代理，写书侧通用工具第三批）",
+  "date": "2026-09-24",
+  "summary": "新增 ~/.codex/skills/beijing-gaokao-politics/scripts/style_roles.py（741 行，≤900 行目标内）：audit/plan/apply 三个子命令，只改 run 的 rPr（颜色/字体/字号），绝不改文字。audit 复用 batch_health 的 Prof/walk 判定 zone/label，把 check_blue 的“教学正文误蓝”规则原样下沉到 run 粒度（口径逐行核对与 bh 完全一致，已用真实数据交叉验证：必修二230=5、选必二r22=52、必修三52批=0，三处都与 bh.check_blue 的 FAIL 数逐一相符）；新增两类此前任何工具都没查过的维度——材料区字体（typography.material）、题面/教学区字体字号（typography.stem_teaching，兼容必修二旧key stem_options_teaching）；单练红绿错位直接调用 bh.check_drill 的既有判定汇总展示，不重新实现，明确标注不支持 plan（内容判断，需主代理指认）。plan 只把 teach_mis_blue / material_font / stem_teaching_font 三类里“run 整体不与标签重叠”的偏差转成逐 run 修改计划；apply 先做只读校验（run 文字逐字比对、after 字段白名单、父稿 SHA），全部通过才动 XML，写后重开核对全书段落文字、未点名 run 的 rPr（C14N）、未点名段落（docx_lib.unchanged_paragraphs），任一不满足就删掉已写文件、整批中止。已用选必二 r22 真实数据跑通完整 audit→plan→apply→batch_health 闭环：教学正文误蓝 52→0，其余 FAIL 202-52=150 分毫不差，全书文字逐段一致，ZIP 里只有 word/document.xml 变了。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/style_roles.py"
+  ],
+  "usage": "python3 style_roles.py audit --docx X.docx [--profile P] [--report r.json]\npython3 style_roles.py plan --docx X.docx --audit r.json --rules teach_mis_blue,material_font,stem_teaching_font --out plan.json [--profile P]\npython3 style_roles.py apply --docx X.docx --plan plan.json --out Y.docx [--expect-sha S] [--profile P] [--report r2.json] [--health]\n退出码：0 无偏差/成功；1 audit 有偏差，或 apply --health 后 FAIL 增多；2 输入/中止；3 拒绝写出（冻结册等）。",
+  "tests": [
+    {
+      "input": "选必二 r22 副本 + profile_probe 草案配置（xuanbi2.draft.json）：audit",
+      "result": "PASS：识别出 教学正文误蓝 52 段（run 级 58 处，2 段各有 2 个误蓝 run），与主代理此前用 batch_health 在同一副本+同一配置上跑出的 52 完全一致；另外报出 material_font/stem_teaching_font 各 1220 处 run（两角色在该草案里指向同一 style“Handbook Body”，数字理应相同，非重复 bug）",
+      "seconds": 0.6
+    },
+    {
+      "input": "同上：plan --rules teach_mis_blue",
+      "result": "PASS：58 处全部 fixable（run 整体不与【标签】范围重叠），生成 58 条 op，0 条 skipped",
+      "seconds": 0.05
+    },
+    {
+      "input": "同上：apply",
+      "result": "PASS：写出成功，写后自核 ok=true、problems=[]（全书段落数、逐段文字、未点名 run 的 C14N、未点名段落 C14N 全部核对通过）",
+      "seconds": 1.9
+    },
+    {
+      "input": "对 apply 输出跑 batch_health.run_health 并与输入版对比（同一份测试脚本里做的交叉核对，不算独立跑一次体检工具）",
+      "result": "PASS：教学正文误蓝 FAIL 52→0；总 FAIL 202→150，差值正好等于 52（其余门一个不多一个不少）；bh.read_docx 逐段文字前后完全一致；zipfile 逐成员比对只有 word/document.xml 变了",
+      "seconds": 0.5
+    },
+    {
+      "input": "必修三第52批真实副本 + profile bixiu3：audit（只读）",
+      "result": "PASS：教学正文误蓝 0 处，与同一份副本上 bh.check_blue 的 FAIL 数（0）完全一致，口径核对通过。同时如实报出一个此前没人查过的新发现：material_font（题目材料样式）2138 段的 eastAsia 字体是运行级显式覆盖的 Songti SC，与 profiles/bixiu3.json 里 typography.material.ea=\"Kaiti SC\" 不符——已抽样看过 XML（<w:rFonts w:eastAsia=\"Songti SC\"/> 是 run 自己的直接属性，不是继承出错），这是真实、大范围的格式现状，但本工具无法判断是“该配置对必修三本来就不准”还是“真实回退”，只如实审计，未做任何修改，留给主代理确认（见 needs_user_decision）",
+      "seconds": 1.0
+    },
+    {
+      "input": "必修二修订230真实副本（冻结）+ profile bixiu2：audit（只读）",
+      "result": "PASS：可正常跑，教学正文误蓝 5 处，与同一份副本上 bh.check_blue 的 FAIL 数（5）完全一致",
+      "seconds": 1.7
+    },
+    {
+      "input": "必修二修订230：apply 直接指向真实原稿路径（--out 落在系统临时目录，从未实际写入，纯粹核验冻结拒绝逻辑）",
+      "result": "PASS：退出码 3，拒绝写出，未生成任何输出文件；跑测前后核对真实文件 SHA（d33a3f93…）与 mtime 完全一致",
+      "seconds": 0.03
+    },
+    {
+      "input": "哲学 R10 真实文件 + profile_probe 草案配置（philosophy.draft.json）：audit（只读，无正式配置）",
+      "result": "PASS：跑通不崩，列出各类计数——teach_mis_blue 1 段、material_font 239 段、drill_color_misplace 2 处（直接来自 bh.check_drill 的判定）；stem_teaching_font 本次样本里未发现偏差（0 处，不是没跑，是跑了没找到）",
+      "seconds": 0.7
+    },
+    {
+      "input": "负例①：把 plan 里某条 op 的 text 改成与当前稿不符的字符串后 apply",
+      "result": "PASS：中止，退出码 2，报“run 文字与当前稿不符”，未写出任何文件",
+      "seconds": 0.3
+    },
+    {
+      "input": "负例②：把 plan 里某条 op 的 after 改成 {\"text\": \"想改的新文字\"}（试图借格式计划夹带改文字）后 apply",
+      "result": "PASS：中止，退出码 2，报“after 里有不支持的字段（疑似要改文字）”，未写出任何文件",
+      "seconds": 0.3
+    },
+    {
+      "input": "负例③：apply 时 --docx 传已经改过的 fixed.docx、--plan 仍用改前那份计划（父稿 SHA 不符）",
+      "result": "PASS：中止，退出码 2，报“父稿 SHA 不符”，未写出任何文件",
+      "seconds": 0.3
+    },
+    {
+      "input": "全程结束后核对四份真实输入（必修三52批、必修二230、选必二r22、哲学R10）的 SHA256 与 mtime",
+      "result": "PASS：与跑测前完全一致，一个字节都没被脚本本身动过（所有写测试都在副本上做）",
+      "seconds": 0
+    },
+    {
+      "input": "Skill 目录 __pycache__ 有无 style_roles 字节码残留",
+      "result": "PASS：无（脚本头部 sys.dont_write_bytecode = True 生效）",
+      "seconds": 0
+    }
+  ],
+  "test_script": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_style_roles.py（可重跑；原始输出目录 /private/tmp/.../scratchpad/booktools3/style_roles/，测试脚本本身另存了一份到本目录）",
+  "replaces": "过去只能靠人工或 Codex 一次性脚本逐处改格式（必修三第52批曾为“答案落点蓝字过多”全书返修，耗约2.2亿token）；batch_health 只能查出误蓝/字体偏差，没有配套的批量修复工具",
+  "known_limits": [
+    "角色→样式映射有局限：优先用 typography.<role>.styles（本工具建议的新字段，尚未登记进任何 profile），其次用 profile_probe 画像时留的 typography.<role>._style（单一样例样式，可能没覆盖同角色下的其它样式），都没有时用启发式（材料=样式名含“材料”的那个，其余 source 并入 teaching）。人工维护的 bixiu2/bixiu3 profile 都没有 _style 或 styles 字段，走的是启发式兜底——bixiu3 命中了正确的“题目材料”，但这只验证了这一本书，没有覆盖“启发式在某本书上猜错角色”的情况，需要主代理逐本确认。",
+    "字体检查只比对 eastAsia/ascii 字体族与字号（pt），不查加粗/斜体/下划线/西文复杂脚本字号（szCs）等其它格式维度；task 里提到的“加粗”角色审计未实现。",
+    "教学正文误蓝的修复方式统一是给该 run 显式加/改 w:color val=\"auto\"（不判断颜色是 run 直接设置还是从 rStyle/pStyle 继承下来的，一律用 run 级覆盖解决，简单可靠但不是“干净”地删掉误设的颜色）；run 里同时混了标签文字和正文（标签与正文没有被拆成两个 run）的情况本工具的 plan 直接跳过，报 skipped，不做“先拆 run 再改格式”（那已经是改动 run 结构，超出“只改 rPr”的范围）。",
+    "drill_color_misplace（单练红绿错位）明确只做 audit 汇总，不支持 plan/apply——因为“哪个字/哪个题肢错了”是内容判断，不是机械格式修复，选它进 --rules 会直接报错退出，不会静默生成空计划。",
+    "material_font 在必修三第52批上审出 2138 段“题目材料”样式实际是 Songti SC 而非配置的 Kaiti SC——这是本工具跑出的第一个新发现，规模很大，但工具本身判断不了这是“配置对必修三不准”还是“真实需要修的回退”，本回执只如实报告数字，没有擅自下结论或去改这 2138 段（也没在任何真实文件上跑过 apply）。",
+    "字号（pt）修复只改 w:sz；若该 run 的 rPr 里已经有 w:szCs 才顺带同步改掉，没有就不新增 szCs（尽量少动 XML，但意味着西文复杂脚本渲染字号在极少数机型/字体回退场景下可能与东亚字号不一致——本工具未遇到过这种真实样本，是理论限制）。",
+    "run 级颜色/字体继承链（StyleTable）是本工具自己薄封装实现的（batch_health 只做了颜色继承，没做字体/字号），逻辑上镜像了 Word 的 直接rPr>rStyle>pStyle>docDefaults 顺序，但没有对着 Word 本身做过大规模交叉验证，只在上面列的几本真实书上跑通、且与 bh.check_blue 的颜色判定完全对齐（颜色链路复用了同一套判定思路），字体/字号链路的正确性主要靠“确实抓到了必修三那 2138 段真实存在的运行级覆盖”这一事实支撑，不是形式化证明过的。",
+    "没有跑过“必修三第52批/必修二230 material_font/stem_teaching_font 的 apply 修复”端到端测试（花名册里没有类似 mis-blue 那样现成的既有体检数字做交叉验证，且 2138 段規模改动需要主代理先确认要不要改、改成什么，本次不擅自动手）；已跑通的端到端闭环只有选必二 r22 的 teach_mis_blue 一类。"
+  ],
+  "profile_fields_needed": [
+    "typography.material.styles（字符串列表，可选）：显式列出“材料区”角色覆盖哪些样式名，优先级高于 _style 单样例和启发式猜测；建议先给 bixiu3（当前启发式猜出的是“题目材料”，主代理确认无误后可直接把这一个值登记进去）。",
+    "typography.stem_teaching.styles / typography.stem_options_teaching.styles（同上，给“题面/教学区”角色）。",
+    "（如需推广字号维度）typography.material.szCs / typography.stem_teaching.szCs：目前没有独立配置西文复杂脚本字号，如果以后要求 szCs 与 sz 强一致，需要新增这个字段或在 pt 之外再显式给一个 szCs 值。"
+  ],
+  "needs_user_decision": [
+    "必修三第52批“题目材料”样式 2138 段实际是 Songti SC，与 profiles/bixiu3.json 的 typography.material.ea=\"Kaiti SC\" 不符——需要主代理/用户判断：(a) 这是必修三真实的书写规范，profiles/bixiu3.json 的这个值需要改成 Songti SC；还是 (b) 这确实是应该统一改回 Kaiti SC 的大范围回退，需要另开一批用 style_roles.py plan+apply 处理（先在候选目录小范围试跑，主代理确认几十处样本没问题后再全量跑）。本次交付未对此做任何修改。"
+  ]
+}

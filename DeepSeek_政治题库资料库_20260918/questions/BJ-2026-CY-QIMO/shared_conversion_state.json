@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "question_count": 21,
+  "question_hashes": {
+    "BJ-2026-CY-QIMO-Q1": "dfa3ebab1bc45009cc599a979327c9a34e112a840fb564b5d4f0de4df7b48fac",
+    "BJ-2026-CY-QIMO-Q2": "faceaa4704f761552a1380475eadfaa45646e8b4ab49de880ca2bd532d23188b",
+    "BJ-2026-CY-QIMO-Q3": "7ff49eef9018f069f5fbd0b6e0ca969bb5ca8e43bbed452af7e2be6db3af0f6b",
+    "BJ-2026-CY-QIMO-Q4": "201575e31d1e56a01993d183d81a586e1e9fc5e617828c9471af0fee0b97725e",
+    "BJ-2026-CY-QIMO-Q5": "0080324f18bec05cbc2ecf4750303d52f9cb4945cc30fd1db1d718ecdac918d0",
+    "BJ-2026-CY-QIMO-Q6": "edfb953d6c9d631796464c61987deaa5fe359d9ff15859192416bd55128bef78",
+    "BJ-2026-CY-QIMO-Q7": "62d82ee7d64baaa0c61eff79fe045aa4cb0e3291e6117ae2f7db4b76ac55a10b",
+    "BJ-2026-CY-QIMO-Q8": "9bfd1208790a6399dd22cbdc507c21abea7b829f18cc8b7a628f2037922e3769",
+    "BJ-2026-CY-QIMO-Q9": "f171df23a27daf0be4c59d5d64038310c3bc5dc4cebf485ee4531412cc76cfd7",
+    "BJ-2026-CY-QIMO-Q10": "a532b7d28aa6f6cb07bf18fead0f96e91f9805b50b4f17e7ddeb334b05c0337d",
+    "BJ-2026-CY-QIMO-Q11": "a819b84e91594ecaea97c9ad42cbde8e68b45d8a01c83495e523cda1f9646e18",
+    "BJ-2026-CY-QIMO-Q12": "eaa571a972d7a0b6c1d27e2ea0c019f649171c97b4d9616d6b1dff0420f72ef4",
+    "BJ-2026-CY-QIMO-Q13": "2280d702d7b0f11d0b78f16130d547e0aaa0c10ef8630585c0d69ee2e0ebdc88",
+    "BJ-2026-CY-QIMO-Q14": "186350b89ffefd2882fea24f550138aa399a1a612439fc3ce619941b280744e4",
+    "BJ-2026-CY-QIMO-Q15": "9fec4e4c97696e0d965e59cddb699f9e79e8f1462f4f886474c89b77650f3dbf",
+    "BJ-2026-CY-QIMO-Q16": "0d4e4ab1b96577128d53cd2e079142ecb23c615be1706688ea05c4b3051f4fdb",
+    "BJ-2026-CY-QIMO-Q17": "f6836bf37bc92ce1fd7ecb9ea092c865efe4e37da86f7b2dd690bcfb45957124",
+    "BJ-2026-CY-QIMO-Q18": "a5995bea14cc9237e78da6dd98c427a09d4e8776c44b43a9a090f12dc5d26fb4",
+    "BJ-2026-CY-QIMO-Q19": "6210fe0f49b962b153b5fb004c988faf0603b1ebdf80b7267aece4660e09d493",
+    "BJ-2026-CY-QIMO-Q20": "ff5f80d8a6ef52bfe6cc541c75ec14e2980a2dfff8b00c416c4fbb41cca29432",
+    "BJ-2026-CY-QIMO-Q21": "37f7e6ef9a9c1dc19ca79fc45c9e280edb2b8deeb7f275d1130528372a343589"
+  },
+  "source_pages": {
+    "paper": 8,
+    "rubric": 4
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "独立答案键/参考作答未提供；E3保持N/A",
+    "个人学生样卷/批注/实得分未提供；学生层保持N/A"
+  ],
+  "current_path_base": "shared exam directory",
+  "historical_candidate_labels": "题级原候选身份/父SHA及旧self_check仅为形成记录；当前状态以本文件为准",
+  "independent_review_sha256": {
+    "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/controller_ready_r6/independent_r6_verification.json": "82556bf623dc3de024941eb568d84b635b4fc32557e52d06e22ae572e471510a",
+    "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/visual_delta_r7/independent_verification.json": "d606b2c5b4ee86c88860ebfcb6cf6bba471b7c9a6908f0ae78f100494783f5bd"
+  },
+  "primary_visual_coverage": [
+    "paper p1,p2,p6 (this continuation)",
+    "rubric p2,p4 (prior primary review in this task)"
+  ],
+  "accepted": true,
+  "independent_visual_coverage": "paper8/8 and rubric4/4;R2/R3/R4 base+repairs,R6 score/path delta,R7 frame delta"
+}

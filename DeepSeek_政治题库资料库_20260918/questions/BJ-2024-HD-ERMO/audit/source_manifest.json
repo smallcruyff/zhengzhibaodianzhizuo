@@ -1,0 +1,97 @@
+{
+  "schema_version": "accepted-doc-content-delta-source-manifest.v1",
+  "exam_id": "BJ-2024-HD-ERMO",
+  "source_docx": {
+    "source_id": "S13d454fdd813",
+    "role": "原卷 DOCX",
+    "original_path": "/Users/wanglifei/Desktop/2024模拟题/海淀二模/试卷/补充材料/高三二模：政治试题（以PDF为准）(1).docx",
+    "package_path": "source_copies/S13d454fdd813_source.docx",
+    "sha256": "13d454fdd813a0391d5dae21dbec99376ac2068d752173587130d5f266037572",
+    "bytes": 253229
+  },
+  "authority_pdf": {
+    "role": "原卷 PDF 权威层",
+    "original_path": "/Users/wanglifei/Desktop/2024模拟题/海淀二模/试卷/试卷.pdf",
+    "package_path": "authority_pdf/2024-HD-ERMO-试卷.pdf",
+    "sha256": "5355283f436e322953d1c6cb1f07663915a738594d8733a379aaf1109b31385c",
+    "bytes": 513944,
+    "page_count": 8
+  },
+  "shared_parent_files": [
+    {
+      "question_id": "BJ-2024-HD-ERMO-Q11",
+      "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+      "sha256": "6cd279534c4357716a7eb7b9d87c6b94ba577f69adbbe2351dc67968d1fb45e6",
+      "bytes": 3792
+    },
+    {
+      "question_id": "BJ-2024-HD-ERMO-Q18",
+      "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "bytes": 9700
+    },
+    {
+      "question_id": "BJ-2024-HD-ERMO-Q21",
+      "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "bytes": 6569
+    }
+  ],
+  "docx_page_evidence": [
+    {
+      "page": 4,
+      "package_path": "assets/docx_pages/page-004.png",
+      "sha256": "2d742a53b6c0e7bcab740842740d54b16fa7ef569c2e4e9e32f9d31d0678d95c",
+      "question_ids": [11],
+      "visual_status": "PASS_readable"
+    },
+    {
+      "page": 7,
+      "package_path": "assets/docx_pages/page-007.png",
+      "sha256": "a825f7d1517b0caf4e562ed397c6539febdd01916d2a2379c2277744e49dec90",
+      "question_ids": [18],
+      "visual_status": "PASS_readable"
+    },
+    {
+      "page": 8,
+      "package_path": "assets/docx_pages/page-008.png",
+      "sha256": "b1a7906ff7a641deaa1b9f23ba14334b51c1dd2e8e677f842ce2b942832114b5",
+      "question_ids": [18],
+      "visual_status": "PASS_readable"
+    },
+    {
+      "page": 9,
+      "package_path": "assets/docx_pages/page-009.png",
+      "sha256": "ae10def8d49751fdd3564470ce65c32e0d0938861f44906bd4f14047c28a1de7",
+      "question_ids": [21],
+      "visual_status": "PASS_readable"
+    }
+  ],
+  "pdf_page_evidence": [
+    {
+      "page": 3,
+      "package_path": "assets/pdf_pages/p003.png",
+      "sha256": "ac320af74e9cf7301f6437f46ced1cc287772bf739d8d338c25418080942e540",
+      "question_ids": [11]
+    },
+    {
+      "page": 6,
+      "package_path": "assets/pdf_pages/p006.png",
+      "sha256": "d9b0de99cd9bbfc3e52050e7c5068b2bd5bee0dffdaf0cdfbe102afdf02e8ba1",
+      "question_ids": [18]
+    },
+    {
+      "page": 8,
+      "package_path": "assets/pdf_pages/p008.png",
+      "sha256": "e6d5f0eca564b609d8d2e7ab50467028e14e13e8be7de43d677cb2e7a4c48aca",
+      "question_ids": [21]
+    }
+  ],
+  "scope_guard": {
+    "source_docx_modified": false,
+    "question_bank_modified": false,
+    "conversion_manifest_modified": false,
+    "old_receipts_modified": false,
+    "write_root": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_content_delta_20260922/BJ-2024-HD-ERMO"
+  }
+}

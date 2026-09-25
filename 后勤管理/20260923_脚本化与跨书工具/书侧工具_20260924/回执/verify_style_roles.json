@@ -1,0 +1,81 @@
+{
+  "tool": "style_roles",
+  "reviewer": "Claude Opus 5.5（对抗性审查，独立于编写者）",
+  "date": "2026-09-24",
+  "verdict": "FAIL",
+  "summary": "teach_mis_blue（教学正文误蓝）这条链是可靠的：在七本书上与 bh.check_blue 逐段一致，并在非必修三的选必二、哲学上亲自跑通 audit→plan→apply→health；写保护、文字不变、冻结册拒写、父稿 SHA 核对都过了。但 material_font 和 stem_teaching_font 两条字体规则，在已经送印的必修二230、必修三52批上几乎全是误报：必修二230 的 575 处中，可核实的全部是按版式协议本来就该那样排的格式（选择题题干用宋体、主观题材料用楷体、考法说明用楷体12pt）。必修三52批报出的 2138 段里，至少 1221 段是选择题题干，用宋体是版式协议规定的；另有735段主观题材料样式的宋体行，抽到的样本是设问，工具也全部判成错。照它的计划 apply 会把正确格式改坏。回执把这 2138 段当作“新发现”，还给出“统一改回楷体”的选项，会误导主代理。另外，写后体检只比较 FAIL 总数，新增的误蓝会被抵消掉；themeColor 在运行级的蓝字修完仍显示蓝色，工具却判为已修好。",
+  "issues": [
+    {
+      "severity": "blocker",
+      "desc": "material_font / stem_teaching_font 只按样式名判定角色，不区分选择题/主观题、材料/设问、考法说明。在已定稿的书上产生大面积误报，并把它们标为 fixable；照计划 apply 会把符合版式协议的格式改坏。",
+      "evidence": "按题型拆 audit 结果（verify_sr 内联脚本）：b2_230 的 题目材料 字体 = [('choice','source','Songti SC'):210, ('subjective','source','Kaiti SC'):63]，工具报的 material_font 210 处正好就是选择题那 210 个 run；样本第826段「12．一位从未写过代码的开发者…」 before={'ea':'Songti SC'} after={'ea':'Kaiti SC'}。references/style-spec.md:136「完整选择题的题干…统一宋体…主观题材料保留Kaiti SC」。b2_230 另有 stem_teaching_font 64 处 {'ea':'Kaiti SC','pt':12.0}→Songti 10.5，对应 style-spec.md:45「“具体考法”标题楷体14pt、下方说明楷体12pt」。b3_52：material_font 2233 run 全是 Songti→Kaiti，其中 ('choice','source','Songti SC') 1221 个；plan 抽样第82段「）结合材料一，运用《」是设问，按协议本来就该用宋体。第67段「【题目】」标签也被列入。在副本上 plan --rules material_font 得到 {\"ops\": 2233, \"skipped\": 0}，apply 抽 3 条 exit=0，工具没有任何拦截。",
+      "fix": "字体规则至少按 bh.walk 给出的 ex.kind（choice/subjective/topic）和 zone 细分角色；角色→样式映射改为配置里显式给的角色表（含题型条件），没有显式表时这两类只做 CANDIDATE 审计、禁止 plan。回执的 needs_user_decision 撤回“统一改回 Kaiti SC”的选项，改为说明这 2138 段大部分符合 style-spec.md:136。"
+    },
+    {
+      "severity": "major",
+      "desc": "用于后面几本书时，字体角色完全依赖 profile_probe 草案里单一的 _style 样本，还经常把角色映射错；字体检查也不按 zone 过滤，教学、细则段落会被当成“材料”来改。",
+      "evidence": "逐本 _material_stem_roles 输出：思维 material→['题目设问']（设问被当成材料）；哲学 material→['Normal']，stem→['分析过程']；文化 stem→['答案落点']；选必二 material 和 stem 都→['Handbook Body']。选必二 audit：material_font 1220 run、stem_teaching_font 1220 run，是同一批 run 被两条规则各报一次；按 zone 拆，Handbook Body 里 ('rubric',9.5pt)=682、('teaching',9.5pt)=484，全部要求改成 10.5，细则说明的小字号也会被放大。哲学 material_font 里 196 个是 {'ea':'楷体'}→Source Han Sans SC，也就是真正的材料楷体要被改成黑体。回执说这 1220 处“理应相同，非重复 bug”，没有指出草案配置本身不可信。",
+      "fix": "没有人工确认的 typography.<role>.styles（带 zone 或题型条件）时，字体类只出计数、不给 fixable；同一 run 被两个角色要求不同格式时报冲突；known_limits 写明“草案配置下字体审计不可用于修复”。"
+    },
+    {
+      "severity": "major",
+      "desc": "apply --health 只比较 FAIL 总数，不按门比较；计划里的 after 值也不做任何约束（可以把正文改成蓝色或红色），所以写后新增的教学正文误蓝会被别处的下降抵消，返回 exit 0，报告里没有任何提示。另外体检默认不跑（要加 --health），而规格要求对输出跑 batch_health。",
+      "evidence": "构造 mask.plan.json：一条修好第78段的误蓝，另一条把干净的教学段第2703段（「原告：甲公司。被告：乙公司…」）的正文 run 设为 {'color':'1F4E79'}。apply … --health 的结果：exit=0，health={'before_fail': 202, 'after_fail': 202}，新增的误蓝没有被报告。n_red.json（after={'color':'FF0000'}）和 n_inj.json（after={'color':'auto\"/><w:t>x'}，非法颜色值）都 exit=0 写出，工具没有校验颜色格式。",
+      "fix": "health 按 (check, rule) 逐门比较，被修类别必须下降，其他门任何新增都中止、删除输出、exit 1；--health 改为默认开启；after 值做白名单校验（color 只能是 auto 或 6 位十六进制，并且对 teach_mis_blue 只允许 auto 或配置里的正文色；ea/ascii 只能是配置里给出的字体；pt 只能是配置里给出的字号）；同时核对 op.before 与当前格式一致。"
+    },
+    {
+      "severity": "major",
+      "desc": "颜色和字体只读 w:val 与 w:eastAsia/w:ascii，忽略 w:themeColor 以及 eastAsiaTheme/asciiTheme。run 上带 themeColor 的蓝字，修复后变成 val=auto 但 themeColor 还在，Word 渲染时 themeColor 优先，仍然显示蓝色；bh 和本工具却判为已修好。",
+      "evidence": "attack xa：给第78段 run2 设 <w:color w:val=\"1F4E79\" w:themeColor=\"accent1\"/>。audit 识别出来并判 fixable，apply 之后这个 run 的颜色属性是 {'val': 'auto', 'themeColor': 'accent1'}，postcheck ok，health 显示误蓝减少。七本书的 styles.xml 里都有大量 themeColor 与 eastAsiaTheme（例如必修三 majorEastAsia 35 处），目前正文 run 里还没有，但在 Word 里从主题色板选蓝就会写出 themeColor。",
+      "fix": "设置颜色时同时删除 themeColor/themeTint/themeShade，设置字体时删除对应的 *Theme 属性；StyleTable 解析时遇到 theme 属性，把结果标为 unknown/CANDIDATE，不要当作确定值。"
+    },
+    {
+      "severity": "major",
+      "desc": "误蓝修复一律写死 color=auto（纯黑），不用该书的正文色，也不区分蓝色是 run 自己的直接格式还是段落样式的设计色。结果是修好的字和同段相邻正文颜色不一致；样式本身设计为蓝色的段落（例如哲学的错肢分组标题）也会被改成黑色。",
+      "evidence": "xa.out.docx 第78段：相邻 run 是 val=333333，修复后的 run 是 val=auto。选必二草案的 typography.stem_teaching.color=222222，也没有被用上。哲学的唯一一条计划是 teach_mis_blue#10785#0，样式为「错肢分组」，文字「跨模块逻辑题中的哲学概念陷阱」，蓝色来自样式；全书 18 个错肢分组段中 17 个是 1F4E79，只有这一段落在 teaching 区。apply 会把它改成黑色，但它是分组标题而不是正文误蓝（bh 也同样报 FAIL，属于草案配置/zone 的问题，但工具标成了 fixable）。",
+      "fix": "目标色取段落样式链里的非蓝色，或配置的正文色（typography.*.color / 同段非蓝 run 的众数）；蓝色只来自 pStyle 而 run 没有直接格式的，一律标为 CANDIDATE、不可机械修复。"
+    },
+    {
+      "severity": "major",
+      "desc": "规格要求的“加粗”角色没有实现，字体检查也不看 b/bCs；回执已承认这一点，但工具的文件头仍写“只改 run 的字体、颜色、加粗等格式”。",
+      "evidence": "ALLOWED_AFTER_FIELDS = {'color','ea','ascii','pt'}；neg_bold.json（after 含 'bold'）被拒并报“after 里有不支持的字段（疑似要改文字）”，把改加粗说成“疑似改文字”，会误导使用者。",
+      "fix": "实现 bold（w:b/w:bCs）的审计和修复，或者把文件头和提示改成“暂不支持加粗”，并把拒绝原因改为“不支持的格式字段”。"
+    },
+    {
+      "severity": "minor",
+      "desc": "plan 的 --docx 参数是必填但完全没有用到（没有核对 audit 对应的 SHA）；plan 为空时返回 exit 1，与文件头“plan：生成的计划为空 → 0”自相矛盾。",
+      "evidence": "cmd_plan 里没有读取 args.docx；对 b2_230 用 plan --rules teach_mis_blue 输出 {\"ops\": 0, \"skipped\": 5}，exit=1。",
+      "fix": "plan 核对 --docx 的 SHA 等于 audit.inputs.docx_sha256；把退出码与文件头统一。"
+    },
+    {
+      "severity": "minor",
+      "desc": "报告输出允许覆盖任何一份“本工具生成的”JSON：plan --out 指向另一份 audit 报告时，会被静默覆盖成 plan。",
+      "evidence": "cp xa.audit.json other.audit.json; plan … --out other.audit.json → exit=0，之后 other.audit.json 的 mode 变成 'plan'。",
+      "fix": "只有 mode 相同、inputs.docx_sha256 也相同时才允许覆盖，否则拒绝（exit 3）。"
+    },
+    {
+      "severity": "minor",
+      "desc": "drill_color_misplace 靠规则名里有没有“红/绿/颜色/纠正”来筛选：会把“缺红色错处/缺绿色纠正”这类缺失问题也归为“错位”，同时漏掉“A2 表内正误不齐”。",
+      "evidence": "哲学 audit 的 drill_color_misplace 两条，bh_rule 都是 'A2 错误行缺红色错处'（FAIL，第14861、14863段）；batch_health.py:1023 的 'A2 表内正误不齐' 不会被收入。",
+      "fix": "按 bh 规则名写显式白名单，报告里保留 bh_rule 原名，类别名改为 drill_color（不暗示“错位”）。"
+    }
+  ],
+  "checked": [
+    "重跑 run_tests_style_roles.py（TMPDIR=scratchpad/booktools3/verify_sr）：13/13 PASS，与回执一致",
+    "七本书（哲学、文化、选必一、选必二、思维、推理、必修三52批）在同一 docx+同一配置上比较 audit_mis_blue 与 bh.check_blue 的“教学正文误蓝”段号集合，全部一致（1/0/0/52/0/0/0）",
+    "非必修三全流程①：选必二 r22 副本：audit→plan(58 ops)→apply→health 202→150，postcheck ok；加入攻击用例后 202→151（剩 1 处是混合标签 run，已正确 skipped）",
+    "非必修三全流程②：哲学 R10 副本+草案：audit→plan(1 op)→apply --health 35→34，postcheck ok；但这唯一一条是错肢分组标题，属误报（见 issues）",
+    "攻击：跨 run/混合标签（第91段，把标签和正文合进同一个 run 并设为蓝色）→ fixable=False、skipped，标签颜色未动 —— 通过",
+    "攻击：同段多处命中（第105段 3 个蓝 run，包括 0070C0）→ 3 条都修好，未点名 run 不变 —— 通过",
+    "攻击：run 级 themeColor → 修复后 Word 仍显示蓝色，工具判为已修好 —— 不通过",
+    "攻击：表格单元格 —— 选必二和必修三的表格段都不在 teaching/rubric 区，无误蓝样本；必修三的 material_font 计划里也没有表格内的 op（表格里的材料段本来就是楷体）。同段多 op（第82段 run2/run4）apply 后 postcheck ok",
+    "攻击：计划重复指名同一 run → exit 2，无输出；pt='abc' → exit 2，无输出；after 含 bold → exit 2；after 填任意颜色（FF0000）或非法颜色值 → exit 0 写出（不通过）",
+    "攻击：一处修好、另一处新增误蓝 → health 202→202，exit 0，没有报出（不通过）",
+    "路径守卫：--out 指向项目根或 Skill 目录、--report 指向 Skill 目录、audit/plan 报告写进项目 → 都是 exit 3，没有留下文件；out==docx、输出已存在、plan 输出等于输入 → exit 3",
+    "冻结册：真实 230 路径 + 草案 profile → exit 3；230 副本不带 --profile → 按 plan 的 book_id 加载 bixiu2 → exit 3；230 副本 + frozen=false 的草案配置 → 可以写（规格第5条允许的测试做法）",
+    "必修三52批 audit 只读：误蓝 0，与 bh 一致；material_font 2233 run/2138 段按题型拆开核查，至少 1221 个是选择题（按 style-spec.md:136 应为宋体）",
+    "必修二230 audit 只读：误蓝 5 处都不可修（混合 run），plan 的 ops 为 0；字体 575 处中，可核实的都是符合协议的设计格式",
+    "测试前后 8 本真实书稿的 SHA256 前 16 位与 mtime 完全一致；Skill 目录 __pycache__ 无新增；项目根与 Skill 目录无 zz_* 残留；未改任何工具或配置代码；未运行 collab.py",
+    "所有测试产物在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools3/verify_sr/"
+  ]
+}

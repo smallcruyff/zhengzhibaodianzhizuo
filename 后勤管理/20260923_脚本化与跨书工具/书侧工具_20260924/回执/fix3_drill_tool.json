@@ -1,0 +1,84 @@
+{
+  "summary": "第二轮返修（对应 r3verify_drill_tool.json 的 7 条 major + 2 条 minor）：写后单练门的\"新增 FAIL\"基线改用内容 key；error_runs 排序后核对重叠并 Abort(2)，另加写后逐字核对重建行题干；A1 是否\"未改动\"改成直接核对 A1 那一行现在的真实内容（题干、空括号、题源、无红绿），漂移一律走模板重建、不再被放行；只是因为插入/删除条目而需要重新编号、内容本身没变的行，改成\"原样复制原 tr、只替换开头序号文字\"，不再被误伤重建（无制表符行不再被套制表符，题干与纠正同段的模板不再一律 Abort(2)）；--admission 拆成 decision/execution 两种用法，execution 改用题干哈希这种稳定 id，不再用位置性的 group:no；paragraph/card 版式 build 的拒绝信息改为明说\"功能未实现\"并列出所需配置字段；--report 的覆盖判定改成只认\"tool.name+mode 都匹配\"的报告文件，不再允许覆盖任何 schema=baodian_drill_items_v1 的 items.json；顺带把 guard_json 里的 GuardError 统一成退出码 3（minor）。只改了 drill_tool.py 一个文件，未改 batch_health.py/docx_lib.py/profile_lib.py/profiles/、未运行 collab.py、未启子代理。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py"
+  ],
+  "tests": [
+    {
+      "input": "复跑审查者 attack.py（cases A-J，全部 38 例，含 B3_52/B2_230 真实往返、B2_230 新增题肢重编号、error_runs 偏移与重叠、非条目行、A1/A2 不等长、写后单练门、--report 守卫共 14 项、--admission、paragraph/card build 拒绝、A1 派生）",
+      "result": "DONE 0 bugs of 38",
+      "seconds": "~150"
+    },
+    {
+      "input": "复跑审查者 extra.py（F4：父稿已有'A2 错误行缺绿色纠正' FAIL，再新增一条同规则坏条目；F5 对照组）",
+      "result": "F4 exit 1 out_exists False；F5 exit 1 out_exists False（均正确拦下，未再被基线掩盖）",
+      "seconds": "~15"
+    },
+    {
+      "input": "复跑审查者 b2ins.py / b2ins2.py（B2_230：定位无制表符原行与题干/纠正同段模板组、末组追加、无制表符行前插入）",
+      "result": "无制表符原行插入后 orig/new 去掉序号后逐字相同，未被套上制表符；末组追加 ok/err 均 exit 0",
+      "seconds": "~40"
+    },
+    {
+      "input": "在 B2_230 第 869 组（题干与纠正同段的模板行）前插入 1 条新错误条目后 build",
+      "result": "exit 0（此前 Abort(2)：'该 tc 只有 1 个 w:p'），生成结果单段内题干+红字错处+绿字纠正结构正确",
+      "seconds": "6.3"
+    },
+    {
+      "input": "check --admission-mode execution：在按决策删除后的候选稿上核对（H4 场景）",
+      "result": "status=pass，still_excluded=0，missing_retained=0；同一决策在未执行的父稿上跑：status=fail，still_excluded=2/3（视用例）",
+      "seconds": "~2"
+    },
+    {
+      "input": "本次编写者测试 run_tests_drill_tool.py（含新增 8 条 r3 回归：新增-FAIL 基线、error_runs 重叠、A1 派生、无制表符续编号、同段模板、admission 两种模式、paragraph/card 拒绝文案、--report 不许覆盖 items.json）在 scratchpad 先跑通，再复制到测试目录",
+      "result": "全部用例：PASS；4 个真实输入 SHA/mtime 测试前后一致",
+      "seconds": "~130"
+    },
+    {
+      "input": "语法检查 + drill_tool.py --help / check --help；py_compile 后核对 Skill scripts/__pycache__ 无新增文件",
+      "result": "OK；__pycache__ 仍只有 3 个旧 cpython-312（book_incremental/check_drill_admission/source_intake），无 drill_tool 条目",
+      "seconds": "<1"
+    },
+    {
+      "input": "精简注释把 drill_tool.py 压到规格要求的 ≤1200 行后，复跑 attack.py 全部 38 例 + run_tests_drill_tool.py 做最终确认",
+      "result": "attack.py：DONE 0 bugs of 38；run_tests_drill_tool.py：全部用例 PASS；drill_tool.py 恰好 1200 行；4 个真实输入与 batch_health/docx_lib/profile_lib/check_drill_admission 4 个未改脚本 SHA 前后一致",
+      "seconds": "~150"
+    }
+  ],
+  "known_limits": [
+    "paragraph（哲学）与 card（选必二）的 build 往返仍未实现——本轮按主代理返修任务范围明确延后，只把拒绝信息改成了'功能未实现，需要以下配置字段'（paragraph: item_styles/correction_styles/group_label_regex 或 group_style/paragraph_verdict_regex；card 沿用 extract 已有的 _CARD_NEEDED_FIELDS）。",
+    "--admission-mode execution 的稳定 id 用的是 bh.norm(stem) 的 sha1 前 16 位；如果书里出现两条题干完全相同（norm 后一致）的条目，无法用这个 id 唯一区分，会报'候选稿里有条目题干哈希重复'FAIL 并要求人工复核，不做进一步猜测。",
+    "renumber-only 路径（内容不变、只改序号）要求原行题干单元格的某个 w:r 就以旧序号原文起始；如果某一行的序号被拆进多个 run（未见过这种情况，但理论上可能），_renumber_row 找不到就 Abort(2)（不改用模板重建，直接中止本次 build），不会猜测拼接位置。",
+    "drill_tool_verify.py（上一轮审查者遗留的辅助脚本）仍在 Skill 母版 scripts/ 下，本轮工作纪律要求'只改 drill_tool.py 本身'，未移动它；仍需主代理在下次 collab sync 前把它挪到 测试/审查者辅助脚本/，否则会被当成 Skill 脚本一起发布（沿用上一轮回执里的提醒，本轮未处理，见 issues_deferred）。"
+  ],
+  "issues_resolved": [
+    {"desc": "写后单练门'新增 FAIL'基线键是 (rule, f.get('text'))，但 Findings 记的字段叫 excerpt 不叫 text，实际退化成 (rule, None)，父稿有同规则旧 FAIL 就放行新造的同规则 FAIL",
+     "how": "改成 _fail_content_key()：(rule, 去掉序号前缀并 bh.norm 过的 excerpt)，只有内容真的相同才算'父稿原有'",
+     "test": "extra.py F4/F5 复跑均 exit 1；run_tests_drill_tool.py r3-1"},
+    {"desc": "error_runs 只核对 stem[start:end]==text，不检查片段是否重叠，重叠部分会被写两遍",
+     "how": "_resolve_error_run_offsets 排序后逐对核对 s_i>=e_{i-1}，有重叠 Abort(2)；另加 _verify_built_stem 写后核对重建行 A2 题干原文必须等于 no+stem（+同段纠正）",
+     "test": "attack.py C4；run_tests_drill_tool.py r3-2"},
+    {"desc": "A1 是否'未改动'拿配对后的 A2 记录跟自己比，从不核对 A1 行本身，A1 漂移（题干、判断栏被填、题源不同）原样保留且 exit 0",
+     "how": "新增 _a1_matches_rec()：直接读 A1 那一行现在的真实内容（题干、空括号、题源、无红绿），核对通不过就归入'内容变了'，走模板重建由 A2 派生",
+     "test": "attack.py J；run_tests_drill_tool.py r3-3"},
+    {"desc": "新增题肢后所有被重编号的条目一律用模板重建：无制表符行被套上制表符；题干与纠正同段的模板一律 Abort(2)；rPr 会多出差异",
+     "how": "拆成三态：内容与父稿位置完全一致→原样复制；只是序号变了（内容不变）→原样复制原 tr 只替换开头序号文字（_renumber_row）；内容真的新增/改了→才走模板重建。_rebuild_stem_cell 同时支持题干与纠正同段的模板（直接接在同一段后面）",
+     "test": "attack.py B（rows_differ_beyond_number=0）；b2ins.py/b2ins2.py；869 组插入手测；run_tests_drill_tool.py r3-4a/r3-4b"},
+    {"desc": "--admission 在决策含 exclude 时永远不能 PASS（父稿上报'仍在书内'，执行后 id 对不上或 sha 不符），且报告里 status=pass 与 FAIL 同时出现",
+     "how": "拆成 --admission-mode decision（默认，核决策文件本身完整/格式对，在父稿上跑，exclude 仍在书内不算 FAIL）和 execution（核决策有没有被正确执行，在候选稿上跑，用题干内容哈希这种稳定 id，不再用位置性 group:no）",
+     "test": "attack.py H；run_tests_drill_tool.py r3-5（H4 场景两种模式各验证一次）"},
+    {"desc": "paragraph/card 版式 build 只提示'只支持 table3'，不说明缺什么配置",
+     "how": "拒绝信息改为'功能未实现，不是配置缺失'并列出对应版式所需的配置字段",
+     "test": "attack.py I；run_tests_drill_tool.py r3-6"},
+    {"desc": "--report 可以悄悄覆盖已存在的 items.json（_is_own_json 把 schema 匹配的 items.json 也当本工具报告）",
+     "how": "guard_json 新增 purpose 参数：purpose='report' 只认 tool.name+mode 都匹配的报告文件，items.json（没有顶层 mode 字段）永远判定为'不是这次报告'，不允许覆盖；extract --out 仍按 schema 判定（它本来就该覆盖旧 items.json）",
+     "test": "attack.py G（'check --report 指向已存在的 items.json'一项）；run_tests_drill_tool.py r3-7"},
+    {"desc": "minor：guard_json 对 GuardError 按消息文字分流成 2 或 3，退出码不一致（规格要求守卫拒绝一律 3）",
+     "how": "guard_json 里 dl.GuardError 一律 Abort(3)，不再猜测消息文字",
+     "test": "attack.py G（同路径/已存在等用例全部 exit 3）；run_tests_drill_tool.py 更新回归 7 的期望退出码为 3"}
+  ],
+  "issues_deferred": [
+    {"desc": "paragraph（哲学）与 card（选必二）版式的 build 往返仍未实现", "why": "工程量（按段落序列拼接模板 / 题卡级识别）超出本轮返修范围，上一轮已列入 needs_user_decision，本轮只把拒绝信息改清楚，由主代理裁定是否移出本轮验收"},
+    {"desc": "drill_tool_verify.py 仍留在 Skill 母版 scripts/ 下", "why": "工作纪律要求本轮只改 drill_tool.py 本身，不碰 Skill scripts/ 下其他文件；需要主代理在下次 collab sync 前把它移到 测试/审查者辅助脚本/"}
+  ]
+}

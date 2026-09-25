@@ -1,0 +1,92 @@
+{
+ "tool": {"name": "drill_tool", "cmd": "fix", "version": "1.1.0"},
+ "summary": "按 verify_drill_tool.json 逐条返修 drill_tool.py：guard_json 改用 docx_lib.guard_write(kind='.json') 的口径（受保护根/冻结册与其他写工具一致）；build 改成逐行判断'与父稿这个位置内容是否完全一致'，未改动的记录原样复制原 tr（不再一律拿全书第一行当模板），round-trip 在 B3_52、B2_230 两个金标准上都做到逐段文字+run颜色+pPr 的 C14N 严格零差异；items.json 的 stem/correction/source 改成取原文（不经 bh.norm）；error_runs 改成带字符偏移，build 按偏移上色；build 遇到非条目行/A1A2条数不一致/verdict=正确带correction 一律中止，不再悄悄丢数据；extract/build 的 --report 与主输出的守卫都提到写出之前，失败即回滚；check 补齐序号连续、A1/A2 题干全文一致、分组标签格式三项检查；--admission 补 input_sha256 核对与'排除条目仍在书内'的逐条 FAIL；card 版式认不出条目时退出 2 并列出所需配置字段；新增 --allow-rebase 与写后体检'只拦新增 FAIL、退出码 1'。",
+ "files": {
+  "changed": ["/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py"],
+  "unchanged_confirmed": [
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/batch_health.py",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/docx_lib.py",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profile_lib.py",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/check_drill_admission.py",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/bixiu2.json",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/bixiu3.json",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/_house.json",
+   "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py（独立审查者脚本，未改动，本轮只重跑）"
+  ],
+  "test_script_updated": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_drill_tool.py（在原有用例基础上加了返修回归用例段，并把 HERE 从'脚本自身目录'改成系统临时目录——guard_json 修好后，脚本自身所在的项目目录已经是受保护目录，不能再当测试输出目录用，这是本次修复的直接副作用，按正确行为处理，不是新 bug）"
+ },
+ "usage": "/usr/bin/python3 run_tests_drill_tool.py（从其真实位置直接跑，无需再指定 --out；旧版假设“脚本在哪测试输出就能写在哪”，返修后不成立，已改用系统临时目录）",
+ "tests": {
+  "own_suite": {"path": "同上", "exit": 0, "result": "全部用例 PASS（含原有用例与本轮新增的返修回归用例），真实输入 SHA/mtime 测试前后逐一相同"},
+  "independent_verifier_rerun": {
+   "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py（回执作者留下的对抗性复核脚本，未改动，只重跑）",
+   "command": "/usr/bin/python3 -B drill_tool_verify.py --out <临时目录>/cases",
+   "result": "30 例中 29 例按预期；1 例（'A1A2题干第20字后不一致'负例）该脚本的正则只匹配旧 bh 的规则名'同序号条目不一致'——本次修复新增了一条名字不同、含义更准确的规则'A1/A2 题干逐字不一致（第 20 字之后有差异）'，exit=1 且确有该发现，缺陷本身已修好，只是命中的正则字符串没跟着老名字走，不算残留问题（见 issues_resolved 第 8 条说明）"
+  }
+ },
+ "issues_resolved": [
+  {"desc": "[blocker①] guard_json 只拦冻结册目录，不拦受保护根，可在审阅入口/协作/工作区根/GaokaoPolitics/Skill scripts/项目根新建 json",
+   "how": "guard_json 改成调用 dl.guard_write(out, pd副本(frozen强制False), inputs, kind='.json', overwrite=_is_own_json(out))；传 profile 副本（不是 None）是关键——这样 profiles/_house.json 里合并进每份 profile 的 output_guard.protected_roots（~/GaokaoPolitics、~/.codex/skills、~/.claude/skills、~/Desktop）才会被读到，跟 docx_lib 其它写工具的口径完全一致；只强制 frozen=False 这一点跳过 guard_write 对'这本书冻结就整体拒绝任何输出'的判断，冻结册的目录仍由 guard_write 内部按位置判断的 _frozen_hits() 单独挡住。",
+   "test": "回归用例：guard_json 对 00_必修三最新审查稿/、协作/、工作区根、GaokaoPolitics 续作目录、Skill scripts/、项目根 全部返回 refused(3)；对 协作/候选/<谁>/<批次>/构建/ 与系统临时目录放行；drill_tool_verify.py 重跑同一组位置全部一致"},
+  {"desc": "[blocker②] B2_230 金标准 extract→build 往返：单练区文字和格式实际被改了（build 用全书第一条模板套所有行，序号统一写成 N、+制表符），回执当时比对的是 norm 后聚合字段，看不出差异",
+   "how": "build 改成逐行判断：把 group/no/stem/verdict/error_runs/correction/source 与父稿这个 (table,row) 位置现在的真实内容整体比较，完全一致就直接 deepcopy 父稿的原始 <w:tr>，不经任何模板/run 重建；只有新增或确实改过的记录才用模板生成，模板取本组内第一条同 verdict 的原始行（找不到才退回全书兜底模板），模板的序号分隔符与 w:pPr（行距等）都随模板行本身，不再固定套全书第一行的格式。",
+   "test": "新增严格往返核对（逐段原文 dl.para_text 全等 + run 颜色序列全等 + w:pPr 的 C14N 全等，不用 bh.norm）：B3_52（19861 段）与 B2_230（23035 段）往返后 text_diff=color_diff=ppr_diff=0；drill_tool_verify.py 的 rt_detail/fmt_detail 等价复核同样 0 差异"},
+  {"desc": "[major③] items.json 的 stem/correction/source 经 bh.norm 删掉全部空白，build 写回的是删过空白的文本",
+   "how": "extract 改成直接从单元格原文（run 拼接）取值，只用 item_regex 去掉序号前缀，不再调用 bh.norm；bh.norm 只用在 check 的比较逻辑里。",
+   "test": "B3_52 往返逐段原文比较 text_diff=0（含半角空格的题肢，如'分析研究 2025 年经济工作'，往返后空格原样保留）；drill_tool_verify.py 的'B3_52 往返单练区逐段文字'用例 n=0"},
+  {"desc": "[major④] error_runs 只存子串，build 用 find() 找第一次出现处上红色，重复片段时位置会错，退出码仍是 0",
+   "how": "extract 改成为每个红色片段记录相对 stem 的字符偏移 {text,start,end}（按 run 在单元格内的绝对位置切分，再换算到题干区间内）；build 的 _stem_specs 直接按偏移切割上色，不再猜测；仍支持只给字符串的旧式写法作兜底，但要求该子串在 stem 里恰好出现一次，出现 0 次或多次都 Abort(2)，不再'找第一次出现处'。",
+   "test": "drill_tool_verify.py 的'重复片段的红色位置'用例：往返前后完全一致（same=True）；新增单元断言 error_runs 的 start/end 与 stem 切片一致"},
+  {"desc": "[major⑤] build 整表删掉重建 tr，表头/组内小标题等非条目行会被悄悄删掉，退出码 0",
+   "how": "新增 _non_item_rows_table3()（复用 item_regex/columns 配置薄封装），extract 把结果落进 items.json 的 non_item_row_details；build 在改表格之前先用同一函数检查涉及的 A1/A2 表格，只要有非条目行就 Abort(2) 并列出具体表格/行号，不再替换整表。",
+   "test": "回归用例：在 A2 表 328 插入一行伪表头，extract 报 non_item_rows=1 且列出该行，build 对该父稿一律 Abort(2)、不留输出；drill_tool_verify.py 的'A2 表内表头行'用例 build_exit=2"},
+  {"desc": "[major⑥] extract 用 zip(A1,A2) 静默截断条数不同的情况，退出码 0，喂给 build 会丢多出的 A2 条目",
+   "how": "extract 改用 itertools.zip_longest，records 一律按 A2 全量输出（缺的 A1 侧填 null），payload 里 a1_a2_count_mismatch=true 且退出码改为 1；build 看到 a1_a2_count_mismatch=true 直接 Abort(2) 拒绝使用。",
+   "test": "回归用例：删掉 A1 最后一行后 extract exit=1、records 仍是 676 条且最后一条 a1=null；build 对该 items Abort(2)；drill_tool_verify.py 的'A1 缺一行时'用例一致"},
+  {"desc": "[major⑦] 出错时留下半成品：build 先写 docx 再检查 --report，extract 先写 items.json 再检查 --report，违反'任何一条校验失败就不留输出'",
+   "how": "extract/build 都改成在写任何主输出之前，先对 --report 也过一遍 guard_json；报告路径本身不合规（后缀错/目标已存在且非本工具产物）时主输出根本不会开始写；写报告这一步万一之后失败，也会回滚已写出的主输出（unlink）。",
+   "test": "回归用例：--report 指向已存在的非本工具 json 时 build 不留 .docx（exit=2）；--report 后缀不是 .json 时 extract 不留 items.json（exit=2）；drill_tool_verify.py 对应两个用例一致（docx_left/items_left 均为 False）"},
+  {"desc": "[major⑧] check 缺序号连续、A1/A2 题干逐字一致（bh 只比前 20 字）、分组标签格式三项，也没有对应负例",
+   "how": "新增 _check_seq_and_stems()（序号必须是 1..N 连续；用 bh.norm 后的完整题干做全文比较，不只前 20 字）与 _check_group_labels()（仅在 drill.group_label_regex 配置存在时生效，检查分组标签样式段落是否匹配）。",
+   "test": "单元测试直接调用两个函数验证跳号/第20字后不一致都能命中；drill_tool_verify.py 8 个负例里，除'第20字后不一致'因规则改名沿用旧正则命中不上外（缺陷本身已修，exit=1 且确有新规则命中），其余全部一致"},
+  {"desc": "[major⑨] --admission 语义不完整：exclude 条目仍在书里时不报任何发现；不核对 input_sha256；candidate 的 id/text 与真实准入文件口径不符（text 带制表符和纠正）",
+   "how": "candidate 的 text 改成'no、纯stem'（cda.verify 内部会把序号前缀剥掉，剩下的就是纯题干，不再带制表符/纠正）；decisions.input_sha256 存在时与 --docx 的 sha256 比对不符直接 FAIL（因为 drill_tool 现抽候选、不落候选文件，这里按'决策是针对哪一版书稿做的'解释，如与准入台账真实口径不同，见 needs_user_decision）；cda.verify 成功后，对 excluded_ids 里的每一条都单独报 FAIL'准入裁决为排除，但该条目仍在当前书稿内'（因为 candidates 本就现抽自这一版书稿，excluded 条目出现在候选集里就代表它还没被删）。",
+   "test": "回归用例：3 条 exclude 决策 + 错误 input_sha256 → status=fail/input_sha256_mismatch；改成正确 sha 后 → status=pass 但 3 条'仍在书内'FAIL；drill_tool_verify.py 对应用例一致"},
+  {"desc": "[major⑩] 只有 table3 能 build；card 版式（选必二）extract 返回 0 条时退出码仍是 0，没有报告缺哪些配置字段；paragraph 版式的 build 未实现",
+   "how": "card/未登记版式 extract 认不出任何条目（count=0）时改成 Abort(2)，把 card 版式还缺的关键配置字段（item_regex、correction_marker、a2_allowed、分组标签）列进错误信息；paragraph 版式的 build 工程量（需要按段落序列拼接、没有'表格行'可整体替换）与本次返修范围不成比例，明确写进 known_limits/needs_user_decision，未实现。",
+   "test": "回归用例：选必二 r22（card 草案）extract 现在 exit=2 且 stderr 含 item_regex/correction_marker 等字段名；drill_tool_verify.py 未把这条列为 major 阻塞项（回执原文认为'如实说明已经够格'，此次顺带把退出码也改正了）"},
+  {"desc": "[minor] verdict=正确 却带 correction/error_runs 时 build 静默丢弃，不报错",
+   "how": "改成 Abort(2)，要求人先在 items.json 里去掉这些字段或把 verdict 改成错误。",
+   "test": "回归用例：verdict=正确 带 correction → exit=2，不留输出；drill_tool_verify.py 对应用例一致"},
+  {"desc": "[minor] 写后单练门 FAIL 时退出码是 2（规格要求 1），且不分是不是父稿本来就有的旧 FAIL",
+   "how": "写后重新对父稿（改动前的 d.items）也跑一遍 bh.check_drill 当基线，只有比基线新增的 FAIL 才 Abort(1)；父稿原有的旧 FAIL（如哲学 R10 本身缺 2 条红）不再挡住 build。",
+   "test": "回归用例：新增一条缺红的错误条目 → 写后体检新增 1 条 FAIL → exit=1、不留输出；drill_tool_verify.py 对应用例一致（规格里的退出码 1 用整数比较，'0 或非 0'的旧判断已改正）"},
+  {"desc": "[minor] items.source_sha256 与父稿不一致时 build 不核对，旧父稿的 items 可能被套到表格序号刚好也存在的新父稿上，静默覆盖新改动",
+   "how": "source_sha256 存在且与父稿当前 SHA 不一致时默认 Abort(2)，新增 --allow-rebase 显式放行。",
+   "test": "回归用例：篡改 items.source_sha256 后不加参数 → exit=2；加 --allow-rebase → exit=0 正常生成"}
+ ],
+ "issues_deferred": [
+  {"desc": "paragraph 版式的 build（[major⑩] 的一部分）未实现——没有'表格行'可整体替换，需要按段落序列拼接的另一套模板规则，工程量接近重新做一遍 table3 的往返保真设计",
+   "why": "目前没有正式登记 paragraph 版式的书（哲学 R10 只有 profile_probe 草案，未确认），本轮返修优先把两本已登记书（bixiu2/bixiu3，都是 table3）的 blocker/major 做扎实；paragraph 的 build 留给下一轮或人工，已写进文件头'已知不做的事'。"},
+  {"desc": "card 版式（选必二）的题卡级识别本身未实现，只是把'认不出'的退出码和提示改正确了",
+   "why": "同上：bh.collect_drill 没有 card 分支，drill_tool 定位是薄封装、不重复实现 bh 的判定逻辑；选必二也没有正式 profile，识别规则需要人先确认题卡的标题/正误标注/分组写法。"},
+  {"desc": "--admission 的 input_sha256 核对口径（对比 --docx 的 sha256，而不是某个候选文件的字节 sha256）",
+   "why": "drill_tool 在内存里现抽候选、不落候选文件，check_drill_admission.main() 单独跑时比对的是候选文件字节，这里的'input'含义本来就不同；按'决策是针对哪一版书稿做的'解释是本工具场景下最合理的选择，但如果真实准入台账对 input_sha256 有另一套约定（比如始终指向某次 extract 落的 items.json 文件），需要主代理确认。"},
+  {"desc": "规格提到的'可选对照正文核对被选题肢应为正确'未实现",
+   "why": "需要把单练题源字符串与例题块重新配对、再解析该例题的【答案】结构，工程量接近 batch_health.diff_source 一整套，超出本工具'薄封装'定位；文件头已写明。"}
+ ],
+ "known_limits": [
+  "build 仍只支持 drill.layout=='table3'（两本已登记书都是这个版式）",
+  "build 生成新增/改动行时数字与题肢之间固定用'N、'+制表符，与现有两册实际格式一致；未改动的行原样保留原分隔符，不受此限制",
+  "--order alternate 仍是启发式交替，不保证 alternation.max_same_run_per_table 这个 WARN 级提示阈值",
+  "--admission 的 id 仍是 group:no（位置性），只在'候选与决策针对同一版书稿'时有意义，不是跨版本稳定 id"
+ ],
+ "profile_fields_needed": [],
+ "needs_user_decision": [
+  "paragraph 版式的 build 是否要在下一轮补齐，还是等哲学等书正式登记 profile 之后再做；",
+  "选必二 card 版式的题卡级识别规则（标题写法、正误标注、分组标签）由谁来定，drill_tool 需要这些字段才能实现 extract/check/build；",
+  "--admission 的 input_sha256 应该对比 --docx 的 sha256，还是对比某个固定的候选文件 sha256——如果准入台账已经有既定约定，请指出具体文件，本工具再对齐。"
+ ],
+ "actual_model": "Claude Sonnet 5（本轮返修的主代理）",
+ "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/fix_drill_tool.json"
+}

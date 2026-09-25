@@ -1,0 +1,143 @@
+{
+  "exam_id": "BJ-2023-CY-ERMO",
+  "status": "versioned_Q8_Q10_Q19_visual_structure_repair_pending_independent_review",
+  "questions": 21,
+  "points_total": 100,
+  "parent_candidate_manifest_sha256": "17d5c3527bd84804ad6825edac9c7da3cb9c83d0ca58cd6cccb5a5d2c91a7741",
+  "sources": [
+    {
+      "source_id": "S38162016129f",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区二模/√朝阳/202305朝阳高三2模政治试题.pdf",
+      "sha256": "38162016129f3b1b99cf297f7aa2f7801a5a039a273925b15770ac484c5e46b3",
+      "pages": 7,
+      "role": "原卷题面"
+    },
+    {
+      "source_id": "S96315fb88e87",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区二模/√朝阳/202305朝阳高三2模政治答案.pdf",
+      "sha256": "96315fb88e871f809076eafbc49b31e7990c9f9f3f5aaecb369b71fb103ac78a",
+      "pages": 2,
+      "role": "参考答案/E3"
+    }
+  ],
+  "all_source_pages_opened": {
+    "S38162016129f": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "S96315fb88e87": [
+      1,
+      2
+    ]
+  },
+  "question_sha256": {
+    "BJ-2023-CY-ERMO-Q1.md": "f7f87c37bb8155dc5f88111ad93db2200640e4033ffd8f69f9879a462f017c4f",
+    "BJ-2023-CY-ERMO-Q10.md": "645a25b62331759058829dd4fb8643640075aa4e3768b9a76ca265b83bebd5a1",
+    "BJ-2023-CY-ERMO-Q11.md": "c7bd848221c9b10ba7f61a481c21cb0932a02f0570696676d4254ea7c45c6f25",
+    "BJ-2023-CY-ERMO-Q12.md": "bd704b060c5914872c60c5bea08981617e3d37083b94f2cc1d10c9f557275093",
+    "BJ-2023-CY-ERMO-Q13.md": "8ff340682e88d70e953f4306601ba67dcb14f2976d40d1734e9245e98d412721",
+    "BJ-2023-CY-ERMO-Q14.md": "3c1b0777e213d0eea5b658d3d9ddde6762d465a921f376c96f15e490643500cf",
+    "BJ-2023-CY-ERMO-Q15.md": "07e6c970a305d4ce9dd02d324c915eb19af2937f6213b41bd71d899ae5bff564",
+    "BJ-2023-CY-ERMO-Q16.md": "b8105fb9a09fa5084be3cab96a5c59f7e8825558c6cf6b37c38aed2c9c889ea3",
+    "BJ-2023-CY-ERMO-Q17.md": "5fcc79d92c355064728a142497fb5c99fd39404cf73192afdae1ed29657a634a",
+    "BJ-2023-CY-ERMO-Q18.md": "3766c5f27503bde77b947f7ee40bde533a6247986b45e06c1340b79fae54e7d9",
+    "BJ-2023-CY-ERMO-Q19.md": "c99e824271be97a92a8118431e2b77711638be3e12af62851ed6dd9021aee4d3",
+    "BJ-2023-CY-ERMO-Q2.md": "d52702e4a9f577177fed442e65b9da14eddc313c8d25dff0aec2da43ef3d336c",
+    "BJ-2023-CY-ERMO-Q20.md": "1b39d54233e31110d12647e720dfed81b67910507f53997ea51e931e61e95ae5",
+    "BJ-2023-CY-ERMO-Q21.md": "9e497bd1bedae03b62eb20b0da3a15c71605aaaaac48d06b294bc492b4205429",
+    "BJ-2023-CY-ERMO-Q3.md": "53a9d7275868506d71f5efaa41393f5cbd855c3e0c95971aed7ef105d6a18c1b",
+    "BJ-2023-CY-ERMO-Q4.md": "ef8b2daa74214d12d729e1982610993fa35ee0d18a361ac95bb655e94681f882",
+    "BJ-2023-CY-ERMO-Q5.md": "8dfece7443a8f3345104fc5be536f8d1e5ba560d36bdba24fad5a918fe88908d",
+    "BJ-2023-CY-ERMO-Q6.md": "36f7c891883f0373c6c2ecf408237c278b03c78b07eea4300890b677e823a34d",
+    "BJ-2023-CY-ERMO-Q7.md": "221dfebc76a8eed2399b7fe8bc8b2ccc1657c3af8036092e04fb5ff3ec399ca1",
+    "BJ-2023-CY-ERMO-Q8.md": "a7bcb249ad94bfb6c013a6d26638eeaeb255d1ed393f1343d48fd22c6c39a53d",
+    "BJ-2023-CY-ERMO-Q9.md": "0b9389a7f36e8f694817cbf7bf18d98735d6fdab77efabf0832e63afec4c526b"
+  },
+  "parent_question_sha256": {
+    "BJ-2023-CY-ERMO-Q1.md": "ff5ac37002ab3938cb40886734f478bc85ea24b5f728106ad8ccb27ab19e04d7",
+    "BJ-2023-CY-ERMO-Q2.md": "f9a287cd30ebe13d43afd84e0633300f1f4b2ec0a4da603f0e98457adb45fd67",
+    "BJ-2023-CY-ERMO-Q3.md": "106a04e2882b48889bc3e6f57fb5727dd583d20745a477650cda704426edd69e",
+    "BJ-2023-CY-ERMO-Q4.md": "4afb670d76dc900300040404a3f1d65412feb5fce32aa41d9717103dba483dc9",
+    "BJ-2023-CY-ERMO-Q5.md": "2036035b877ab4fed3500cb7e52511d560b2da1b379c0579cbcc78c8192dfd2b",
+    "BJ-2023-CY-ERMO-Q6.md": "cf1ae0aaa9d91a59096c17382a19386cb7cc47f5efb44b2ed86ad569cb875a32",
+    "BJ-2023-CY-ERMO-Q7.md": "7cfeef3f5ca6fcd0afbbd9c993c78ac4a488f45a63226451a121125c860bfd3f",
+    "BJ-2023-CY-ERMO-Q8.md": "ff782885febb1e64a7afa31f67d68eaa107b47c158aac1ef797f9f61b1ad9346",
+    "BJ-2023-CY-ERMO-Q9.md": "c00f3058b7768b2e1fcceba03698a834389804972a7e970a5e02d12008e2c42c",
+    "BJ-2023-CY-ERMO-Q10.md": "35ab3ea3deec5bdc205b226cf49a6a1c45dbdba9dadedd2a9f6d917328c5b20c",
+    "BJ-2023-CY-ERMO-Q11.md": "0725cb18aab3285a38ef86f4d3921a9d30b73086b92a78c90e3a5fb7ddedeb85",
+    "BJ-2023-CY-ERMO-Q12.md": "b5275db04d2b64701caa9f509daa201067f95aec6268870fed63af5b016fc680",
+    "BJ-2023-CY-ERMO-Q13.md": "c468f303efeefa61ecb35afaa562aa1687c141f9bb61d05be0222b3fa1cdb4a2",
+    "BJ-2023-CY-ERMO-Q14.md": "2bf003114e3fa0abc757959627d775914d6f0cd69deee9b6941e384fb0cfc588",
+    "BJ-2023-CY-ERMO-Q15.md": "523de498c668c56438b8888e61c5116271dccf9c6b53305f9a97e46fe1cbaf2d",
+    "BJ-2023-CY-ERMO-Q16.md": "261fe752607baedfc566676267b624f55847d7b7cd3832e28672ef371fa3b5eb",
+    "BJ-2023-CY-ERMO-Q17.md": "a327112fe6fddbb7a72652f4c366a653e156da745943e63d03e8560a56fd8be1",
+    "BJ-2023-CY-ERMO-Q18.md": "3ec33c7ac12ba8adbe24b71a3701069c9c78475b6e19d0d3f149492408ed0fc3",
+    "BJ-2023-CY-ERMO-Q19.md": "3a72fe8ca00408c196e8d61ce88ddd02e87cad75a154d791456ab926ccf28bd7",
+    "BJ-2023-CY-ERMO-Q20.md": "88fb23d245c013f1eabe1fc535d09daf7fec80d84fdb1c0db007a03d9adfc754",
+    "BJ-2023-CY-ERMO-Q21.md": "dade97abf2e3745649e2100bc117d6bfad757cacf4fdcce1752217b188c7b2a3"
+  },
+  "parent_candidate_question_sha256": {
+    "BJ-2023-CY-ERMO-Q1.md": "ecc27411f94f840f893341aa11c65a4e9bf1396588a88f46bbc62f9211da7bc1",
+    "BJ-2023-CY-ERMO-Q10.md": "722d3b18a774f444a527d7d6c122bb6b7b3dca76a4c2a75d7c049b49232642e0",
+    "BJ-2023-CY-ERMO-Q11.md": "694852c4c373db18d134241c791654cc9f767a7bd7541f5e49d7ea72c57ecec4",
+    "BJ-2023-CY-ERMO-Q12.md": "77bbdb4d620301c25ddd40674d2ec2182e4a8b2259293cc20a46710ddfea5afa",
+    "BJ-2023-CY-ERMO-Q13.md": "e9d61a7fb756700ad12446a49ef3678fdd28b64a921f6d55749d273f54a9d65d",
+    "BJ-2023-CY-ERMO-Q14.md": "8d2f899243a703c13d171bfba43b069e7dce66bec7cd56b90b5042d07cfb28d0",
+    "BJ-2023-CY-ERMO-Q15.md": "a67109f32cd376ccce88796f0f716d5dd3e2c0a5bb6c502b18a459f4ac1fc241",
+    "BJ-2023-CY-ERMO-Q16.md": "6701d7bff8c25bb19e6bbe3232bab9798a1d60f86ac6afcbd762594867e693a0",
+    "BJ-2023-CY-ERMO-Q17.md": "4bdcea2c36dd72da53ea6b933f1391cad5371feda40c5dbd607bb4dca2b56bd4",
+    "BJ-2023-CY-ERMO-Q18.md": "cf37d62904199a253f48b3ec0d500e1e5464ab5fc84007aba689cec619081483",
+    "BJ-2023-CY-ERMO-Q19.md": "5e33b266c27b288cf45e651066593e8e14046552316aa2d547965e6cae4a0919",
+    "BJ-2023-CY-ERMO-Q2.md": "ba37a34ee35812c6ad8725b812d97e408bc860cfb973359a6656ddbbf207aab2",
+    "BJ-2023-CY-ERMO-Q20.md": "c7e4f7b0891eccdd239db0567ac2c9a63f7d25b6a37ff7bb5e5da677702b37c5",
+    "BJ-2023-CY-ERMO-Q21.md": "66c4e33886c0ef99b485fd2b43ebbc9d68082e5e70dea0ebfddd18de04b7eb06",
+    "BJ-2023-CY-ERMO-Q3.md": "d00a38db1638ad79639921cefd023e61efacb0868574a272ed89bdb3d56e311a",
+    "BJ-2023-CY-ERMO-Q4.md": "2f8306dd6d0538ce5bbb086fe79060631a60c5d3b28fb62d1abbe5e56928f0a5",
+    "BJ-2023-CY-ERMO-Q5.md": "d321421cd7623e47dbd4b576bfb0bc52b47a830d6a81ba8b45e9714e7fd93ab5",
+    "BJ-2023-CY-ERMO-Q6.md": "483627a5c0ce1e1b765316c10997e5afc7e2774c51c7945c55dade847c4a8332",
+    "BJ-2023-CY-ERMO-Q7.md": "cfe2176c1ee0a2312416eb4430ab7339833e98cb63cb9f5b57b09ad4fea1cc01",
+    "BJ-2023-CY-ERMO-Q8.md": "1b1f81abd3b68748fd22c11f1996a3197dab4240f88e20030e41642b4518de55",
+    "BJ-2023-CY-ERMO-Q9.md": "def3861cf407cfc1a39c2d07f21f213921196145050f10f918e833ca96dec9ae"
+  },
+  "assets": {
+    "assets/embedded/img-000.png": "736b2cbadc6ca5aa62ef2b29e508d3045de8a8af001ed01ea32a1a9e0bcab5de",
+    "assets/embedded/img-001.png": "59fc58aaceaccad73da2ad44e6ca4c590a4e7296901d1ce1fdc4984f59091d23",
+    "assets/embedded/img-002.png": "81cd342a72f93a233e87c40619900504e5572bf60985335f74e109548bb8f695",
+    "assets/embedded/img-003.png": "6472de08c9555deb7a20995cb6c96dc11adeebc12f0f38531b7b92a48798583a",
+    "assets/embedded/img-004.png": "358d7450ac783e4f8830f8451c9776fecb46041ec2911798d5cb23dcff7bfa3f",
+    "assets/figure_objects.jsonl": "d70086999371305fbb860eb24aa3675f77fa66c9d19ecc005692b4250ca26f5d",
+    "assets/source_pages/answer/p-01.png": "f2837cc4f6491f7c3ce7247c087bec73eb8fae7f008e500077bfa83c84931fda",
+    "assets/source_pages/answer/p-02.png": "5097ea528330576305de5794c6300b246f33943b9ddc01445b7fceaf21719bea",
+    "assets/source_pages/exam/p-01.png": "b1783a8ff89f58e9794758518c73ba6fd1dc36093c657851d79177854c98b885",
+    "assets/source_pages/exam/p-02.png": "a72b176d093a943b9d6fea7db152849c56a208adb7a0f63c152ff9886681430f",
+    "assets/source_pages/exam/p-03.png": "15adbe6e62b09a5318935c02a275c993443ee51c4a962f9400fdc02f036e743e",
+    "assets/source_pages/exam/p-04.png": "e00265d22379366fc371e6881960ab751b94617c05fd54b75cc27579b37d54e3",
+    "assets/source_pages/exam/p-05.png": "96914cd7e24f534741dc24d09dc929542d792d046fc3756ba7e99066eaea3a5a",
+    "assets/source_pages/exam/p-06.png": "4920100affc49fc8353548ab61d9adf57a89d6c3a0ecea9fbb72cf1a25ca6f19",
+    "assets/source_pages/exam/p-07.png": "5adcf9e7b6829cd9a6aa8bbf65e38a5e0d6aaadf18e4e32aad0fc646631e3352"
+  },
+  "formal_rubric_status": "not_found; all Q1-Q21 remain E3-or-no-rubric, no E1",
+  "student_evidence_status": "N/A_with_basis",
+  "versioned_delta": {
+    "changed_questions": [
+      "BJ-2023-CY-ERMO-Q8",
+      "BJ-2023-CY-ERMO-Q10",
+      "BJ-2023-CY-ERMO-Q19"
+    ],
+    "unchanged_question_count": 18,
+    "navigation_candidate_applied": true,
+    "support_candidate_applied": true,
+    "shared_files_modified": []
+  },
+  "known_unresolved": [
+    "本版本只完成内容结构增量，尚未进行独立工位复核；不得将本回执称为独立复核。",
+    "原始来源未提供正式评分细则；非选择题完整保留，参考答案仍为E3，不升格为E1。",
+    "原始来源未提供学生样卷、批注或实得分；仍为N/A_with_basis。"
+  ],
+  "shared_files_modified": []
+}

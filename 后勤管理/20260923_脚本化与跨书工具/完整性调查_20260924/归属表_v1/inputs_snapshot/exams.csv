@@ -1,0 +1,95 @@
+﻿exam_id,year,school_year,region,institution,grade,stage,paper_type,versions,file_count,has_paper,has_rubric,has_answer,has_lecture,is_assembly,question_count,subq_count,extract_status,notes
+ASM-2024届各区一模试题分类汇编必修1,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编必修2 ,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编必修3,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编必修4,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编选必1,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编选必2,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-2024届各区一模试题分类汇编选必3,2024,2023-2024学年,unknown,unknown,高三,一模,模拟考试,,1,N,N,N,N,Y,,,pending,
+ASM-北京2024各区《经济与社会》考题-wlfwlf,2024,2023-2024学年,unknown,unknown,高三,unknown,unknown,,1,N,N,N,N,Y,,,pending,
+ASM-北京及2024各区《经济与社会》考题-wlf,2024,2023-2024学年,unknown,unknown,高三,unknown,unknown,,1,N,N,N,N,Y,,,pending,
+BJ-2020-BJ-GAOKAO,2020,unknown,北京,unknown,高三,高考,高考真题,教师版18页含7页题面+11页E3；正式评分细则4页/E1,2,Y,Y,Y,N,N,21,,all_available_source_conversion_accepted,21题/100分；教师版18页(E0/E3)、正式评分4页(E1仅Q16-Q21)、32资产；v4 Q2及Q16–Q21定向视觉补录和两项独立内容复核已绑定；合后复验待完成；无个人学生载体；批量验收计划 `claude-bj2020-r2-20260922` 已验收现有来源
+BJ-2021-BJ-GAOKAO,2021,unknown,北京,unknown,高三,高考,高考真题,教师版12页含10页试卷区+2页E3；正式细则PDF7页,2,Y,Y,Y,N,N,21,,source_conversion_accepted,21独立题/100分；Q8/Q18/Q20/Q21图表及字形差分闭合；教师版和正式细则两个图形版本分开；原封面9页与载体实际12页并列，学生样卷缺源。；全部现有来源完成转换验收。
+BJ-2022-BJ-GAOKAO,2022,unknown,北京,unknown,高三,高考,高考真题,教师版22页含7页题面+15页E3；正式评分7页,2,Y,Y,Y,N,N,21,,all_available_source_conversion_accepted,21题100分；源特异文字/分值差异分别保留；Q17-Q20 E1图文修补和Q18本源设问已复核；无个人学生载体。
+BJ-2023-BJ-GAOKAO,2023,unknown,北京,unknown,高三,高考,高考真题,教师版9页（题面p1-p7+E3 p8-p9）；正式细则5页/E1；辅助讲评20页,3,Y,Y,Y,Y,N,20,,all_available_source_conversion_accepted,20题/100分；教师版、正式E1和辅助讲评按角色分层；auxiliary coverage仅支持指针，不升原卷/E1；无个人学生载体。
+BJ-2023-CY-ERMO,2023,2022-2023学年,朝阳,unknown,高三,二模,模拟考试,原卷PDF7页+E3答案PDF2页,2,Y,N,Y,N,N,21,,all_available_source_conversion_accepted,2023.5，21题100分；Q8/Q10/Q19图与表转换；E1及个人学生层缺源，禁止补造。
+BJ-2023-CY-YIMO,2023,2022-2023学年,朝阳,unknown,高三,一模,模拟考试,原卷题面8页；参考答案2页/E3；正式评分细则未提供,2,Y,N,Y,N,N,21,,all_available_source_conversion_accepted,21题/100分；两源10页；参考答案E3-only，正式E1未提供；Q11曲线数值为图上约读；学生样本N/A；批量验收计划 `cy2023v3-ft2023v2-live-20260922` 已验收现有来源
+BJ-2023-DC-ERMO,2023,2022-2023学年,东城,unknown,高三,二模,模拟考试,原卷12物理页（题面11+空白尾页1）+答案1物理/2逻辑,2,Y,Y,Y,N,N,21,12,all_available_source_conversion_accepted,21题100分；E3覆盖Q1-Q21；同题等级E1仅Q16/Q21；学生样本N/A_with_basis；待验收；批量验收计划 `dc2023-v4-live-20260922` 已验收现有来源
+BJ-2023-DC-YIMO,2023,2022-2023学年,东城,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,33,18,pending,
+BJ-2023-FT-ERMO,2023,2022-2023学年,丰台,unknown,高三,二模,模拟考试,原卷10页；参考答案2页/E3 only,2,Y,N,Y,N,N,22,,all_available_source_conversion_accepted,22题100分；原卷10页+同卷参考答案2页；正式E1与个人学生层缺源；Q6/Q19图文按主审与独立回执保留；批量验收计划 `cy2023v3-ft2023v2-live-20260922` 已验收现有来源
+BJ-2023-FT-YIMO,2023,2022-2023学年,丰台,unknown,高三,一模,模拟考试,教师版/转录题源DOCX；302段/6表/4图；active可读派生见证35页；14页缺字派生仅history,1,Y,N,Y,N,N,22,,all_available_source_conversion_accepted,22题（选择15/非选择7）；E3/source material only；points_total=null；无同卷E1/学生层；Q17两议/四议与Q20福建省委串句保留；35页为可读派生见证，14页缺字派生仅history；批量验收计划 `ft2023-yimo-v3-20260922` 已验收现有来源
+BJ-2023-HD-ERMO,2023,2022-2023学年,海淀,unknown,高三,二模,模拟考试,原卷8页；答案DOC派生3页/E3；正式评分PPTX43页/E1,3,Y,Y,Y,N,N,21,,all_available_source_conversion_accepted,卷首2022—2023学年第二学期期末练习/2023.05与归档ERMO、细则海淀二模并列保留；s38静态动画有限制；旧3为评分来源切片数，现21独立题/100分；批量验收计划 `codex-bank-direct-hd-ermo-20260922` 已验收现有来源
+BJ-2023-HD-QIMO,2023,2022-2023学年,海淀,unknown,高三,期末,期末考试,,2,N,N,Y,N,N,0,6,retired_duplicate_registration,重复登记已撤销：本登记的两份来源实为2023海淀二模（第二学期期末练习）原卷与答案，已归 BJ-2023-HD-ERMO；不存在2023海淀高三第一学期期末原件（见 claude_bank_20260922/HD2023_identity）。
+BJ-2023-HD-QIZHONG,2023,2022-2023学年,海淀,unknown,高三,期中,期中考试,教师版,3,Y,Y,N,N,N,64,21,all_available_source_conversion_accepted,批量验收计划 `claude-accept4-20260922` 已验收现有来源
+BJ-2023-HD-YIMO,2023,2022-2023学年,海淀,unknown,高三,一模,模拟考试,,2,N,Y,Y,N,N,19,19,all_available_source_conversion_accepted,批量验收计划 `claude-accept4-20260922` 已验收现有来源
+BJ-2023-XC-ERMO,2023,2022-2023学年,西城,unknown,高三,二模,模拟考试,,3,Y,Y,Y,N,N,28,16,pending,
+BJ-2023-XC-YIMO,2023,2022-2023学年,西城,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,49,22,all_available_source_conversion_accepted,批量验收计划 `claude-accept2b-20260922` 已验收现有来源
+BJ-2024-BJ-GAOKAO,2024,unknown,北京,unknown,高三,高考,高考真题,教师版,2,Y,N,N,N,N,57,15,all_available_source_conversion_accepted,批量验收计划 `codex-bj-gaokao-20260923` 已验收现有来源；批量验收计划 `codex-retro-batch2-resign-20260924-v1` 已验收现有来源；批量验收计划 `codex-retro-batch2-stagefix-resign-20260924-v2` 已验收现有来源
+BJ-2024-CY-ERMO,2024,2023-2024学年,朝阳,unknown,高三,二模,模拟考试,原卷8页+正式评分5页+补充DOCX E3/可读3页,3,Y,Y,Y,N,N,20,,all_available_source_conversion_accepted,20题100分；Q16-Q20正式E1，E3覆盖Q1-Q20；通用等级表不升E1；学生层N/A_with_basis。
+BJ-2024-CY-QIZHONG,2024,2023-2024学年,朝阳,unknown,高三,期中,期中考试,原卷8页 + 正式评分DOCX 9页 + 评标/讲评DOCX 18页 + 正式评分RTF 5页；可读见证合计40页,4,Y,Y,N,Y,N,20,3,all_available_source_conversion_accepted,20题/100分；Q1-Q15 RTF内嵌答案表为E3，Q16-Q20正式DOCX/RTF同题评分为E1；S92评标DOCX为候选E3；无独立答案和学生层，均保留N/A_with_basis；可读源页8+9+18+5=40页；批量验收计划 `cy2024-qizhong-v28-main-approval-20260922` 已验收现有来源
+BJ-2024-CY-YIMO,2024,2023-2024学年,朝阳,unknown,高三,一模,模拟考试,原卷8页；讲评/评分PPTX各50页同SHA；答案DOCX E3可读3页,4,Y,Y,Y,Y,N,21,,all_available_source_conversion_accepted,21题100分；Q16/Q17/Q18(1)/Q19/Q20/Q21正式E1；Q1-Q15与Q18(2)不升E1；源页去重61；学生N/A_with_basis；S26-S27模板重叠保留；批量验收计划 `cy2024-yimo-v37-20260922` 已验收现有来源
+BJ-2024-DC-ERMO,2024,2023-2024学年,东城,unknown,高三,二模,模拟考试,,15,Y,Y,N,Y,N,44,12,all_available_source_conversion_accepted,批量验收计划 `codex-bj2024-dc-ermo-20260923-state2` 已验收现有来源
+BJ-2024-DC-YIMO,2024,2023-2024学年,东城,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,28,13,all_available_source_conversion_accepted,S7是答案键/主观参考答案与通用等级标准混合载体；题级细则主载体为S4b2073bcc9e2；无学生样卷层；批量验收计划 `codex-accept-bj-2024-dc-yimo-20260922` 已验收现有来源
+BJ-2024-FT-ERMO,2024,2023-2024学年,丰台,unknown,高三,二模,模拟考试,,2,Y,Y,N,N,N,23,8,all_available_source_conversion_accepted,批量验收计划 `claude-accept2b-20260922` 已验收现有来源
+BJ-2024-FT-YIMO,2024,2023-2024学年,丰台,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,65,20,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源；批量验收计划 `codex-retro-batch1-resign-20260924-v1` 已验收现有来源
+BJ-2024-HD-ERMO,2024,2023-2024学年,海淀,unknown,高三,二模,模拟考试,,4,Y,Y,Y,N,N,59,27,all_available_source_conversion_accepted,参考答案S8f109fb09efc经实物裁定；附两张通用等级描述表但非正式E1细则；批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2024-HD-QIZHONG,2024,2024-2025学年,海淀,unknown,高三,期中,期中考试,原卷8页；评分PDF71页含主观参考答案与E1,2,Y,Y,N,N,N,21,,all_available_source_conversion_accepted,卷首2024—2025学年/2024.11；21题100分；Q17评分图结构已补齐；旧Q0/Q24/Q25为误分片，原路径兼容和原字节历史均保留；批量验收计划 `codex-retro-batch2-resign-20260924-v1` 已验收现有来源；批量验收计划 `codex-retro-batch2-stagefix-resign-20260924-v2` 已验收现有来源
+BJ-2024-HD-YIMO,2024,2023-2024学年,海淀,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,39,14,all_available_source_conversion_accepted,参考答案S98d1d762f302经实物裁定；附通用等级描述但非正式E1细则；批量验收计划 `claude-accept2b-20260922` 已验收现有来源
+BJ-2024-SJS-YIMO,2024,2023-2024学年,石景山,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,21,5,pending,
+BJ-2024-XC-ERMO,2024,2023-2024学年,西城,unknown,高三,二模,模拟考试,,3,Y,Y,Y,N,N,24,12,all_available_source_conversion_accepted,S85为独立参考答案，附两张通用等级描述，不含学生层；正式题级评分仍由Sf2e1772f20ed提供；批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2024-XC-YIMO,2024,2023-2024学年,西城,unknown,高三,一模,模拟考试,,3,Y,Y,Y,N,N,26,12,all_available_source_conversion_accepted,S91为独立参考答案，附通用等级描述，不含学生层；正式题级评分仍由Sf7bcf000f212提供；批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2025-BJ-GAOKAO,2025,unknown,北京,unknown,高三,高考,高考真题,教师版,2,N,Y,N,N,N,48,18,all_available_source_conversion_accepted,批量验收计划 `codex-bj2025-bj-gaokao-20260923-state1` 已验收现有来源
+BJ-2025-CP-ERMO,2025,2024-2025学年,昌平,unknown,高三,二模,模拟考试,原卷内嵌E3；正式细则PPT兼有讲评及学生层,2,Y,Y,Y,Y,N,22,,materialized_pending_fidelity_acceptance,22独立题/100分。纸面p1-8，E3 p9-10，p11空白；PPT21张按题及内容单元分层。Q20/Q22表格结构已精确修复；Q16书法文字、Q18/Q22手写仍未决，不能称整卷验收；原50为来源行数，不是独立题数。
+BJ-2025-CY-ERMO,2025,2024-2025学年,朝阳,unknown,高三,二模,模拟考试,主卷10页+补充扫描6页+同SHA DOCX可读22页（Word原生12页另记）,3,Y,Y,N,N,N,22,,all_available_source_conversion_accepted,22题100分；Q16-Q22 DOCX右栏E1；Q1-Q15无题级E1；学生层N/A；source_pages=paper10+scan6+docx_witness22；批量验收计划 `cy2025-ermo-v2-live-20260922` 已验收现有来源
+BJ-2025-CY-QIMO,2025,2024-2025学年,朝阳,unknown,高三,期末,期末考试,,3,Y,Y,N,N,N,45,20,pending,
+BJ-2025-CY-YIMO,2025,2024-2025学年,朝阳,unknown,高三,一模,模拟考试,,6,Y,Y,N,Y,N,66,19,pending,
+BJ-2025-DC-ERMO,2025,2024-2025学年,东城,unknown,高三,二模,模拟考试,原卷8页含内嵌E3+正式评分5页,2,Y,Y,Y,N,N,21,,all_available_source_conversion_accepted,21题100分；E3内嵌原卷，独立答案/个人学生层未提供；原题和正式来源的字形差异分别保留；批量验收计划 `codex-retro-batch2-resign-20260924-v1` 已验收现有来源；批量验收计划 `codex-retro-batch2-stagefix-resign-20260924-v2` 已验收现有来源
+BJ-2025-DC-QIMO,2025,2024-2025学年,东城,unknown,高三,期末,期末考试,,3,Y,Y,N,N,N,45,14,all_available_source_conversion_accepted,批量验收计划 `codex-bj2025-dc-qimo-20260923-state2` 已验收现有来源
+BJ-2025-DC-YIMO,2025,2024-2025学年,东城,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,57,19,all_available_source_conversion_accepted,批量验收计划 `accept-dc-yimo-20260923-overnight` 已验收现有来源
+BJ-2025-FS-YIMO,2025,2024-2025学年,房山,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,41,16,pending,
+BJ-2025-FT-ERMO,2025,2024-2025学年,丰台,unknown,高三,二模,模拟考试,,9,Y,Y,N,N,N,41,12,all_available_source_conversion_accepted,批量验收计划 `codex-ft-ermo-20260923-r2` 已验收现有来源
+BJ-2025-FT-QIMO,2025,2024-2025学年,丰台,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,46,16,all_available_source_conversion_accepted,批量验收计划 `bj-2025-ft-qimo-r4-postprep-acceptance-20260923` 已验收现有来源
+BJ-2025-FT-YIMO,2025,2024-2025学年,丰台,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,42,12,pending,
+BJ-2025-HD-ERMO,2025,2024-2025学年,海淀,unknown,高三,二模,模拟考试,,4,Y,Y,N,Y,N,46,14,all_available_source_conversion_accepted,批量验收计划 `hd_ermo_r1_20260923_final` 已验收现有来源
+BJ-2025-HD-QIMO,2025,2024-2025学年,海淀,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,30,11,pending,
+BJ-2025-HD-QIZHONG,2025,2024-2025学年,海淀,unknown,高三,期中,期中考试,,2,Y,Y,N,N,N,43,18,pending,
+BJ-2025-HD-YIMO,2025,2024-2025学年,海淀,unknown,高三,一模,模拟考试,,3,Y,Y,N,N,N,50,25,pending,
+BJ-2025-MTG-YIMO,2025,2024-2025学年,门头沟,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,43,12,pending,
+BJ-2025-SJS-YIMO,2025,2024-2025学年,石景山,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,46,16,pending,
+BJ-2025-SY-YIMO,2025,2024-2025学年,顺义,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,47,17,all_available_source_conversion_accepted,批量验收计划 `codex-bj-2025-sy-yimo-source-accept-20260924-v2` 已验收现有来源；批量验收计划 `codex-retro-sy-yimo-q20-resign-20260924-v1` 已验收现有来源
+BJ-2025-XC-ERMO,2025,2024-2025学年,西城,unknown,高三,二模,模拟考试,,2,Y,Y,N,N,N,45,15,all_available_source_conversion_accepted,批量验收计划 `accept_BJ-2025-XC-ERMO_codex_20260923` 已验收现有来源；批量验收计划 `codex-retro-batch3-resign-20260924-v1` 已验收现有来源
+BJ-2025-XC-QIMO,2025,2024-2025学年,西城,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,52,22,pending,
+BJ-2025-XC-YIMO,2025,2024-2025学年,西城,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,51,21,pending,
+BJ-2025-YQ-YIMO,2025,2024-2025学年,延庆,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,40,11,pending,
+BJ-2026-BJ-GAOKAO,2026,unknown,北京,unknown,高三,高考,高考真题,,3,Y,Y,Y,N,N,59,24,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源；批量验收计划 `codex-retro-batch1-resign-20260924-v1` 已验收现有来源
+BJ-2026-CP-ERMO,2026,2025-2026学年,昌平,unknown,高三,二模,模拟考试,学生版+教师版,2,N,Y,N,N,N,45,16,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2026-CP-QIMO,2026,2025-2026学年,昌平,unknown,高三,期末,期末考试,教师版,2,N,Y,N,N,N,30,10,all_available_source_conversion_accepted,批量验收计划 `codex-bj2026-cp-qimo-state1-20260923` 已验收现有来源
+BJ-2026-CY-ERMO,2026,2025-2026学年,朝阳,unknown,高三,二模,模拟考试,教师版,2,N,Y,N,N,N,24,10,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2026-CY-QIMO,2026,2025-2026学年,朝阳,unknown,高三,期末,期末考试,原卷PDF8页；正式评分PDF4页；无独立答案/学生样卷来源,2,Y,Y,N,N,N,21,,source_conversion_accepted,21独立题/100分；R6评分条件归属与包内路径、R7 Q2/Q18框线已复核。旧31为来源切片数，非独立题数。；已按全部现有来源完成转换验收，缺源项保持N/A。
+BJ-2026-CY-QIZHONG,2026,2025-2026学年,朝阳,unknown,高三,期中,期中考试,原卷PDF含E3；正式细则DOCX含Q16-Q21,3,Y,Y,Y,N,N,21,,all_available_source_conversion_accepted,21独立题/100分；原卷8页与原DOCX138正文段落完整保留；中文可读派生细则5页；Q21 U01-U03方向未决。原44为来源行数，不是独立题数；批量验收计划 `accept-cy-qizhong-20260923-overnight` 已验收现有来源
+BJ-2026-CY-YIMO,2026,2025-2026学年,朝阳,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,40,15,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2026-DC-ERMO,2026,2025-2026学年,东城,unknown,高三,二模,模拟考试,教师版,8,N,Y,N,N,N,38,13,pending,
+BJ-2026-DC-QIMO,2026,2025-2026学年,东城,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,52,17,pending,
+BJ-2026-DC-YIMO,2026,2025-2026学年,东城,unknown,高三,一模,模拟考试,扫描版,12,Y,Y,N,N,N,86,23,pending,
+BJ-2026-FS-ERMO,2026,2025-2026学年,房山,unknown,高三,二模,模拟考试,教师版,3,N,Y,N,N,N,24,17,all_available_source_conversion_accepted,批量验收计划 `claude-accept3b-20260922` 已验收现有来源
+BJ-2026-FS-YIMO,2026,2025-2026学年,房山,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,22,9,pending,
+BJ-2026-FT-ERMO,2026,2025-2026学年,丰台,unknown,高三,二模,模拟考试,教师版,2,N,Y,N,N,N,22,10,all_available_source_conversion_accepted,批量验收计划 `codex-bank-direct-ft-ermo-20260922-v2` 已验收现有来源
+BJ-2026-FT-QIMO,2026,2025-2026学年,丰台,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,35,21,pending,
+BJ-2026-FT-YIMO,2026,2025-2026学年,丰台,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,22,9,all_available_source_conversion_accepted,批量验收计划 `codex-bank-direct-ft-yimo-20260922` 已验收现有来源；批量验收计划 `codex-retro-batch1-resign-20260924-v1` 已验收现有来源
+BJ-2026-HD-ERMO,2026,2025-2026学年,海淀,unknown,高三,二模,模拟考试,教师版,2,N,N,N,Y,N,28,10,pending,
+BJ-2026-HD-QIMO,2026,2025-2026学年,海淀,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,38,23,all_available_source_conversion_accepted,批量验收计划 `hd-qimo-state1-root-20260923` 已验收现有来源
+BJ-2026-HD-QIZHONG,2026,2025-2026学年,海淀,unknown,高三,期中,期中考试,,2,Y,N,N,Y,N,30,10,pending,
+BJ-2026-HD-YIMO,2026,2025-2026学年,海淀,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,33,19,pending,
+BJ-2026-MTG-YIMO,2026,2025-2026学年,门头沟,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,46,16,all_available_source_conversion_accepted,批量验收计划 `claude-accept2b-20260922` 已验收现有来源
+BJ-2026-SJS-ERMO,2026,2025-2026学年,石景山,unknown,高三,二模,模拟考试,教师版,2,N,Y,N,N,N,25,10,all_available_source_conversion_accepted,批量验收计划 `bj-2026-sjs-ermo-state3-root-20260923` 已验收现有来源
+BJ-2026-SJS-QIMO,2026,2025-2026学年,石景山,unknown,高三,期末,期末考试,,1,Y,N,Y,N,N,20,11,pending,S22为10页混合载体：p1-p8原卷，p9-p10答案及评分参考；实际Q1-Q20共20题、100分。原卷‘第二部分共6题’与实际Q16-Q20五题矛盾，属源文件内部计数错误，禁止生成Q21。Q1-Q20按2026石景山期末具名无正式细则例外使用E3；学生层N/A_with_basis。
+BJ-2026-SJS-YIMO,2026,2025-2026学年,石景山,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,36,18,pending,
+BJ-2026-SY-ERMO,2026,2025-2026学年,顺义,unknown,高三,二模,模拟考试,,2,Y,Y,N,N,N,25,10,pending,
+BJ-2026-SY-YIMO,2026,2025-2026学年,顺义,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,24,9,pending,
+BJ-2026-TZ-QIMO,2026,2025-2026学年,通州,unknown,高三,期末,期末考试,,2,Y,Y,N,N,N,50,18,pending,
+BJ-2026-TZ-YIMO,2026,2025-2026学年,通州,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,27,9,pending,
+BJ-2026-XC-ERMO,2026,2025-2026学年,西城,unknown,高三,二模,模拟考试,教师版,2,N,Y,N,N,N,24,9,pending,
+BJ-2026-XC-QIMO,2026,2025-2026学年,西城,unknown,高三,期末,期末考试,教师版；答案及评分参考；评标PPT,4,Y,Y,Y,Y,N,21,4,accepted_verified,完整Q1-Q21、100分。Sef同SHA混合载体：p1-p9原卷(E0)、p10-p12参考答案(E3)；卷首印8页但实际题面和页脚为9页，矛盾原样保留。S547正式评分PDF为Q16-Q21 E1；S9为具名评标载体，题级评分规则单元为E1、示例/方向提示为E3、Q19 slides6-9图文为E2候选；学生材料未提供。
+BJ-2026-XC-YIMO,2026,2025-2026学年,西城,unknown,高三,一模,模拟考试,,3,Y,Y,N,N,N,43,13,pending,
+BJ-2026-YQ-YIMO,2026,2025-2026学年,延庆,unknown,高三,一模,模拟考试,,2,Y,Y,N,N,N,45,15,all_available_source_conversion_accepted,批量验收计划 `accept_BJ-2026-YQ-YIMO_codex_20260923` 已验收现有来源；批量验收计划 `bj-2026-yq-yimo-retro-q20-reaccept-20260924-v2` 已验收现有来源
+BJ-2024-SY-ERMO,2024,2023-2024学年,顺义,unknown,高三,二模,模拟考试,,2,Y,N,Y,N,N,20,7,all_available_source_conversion_accepted,原卷20题100分；独立E3参考答案，非E1；原卷与答案源内印分冲突照录；字库修复后可读9+2页；批量验收计划 `claude-accept2b-20260922` 已验收现有来源

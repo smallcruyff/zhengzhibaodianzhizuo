@@ -1,0 +1,93 @@
+{
+  "exam_id": "BJ-2026-MTG-YIMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-MTG-YIMO-Q1": "7c417f71cbe124755f73d50fed601ca6045fc46060caeeee3152061fa574febb",
+    "BJ-2026-MTG-YIMO-Q2": "6a6316ef07d4f1df03caa5ef3c02868f4a4a211757447e37477eb5b5cd1d48fc",
+    "BJ-2026-MTG-YIMO-Q3": "4666aa8198d7cc7e9a43649b34d47d7574e71c01f79f129c04e6a0765f51a9af",
+    "BJ-2026-MTG-YIMO-Q4": "6660be790efc675e4b01399c84c06d9f0193e2417d15948ef80dd8ace69bf863",
+    "BJ-2026-MTG-YIMO-Q5": "fc965de75d46ec82f214e31350c9abf7d88c0bf091c061f59efcf16757aa491b",
+    "BJ-2026-MTG-YIMO-Q6": "68b726ea3b9fd4fbe032a5e20ee2b3b1ce873a9416107c41c4b2beb748f150f5",
+    "BJ-2026-MTG-YIMO-Q7": "9cf7de4c222dbee6d0ff344bf336e2ac104d53958deb94f57d0f5d7aea364078",
+    "BJ-2026-MTG-YIMO-Q8": "5ba35854df46e98cf8c3c9ee3e143c92c00decac8559a0cf1a6eea7177163373",
+    "BJ-2026-MTG-YIMO-Q9": "e42f6edf1a3f120d7b7cd40804a669734ca1f6383c1a01eabdf8079374ccf410",
+    "BJ-2026-MTG-YIMO-Q10": "7969c754d1e9558f157354191347fc329f033567b6c807e804492e1557088d2b",
+    "BJ-2026-MTG-YIMO-Q11": "38912e9d9963133c759a2666a963c28b4466fed3285891eff25d39fc06d73ef2",
+    "BJ-2026-MTG-YIMO-Q12": "ce52d6c13b69dd4427b9e34a6fbfd720ae922e8608ffd2b237f3d555539482d9",
+    "BJ-2026-MTG-YIMO-Q13": "06b2a607918d84093b2c69be0288b81076920ab6e5869a1c5b068979daf08465",
+    "BJ-2026-MTG-YIMO-Q14": "b839678b53f3d9196861d16312e0d4fa843ebe8f752c510b29fc65b96419729a",
+    "BJ-2026-MTG-YIMO-Q15": "942d09c99c9020886cd05a21d021ce474d6db3a576b8e5380e55b09db9f5d420",
+    "BJ-2026-MTG-YIMO-Q16": "0c8eb0f2068ca63b64f21e17df7c2ff7e70f3ad9457987c549117afae5b3a46c",
+    "BJ-2026-MTG-YIMO-Q17": "8d7d48e06903fe5c47e149c2f7dd9d390380a4f4f972d6cc30c2e80527f63a9d",
+    "BJ-2026-MTG-YIMO-Q18": "264d93409f2cf2eff32dc0a8f3723fc9e7707e9483b16180a149af751d65c4a5",
+    "BJ-2026-MTG-YIMO-Q19": "69a1270084892fe3e022b3894ce76b3638495a6e1a754e56d356cb924c4fd456",
+    "BJ-2026-MTG-YIMO-Q20": "b9bc8e7148db47f7ef54ebf3c7a2e7dc4cdabaf8c8279ed8360614679e8f5ece",
+    "BJ-2026-MTG-YIMO-Q21": "aaf420e601890e2e79d0378a279df7fb2dd7bb22c00b67dd45da2623a492ad11"
+  },
+  "source_pages": {
+    "paper": 8,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 8,
+  "source_roles": {
+    "paper": "Se84e6bbdd898",
+    "rubric": "S89313bd87150"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q5",
+      "location": "站点①竖排小字括号首尾汉字",
+      "partial_reading": "（【?】148、397、532【?】）",
+      "affects_answering": false,
+      "round": "r2",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    },
+    {
+      "qid": "Q5",
+      "location": "站点⑪竖排小字括号首尾汉字",
+      "partial_reading": "（【?】148、397【?】）",
+      "affects_answering": false,
+      "round": "r2",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    },
+    {
+      "qid": "Q5",
+      "location": "客服电话上方小标签4字",
+      "partial_reading": "1图标+4字（内容未辨认）",
+      "affects_answering": false,
+      "round": "r2",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "c1",
+      "c2",
+      "c3"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-mtg-yimo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:05:08.939283+00:00"
+    },
+    {
+      "spec_id": "bj-2026-mtg-yimo-state2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:06:37.034346+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-22T22:06:44.901653+00:00"
+}

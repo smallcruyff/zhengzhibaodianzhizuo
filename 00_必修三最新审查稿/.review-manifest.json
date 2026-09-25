@@ -1,37 +1,37 @@
 {
-  "copied_at": "2026-09-23T14:03:27.734176-07:00",
+  "copied_at": "2026-09-23T15:07:32.568454-07:00",
   "published_by": "claude:3bd4f1ab-82ef-482b-9938-ae3c518113e0",
   "source_state": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
-  "source_docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx",
-  "source_pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.pdf",
-  "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx",
-  "docx_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
-  "bytes": 15547969,
-  "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.pdf",
-  "pdf_sha256": "c8cf2528bbbe78bf0f1cf1b19834c42bfee8de2544725c6642dd1f4c57a53840",
-  "pdf_pages": 776,
+  "source_docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx",
+  "source_pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.pdf",
+  "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx",
+  "docx_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+  "bytes": 15612374,
+  "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.pdf",
+  "pdf_sha256": "535ca09d53d40ad9de527634074b0c1f940b68f02bac0ae29e1fc770e4b78933",
+  "pdf_pages": 811,
   "status": "stage_review_copy_not_final",
-  "latest_batch": "batch51",
+  "latest_batch": "batch52",
   "body_changed": true,
   "verified": "root technical acceptance JSON; pypdf page count; same-version render binding PASS",
-  "previous_review_archive": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第50批_原样审阅_20260923_140327",
+  "previous_review_archive": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第51批_原样审阅_20260923_150732",
   "validation": {
     "root_approval": {
-      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/最终主代理技术验收.json",
-      "sha256": "b6df90ad0ed9878a53fcdd5dbf30e381561c9de47e2d39e26aefe4ce04519929",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/最终主代理技术验收.json",
+      "sha256": "31dc64556ed0ad37c0ea9f71a7be5fb958e5701168d4e9c6631a170d263d8598",
       "approval_type": "root_technical_acceptance",
       "approved": true,
       "final_qa_passed": true,
       "actor_owned": "claude:3bd4f1ab-82ef-482b-9938-ae3c518113e0",
-      "expected_current_working_head_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
+      "expected_current_working_head_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
       "same_version_binding": {
-        "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/必修三政治与法治宝典_第51批_主体专题审阅稿.docx",
-        "docx_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
-        "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/rendered/必修三政治与法治宝典_第51批_主体专题审阅稿.pdf",
-        "pdf_sha256": "c8cf2528bbbe78bf0f1cf1b19834c42bfee8de2544725c6642dd1f4c57a53840",
-        "pdf_pages": 776,
-        "rendered_from_docx_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
-        "render_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/rendered",
+        "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/必修三政治与法治宝典_第52批_意见修改审阅稿.docx",
+        "docx_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+        "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/rendered/必修三政治与法治宝典_第52批_意见修改审阅稿.pdf",
+        "pdf_sha256": "535ca09d53d40ad9de527634074b0c1f940b68f02bac0ae29e1fc770e4b78933",
+        "pdf_pages": 811,
+        "rendered_from_docx_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+        "render_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/rendered",
         "renderer": "/Users/wanglifei/.codex/plugins/cache/openai-primary-runtime/documents/26.904.11930/skills/documents/render_docx.py",
         "fontconfig": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Codex/第49批_单题样稿_20260921/全书推广_20260921/构建/续接20260922/最终排版准备_20260922/题面楷体环境候选_私有fontconfig.conf",
         "fontconfig_sha256": "208d8a750bf20ca295df50ba55f9f587e3ca1cc2deb24a2f7508508e5818a074",
@@ -39,19 +39,19 @@
       }
     },
     "candidate_note": {
-      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/本轮修订与审查说明_第51批.md",
-      "sha256": "ed495ea77c5de2eae85a40de0ed299c506c9566e7b7475708e2b046334d69563",
-      "bytes": 1915
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/本轮修订与审查说明_第52批.md",
+      "sha256": "23730d06056e1245f4fb22d12b6b2d90975f3ecad5db809c5d35a19956d96de1",
+      "bytes": 3691
     },
-    "candidate_pdf_pages": 776,
+    "candidate_pdf_pages": 811,
     "same_version_binding": {
-      "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/必修三政治与法治宝典_第51批_主体专题审阅稿.docx",
-      "docx_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
-      "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/rendered/必修三政治与法治宝典_第51批_主体专题审阅稿.pdf",
-      "pdf_sha256": "c8cf2528bbbe78bf0f1cf1b19834c42bfee8de2544725c6642dd1f4c57a53840",
-      "pdf_pages": 776,
-      "rendered_from_docx_sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
-      "render_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/rendered",
+      "docx": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/必修三政治与法治宝典_第52批_意见修改审阅稿.docx",
+      "docx_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+      "pdf": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/rendered/必修三政治与法治宝典_第52批_意见修改审阅稿.pdf",
+      "pdf_sha256": "535ca09d53d40ad9de527634074b0c1f940b68f02bac0ae29e1fc770e4b78933",
+      "pdf_pages": 811,
+      "rendered_from_docx_sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+      "render_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/构建/rendered",
       "renderer": "/Users/wanglifei/.codex/plugins/cache/openai-primary-runtime/documents/26.904.11930/skills/documents/render_docx.py",
       "fontconfig": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Codex/第49批_单题样稿_20260921/全书推广_20260921/构建/续接20260922/最终排版准备_20260922/题面楷体环境候选_私有fontconfig.conf",
       "fontconfig_sha256": "208d8a750bf20ca295df50ba55f9f587e3ca1cc2deb24a2f7508508e5818a074",
@@ -59,25 +59,25 @@
     },
     "old_manifest": {
       "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/.review-manifest.json",
-      "sha256": "3d1fd662b7923daabbeb52306d372ab6aab2d254443c196c9b01ce44ab947612"
+      "sha256": "cf130f635587dd2c9aa0bc3708a147d4ff151e5007044d197f90fc07ae34f1ae"
     },
     "archive": {
-      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第50批_原样审阅_20260923_140327",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第51批_原样审阅_20260923_150732",
       "files": [
         {
-          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第50批_原样审阅_20260923_140327/必修三政治与法治宝典_R31续修_第50批_阶段审查稿.docx",
-          "sha256": "4868b238097a12952aa7ed3035f16b857f3e53d132ecc49289891499760239c1",
-          "bytes": 15321302
+          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第51批_原样审阅_20260923_150732/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx",
+          "sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
+          "bytes": 15547969
         },
         {
-          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第50批_原样审阅_20260923_140327/必修三政治与法治宝典_R31续修_第50批_阶段审查稿.pdf",
-          "sha256": "35f5b20446dc09e64186c89966d87a0cb9134e381976eeeefbfd0f28c2dadd43",
-          "bytes": 17268539
+          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第51批_原样审阅_20260923_150732/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.pdf",
+          "sha256": "c8cf2528bbbe78bf0f1cf1b19834c42bfee8de2544725c6642dd1f4c57a53840",
+          "bytes": 20085909
         },
         {
-          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第50批_原样审阅_20260923_140327/先看这里.md",
-          "sha256": "f8b8a82e7cfcc57618ea2696068696e8319a7f117efd498c7002e7d0208f5129",
-          "bytes": 1695
+          "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_人工审查历史/第51批_原样审阅_20260923_150732/先看这里.md",
+          "sha256": "fb86766e16157f35f38ecc7aaf0bf396904c4dc2be24aff35f3dfc6ec67137de",
+          "bytes": 1782
         }
       ],
       "unknown_items_untouched": [
@@ -88,10 +88,10 @@
     },
     "central_state_before": {
       "path": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
-      "sha256": "c450ea48b98c5570f10f8df536ce4a7b32096a7cb30ce83ae20ae44954a7749b",
-      "bytes": 25786
+      "sha256": "c5b89fc1bc031e968cb93768870ce5a26f1fe67553cff152875697a0522f188c",
+      "bytes": 26221
     },
-    "central_state_backup": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/发布准备/状态备份/当前状态_20260923_140327.json",
+    "central_state_backup": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/发布准备/状态备份/当前状态_20260923_150732.json",
     "review_entry_unknown_items_preserved": [
       ".DS_Store",
       "~$三政治与法治宝典_R31续修_第42批_当前工作稿.docx",

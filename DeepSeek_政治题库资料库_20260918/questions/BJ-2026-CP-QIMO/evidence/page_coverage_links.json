@@ -1,0 +1,405 @@
+{
+  "status": "complete",
+  "teacher": "10/10 rendered pages actually opened",
+  "teacher_page_map": {
+    "1": "卷首、说明、Q1-Q4开头",
+    "2": "Q4续页、Q5-Q7、Q8开头",
+    "3": "Q8续页、Q9-Q12、Q13开头",
+    "4": "Q13续页、Q14-Q15、Q16开头及图片表格",
+    "5": "Q16续页、Q17、Q18、Q19开头",
+    "6": "Q19续页、Q20图表、Q21开头",
+    "7": "选择题答案表、Q16答案、Q17答案开头",
+    "8": "Q17答案续页、Q18答案、Q19答案开头",
+    "9": "Q19答案续页、Q20答案、Q21答案开头",
+    "10": "Q21答案续页"
+  },
+  "rubric": "3/3 rendered pages actually opened",
+  "rubric_page_map": {
+    "1": "答案键、Q16、Q17、Q18",
+    "2": "Q19、Q20、Q21细则开头",
+    "3": "Q21水平2/1与两层分析说明"
+  },
+  "question_coverage": {
+    "1": {
+      "teacher_pages": [
+        1
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [
+        "image1.png"
+      ]
+    },
+    "2": {
+      "teacher_pages": [
+        1,
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "3": {
+      "teacher_pages": [
+        1
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "4": {
+      "teacher_pages": [
+        1,
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "5": {
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "6": {
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "7": {
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "8": {
+      "teacher_pages": [
+        2,
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "9": {
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "10": {
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "11": {
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "12": {
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "13": {
+      "teacher_pages": [
+        3,
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "14": {
+      "teacher_pages": [
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "15": {
+      "teacher_pages": [
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": []
+    },
+    "16": {
+      "teacher_pages": [
+        4,
+        5
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": [
+        "image2.png",
+        "image3.png"
+      ]
+    },
+    "17": {
+      "teacher_pages": [
+        5
+      ],
+      "answer_pages": [
+        7,
+        8
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": []
+    },
+    "18": {
+      "teacher_pages": [
+        5
+      ],
+      "answer_pages": [
+        8
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": []
+    },
+    "19": {
+      "teacher_pages": [
+        5,
+        6
+      ],
+      "answer_pages": [
+        8,
+        9
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "media": []
+    },
+    "20": {
+      "teacher_pages": [
+        6
+      ],
+      "answer_pages": [
+        9
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "media": [
+        "image4.png"
+      ]
+    },
+    "21": {
+      "teacher_pages": [
+        6,
+        7
+      ],
+      "answer_pages": [
+        9,
+        10
+      ],
+      "rubric_pages": [
+        2,
+        3
+      ],
+      "media": []
+    }
+  },
+  "image_links": [
+    {
+      "file": "BJ-2026-CP-QIMO-Q1.md",
+      "target": "assets/teacher_media/image1.png",
+      "exists": true,
+      "sha256": "dae03ed5e0684482725033bcd73627e9f153ccea564987e15f140bc0e3973b3a"
+    },
+    {
+      "file": "BJ-2026-CP-QIMO-Q16.md",
+      "target": "assets/teacher_media/image2.png",
+      "exists": true,
+      "sha256": "e2ee356dcb817c7fb2f10243686a198dda7c3ce1a136c3cd6099a2e08a1e5f57"
+    },
+    {
+      "file": "BJ-2026-CP-QIMO-Q16.md",
+      "target": "assets/teacher_media/image3.png",
+      "exists": true,
+      "sha256": "6e49362e3814ea8f4ab84f580131234f3da66a51e50de862109812c11ad393bb"
+    },
+    {
+      "file": "BJ-2026-CP-QIMO-Q20.md",
+      "target": "assets/teacher_media/image4.png",
+      "exists": true,
+      "sha256": "b795f33cacfc3c11bb540018610b4a1ffde03bbcd9bbb5c7bbcca75c1bbfe081"
+    }
+  ],
+  "rendered_source_pages": {
+    "teacher_render": {
+      "directory": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher",
+      "pages": [
+        "page-1.png",
+        "page-2.png",
+        "page-3.png",
+        "page-4.png",
+        "page-5.png",
+        "page-6.png",
+        "page-7.png",
+        "page-8.png",
+        "page-9.png",
+        "page-10.png"
+      ],
+      "count": 10,
+      "sha256": {
+        "page-1.png": "32d7c84148a973e810ba2987dae48b383387da51513d28196c5a563334ae9a12",
+        "page-2.png": "0f46844703570f1e408110408bc14711d57790cc94eee52f3934218ddef6723a",
+        "page-3.png": "3b32ae2c2285eea86d59edfee963b1c0146648b8475dc79fad2edefb5d154eae",
+        "page-4.png": "b2f424bc70350488c5a727ccd5be3efd27d3abd90668031e83c2d8c5d8b254f5",
+        "page-5.png": "3325d6fbc502c1ea6d9765bde9e44af84e8d5e774a54e6043499aeb49692b962",
+        "page-6.png": "5fd026bdb53f9be96026f8661390c7a6155685ef5ba918ab66a60e2c4163fef3",
+        "page-7.png": "72a9715f94e7b8afb91b97ccf09980073f20415b5e8c78c07d5e96fa635777ff",
+        "page-8.png": "30b80543ecf370e928f78f113ff008c423b18f3fb006e4f650dc30bedb66f405",
+        "page-9.png": "abe24eddcb30b39becb76d912ccb4a8b16603b9d380907c936e222c4fe5d9f5e",
+        "page-10.png": "dfbdd36fa44ac7693033830cf3ebe1947dec9417886f5bd0de75ee72a19db4ab"
+      }
+    },
+    "rubric_render": {
+      "directory": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/scoring",
+      "pages": [
+        "page-1.png",
+        "page-2.png",
+        "page-3.png"
+      ],
+      "count": 3,
+      "sha256": {
+        "page-1.png": "bd7d7339ec4e5f768fc3e088cd6afe76f7298bccbe60558dc5f27b44a6d0987d",
+        "page-2.png": "ac72d3b5d673243258fe9d46b5fe8cfe6484a5c5088d5a8d74e2f7f1d799151e",
+        "page-3.png": "780dcfbe7d1574176710e3484ba02c5fcc2e724b608cb4a8bca39c91ce852789"
+      }
+    }
+  },
+  "source_page_files": {
+    "teacher": [
+      {
+        "page": 1,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-1.png",
+        "sha256": "32d7c84148a973e810ba2987dae48b383387da51513d28196c5a563334ae9a12"
+      },
+      {
+        "page": 2,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-2.png",
+        "sha256": "0f46844703570f1e408110408bc14711d57790cc94eee52f3934218ddef6723a"
+      },
+      {
+        "page": 3,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-3.png",
+        "sha256": "3b32ae2c2285eea86d59edfee963b1c0146648b8475dc79fad2edefb5d154eae"
+      },
+      {
+        "page": 4,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-4.png",
+        "sha256": "b2f424bc70350488c5a727ccd5be3efd27d3abd90668031e83c2d8c5d8b254f5"
+      },
+      {
+        "page": 5,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-5.png",
+        "sha256": "3325d6fbc502c1ea6d9765bde9e44af84e8d5e774a54e6043499aeb49692b962"
+      },
+      {
+        "page": 6,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-6.png",
+        "sha256": "5fd026bdb53f9be96026f8661390c7a6155685ef5ba918ab66a60e2c4163fef3"
+      },
+      {
+        "page": 7,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-7.png",
+        "sha256": "72a9715f94e7b8afb91b97ccf09980073f20415b5e8c78c07d5e96fa635777ff"
+      },
+      {
+        "page": 8,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-8.png",
+        "sha256": "30b80543ecf370e928f78f113ff008c423b18f3fb006e4f650dc30bedb66f405"
+      },
+      {
+        "page": 9,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-9.png",
+        "sha256": "abe24eddcb30b39becb76d912ccb4a8b16603b9d380907c936e222c4fe5d9f5e"
+      },
+      {
+        "page": 10,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher/page-10.png",
+        "sha256": "dfbdd36fa44ac7693033830cf3ebe1947dec9417886f5bd0de75ee72a19db4ab"
+      }
+    ],
+    "rubric": [
+      {
+        "page": 1,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/scoring/page-1.png",
+        "sha256": "bd7d7339ec4e5f768fc3e088cd6afe76f7298bccbe60558dc5f27b44a6d0987d"
+      },
+      {
+        "page": 2,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/scoring/page-2.png",
+        "sha256": "ac72d3b5d673243258fe9d46b5fe8cfe6484a5c5088d5a8d74e2f7f1d799151e"
+      },
+      {
+        "page": 3,
+        "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/scoring/page-3.png",
+        "sha256": "780dcfbe7d1574176710e3484ba02c5fcc2e724b608cb4a8bca39c91ce852789"
+      }
+    ]
+  }
+}

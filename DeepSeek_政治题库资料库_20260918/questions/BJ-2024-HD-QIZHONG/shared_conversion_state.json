@@ -1,0 +1,129 @@
+{
+  "exam_id": "BJ-2024-HD-QIZHONG",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-HD-QIZHONG-Q1": "1dd8eb5244ffed3125f2b0a977601cd728a70cfbf63fa1e261879546b760341c",
+    "BJ-2024-HD-QIZHONG-Q2": "f77b0104fd40958a9fed979b1b976e1d306d2c8ef73f2b3399e7a16846dc44fe",
+    "BJ-2024-HD-QIZHONG-Q3": "485f9ab24d7fed799d96c4c38cbd83a16383bedf98b5a9b9a987f18eb78fec7b",
+    "BJ-2024-HD-QIZHONG-Q4": "a9b90d595acdcc04320b1c74458fe2ed1b911ccc8e3b87197f4e92dea65e561b",
+    "BJ-2024-HD-QIZHONG-Q5": "7b30608dba7bbd5fb02b34ad690d9091c5bf9f88dff8a6082d21b7403e6e2a16",
+    "BJ-2024-HD-QIZHONG-Q6": "67c8feb86a0091866d4acdae2de818ac6f4e7ac4daa3f128ce0e3528d3832054",
+    "BJ-2024-HD-QIZHONG-Q7": "5fd7cf34fcc52b2eb1f28bf4914b32c0144c13e3fb23e7c48276a4a0f49f568a",
+    "BJ-2024-HD-QIZHONG-Q8": "0edbc7eebaf2eff023757ada4eb89e45f10d6388a73d70851167a5b46b7e0125",
+    "BJ-2024-HD-QIZHONG-Q9": "e90a3257445f144fc81a394da34ac9163dcaf417abdf2bfb2ad82f41a7225cf3",
+    "BJ-2024-HD-QIZHONG-Q10": "fa48c48028eb51f88931953c1d2699216c8eb3e042fc47e5e28d78085d4ebc18",
+    "BJ-2024-HD-QIZHONG-Q11": "1e7b17c1ffaa2bfe690d87e8987b4b3dc1778d9a05b06c643c48317e8c3181ba",
+    "BJ-2024-HD-QIZHONG-Q12": "fb69ec514e82f66d5849fb16ba92ad71eefcaf8c719ec2b65664b4eb52accdf2",
+    "BJ-2024-HD-QIZHONG-Q13": "ac32d6885b1230b6e1fdf3c7c0768fae73569e4eaafaa73457f2990e06919e03",
+    "BJ-2024-HD-QIZHONG-Q14": "c246e461536f1b7a2faa7faea9d9046495f7b50476b2744b33703f022c4eb72d",
+    "BJ-2024-HD-QIZHONG-Q15": "aa080fe3413527e4b31d5284a75bbbba0f2a8aed2d59afdc444a06eedfed7f04",
+    "BJ-2024-HD-QIZHONG-Q16": "48fb04860c1332c4a41972b52622038cc6f4a907e4dcb2274dff5ce9d3a75b0c",
+    "BJ-2024-HD-QIZHONG-Q17": "e19a67415045f0cba6ccbbe7fcc9b45d41fa8693b88c410c34fb1119d308f2e0",
+    "BJ-2024-HD-QIZHONG-Q18": "9e2539bd342680500a409959d0631b4a12f2b4b311bd31cfcec6820a07321d5e",
+    "BJ-2024-HD-QIZHONG-Q19": "f933ce23befde59771321f9bc8c2eac7f2ef243d1956b6184d273a116f09ad45",
+    "BJ-2024-HD-QIZHONG-Q20": "ff98816908ca9e6c4e93b7c86de28f4d74ff181761912284283b6b5fa508aa1e",
+    "BJ-2024-HD-QIZHONG-Q21": "e1fc2d23a56b6b5dc3552c79a4a4d26f0ab53d30aad4280f266d85095e48c2dd"
+  },
+  "source_pages": {
+    "paper": 8,
+    "scoring": 71
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "无独立整卷答案键；Q1-Q15内容核对答案仅为推导候选，非来源答案",
+    "Q1-Q15没有逐题E1，不能从选项分布推补",
+    "无个人学生答卷/批注/实得分；群体性阅卷反馈保留"
+  ],
+  "excluded_historical_keys": [
+    {
+      "old_question_id": "BJ-2024-HD-QIZHONG-Q0",
+      "original_sha256": "2447e8c9f82bca9fe2aafb0645c68f98a53a4ce0d286517388270e41cc5378bc",
+      "history": "sources/history_invalid_question_keys/BJ-2024-HD-QIZHONG-Q0.md.txt",
+      "old_path_preserved_as_locator": true
+    },
+    {
+      "old_question_id": "BJ-2024-HD-QIZHONG-Q24",
+      "original_sha256": "4c62041f9fd15211e2b9e140124cbf1c9e064d7d29bfd27a1bff7161613da27e",
+      "history": "sources/history_invalid_question_keys/BJ-2024-HD-QIZHONG-Q24.md.txt",
+      "old_path_preserved_as_locator": true
+    },
+    {
+      "old_question_id": "BJ-2024-HD-QIZHONG-Q25",
+      "original_sha256": "5e7ca8161b1bcb19f0efc0d062a29be4a2dfacf6796f140c49b30244f6842ae4",
+      "history": "sources/history_invalid_question_keys/BJ-2024-HD-QIZHONG-Q25.md.txt",
+      "old_path_preserved_as_locator": true
+    }
+  ],
+  "primary_visual": [
+    "paperp1,p4,p6;Q13 focused source crop",
+    "scoringp20"
+  ],
+  "independent_chain": "02 base all-source review +04 six-score-node recheck +06 packaging +08 Q17 structure +auxiliary p25/p60 review +10 feedback linkage and p057 hash erratum",
+  "auxiliary_source_graph_delta": {
+    "path": "sources/auxiliary_visual_structure_20260922.md",
+    "sha256": "74be671f6f1b422e95ea1257a0e3346078a36fc47bf02d1024364aa923834c77",
+    "independent_verified": true
+  },
+  "feedback_source_delta": {
+    "materialization_sha256": "efb04ba01ef5f1d003860a4c2a6db3ffdb6c3b2cf40c5a903bc8752a88d7d96e",
+    "independent_review_sha256": "8c2bcae4067529438ede85f6c5bc485b7ebe95197abb612a6e251cc44e0420ad",
+    "questions": [
+      "Q16",
+      "Q17",
+      "Q21"
+    ]
+  },
+  "accepted_at": "2026-09-24T11:00:56.256411+00:00",
+  "feedback_receipt_erratum": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-HD-QIZHONG/10_feedback_source_review/erratum_p057.json",
+    "sha256": "38127ad43c85d37218baf15922c6cc8fab6006a4dd3ccca487ac2fd8b989e204"
+  },
+  "source_conversion_accepted": true,
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch2-bj-2024-hd-qizhong-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T10:11:06.925324+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-HD-QIZHONG/retro-batch2-bj-2024-hd-qizhong-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2024-HD-QIZHONG-Q16": "48fb04860c1332c4a41972b52622038cc6f4a907e4dcb2274dff5ce9d3a75b0c",
+        "BJ-2024-HD-QIZHONG-Q17": "e19a67415045f0cba6ccbbe7fcc9b45d41fa8693b88c410c34fb1119d308f2e0",
+        "BJ-2024-HD-QIZHONG-Q20": "ff98816908ca9e6c4e93b7c86de28f4d74ff181761912284283b6b5fa508aa1e",
+        "BJ-2024-HD-QIZHONG-Q21": "e1fc2d23a56b6b5dc3552c79a4a4d26f0ab53d30aad4280f266d85095e48c2dd"
+      }
+    }
+  ],
+  "source_page_total": 79,
+  "source_roles": {
+    "paper": "S16c75dff224a"
+  },
+  "bounded_residual": [],
+  "review_receipts": {
+    "previous_acceptance": {},
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/primary_review/BJ-2024-HD-QIZHONG.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/independent_review/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-HD-QIZHONG/retro-batch2-bj-2024-hd-qizhong-20260924_merge.json",
+    "prior_reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign/BJ-2024-HD-QIZHONG.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign_stagefix/BJ-2024-HD-QIZHONG.json",
+    "rounds": []
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-hd-qizhong-state2-retro-batch2-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:31:31.686522+00:00"
+    },
+    {
+      "spec_id": "bj-2024-hd-qizhong-state3-retro-batch2-status-fix-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:59:44.674630+00:00"
+    }
+  ]
+}

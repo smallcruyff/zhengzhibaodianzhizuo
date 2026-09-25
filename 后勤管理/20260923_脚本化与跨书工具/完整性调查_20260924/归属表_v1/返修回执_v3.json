@@ -1,0 +1,89 @@
+{
+ "responder": "Claude（工作流子代理，只读书稿/题库/Skill，未运行collab.py，未启动子代理/新会话）",
+ "target": "归属表_v1 → v3",
+ "rule_version_before": "2026-09-24-attribution-v2",
+ "rule_version_after": "2026-09-24-attribution-v3",
+ "against": "确认意见_v2.json（Opus对抗复核，verdict=FAIL，1 blocker / 4 major）",
+ "items": [
+  {
+   "severity": "blocker",
+   "desc_ref": "v2直接用matrix.csv的dup_covered_by合并收录状态，没有区分重复登记别名和跨卷复用/串题；分母未按等价类去重；身份错误行仍出现在错收表；书稿标签重定向未处理",
+   "status": "fixed_with_deferred_subitem",
+   "fix_applied": [
+    "①区分别名与串题：build_exam_identity_v3.py新增dup_alias_qid_pairs，只对status=duplicate_registration_alias的卷（本轮唯一一对BJ-2024/2025-HD-QIZHONG，按bank_duplicate_exams.csv的kind=duplicate_registration过滤）用matrix.csv的dup_of生成逐题(canonical_qid,alias_qid)表，共20对；build_attribution_v3.py只信这张表做COLLECTED合并，跨卷复用/串题（22/24高考Q8/Q13、24高考Q18↔26海淀期中Q8等）只在downgrade_notes标注'关联但不合并'，不改收录状态。",
+    "②孪生题任一侧S/F/M都算覆盖：COLLECTED判断改为直接读双方matrix.csv模块列的原始值（不再依赖dup_covered_by字符串，该列对M值本就不填，是v2假漏收的直接原因），验证：BJ-2025-HD-QIZHONG的Q2/Q15/Q19/Q21/Q25#1均已从漏收表移出，正确显示COLLECTED。",
+    "③分母/差集按canonical_qid去重：新增canonical_qid列，build_diffs_v3.py按(canonical_qid,subq)去重（必须带subq，否则会把同一qid下不同小问误合并——本轮实现中先出现此bug并已自查修复），8本书合计去重76行漏收候选、39行OUT候选、0行错收候选。",
+    "④build_diffs排除身份错误行：build_diffs_v3.py统一用admission.startswith('身份')过滤，覆盖'身份错误-不计入分母'（伪Q18，1行）和v3新增的'身份未确认-不计入分母-待复核'（汇编待复核未定年份，2行），共3行不再进入任何模块差集，验证：BJ-2025-FT-YIMO-Q18已不在B2/PH/MI等任何extra_candidates.csv中。",
+    "⑤书稿标签重定向补进exam_identity：已尝试，见not_fixed。"
+   ],
+   "not_fixed": [
+    "确认意见示例'2025朝阳期中'→BJ-2026-CY-QIZHONG：已用grep遍历.claude/skills/beijing-gaokao-politics/references/下全部book-*.md、source-inventory.md、user-requirements-ledger.md，未找到'2025朝阳期中'或同类书稿字面标签与真实exam_id不一致的可引用原文，BJ-2026-CY-QIZHONG的exams.csv记录本身也未发现类似BJ-2024-CY-QIZHONG/BJ-2023-HD-QIZHONG的'文件名月份vs登记学年'错位证据。按规则找不到出处不代为猜测重定向，已在exam_identity.json的unresolved_notes与本回执明确列为deferred，留待主代理或下一轮核实后补登。"
+   ],
+   "verification": [
+    "两次独立重跑exam_identity.json/attribution.csv/attribution_options.csv/attribution_ruled.csv/diffs/model_batch/slice_estimate.json/回传题库线_v3.json逐字节一致（分别在scratchpad与交付目录各验证一次）。",
+    "确认意见举的3个具体假收录例子（2024/2022高考Q8、Q13，2026海淀期中Q8↔2024高考Q18）逐一核对：现均只按各自matrix.csv本身的S/F/M值判定COLLECTED，不再因跨卷关联被拉高；downgrade_notes里如实标注'关联但不合并(疑似跨卷复用/串题,非duplicate_registration_alias)'。"
+   ]
+  },
+  {
+   "severity": "major",
+   "desc_ref": "exams.csv/book-*.md逐题E1限定未系统补齐进skill_overrides.json；无rubric_links行的主观题被误判'不收'而非'待裁决'",
+   "status": "fixed_with_scope_limit",
+   "fix_applied": [
+    "①eval_rubric_rows()核心bug修复：rubric_links.csv'一行都没有'（未核实）与'有明确负例记录'（已核实无）不再合并处理，前者落待裁决-证据未核实，后者才判不收-无E1。",
+    "②用grep -n E1逐行核对exams.csv全表（仅18行含逐题E1/E3限定），结合book-xuanbi-1.md/book-xuanbi-3.md的多轮独立核验记录，找出与rubric_links.csv自动匹配结果冲突或缺失的题，新增14条skill_overrides覆盖（原5条不变，共19条），每条带原文行号出处：纠正误判为E1的BJ-2026-FT-YIMO-Q19（book-xuanbi-1.md连续5轮核验一致确认只有答案方向和整题样卷总分）；补齐已闭环但rubric_links.csv没有对应正确行的BJ-2024-FT-YIMO-Q20、BJ-2026-FS-YIMO-Q19、BJ-2026-HD-QIZHONG-Q22(1)、BJ-2026-HD-ERMO-Q18(1)；补齐已核实确认负例的BJ-2024-FT-YIMO-Q21、BJ-2024-SJS-YIMO-Q19(2)、BJ-2026-FT-ERMO-Q20、BJ-2024-MTG-YIMO-Q18。",
+    "③冲突处理：本轮未发现exams.csv notes与book-xuanbi-*.md结论互相矛盾的情况；两个来源结论一致才写入覆盖表，未发现冲突。BJ-2024-SJS-YIMO-Q19(3)无可引用具体结论，未代为裁定，仍按通用规则落待裁决-证据未核实（不判'不收'）。"
+   ],
+   "not_fixed": [
+    "全部book-*.md（bixiu-2/3、culture、philosophy、reasoning等）的E1关键词穷尽扫描未完成，本轮只系统核对了exams.csv全表和book-xuanbi-1.md/book-xuanbi-3.md里明确提到具体题号的段落（这两个文件是确认意见证据引用最集中的来源）；未扫描到的部分若其rubric_links.csv本身判定已经正确，不受影响，但不能排除还有类似BJ-2026-FT-YIMO-Q19这样'自动匹配与书稿核验冲突'但本轮未发现的题。"
+   ],
+   "verification": [
+    "BJ-2026-FT-YIMO-Q19：admission由'完整题-有E1'改判为'不收-无E1'，evidence='缺细则-已核实'。",
+    "BJ-2026-HD-QIZHONG-Q22(1)：admission由'不收-无E1'（原evidence='缺细则'，rubric_links一行都没有）改判为'完整题-有E1'。",
+    "BJ-2024-FT-YIMO-Q20/BJ-2026-FS-YIMO-Q19：均由'待裁决-证据未核实'改判为'完整题-有E1'。",
+    "BJ-2026-HD-ERMO-Q18(1)：由'不收-无E1'(evidence=E3)改判为'完整题-有E1'。",
+    "BJ-2024-FT-YIMO-Q21/BJ-2024-SJS-YIMO-Q19(2)/BJ-2026-FT-ERMO-Q20：均由'待裁决-证据未核实'或'不收-无E1'(未核实版)改判/确认为'不收-无E1'(已核实版，evidence='缺细则-已核实')。"
+   ]
+  },
+  {
+   "severity": "major",
+   "desc_ref": "门头沟/房山汇编候选行题型判反（FS-YIMO-Q17主观题误标选择题，Q13选择题误标主观题）；只从status=已解析的9个汇编块生成候选行，遗漏待复核块与书稿已收录题",
+   "status": "fixed_with_scope_limit",
+   "fix_applied": [
+    "①题型判定改按北京卷题号区间（Q1-15选择题/Q16+主观题）：原正则`\\(\\d+分\\)|（\\d+分）`只认单一全角/半角括号组合，BJ-2024-FS-YIMO-Q17原文'（11分)'全角开半角闭两种正则都漏判被误标选择题；BJ-2024-FS-YIMO-Q13(num=13)因chars>500误判主观题。改按题号区间后两题均已改判正确（Q13→选择题，Q17→主观题）。",
+    "②纳入assembly_blocks.csv中status=待复核的5个门头沟/房山区块（原matched_exam_id为空未被纳入）：门头沟8/11、房山15能用book-xuanbi-1.md:308的官方答案键(D/C/D)反向核实年份为2024届，已并入对应卷候选行；门头沟14/20无可核实的具体结论，不代为裁定，标'身份未确认-不计入分母-待复核'单列（不进任何模块分母）。",
+    "③补齐书稿已确认收录、但assembly_blocks.csv/questions.csv均无独立行的4题（门头沟Q10/Q18、房山Q14/Q18(2)），来源标book-xuanbi-1.md具名核实，不冒充分类器/汇编产物；其中Q10/Q14/Q15/Q18(2)及待复核解析出的Q8/Q11共8题按book-xuanbi-1.md:308'正文9个实际题块与正式键9/9一致'直接标注归属_X1=COLLECTED；门头沟Q18按同一处审计记录'只修订审计状态，不改正文和正式槽'的明文，未标COLLECTED，只记确认负例。",
+    "④门头沟/房山候选行从v2的9行增至18行（+9），已列入回传题库线_v3.json要求题库负责人补登questions.csv/matrix.csv正式行。"
+   ],
+   "not_fixed": [
+    "确认意见提到的'必修三收门头沟Q1、Q3、Q8和房山Q9、Q10'未能在book-bixiu-3.md（必修三对应的Skill记录文件，已grep确认其中无任何门头沟/房山字样）或其它可读到的Skill文本里找到可引用原文核实，本表不代为登记，列为deferred，建议主代理下一步核实必修三正文实际引用情况后补登。"
+   ],
+   "verification": [
+    "attribution.csv中BJ-2024-FS-YIMO-Q13：type=选择题，admission=完整题-选择题照收（原type=主观题,admission=待裁决）。",
+    "BJ-2024-FS-YIMO-Q17：type=主观题，admission=待裁决-证据未核实（原type=选择题,admission=完整题-选择题照收）。",
+    "BJ-2024-MTG-YIMO-Q8/Q10/Q11、BJ-2024-FS-YIMO-Q14/Q15：归属_X1=COLLECTED，evidence=E1。",
+    "BJ-2024-MTG-YIMO-Q18：归属_X1=MAYBE（未标COLLECTED），admission=不收-无E1。",
+    "UNRESOLVED-门头沟一模-Q14/Q20：admission=身份未确认-不计入分母-待复核，已被build_diffs_v3.py排除出全部模块差集。"
+   ]
+  },
+  {
+   "severity": "major",
+   "desc_ref": "重跑校验是自己对自己（比较快照与快照自己的清单，永远OK）；脚本仍硬编码另一次会话的/private/tmp分类器路径；README未记录questions.csv哈希",
+   "status": "fixed",
+   "fix_applied": [
+    "build_attribution_v3.py、prep_model_batch_v3.py新增--inputs-dir参数，默认读交付目录本地inputs_snapshot/，不再硬编码/private/tmp/…/bf450d67…/scratchpad/completeness/classifier；build_exam_identity_v3.py新增--bank-dir/--review-dir/--matrix参数（该脚本职责是核对线上最新状态，默认仍指向线上）。",
+    "新增scripts/verify_live_inputs_v3.py：对照当前线上题库文件（rubric_links.csv、exams.csv、assembly_blocks.csv、matrix.csv、bank_duplicate_exams.csv）的实时SHA-256与inputs_snapshot/MANIFEST.sha256登记的快照哈希，不一致报CHANGED并提示需要用线上路径重新生成，取代'自己对自己'的旧校验命令。",
+    "补记questions.csv当前哈希13116c9d0409bcb7a9ea025978b9d58f1c03b5635a8e1dc3a2ba314ecfad871d（4398行）到README；该文件本表脚本不直接读取，只留痕供人工判断题库是否整体重建。"
+   ],
+   "verification": [
+    "本次执行verify_live_inputs_v3.py：5个线上文件与快照全部OK，说明自v2生成以来题库/矩阵未变，本版attribution.csv仍可信任离线快照复现。",
+    "两次独立重跑（一次在scratchpad用--inputs-dir指向复制的快照，一次在交付目录用相对路径inputs_snapshot）产出的exam_identity.json/attribution.csv/attribution_options.csv/attribution_ruled.csv/diffs/*/model_batch/slice_estimate.json/回传题库线_v3.json逐字节一致。"
+   ]
+  }
+ ],
+ "not_verified_independently": [
+  "全部book-*.md的E1关键词穷尽扫描（bixiu-2/3、culture、philosophy、reasoning等）未完成，本轮重点核对了确认意见证据引用最集中的exams.csv全表与book-xuanbi-1.md/book-xuanbi-3.md，其余书目仅在grep命中'门头沟'/'房山'等特定关键词时核对，不排除还有未发现的类似冲突。",
+  "本轮对确认意见举出的blocker①⑤条具体三个跨卷复用例子（22/24高考Q8/Q13，26海淀期中Q8↔24高考Q18）做了逐一抽样核实，其余matrix.csv里可能存在的同类shared_or_reused_questions对未逐一抽查，信任'只信dup_alias_qid_pairs、不再读dup_covered_by'这一架构性修复会自动覆盖全部同类实例。"
+ ],
+ "determinism_verified": "两次独立完整重跑（scripts/build_exam_identity_v3.py→build_attribution_v3.py→build_diffs_v3.py→prep_model_batch_v3.py→apply_rulings_v3.py 全链路），产出的全部文件逐字节一致；分别验证于 /private/tmp/claude-501/.../scratchpad/v3work（run2子目录）与交付目录本身（verify_run2子目录，事后已清理）两处。",
+ "discipline_compliance": "全程只读书稿/题库/Skill；未修改任何书稿/题库/协作文件/Skill文件；未运行collab.py；未启动子代理、未开新会话、未向其它会话发消息；中间产物只写入/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/；全部脚本使用/usr/bin/python3(3.9.6)，开头均设置sys.dont_write_bytecode=True；大文件（exams.csv、rubric_links.csv、book-*.md）均用grep/sed查片段，Skill引用按文字定位（行号均为grep -n实测结果，非估算）。"
+}

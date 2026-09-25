@@ -1,0 +1,49 @@
+{
+  "summary": "收口 confirm_publish_review.json 里剩的 1 个 major + 1 个 minor：①先看这里/审阅清单/中央状态/审阅入口新文件/工作区根新文件五类写入目标，现在都在 resolve() 之前先对未解析路径本身及各级父目录逐一查是否符号链接，命中任何一级即 GuardRefusal（exit 3），dry-run 与 --apply 都不放过；另外先看这里/审阅清单这两类原本就该落在审阅入口内的目标，额外要求 realpath 落在 realpath(审阅入口) 内，不再只满足'落在项目根内'。②_rollback 第 4 步的 elif 分支与第 5 步核对里的 sha256_file 调用都各自包了 try/except OSError，读取失败计入'回滚不完整'清单（退出码 4），不会再被误报成'输入或配置错误'（退出码 2），也不会跳过后续文件的恢复/核对。",
+  "files": [
+    {
+      "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py",
+      "change": "新增 _reject_symlink_chain(p, what)：对未解析路径的每一级父目录逐一查 is_symlink()，命中即 GuardRefusal，不看链接指向哪里。build_context 里 manifest_path/central_path/note_path 在各自 .resolve() 之前先调用它（原来是先 resolve 再查，链接早被解引用查不出来）；note_path、以及配置上位于 review_entry 内的 manifest_path，resolve 后额外断言 realpath 落在 realpath(review) 内。do_apply 里 ws_docx/ws_pdf/rv_docx/rv_pdf 的计算原来是先 _confine()（内部 realpath）再 _reject_symlink()（对已解析路径查链接，形同虚设），现在改成先 _reject_symlink_chain() 再 _confine()。compute_targets 里对应的 dst 检查也从 _reject_symlink 换成 _reject_symlink_chain（覆盖父目录）。_rollback 第 4 步 'elif p.is_file() and sha256_file(p) != before_sha' 改写成 else 分支内部 try/except OSError（读失败记入 incomplete 并 continue，不再让异常穿透该 for 循环项）；第 5 步 'now_sha = sha256_file(p)' 同样包 try/except OSError，失败记入 incomplete 并 continue 到下一个文件，不影响其余文件的核对。",
+      "lines_changed_approx": 90
+    },
+    {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py",
+      "change": "新增回归用例 R27（先看这里.md 是指向项目根内、审阅入口外某真实文件的符号链接，dry-run 与 --apply 都应 GuardRefusal 退出 3，且该文件内容不被改动——对应 confirm 报告的 C5b 攻击面）、R27b（先看这里.md 是指向审阅入口内另一已登记文件的符号链接，同样应在 dry-run 阶段 GuardRefusal，不能因'最终落点在入口内'就放行）、R28（用 run_tool_inject monkeypatch pr.sha256_file，令中央状态写入触发回滚后、_rollback 第 5 步核对读中央状态 SHA 时抛 OSError；断言退出码变成 4、stderr 含'回滚不完整'且不含'输入或配置错误'，中央状态磁盘内容其实已正确恢复，且清单/先看这里/审阅入口的其余恢复步骤没有被这次读故障打断）。"
+    }
+  ],
+  "tests": {
+    "runner": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py",
+    "python": "/usr/bin/python3 (3.9.6)",
+    "rehearsed_in_scratchpad": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/run.log",
+    "final_run_at_real_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/final_run.log（内容同步跑在测试脚本原路径下，输出仍写入其自身 out/ 与 test_results.json，未额外污染 scratchpad 之外的位置）",
+    "pass": 137,
+    "fail": 0,
+    "returncode": 0,
+    "note": "金标准（此前 125 通过的全部用例）连同新增的 R27/R27b/R28 一并跑过，全部 [PASS]，退出码 0。"
+  },
+  "issues_resolved": [
+    {
+      "desc": "先看这里.md（以及同类的审阅清单/中央状态/审阅入口新文件/工作区根新文件）若本身是符号链接，且指向项目根内、审阅入口外的某个文件，之前会在 note_path 完成 .resolve() 之后才检查'是不是链接'——链接早被解引用，检查恒假；containment 判定又只要求最终 realpath 落在项目根内，攻击目标恰好还在根内时会放行，导致 --apply 以退出码 0 覆盖入口外的无关文件。",
+      "how": "新增 _reject_symlink_chain：在对 note_path/manifest_path/central_path 做 .resolve() 之前，先对未解析路径逐级查是否符号链接，命中任一级立即 GuardRefusal（不管链接指向哪里）；do_apply 里 review/workspace 的 docx/pdf 写入目标也把原来'先 _confine 再查链接'的顺序倒过来，改成'先查链接链再 _confine'。另外对 note_path 与（配置在 review_entry 内时的）manifest_path，追加 realpath 必须落在 realpath(review_entry) 内的断言，不再只满足'落在项目根内'。",
+      "test": "R27（跨审阅入口边界的符号链接，dry-run 与 --apply 均退出 3，受害文件内容不变）、R27b（链接指向审阅入口内另一文件，dry-run 即退出 3）"
+    },
+    {
+      "desc": "_rollback 第 4 步的 elif 分支和第 5 步核对都直接调用 sha256_file，没有 try 保护；回滚过程中若再发生一次读故障（如磁盘暂不可读、文件被并发进程锁住），异常会穿透 _rollback，被 main() 的通用 except 打印成'输入或配置错误'（退出码 2），让人误以为写入之前就失败，且会跳过该文件之后的其余核对/恢复步骤。",
+      "how": "第 4 步把 'elif p.is_file() and sha256_file(p) != before_sha' 改写为 else 分支内部对 sha256_file 的调用加 try/except OSError，失败时记入 incomplete 并 continue 到下一个文件；第 5 步的 'now_sha = sha256_file(p)' 同样包 try/except OSError，失败同样记入 incomplete（带上标签与错误信息）并 continue，不影响循环里其余文件的核对，也不会让异常升级为退出码 2。",
+      "test": "R28（monkeypatch pr.sha256_file 令中央状态核对读失败，断言退出码 4、stderr 含'回滚不完整'不含'输入或配置错误'，且清单/先看这里/审阅入口的旧文件确已在其余步骤中正确恢复）"
+    }
+  ],
+  "discipline_confirmed": {
+    "only_file_changed": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py",
+    "test_file_changed": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py（仅追加 R27/R27b/R28 三个用例，未删改既有用例）",
+    "other_scripts_or_profiles_touched": false,
+    "collab_py_run": false,
+    "subagents_or_new_sessions_spawned": false,
+    "messages_sent_to_other_sessions": false,
+    "helper_scripts_location": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/（run_tests_publish_review.py 副本、run.log、final_run.log）",
+    "pycache_check": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 修复前后均只有 book_incremental/check_drill_admission/source_intake 三个旧 cpython-312 缓存，未新增 publish_review 缓存（测试脚本自身也断言了这一条）",
+    "real_inputs_sha_mtime": "run_tests_publish_review.py 内置的 REAL_INPUTS 快照（真实 B3_52/B3_51 docx/pdf/验收/同版身份/接管.json/中央状态等）测试前后核对一致（脚本内 check(before == after, ...) 通过）",
+    "protected_dirs_new_files": "真实 00_必修三最新审查稿（审阅入口）与真实中央状态/接管.json 全程只读；断言测试后未在其中新增任何文件（真实数据 dry-run 一节的 gate 结果与文件快照均确认）"
+  },
+  "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/fix6_publish_review.json"
+}

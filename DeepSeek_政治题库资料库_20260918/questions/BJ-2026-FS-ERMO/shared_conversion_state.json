@@ -1,0 +1,63 @@
+{
+  "exam_id": "BJ-2026-FS-ERMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-FS-ERMO-Q1": "b6d10364bcd0562501996bb353c91c9c40693887d94200b2c1948d0466c8b6c3",
+    "BJ-2026-FS-ERMO-Q2": "fcf3c778dfafecc7e21d6e8c8950b01ca7c0328d05e281cc4fa9fbb2eed71f29",
+    "BJ-2026-FS-ERMO-Q3": "ccbb05b43285f5590b9706f1347509cf7776289486e425bdae6a4af8350cbe0b",
+    "BJ-2026-FS-ERMO-Q4": "b73bbdad105bfef4aa8dbb04d675c6e16d2b17a55cfd0e257c7b14c48aa814c8",
+    "BJ-2026-FS-ERMO-Q5": "fa36fb385049f1911041f5d4d13c9867ed126c9ba75b4547811ee091f83a8ee9",
+    "BJ-2026-FS-ERMO-Q6": "b2c67d5ccb45fb23a8d19ea186e15728cb1ee2cef9b0f1e59234ecd0e22f559f",
+    "BJ-2026-FS-ERMO-Q7": "60637c3f9d1bbc85aadabbe7fd515c6683e648f301fa60bc48b6c261313408cd",
+    "BJ-2026-FS-ERMO-Q8": "37c66140f4c6d22924d41b7c09e0f79bbe34d3b9d6ed4c95e9d16995a03af69e",
+    "BJ-2026-FS-ERMO-Q9": "1ff0d0b0c0701c841f449db7020125b441589c015c24a5efe76080cca64da499",
+    "BJ-2026-FS-ERMO-Q10": "dd48d59bd725704917c498181e8fbecb4b6fdaef7a21b3e1f7e6cc1d3fe77c9f",
+    "BJ-2026-FS-ERMO-Q11": "53a0d731bf59669a0dd2868dad57fddc2dee4e9bb1173bd098c5c35e37873025",
+    "BJ-2026-FS-ERMO-Q12": "beba45b385887f04f2540b8a3d445550a502db5e50ebc6f463e714b2e167c9f8",
+    "BJ-2026-FS-ERMO-Q13": "dbf03e338148149944fcd8f444e8a3f443457f2feea8330e25f0ee7774a0aa11",
+    "BJ-2026-FS-ERMO-Q14": "18a1405ccad7bc9accb115c0afaf423773e11e459fe0609b25684d693e7da974",
+    "BJ-2026-FS-ERMO-Q15": "c37755307f8c028c3a73247640636d36113468415b8c5270b050a4b69b82e30f",
+    "BJ-2026-FS-ERMO-Q16": "b0cd06094294fdae7bacdb0f43347e0811b10a32af3322f59ac2ffb32d50e525",
+    "BJ-2026-FS-ERMO-Q17": "43ddfc805fdfaf41ac09e22aba57eebdc06f80f26692fb649c46057c6bd76149",
+    "BJ-2026-FS-ERMO-Q18": "b52b818f2e4d6036f1212266a8d54d8ea2e84e882f51f22196cf0bee81551380",
+    "BJ-2026-FS-ERMO-Q19": "138b34dc49cbc277c126b10b8071fe054797b0fb657f960b505b1e7653211244",
+    "BJ-2026-FS-ERMO-Q20": "335a581353a316eacd41127b8d3b9973461bc60450aead25aad7f329a808465b",
+    "BJ-2026-FS-ERMO-Q21": "9b87e9965626fe9dcd5445da0e633dca89d151dc29d67207abb2980d713948bd"
+  },
+  "source_pages": {
+    "teacher": 12,
+    "rubric_1_docx_or_pptx_unpaged": 0,
+    "rubric_2_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 12,
+  "source_roles": {
+    "teacher": "Sffe050fd8f7e",
+    "rubric_1": "S51621a4abaad",
+    "rubric_2": "S51621a4abaad"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "缺原卷来源",
+    "无独立参考答案文件"
+  ],
+  "bounded_residual": [],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-fs-ermo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:28:42.274162+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:30:06.122838+00:00"
+}

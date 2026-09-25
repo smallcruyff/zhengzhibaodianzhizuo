@@ -1,0 +1,73 @@
+{
+  "summary": "第五轮返修，对应终审 final_publish_review.json 的 2 条 major + 4 条 minor（不含已声明延后的 N3/N6/N8 与行数精简）：（1）note_file/archive_to/central_state_backup 等由配置模板渲染出的写入目标统一过真正的逃逸检查（不再是 `_confine(p,[p.parent])` 这种拿路径跟自己父目录比的恒真式），含 '../' 或落在声明目录外一律 GuardRefusal（退出 3），dry-run 阶段就报出；（2）`_rollback` 里原来没有 try 保护的 shutil.move（移回归档文件）与 shutil.copy2（从备份恢复中央状态/清单/先看这里）现在各自 try/except，一步失败不再中断后续步骤，回滚不完整时新退出码 4（写进文件头“退出码”一节），stderr/报告写“回滚不完整，需要人工核查：<逐项路径与原因>”，不再落进“输入或配置错误”；额外发现并修复了因此暴露的次生问题——回滚第 3 步对归档目录做 rmtree 之前，如果第 2 步有文件未能移回（唯一副本还躺在归档目录里），旧写法会不分青红皂白把归档目录连同这份唯一副本一起删掉，现在只要归档目录里还留着任何未移回的登记文件就整体保留、不删；（3）archive_dir.mkdir(parents=True) 顺带新建的中间目录记录并在回滚时按深到浅只删本次新建的、非空则停止且计入不完整；dry-run 增加 paths.review_history 磁盘存在性检查；中央状态第 6 步三种可预见失败（central_state_fields 缺必需键、status 模板占位符未知、active_revision_round 现有值非 dict）改到 dry-run 阶段的 write_targets 门里预检并 FAIL；dry-run 计划新增 central_state_fields_not_updated_preview；active_revision_round.summary 改为始终指向本轮更新后的“先看这里”文件（不再沿用旧批次说明），previous_working_head 补上 pdf_pages。",
+  "files": {
+    "modified": [
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py"
+    ],
+    "test_added_or_updated": [
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py（新增 test_regressions 内 R15–R26，共 31 条新 check；原 R1–R14 与必测①②③④、94 条 check 原样保留全部仍成立）"
+    ],
+    "scratch_only": [
+      "$SCRATCH/booktools/publish_review/run_tests_publish_review.py（先跑的副本，与项目内文件 SHA 一致：df7513937a4619db0929cf2c895ad743b2931938b8c46616188b979ada9b7551）",
+      "$SCRATCH/booktools/publish_review/fix5_verify/orig_verify.py（复制自上一轮审查者，未修改，仅复用其沙盒构造/inject 机制做补充对抗性验证）",
+      "$SCRATCH/booktools/publish_review/fix5_verify/fix5_attacks.py（补充对抗性用例：G2/G2b/G3/G4/G5/G6/F5e/F5f/F5g/F6/F2/F2b/F4a-e，17 例，均为独立于 run_tests 的第二套证据）",
+      "$SCRATCH/booktools/publish_review/fix5_verify/run/results.json（上面 17 例的结果）",
+      "$SCRATCH/booktools/fix5_publish_review.json（本回执的暂存副本）"
+    ]
+  },
+  "tests": [
+    {"input": "run_tests_publish_review.py（94 条原有 check，$SCRATCH/booktools/publish_review/ 内运行）", "result": "全部 [PASS]，0 [FAIL]，退出码 0", "seconds": "约 25s"},
+    {"input": "run_tests_publish_review.py（含新增 R15–R26，共 125 条 check）", "result": "全部 [PASS]，0 [FAIL]，退出码 0；真实输入 SHA/mtime 测试前后一致；__pycache__ 无 publish_review 编译缓存", "seconds": "约 27s"},
+    {"input": "run_tests_publish_review.py 已复制到项目 测试/ 目录后原样重跑一次", "result": "同上，125/125 PASS", "seconds": "约 27s"},
+    {"input": "上一轮/上上一轮审查者的对抗脚本原样重跑：r3_attacks.py（31 例）、orig_verify.py（31 例）、final_attacks.py（约 20 例）、final_attacks2.py（3 例）——均只读证据脚本，未加断言，用于核对旧金标准场景本轮仍是预期结果", "result": "全部 exit 0（无崩溃）；人工核对关键条目：G2/G2b 现为 dry_rc=3/apply_rc=3、受害文件未变；F5e/F5f 现为 apply_rc=4、stderr 含“回滚不完整，需要人工核查”且不含“输入或配置错误”；N10 系列真实数据 dry-run 门结果与此前一致（ownership/batch_monotonic/review_entry 按预期 FAIL），真实文件全程未变", "seconds": "各 1–3s"},
+    {"input": "fix5_attacks.py（本轮新写的 17 个补充对抗用例，含三重故障 F5g、archive_to/backup 模板逃逸 G4/G5、中央状态中间一级符号链接 G6）", "result": "全部符合预期：G2/G2b/G4/G5/G6 dry_rc=apply_rc=3 且沙盒/根外 diff 为空；G3（合法自定义单级文件名）不受影响；F5e/F5f/F5g apply_rc=4 且归档目录中未移回的文件被保留不被 rmtree 误删；F2 中间目录清理干净；F2b/F4a/F4c/F4d dry_rc 从旧的 0 变为 2；F4b（合法缺省）仍 dry_rc=0 且计划里能看到 preview；F4e 的 summary/pdf_pages 按预期更新", "seconds": "约 4s"},
+    {"input": "/usr/bin/python3 -B -m py_compile publish_review.py", "result": "编译通过，无新增 __pycache__（-B 禁用字节码写入）", "seconds": "<1s"}
+  ],
+  "issues_resolved": [
+    {
+      "desc": "major#1：publish.note_file 等由配置模板渲染出的写入目标未过真正的逃逸检查——compute_targets 里 `_confine(p, [p.parent])` 恒真，note_path 在 build_context 里更是完全没有 containment；note_file 带 '../' 时能把\"先看这里\"写到审阅入口之外甚至项目根之外，且回滚会把根外原文件当\"新建\"的一并搬走/覆盖（终审 G2/G2b）。",
+      "how": "build_context 里新增校验：publish.note_file 必须是单级文件名（不含 '/'、'\\\\'、不是 '..'），否则 GuardRefusal；随后对 note_path 与 manifest_path/central_path 同口径地跑 _confine_no_escape。compute_targets 里原来自比自的 _confine(p,[p.parent]) 循环改为对 build_context 记下的\"配置原文\"（ctx['central_configured']/['manifest_configured']/['note_configured']）再跑一次真正的 _confine_no_escape，不再是恒真式。archive_to/central_state_backup 这类会把声明目录（review_history/candidate）整段替换进模板结果里的写入目标，新增 `_confine_template_result(prof, template, ctx, base, what)`：渲染结果按 resolve() 同一套语义解析（兼容书册配置里\"字面相对路径，不带占位符\"的写法，比如沙盒 profile 与部分真实书册配置），最终 realpath 必须落在声明的 base 内，否则 GuardRefusal；compute_targets 与 do_apply 都调用它（dry-run 与 --apply 用同一套判定，dry-run 阶段就报出，不再只是汇总进 problems 变成退出 2）。backup_dir 之前只在 --apply 里检查、dry-run 完全没查、且 dry-run 计划里给的是硬编码猜测路径，现在 compute_targets 也真正渲染+校验，加入 targets 计划。",
+      "test": "run_tests_publish_review.py R15/R16（note_file 两种逃逸变体）、R17（archive_to 逃逸）、R18（central_state_backup 逃逸）；fix5_attacks.py G2/G2b/G3/G4/G5/G6（G3 是合法自定义单级文件名的正例，G6 是中央状态路径中间一级符号链接的额外覆盖）"
+    },
+    {
+      "desc": "major#2：_rollback 里 shutil.move（把归档文件移回原位）和 shutil.copy2（从备份恢复中央状态/清单/先看这里）都没有 try/except；回滚途中只要再发生一次 IO 故障，_rollback 本身会直接抛出异常，跳过后面的恢复步骤和\"回滚不完整\"汇总，异常一路冒到 main() 的通用 except Exception，打印成\"输入或配置错误\"，让主代理误以为失败发生在任何写入之前（终审 F5e/F5f）。",
+      "how": "_rollback 每一步（第 1 步删除新建文件、第 2 步移回归档文件、第 3 步删除归档目录、第 4 步恢复中央状态/清单/先看这里）现在各自 try/except OSError，失败只记入 incomplete 列表、写一条警告 step，继续跑下一步，_rollback 本身保证不再抛出异常，返回值从字符串改为 (note_text, incomplete_list) 元组。新增异常类 RollbackIncomplete（original, incomplete, note），do_apply 的 except 分支在 incomplete 非空时改抛它（不再是 GuardRefusal 的\"已回滚\"或 Gate 的\"发布中途失败，已回滚\"这类会让人误判已经复原的措辞）。main() 新增对应分支：stderr 写\"发布中途失败：<原始错误>；回滚不完整，需要人工核查：<逐项路径与原因>\"，若给了 --report 也尽量把这份信息写进报告文件，退出码用新定义的 4（写进文件头\"退出码\"一节），绝不落进\"输入或配置错误\"。修复过程中用故障注入发现并顺带堵上一个次生数据丢失风险：第 2 步某文件移回失败后仍留在归档目录里（这是它唯一副本，docx/pdf 没有独立备份），若第 3 步不分青红皂白地 rmtree 整个归档目录，会把这唯一副本也删掉——现在只要归档目录里还有任何未移回的登记文件，第 3 步就整体跳过删除，原样保留供人工核查/找回。",
+      "test": "run_tests_publish_review.py R19（回滚移回故障）、R20（回滚恢复中央状态故障）；fix5_attacks.py F5e/F5f（原有场景复跑，确认从旧的\"输入或配置错误\"变为新的\"回滚不完整，需要人工核查\"+退出码4）、F5g（新增三重故障：移回PDF+恢复清单同时故障，验证多重故障仍不中断、仍完整报告）、F6（确认单一故障场景退出码仍是2，不会被误判为4）"
+    },
+    {
+      "desc": "minor：archive_dir.mkdir(parents=True) 顺带新建的中间目录，回滚只 rmtree archive_dir 本身，这些中间目录留了下来，沙盒全树和发布前不一致；paths.review_history 配了但磁盘上不存在时 dry-run 全部门 PASS，只能等 --apply 里隐式新建（终审 F2/F2b）。",
+      "how": "do_apply 在 archive_dir.mkdir 之前，沿 archive_dir 向上走，记下从 archive_dir 的父目录开始、到 review_history 为止尚不存在的祖先目录（archive_new_ancestors，深到浅顺序）；_rollback 新增第 3b 步：rmtree(archive_dir) 之后，由深到浅逐个 rmdir 这些记录下来的祖先目录，只删空目录，遇到非空就停止并计入 incomplete（不会误删混入的其他内容，也不会动发布前就存在的目录）。compute_targets 新增检查：paths.review_history 配置了但磁盘上不存在时直接 FAIL（'归档历史目录在磁盘上不存在…工具不会自动新建根目录'），dry-run 阶段就报出，不必等 --apply 才发现。",
+      "test": "run_tests_publish_review.py R21（中间目录清理）、R22（review_history 磁盘缺失）；fix5_attacks.py F2/F2b 复跑确认 new_subdir_left=false、dry_rc 从 0 变为 2"
+    },
+    {
+      "desc": "minor：中央状态第 6 步有三种可预见失败——①publish.central_state_fields 整体覆盖时漏了必需字段名映射（写入时 KeyError）；②publish.central_state_status_template 带工具不认识的占位符；③中央状态里现有的 active_revision_round 不是 dict（.update() 会炸）——旧版都只能等 --apply 写到一半才失败再靠事务回滚兜底，dry-run 全部门 PASS；另外 dry-run 计划里看不到 central_state_fields_not_updated（只有 apply_result/回执才有）（终审 F4a/F4b/F4c/F4d）。",
+      "how": "新增 `_REQUIRED_CENTRAL_FIELDS` 常量（do_apply 第 6 步实际用到的必需字段名，不含可选的 status/active_revision_round）与 `_precheck_central_state_write(prof, central, batch)` 函数：检查 central_state_fields 是否为 dict 且包含全部必需键；若配了 status 字段名，试渲染 status 模板（用哨兵值）看占位符是否都认识；若配了 active_revision_round 字段名，检查中央状态里对应值若存在则必须是 dict。compute_targets 新增对 central 参数（run() 里已加载好的中央状态 JSON）调用这个预检函数，问题汇总进 write_targets 门 FAIL。同时在 plan 里新增 `central_state_fields_not_updated_preview`（dry-run 也能看到书册配置漏了哪些可选字段名映射，不用等到 apply_result）。",
+      "test": "run_tests_publish_review.py R23（缺必需字段名）、R24（status 模板占位符不认识）、R25（active_revision_round 非 dict）；fix5_attacks.py F4a/F4c/F4d（dry_rc 从旧的 0 变为 2）、F4b（合法缺省场景确认不受影响，dry_rc 仍 0，且能看到 preview 列表）"
+    },
+    {
+      "desc": "minor：active_revision_round.summary 改批次后仍沿用旧值（继续指向上一批的说明文件），previous_working_head 缺 pdf_pages（前身 publish_b52 与真实中央状态里都有这一项）（终审 F4e）。",
+      "how": "do_apply 第 6 步：active_round.update({...}) 里新增 'summary': str(note_path)——不管有没有给 --note，第 5 步都会把 note_path（\"先看这里\"）更新成本轮内容（有 --note 用其原文，没有则是机器生成的最小链接页），是唯一能保证\"指向本轮说明\"的文件，比继续沿用旧 summary 字段值更可靠。previous_working_head 的字典里新增 'pdf_pages': new_central.get(fields['latest_render_pages'])，取的是本次覆盖之前（仍是旧批次）的值，必须在后面几行把 latest_render_pages 改写成新页数之前读取。",
+      "test": "run_tests_publish_review.py R26；fix5_attacks.py F4e_summary_and_pdf_pages（复用真实必修三中央状态字段口径核对 arr_summary 是否等于本轮先看这里路径、previous_working_head.pdf_pages 是否等于旧页数 782）"
+    }
+  ],
+  "issues_deferred": [
+    {
+      "desc": "行数精简（publish_review.py 现为 1410 行，规格目标 ≤900 行）：本轮为修两条 major 与四条 minor 新增了 _confine_template_result/_precheck_central_state_write/archive_new_ancestors 跟踪/RollbackIncomplete 等约 250 行，行数不降反升。",
+      "why": "终审报告本身把这条列为\"修完上面两条 major 之后再精简\"，且用户本轮任务的三条编号要求里没有把行数精简列进来；在没有专门一轮做合并重复 containment 调用/精简注释的情况下，现在动手裁剪存在把刚验证过的安全逃逸检查裁没的风险，风险收益不对等，故按终审自己的建议延后到专门一轮。"
+    },
+    {
+      "desc": "N3（preserve 放行的同名文件被直接覆盖、无备份）、N6（dry-run 不按模板渲染备份目录且未逐文件列出归档计划、候选目录形态门只看正则）、N8（候选目录形态门只看正则，未做真实归属校验）——上一轮返修回执已声明延后，本轮终审复跑确认仍存在。",
+      "why": "本轮用户下达的三条编号要求（note/archive/backup 逃逸、回滚健壮性、archive中间目录+review_history存在性+中央状态预检+summary/pdf_pages）不包含这三项；且终审报告原文对这条的处理意见是\"按 r3verify 的建议处理；如果主代理裁定继续延后，就把它们登记进工具文件头的已知限制\"，即由主代理裁定，不是本轮返修者的既定任务范围，故不在本轮改动，原样保留在已知限制里等待主代理决定。"
+    }
+  ],
+  "known_limits": [
+    "note_file 现在被硬性要求是单级文件名（不能含子目录）；真实 bixiu2/bixiu3 配置用的都是这种写法，不受影响，但若将来某本书需要把\"先看这里\"放进审阅入口的子目录，需要另外设计校验（不能简单放开这条限制，否则又要重新处理 '../' 逃逸）。",
+    "_confine_template_result 对 archive_to/central_state_backup 模板的解析沿用 profile_lib.resolve() 语义（不是绝对路径就当作相对项目根解析），这与工具其余 paths.* 字段的解析口径一致，但要求这两个模板的渲染结果最终确实落在 review_history/candidate_root 之内——如果书册模板写法本身就依赖\"渲染出的字符串既不以声明目录开头、也不是合法的项目根相对路径\"这种非常规用法，会被判定为不在 base 内而拒绝（目前两本真实书册的配置都不是这种写法）。",
+    "回滚新增的 archive_new_ancestors 清理与\"归档目录里还有未移回文件时整体保留不删\"这两条改动只覆盖了归档目录这一条链路；备份目录（发布准备/状态备份）本身若因故障残留半成品，仍按原有逻辑处理（不在本轮改动范围）。",
+    "退出码 4 是本轮新增定义，只在\"--apply 中途失败且回滚本身也失败\"这一种场景下出现；调用方（主代理/collab.py 等）若已经写死\"非 0/1/2/3 视为未知错误\"，需要相应更新对退出码 4 的识别与处理文案。",
+    "central_state_fields 的预检（_precheck_central_state_write）只覆盖了 do_apply 第 6 步实际会用到的必需字段名与两个可选字段（status/active_revision_round）的类型/模板占位符；没有对中央状态其余字段做通用 schema 校验。"
+  ],
+  "profile_fields_needed": [
+    "本轮未新增需要登记进 profiles 的配置字段；用到的字段名（publish.central_state_status_template、publish.central_state_fields 等）在前几轮回执里已经登记过。"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "summary": "第四轮返修：规格六条（目录同版闸、写后失败清理、批量误改保护、check/repair keepNext 长链闸同口径、文件头说明更新）全部完成并有真实数据/合成用例验证；顺手修的两处（标题段首空白 run、PAGEREF 拆分 instrText）也已修好。回归测试 39/39 通过（含新增 10 条），金标准 B3_03 repair == B3_04、B3_04 repair --toc == B3_52 仍逐字节一致。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/layout_prepare.py（唯一改动文件，44557 → 56200 字节）"
+  ],
+  "issues_resolved": [
+    {
+      "desc": "1【必须】目录同版闸：repair --toc 与 check 带 --toc-pdf/--pdf 时必须证明 PDF 由输入 DOCX 渲染。",
+      "how": "新增 prove_same_version(pd, P, docx, pdf, docx_sha, pdf_sha, soft)：①先查 bh._identity_records（同版身份记录/.review-manifest.json）——记录里本 DOCX 对应别的 PDF（identity=pdf_mismatch）或本 PDF 由别的 DOCX 渲染（identity=docx_mismatch）直接判不同版，不看对位率；②否则复用 block_index 的对位算法（bx.load_docx + bx.BookCfg + bx.pdf_stream + bx.align，不另写一套）算正文对位率 align_ratio = len(pmap)/tried，低于 profile 的 toc.pdf_align_min（新字段，缺省 0.98）判不同版。soft=False（repair）不同版直接 Abort(2) 不写输出；soft=True（check）不抛异常，返回 (result, ok)，ok=False 时该 --toc-pdf 的页码差异整体归入 toc_version_problems，todo_toc 清空，不再计入可修待办（repairable_plan_count.toc=0），即使 toc_pdf_dests 自己的两道闸（链接行数/落页找标题）因为整份 PDF 系统性错位而没拦住也不会被当成可修待办误报。报告新增字段 pdf_same_version:{method, identity, align_ratio, threshold, paras_tried, anchors, identity_file?}。",
+      "test": "真实数据四个必测场景全部核实：①B3_04 DOCX + 目录定位/04_编号与考法计数.pdf → align_ratio=0.995（identity=unrelated，无专属身份记录但对位率达标）→ 通过，repair --toc 仍得到 30 处回填、输出 SHA256 与 B3_52 逐字节相同（金标准未破坏）；②B3_52 DOCX + 第51批 PDF（必修三_人工审查历史/第51批_原样审阅_20260923_150732/）→ identity=pdf_mismatch（B3_52 自己的 同版身份.json 记录显示它对应另一份 PDF）→ repair Abort(2)，不写输出；③B3_51 DOCX + B3_52 PDF → identity=pdf_mismatch（B3_51 目录下 .review-manifest.json 记录显示它对应另一份 PDF）→ repair Abort(2)，不写输出；④B3_52 DOCX + 其同版 PDF → identity=match（命中 构建/同版身份.json）→ 通过，check pending=0。均见 run_tests_layout_prepare.py 的 fix4-1～fix4-4。"
+    },
+    {
+      "desc": "2【必须】写出后失败清理不完整：write_docx 之后只有显式 fail_after_write 判定的几种失败会删除输出，写后重读崩溃、--health 的 bh.run_health 抛异常、write_report 的 OSError 等都会留下未复核的 DOCX。",
+      "how": "把 receipt = dl.write_docx(...) 之后的整段写后复核 + 写报告代码放进一个 try / except BaseException 块：任何异常（不限于 Abort）都先 out_path.unlink() 再重新抛出，不留半成品；fail_after_write 简化为只 raise Abort，不再自己 unlink（交给外层统一处理，避免两处逻辑不一致）。write_report 的临时文件从固定名 .<报告名>.tmp 改用 tempfile.mkstemp(dir=同目录)：mkstemp 每次生成之前不存在的随机名并以 O_CREAT|O_EXCL 建它，不会跟随攻击者预先放在固定名位置的符号链接。",
+      "test": "fix4-5：monkeypatch bh.run_health 让写后那次调用抛 RuntimeError（模拟 --health 崩溃），repair 写出 DOCX 后异常向外传播，输出文件确认已被删除。fix4-6：在报告目录预放一个指向 precious.txt 的符号链接 .r.json.tmp（旧实现会踩中的固定名），跑 check --report 该目录/r.json，受害文件内容不变、该符号链接原样未被覆盖、真正的报告文件正常写出且不是符号链接。"
+    },
+    {
+      "desc": "3【必须】批量误改保护：--docx 不落在任何登记书册目录下（detect_profile 判空，常见于拿别的书稿硬套 --profile）时，缺省会照单全收改动。",
+      "how": "do_repair 里 bh.walk 之后、写任何东西之前，先算 registered_book = detect_profile(args.docx) is not None；未登记时用 true_numbering 得到的标题总数作分母，算 --numbering 计划改动比例，超过 10% 或 --method-counts 计划里有 actual==0 的（考法题数将归零）就判 mass_risk，Abort(2)（不受 --allow-blocked 影响），除非显式传新增开关 --allow-mass-renumber；放行时把 book_registered/mass_renumber_risk/mass_renumber_allowed 写进报告。",
+      "test": "fix4-7：把已登记的 B3_03（03→04 那一批本身是 343/344 处编号大改）复制到 scratch（不在任何登记书册目录下），--profile bixiu3 --numbering：不加放行开关 → Abort(2)；加 --allow-blocked → 仍 Abort(2)（证明这条不受它影响）；加 --allow-mass-renumber → 放行写出，报告里 mass_renumber_risk=true、mass_renumber_allowed=true、book_registered=false。"
+    },
+    {
+      "desc": "4 check 与 repair 的 keepNext 长链闸口径不一致：会被 repair 挡下的长链候选，check 之前照样算进可修待办。",
+      "how": "把 repair 原来内联的“按当前 keepNext 状态模拟链长、forbid_long_chains/max_keep_next_chain 判 blocked”逻辑提成独立函数 keepnext_gate(items, pd, P, wanted)，do_check 和 do_repair 都改成调用这同一个函数：do_check 把它筛出的 blocked 列进新字段 blocked.keepnext / blocked_count.keepnext，不再计入 repairable_plan_count.keepnext / pending；do_repair 逻辑不变（仍是同一份算法，只是从内联搬进函数）。",
+      "test": "fix4-8：monkeypatch plan_keepnext 强制候选指向 B3_03 里一个当前未设 keepNext 的真实段落，配一份 max_keep_next_chain=0 的临时 profile（必然触发长链闸），check 得到 blocked_count.keepnext=1、repairable_plan_count.keepnext=0，repair 对同一输入同一配置也判 blocked 并 Abort(2)、不写输出——两边结论一致。（原有回归套件里“keepNext 链长判断按局部链长”这条单测继续通过，链长算法本身没变。）"
+    },
+    {
+      "desc": "5 文件头说明过时：keep_next_labels 缺省值文字仍写着必修三的两个标签、说两册未登记；新增字段/开关未写进文件头。",
+      "how": "改写头部：keep_next_labels 缺省改成 []（未配置不启用），注明 bixiu3.json 第503行已登记该字段；新增 toc.pdf_align_min 字段说明（缺省 0.98，配合同版身份记录使用）；新增 --allow-mass-renumber 开关说明（不受 --allow-blocked 影响）。",
+      "test": "人工核对 layout_prepare.py 开头 41-64 行；grep 确认不再出现旧的“两册配置尚未登记”“缺省 ['【思维链条】','【答案落点】']”这类过时措辞。"
+    },
+    {
+      "desc": "6a（顺手修）标题段首只含空白的 run：bh.read_docx 的 it['text']=raw.strip() 已经去掉了前导空白，但 num_span_in_ttext 用的 tt=t_text(p) 没 strip，导致正则从段首开始匹配不上而误判 blocked。",
+      "how": "num_span_in_ttext 里先算 tt 的前导空白长度 lead，用 tt.lstrip() 再跑标题正则，命中的 span 加回 lead，落回 tt 自己的坐标系（replace_span_digits 用的就是这个坐标系）。",
+      "test": "fix4-9：在 B3_03 一处真实的例题标题段首插入一个只含空格的 run，num_span_in_ttext 仍能定位到数字 span 且落在正确的数字字符上。"
+    },
+    {
+      "desc": "6b（顺手修）PAGEREF 域代码被 Word 拆成多个 <w:instrText>（甚至分属不同 run）时，toc_page_nodes 只看单个片段里有没有整段 \"PAGEREF\" 子串，两个片段各含半个时都不命中。",
+      "how": "toc_page_nodes 的 pageref_in_hyperlink 分支改成在 fldChar begin..separate 之间累积拼接全部 instrText 文本到 instr_buf，separate 时再判断 'PAGEREF' in instr_buf，不再逐片段单看。",
+      "test": "fix4-10：合成一个把 \"PAGEREF _Toc3 \\\\h\" 拆成两个 <w:instrText>（\"PAGE\" / \"REF _Toc3 \\\\h\"）分属两个 run 的域，toc_page_nodes 仍能定位到 separate/end 之间的缓存页码数字节点。"
+    }
+  ],
+  "issues_deferred": [
+    {
+      "desc": "check 模式没有像 repair 一样单独暴露批量误改风险（mass_renumber_risk）字段——因为 check 本身不写任何书稿文件，规格原文的“blocked 并中止”是针对会写出的 repair 说的；check 报告目前不含这个信息，主代理若想在只读检查阶段就看到这个风险信号，需要另外提需求。",
+      "why": "规格条文明确写的是“计划编号改动…blocked 并中止”，中止（Abort）本身只对写操作有意义；为了不在没有明确要求的地方扩大改动面、增加新的未经验证的报告字段语义，本轮只在 repair（真正会写文件的入口）实现，check 维持原有四类 stats/plan 结构不变。"
+    },
+    {
+      "desc": "toc.pdf_align_min（缺省 0.98）尚未写进 profiles/bixiu3.json 或 _house.json，目前完全靠代码里的 bh.cfg(pd, 'toc.pdf_align_min', 0.98) 兜底缺省值；如果以后哪本书的正常渲染对位率天然低于 0.98（例如版式差异很大的书），需要主代理按该册实测对位率单独登记这个字段，否则会被目录同版闸误判不同版。"
+    },
+    {
+      "desc": "目录同版闸的对位率证明会用 block_index 把整份 DOCX 用它自己的 load_docx 再解析一遍（与 docx_lib/batch_health 的解析是两条独立代码路径），对 811 页级别的真实书稿会增加几秒到十几秒的运行时间；没有做“同一进程内只解析一次、两边共享”的优化，按规格“不改 block_index.py”的约束，这条只能接受这个开销，写进这里以免误以为是性能回归。"
+    }
+  ],
+  "profile_fields_needed": [
+    {"field": "toc.pdf_align_min", "default_in_code": 0.98, "note": "目录同版闸的正文对位率阈值；block_index 自己的实测：同版 98.3%–100%，近版错配 90.6%–91.5%，取 0.98 能把两类分开；建议登记进 _house.json 作为跨书通用缺省，除非某册需要单独覆盖。"}
+  ],
+  "tests": {
+    "cmd": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare/fix4 && PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 run_tests_layout_prepare.py",
+    "result": "39/39 PASS（29 条原有回归 + 10 条本轮新增 fix4-1～fix4-10），含金标准 B3_03 repair(--numbering --method-counts --keepnext) == B3_04（SHA256 相同）、B3_04 repair(--toc, 目录定位/04.pdf) == B3_52（SHA256 相同）两条仍逐字节成立",
+    "regression_file_updated": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_layout_prepare.py（已同步本轮 10 条新用例）",
+    "discipline_checks": [
+      "真实输入文件（B3_52/PDF、B3_03、B3_04/PDF、B3_51/PDF、B2_230/PDF、bixiu3.json 等 14 个）测试前后 SHA256+mtime 逐一核对，全部一致（脚本内置断言 + 本次额外用 fix4_snap_before.json 独立复核）",
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 测试前后仍只有 book_incremental/check_drill_admission/source_intake 三个原有 cpython-312.pyc，没有 layout_prepare 相关新文件",
+      "scripts/ 目录本轮只有 layout_prepare.py 一个文件的内容和 mtime 变化，未新增任何辅助/攻击脚本文件；辅助与测试脚本全部在 scratch 的 booktools/layout_prepare/fix4/ 下",
+      "审阅入口/工作区/协作/中央状态/Skill 目录/项目根 的守卫矩阵测试（回归#8a/8b/8c，本轮沿用未改）全部 exit 3 且目录列表测试前后不变",
+      "未修改 batch_health.py/block_index.py/docx_lib.py/profile_lib.py/profiles/ 或其他脚本（只在 layout_prepare.py 里新增 import block_index as bx 来复用其 load_docx/BookCfg/pdf_stream/align，没有改 block_index.py 本身）；未运行 collab.py；未启动子代理、新会话，未使用会话管理类工具"
+    ]
+  },
+  "known_limits": [
+    "目录同版闸的“正文对位”证明依赖 block_index.align 这套最长递增子序列锚点算法，理论上极端情况下（例如大段落被整体搬到别处但内容不变）可能仍给出偏高的对位率；这是 block_index 自己文件头就写明的已知局限（“对位率只是辅助信号”），本工具在此基础上叠加了同版身份记录优先判定，两道证据都要过，没有再额外加固对位算法本身（规格要求不改 block_index.py）。",
+    "批量误改保护的 10% 阈值和“考法题数归零”判据是本轮按规格原文直接实现的固定值，没有做成可配置字段（规格没有要求新增字段），如果以后需要按书调整，需要主代理提出再加。"
+  ]
+}

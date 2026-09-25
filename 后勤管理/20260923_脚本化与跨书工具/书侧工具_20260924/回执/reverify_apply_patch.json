@@ -1,0 +1,70 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "上一轮 major#4（插入绕过题面零改写）没有修好，返修回执说已修是错的。写后复核调用 zones_of(d)，而 zones_of 读的是 d.items；Doc.refresh() 只重建 d.paras，不重读 items。所以 zone_after 仍是原稿的区位表，工具再用新段在输出里的段号去查它，查到的是原稿同一段号那一段的区位。结果有两种：一是漏拦，新段真的进了题面，工具查到的却是锚点所在的教学区；二是误拦，前面有别的插入或删除让段号整体后移，合法的教学区插入被判成落进题面。另外，只要给了 source_zone，这道复核就直接跳过（`if op.get('source_zone'): continue`），值是否合法、有没有 reason 都不查。",
+   "evidence": "1) 上一轮的原始证据命令（apply_patch_verify.py --only C12b，输出在 $SCRATCH/booktools/apply_patch_reverify/old_cases）：rc=0，新段在输出里 zone=source、样式'题目选项'，结论 FAIL。2) attack.py N1：锚点是 B3_52 的教学区【…】段，前一段是 source。insert_before 插入'（3）结合材料，说明其中的道理。'（clone_from 取上一段），不给 source_zone，rc=0。对输出重新跑 bh.walk，新段 zone=source。进程内复现：do_apply 之后 len(d.items)=19861、len(d.paras)=19862，工具在新段段号上查到的 zone 是 'teaching'。3) N1b：同一个补丁改给 source_zone='whatever' 且不给 reason，rc=0，照样写出。4) N8 误拦：E1 在段 210 后插一段教学说明，E2 在段 1512 后插一段教学说明（1512、1513 是 teaching，1514 是 title）。两条一起 apply，rc=2，zone_leak 指向 E2，index 1514、zone=title。只跑 E2 时 rc=0，对输出重新 walk，新段 zone=teaching。结果见 attack_results_N1_N2_N3.json、attack_results_N8.json。",
+   "fix": "写后复核前用输出重新取区位：对重开的 d_out（或重新 bh.read_docx(out)）跑 bh.walk，拿新段的元素或段号去查；不能用 d.items。source_zone 取值必须是 restore 或 approved_edit，并且必须带 reason，check_ops 对所有 op 都校验这一点，不只校验锚点在题面区的 op。回归用例至少要有 C12b（应中止）和 N8（应放行）。"
+  },
+  {
+   "severity": "major",
+   "desc": "'只允许覆盖本工具自己写的文件'这条守卫范围太宽。_own_json 只要看到 schema=='baodian_patch_v1' 就认作本工具的文件，所以主代理或 Codex 已批准的补丁（审批记录）会被 --report 或 diff --out 直接覆盖。守卫的 inputs 也没有列入 --patch，报告可以写回补丁本身。",
+   "evidence": "attack.py N3：`check --docx B3_52 --patch n3_approved_patch.json --report n3_approved_patch.json` rc=1，补丁文件被改写成 {\"tool\":\"apply_patch\",\"mode\":\"check\",…}。apply 时 --report 指向同一补丁，rc=0，补丁同样被覆盖。N4：先放一份 approved_by='claude:主代理会话' 的已批准补丁，再跑 `diff --out <该补丁>`，rc=0，文件被换成 diff 生成的补丁，approved_by 变成 'diff:apply_patch'。`diff --out X --report X` rc=0，最后留在 X 里的是报告（没有 schema），补丁丢了，stdout 却仍然报 out=X。",
+   "fix": "--patch、--out、--docx 全部放进报告守卫的 inputs。--report 与 diff --out 不许同路径。覆盖补丁只允许 approved_by 以 'diff:' 开头的 diff 产物，覆盖报告只允许 tool=='apply_patch' 且 mode 相同的文件；其余一律 overwrite=False。"
+  },
+  {
+   "severity": "major",
+   "desc": "学生正文词表可以用 source_zone='restore' 绕过。check_ops 只要 source_zone=='restore' 就跳过词表，不看锚点是不是真在 source/title 区。补丁作者（模型）给任何教学段加这一个字段，就能把工程标签写进正文。规格只豁免题面还原。",
+   "evidence": "attack.py N2：B3_52 段 229（zone=teaching）做 replace_text，'党的领导'→'党的领导（待核）'，带 source_zone='restore'，rc=0，输出里该段是'（总体概括）坚持党的领导（待核）、人民当家作主…'。对照：去掉 source_zone 后 check rc=2，报'新文字命中禁用词表 工程标签:待核'。",
+   "fix": "只有锚点区位（insert 还要看写后新段的真实区位）是 source/title 时，restore 才豁免词表。教学区给 restore 直接中止，或者至少照常过词表。"
+  },
+  {
+   "severity": "major",
+   "desc": "'未点名段落不变'的复核用错了基线，写不写这道核对都一样。before_paras = list(d.paras) 保存的是元素引用，do_apply 改树之后才去算 para_sha，所以'改前'其实是改后的内存树。重开输出文件，只能查出序列化这一步引入的差异；工具在内存里顺手改坏的未点名段落，两边一样，复核照样通过。返修回执说这一项已改成'对重开输出核对'，但基线问题还在。",
+   "evidence": "attack.py N6（进程内调用 ap.main）：把 apply_set_keepnext 包一层，模拟实现缺陷，让它顺手在下一段首个 w:t 后面追加'【被误改】'。apply 对段 229 做 set_keepnext，rc=0，写出 n6_out.docx。与 B3_52 逐段比，只有段 230 不同：'【细则说明】【被误改】 坚持党的领导…'。unchanged_paragraphs 没有报。",
+   "fix": "基线改用原稿：在 do_apply 之前对 d.paras 逐段算好 para_sha 并存下来，或者对 d.doc_xml_orig 重新解析、跑 para_elements。unchanged_paragraphs 的输入换成这份哈希列表。"
+  },
+  {
+   "severity": "major",
+   "desc": "diff 的格式核对只做了一半，format_changes_count=0 会让人以为没有格式差异。_equal_pair_diff 只比较文字完全相同的配对，而且只看 keepNext、颜色、加粗。有三类差异完全不报：文字改了的配对里，keepNext 或 pStyle 的变化（replace_paragraph 保留旧 pPr，这些变化在回放时静默丢掉）；新插入段落的样式（统一套锚点段的 pPr）；文字未变但 pStyle 改了的段落。另外，keepNext 在空段落上变化时，diff 会生成 text='' 的锚点，resolve_anchor 必定拒绝，整份补丁都回放不了。",
+   "evidence": "measure_style.py（真实数据）：51→52 中，文字改动配对里 keepNext 变化 180 处、pStyle 变化 39 处，新插入段落 1412 段，diff 报告都没有体现，format_changes_count=0。03→04、04→52 这三项都是 0，金标准不受影响。attack.py N5（合成稿）：段 229 只改 pStyle（affa→21），段 243 改一个字并加 keepNext，空段 15584 切换 keepNext。diff 只生成 2 条 op，format_changes=[]。apply 在空锚点 D0002 上 rc=2（'anchor 的 text/contains 不得为空串'）。去掉 D0002 后 apply rc=0，文字流一致，但段 229 的样式仍是 affa（目标是 21），段 243 的 keepNext 仍是 false（目标是 true）。",
+   "fix": "配对段落不论文字是否改动，都比较 pPr（pStyle、keepNext 等）：能生成 op 的生成 op，不能的写进 format_changes。插入段落带上目标稿的样式名（style 或 clone_from）。空段落的锚点改成'前一段 contains + 本段 index_hint'，或者直接列为'不可回放'并计数。format_changes 注明覆盖范围。"
+  },
+  {
+   "severity": "major",
+   "desc": "04→52 金标准的文字流一致，但结构损失只报了一部分。工具在 diff 补丁里按 op 标了 complex_parts（hyperlink 30 / field 90，与实测一致）。以下损失工具都没有输出，apply 报告里也没有任何结构损失字段：一是 210 个彩色 run 丢失，测试脚本自己的估算是 180，少算了 30；二是 30 行目录的 w:tab 变成 w:t 里的字面 '\\t'；三是字体颜色从 2D2D2D 变成无色。原因是 replace_paragraph 取的是'段落第一个直接子 w:r'，不是规格说的'首个文字 run'。目录行的 run 都包在 w:hyperlink 里，p.find(W+'r') 取到 None，rPr 全部丢掉。",
+   "evidence": "measure_fidelity.py 04_52：回放稿与 B3_52 相比，hyperlink 2/32，fldChar 6/96，colored runs 15069/15279（少 210），有 30 段逐字颜色或加粗不同。段 9 在 04 和 52 里都是 hyperlink 下 7 个 run，颜色 2D2D2D，页码前有 w:tab；回放稿只有一个无色 run，文字是'01　党总体：党的全面领导\\t15'，tab 写在 w:t 里。测试回执写的 colored_run_loss_estimate=180 出自测试脚本，不是工具输出。",
+   "fix": "apply 报告对 replace_paragraph 和 delete_paragraph 逐条输出 lost_structure（complex_parts、彩色 run 数、tab/sym 数），并给出汇总。首个 rPr 改为取 _run_spans 里第一个有文字的 run。新文字里的 '\\t' 生成 w:tab，或者直接中止。"
+  },
+  {
+   "severity": "minor",
+   "desc": "上一轮的 minor 仍在：词表按单个 run 分别检查，不查拼接后的整段；replace_text 缺 new 时报错只有\"中止：'new'\"。",
+   "evidence": "apply_patch_verify.py --only C13、C21（old_cases）：C13 check rc=1，拆成'待'和'核'两个 run 的'待核'没有拦下，只有 apply --health 才新增 FAIL'工程标签:待核'。C21 rc=2，err=\"中止：'new'\"。",
+   "fix": "用拼接后的整段文字过词表（replace 后的整段、insert 各 runs 合并后的文字）。check_ops 按 op 类型校验必填字段，报错写中文字段名。"
+  },
+  {
+   "severity": "minor",
+   "desc": "--health 分支抛异常时退出 2，但候选 docx 已经写出，不会删除，违反共同约定第 4 条'中止不留输出'；新 FAIL 时退出 1 并保留输出，这是规格允许的。性能和篇幅：03→04 回放耗时 98.98s（上一轮 58.7s），工具 1344 行，超出 900 行的目标。",
+   "evidence": "apply_patch.py 1122–1126 行：except 分支只写报告、return 2，没有 out_path.unlink()。rerun/test_results.json：apply(diff(B03_to_B04)) 98.98s，apply(diff(B51_to_B52_stress)) 121.8s；wc -l=1344。",
+   "fix": "health 异常时删除输出，或者在报告和 stderr 里明确写'输出已保留，状态未知'，并改为退出 1。resolve_anchor 预先算好 texts 和归一化索引。"
+  },
+  {
+   "severity": "minor",
+   "desc": "交付面卫生（不属于 apply_patch.py 代码本身）：上一轮审查者的 apply_patch_verify.py 还放在 Skill 母版的 scripts/ 下（publish_review_verify.py 也一样），主代理 sync 时会随母版一起发布。另外，审阅入口 00_必修三最新审查稿/ 里有一个 02:25 写入的 __verify_never_written__.json，内容是 layout_prepare 的 check 报告，属于 layout_prepare 线的问题。",
+   "evidence": "ls ~/.codex/skills/beijing-gaokao-politics/scripts：apply_patch_verify.py（Sep 24 02:05）、publish_review_verify.py（03:06）。审阅入口文件的 tool.name=layout_prepare，inputs 指向 scratchpad/booktools/layout_prepare/out/t1_labels_stripped.docx。",
+   "fix": "主代理 sync 前把两个 *_verify.py 挪到 后勤管理/…/测试/。审阅入口的残留文件交 layout_prepare 线核实后删除（本复审没有动它）。"
+  }
+ ],
+ "checked": [
+  "逐条复现上一轮的原始证据：apply_patch_verify.py 全部用例在当前工具上重跑（输出 $SCRATCH/booktools/apply_patch_reverify/old_cases/verify_results.json）。blocker①（C22）已修，单 run 中间替换不丢字，lost_chars=0。blocker②（C01）已修，rc=3，victim 未变。blocker④（C04/C05/C06/C19）已修，--profile bixiu3、补丁 book、--allow-frozen-test、符号链接四种绕过都 rc=3 或参数被拒，没有输出。major C15/C10/C17/C14/C08/C09/C07/C03/C16 均已修（C16：带 br 的中止，多个 w:t 的替换后文字正确，带批注的中止）。major C12b 未修（见 issue 1）。C02 只调用了 guard_write 库本身；工具层面的覆盖守卫由测试 F13 和本轮的 N3/N4 覆盖。",
+  "blocker③（金标准）已按裁定修好：diff 不再自动授权（D0001 未授权 apply rc=2）；测试脚本显式授权后，03→04 回放 rc=0，19861 段文字流逐段一致，set_keepnext=284 条，keepNext 逐段一致，与 B04 仅 40 段 C14N 不同，差别只在 Word 渲染缓存 w:lastRenderedPageBreak，属于等价；04→52 回放 rc=0，文字流一致，结构损失部分报告（见 issue 6）；51→52 压力测试在 D0859 表格单元格唯一段中止，逐条可行率与回执一致。",
+  "重跑 run_tests_apply_patch.py（复制到 $SCRATCH/booktools/apply_patch_reverify/rerun/，连同 diff_reproduction_analysis.py）：全部关键断言通过，输出'全部关键断言通过'，脚本内的真实输入 SHA/mtime 检查也未变。",
+  "新攻击用例 9 个（attack.py：N1、N1b、N2、N3、N4、N5、N6、N7、N8），另有实测脚本 measure_style.py、measure_fidelity.py。N7（同段 set_format 后接相邻不重叠的 replace_text）通过，没有问题。",
+  "审查了返修引入的新代码：_authz/needs_authorization/complex_parts、_equal_pair_diff/format_changes、写后重开 open_docx 复核、_own_json/_guard_report_path、before/after 报告字段、insert/set_format 写后条件、题面区插入复核、检测输入稿冻结与书册不一致（exit 2）。",
+  "真实输入：B3_52、B3_03、B3_04、同版身份.json、B3_51、B2_230、构建/04_编号与考法计数.json 以及 apply_patch.py 本身，测试前后 SHA 与 mtime 一致（snap_before/after.json 用 cmp 比对相同）。scripts/__pycache__ 前后列表相同。构建/ 下没有新文件。",
+  "本复审没有改动任何工具或脚本，没有运行 collab.py，也没有启动子代理。输出全部在 $SCRATCH/booktools/apply_patch_reverify/。"
+ ],
+ "note": "上一轮 4 条 blocker 都已修好，金标准回归通过（03→04 文字流与 keepNext 逐段一致；04→52 文字流一致）。本轮判 FAIL 不是因为 blocker，而是有 6 条 major 未解决：题面区插入复核实际失效（上一轮 major#4，返修回执写已修但不属实）；审批补丁可被覆盖；restore 可绕过词表；'未点名段落不变'复核的基线错误；diff 格式核对有缺口；结构损失只报了一部分。需要再返修一轮。",
+ "scratch": "$SCRATCH=/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad"
+}

@@ -1,0 +1,1598 @@
+{
+  "schema_version": "visual-delta-md-coverage.v1",
+  "exam_id": "BJ-2024-HD-ERMO",
+  "shared_question_directory": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO",
+  "shared_md_hashes": {
+    "1": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q1.md",
+      "sha256": "e63dccdf2251950514fb9cc1ab596863b0d3023984aeec3ac7a3febd89dccbd6",
+      "bytes": 4846
+    },
+    "2": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q2.md",
+      "sha256": "9aceee61042227693a827150b7555c689410066fe3312eec4cf699e589c9dac7",
+      "bytes": 5994
+    },
+    "3": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q3.md",
+      "sha256": "66fdca8fc99fd989abfa28dac6a00c2afb79d17b7655b5e9f6074044800b40f0",
+      "bytes": 4363
+    },
+    "4": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q4.md",
+      "sha256": "991d7cba1817e6c19dd6c394c3795aed710c6dab94911e27f8d61079389e1cc8",
+      "bytes": 3907
+    },
+    "5": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q5.md",
+      "sha256": "2f0d3e67c14479fe6c9b932725582c78c7df9b09d80cf4080d80b4b39502c1ff",
+      "bytes": 3818
+    },
+    "6": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q6.md",
+      "sha256": "b02c7d560b69caf8273a99d6727abe21fd17c33dadf0c3058b15e9110167b5c9",
+      "bytes": 4035
+    },
+    "7": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q7.md",
+      "sha256": "c22ef780881d186ca2c201115f7c217537dfe39e3faeb143efb38e6ed4e26880",
+      "bytes": 3897
+    },
+    "8": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q8.md",
+      "sha256": "54ed0ad2b8bcfd7ed871bc5a28fe1e43b72b3f2c20c2c477cd9170849c8dab92",
+      "bytes": 4082
+    },
+    "9": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q9.md",
+      "sha256": "c5e13747156e3d83cfa93678bef4afaf62c828a92757e1740f97cdd18c68aa3e",
+      "bytes": 5099
+    },
+    "10": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q10.md",
+      "sha256": "20362a667b440c489154369a9687e21b52257b5a9bc7f35ed4211a4569615a44",
+      "bytes": 3510
+    },
+    "11": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+      "sha256": "6cd279534c4357716a7eb7b9d87c6b94ba577f69adbbe2351dc67968d1fb45e6",
+      "bytes": 3792
+    },
+    "12": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q12.md",
+      "sha256": "53203df5f7e6fc549e81d69dac5923f099dec9595872a94012a7768185906384",
+      "bytes": 4376
+    },
+    "13": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q13.md",
+      "sha256": "a99451fce7f5d4363e119b516bd1262f30aad5961bdbd2cb848c803798ee5272",
+      "bytes": 3412
+    },
+    "14": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q14.md",
+      "sha256": "b6bf17376f181705d07c314cb509bac26d89642cb863a2473ad05b4559b9e3f2",
+      "bytes": 3535
+    },
+    "15": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q15.md",
+      "sha256": "d6b7b5f6b2445c7399f653629dea8c5ad06bf170900e492ce0c04baf116c9fe4",
+      "bytes": 4278
+    },
+    "16": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q16.md",
+      "sha256": "66badba1b0942c1d8f448a73976f98a1368966e2c2242119f21c0a0e23f17434",
+      "bytes": 6151
+    },
+    "17": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q17.md",
+      "sha256": "def5b9f18718fd05f93658459f168ea07698e220e1af672c6bf94f03dd4827a4",
+      "bytes": 10007
+    },
+    "18": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "bytes": 9700
+    },
+    "19": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q19.md",
+      "sha256": "e146dca16abda5c0d28b3646b9f5ecc9a485ead0e47b7e7cf234184599c47601",
+      "bytes": 7635
+    },
+    "20": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q20.md",
+      "sha256": "e207149c3925721d1c16907df22d93df1f48c027de369be64f8758f6ecc65121",
+      "bytes": 7442
+    },
+    "21": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "bytes": 6569
+    }
+  },
+  "method": "read-only source-content coverage; each OOXML paragraph/table cell compared independently to current question MD after content normalization; duplicate source boxes are counted once, while page/order differences remain in OOXML page mapping.",
+  "rows": [
+    {
+      "source_id": "S13d454fdd813",
+      "question": 1,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q1.md",
+      "shared_md_sha256": "e63dccdf2251950514fb9cc1ab596863b0d3023984aeec3ac7a3febd89dccbd6",
+      "source_blocks": [
+        "P005",
+        "P006",
+        "P007",
+        "P008",
+        "P009",
+        "P010"
+      ],
+      "source_tables": [],
+      "source_text_chars": 176,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 176,
+        "candidate_chars": 1597,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "73731ff25204052eaaa2c350868d50c091487dd0574373e58a559f1ddf8751d4",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 176
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 2,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q2.md",
+      "shared_md_sha256": "9aceee61042227693a827150b7555c689410066fe3312eec4cf699e589c9dac7",
+      "source_blocks": [
+        "P011",
+        "P012",
+        "P013",
+        "P014",
+        "P015",
+        "P016",
+        "P017"
+      ],
+      "source_tables": [],
+      "source_text_chars": 247,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 247,
+        "candidate_chars": 1839,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "63d2142b09882535157185cd37339a78b37aba0007f5da9c375dc224f226733c",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 247
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 3,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q3.md",
+      "shared_md_sha256": "66fdca8fc99fd989abfa28dac6a00c2afb79d17b7655b5e9f6074044800b40f0",
+      "source_blocks": [
+        "P018",
+        "P019",
+        "P020",
+        "P021",
+        "P022",
+        "P023",
+        "P024"
+      ],
+      "source_tables": [],
+      "source_text_chars": 210,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 210,
+        "candidate_chars": 1405,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "206911396ca5263cd6d8e35867725f834f85a179514b40156e905c2b62a1ab7e",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 210
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 4,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q4.md",
+      "shared_md_sha256": "991d7cba1817e6c19dd6c394c3795aed710c6dab94911e27f8d61079389e1cc8",
+      "source_blocks": [
+        "P025",
+        "P026",
+        "P027",
+        "P028",
+        "P029",
+        "P030"
+      ],
+      "source_tables": [],
+      "source_text_chars": 192,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 192,
+        "candidate_chars": 1233,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "b196941fce89883648a6b1c1a22177afb66e343c6378930bf9ccbeb2bc216691",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 192
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 5,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q5.md",
+      "shared_md_sha256": "2f0d3e67c14479fe6c9b932725582c78c7df9b09d80cf4080d80b4b39502c1ff",
+      "source_blocks": [
+        "P031",
+        "P032",
+        "P033"
+      ],
+      "source_tables": [],
+      "source_text_chars": 178,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 178,
+        "candidate_chars": 1205,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "40231f9e5d7f7102124ed600c154bf5ea9dba4baec29fb504a2ae988674d5aab",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 178
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 6,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q6.md",
+      "shared_md_sha256": "b02c7d560b69caf8273a99d6727abe21fd17c33dadf0c3058b15e9110167b5c9",
+      "source_blocks": [
+        "P034",
+        "P035",
+        "P036",
+        "P037",
+        "P038",
+        "P039"
+      ],
+      "source_tables": [],
+      "source_text_chars": 211,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 211,
+        "candidate_chars": 1271,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "f819deddb3283d25fd2220e771f03640b5bcc5df58caca71cce73b6c5accea12",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 211
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 7,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q7.md",
+      "shared_md_sha256": "c22ef780881d186ca2c201115f7c217537dfe39e3faeb143efb38e6ed4e26880",
+      "source_blocks": [
+        "P040",
+        "P041",
+        "P042",
+        "P043",
+        "P044",
+        "P045",
+        "P046"
+      ],
+      "source_tables": [],
+      "source_text_chars": 189,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 189,
+        "candidate_chars": 1227,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "e7dc844580da88469b77dc2c00e925edf3c086000d75242899ad78fa0f046a4c",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 189
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 8,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q8.md",
+      "shared_md_sha256": "54ed0ad2b8bcfd7ed871bc5a28fe1e43b72b3f2c20c2c477cd9170849c8dab92",
+      "source_blocks": [
+        "P047",
+        "P048",
+        "P049",
+        "P050",
+        "P051",
+        "P052"
+      ],
+      "source_tables": [],
+      "source_text_chars": 205,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 205,
+        "candidate_chars": 1273,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "887c7a99af8be5f3e136697f728de714f3762eeb83dcdf76d699af0b693a5f8a",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 205
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 9,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q9.md",
+      "shared_md_sha256": "c5e13747156e3d83cfa93678bef4afaf62c828a92757e1740f97cdd18c68aa3e",
+      "source_blocks": [
+        "P053",
+        "T000",
+        "P054",
+        "P055",
+        "P056",
+        "P057",
+        "P058",
+        "P059",
+        "P060"
+      ],
+      "source_tables": [
+        "T000"
+      ],
+      "source_text_chars": 312,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 312,
+        "candidate_chars": 1557,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "6f382551cd9ed12fe9faee718337c5a27f66c7e8dd998be1e03ef1f034d98b34",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 312
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 10,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q10.md",
+      "shared_md_sha256": "20362a667b440c489154369a9687e21b52257b5a9bc7f35ed4211a4569615a44",
+      "source_blocks": [
+        "P061",
+        "P062",
+        "P063",
+        "P064",
+        "P065",
+        "P066",
+        "P067"
+      ],
+      "source_tables": [],
+      "source_text_chars": 219,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 219,
+        "candidate_chars": 1118,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "59c1b39932174388f15ec1df1499f1fd55f2334d44c2ddcdd50f28f902baae3a",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 219
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 11,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+      "shared_md_sha256": "6cd279534c4357716a7eb7b9d87c6b94ba577f69adbbe2351dc67968d1fb45e6",
+      "source_blocks": [
+        "P068",
+        "P069",
+        "P070",
+        "P071",
+        "P072",
+        "P073",
+        "P074",
+        "P075"
+      ],
+      "source_tables": [],
+      "source_text_chars": 447,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 447,
+        "candidate_chars": 1181,
+        "content_coverage": 0.677852,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "7cbf086cb87f2da1d1733e49b1177051f00c0bb26df8c39f5dcd03ac35cfb227",
+        "missing_chunks": [
+          "百七十四条建筑区划内的道路属于业主共有但是属于城镇公共道路的除外建筑区划内的其他公共场所公用设施和物业服务用房属于业主共有中华人民共和国民法典第二百七十四条建筑区划内的道路属于业主共有但是属于城镇公共道路的除外建筑区划内的其他公共场所公用设施和物业服务用房属于业主共有"
+        ],
+        "ordered_content_coverage": 0.677852,
+        "content_coverage_orderless": 0.677852,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 447
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 12,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q12.md",
+      "shared_md_sha256": "53203df5f7e6fc549e81d69dac5923f099dec9595872a94012a7768185906384",
+      "source_blocks": [
+        "P076",
+        "P077",
+        "P078",
+        "P079",
+        "P080",
+        "P081",
+        "P082"
+      ],
+      "source_tables": [],
+      "source_text_chars": 251,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 251,
+        "candidate_chars": 1355,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "a35b018fb8ec7784ba5c79c0350ac7ffb35b3bbdfd7c98bdf1df0c0fc511b87a",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 251
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 13,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q13.md",
+      "shared_md_sha256": "a99451fce7f5d4363e119b516bd1262f30aad5961bdbd2cb848c803798ee5272",
+      "source_blocks": [
+        "P083",
+        "P084",
+        "P085",
+        "P086",
+        "P087",
+        "P088",
+        "P089"
+      ],
+      "source_tables": [],
+      "source_text_chars": 188,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 188,
+        "candidate_chars": 1071,
+        "content_coverage": 0.989362,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "644d0454c82d21b91e9ea1f08dbcee355df1b4073fcff6827d350465d280311b",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.989362,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 188
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 14,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q14.md",
+      "shared_md_sha256": "b6bf17376f181705d07c314cb509bac26d89642cb863a2473ad05b4559b9e3f2",
+      "source_blocks": [
+        "P090",
+        "P091",
+        "P092",
+        "P093",
+        "P094",
+        "P095"
+      ],
+      "source_tables": [],
+      "source_text_chars": 257,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 257,
+        "candidate_chars": 1128,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "9dea0c4f7fae8531d62a1ceb15b1a676a97ae4457d6ace50509269a2cb90e6d9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 257
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 15,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q15.md",
+      "shared_md_sha256": "d6b7b5f6b2445c7399f653629dea8c5ad06bf170900e492ce0c04baf116c9fe4",
+      "source_blocks": [
+        "P096",
+        "P097",
+        "P098",
+        "P099",
+        "P100",
+        "P101",
+        "P102",
+        "P103",
+        "P104",
+        "P105"
+      ],
+      "source_tables": [],
+      "source_text_chars": 247,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 247,
+        "candidate_chars": 1351,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "25245fd7da5ec52a59dd4a55cf8466d0ee56f5fd26304ddeabe92677be6d7d03",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 247
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 16,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q16.md",
+      "shared_md_sha256": "66badba1b0942c1d8f448a73976f98a1368966e2c2242119f21c0a0e23f17434",
+      "source_blocks": [
+        "P106",
+        "P107",
+        "P108",
+        "P109",
+        "P110",
+        "P111",
+        "P112",
+        "P113"
+      ],
+      "source_tables": [],
+      "source_text_chars": 198,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 198,
+        "candidate_chars": 1952,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "9d196f7e8ad3683cb53aadc4e74d912a4a1834444ec96efb8f82428079ae7065",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 198
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 17,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q17.md",
+      "shared_md_sha256": "def5b9f18718fd05f93658459f168ea07698e220e1af672c6bf94f03dd4827a4",
+      "source_blocks": [
+        "P114",
+        "P115",
+        "P116",
+        "P117",
+        "T001",
+        "P118",
+        "P119",
+        "P120",
+        "P121",
+        "P122",
+        "P123",
+        "P124"
+      ],
+      "source_tables": [
+        "T001"
+      ],
+      "source_text_chars": 483,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 483,
+        "candidate_chars": 3084,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "10c1d337f46c0dbebd7f321e40792965422716cb25b540379d1274f29838b13e",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 479
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 18,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "shared_md_sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "source_blocks": [
+        "P125",
+        "P126",
+        "P127",
+        "P128",
+        "P129",
+        "P130",
+        "P131",
+        "P132",
+        "P133",
+        "P134",
+        "P135"
+      ],
+      "source_tables": [],
+      "source_text_chars": 1212,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 1212,
+        "candidate_chars": 2975,
+        "content_coverage": 0.656766,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "5222204c968c662ce323840f20e272d3a4abf354fd932c1ce60de0211126181a",
+        "missing_chunks": [
+          "国家嘉宾的观点嘉宾1进入21世纪后全球南方国家纷纷崛起这些国家在国际舞台上发挥着越来越重要的作用随着成员国数量的增加金砖国家合作机制的整",
+          "力量增强削弱单极主导地位的力量随之增大现在二十国集团上海合作组织等其他"
+        ],
+        "ordered_content_coverage": 0.656766,
+        "content_coverage_orderless": 0.695545,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 1212
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 19,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q19.md",
+      "shared_md_sha256": "e146dca16abda5c0d28b3646b9f5ecc9a485ead0e47b7e7cf234184599c47601",
+      "source_blocks": [
+        "P136",
+        "P137",
+        "P138",
+        "P139",
+        "P140",
+        "P141",
+        "P142",
+        "P143",
+        "P144"
+      ],
+      "source_tables": [],
+      "source_text_chars": 347,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 347,
+        "candidate_chars": 2425,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "8b23f93501acbec8c2af9e735c556a73448f4ac8377771b69373096eda4159c9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 347
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 20,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q20.md",
+      "shared_md_sha256": "e207149c3925721d1c16907df22d93df1f48c027de369be64f8758f6ecc65121",
+      "source_blocks": [
+        "P145",
+        "P146",
+        "P147",
+        "T002",
+        "P148",
+        "P149",
+        "P150",
+        "P151",
+        "P152",
+        "P153",
+        "P154"
+      ],
+      "source_tables": [
+        "T002"
+      ],
+      "source_text_chars": 372,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 372,
+        "candidate_chars": 2341,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "f77fdcef9b39c9ada83d4391e6d7b3aeb7ec7ac94dd2b488f8770a64198fa4f8",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 368
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 21,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "shared_md_sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "source_blocks": [
+        "P155",
+        "P156",
+        "P157",
+        "P158"
+      ],
+      "source_tables": [],
+      "source_text_chars": 349,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 349,
+        "candidate_chars": 1976,
+        "content_coverage": 0.65616,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "628fc26b0dcd30ae718c22cb12b9f2275e0a66adbc09e36b3dc8c2e164118e47",
+        "missing_chunks": [
+          "年政府工作报告的新热词加快发展新质生产力积极推进新型城镇化充分发挥新型举国体制优势加强和创新社会治理培育创新文化",
+          "质生产力积极推进新型城镇化充分发挥新型举国体制优势加强和创新社会治理培育创新文化"
+        ],
+        "ordered_content_coverage": 0.65616,
+        "content_coverage_orderless": 0.69914,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 349
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 16,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q16.md",
+      "shared_md_sha256": "66badba1b0942c1d8f448a73976f98a1368966e2c2242119f21c0a0e23f17434",
+      "source_blocks": [
+        "P004",
+        "P005",
+        "P006",
+        "P007",
+        "P008",
+        "P009",
+        "P010",
+        "P011",
+        "P012",
+        "P013",
+        "P014"
+      ],
+      "source_tables": [],
+      "source_text_chars": 132,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 132,
+        "candidate_chars": 1952,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "88a7e787e95eb130bedd7149b2529a6d91306a3814554a12131a8772df0f72e9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 132
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 17,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q17.md",
+      "shared_md_sha256": "def5b9f18718fd05f93658459f168ea07698e220e1af672c6bf94f03dd4827a4",
+      "source_blocks": [
+        "P015",
+        "P016",
+        "P017",
+        "P018",
+        "T000",
+        "P019",
+        "P020",
+        "P021",
+        "P022",
+        "P023",
+        "P024",
+        "P025",
+        "P026",
+        "P027",
+        "P028",
+        "P029"
+      ],
+      "source_tables": [
+        "T000"
+      ],
+      "source_text_chars": 675,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 675,
+        "candidate_chars": 3084,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "c46df9cc7ad85e88f552a55c4e66b119909de07517daed82c8399eaf3ad3d432",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 657
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 18,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "shared_md_sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "source_blocks": [
+        "P030",
+        "P031",
+        "P032",
+        "P033",
+        "P034",
+        "P035",
+        "P036",
+        "P037",
+        "P038",
+        "P039",
+        "P040",
+        "P041",
+        "P042",
+        "P043",
+        "P044",
+        "P045"
+      ],
+      "source_tables": [],
+      "source_text_chars": 530,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 530,
+        "candidate_chars": 2975,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "e9e6e086e08e7881e772154756c15e385106fa48b8cacbbab5e130ecddf57484",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 518
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 19,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q19.md",
+      "shared_md_sha256": "e146dca16abda5c0d28b3646b9f5ecc9a485ead0e47b7e7cf234184599c47601",
+      "source_blocks": [
+        "P046",
+        "P047",
+        "P048",
+        "P049"
+      ],
+      "source_tables": [],
+      "source_text_chars": 165,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 165,
+        "candidate_chars": 2425,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "ac123c8f94804113f45df3f5c8a52ffeab11ba66dbcfc4c5ee00d8ac7505b76c",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 165
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 20,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q20.md",
+      "shared_md_sha256": "e207149c3925721d1c16907df22d93df1f48c027de369be64f8758f6ecc65121",
+      "source_blocks": [
+        "P050",
+        "P051",
+        "P052",
+        "P053",
+        "P054"
+      ],
+      "source_tables": [],
+      "source_text_chars": 147,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 147,
+        "candidate_chars": 2341,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "350f25c2427222cf9f9f0654e3dd305df52bf29e615f108a3e346bccb8e60189",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 147
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "question": 21,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "shared_md_sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "source_blocks": [
+        "P055",
+        "P056",
+        "P057",
+        "T001",
+        "P058",
+        "P059",
+        "P060",
+        "P061",
+        "P062",
+        "P063"
+      ],
+      "source_tables": [
+        "T001"
+      ],
+      "source_text_chars": 371,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 371,
+        "candidate_chars": 1976,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "c524317312e81afd422cc8d8a522603f7fd81c57ddd68abac25116d19ca40aa5",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 359
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 1,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q1.md",
+      "shared_md_sha256": "e63dccdf2251950514fb9cc1ab596863b0d3023984aeec3ac7a3febd89dccbd6",
+      "source_blocks": [
+        "P004"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1597,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "0f88b97c919e52e2d207e9216aa8f809d8f0bd9e4a917248303b57d6cce82048",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.8,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 2,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q2.md",
+      "shared_md_sha256": "9aceee61042227693a827150b7555c689410066fe3312eec4cf699e589c9dac7",
+      "source_blocks": [
+        "P004"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1839,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "269de770b942ed95cef5b9fa6bd826e3189a0c0472db276393b60df39d50aa36",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.9,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 3,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q3.md",
+      "shared_md_sha256": "66fdca8fc99fd989abfa28dac6a00c2afb79d17b7655b5e9f6074044800b40f0",
+      "source_blocks": [
+        "P004"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1405,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "83daaf967735c7b48747b44cb41503b805ed715988fa0e2a5badc89e4d305a2c",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.8,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 4,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q4.md",
+      "shared_md_sha256": "991d7cba1817e6c19dd6c394c3795aed710c6dab94911e27f8d61079389e1cc8",
+      "source_blocks": [
+        "P004"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1233,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "9bfa36a65874e59e7b774c1fd0ac6077afb9b5f6ef21999e0eeaf60657436a39",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.7,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 5,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q5.md",
+      "shared_md_sha256": "2f0d3e67c14479fe6c9b932725582c78c7df9b09d80cf4080d80b4b39502c1ff",
+      "source_blocks": [
+        "P004"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1205,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "1e0bfb03cd92adc70db7c6b3d895624db2a5e197c70cffd51ba692e1756f82e9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.7,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 6,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q6.md",
+      "shared_md_sha256": "b02c7d560b69caf8273a99d6727abe21fd17c33dadf0c3058b15e9110167b5c9",
+      "source_blocks": [
+        "P005"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1271,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "bc46aa72d175144d22f54f96a9d98729220d15bb0d419ee45f58a556cd9e2a25",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.545455,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 7,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q7.md",
+      "shared_md_sha256": "c22ef780881d186ca2c201115f7c217537dfe39e3faeb143efb38e6ed4e26880",
+      "source_blocks": [
+        "P005"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1227,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "d50aade27375357f547cd56c324fc12e877bcaf9665988766d9697cbdc435160",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.090909,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 8,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q8.md",
+      "shared_md_sha256": "54ed0ad2b8bcfd7ed871bc5a28fe1e43b72b3f2c20c2c477cd9170849c8dab92",
+      "source_blocks": [
+        "P005"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1273,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "c11fd4f6074431f63fd8da7904ac4f7489f92510c3cdaea51b2406c3b8064b18",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.363636,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 9,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q9.md",
+      "shared_md_sha256": "c5e13747156e3d83cfa93678bef4afaf62c828a92757e1740f97cdd18c68aa3e",
+      "source_blocks": [
+        "P005"
+      ],
+      "source_tables": [],
+      "source_text_chars": 2,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 2,
+        "candidate_chars": 1557,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "d7771d5f941da0f4046503b79ae74ddb3eb470253a9683bd97fe53af97fee366",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.363636,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 2
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 10,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q10.md",
+      "shared_md_sha256": "20362a667b440c489154369a9687e21b52257b5a9bc7f35ed4211a4569615a44",
+      "source_blocks": [
+        "P005"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1118,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "dd262471e967dd28c1fff50729dec414d00aac8d5aff63d54b71c65a9f76396f",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.363636,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 11,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+      "shared_md_sha256": "6cd279534c4357716a7eb7b9d87c6b94ba577f69adbbe2351dc67968d1fb45e6",
+      "source_blocks": [
+        "P006"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1181,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "19d8a68286497af60241f450dd723c57dfbeab5724901a97a03edd5d2e703989",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.733333,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 12,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q12.md",
+      "shared_md_sha256": "53203df5f7e6fc549e81d69dac5923f099dec9595872a94012a7768185906384",
+      "source_blocks": [
+        "P006"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1355,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "63f147c358d3d0381153742c346335ba6d10ca87bb701b904ba8c339da78a83e",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.666667,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 13,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q13.md",
+      "shared_md_sha256": "a99451fce7f5d4363e119b516bd1262f30aad5961bdbd2cb848c803798ee5272",
+      "source_blocks": [
+        "P006"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1071,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "983bab6f9871ee845f8fc0887f6751c58763b75e08de997b9e9151b0cdb174c1",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.733333,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 14,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q14.md",
+      "shared_md_sha256": "b6bf17376f181705d07c314cb509bac26d89642cb863a2473ad05b4559b9e3f2",
+      "source_blocks": [
+        "P006"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1128,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "0d9ee0517e68b4cd1f1dcea4d97ba68a40dd3b19e216c55d8197fc4e100fa759",
+        "missing_chunks": [],
+        "ordered_content_coverage": 0.466667,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": true,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 15,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q15.md",
+      "shared_md_sha256": "d6b7b5f6b2445c7399f653629dea8c5ad06bf170900e492ce0c04baf116c9fe4",
+      "source_blocks": [
+        "P006"
+      ],
+      "source_tables": [],
+      "source_text_chars": 3,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 3,
+        "candidate_chars": 1351,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "6b66e5f638cf33d96ac0768b3752689d8e581c7f4b221f15a73024326a8d53a6",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 3
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 16,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q16.md",
+      "shared_md_sha256": "66badba1b0942c1d8f448a73976f98a1368966e2c2242119f21c0a0e23f17434",
+      "source_blocks": [
+        "P009",
+        "P010"
+      ],
+      "source_tables": [],
+      "source_text_chars": 132,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 132,
+        "candidate_chars": 1952,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "88a7e787e95eb130bedd7149b2529a6d91306a3814554a12131a8772df0f72e9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 132
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 17,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q17.md",
+      "shared_md_sha256": "def5b9f18718fd05f93658459f168ea07698e220e1af672c6bf94f03dd4827a4",
+      "source_blocks": [
+        "P011",
+        "P012",
+        "P013"
+      ],
+      "source_tables": [],
+      "source_text_chars": 199,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 199,
+        "candidate_chars": 3084,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "62cdac49edc84d06caca1f30becffc60871889c1b051321734c8d14c1dfd3bc8",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 199
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 18,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "shared_md_sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "source_blocks": [
+        "P014",
+        "P015",
+        "T000",
+        "P016",
+        "P017"
+      ],
+      "source_tables": [
+        "T000"
+      ],
+      "source_text_chars": 349,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 349,
+        "candidate_chars": 2975,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "7b8cf68d67800d0f34c7006ead9e4a2e29b7e657754644f9b20314e262d2f6f9",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 337
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 19,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q19.md",
+      "shared_md_sha256": "e146dca16abda5c0d28b3646b9f5ecc9a485ead0e47b7e7cf234184599c47601",
+      "source_blocks": [
+        "P018",
+        "P019"
+      ],
+      "source_tables": [],
+      "source_text_chars": 165,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 165,
+        "candidate_chars": 2425,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "ac123c8f94804113f45df3f5c8a52ffeab11ba66dbcfc4c5ee00d8ac7505b76c",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 165
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 20,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q20.md",
+      "shared_md_sha256": "e207149c3925721d1c16907df22d93df1f48c027de369be64f8758f6ecc65121",
+      "source_blocks": [
+        "P020",
+        "P021",
+        "P022",
+        "P023"
+      ],
+      "source_tables": [],
+      "source_text_chars": 147,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 147,
+        "candidate_chars": 2341,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": true,
+        "expected_content_sha256": "350f25c2427222cf9f9f0654e3dd305df52bf29e615f108a3e346bccb8e60189",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 147
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "question": 21,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "shared_md_sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "source_blocks": [
+        "P024",
+        "P025",
+        "T001",
+        "P026"
+      ],
+      "source_tables": [
+        "T001"
+      ],
+      "source_text_chars": 189,
+      "comparison": {
+        "status": "PASS",
+        "expected_chars": 189,
+        "candidate_chars": 1976,
+        "content_coverage": 1.0,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "1192e2c372006d72e5b8282de4cfcfed49514b90fc8f696c0b1633d4de4b64ce",
+        "missing_chunks": [],
+        "ordered_content_coverage": 1.0,
+        "content_coverage_orderless": 1.0,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 177
+      }
+    }
+  ],
+  "differences": [
+    {
+      "source_id": "S13d454fdd813",
+      "question": 11,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+      "shared_md_sha256": "6cd279534c4357716a7eb7b9d87c6b94ba577f69adbbe2351dc67968d1fb45e6",
+      "source_blocks": [
+        "P068",
+        "P069",
+        "P070",
+        "P071",
+        "P072",
+        "P073",
+        "P074",
+        "P075"
+      ],
+      "source_tables": [],
+      "source_text_chars": 447,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 447,
+        "candidate_chars": 1181,
+        "content_coverage": 0.677852,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "7cbf086cb87f2da1d1733e49b1177051f00c0bb26df8c39f5dcd03ac35cfb227",
+        "missing_chunks": [
+          "百七十四条建筑区划内的道路属于业主共有但是属于城镇公共道路的除外建筑区划内的其他公共场所公用设施和物业服务用房属于业主共有中华人民共和国民法典第二百七十四条建筑区划内的道路属于业主共有但是属于城镇公共道路的除外建筑区划内的其他公共场所公用设施和物业服务用房属于业主共有"
+        ],
+        "ordered_content_coverage": 0.677852,
+        "content_coverage_orderless": 0.677852,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 447
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 18,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q18.md",
+      "shared_md_sha256": "0df2465a0a676b792c7135e45eb4b22c1cb50a4b51c82556382c32183450bc23",
+      "source_blocks": [
+        "P125",
+        "P126",
+        "P127",
+        "P128",
+        "P129",
+        "P130",
+        "P131",
+        "P132",
+        "P133",
+        "P134",
+        "P135"
+      ],
+      "source_tables": [],
+      "source_text_chars": 1212,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 1212,
+        "candidate_chars": 2975,
+        "content_coverage": 0.656766,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "5222204c968c662ce323840f20e272d3a4abf354fd932c1ce60de0211126181a",
+        "missing_chunks": [
+          "国家嘉宾的观点嘉宾1进入21世纪后全球南方国家纷纷崛起这些国家在国际舞台上发挥着越来越重要的作用随着成员国数量的增加金砖国家合作机制的整",
+          "力量增强削弱单极主导地位的力量随之增大现在二十国集团上海合作组织等其他"
+        ],
+        "ordered_content_coverage": 0.656766,
+        "content_coverage_orderless": 0.695545,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 1212
+      }
+    },
+    {
+      "source_id": "S13d454fdd813",
+      "question": 21,
+      "shared_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q21.md",
+      "shared_md_sha256": "fb612fc53b2ccdf13306cae41af877c93863c9d3207e618abc3f503023a59df7",
+      "source_blocks": [
+        "P155",
+        "P156",
+        "P157",
+        "P158"
+      ],
+      "source_tables": [],
+      "source_text_chars": 349,
+      "comparison": {
+        "status": "MISSING_OR_DIFFERENT",
+        "expected_chars": 349,
+        "candidate_chars": 1976,
+        "content_coverage": 0.65616,
+        "raw_normalized_equal": false,
+        "expected_content_sha256": "628fc26b0dcd30ae718c22cb12b9f2275e0a66adbc09e36b3dc8c2e164118e47",
+        "missing_chunks": [
+          "年政府工作报告的新热词加快发展新质生产力积极推进新型城镇化充分发挥新型举国体制优势加强和创新社会治理培育创新文化",
+          "质生产力积极推进新型城镇化充分发挥新型举国体制优势加强和创新社会治理培育创新文化"
+        ],
+        "ordered_content_coverage": 0.65616,
+        "content_coverage_orderless": 0.69914,
+        "order_only_difference": false,
+        "expected_unique_content_chars": 349
+      }
+    }
+  ],
+  "difference_count": 3
+}

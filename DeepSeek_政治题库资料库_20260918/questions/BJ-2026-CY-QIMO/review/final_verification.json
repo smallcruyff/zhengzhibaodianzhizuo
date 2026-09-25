@@ -1,0 +1,33 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "status": "awaiting_independent_review",
+  "scope": "本转写工位自检与页资产闭合",
+  "question_count": 21,
+  "source_pages_opened": {
+    "paper": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rubric": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "findings": [
+    "题面视觉候选已写入",
+    "复杂版面已保留整页及裁图",
+    "E1 Q16-Q21已分层",
+    "Q1-Q15 E1不适用（选择题）",
+    "答案和学生材料缺源（来源限制）"
+  ],
+  "independent_reviewer": null,
+  "sol_inspection": null
+}

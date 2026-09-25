@@ -1,0 +1,44 @@
+{
+  "schema_version": "candidate_bounded_source_coverage_v2",
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "candidate_status": "bounded/blocked_on_source",
+  "shared_write_scope": "none",
+  "paper": {
+    "source_id": "S44eade2b04f8",
+    "sha256": "44eade2b04f87c55a788e0865e5457d884abfda002caf78f19626939aa29579d",
+    "role": "教师版",
+    "question_pages": "p1-p8",
+    "answer_pages": "p9-p21",
+    "independent_original_exam": "missing"
+  },
+  "scoring_candidate": {
+    "source_id": "S132a504a16fe",
+    "sha256": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+    "role": "评分材料候选",
+    "e1_scope": "Q16-Q21 E1_candidate_pending only",
+    "formal_E1": false
+  },
+  "question_scope": {
+    "Q1-Q15": "E0_teacher_bounded + E3_teacher_reference; E1=N/A_objective; teacher header 3 only",
+    "Q16-Q21": "E0_teacher_bounded + E3_teacher_reference; E1_candidate_pending; printed_score=N/A/uncertain"
+  },
+  "source_boundary": {
+    "q19_parent_score": "1分 excluded",
+    "q19_chart_first_bar": "10246.5 from teacher visual",
+    "q20_candidate_score": "8 excluded from original print score",
+    "teacher_answer_in_e0": false
+  },
+  "snapshot_sha256": {
+    "questions.csv": "f76f02ec4ac1ee29b302132c286568c7d074c2d71fd7c737358fad07749bda3f",
+    "rubric_links.csv": "d9b1416465389e18a2fdd608f2462576b9cdd14d54e7ae0a9a041b621da14c57",
+    "source_manifest.csv": "c03d45354134018f8e49ac44f48eb5e47240ffa84005e78f5c18f477f0a50f1d"
+  },
+  "blocked_claims": [
+    "independent_original_exam",
+    "formal_E1_Q16_Q21",
+    "original_printed_score_Q16_Q21",
+    "whole_exam_acceptance",
+    "controller_ready"
+  ],
+  "candidate_count": 21
+}

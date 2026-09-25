@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "receipt_type": "independent_student_sample_verification",
+  "exam_id": "BJ-2024-DC-YIMO",
+  "reviewed_at": "2026-09-21T20:53:27-07:00",
+  "review_scope": "独立逐图复核transcribe_2024_dc_yimo_student_samples中的12张评分PPTX学生/批改图：学生原答、可见实得分、红色评分与逐点标记、黑色批注/涂改、下缘界面提示、uncertain区域坐标、原生嵌入图与资产SHA；不使用答案或评分文字补齐学生手写，不写共享题库、索引或conversion_manifest。",
+  "source": {
+    "pptx_path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/细则.pptx",
+    "pptx_sha256": "4b2073bcc9e26f626b49b66dd6e0c64ec93650292d50719806830d7aea9fa3ce",
+    "slide_count": 74,
+    "student_slides": [28, 29, 30, 35, 42, 46, 47, 52, 58, 65, 73, 74],
+    "authority": "PPTX内嵌原始媒体；rendered_slides仅作版面/界面位置佐证；native_text层为空时不以文字层替代图像。"
+  },
+  "technical_checks": {
+    "source_slide_relationships": {
+      "status": "pass",
+      "mapping": {
+        "slide28": "ppt/media/image26.jpeg",
+        "slide29": "ppt/media/image27.jpeg",
+        "slide30": "ppt/media/image28.jpeg",
+        "slide35": "ppt/media/image31.jpeg",
+        "slide42": "ppt/media/image35.jpeg",
+        "slide46": "ppt/media/image39.jpeg",
+        "slide47": "ppt/media/image40.jpeg",
+        "slide52": "ppt/media/image43.jpeg",
+        "slide58": "ppt/media/image47.png",
+        "slide65": "ppt/media/image50.png",
+        "slide73": "ppt/media/image53.jpeg",
+        "slide74": "ppt/media/image54.jpeg"
+      }
+    },
+    "embedded_media_sha256": {
+      "status": "pass",
+      "count": 12,
+      "all_copies_match_pptx": true,
+      "sha256": {
+        "slide28_image26.jpeg": "8b5fb447f10056c2f4da9e2cece5d32a38ab98e95656f2154b4c84d5662dc579",
+        "slide29_image27.jpeg": "b7109ac83d57128bede90574ae406ddb40046d80cfc24a8dc4707cb3b3e729e7",
+        "slide30_image28.jpeg": "b04f40ff819610b42099a292f30c4860475c8bda6fa46167f9a036e1f0f83319",
+        "slide35_image31.jpeg": "5873354459ba943365b11710ee752c8df30fb2401105923258951a2b30b364a1",
+        "slide42_image35.jpeg": "577fac160db86cd37e1b47a4fda4a13e04a611fda7feabed5389811276f0c819",
+        "slide46_image39.jpeg": "013d34f61e76fd619da09ee5cb4e56880230abc34fb47efa7572fbb4c5a94d2c",
+        "slide47_image40.jpeg": "6defde081f32a2a16c4845e5605ff8e6a4a4eeed76fa2b4a5a0645e833089e36",
+        "slide52_image43.jpeg": "5e6165078aa11635701799706850d87a9cfb8a9ef0a2dba5d59b6bae3c1ee5c6",
+        "slide58_image47.png": "0e1f2a64e43731944f7ce812148bd0ab6a64542c945219448b509b73bcf62f68",
+        "slide65_image50.png": "7b21efe345af35cc51db260d47dabf6a7e239ee056647a49d11a8810be330e48",
+        "slide73_image53.jpeg": "6121c83b5f8fe7c2c14a8802909ebb42665def13819c0952cbee70e05873a21e",
+        "slide74_image54.jpeg": "56474ae0594dab503d418870fa9833301b89430eba42f714133d8e3956c367ee"
+      }
+    },
+    "asset_sha256_manifest": {
+      "status": "pass",
+      "manifest": "assets/sha256sums.txt",
+      "entries": 45,
+      "matched_entries": 45,
+      "mismatches": 0
+    },
+    "rendered_slides": {"status": "pass", "present_and_opened": 12, "expected": 12},
+    "native_text_layers": {"status": "pass", "present": 12, "empty": 12},
+    "native_shape_refs": {"status": "pass", "present": 9, "expected": 9},
+    "shared_write_check": {
+      "shared_question_bank_modified": false,
+      "shared_indexes_modified": false,
+      "conversion_manifest_modified": false,
+      "raw_sources_modified": false
+    }
+  },
+  "sample_review": [
+    {
+      "sample_id": "Q16-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "subpart": "16",
+      "slide": 28,
+      "media": "assets/pptx_media/slide28_image26.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "7.0/7", "visual": "7.0/7", "status": "pass", "basis": ["right red 7.0", "right input 7", "label 16(7.0分)"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black handwritten underlines/line writing"], "red_point_marks": "none_safely_separable"},
+      "transcription": "No confident contradiction found; concept words that are not stable remain [uncertain] and are not filled from the answer.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[95, 145, 610, 215], [95, 215, 610, 300], [95, 300, 610, 390]]}
+    },
+    {
+      "sample_id": "Q16-S2",
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "subpart": "16",
+      "slide": 29,
+      "media": "assets/pptx_media/slide29_image27.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "7.0/7", "visual": "7.0/7", "status": "pass", "basis": ["right red 7.0", "right input 7"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black underlines", "black overwriting/possible self-correction"], "red_point_marks": "none_safely_separable"},
+      "transcription": "Broad text order and stable fragments agree with the image; the opening, overwritten characters and ending are explicitly bounded rather than normalized.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[42, 132, 555, 205], [42, 205, 555, 300], [42, 300, 555, 365]]}
+    },
+    {
+      "sample_id": "Q16-S3",
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "subpart": "16",
+      "slide": 30,
+      "media": "assets/pptx_media/slide30_image28.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "0/7", "visual": "0/7", "status": "pass", "basis": ["right red 0", "right input 0"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["large red overlay reads 没答哲学", "black student underlines"], "red_point_marks": "large_overlay_not_student_text"},
+      "transcription": "The three black handwritten paragraphs are retained with bounded uncertainty; the red overlay is correctly separated from the student answer.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[25, 130, 650, 250], [25, 250, 650, 360], [25, 360, 650, 458]]}
+    },
+    {
+      "sample_id": "Q17-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q17",
+      "subpart": "17",
+      "slide": 35,
+      "media": "assets/pptx_media/slide35_image31.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "7.0/7", "visual": "7.0/7", "status": "pass", "basis": ["right red 7.0", "right input 7", "label 17(7.0分)"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black insertion/annotation near first numbered point", "underlines"], "red_point_marks": "no_red_point_marks_other_than_score"},
+      "transcription": "The inserted black note near the first point is present, but its exact characters/teacher-versus-student attribution remain uncertain; no unsupported expansion is accepted.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[530, 175, 790, 235], [760, 590, 1030, 650]]}
+    },
+    {
+      "sample_id": "Q18-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "subpart": "18(1)",
+      "slide": 42,
+      "media": "assets/pptx_media/slide42_image35.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "8.0/8", "visual": "8.0/8", "status": "pass", "basis": ["right red 8.0", "right inputs 2 and 6 for the two 18 subparts"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black handwriting", "black underlines"], "red_point_marks": "no_separately_readable_red_point_marks"},
+      "transcription": "The current-page 18(1) answer and the start of 18(2) are separated; lower-page truncation is not reconstructed.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[15, 80, 1115, 250], [15, 250, 1115, 560], [15, 560, 1115, 910]]}
+    },
+    {
+      "sample_id": "Q18-S2",
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "subpart": "18(2)",
+      "slide": 46,
+      "media": "assets/pptx_media/slide46_image39.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "6.0/6", "visual": "6.0/6", "status": "pass", "basis": ["right red 6.0", "label 18-2(6.0分)", "right input 6"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black underlines", "circle/rewriting", "possible black marking strokes"], "red_point_marks": "score_only"},
+      "transcription": "The upper continuation and lower start of 18(3) are explicitly bounded; no answer-key normalization found.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[65, 90, 900, 220], [65, 220, 900, 600], [65, 600, 900, 700]]}
+    },
+    {
+      "sample_id": "Q18-S3",
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "subpart": "18(2)",
+      "slide": 47,
+      "media": "assets/pptx_media/slide47_image40.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "6.0/6", "visual": "6.0/6", "status": "pass", "basis": ["right red 6.0", "label 18-2(6.0分)", "right input 6", "green submit/confirm icon"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black strikethrough", "black insertion/correction", "underlines", "circled point numbers"], "red_point_marks": "score_only"},
+      "transcription": "Overwritten words, deletion/insertion strokes and the visible start of 18(3) are retained; exact covered glyphs remain bounded.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[70, 130, 1000, 260], [70, 260, 1000, 650], [70, 650, 1000, 750]]}
+    },
+    {
+      "sample_id": "Q18-S4",
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "subpart": "18(3)",
+      "slide": 52,
+      "media": "assets/pptx_media/slide52_image43.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "6.0/6", "visual": "6.0/6", "status": "pass", "basis": ["right red 6.0", "label 18-3(6.0分)", "right input 6"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["black underlines", "black overwriting", "更改 dropdown"], "red_point_marks": "score_only"},
+      "transcription": "The upper preceding fragment is separated from 18(3); lower crop and unstable terms are not completed from the rubric.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[70, 75, 1000, 125], [70, 125, 1000, 540], [70, 540, 1000, 590]]}
+    },
+    {
+      "sample_id": "Q19-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q19",
+      "subpart": "19",
+      "slide": 58,
+      "media": "assets/pptx_media/slide58_image47.png",
+      "status": "image_preserved_bounded_transcription",
+      "score": {"transcription": null, "visual": null, "status": "pass", "basis": ["cropped sample has no score panel or reliable score text"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["line under each handwriting row"], "red_point_marks": "none_visible"},
+      "transcription": "Only stable fragments are transcribed; every row remains bounded by the low-resolution photographed-screen image, with no score inferred.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[0, 0, 1155, 547]]}
+    },
+    {
+      "sample_id": "Q20-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q20",
+      "subpart": "20",
+      "slide": 65,
+      "media": "assets/pptx_media/slide65_image50.png",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": "8.0/8", "visual": "8.0/8", "status": "pass", "basis": ["left red 8分", "right label 20(8.0分)", "right input 8"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["left red 8分", "nine visible red point marks reading 1", "black handwriting"], "red_point_marks": {"count_visually_verified": 9, "coordinates": [[546, 140], [636, 234], [1120, 230], [1519, 237], [441, 342], [1254, 311], [1006, 647], [1458, 651], [1278, 793]], "far_right_partial_red_0": "not assigned to Q20"}},
+      "transcription": "The five-point structure, red score and point marks agree; characters under/near red marks remain [uncertain].",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[180, 50, 1750, 260], [180, 260, 1750, 430], [180, 430, 1750, 780], [180, 780, 1750, 1000]]}
+    },
+    {
+      "sample_id": "Q21-S1",
+      "question_id": "BJ-2024-DC-YIMO-Q21",
+      "subpart": "21",
+      "slide": 73,
+      "media": "assets/pptx_media/slide73_image53.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": null, "visual": null, "status": "pass", "basis": ["no score visible in the copied sample"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["handwritten underlines/answer lines", "bottom system instruction"], "red_point_marks": "none_visible"},
+      "transcription": "Three answer points and the bottom system instruction are separated; no score is inferred and unstable words retain [uncertain].",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[50, 180, 1120, 750]]}
+    },
+    {
+      "sample_id": "Q21-S2",
+      "question_id": "BJ-2024-DC-YIMO-Q21",
+      "subpart": "21",
+      "slide": 74,
+      "media": "assets/pptx_media/slide74_image54.jpeg",
+      "status": "pass_with_bounded_uncertainty",
+      "score": {"transcription": null, "visual": null, "status": "pass", "basis": ["no score visible in the copied sample"]},
+      "marks_annotations_edits": {"status": "pass", "observed": ["handwritten underlines/answer lines", "bottom system instruction"], "red_point_marks": "none_visible"},
+      "transcription": "Four answer points and the bottom system instruction are separated; exact unstable characters remain bounded and the source image is retained.",
+      "uncertain_coordinates": {"coordinate_system": "source embedded image pixels", "verified": true, "regions": [[40, 180, 1600, 1040]]}
+    }
+  ],
+  "uncertainty_audit": {
+    "all_12_samples_have_uncertain_coordinate_regions": true,
+    "coordinate_granularity": "inventory-level visual regions, not one bbox per individual [uncertain] token",
+    "remaining_bounded_uncertainty": [
+      "Q16-S1/S2/S3: photographed screen moire and perspective obscure portions of handwritten characters.",
+      "Q17-S1: exact glyphs and attribution of the black inserted note are not safely separable.",
+      "Q18-S1/S2/S3/S4: several terms, overwritten characters and crop-boundary fragments are not character-safe.",
+      "Q19-S1: the entire low-resolution sample contains unresolved character regions; no score is visible.",
+      "Q20-S1: characters beneath/near red point marks remain bounded; the unrelated partial red 0. is not assigned to Q20.",
+      "Q21-S1/S2: multiple characters remain unstable; no score is visible; bottom system instruction is not student text."
+    ],
+    "answer_key_normalization_detected": false,
+    "source_image_authoritative": true
+  },
+  "upstream_candidate_findings": [
+    {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q16.md",
+      "line": 100,
+      "issue": "父候选将slide 30红色覆盖字写为“没答题”；原图与独立转写均清楚显示“没答哲学”。",
+      "required_action": "合并候选时改为“没答哲学”，同时保留原图和分数0/7；不得把学生文化角度答案改判为哲学作答。"
+    }
+  ],
+  "decision": {
+    "student_layer_can_be_merged_into_final_candidate": true,
+    "merge_mode": "image_authoritative_with_bounded_transcription",
+    "student_layer_exact_character_complete": false,
+    "student_layer_is_sufficient_as_evidence_if": [
+      "12张PPTX嵌入原图与页位链接全部保留；",
+      "transcription.md和inventory.json一并保留；",
+      "[uncertain]不被答案、评分细则或常识静默替换；",
+      "Q19、Q21无可见分数继续保持null；",
+      "父候选Q16第100行的‘没答题’修正为‘没答哲学’。"
+    ],
+    "whole_exam_acceptance_from_this_receipt": false,
+    "reason": "本回执只证明学生层的12张图像、画面分数、标记/涂改、坐标和资产完整性；它不能替代父候选的题面、来源角色、正式评分和整卷验收。"
+  }
+}

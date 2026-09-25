@@ -1,0 +1,141 @@
+{
+  "schema_version": "consolidated-signoff.v1",
+  "exam_id": "BJ-2025-DC-ERMO",
+  "signed_off_at": "2026-09-22",
+  "mode": "readonly_consolidated_signoff",
+  "shared_files_modified": [],
+  "old_materialize_rerun": false,
+  "decision_status": "UNCERTAIN_CONTROLLER_MANUAL_ADJUDICATION",
+  "input_receipts": {
+    "current_shared_parity": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/current_shared_parity/verification.json",
+      "sha256": "b34ea1f7d5ee7bd9405e1498ad8cae99c6382dc7f1a21abb8335fc5cc2432433"
+    },
+    "q18_drift_provenance": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/current_shared_parity/q18_drift_provenance.json",
+      "sha256": "ebba55d8cf873fd540fe878ee0f60b82d1bcbe3c90d2375cd94b6518e0a46aeb"
+    },
+    "independent_visual_refresh": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/independent_visual_refresh/verification.json",
+      "sha256": "857a52ef2acf25984b24504978b30568ab23a656d8af1a4603312e872ba72924"
+    },
+    "package_compatibility": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/package_compatibility/verification.json",
+      "sha256": "bef34746865e2d9272cb34e0eed4ee0897b1db2136ba5f43382dfca35c073048"
+    },
+    "old_merge_receipt": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/BJ-2025-DC-ERMO_merge_20260921.json",
+      "sha256": "ac37c57fd2a3ae97c5f280b485dd886192ecc72d0558299e6f7d47c3b0b6a996"
+    },
+    "old_materialization": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/materialize_2025_dc_ermo_merge_ready/materialization.json",
+      "sha256": "a6aa572c7ed9d93a23dce1593aad26627a732e8ff69f2d5fa4d51c3648f19e99"
+    },
+    "old_independent_verification": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/materialize_2025_dc_ermo_merge_ready/verification.json",
+      "sha256": "18a6b7eb409539fb70f24f2a2e9ccb67c38b90f4f207f24295004903f375e89a"
+    }
+  },
+  "global_evidence": {
+    "shared_question_count": 21,
+    "old_merge_question_count": 21,
+    "current_shared_parity": {
+      "pass_count": 20,
+      "fail_count": 1,
+      "failed_question": "BJ-2025-DC-ERMO-Q18"
+    },
+    "active_links": {
+      "status": "PASS",
+      "markdown_files": 21,
+      "links_checked": 21,
+      "broken": 0,
+      "outside_question_root": 0,
+      "missing_asset_or_evidence_tokens": 0
+    },
+    "high_risk_visual_refresh": {
+      "status": "PASS_FOR_TARGETED_SCOPE",
+      "freshly_closed_questions": ["Q3", "Q4", "Q9", "Q14", "Q17", "Q19", "Q20", "Q21"],
+      "basis": "source PDFs SHA matched; requested paper/rubric pages were opened; no real transcription omission was found; local assets and target candidates matched current shared bytes."
+    },
+    "stable_visual_scope_reused": ["Q1", "Q2", "Q5", "Q6", "Q7", "Q8", "Q10", "Q11", "Q12", "Q13", "Q15", "Q16"],
+    "independent_answer": {
+      "status": "source_not_provided",
+      "basis": "Only embedded p007-p008 answer/level material exists; no independent answer source was supplied."
+    },
+    "student_layer": {
+      "status": "source_not_provided",
+      "basis": "No student original answers, handwriting/annotations, teacher marks, score marks, or per-student scores were supplied."
+    }
+  },
+  "twenty_question_signoff": [
+    {"question_id":"Q1","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q2","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q3","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q4","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q5","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q6","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q7","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q8","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q9","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q10","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q11","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q12","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q13","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q14","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q15","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q16","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_REUSED_PRIOR_INDEPENDENT_RECEIPT","links":"PASS","high_risk_visual":"PASS_REUSED_STABLE_LOW_RISK"},
+    {"question_id":"Q17","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q19","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q20","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"},
+    {"question_id":"Q21","current_shared_equals_old_merge_candidate":true,"content_facts":"PASS_FRESH_TARGETED_REFRESH","links":"PASS","high_risk_visual":"PASS_FRESH_VISUAL"}
+  ],
+  "q18_signoff": {
+    "question_id": "Q18",
+    "current_shared_equals_old_merge_candidate": false,
+    "old_merge_candidate_sha256": "68d4af940702158e08a77b15b79238c24a9d4f8d4ae5b9e5192c07e7130febd2",
+    "current_shared_sha256": "9e1ef21c6736a43c20781080e82fc64fdb41b88349d21153f1ca4e96b16dd64b",
+    "exact_diff_scope": "one repair-log metadata wording line under 精确修复记录; all other bytes equal",
+    "metadata_line_change": "将‘不再保留“未找到已确认的正式评分材料”占位’改为‘不再保留旧版“未找到已确认的正式评分材料”空缺说明’",
+    "question_text_native_ocr": "UNCHANGED",
+    "formal_rubric_e1": "UNCHANGED",
+    "embedded_answer_e3": "UNCHANGED",
+    "source_identity_page_facts_assets_links": "UNCHANGED",
+    "content_facts": "PASS_NO_SUBSTANTIVE_CHANGE_FOUND",
+    "authorization_receipt": "MISSING_OR_UNCERTAIN",
+    "decision": "MANUAL_CONTROLLER_ADJUDICATION_REQUIRED"
+  },
+  "old_materialize_policy": {
+    "must_not_rerun": true,
+    "reason": "The old package is already represented by the merge receipt and current shared state; its Q18 parity is stale, and the package compatibility audit identified stale parent identities and missing README."
+  },
+  "single_writer_options": [
+    {
+      "option": "A_RECOMMENDED_PRESERVE_CURRENT_SHARED",
+      "recommended": true,
+      "action": "Keep current shared Q18 SHA 9e1ef21c...; add an equivalent metadata-only authorization receipt recording the exact one-line wording change, current SHA, actor/authority and timestamp; do not rerun or overwrite the old materialize package.",
+      "why": "The drift is one repair-record wording line; question facts, E1, E3, source identity, assets and active links are unchanged. This preserves current shared content while repairing provenance."
+    },
+    {
+      "option": "B_STRICT_RECEIPT_PARITY_RESTORE",
+      "recommended": false,
+      "action": "Only if the controller rejects or cannot authorize the metadata-only edit: single writer restores Q18 exactly to old merge candidate SHA 68d4af94... and records a rollback receipt; then re-run parity.",
+      "why": "This restores byte parity but discards the current metadata wording change; it is not authorized or performed by this signoff."
+    }
+  ],
+  "recommendation": {
+    "choice": "A_RECOMMENDED_PRESERVE_CURRENT_SHARED",
+    "whole_package_status": "UNCERTAIN_NOT_FULL_ACCEPTANCE",
+    "next_actor": "controller / single shared writer",
+    "do_not": ["do not rerun old materialize package", "do not auto-revert Q18", "do not claim independent answer or student-layer PASS"]
+  },
+  "write_scope": {
+    "only_new_files": [
+      "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/consolidated_signoff/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/resume_audit_20260922/consolidated_signoff/verification.md"
+    ],
+    "shared_question_bank_modified": false,
+    "old_package_modified": false,
+    "manifest_modified": false,
+    "source_files_modified": false
+  }
+}

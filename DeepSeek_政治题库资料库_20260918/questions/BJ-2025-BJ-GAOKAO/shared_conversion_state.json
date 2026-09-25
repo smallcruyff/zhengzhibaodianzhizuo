@@ -1,0 +1,104 @@
+{
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2025-BJ-GAOKAO-Q1": "b0f3d212d7ae77c2526c8bb87c87bc47991efb8d101deb8d6eea4713f8cae9e5",
+    "BJ-2025-BJ-GAOKAO-Q2": "2be8fd54154c309cfeb33900b625ae5e4b631d4845f173612e6007682b3b35d4",
+    "BJ-2025-BJ-GAOKAO-Q3": "03d8826e27b493bc8b72489b7d4f0535c26900436243578464a48eca156bf2c3",
+    "BJ-2025-BJ-GAOKAO-Q4": "e5e62a00bd3334ab33637bfb0437c6bc3ec670421d633202a04777dd88e76a19",
+    "BJ-2025-BJ-GAOKAO-Q5": "116017e5fdf518f2f0458169d8549598c2cb51194921b5227c507507f6d14e69",
+    "BJ-2025-BJ-GAOKAO-Q6": "5c39fcb0d53acbcadd5371f85e42aab87bfc5fe807751c8840bb6e593d71e509",
+    "BJ-2025-BJ-GAOKAO-Q7": "a2da1e7dccdf59424aa822d711081e07ac8bb238f34076cb7d9535e41071882a",
+    "BJ-2025-BJ-GAOKAO-Q8": "ed0cc9f08ea1a93b86ab1268f96a5b266866caa37b7fa79cd5f58b32b196bdcf",
+    "BJ-2025-BJ-GAOKAO-Q9": "4c14087eb18e4c607a1edcab0d63cc6657399b5b7599235110a8385b16cd5a23",
+    "BJ-2025-BJ-GAOKAO-Q10": "ec846a6a6202433c1171a28335463f341d7d3c2897909fa3cb084826fb2e6b16",
+    "BJ-2025-BJ-GAOKAO-Q11": "52f9c3bd6e2bed565c25dec5ce6377949c386906f69887b2667e814a9d236ae4",
+    "BJ-2025-BJ-GAOKAO-Q12": "fe5de9806b021889534df8db0567ba1f3e7511f64fabc870c88763e620b535c2",
+    "BJ-2025-BJ-GAOKAO-Q13": "1a87deddb9f7fb18d7cf48514643c23a0e48f1a8ce1969eb6c4c117c8d838a52",
+    "BJ-2025-BJ-GAOKAO-Q14": "d8f09fe5c7b2c0519189d97f1d58d69d0a2f1fee077f294605495db89cb7587f",
+    "BJ-2025-BJ-GAOKAO-Q15": "923270ac3d536eeb2cc7339fa1bd73553e3b630db6ceb4e2e95cc19e9ebee928",
+    "BJ-2025-BJ-GAOKAO-Q16": "8de0fc439685fdae9ac26296b8ea5ed6d666e7f90739d4d8615d91713e407878",
+    "BJ-2025-BJ-GAOKAO-Q17": "ccd609d0f364247d6532bd2336fb6a80bb2a92ecd60503adfd95b33db93d0da6",
+    "BJ-2025-BJ-GAOKAO-Q18": "d39ecbf3bd34241e7e2f4af4d2acf9fa3c09cc7569177f18e9e094e4b28aff53",
+    "BJ-2025-BJ-GAOKAO-Q19": "c387c9b6c3159450430077e9d7afce8d0f000e015b0bb600208155a98acf3b06",
+    "BJ-2025-BJ-GAOKAO-Q20": "9c7e5baae8b21f3c03e0eed3dffed1ade003d059a5e603ef11628c9318b25b08",
+    "BJ-2025-BJ-GAOKAO-Q21": "d38508e241202b6a1b9ebcd65164b80e68a7f56e9540e829e7de2d9f8b4729cf"
+  },
+  "source_pages": {
+    "teacher": 21,
+    "rubric": 6
+  },
+  "source_page_total": 27,
+  "source_roles": {
+    "teacher": "S44eade2b04f8",
+    "rubric": "S132a504a16fe"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "N/A_with_basis：来源清单未提供独立无答案原卷；S44教师版混合载体p1–p8承载题面，p9–p21承载E3答案/解析，不把教师版整体伪装为独立原卷。",
+    "N/A_with_basis：未找到可确认的官方E1正式评分细则；S132仅作为评分材料候选保留，Q16–Q21不将候选内容升格为E1。",
+    "N/A_with_basis：未提供学生作答/批注/实得分样卷；教师版中的学生共性问题不替代学生原答。",
+    "N/A_with_basis：Q16–Q21没有可确认的逐题分值；原件只给第二部分6题合计55分，保留合计，不向六题分摊。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q16",
+      "location": "S44教师版p6兔子插图胸前标记/气泡字",
+      "partial_reading": "B1指出原图可见“本命”和胸前圆章“兔”，题目MD当前概括为装饰文字/对话框；图像原页保留。",
+      "affects_answering": false,
+      "round": "r1 B minor carried through r2",
+      "basis": "非作答文字转写minor，r2没有扩展范围处理；不影响题面设问或评分。",
+      "source_image": "assets/source_pages/p006.png"
+    },
+    {
+      "qid": "README",
+      "location": "coverage/source_coverage.md与coverage/visual_transcription.md多段行首",
+      "partial_reading": "遗留独立双引号导致Markdown呈现杂乱；不改变内容或来源角色。",
+      "affects_answering": false,
+      "round": "r1/r2 minor carried forward",
+      "basis": "B1将其分类为可读性minor，B2未复核此格式细节。"
+    },
+    {
+      "qid": "Q16",
+      "location": "S44 p14同页总分来源引文",
+      "partial_reading": "r2引文中插入分号；原件分行排版未有该分号。紧随说明仍明确55分是第二部分合计，不是Q16–Q21单题分值。",
+      "affects_answering": false,
+      "round": "r2 independent B minor",
+      "basis": "不用于分摊题分；原始教师版PDF与页图保留。",
+      "source_image": "assets/source_pages/p014.png"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2"
+    ],
+    "independent": [
+      {
+        "path": "BJ-2025-BJ-GAOKAO/r1_verify/verification.json",
+        "sha256": "478a97baa271f385f839f025187552a7399b881b872c35e253158b328271b68e",
+        "overall": "fail_M1_M4_later_closed"
+      },
+      {
+        "path": "BJ-2025-BJ-GAOKAO/r2_verify/verification.json",
+        "sha256": "f1fff23b417370a7b7634309d71d82108023df9ba3bf32f1709d77f4c2f50ad5",
+        "overall": "pass_with_residual"
+      }
+    ],
+    "merge_receipt": "BJ-2025-BJ-GAOKAO/bj2025_gaokao_r2_reconciled_materialization_merge.json",
+    "prior_materialization_note": "Shared folder was already byte-identical to the B-reviewed r2 candidate when the stale-parent apply was refused; r2_reconcile_full creates the missing controller backup/merge receipt without byte-level content changes."
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-bj-gaokao-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T09:00:15.333507+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T09:03:26.849528+00:00"
+}

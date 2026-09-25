@@ -1,0 +1,513 @@
+{
+ "schema": "baodian-book-profile/0.1",
+ "book_id": "bixiu2",
+ "title": "必修二《经济与社会》",
+ "collab_key": "必修二",
+ "frozen": true,
+ "frozen_note": "2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝）",
+ "rule_refs": {
+  "book": "references/book-bixiu-2.md",
+  "active": "references/active/book-bixiu-2-current.md",
+  "style": "references/style-spec.md#必修二当前排版标准",
+  "rubric": "references/student-rubric-standard.md"
+ },
+ "paths": {
+  "root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝",
+  "workspace": "必修二_周六成品冲刺_20260910",
+  "aux_workspace": "必修二_Astra审核修订_20260913",
+  "central_state": "必修二_周六成品冲刺_20260910/状态/当前基线.json",
+  "review_entry": "00_必修二最新审查稿",
+  "review_manifest": "00_必修二最新审查稿/.review-manifest.json",
+  "review_history": "必修二_人工审查历史",
+  "build_dir_pattern": "必修二_Astra审核修订_20260913/核验/{label}{rev}_{date}",
+  "handoff": "必修二_Astra审核修订_20260913/协作/接管.json"
+ },
+ "naming": {
+  "batch_label": "修订{rev}",
+  "docx_stem": "必修二_v25_修订{rev}_{label}",
+  "review_copy_stem": "必修二_v25_修订{rev}_最新工作稿",
+  "feedback_hint": "请按“修订{rev}＋PDF页码”提意见"
+ },
+ "sources": {
+  "roots": [
+   "00_共同资料/原材料/2023模拟题",
+   "00_共同资料/原材料/2024模拟题",
+   "00_共同资料/原材料/2025模拟题",
+   "00_共同资料/原材料/2026模拟题",
+   "00_共同资料/原材料/历年高考题及细则"
+  ],
+  "banke": [
+   "00_共同资料/原材料/宝典制作原料/2026班课必修二第一轮 五四三二一 .pdf",
+   "00_共同资料/原材料/宝典制作原料/2026班课必修二第二轮 经济与社会习题课 .pdf"
+  ],
+  "extra": [
+   "00_共同资料/原材料/宝典制作原料/必修二 终极版秘籍.docx",
+   "00_共同资料/原材料/宝典制作原料/必修二经济与社会-应如何主体积累页.txt"
+  ],
+  "bank": {
+   "root": "DeepSeek_政治题库资料库_20260918",
+   "module_hint": "经济与社会"
+  },
+  "answer_only_choice_only": true,
+  "no_e1_exceptions": {
+   "whole_papers": [
+    "2024顺义二模",
+    "2026石景山期末",
+    "2026北京高考"
+   ],
+   "questions": [
+    "2024石景山一模第19题第（1）问"
+   ]
+  },
+  "stem_module_guard_note": "设问点名他册（如《当代国际政治与经济》）的题只作跨模块候选，归属由主代理裁定"
+ },
+ "styles": {
+  "_note": "一律按 w:name 匹配，不用 styleId（必修三 Word 重存后 styleId 变成 aff5/31 等）",
+  "h1": [
+   "heading 1"
+  ],
+  "h2": [
+   "heading 2"
+  ],
+  "example_title": [
+   "heading 3",
+   "heading 4"
+  ],
+  "group_heading": [
+   "heading 3"
+  ],
+  "method": [
+   "具体考法"
+  ],
+  "method_desc": [
+   "考法说明"
+  ],
+  "category_line": [
+   "考法分类"
+  ],
+  "trigger_box": [
+   "触发词速查"
+  ],
+  "toc": [
+   "目录一级",
+   "目录二级"
+  ],
+  "front_heading": [
+   "前置一级标题"
+  ],
+  "source": [
+   "题目材料",
+   "题目设问",
+   "题目选项"
+  ],
+  "teaching": [
+   "分析过程",
+   "答案落点",
+   "宝典正文"
+  ],
+  "rubric": [
+   "细则说明"
+  ],
+  "imported_style_pattern": "^R\\d{3}.*Normal$",
+  "_imported_note": "并入题面时带进来的逐题 Normal 样式（R184CYNormal 等数十种），不能据样式判断题面区"
+ },
+ "structure": {
+  "framework": "54321：五大理念/四大环节/三大基本经济制度/两只手/万物归一 + 是如何/应如何专题 + 题肢判断 + 图表类选择题专题",
+  "parts": [
+   {
+    "id": "FRONT",
+    "match": "^(目录|\\(前置\\)|第一轮　54321基础框架)$",
+    "schema": {}
+   },
+   {
+    "id": "R1",
+    "match": "^[一二三四五]、",
+    "schema": {
+     "subjective": "subj_r1",
+     "choice": "choice"
+    },
+    "numbering_reset": [
+     "h2",
+     "method"
+    ]
+   },
+   {
+    "id": "EXT",
+    "match": "^第一轮拓展",
+    "schema": {
+     "ext": "subj_multi"
+    }
+   },
+   {
+    "id": "SHI",
+    "match": "^第二部分　是如何专题",
+    "schema": {
+     "subjective": "subj_multi"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ]
+   },
+   {
+    "id": "YING",
+    "match": "^第三部分　应如何专题",
+    "schema": {
+     "subjective": "subj_multi"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ]
+   },
+   {
+    "id": "DRILL",
+    "match": "^第四部分　题肢判断",
+    "drill": true
+   },
+   {
+    "id": "CHART",
+    "match": "^第五部分",
+    "schema": {
+     "choice": "choice"
+    },
+    "kind_override": {
+     "subjective": "choice"
+    },
+    "_note": "本部分选择题标题也写“例题N”"
+   }
+  ]
+ },
+ "example_titles": [
+  {
+   "kind": "ext",
+   "regex": "^拓展例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  },
+  {
+   "kind": "choice",
+   "regex": "^选择例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  },
+  {
+   "kind": "subjective",
+   "regex": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  }
+ ],
+ "title_format": {
+  "sep": "　　",
+  "example": "例题 12　　2024 石景山一模 第19题 第（1）问",
+  "cross_module_suffix": "（跨模块）"
+ },
+ "column_schemas": {
+  "subj_r1": {
+   "labels": [
+    "【为什么能想到】",
+    "【链条】",
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "mode": "each_once",
+   "exempt_if_source_in": "sources.no_e1_exceptions",
+   "_candidates_observed_r230": "【链条】缺10（7个跨模块）、【细则说明】缺3（均为2024石景山一模Q19(1)具名例外）"
+  },
+  "subj_multi": {
+   "labels": [
+    "【为什么能想到】",
+    "【链条】",
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "mode": "at_least_once",
+   "repeatable": [
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "extra_labels": [
+    "【材料信号】",
+    "【传导路径】",
+    "【倒推入口】",
+    "【54321位置】",
+    "【题源示例】",
+    "【主体识别】",
+    "【措施、直接效果与后续】",
+    "【作答句式】"
+   ]
+  },
+  "choice": {
+   "labels": [
+    "【答案】",
+    "【分析过程】"
+   ],
+   "mode": "each_once"
+  }
+ },
+ "hidden_labels": [
+  "【材料原文】",
+  "【设问】"
+ ],
+ "labels_rules": {
+  "rubric_labels": [
+   "【细则说明】"
+  ],
+  "source_labels": [],
+  "chain": {
+   "label": "【链条】",
+   "arrow": "→",
+   "no_hard_break_between_links": true
+  },
+  "forbid_italic": true,
+  "block_label_allow_regex": [
+   "^【角度",
+   "^【(整题补充|概念辨析|解题提示)】$"
+  ],
+  "_allow_note": "是如何/应如何专题【答案落点】里按角度分列的小标签，属本册既有写法，不当作异常标签"
+ },
+ "numbering": {
+  "per_kind": true,
+  "scope_default": "h2"
+ },
+ "method_count": {
+  "regex": "（(\\d+)题）\\s*$",
+  "bearer_styles": [
+   "具体考法",
+   "heading 3"
+  ],
+  "count_kinds": [
+   "subjective"
+  ],
+  "unit": "blocks",
+  "scope_end": [
+   "h1",
+   "h2",
+   "group_heading",
+   "method"
+  ]
+ },
+ "student_text": {
+  "forbidden_words_book": [],
+  "allow_contexts": {
+   "需核": [
+    "无需核验"
+   ],
+   "出处": [
+    "措施的出处"
+   ]
+  },
+  "trailing_tag_exempt_styles": [
+   "考法分类",
+   "细则说明",
+   "heading 1",
+   "heading 2"
+  ],
+  "zone_rule": "标题→首个教学栏目标签之间=题面区；【细则说明】起到下一标签=细则区；表格内题肢按单练规则单独查",
+  "_common_note": "通用禁用词、词组、误伤模式等在 _house.json；这里只写本册增补"
+ },
+ "drill": {
+  "layout": "table3",
+  "columns": 3,
+  "stem_col": 0,
+  "answer_col": 1,
+  "source_col": 2,
+  "item_regex": "^(\\d+(?:（补\\d+）)?)[、.．]\\s*(.*)$",
+  "a1_blank": "（　）",
+  "a2_allowed": [
+   "正确",
+   "错误"
+  ],
+  "correction_marker": "纠正：",
+  "colors": {
+   "error_run": "C00000",
+   "correction": "008000"
+  },
+  "a1_forbid": [
+   "答案",
+   "提示",
+   "本题设问",
+   "不选原因"
+  ],
+  "intro_forbidden": [
+   "不选",
+   "本题设问"
+  ],
+  "part": "DRILL",
+  "a1_heading": "题肢单练（打印）",
+  "a2_heading": "题肢单练（答案与纠正）",
+  "categories": [
+   "传导链判断",
+   "主体与职能",
+   "概念与范围",
+   "关系与方向",
+   "因果关系",
+   "成立条件",
+   "程度与范围",
+   "其他易混判断"
+  ],
+  "group_label_regex": "^(一、传导链判断|二、综合题肢判断|【[^】]+】)$",
+  "alternation": {
+   "required": true,
+   "max_same_run_per_table": 3,
+   "jitter": true,
+   "seed_recorded": true,
+   "level": "WARN",
+   "_level_note": "REQ-BX2-20260915-003 原文只要求“错肢与正确题肢总体交替、不成固定规律”，没有给连续条数阈值；3 是工具提示值，只 WARN（修订230验收记录里两张表 max_same_run=4 已通过）"
+  },
+  "each_table_has_both": true,
+  "_observed_r230": "A1 820 = A2 820；导语3处提到“不选”，与2026-09-15“单练不用不选”规则是否冲突需主代理判断（本册已冻结，只记录）"
+ },
+ "toc": {
+  "mode": "hyperlink_static",
+  "styles": [
+   "目录一级",
+   "目录二级"
+  ],
+  "entries_expected": 36,
+  "page_from": "pdf_link_destination",
+  "toc_pdf_pages": [
+   2,
+   3
+  ],
+  "verify_heading_on_target": true,
+  "label_differs_from_heading": true
+ },
+ "footer": {
+  "regex": "—\\s*(\\d+)\\s*—",
+  "exempt_pages": [
+   1
+  ],
+  "page_offset": 0,
+  "continuous": true
+ },
+ "cover_preface": {
+  "cover": "用户手工（GPT生图）",
+  "preface": "用户手工；工程稿已删前言（修订215），目录同步",
+  "page1_footer": false
+ },
+ "typography": {
+  "_note": "style 级观测值；运行级格式可能覆盖，改字体前必须同时扫运行级",
+  "material": {
+   "ea": "Kaiti SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5
+  },
+  "stem_options_teaching": {
+   "ea": "Songti SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5
+  },
+  "method_title": {
+   "ea": "Kaiti SC",
+   "pt": 14,
+   "color": "005B7F"
+  },
+  "method_desc": {
+   "ea": "Kaiti SC",
+   "pt": 12
+  },
+  "body_line_pt": 16,
+  "space_after_pt": 2,
+  "choice_options": {
+   "layout": "2x2_table",
+   "rows": [
+    "A/B",
+    "C/D"
+   ],
+   "circled": [
+    "①/②",
+    "③/④"
+   ]
+  },
+  "colors": {
+   "trigger_red": "C00000",
+   "a2_error_red": "C00000",
+   "a2_correction_green": "008000",
+   "label_blue": "1F4E79"
+  }
+ },
+ "pagination": {
+  "keep_next": "标题+首段、表头+首行、材料小标题+后文",
+  "forbid_long_chains": true,
+  "forced_breaks_only": [
+   "封面",
+   "目录",
+   "顶层入口",
+   "附录起页"
+  ],
+  "blank_threshold_ratio": 0.33
+ },
+ "render": {
+  "engine": "libreoffice_bundled",
+  "soffice": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/MacOS/soffice",
+  "renderer_glob": "~/.codex/plugins/cache/openai-primary-runtime/documents/*/skills/documents/render_docx.py",
+  "renderer_pick": "latest_and_record_version",
+  "path_prepend": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override",
+  "png_dpi": 120,
+  "lo_profile": "<build_dir>/lo_profile",
+  "identity_file": "同版身份.json",
+  "record": [
+   "docx_sha256",
+   "pdf_sha256",
+   "pdf_pages",
+   "png_count",
+   "renderer_path",
+   "renderer_version",
+   "soffice_version",
+   "fontconfig_sha256",
+   "embedded_fonts"
+  ],
+  "fontconfig": {
+   "template": "house",
+   "dirs_extra": [
+    "/Applications/Microsoft Word.app/Contents/Resources/DFonts"
+   ],
+   "aliases": {
+    "宋体": "SimSun",
+    "楷体": "KaiTi",
+    "楷体_GB2312": "KaiTi",
+    "黑体": "Source Han Sans SC",
+    "sans-serif": "Source Han Sans SC"
+   },
+   "historical_file": "必修二_周六成品冲刺_20260910/参考/本机字库/fonts135-local-word.conf",
+   "historical_sha256_prefix": "aa0f58a05f064b2e"
+  }
+ },
+ "pixel": {
+  "policy": "same_page_full_pixels",
+  "allow_content_addressed_map": true,
+  "_note": "历史 map_visual_pages.py 用去页脚正文区+跨页映射，与 style-spec“同页、完整像素完全一致”不一致；新工具默认按规则，放宽须主代理明示",
+  "report_body_only_equal": false,
+  "inherit_unchanged_without_ledger": true,
+  "subpixel_tolerance_pt": 0.2,
+  "_ruling": "用户2026-09-23裁定：与上一版正文一样的页（同页或错位仅页码/页脚不同、亚像素位移在容差内）阶段稿不重看；定稿/送印终审用 page_delta --final，仍须旧页实看记录"
+ },
+ "publish": {
+  "entry": "00_必修二最新审查稿",
+  "note_file": "先看这里.md",
+  "manifest": ".review-manifest.json",
+  "archive_to": "必修二_人工审查历史/{prev_label}_原样审阅_{stamp}",
+  "preserve": [
+   ".DS_Store",
+   "~$*",
+   "批注*"
+  ],
+  "dry_run_default": true,
+  "require_root_approval": true
+ },
+ "handoff": {
+  "collab_book": "必修二",
+  "owner_file": "协作/接管.json",
+  "checkpoint_fields": [
+   "working_head",
+   "sha256",
+   "pending",
+   "next_action"
+  ]
+ },
+ "pdf_fonts": {
+  "expected_cjk_regex": "^(STSongti|STKaiti|SimSun)",
+  "_note": "本册 fontconfig 把“宋体”映射到 SimSun（Word DFonts），属预期"
+ },
+ "colors": {
+  "blue_exempt_styles": [
+   "框架层级"
+  ]
+ }
+}

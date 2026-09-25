@@ -1,0 +1,61 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "上一轮 major②（diff 插入段格式保真）只修好了一半。_new_para_specs 遇到“单个 run、没有显式颜色也没有加粗”的新段时只输出 text，不输出 runs；多 run 规格里没有颜色的 run 也不写 color。apply 时 _build_paragraph 照旧把锚点第一个 w:r 的 rPr（含 w:b、w:color）和锚点整份 pPr（jc、ind、keepLines、spacing、tabs）复制给新段。结果是新段继承了锚点的加粗、颜色和对齐缩进，而目标稿里它本来不加粗、是黑色、不居中。这些差异 format_changes 一条都没有，format_changes_count 仍会让主代理以为插入段回放是保真的。fix4 回执写的“136 个插入段 0 处不符”只覆盖了 D0859 之前的一小段。它 known_limits 里说“模板显式写颜色时只多出 000000，视觉等价”，但锚点是绿色时，回放出来就是绿色。",
+   "evidence": "合成用例（repro/final_attack.py F4/F5，结果在 final_attack_F4_F5.json）：在 B3_52 段 256 后插入一个无格式单 run 段。段 256 的首 run 是 008000 绿色，是'纠正：…'这一段。diff 规格为 {text,style:'分析过程',keep_next:false}，format_changes=[]。apply rc=0，回放出来的 run 是 ('008000',False)，目标是 (None,False)。在段 73 后插入时（首 run 加粗），回放是 ('000000',True)，目标是 (None,False)。在段 229 后插入 jc=center 的段，回放 jc=None，format_changes=[]。真实数据（repro/f6_real.py，结果在 f6_real.json）：把 51→52 的 158 条 insert op 单独 apply 到 B3_51，rc=0。其中 6 个歧义锚点补了 index_hint，D1652 因为命中词表剔除。可以一一配对核对的插入段有 981 个，考虑样式级加粗后，有效加粗或颜色不符的 533 个，其中 432 个不在 format_changes 里；jc/ind 不符的 470 个，其中 326 个未报。例如 B3_52 段 11047'“中国共产党领导下的中国所取得的社会成就…'：目标 rPr 只有 lang，回放段（锚点是加粗的【设问】段）rPr 是 b、bCs、rFonts、lang。f6_sim.py 做了纯模拟，得到的 533/432 与实测完全一致。",
+   "fix": "diff 生成的插入段规格一律显式给出每个 run 的 bold 和 color（没有颜色时写 'auto' 或 '000000'）。或者让 _build_paragraph 在 spec 标明来自 diff 时，不继承模板 rPr 的 b/bCs/color，只继承字体和字号。目标段 pPr 里的 jc/ind/spacing/keepLines/tabs 与锚点不同时，要么带进规格（新增 ppr 字段），要么逐段记入 format_changes（kind=insert_ppr），并计入 lost_structure_summary。补回归用例：绿色锚点和加粗锚点后各插一个无格式段，jc=center 段；在 51→52 insert-only 回放上断言“有效格式不符且未报告”为 0。"
+  },
+  {
+   "severity": "minor",
+   "desc": "restore 词表豁免的写后复核只覆盖 insert。replace_paragraph 或 replace_text 带 restore 时，把 title 段改成不再像标题的文字，写后该段区位变成 heading，后面的题面段变成 outside，工程词照样写进学生可见的正文，默认 apply rc=0。它与上一轮 R2 是同一类问题；上一轮修复建议把非 insert 的 op 划在范围外，所以记为 minor。加 --health 时能以 rc=1 发现。",
+   "evidence": "repro/final_attack.py F1：op replace_paragraph 的锚点是段 1514'选择例题 2　2024顺义二模第9题'（zone=title），source_zone=restore，new='本题讲解待核，暂按旧版。'，结果 rc=0。对输出重新跑 walk：段 1514 zone=heading，下一段 zone=outside。同一补丁加 --health：rc=1，new_FAIL 为'工程标签:待核（zone=heading）'和'例题编号不连续'。",
+   "fix": "cmd_apply 写后对所有 restore op 的目标段（按元素换算写后段号）都查写后区位。不在 source/title 区的，补跑一遍词表，命中就删除输出并中止。"
+  },
+  {
+   "severity": "minor",
+   "desc": "词表检查的是补丁里的原始新文字，没有先去掉零宽字符；写后读回的口径（para_text/_ws_norm）却会去掉零宽字符。把 U+200B 插进禁用词中间，check 和 apply 都放行，学生看到的仍是这个禁用词。",
+   "evidence": "F3：在教学段 229 后 insert_after，文字为'本题讲解待\\u200b核，暂按旧版。'。check rc=1（pending，不报词表），apply rc=0，读回段 230 为'本题讲解待核，暂按旧版。'（zone=teaching）。对照：不含零宽字符时 check rc=2，报'命中禁用词表 工程标签:待核'。加 --health 时 rc=1 能发现。",
+   "fix": "_forbidden_hit（或 _new_texts_of）过词表前先做 translate(bh.ZW)，与 bh 的口径保持一致。"
+  },
+  {
+   "severity": "minor",
+   "desc": "写后自证只补了 set_keepnext 的“文字不变”这一条。set_format 与 replace_text 的目标段在目标子串以外被顺手改字，set_keepnext 目标段的 run 格式被改（不是文字），都发现不了。上一轮 minor④ 的修复建议里本来就包括 set_format 的文字不变。",
+   "evidence": "F8（进程内调用 ap.main 注入缺陷，结果在 final_attack_F7_F8_F9.json）：apply_set_format 额外在段末加'【误改】'，rc=0，输出段 229 结尾是'…治理格局。【误改】'。apply_replace_text 做同样的误改，rc=0，结尾同样是'【误改】'。apply_set_keepnext 额外把首 run 改成 FF0000，rc=0，输出首 run 为 ('FF0000',False)。对照：insert 多插一段未登记段、delete 顺手多删下一段，都 rc=2 且不留输出。",
+   "fix": "set_format 后置条件加上“段落文字不变”。replace_text 后置条件加上“去掉 old→new 替换后，其余文字与改前相同”。set_keepnext 比对改前改后去掉 pPr/keepNext 后的 C14N 是否一致。"
+  },
+  {
+   "severity": "minor",
+   "desc": "diff 生成锚点时用精确文字判断是否重复（uniq_anchor 按 old_texts 精确相等计数），resolve_anchor 却按 bh.norm（去掉空白）匹配。两段只差空白时，diff 给的是不带 index_hint 的 text 锚点，apply 会因为命中 2 段而中止。51→52 压力回放除了表格（D0859）以外还被这一点挡住。fix4 回执没有写出来。",
+   "evidence": "repro/f6_amb.py：51→52 补丁里有 6 条锚点按 norm 在 B3_51 命中多段，且没有 index_hint，分别是 D1184、D1185、D1359、D1360、D1570、D1571（都是'【设问】（1）…'）。只 apply insert 类 op 时 rc=2，报'op D1185：锚点命中 2 段（须恰好 1 段）'。",
+   "fix": "uniq_anchor 改用 bh.norm 计数，重复时带上 index_hint/prev。压力测试报告里如实列出。"
+  },
+  {
+   "severity": "minor",
+   "desc": "上一轮 R4 仍能复现：主代理只补 source_zone/allow_complex 和 approval_ref、没改 approved_by 时，再跑一次 diff --out 写同一路径，会静默覆盖掉授权。fix4 自己把它延后了，没有主代理裁定。",
+   "evidence": "repro/r3attack.py R4（原命令重跑）：第二次 diff rc=0，authorization_lost=true，approval_ref_after='必修三政治与法治宝典_第52批_意见修改审阅稿.docx -> r3_small_new.docx'。对照 F7：把 approved_by 改成'claude:主代理'之后，再 diff --out 同一路径，rc=3，文件不变。",
+   "fix": "_own_json 只在所有 op 都没有 source_zone/allow_complex 且 approval_ref 仍是自动值时才允许覆盖。或者由 apply 拒绝“带授权字段但 approved_by 以 diff: 开头”的补丁。"
+  },
+  {
+   "severity": "minor",
+   "desc": "上一轮 minor⑧ 只落实在 diff 报告上。diff 报告有 lost_structure_summary，apply 报告顶层仍然没有结构损失汇总。文件 1714 行，超出规格 ≤900 行的目标。",
+   "evidence": "repro/replay.py 04 52：apply 报告的键只有 tool/version/mode/inputs/profile/ops/ops_extra/output，any_summary_field=[]。`wc -l apply_patch.py` 为 1714。",
+   "fix": "apply 报告顶层汇总 ops_extra 里的 lost_structure_before/after。另开瘦身批次。"
+  }
+ ],
+ "checked": [
+  "上一轮 r3verify 各条的原始证据命令都已重跑（repro/r3attack.py R1–R8，原脚本只改了 R7 读报告时的 .get 容错）。R2（title 锚点、insert_before、restore、带工程词）：rc 由 0 变为 2，报'题面零改写复核不通过，已删除输出'，cases 下没有 r2_out.docx；对照组 check rc=2，报命中词表。R3：报告被拒时 rc=3，patch_left_on_disk=false；大小写变体 rc=2，out 未写出。R5：bold:false 生效，new_run_bold=[false]。R6：set_keepnext 顺手改文字，rc=2，不留输出；insert 锚点被误改，rc=2，不留输出。R7：check 与 apply 都在 rc=2 中止，报'样式名…找不到'。R8：rc=0，输出 XML 原样保留'\\u3000\\u3000首行缩进的补充段。'。R4：仍能复现，见 issues。",
+  "上一轮 major②的合成复现 r9_insert_fmt.py：diff 规格带上了 keep_next:true 和两个 run 的 bold/color；回放后 keepNext=true，run1 为 FF0000 加粗，与目标一致。这是代码真的修了，不只是改了测试。但只修了“目标段本身有格式”这一半，“目标段无格式、锚点有格式”这一半没有修，见 major。",
+  "04→52 金标准回放（repro/replay.py 04 52）：diff 30 条 replace_paragraph，apply 5.2 秒，rc=0。文字流逐段一致，keepNext/pStyle 不一致均为 0，没有字面 tab。彩色 run 15279→15099，hyperlink 32→2。diff 的 lost_structure_summary 为 hyperlink_lost=30、field_lost=90、colored 210→30，与 ops_extra 自行合计完全一致。",
+  "51→52 压力回放（repro/replay.py 51 52）：diff 2.6 秒，生成 1652 条 op（921 条 replace_paragraph、572 条 delete_paragraph、159 条 insert_after）。format_changes 共 461 条（188 条 replace_paragraph_format、249 条 insert_run_extra_format、24 条 insert_format）。插入段 1412 个，其中 keep_next=true 的 295 个，带 runs 的 615 个。apply 在 D0859 表格单元格唯一段处中止，与 fix4 描述一致。另外只 apply insert 类 op 的实测结果见 major 和第 5 条 minor。",
+  "新增攻击用例 13 个（repro/final_attack.py F1–F9 的 22 个子场景，以及 f6_sim.py、f6_real.py、f6_amb.py）。补丁不可覆盖（F7）全部被拒且文件不变：diff --out 指向已批准补丁的符号链接 rc=3；大小写变体 F7_APPROVED.JSON rc=3；check --report 指向补丁本身或它的符号链接 rc=3；diff --report 指向 diff 产物补丁 rc=3，--out 未落盘；diff --out 指向改过 approved_by 的授权补丁 rc=3。F2：restore insert 插入一段标题式伪题目（带'待核'），落在 title 区后按规格豁免，rc=0，记为按规格行为，不计为问题。",
+  "未点名段落基线：insert 多插一段未登记的段落 rc=2；delete 顺手多删下一段 rc=2，报'未点名段落发生变化'，不留输出。基线来自 doc_xml_orig 的独立解析，这一点有效。",
+  "受保护目录（F9，只用预期被拒的命令）：diff --out 指向审阅入口 rc=3；diff --report 指向 Skill scripts rc=3，--out 未落盘；apply --out 指向项目根 rc=3。命令前后审阅入口、scripts/、项目根都没有新增文件。",
+  "run_tests_apply_patch.py：复制到 scratchpad/booktools/apply_patch_final/rerun/ 后用 /usr/bin/python3 -B 运行，36/36 PASS，总计 36，失败 0，exit 0，用时 111 秒。",
+  "真实输入 B3_52、B3_03、B3_04、同版身份.json、B3_51、B2_230、04_编号与考法计数.json 以及 apply_patch.py 本身，测试前后 SHA256 与 mtime 一致（snap_before.json 与 snap_after.json 用 cmp 比对相同）。scripts/__pycache__ 和 scripts/ 的目录列表前后相同，没有新增 *_verify/*_attack 文件。构建/ 目录列表不变。审阅入口 00_必修三最新审查稿/ 的文件列表不变，只有父目录（项目根）的 mtime 从 05:55 变为 06:04。项目根条目数前后都是 71，F9 断言项目根无新增文件；这次 mtime 变化来自并行的 后勤管理/、Claude协作同步 等目录活动，不是本复审所为。",
+  "本复审没有修改任何工具或脚本，没有运行 collab.py，没有启动子代理，也没有给其他会话发消息。辅助脚本和产物全部在 scratchpad/booktools/apply_patch_final/ 下。"
+ ],
+ "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/final_apply_patch.json",
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch_final"
+}

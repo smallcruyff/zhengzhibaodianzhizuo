@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "status": "fixed_pending_independent_delta_review",
+  "fixed_conversion_defects": [
+    "Q11 option A: 受商标法保护",
+    "Q19 E1: 政府履行经济职能（或宏观调控）",
+    "Q21 crop now contains all dialogue text"
+  ],
+  "normalized_source_limits": {
+    "Q1_Q15_E1": "not_applicable_choice",
+    "answer_source": "not_provided_with_basis",
+    "student_source": "not_provided_with_basis"
+  },
+  "sha256": {
+    "Q11": "15c98fe0b10544fbf07ab70ae472c542768dd3a501b27a9e9c07a4390584b763",
+    "Q19": "e6b2db9082b95de2df156968c6d695b5733f69a4bd958c0bf0835d934722dca8",
+    "Q21_crop": "a53a083cad8708132c6559b7b52170fc18b41ac163a9834eaaa12e66793de4f3",
+    "complete_candidate_json": "4b305945c909432d18ad86f2f98a181a6688126c908de5519ebd47e27f59b48b",
+    "self_check_json": "109c1073fa4adf96d82e4934d77291cbe9d7cce64f2530352d5b81e47c7a59f9"
+  },
+  "shared_modified": false
+}

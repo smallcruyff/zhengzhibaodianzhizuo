@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "reviewer_role": "independent_visual_content_reviewer",
+  "review_mode": "frozen-batch targeted delta verification r4; no other questions rerun",
+  "reviewed_at": "2026-09-22T01:46:37-07:00",
+  "scope": [
+    "Q16 original-page boundary",
+    "Q21 paper frame topology",
+    "Q18 rubric p2 required literal text",
+    "Q21 rubric p4 merged-angle scoring structure",
+    "current candidate SHA versus output_sha256.json",
+    "prior r3/repair hash invalidation after rebuild"
+  ],
+  "source_visual_opened": {
+    "paper": {
+      "pages_opened": [4, 5, 8],
+      "page_images": {
+        "p004": {
+          "path": "evidence/paper_pages/p004.png",
+          "sha256": "279df0d166c5fab587eb8bb204e234eaab6a9a376ec0dc8340f91fc6f9ce6c88",
+          "finding": "Q16 starts on p4 and its full stem, image, and prompt end on p4."
+        },
+        "p005": {
+          "path": "evidence/paper_pages/p005.png",
+          "sha256": "1cf8d11b69504c90efd3c3256a64b6afbce8c10aa75be9ab19e6cc98904833c6",
+          "finding": "p5 starts with Q17; Q16 does not continue onto p5."
+        },
+        "p008": {
+          "path": "evidence/paper_pages/p008.png",
+          "sha256": "d9eabda7ae4dda28f260c1100b88ba81c98ebdff0414c32fc5e4e3c8b41e23e3",
+          "finding": "The teacher is in one upper rounded box; 甲、乙、丙、丁 share one lower rounded box."
+        }
+      }
+    },
+    "rubric": {
+      "pages_opened": [2, 4],
+      "page_images": {
+        "p002": {
+          "path": "evidence/rubric_pages/p002.png",
+          "sha256": "b2b85fad33a9edc6e601081f70eb64718cc04fa81fd5365cfd9b05c2c959cd63",
+          "finding": "The Q18 block visibly contains the source typo fragment and the required ‘需结合材料’ wording in the adjacent scoring text."
+        },
+        "p004": {
+          "path": "evidence/rubric_pages/p004.png",
+          "sha256": "0fa18d11560427cce254775049bc55c08345fbec46d529a563880ea836242367",
+          "finding": "制度优势 occupies one merged angle with three optional paths; the right merged score cell says ‘任一角度2分’ and ‘纯经济角度最高6分’."
+        }
+      }
+    },
+    "source_pdf_sha256": {
+      "paper": "e1a49527cb4c175f3de69c5cb429216b35938f336f1417fd9df9d955c3e98399",
+      "rubric": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a"
+    }
+  },
+  "targeted_checks": {
+    "Q16_page_boundary": {
+      "status": "pass",
+      "source_pages": [4, 5],
+      "source_result": "Q16 is closed on p4; p5 begins Q17.",
+      "candidate_declared_pages": [4],
+      "candidate_contains_boundary_guard": true,
+      "candidate_path": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "candidate_sha256": "4c5a3e15f739e3d09acd4f92dbf677b722637e5ea9b7afc544a5d083493e6ed9"
+    },
+    "Q21_paper_frame_topology": {
+      "status": "pass",
+      "source_path": "evidence/paper_pages/p008.png",
+      "candidate_path": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "candidate_declares": "教师文字单独上方框；甲乙丙丁共享下方一个框",
+      "candidate_contains_topology_guard": true,
+      "crop_path": "evidence/figures/Q21_p008_discussion_boxes.png",
+      "crop_sha256": "a53a083cad8708132c6559b7b52170fc18b41ac163a9834eaaa12e66793de4f3",
+      "candidate_sha256": "7ba079ce081396ec94037779f628ef7e0ba258761dd75e927a7b6b8bf0a682e2"
+    },
+    "Q18_rubric_p2_literals": {
+      "status": "pass",
+      "source_path": "evidence/rubric_pages/p002.png",
+      "required_literals": [
+        "未按照未全面、诚信原则",
+        "需结合材料"
+      ],
+      "candidate_path": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "candidate_contains_required_literals": true,
+      "candidate_sha256": "96757979f4efaa29191473488e226fe5de102aa00e534ae26d8cf36fd56db6c7",
+      "fidelity_note": "视觉原页将‘需结合材料’置于该评分块的相邻第4点括注；候选保留该短语及疑似错字，未把原件改正为规范表述。严格逐行版式定位如需另行裁判，应由总控决定；本轮按指定‘保留错字且含短语’门槛判通过。"
+    },
+    "Q21_rubric_p4_scoring_structure": {
+      "status": "pass",
+      "source_path": "evidence/rubric_pages/p004.png",
+      "candidate_path": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "candidate_preserves_merged_angle": true,
+      "candidate_preserves_any_angle_two": true,
+      "candidate_preserves_economic_cap": true,
+      "required_text": "制度优势为一个合并角度（下含三路可选分析），任一角度2分；纯经济角度最高6分。"
+    }
+  },
+  "sha_verification": {
+    "current_candidate_sha256": {
+      "Q16": "4c5a3e15f739e3d09acd4f92dbf677b722637e5ea9b7afc544a5d083493e6ed9",
+      "Q18": "96757979f4efaa29191473488e226fe5de102aa00e534ae26d8cf36fd56db6c7",
+      "Q21": "7ba079ce081396ec94037779f628ef7e0ba258761dd75e927a7b6b8bf0a682e2",
+      "Q11": "15c98fe0b10544fbf07ab70ae472c542768dd3a501b27a9e9c07a4390584b763",
+      "Q19": "e6b2db9082b95de2df156968c6d695b5733f69a4bd958c0bf0835d934722dca8",
+      "Q21_crop": "a53a083cad8708132c6559b7b52170fc18b41ac163a9834eaaa12e66793de4f3",
+      "complete_candidate.json": "67e69a86792555b1c6b1386b4d092b99f8d6005698cd1926035b9ce061618de6",
+      "self_check.json": "c6bd2019d7c9e573e889905f80a4d54a228439622797bb4e8333fa460da7e4d8"
+    },
+    "output_manifest": {
+      "path": "output_sha256.json",
+      "entry_count": 161,
+      "missing": 0,
+      "mismatches": 0,
+      "targeted_candidate_entries_match": true,
+      "note": "The manifest is internally consistent, but it also contains stale controller_ready entries from the prior package; that does not make the old package reusable."
+    },
+    "status": "pass"
+  },
+  "prior_r3_hash_status": {
+    "status": "stale_after_rebuild",
+    "repair_receipt_path": "review_r2/repair_receipt.json",
+    "still_matching_targeted_repair_hashes": {
+      "Q11": true,
+      "Q19": true,
+      "Q21_crop": true
+    },
+    "invalidated_old_hashes": {
+      "complete_candidate.json": {
+        "old_r3_receipt": "4b305945c909432d18ad86f2f98a181a6688126c908de5519ebd47e27f59b48b",
+        "current": "67e69a86792555b1c6b1386b4d092b99f8d6005698cd1926035b9ce061618de6"
+      },
+      "self_check.json": {
+        "old_r3_receipt": "109c1073fa4adf96d82e4934d77291cbe9d7cce64f2530352d5b81e47c7a59f9",
+        "current": "c6bd2019d7c9e573e889905f80a4d54a228439622797bb4e8333fa460da7e4d8"
+      },
+      "controller_ready_Q16": {
+        "old_materialized": "31f3500196bc1cd32c6c4cfdba73b5aa24ceca11aba505cca4cef7e34ecbbc4f",
+        "current_candidate": "4c5a3e15f739e3d09acd4f92dbf677b722637e5ea9b7afc544a5d083493e6ed9"
+      },
+      "controller_ready_Q18": {
+        "old_materialized": "9ecd60e59aec1f05c055e84bd74aac48119289c1d91cd49d46b4ed874c4e1c1e",
+        "current_candidate": "96757979f4efaa29191473488e226fe5de102aa00e534ae26d8cf36fd56db6c7"
+      },
+      "controller_ready_Q21": {
+        "old_materialized": "54f78cfe3b1a25a2cf177176c916eb807bf7a50735707f809d8ac3c7bb13128d",
+        "current_candidate": "7ba079ce081396ec94037779f628ef7e0ba258761dd75e927a7b6b8bf0a682e2"
+      }
+    },
+    "implication": "prior R3/repair hash set cannot certify the rebuilt candidate; controller_ready must be freshly re-materialized."
+  },
+  "conversion_complete": true,
+  "source_limitations": {
+    "Q1_Q15_E1": "不适用（选择题）；沿用 prior r3 已核定状态，未在本定点轮重扫",
+    "answer_source": "not_provided_with_basis; all answer fields remain N/A",
+    "student_source": "not_provided_with_basis; all student fields remain N/A",
+    "impact": "这些是输入源限制，不构成当前候选的转换缺陷，也不因缺源补造答案或学生层。"
+  },
+  "precise_defects": [
+    "现有 controller_ready 仍是旧物化包，其 Q16/Q18/Q21 及 complete/self 哈希与新候选不同；不可直接复用。"
+  ],
+  "real_unresolved": [
+    "无独立答案键/参考作答源。",
+    "无学生原答、样卷、教师批注、评分标记或实得分。",
+    "Q18‘需结合材料’的逐行归属与原页相邻第4点括注存在版面定位注意事项；本轮按指定文字保留门槛判通过，严格行级裁判留给总控。"
+  ],
+  "merge_ready": true,
+  "merge_ready_scope": "当前 candidates/ 隔离候选可交总控重新物化；不得把现有 controller_ready 目录作为本次新候选直接提交。",
+  "controller_repackage_required": true,
+  "shared_modified": false,
+  "write_scope": {
+    "only_written": [
+      "review_r2/targeted_delta_verification_r4.md",
+      "review_r2/targeted_delta_verification_r4.json"
+    ],
+    "not_modified": [
+      "build_candidate.py",
+      "candidates/",
+      "controller_ready/",
+      "shared question bank",
+      "index/manifest",
+      "source PDFs and rendered source pages"
+    ]
+  }
+}

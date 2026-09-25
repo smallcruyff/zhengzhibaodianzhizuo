@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "role": "teacher_embedded_E3",
+  "choice_key": {
+    "1": "C",
+    "2": "A",
+    "3": "B",
+    "4": "B",
+    "5": "A",
+    "6": "D",
+    "7": "A",
+    "8": "C",
+    "9": "B",
+    "10": "C",
+    "11": "D",
+    "12": "D",
+    "13": "D",
+    "14": "C",
+    "15": "A"
+  },
+  "subjective_answers": "Q16-Q21 full teacher answer and explanation preserved in each candidate",
+  "independent_answer_file": "missing"
+}

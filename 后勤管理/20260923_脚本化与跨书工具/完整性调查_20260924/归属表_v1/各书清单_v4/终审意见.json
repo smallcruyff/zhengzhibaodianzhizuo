@@ -1,0 +1,668 @@
+{
+ "reviewer": "claude-opus-5-5 终审（只读）",
+ "date": "2026-09-24",
+ "verdict": "FAIL",
+ "precondition": "审查开始（16:02）直到16:13，各书清单_v4/00_汇总.md 和各书清单都不存在；本目录只含本文件。merge_judgments.py 还没以 --final 并入升级判定：rulings.jsonl 里 ruler 为 esc* 的记录为0条，也没有 book_lists/。抽样对象因此改为从现有判定数据复原的候选：escalation 覆盖首轮，gold_final 覆盖金标；再用 book_status 找出“未收但 rel=主/跨”的漏收候选和“已收但 chk=错收”的错收候选。复原脚本、样本和逐条结论在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_final_review/（derive.py、sample.json、sample_verdicts.json、subq_audit.json）。",
+ "sample_accuracy": {
+  "B3": {
+   "抽查": 7,
+   "对": 4,
+   "存疑": 1,
+   "错": 2,
+   "准确率": "4/7",
+   "漏收候选": "3/4",
+   "错收候选": "1/3"
+  },
+  "PH": {
+   "抽查": 7,
+   "对": 5,
+   "存疑": 0,
+   "错": 2,
+   "准确率": "5/7",
+   "漏收候选": "4/4",
+   "错收候选": "1/3"
+  },
+  "CU": {
+   "抽查": 7,
+   "对": 3,
+   "存疑": 1,
+   "错": 3,
+   "准确率": "3/7",
+   "漏收候选": "3/4",
+   "错收候选": "0/3"
+  },
+  "X1": {
+   "抽查": 7,
+   "对": 3,
+   "存疑": 0,
+   "错": 4,
+   "准确率": "3/7",
+   "漏收候选": "3/4",
+   "错收候选": "0/3"
+  },
+  "X2": {
+   "抽查": 7,
+   "对": 3,
+   "存疑": 1,
+   "错": 3,
+   "准确率": "3/7",
+   "漏收候选": "2/4",
+   "错收候选": "1/3"
+  },
+  "MI": {
+   "抽查": 7,
+   "对": 4,
+   "存疑": 0,
+   "错": 3,
+   "准确率": "4/7",
+   "漏收候选": "4/4",
+   "错收候选": "0/3"
+  },
+  "RE": {
+   "抽查": 7,
+   "对": 4,
+   "存疑": 0,
+   "错": 3,
+   "准确率": "4/7",
+   "漏收候选": "4/4",
+   "错收候选": "0/3"
+  }
+ },
+ "sample_accuracy_total": {
+  "抽查": 49,
+  "对": 26,
+  "存疑": 3,
+  "错": 20,
+  "漏收候选": "23/28",
+  "错收候选": "3/21"
+ },
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "待终审的交付物不存在：各书清单_v4（含00_汇总.md）没有生成，升级判定也没有并入 rulings/attribution_ruled/book_lists。",
+   "evidence": "归属表_v1 下没有 各书清单_v4、book_lists；rulings.jsonl 最后写入时间 15:51，esc* ruler 0 条；model_batch/judgments/esc*.json 写于 15:55-15:59，之后没有并入。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "小问级“已收第N问”由题级 matrix.csv 整题展开而来。书稿只收了某一问，其余各问也被标成“已收”。结果是小问级“错收”基本都是假阳性，而且真正缺收的小问被隐藏了。",
+   "evidence": "build_attribution_v3.py 第390-396行按 qid 的 mrow.get(book) 判 COLLECTED，与 subq 无关。对照书稿 docx 全文扫题号标签：616 个“已收第N问”中，263 个在书稿里只出现其他小问的标签。终判 chk=错收 的小问共 241 个，其中 227 个属于这种情况。抽查的 17 条小问错收候选全部如此，例如推理书只收 2024 西城二模 18（1），却被标“已收第4问”并判错收；文化书只收“2024 年西城二模第 18（4）题”，却对 18#3 判错收。另有 26 个小问被判相关、书稿实际未收，却因标了“已收”而进不了漏收候选，例如 BJ-2026-XC-YIMO-Q19#1：B3 为主，必修三书只收（2）。",
+   "fix": "按书稿逐题标签（含“第N（k）题”“第N题第（k）问”两种写法）重建小问级收录状态，再重出错收和漏收候选。已判定的 chk 不必重跑，只需重新判断它是否构成书稿错收。"
+  },
+  {
+   "severity": "major",
+   "desc": "校准用的模型与全量判定用的模型不一致，校准结论不能证明全量质量达标。",
+   "evidence": "calibration_report.md 比对的 gc01-04/gs01-05 判定，judge 为 claude-sonnet-5（其中1份写作 Claude Sonnet 5）；全量 c001-c060、s001-s060 和 12 个升级批次的 judge 全是 claude-opus-5-5。Opus 在金标上的 precision/recall 和错收精确率从未测量。gold_judge_A/B 是构造金标的输入，不能兼作校准。",
+   "fix": "用全量同款模型（opus）在 gc/gs 上补跑一次，再运行 compare_to_gold.py；报告里写明实际被校准的模型。"
+  },
+  {
+   "severity": "major",
+   "desc": "准入没有过滤：merge_judgments.py 把 rel=主/跨 一律写成 IN，不看 admission。无细则的主观题因此进入“应收”候选，违反“主观题有细则才收、无细则只收选择题”。",
+   "evidence": "rulings.jsonl 中 value=IN 的记录有 59 条落在 admission=不收-无E1 的单元上。抽查复现2条：BJ-2023-CY-ERMO-Q20#1 X1，题库第1问“开放性试题，答案略”，无E1；BJ-2023-CY-YIMO-Q19#1 X2，题库 E1=not_provided。",
+   "fix": "生成清单时，漏收候选只保留选择题照收、有E1和具名例外；无E1的主观题单列“不收”。"
+  },
+  {
+   "severity": "major",
+   "desc": "attribution.csv 的 admission 列落后于当前题库。一批标“待裁决-证据未核实”的主观题，题库里已经配好正式细则。按旧列过滤会漏掉可收题，按新列则缺少复核记录。",
+   "evidence": "抽到的4个“待裁决”单元，现在用 bank.py get 查，都已配对E1：BJ-2023-HD-YIMO-Q21#2（细则p045-049）、BJ-2024-FT-ERMO-Q21（细则P88-P110）、BJ-2025-HD-ERMO-Q20（细则第4-5页）、BJ-2025-FT-QIMO-Q19（PPTX第46-48张）。rulings 中 IN 落在“待裁决”单元的记录有 80 条。",
+   "fix": "出清单前，用当前题库的 rubric 状态刷新 admission。inputs_snapshot 的 rubric_links.csv 已过时。"
+  },
+  {
+   "severity": "minor",
+   "desc": "缺判检测只查“整条判定缺失”，不查“已收模块缺 chk”。有1个单元的已收模块没有复判，也没有进入升级批次。",
+   "evidence": "BJ-2026-DC-ERMO-Q11（c046）：B3、X2 都是“已收整题”，chk={}，conf=中，needs_escalation 返回 None。",
+   "fix": "needs_escalation 增加一项：book_status 已收的模块不在 chk 里，就按缺判升级。"
+  },
+  {
+   "severity": "minor",
+   "desc": "升级复判对首轮错收几乎照单全收，没能纠正小问展开造成的假错收。",
+   "evidence": "首轮 302 条错收，升级后 297 条维持错收、5 条改为暂缓。升级批次沿用了同一份错误的 book_status。",
+   "fix": "修复 book_status 后，只对受影响的小问重新升级。"
+  }
+ ],
+ "coverage_checks": {
+  "单元缺判": "1947/1947 个单元都有判定；463/463 个升级单元都有升级判定。模块级缺 chk 1处（见minor）。",
+  "错收升级覆盖": "首轮非金标单元的 chk=错收 全部进入升级（220 个以错收为由，另有同时 conf低 的）。10 个金标单元中 Sonnet 判错收、未升级的，终判取 gold_final（opus 裁定），不算遗漏。",
+  "校准与全量模型": "不一致（Sonnet 校准，Opus 全量）"
+ },
+ "sample_items": [
+  {
+   "book": "B3",
+   "kind": "漏收",
+   "unit_id": "BJ-2020-BJ-GAOKAO-Q17#1",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "s001.json",
+   "verdict": "对",
+   "note": "有E1；细则替代项\"政府经济建设的职能\"可归必修三政府职能，跨收成立"
+  },
+  {
+   "book": "B3",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-SJS-QIMO-Q4",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "c054.json",
+   "verdict": "对",
+   "note": "选择题；①行政裁量权基准属法治政府，B3题肢可用"
+  },
+  {
+   "book": "B3",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-FS-YIMO-Q10",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "c049.json",
+   "verdict": "存疑",
+   "note": "主考肖像权（选必二）；①\"自由不能逾越法律红线\"归B3较弱，答案键未核实"
+  },
+  {
+   "book": "B3",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-YQ-YIMO-Q1",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "escc05.json",
+   "verdict": "对",
+   "note": "③中流砥柱属必修三第一课\"历史和人民的选择\""
+  },
+  {
+   "book": "B3",
+   "kind": "错收",
+   "unit_id": "BJ-2026-HD-QIZHONG-Q2",
+   "book_status": "已收整题",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escc05.json",
+   "verdict": "对",
+   "note": "书稿选择例题9，四肢均为民营经济传导链，司法只是背景"
+  },
+  {
+   "book": "B3",
+   "kind": "错收",
+   "unit_id": "BJ-2024-HD-YIMO-Q17#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs02.json",
+   "verdict": "错",
+   "note": "书稿只收第（3）问（例题15、例24），第（1）问未收，不存在错收"
+  },
+  {
+   "book": "B3",
+   "kind": "错收",
+   "unit_id": "BJ-2026-SJS-ERMO-Q17#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "书稿只引用第（1）问，第（2）问未收"
+  },
+  {
+   "book": "PH",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-CY-YIMO-Q7",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "c004.json",
+   "verdict": "对",
+   "note": "世界观方法论、实践与理论创新，属哲学；书稿只有2025、2026朝阳一模Q7"
+  },
+  {
+   "book": "PH",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-BJ-GAOKAO-Q5",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "高",
+   "final_src": "c040.json",
+   "verdict": "对",
+   "note": "普遍联系、部分与整体、质变、合目的合规律，纯哲学；哲学书缺2026高考"
+  },
+  {
+   "book": "PH",
+   "kind": "漏收",
+   "unit_id": "BJ-2024-DC-ERMO-Q11",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "c015.json",
+   "verdict": "对",
+   "note": "C肢一分为二、适度原则可入哲学"
+  },
+  {
+   "book": "PH",
+   "kind": "漏收",
+   "unit_id": "BJ-2025-HD-ERMO-Q20",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "s036.json",
+   "verdict": "对",
+   "note": "E1已配对（细则第4-5页），补充规定矛盾分析法最多2分，可跨收入哲学"
+  },
+  {
+   "book": "PH",
+   "kind": "错收",
+   "unit_id": "BJ-2026-SJS-ERMO-Q17#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "哲学书只收第（3）问，第（1）问未收"
+  },
+  {
+   "book": "PH",
+   "kind": "错收",
+   "unit_id": "BJ-2026-CY-YIMO-Q6",
+   "book_status": "已收整题",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escc04.json",
+   "verdict": "错",
+   "note": "书稿例题17用D肢讲\"根据固有联系建立新的具体联系\"，属哲学联系观，判错收不成立"
+  },
+  {
+   "book": "PH",
+   "kind": "错收",
+   "unit_id": "BJ-2025-FT-YIMO-Q16",
+   "book_status": "已收整题",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs04.json",
+   "verdict": "对",
+   "note": "设问限定运用文化知识，题库无E1，哲学书不应收"
+  },
+  {
+   "book": "CU",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-CP-QIMO-Q16",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "高",
+   "final_src": "s042.json",
+   "verdict": "对",
+   "note": "设问点名《哲学与文化》，E1必答传承优秀传统文化；文化书缺2026昌平期末"
+  },
+  {
+   "book": "CU",
+   "kind": "漏收",
+   "unit_id": "BJ-2024-BJ-GAOKAO-Q19",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "escs02.json",
+   "verdict": "对",
+   "note": "用户2026-09-22确认该题细则按E1使用；细则含核心价值观，跨收成立"
+  },
+  {
+   "book": "CU",
+   "kind": "漏收",
+   "unit_id": "BJ-2024-FT-ERMO-Q21",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "s019.json",
+   "verdict": "对",
+   "note": "细则为正式评分材料，其中价值观、民族精神可入文化"
+  },
+  {
+   "book": "CU",
+   "kind": "漏收",
+   "unit_id": "BJ-2025-FT-QIMO-Q19#1",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "s035.json",
+   "verdict": "存疑",
+   "note": "设问限定《法律与生活》，E1仅\"不符合敬业等核心价值观\"1分，文化跨收偏弱"
+  },
+  {
+   "book": "CU",
+   "kind": "错收",
+   "unit_id": "BJ-2026-SJS-QIMO-Q18#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "文化书只收第（1）问，第（2）问未收"
+  },
+  {
+   "book": "CU",
+   "kind": "错收",
+   "unit_id": "BJ-2024-XC-ERMO-Q18#3",
+   "book_status": "已收第3问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs03.json",
+   "verdict": "错",
+   "note": "文化书只收第18（4）题，第（3）问未收"
+  },
+  {
+   "book": "CU",
+   "kind": "错收",
+   "unit_id": "BJ-2024-CY-ERMO-Q19#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs02.json",
+   "verdict": "错",
+   "note": "文化书只收第19（3）题，第（2）问未收"
+  },
+  {
+   "book": "X1",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-HD-YIMO-Q15",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "c009.json",
+   "verdict": "对",
+   "note": "绿色贸易、负责任大国，选必一可用；书稿只有2024-2026海淀一模Q15"
+  },
+  {
+   "book": "X1",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-HD-QIZHONG-Q14",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "低",
+   "final_src": "escc01.json",
+   "verdict": "对",
+   "note": "\"一带一路\"、国际贸易投资平台，属选必一"
+  },
+  {
+   "book": "X1",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-HD-YIMO-Q21#2",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "低",
+   "final_src": "escs01.json",
+   "verdict": "对",
+   "note": "设问点名《当代国际政治与经济》；题库已配E1（细则p045-049），attribution仍标\"待裁决\"，已过时"
+  },
+  {
+   "book": "X1",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-CY-ERMO-Q20#1",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "gold_final",
+   "verdict": "错",
+   "note": "准入不符：题库无正式细则（第1问答案\"开放性试题，答案略\"），admission=不收-无E1，不应列漏收"
+  },
+  {
+   "book": "X1",
+   "kind": "错收",
+   "unit_id": "BJ-2024-CY-QIZHONG-Q20#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs02.json",
+   "verdict": "错",
+   "note": "选必一书只收第（3）问，第（2）问未收"
+  },
+  {
+   "book": "X1",
+   "kind": "错收",
+   "unit_id": "BJ-2026-DC-YIMO-Q19#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs05.json",
+   "verdict": "错",
+   "note": "选必一书只收第（3）问"
+  },
+  {
+   "book": "X1",
+   "kind": "错收",
+   "unit_id": "BJ-2024-XC-YIMO-Q19#5",
+   "book_status": "已收第5问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs03.json",
+   "verdict": "错",
+   "note": "选必一书只收第（4）、（6）问"
+  },
+  {
+   "book": "X2",
+   "kind": "漏收",
+   "unit_id": "BJ-2025-HD-QIZHONG-Q11",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "低",
+   "final_src": "escc03.json",
+   "verdict": "存疑",
+   "note": "题库本题选项缺失，无法核对选必二角度"
+  },
+  {
+   "book": "X2",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-XC-YIMO-Q14",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "c011.json",
+   "verdict": "对",
+   "note": "名誉权、管辖、举证，属选必二"
+  },
+  {
+   "book": "X2",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-CY-YIMO-Q19#1",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "s005.json",
+   "verdict": "错",
+   "note": "准入不符：题库E1=not_provided，只有参考答案，admission=不收-无E1"
+  },
+  {
+   "book": "X2",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-HD-YIMO-Q13",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "c009.json",
+   "verdict": "对",
+   "note": "姓名权、公益诉讼，属选必二"
+  },
+  {
+   "book": "X2",
+   "kind": "错收",
+   "unit_id": "BJ-2026-XC-YIMO-Q13",
+   "book_status": "已收整题",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escc05.json",
+   "verdict": "对",
+   "note": "设问\"推理正确\"，四肢考概念关系、条件、关系性质，法条只是材料"
+  },
+  {
+   "book": "X2",
+   "kind": "错收",
+   "unit_id": "BJ-2025-BJ-GAOKAO-Q18#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs03.json",
+   "verdict": "错",
+   "note": "选必二书只收第（1）问"
+  },
+  {
+   "book": "X2",
+   "kind": "错收",
+   "unit_id": "BJ-2026-HD-ERMO-Q18#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "选必二书只收第（2）问"
+  },
+  {
+   "book": "MI",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-FS-YIMO-Q5",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "c049.json",
+   "verdict": "对",
+   "note": "A肢思维运行方式想象性，属思维"
+  },
+  {
+   "book": "MI",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-BJ-GAOKAO-Q21",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "低",
+   "final_src": "escs05.json",
+   "verdict": "对",
+   "note": "E1可用知识含科学思维、创新思维"
+  },
+  {
+   "book": "MI",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-YQ-YIMO-Q18#2",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "高",
+   "final_src": "escs07.json",
+   "verdict": "对",
+   "note": "设问点名《逻辑与思维》；E1为辩证思维、创新思维；书稿只有2025延庆一模Q18"
+  },
+  {
+   "book": "MI",
+   "kind": "漏收",
+   "unit_id": "BJ-2025-XC-ERMO-Q16#3",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "低",
+   "final_src": "escs05.json",
+   "verdict": "对",
+   "note": "E1括注\"运用创新思维\""
+  },
+  {
+   "book": "MI",
+   "kind": "错收",
+   "unit_id": "BJ-2026-FS-YIMO-Q18#2",
+   "book_status": "已收第2问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "思维书只收第（1）问"
+  },
+  {
+   "book": "MI",
+   "kind": "错收",
+   "unit_id": "BJ-2026-FS-ERMO-Q18#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs06.json",
+   "verdict": "错",
+   "note": "思维书只收第（2）问"
+  },
+  {
+   "book": "MI",
+   "kind": "错收",
+   "unit_id": "BJ-2025-DC-QIMO-Q18#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs04.json",
+   "verdict": "错",
+   "note": "思维书只收第（2）问"
+  },
+  {
+   "book": "RE",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-CY-ERMO-Q8",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "中",
+   "final_src": "escc01.json",
+   "verdict": "对",
+   "note": "概念外延关系图，属推理"
+  },
+  {
+   "book": "RE",
+   "kind": "漏收",
+   "unit_id": "BJ-2026-CP-QIMO-Q6",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "高",
+   "final_src": "c042.json",
+   "verdict": "对",
+   "note": "三段论规则，属推理"
+  },
+  {
+   "book": "RE",
+   "kind": "漏收",
+   "unit_id": "BJ-2023-FT-ERMO-Q5",
+   "book_status": "未收",
+   "model": "主",
+   "conf": "高",
+   "final_src": "c006.json",
+   "verdict": "对",
+   "note": "\"两不可\"、逻辑思维基本要求，属推理"
+  },
+  {
+   "book": "RE",
+   "kind": "漏收",
+   "unit_id": "BJ-2024-DC-ERMO-Q11",
+   "book_status": "未收",
+   "model": "跨",
+   "conf": "中",
+   "final_src": "c015.json",
+   "verdict": "对",
+   "note": "A肢属种关系，属推理"
+  },
+  {
+   "book": "RE",
+   "kind": "错收",
+   "unit_id": "BJ-2026-DC-QIMO-Q17#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs05.json",
+   "verdict": "错",
+   "note": "推理书只收第（2）问"
+  },
+  {
+   "book": "RE",
+   "kind": "错收",
+   "unit_id": "BJ-2024-XC-ERMO-Q18#4",
+   "book_status": "已收第4问",
+   "model": "错收",
+   "conf": "中",
+   "final_src": "escs03.json",
+   "verdict": "错",
+   "note": "推理书只收第（1）问（例题1）"
+  },
+  {
+   "book": "RE",
+   "kind": "错收",
+   "unit_id": "BJ-2026-TZ-QIMO-Q19#1",
+   "book_status": "已收第1问",
+   "model": "错收",
+   "conf": "高",
+   "final_src": "escs07.json",
+   "verdict": "错",
+   "note": "推理书只收第（2）问"
+  }
+ ]
+}

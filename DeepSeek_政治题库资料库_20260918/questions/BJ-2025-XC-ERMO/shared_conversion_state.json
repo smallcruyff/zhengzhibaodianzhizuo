@@ -1,0 +1,109 @@
+{
+  "exam_id": "BJ-2025-XC-ERMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2025-XC-ERMO-Q1": "cccd0a69e6ff969ca02ae8fea27b2ba39375641e07a249d0990a0b2af6b863c3",
+    "BJ-2025-XC-ERMO-Q2": "a0b683ca93aa5ff6b7a57586163f2ea70a063a6bfaca6a3f5da2a7e1a180708a",
+    "BJ-2025-XC-ERMO-Q3": "19ed89666ba638cf012d043759a18759fa84622e488ece991eb14251d636bba8",
+    "BJ-2025-XC-ERMO-Q4": "11f0f54021c8e0fcc7b7e085b9dd264aa4069771c85eb15d99b70dc539314e58",
+    "BJ-2025-XC-ERMO-Q5": "86d8a111ba9a9fc065d2ef36dc449a2c4bcda126d3f6c0501a1ab01874adff32",
+    "BJ-2025-XC-ERMO-Q6": "b9e2865e263e62689905d48ce68a9e647f9a1361d516c928c0ee526196828904",
+    "BJ-2025-XC-ERMO-Q7": "12f3170e4652dad5a15d326e36ae2a19565e5559fc2746658b85b5cec680b685",
+    "BJ-2025-XC-ERMO-Q8": "2de813cf2dc184609d8c5fd442ec841b6fa5f9bf1bf1bbb00f6517e57645dddf",
+    "BJ-2025-XC-ERMO-Q9": "f329576c8cc595710316a093251f64381374e7a60492373272c5847f941af173",
+    "BJ-2025-XC-ERMO-Q10": "3099d37d51f18c9eb68dd6214e514316d1771df71250eb7c78970600bbd547e2",
+    "BJ-2025-XC-ERMO-Q11": "1ccc57abac32209374704719ea0dc983f24f07d32a57b321685a6c261b5aa323",
+    "BJ-2025-XC-ERMO-Q12": "98da157cc32f4b341a32377ff8de0ade6967ae653b1e009b85de460a4d0a53f9",
+    "BJ-2025-XC-ERMO-Q13": "3b5cd8e6927da02255cddbf8c07da35ad8bd18ff3e24a253333e9e51bf6911e7",
+    "BJ-2025-XC-ERMO-Q14": "714b8405c4fea02ec68e65ab52f6ceaf30fa1938c8d9d8c4c8ae20f44397640b",
+    "BJ-2025-XC-ERMO-Q15": "e39f236670b14b8e62d32584235825737e81e38f22885a22f5f77d2b03b2f752",
+    "BJ-2025-XC-ERMO-Q16": "24d29dec6b8f6ef20acc5d1f5c4684d86fa84c5e64aec586ef1f611e6912caf2",
+    "BJ-2025-XC-ERMO-Q17": "32d546f02d2f1bc46ce25b9d185587a0c8351e8f7de6b8c5cbae53df8e5a0b56",
+    "BJ-2025-XC-ERMO-Q18": "a3b2f88b2b92b420457c3e9ddbd61e5c6138d7cd164f9dd49a74ed83da25e8cb",
+    "BJ-2025-XC-ERMO-Q19": "acfe0182e4bda644706b4f6bff75c22e92cf38501337a67646a2e9c33a03586a",
+    "BJ-2025-XC-ERMO-Q20": "81c1541c3c0af8958f699866ab6905a79821de64a9234516b87e3b549d9f4ac9"
+  },
+  "source_pages": {
+    "paper_pdf": 10,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 10,
+  "source_roles": {
+    "paper_pdf": "S06c08602a2f5",
+    "rubric_docx_or_pptx_unpaged": "Scfb0f19ef38a"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "题源目录与manifest列出的来源为同卷原卷PDF和《思想政治答案及评分参考》DOCX；二者已逐页核查，答案内容在两者中均有载体，无第三份独立参考答案文件。",
+    "Q1-Q15为每题3分的客观题；官方答案键按E3保留，未将答案键冒充逐题E1。",
+    "Q1原卷p1家书图两处极小手写字以位置标记保留，原图保留，独立B与主控确认不影响材料或选项。",
+    "封面印“本试卷共9页”，物理PDF为10页，双方原文均保留；Q20答案表尾明确链接p10。",
+    "未发现学生样卷、学生批注或实得分来源，按N/A_with_basis记录。评分DOCX无固定分页，按unpaged=0记页数。"
+  ],
+  "bounded_residual": [],
+  "review_receipts": {
+    "previous_acceptance": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/batch_acceptance_receipts/accept_BJ-2025-XC-ERMO_codex_20260923__BJ-2025-XC-ERMO.json"
+    ],
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/root_primary_review_20260924.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/F/BJ-2025-XC-ERMO/B_final_r1/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/F/BJ-2025-XC-ERMO/B_r1/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/F/BJ-2025-XC-ERMO/B_r2_q19_image/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/F/BJ-2025-XC-ERMO/B_r3_q19_q20_links/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/independent_review_r1/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/supplemental_independent_review_r1/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/binding_refresh_review_r1/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-XC-ERMO/retro-batch3-bj-2025-xc-ermo-20260924_merge.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/reopen_for_resign/reopen_receipt.json",
+    "rounds": []
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-xc-ermo-state1-codex-20260923",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T00:15:36.587809+00:00"
+    },
+    {
+      "event": "reopen_accepted_exam_for_resign",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T06:00:51.144216-07:00",
+      "reason": "题面回溯修订已合入，保留并暂挂旧验收签名，重新走标准全卷验收。"
+    },
+    {
+      "spec_id": "bj-2025-xc-ermo-state2-retro-batch3-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T13:03:34.988175+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T13:06:34.490923+00:00",
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch3-bj-2025-xc-ermo-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T12:53:01.093036+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-XC-ERMO/retro-batch3-bj-2025-xc-ermo-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2025-XC-ERMO-Q13": "3b5cd8e6927da02255cddbf8c07da35ad8bd18ff3e24a253333e9e51bf6911e7",
+        "BJ-2025-XC-ERMO-Q16": "24d29dec6b8f6ef20acc5d1f5c4684d86fa84c5e64aec586ef1f611e6912caf2",
+        "BJ-2025-XC-ERMO-Q17": "32d546f02d2f1bc46ce25b9d185587a0c8351e8f7de6b8c5cbae53df8e5a0b56",
+        "BJ-2025-XC-ERMO-Q18": "a3b2f88b2b92b420457c3e9ddbd61e5c6138d7cd164f9dd49a74ed83da25e8cb",
+        "BJ-2025-XC-ERMO-Q19": "acfe0182e4bda644706b4f6bff75c22e92cf38501337a67646a2e9c33a03586a"
+      }
+    }
+  ],
+  "reopen_receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/group_C/BJ-2025-XC-ERMO/reopen_for_resign/reopen_receipt.json",
+  "previous_acceptance_receipts": [
+    {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/batch_acceptance_receipts/accept_BJ-2025-XC-ERMO_codex_20260923__BJ-2025-XC-ERMO.json",
+      "sha256": "c0824250e0ae30652f08674297c2b53029bec06f7136c4846618cb21958b8c8f"
+    }
+  ]
+}

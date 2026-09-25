@@ -1,0 +1,21 @@
+﻿stratum,qid,type,belongs_to,verdict,basis_summary,read_layers
+untouched,BJ-2023-FT-YIMO-Q7,选择题,philosophy,漏（哲学）,设问+选项：联系的客观性、认识器官/认识能力（唯物辩证法联系观、认识论）,题面
+untouched,BJ-2026-CP-QIMO-Q21,非选择题,必修一为主（兼必修三）,不属六本,E1“至少两本教材、3个角度”，E3答案落在中特发展密码、三统一、以人民为中心；六本书不是主责；必修三可作跨模块,题面+E1+E3
+untouched,BJ-2023-CY-YIMO-Q18,非选择题,必修三/必修一（党的领导）,不属六本,设问：为什么坚持党的领导能确保中国式现代化行稳致远；E3为党的领导核心、马克思主义中国化、自我革命,题面+E3
+untouched,BJ-2023-HD-YIMO-Q8,选择题,reasoning,漏（推理）,演绎推理正误判断,题面+E3
+untouched,BJ-2023-FT-ERMO-Q1,选择题,必修一,不属六本（必修一无书）,历史主动精神、科学社会主义实践,题面+E3
+untouched,BJ-2026-CP-ERMO-Q4,选择题,philosophy+culture,漏（哲学、文化）,答案C：②辩证否定（哲学）③中华文明生命力（文化）,题面+E3
+untouched,BJ-2023-HD-ERMO-Q21,非选择题,mind+xuanbi1（第2问兼文化/哲学）,漏（思维、选必一）,（1）《逻辑与思维》科学思维；（2）全球文明倡议：和平与发展、文化交流、矛盾特殊性,题面+E1+E3
+untouched,BJ-2023-XC-ERMO-Q3,选择题,culture,漏（文化）,文明交流交融、文明多样性，答案D,题面+E3
+untouched,BJ-2026-CP-ERMO-Q10,选择题,xuanbi2,漏（选必二）,合同履行、违约、民法基本原则，答案C,题面+E3
+untouched,BJ-2026-CP-QIMO-Q19,非选择题,第1问必修二；第2问mind,漏（思维；必修二为冻结册）,（2）运用《逻辑与思维》“提高创新思维能力”：联想/发散/聚合/超前思维,题面+E1+E3
+scattered,BJ-2025-XC-QIMO-Q18,非选择题,philosophy,假孤儿（修正后已计入哲学）,哲学书写“2025年西城期末第18题”正确；题库该题只有细则、无题面（采用题面小节：无），首版脚本把它按题面指纹改判到 BJ-2025-HD-QIMO-Q18（海淀期末卷里有同一道“技术恐惧”题）。v2 对无题面题不改判,E1+题库MD+书稿块
+scattered,BJ-2026-FT-YIMO-Q19,非选择题,xuanbi1,漏（选必一）,设问：运用《当代国际政治与经济》说明中国在全球可持续发展中的大国担当,题面
+scattered,BJ-2026-MTG-YIMO-Q2,选择题,必修一,不属六本,抗战胜利80周年对话，答案D：中国梦、党是主心骨,题面+E3
+scattered,BJ-2026-CY-QIZHONG-Q16,非选择题,bixiu2,假孤儿（修正后已计入必修二）,必修二书写“2025 朝阳期中第16题”，题库卷号为 BJ-2026-CY-QIZHONG；题面指纹 fp_resolved 后已覆盖,E1+书稿块
+scattered,BJ-2025-HD-YIMO-Q11,选择题,xuanbi2（也可能必修二）,漏（选必二，中等把握）,合伙企业、有限责任公司、营利法人、公序良俗,题面
+scattered,BJ-2026-SJS-QIMO-Q12,选择题,xuanbi2,漏（选必二）,过错责任、诉讼时效、举证责任，答案A,题面+E3
+scattered,BJ-2024-HD-QIZHONG-Q3,选择题,必修二,不属六本（必修二冻结册的漏题候选）,二次元经济、消费新空间，答案C,题面+E3候选
+scattered,BJ-2025-SJS-YIMO-Q1,选择题,必修一,不属六本,党史镜头：自信自立、坚持走自己的路,题面
+scattered,BJ-2024-FT-ERMO-Q21,非选择题,philosophy（兼中特）,漏（哲学）,E1：“主要涉及两个模块：哲学及中特”，联系观、整体与部分、价值观,题面+E1
+scattered,BJ-2025-SJS-YIMO-Q7,选择题,mind,漏（思维）,选项为超前/发散/联想思维；题库题面在换页处被截断，选项取自 processed_markdown 第3页,题面（processed_markdown）

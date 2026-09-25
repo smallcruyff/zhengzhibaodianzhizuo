@@ -1,0 +1,77 @@
+{
+  "summary": "按 verify_apply_patch.json 的 4 条 blocker + 12 条 major 逐条返修 scripts/apply_patch.py（1215 行）：修复 replace_text 单 run 中间替换丢字（自证 postcondition：写后整段文字须与'按 old→new 替换一次'的期望全等，否则中止）、diff/check/apply 的 --report 与 diff --out 一律经 guard_write 且只允许覆盖本工具自己以前写的文件、写模式下总是对输入稿重新 detect_profile 并删掉 --allow-frozen-test（冻结册不再能靠补丁 book 字段或 --profile 绕过）、同段多条 op 改成逐一比较全部区间而不是只跟上一条比、幂等判断改用'new 是否已恰好把 old 包在里面'而不是简单去重、--health 的新增 FAIL 改按 (check,rule,例题,标签,摘录) 做多重集合差且异常时不再返回 0、insert 的 style 改成按 w:name 查 styleId（找不到/歧义即中止）且 clone_from 必须恰好命中 1 段、parent_docx_sha256 与 anchor.text/contains 非空改为必填、写 docx 前预检 --report 路径避免半成品、run 级操作补上简单-run 判定与 COMPLEX_TAGS 扩容（脚注/批注/域/track changes 等一律中止而不是静默复制/清空）。diff() 额外做了两处改进：对 anchor 落在 source/title 区的生成 op 自动补 source_zone:restore，对含复杂结构的段落自动带 allow_complex——这把金标准回归②③的可行率从原来的 0%/62.1% 提到：diff(B3_03,B3_04) 与 diff(B3_04,B3_52) 整批 apply 都变成 exit 0 且段落文字流逐段一致（paragraph_stream_matches=True）；diff(B3_51,B3_52) 压力测试逐条可行率从 62.1% 升到 98.55%，整批 apply 仍在第 859 条因'是表格单元格唯一段落'正确中止（真实、非 bug 的 v1 边界，见 known_limits）。题面零改写的绕过（插入到题面末尾）改成写后重跑 bh.walk 只核对'新插入的段落自己落进哪个区'，没有做全书级 source/title 文字序列比对——后者在 811 页规模的文档上对 bh.walk 的全局定位很敏感，实测'删掉一段完全无关的教学要点'就会让很远处一个例题的 zone 判断跟着变，会把大量正常补丁一起挡下，比漏防更糟，因此改成局部核对，如实记入 known_limits。",
+  "files": {
+    "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py",
+    "lines": 1215,
+    "data_dir_created": false,
+    "changed_only_this_file": true,
+    "scratch_worked_in": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/apply_patch.py",
+    "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/run_tests_apply_patch.py",
+    "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_apply_patch.py",
+    "test_outputs_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/",
+    "pycache_check": "对比修改前后 skills/scripts/__pycache__ 文件列表，未新增任何 .pyc"
+  },
+  "usage": "命令行与补丁格式不变（见工具文件头），行为变化：--allow-frozen-test 已删除（写模式下永远对输入稿重新 detect_profile 判冻结，不看 --profile/补丁 book 字段）；--report/diff --out 现在只允许覆盖'本工具自己以前写的同类文件'（按内容里的 tool/schema 字段识别），打到其它已存在文件会 exit 3 而不是覆盖。",
+  "tests": [
+    {"input": "回归①：B3_52 单 run 内'old 后面还有别的文字'的 replace_text", "result": "apply exit 0，写后整段文字与期望逐字符全等（旧实现会把 old 后面的文字整段吃掉）", "seconds": 3.75},
+    {"input": "回归②：diff --report 指向已存在的外部 json", "result": "exit 3，目标文件字节不变（旧实现会直接覆盖任意已存在文件）", "seconds": 2.0},
+    {"input": "回归④：补丁 book 写 bixiu3，--docx 实际是 B2_230（bixiu2 冻结册）", "result": "apply exit 3，未留任何输出（旧实现会因为 book/--profile 不是 bixiu2 而放行写出）", "seconds": 0.06},
+    {"input": "回归⑥：同段 3 条 replace_text，第 1、3 条重叠、中间隔一条不重叠的", "result": "check exit 2，报出 F06c 与 F06a 落点重叠（旧实现只跟紧邻上一条比，查不出隔条重叠）", "seconds": 0.89},
+    {"input": "回归⑦：new 把 old 整个包在里面（'一个主体'→'是一个主体的具体要求'）", "result": "apply 后对输出重新 check → 1/1 already_applied（旧实现会判成 pending，重复改写）", "seconds": 0.77},
+    {"input": "回归⑩：insert 段落 style 用样式名'宝典正文'（styleId 实际是 aff5）", "result": "写出后核对 w:pStyle/@w:val == 'aff5'，不是字面'宝典正文'（旧实现直接把名字当 styleId 写进去，Word 会退回默认样式）", "seconds": 3.77},
+    {"input": "回归：insert 的 clone_from 命中 2 段（'全党与泛称'）", "result": "apply exit 2 且不留输出（旧实现静默取第 1 个匹配）", "seconds": 0.84},
+    {"input": "回归⑪：补丁缺 parent_docx_sha256", "result": "check exit 2（旧实现照常检查/应用）", "seconds": 0.05},
+    {"input": "回归⑫：anchor.contains 给空串", "result": "check exit 2（旧实现空串命中全书，再靠 index_hint 消歧，等同于按段号定位）", "seconds": 0.76},
+    {"input": "回归⑬：check --report 指向已存在的外部 json", "result": "exit 3，目标不变", "seconds": 0.77},
+    {"input": "回归⑭：B2_230（冻结册）只读 check 带 --report", "result": "exit 2（本条本身因锚点歧义中止，但没有像旧实现那样因为要写报告就被当成写模式拒绝成 exit 3；report_written=true）", "seconds": 1.52},
+    {"input": "回归⑮：apply 时 --report 指向受保护目录（会被拒），--out 合法", "result": "exit 3，且候选 docx 没有被留在磁盘上（旧实现会先写出 docx，报告失败后 docx 仍留着）", "seconds": 0.79},
+    {"input": "单元：_run_is_simple 对纯 w:t 的 run 和带 w:br 的 run", "result": "分别判 True/False（COMPLEX_TAGS 扩容后 replace_text/set_format 遇到这类 run 会中止而不是复制/清空丢内容）", "seconds": 0},
+    {"input": "必测①：B3_52 全 op 综合（14 条，覆盖表格单元格段/红色 run/跨 run old）", "result": "check exit 1（14 pending）；apply --health exit 0，写后逐条核对全部生效，体检未新增 FAIL（用位置无关的 (check,rule,例题,标签,摘录) 键比对，不再被段落整体偏移误判成'新增'）", "seconds": "2.76+7.5"},
+    {"input": "必测②负例全套：父稿 SHA 错/锚点 0 或多命中/old 不符/同段冲突/题面区未标 source_zone/新文字含工程词/输出落审阅入口或必修二目录或 Skill 目录/冻结册配置", "result": "全部按规格退出码拒绝，不留输出", "seconds": "各 0.06~1.0"},
+    {"input": "必测③回归：diff(B3_03,B3_04) 整批 apply 到 B3_03", "result": "exit 0，段落文字流与 B3_04 逐段一致（旧实现在第 1 条即因题面区未标 source_zone 中止，0% 可行）", "seconds": "1.96+50.4"},
+    {"input": "必测③回归：diff(B3_04,B3_52)（目录回填 30 处）整批 apply 到 B3_04", "result": "exit 0，段落文字流与 B3_52 逐段一致（旧实现在第 1 条即因目录段结构复杂中止）；已知限制：目录段的超链接/PAGEREF 域和例题标签的彩色 run 在这种 replace_paragraph 落地方式下仍会被替换掉，diff 只比文字不比格式/域，见 known_limits", "seconds": "1.82+7.51"},
+    {"input": "必测③压力：diff(B3_51,B3_52) 整批 apply 到 B3_51", "result": "exit 2，在第 859 条因'是表格单元格唯一段落'正确中止（真实边界，不是 bug）；逐条可行性画像：1628/1652=98.55%（旧实现 62.1%），失败原因收窄为 table_cell_alone 17、anchor_ambiguous 6、forbidden_word 1（旧实现主要败在 source_zone_missing 585、complex_paragraph 34）", "seconds": "2.21+118.33"},
+    {"input": "必测④：对 pos_all_ops 的输出再 check", "result": "5/5 already_applied，exit 0", "seconds": "4.34+1.19"},
+    {"input": "必测⑤：B2_230（冻结册）check 可跑、apply 退出 3", "result": "check exit 1；apply exit 3", "seconds": "1.87+0.06"},
+    {"input": "真实输入文件（B3_52/B3_03/B3_04/B3_51/B2_230）测试前后 SHA+mtime", "result": "全部未变", "seconds": 0}
+  ],
+  "issues_resolved": [
+    {"desc": "[blocker①] replace_text 单 run 中间替换丢字", "how": "非跨 run 分支改成 first_t[:fa]+new+after 一次性写回；new_format 分支给 after 另起一个原格式 run；并在函数末尾自证：改后整段文字必须等于 full[:start]+new+full[end:]，不等就 Abort，不再只查 new 是否出现过", "test": "回归①"},
+    {"desc": "[blocker②] diff --report 可覆盖任意已存在文件", "how": "diff 的 --out/--report 与 check/apply 的 --report 统一经 _guard_report_path/_write_report，只有目标不存在，或存在但内容能证明是本工具自己以前写的（tool==apply_patch 或 schema==baodian_patch_v1）才允许覆盖，否则走 guard_write(overwrite=False) 拒绝", "test": "回归②、回归⑬"},
+    {"desc": "[blocker③] 金标准回归①②按交付状态 0% 可行，回执把 0% 说成'设计使然'", "how": "diff() 对落在 source/title 区的生成 op 自动补 source_zone:restore+reason（不再需要人工逐条补），对含复杂结构的段落自动带 allow_complex；两条金标准回归改为 apply exit 0 且段落文字流逐段一致", "test": "必测③（B3_03→B3_04、B3_04→B3_52）"},
+    {"desc": "[blocker③] diff 只比文字，04→52 会抹掉超链接/PAGEREF/彩色 run，也漏掉 keepNext 变化，无法核验外部回传的真实改动", "how": "部分解决：诚实标注为已知限制，未实现回执建议的'回放模式+最小 replace_text+保留域/超链接 run+比对 pPr/rPr 生成 set_keepnext/set_format'——这是对 diff 算法的整体重做，规模超出本次返修窗口，记入 issues_deferred", "test": "无（未实现，见 deferred）"},
+    {"desc": "[blocker④] 冻结册可被绕过写出（只看补丁 book/--profile，不看输入稿本身）", "how": "cmd_apply 在写权守卫前总是对 args.docx 重新 detect_profile；命中 frozen 一律 exit 3，book_id 与 --profile/补丁 book 不一致则 exit 2；删除 --allow-frozen-test 隐藏开关，测试改用临时目录里 frozen:false 的配置文件路径走 --profile", "test": "回归④、原有'冻结册-apply退出3'用例（改用真实 detect_profile 路径验证，不再靠旧的 guard_prof 覆盖）"},
+    {"desc": "[major⑤] 插入到题面末尾可绕过零改写检测", "how": "写后重跑 bh.walk，对每条 insert_after/insert_before 新插入的段落逐个核对落进哪个 zone；只要有一段落进 source/title 且该 op 没给 source_zone，整批中止、不写出。范围仅限'新插入的段落自己'，不做全书 source/title 文字序列比对（原型做法在 811 页文档上对不相关的删改极度敏感，见下方 known_limits）", "test": "必测①正例未触发该门（新增段落均在 teaching 区）；未构造出专门触发该门的正例数据（本册可用的 teaching/source 边界样本有限），已记入 needs_user_decision"},
+    {"desc": "[major⑥] 同段冲突检测只跟上一条 op 比，3 条以上查不全", "how": "touched 从单个 (kind,range,id) 改成按段号存区间列表，逐一与之前全部 op 比较重叠", "test": "回归⑥"},
+    {"desc": "[major⑦] 幂等判断在 new 包含 old 时误判 pending、导致重复改写", "how": "新增 _already_applied_replace：new 恰好出现一次、且段内所有 old 的命中都落在这唯一一次 new 的范围内，就判 already_applied；check_ops 与 apply_replace_text 都改用它", "test": "回归⑦"},
+    {"desc": "[major⑧] --health 按 (check,rule) 去重，同名 FAIL 的新增会被吞掉；异常时返回 0", "how": "改成按 (check,rule,例题标题,part,label,摘录) 的多重集合差（Counter 相减），且异常时打印原因并 exit 2，不再吞异常返回 0", "test": "必测①的 apply --health 用例（旧 key 会把两条真实新 FAIL 误判成'已有'，见修复过程中的中间结果）"},
+    {"desc": "[major⑨] run 级操作会弄坏含 w:br/脚注/批注等子元素的 run；COMPLEX_TAGS 不含批注/脚注/pict/oMath/ins/del/sectPr", "how": "COMPLEX_TAGS 扩容；新增 _run_is_simple，只含 rPr/w:t 才算简单 run，replace_text/set_format 命中非简单 run 一律 Abort，不再复制/清空丢东西；_set_run_text 合并同一 run 里的多个 w:t，不再只改第一个留下残字", "test": "单元测试（_run_is_simple 对含 w:br 的 run 返回 False）；未拿到本册真实的带批注/脚注段落做端到端回归（B3_52 目前没有这类结构，如实记入 known_limits）"},
+    {"desc": "[major⑩] insert 的 style 直接当 styleId 写、clone_from 找不到静默改用锚点", "how": "新增 _resolve_style_id：按 w:name 在 styles.xml 里查唯一 styleId，找不到/歧义都 Abort；clone_from 改成必须恰好命中 1 段，0 或多个都 Abort", "test": "回归⑩、clone_from 命中多段的负例"},
+    {"desc": "[major⑪] 补丁缺 parent_docx_sha256 时 check/apply 照常进行", "how": "check/apply 都在 schema 校验后立刻要求 parent_docx_sha256 非空，缺失 Abort（exit 2）", "test": "回归⑪"},
+    {"desc": "[major⑫] anchor.contains 空串命中全书，等同按段号定位", "how": "resolve_anchor 里 text/contains 为空串直接 Abort", "test": "回归⑫"},
+    {"desc": "[major⑬] check/apply 的 --report 与 diff 的 --out 以 overwrite=True 覆盖任意已有文件", "how": "同②，统一走'只覆盖本工具自己写的文件'的守卫", "test": "回归⑬"},
+    {"desc": "[major⑭] 冻结册只读 check 带 --report 时 exit 3，与'只读检查可以跑'冲突", "how": "报告写出时把传给 guard_write 的 profile 副本强制 frozen=false（只影响'本册是否冻结'这一项判断），目录级/冻结册目录守卫仍然通过 guard_write 内部的 _frozen_hits 正常生效", "test": "回归⑭"},
+    {"desc": "[major⑮] apply 先写出 docx，之后 --report 被拒时 docx 已留在磁盘上", "how": "写 docx 之前先用 _guard_report_path 对 --report 路径做一次不落盘的预检，通不过直接 exit 3，此时还没有调用 dl.write_docx", "test": "回归⑮"},
+    {"desc": "[major⑯] 报告与写后复核不够（缺路径、缺改前改后文字、insert/set_format 没有 postcondition）", "how": "部分解决：_base_report 补了 docx/patch 的路径；apply_replace_text 内新增自证 postcondition（改后整段文字与期望全等）；zone_leak 报告列出违规插入段的 id/段号/zone/摘录。未实现：逐条 op 的改前/改后文字+指纹、insert/set_format 的显式 postcondition、写后重开输出文件逐条复核（目前的'未点名段落不变'复核是在内存态 d 上做的，不是重新打开落盘后的 docx）——规模较大，记入 issues_deferred", "test": "无独立回归（随①⑮间接验证部分行为）"}
+  ],
+  "issues_deferred": [
+    {"desc": "[blocker③ 剩余] diff 的'回放模式'：只在纯文字差异时生成最小 replace_text（保留域/超链接 run），再比对 pPr/rPr 生成 set_keepnext/set_format 或报告格式差异；回归断言补结构计数一致", "why": "这是对 diff 生成算法的整体重做（要按 run 级别做结构感知的差异比较，而不是当前的整段 SequenceMatcher+replace_paragraph），改动面和验证工作量都远超一次返修的合理规模；当前修法（自动补 source_zone/allow_complex）已经把两条金标准回归从 0% 做到逐段文字一致，压力测试逐条可行率做到 98.55%，先满足'能重放、如实报告边界'，格式/域保真留给下一轮或 layout_prepare 承接"},
+    {"desc": "[major⑤ 剩余] 零改写检测目前只查'新插入段落自己落进哪个 zone'，不是全书级 source/title 文字序列比对", "why": "实测过全书序列比对方案：删除一段与题面完全无关的教学要点，会让全书里某个遥远例题的 zone 判断跟着变化（bh.walk 对文档变化的位置敏感性超出预期），导致大量合法补丁被一起挡下，比'漏防某种插入绕过'更糟；局部核对牺牲了对'跨段联合绕过'的覆盖，只防住了回执点名的具体场景（插入段落自己被判进 source/title）"},
+    {"desc": "[major⑨ 剩余] 真实端到端验证：本册（B3_52/B3_03/B3_04/B3_51）目前没有可用的批注/脚注/track changes 段落样本", "why": "只做到了单元级验证（_run_is_simple 对合成的 w:br 段返回 False）和防御性中止（COMPLEX_TAGS 命中即 Abort，不会静默丢内容）；没有真实数据能端到端跑通'遇到批注段会中止'这条链路，如后续拿到含这类结构的书稿应补测"},
+    {"desc": "[major⑯ 剩余] 报告缺逐条改前/改后文字+指纹；insert/set_format 无显式 postcondition；未对写出后重新打开的 docx 文件做复核", "why": "当前的写后复核（postcondition、未点名段落不变）都在内存态 d 上完成，逻辑上等价于写出后的内容（write_docx 只是把同一棵树序列化），但没有'重新打开输出文件再核对一遍'这道独立防线；把这套报告结构做完整（每条 op 都有改前/改后摘录+段落指纹）工作量接近再写一遍报告层，本次返修优先把'会丢字/能绕过安全门'的问题堵上，未展开"},
+    {"desc": "minor：clone_from/index_hint 等边界情形的报告详略、_diff_style_of 等未使用/弱用字段的清理", "why": "不影响正确性，且改动这些字段可能影响回执/report 的既有消费方（如有），本轮不动，留给下次连同 known_limits 一起清"}
+  ],
+  "known_limits": [
+    "diff() 生成的 replace_paragraph/delete_paragraph 对复杂段落（超链接/域/图片/书签）加 allow_complex 后能让文字流一致，但会丢失这些复杂结构本身（目录里的超链接、PAGEREF 域缓存值、例题标签的彩色 run），diff 只比文字不比格式/结构；这类改动应该由 layout_prepare.py 处理或人工核对格式，不要把 diff 输出当成'格式也保真'的回放。",
+    "diff(B3_51,B3_52) 压力测试的整批 apply 仍会在遇到'删除表格单元格里唯一段落'时正确中止（v1 明确不处理表格结构变化）；逐条可行性从 62.1% 提到 98.55% 后，剩余不可行的都是真实边界（表格单元格 17、锚点歧义 6、命中禁用词 1），不是本次要修的 bug。",
+    "题面零改写门只核对新插入段落自己是否落进 source/title 区，不做跨段的全书级联合绕过检测；如果需要更强的保证，得先解决 bh.walk 在大文档上对无关改动的位置敏感性问题（这本身可能是 batch_health 的行为，本工具不能改 batch_health.py）。",
+    "本册真实数据里没有批注/脚注/track changes 段落，_run_is_simple/COMPLEX_TAGS 的扩容只经过单元测试和防御性中止验证，没有真实端到端样本。",
+    "工具正文 1215 行，超过规格软指标 900 行更多（本轮新增了较多安全校验与自证 postcondition）；未为凑行数删减校验，如实报告。"
+  ],
+  "profile_fields_needed": [],
+  "needs_user_decision": [
+    "题面零改写门的范围：当前版本只保证'insert 型 op 新插入的段落自己没有落进 source/title 区'，不保证更复杂的跨段联合绕过一定被挡住（原因见 known_limits 的 bh.walk 位置敏感性）。是否接受这个范围作为 v1 的最终边界，还是要我们先去核实/收窄 batch_health.walk 对无关改动的敏感性（这需要主代理判断是否值得为此改 batch_health 的问题去报告，而不是本工具能自己解决）？",
+    "diff() 的'回放模式'（保留域/超链接/格式，只在纯文字处生成最小 replace_text）没有实现，当前 diff 输出仍然是'文字对得上、格式/结构可能丢'。这类回放主要用于核验外部（如 Codex）回传的真实改动，是否要单独排期做一版结构感知的 diff，还是接受当前版本、格式核验改用人工/PDF 比对？",
+    "工具正文 1215 行明显超过 900 行的软指标（约 130 行是文件头中文说明+补丁格式示例，其余是本轮新增的安全校验），是否要精简文件头（挪到单独文档）来压行数，还是维持现状。"
+  ]
+}

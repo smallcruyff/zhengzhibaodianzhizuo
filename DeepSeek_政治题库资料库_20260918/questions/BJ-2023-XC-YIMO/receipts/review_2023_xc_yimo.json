@@ -1,0 +1,651 @@
+{
+  "schema_version": "luna-independent-review.v1",
+  "exam_id": "BJ-2023-XC-YIMO",
+  "reviewed_at": "2026-09-21",
+  "reviewer": "Codex subagent /root/review_2023_xc_yimo",
+  "readonly": true,
+  "manifest": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+    "sha256_at_initial_read": "355e39dce5f8fe8f96f17255f633aff8a6381da10f8ca6086a7c66ea11e87",
+    "sha256_at_receipt_write": "47c345901d126eb9d4721beeeafa1c2ab703480f825051109188fe6cd933d9b5",
+    "changed_during_review": true,
+    "change_scope": "并发更新发生在清单其他条目；本卷BJ-2023-XC-YIMO条目复核结束时仍与初读一致；本工位未写清单。",
+    "selected_entry": {
+      "exam_id": "BJ-2023-XC-YIMO",
+      "output_dir": "DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO",
+      "question_index_count": 21,
+      "question_md_count": 21,
+      "visual_page_count": 7,
+      "source_ids": {
+        "原卷": "S848e2ed7e079",
+        "参考答案": "S86c2eb361038",
+        "评分材料": "S9140266498fe"
+      }
+    },
+    "selected_entry_unchanged": true,
+    "manifest_unchanged_by_this_worker": true
+  },
+  "sources": [
+    {
+      "role": "原卷",
+      "source_id": "S848e2ed7e079",
+      "path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模试卷.pdf",
+      "sha256": "848e2ed7e0796f77f2a7a0665b17adb8e993971096b537fc112736f8c748dbb1",
+      "pages": 9
+    },
+    {
+      "role": "参考答案",
+      "source_id": "S86c2eb361038",
+      "path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模答案.docx",
+      "sha256": "86c2eb361038092a7e4e248a1c6adad080804236662f5bcbbc0a7a8ee690440a",
+      "converted_pdf_sha256": "ba8789801fbe3aefb96b6fe1e49e69551357d247e636d5b8646c8b40b916c185",
+      "converted_pages": 2
+    },
+    {
+      "role": "评分材料",
+      "source_id": "S9140266498fe",
+      "path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区一模/西城/西城细则-高三政治一模3-30(1).docx",
+      "sha256": "9140266498fe2dda101113edab8bf791de20d35206abaa6b85469a55ff7aeb92",
+      "converted_pdf_sha256": "780898cdb39184b6fde878550e2da90775e38025d3121544e46635e7c5ca96d",
+      "converted_pages": 5
+    }
+  ],
+  "opened": {
+    "original_exam_pages": "1-9 (all visually opened at 120 dpi; page hashes below)",
+    "answer_pages": "1-2 (all visually opened after DOCX conversion)",
+    "rubric_pages": "1-5 (all visually opened after DOCX conversion; DOCX paragraphs/tables also read)",
+    "page_render_sha256": {
+      "p001": "e54b2d3e5721c089388bc8a4d730a3c6e8d4f64943a29cbeae5d616930484ae2",
+      "p002": "3930f25bfb187ddcaad66a364f55898dd12d5d0e0fac44d817336d94a3a1d0de",
+      "p003": "db0139f4c61ae96d61512f7bca2cc45673d38d8615937c401a1ad343ae98242b",
+      "p004": "8d28f4e4a722d2182a6c9778c4d53020eb9af356af376c14df34c4fbb142f73e",
+      "p005": "df9e747f7d2bfda4ea992be2d7f321fb89d163cb8b49fc756614897796543f73",
+      "p006": "8eee96d1e5b375e6ed3fc484488b733427ffb4faf149595c9b9cdaf1d9cc0b6a",
+      "p007": "e30cc1e7717a0f064e9cace340185d8e9ab965245c04de37f4615cec6dec652",
+      "p008": "b3987387606392e836d9c454ce61e69f06a3dd3dcd9ece26b8b526eae94d6777",
+      "p009": "0786540edde010c510fc8f0e2384176beb2c95cd3a6396bcdca1fee9f776ff039"
+    },
+    "answer_page_render_sha256": {
+      "p001": "2cce7be66cc0cd4377f558b6a7815e263866a92bf449d9f1631f298e23c24ca3",
+      "p002": "ccecb4e75812e3708fb571c180a129ab2cfd74e40ba024f99a5cc78cec9de799"
+    },
+    "rubric_page_render_sha256": {
+      "p001": "56bc9cd1c90ac900c47daf18a67f073be75f4acce0e81bf7c9cb9a30123bc0ce",
+      "p002": "5829e40a86f0c612a625132afb8317488f7b6c97db301babd08e3434686451db",
+      "p003": "e51700a86bc781fa91d376ce794a8ede79b8f5bb6bb01b6d6f323a541f28c77c",
+      "p004": "a28884d20972fc3c03b0e97e8e078a7e0a7c7379e0e3bf5d79163dff659f56c",
+      "p005": "b9660718df2401d00dd5fb700e85304a26fa3b043e17d985d9f9b4ecbc2dacf9"
+    },
+    "candidate_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO",
+    "candidate_md_sha256": {
+      "Q1": "da8d6cfece397b8024fef317c598c9e80e6f47a5cb11b1a89025298a1f771be5",
+      "Q2": "29505f0f27c276f936eb539a54457e3b37cc56fffa5969cc3e9c43df68317869",
+      "Q3": "cc5cd0569f2d3fb7905bcde40b2035153c1bd664713ad669dbe895c8c21f7f7b",
+      "Q4": "db535d5c5996e489adc3a3a9a3de1c935afc71e4b0fb6585200ceb577e814246",
+      "Q5": "88398e1bf2c645fafa36ea13320324e48924b03fd910dd3dbfa3949876309263",
+      "Q6": "3d23388ea3652af088ce23f72ef741e808cb65d34170abb39c2720e49853749b",
+      "Q7": "0c06384c675997617ef6362878120ee4044ede65be0c6ddf047ffe4becd90dbf",
+      "Q8": "7f548609c804639bbc95cee83226c3b9f09d161b4810ba945f8527c248d4474d",
+      "Q9": "fae179ffa634a7f941f1ddb2c0bc8f1c5eb72d3ce03aa4f2f1bd4a72a96e6792",
+      "Q10": "81b2e537bbd8a7b77ca4fbe33ad404292743acb60cf000d378882ce0aa0b7bad",
+      "Q11": "03bef5ee292e9650cbe67db30c246f3212f3225833489fe465e87502a14a8d00",
+      "Q12": "a990844bcee7efcfc2fb2c0188c9b4e3c5edf50c0a6f0ae55ff0850ddf483de8",
+      "Q13": "ce925f130b7c9121ddb70bb80be8ff2a3a13644cbbcad360116b6cbcd45f629e",
+      "Q14": "39b729e68da8ca036a0e05ffcf7ffe23083140a6f1819229bca2dbc5baa96798",
+      "Q15": "fc2a38f99ed6df9902d1954721ce87357a349268d39b6acfcb2e4c9bdee43fda",
+      "Q16": "de4c8a205651d57d34fd1dd402796b931f1094fdc1f11a379078c6106ed08b69",
+      "Q17": "0db59b75c75ed69cd65a80f52e02acf8c215a43efc4bbd0ea34284be99832d7b",
+      "Q18": "484f1204f9e6228bf899fa3e387367037978e5c25cfda5448543d649d031f8f1",
+      "Q19": "76bd12dbc5b0c8fd14d99a11f5e07ef8b2c3b8591eebf8d825c43c0b9827b39e",
+      "Q20": "641bb8bc1d8afa8390e951dc1f14fcbc5dd586ee2c65e8da4933f55391ee5111",
+      "Q21": "209716a9d44dbb1a66604b02a495e31dda5945a6a667d3c9fb0b202998d6b8ab"
+    },
+    "all_21_candidate_mds_read": true
+  },
+  "method": {
+    "visual_render": "Poppler pdftoppm at 120 dpi; every original exam page, answer page and rubric page viewed",
+    "text_checks": "Original PDF text layer, python-docx paragraph/table extraction for answer/rubric, and each candidate MD read in full",
+    "image_checks": "Dataset-root assets/evidence page renders and embedded crops were checked for existence; page references are often full-page rather than question-level crops",
+    "no_ocr_substitution": true,
+    "no_candidate_or_manifest_modification": true
+  },
+  "overall": {
+    "judgement": "fail",
+    "counts": {
+      "pass": 2,
+      "fail": 19,
+      "uncertain": 0
+    },
+    "summary": "整卷不能通过独立验收。主要阻断项是Q3/Q17跨题评分材料污染、Q18/Q20评分材料漏配、Q4/Q5跨题/ OCR题面、Q10/Q11图表归属与缺答、Q15文字错位，以及所有选择题分值字段缺失；Q1/Q6/Q11答案也漏录。",
+    "promotion_allowed": false
+  },
+  "question_results": [
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q1",
+      "status": "fail",
+      "source_pages": [
+        1
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q1.md",
+      "candidate_sha256": "da8d6cfece397b8024fef317c598c9e80e6f47a5cb11b1a89025298a1f771be5",
+      "candidate_lines": [
+        8,
+        57,
+        59
+      ],
+      "answer_against_source": "B",
+      "defects": [
+        "分值字段仍为“缺失”，但原卷第1页说明第一部分每题3分。",
+        "参考答案原文标为“（无）”；答案DOCX第1页明确给出1．B。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "补录答案来源及1．B；不把参考答案当正式评分细则。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q2",
+      "status": "fail",
+      "source_pages": [
+        1
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q2.md",
+      "candidate_sha256": "29505f0f27c276f936eb539a54457e3b37cc56fffa5969cc3e9c43df68317869",
+      "candidate_lines": [
+        25,
+        68,
+        69
+      ],
+      "answer_against_source": "D",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "原卷native单行把右侧ronna/quetta/ronto/quecto图示文字插入正文中（MD第25行），题面可读顺序被破坏；图示本身在原卷第1页已核到。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "将四个计量前缀图示独立为图/附图说明，正文保留原句顺序；保留可验证图页引用。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q3",
+      "status": "fail",
+      "source_pages": [
+        2
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q3.md",
+      "candidate_sha256": "cc5cd0569f2d3fb7905bcde40b2035153c1bd664713ad669dbe895c8c21f7f7b",
+      "candidate_lines": [
+        8,
+        25,
+        54,
+        86,
+        190,
+        200
+      ],
+      "answer_against_source": "D",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "原卷native把右上角“银发知播”漫画及题干列文字串入句内（第25行），且质量标记称无图像依赖；实际原卷第2页有该漫画。",
+        "第54—160行把第18—21题评分材料误挂到Q3，正式评分状态错误地标成“已匹配正式材料”；选择题Q3没有这些评分材料。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "按原卷第2页重排题干与漫画，补可打开的p002/漫画引用。",
+        "删除Q18—Q21评分块及错误“已匹配正式材料”状态；Q3仅保留答案D与无正式细则事实。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q4",
+      "status": "fail",
+      "source_pages": [
+        2
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q4.md",
+      "candidate_sha256": "db535d5c5996e489adc3a3a9a3de1c935afc71e4b0fb6585200ceb577e814246",
+      "candidate_lines": [
+        8,
+        25,
+        26,
+        70,
+        71
+      ],
+      "answer_against_source": "D",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "Q4题面第26行选项D后继续串入完整Q5题面（1980/1984/1992历史记录），造成跨题重复与题界错误。",
+        "第2页图像依赖指向figure_objects=4，但实际图像是Q3右上角漫画，不属于Q4。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "Q4 native只保留第2页Q4至D；删除Q5尾部串入文本。",
+        "移除Q4错误的p002图像依赖，或改为Q3专属漫画引用。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q5",
+      "status": "fail",
+      "source_pages": [
+        2
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q5.md",
+      "candidate_sha256": "88398e1bf2c645fafa36ea13320324e48924b03fd910dd3dbfa3949876309263",
+      "candidate_lines": [
+        8,
+        15,
+        16,
+        23,
+        25,
+        79,
+        81
+      ],
+      "answer_against_source": "C",
+      "defects": [
+        "采用题面小节是“原卷 OCR 候选”，没有原卷native段；但原卷PDF第2页存在可读native文字层。",
+        "extraction_status为candidate_ocr且needs_review为Y，不能作为已核题面。",
+        "分值字段仍为“缺失”。"
+      ],
+      "repair_candidate": [
+        "从原卷PDF第2页native重建Q5，不能以OCR候选替代。",
+        "分值改为3分；答案C可沿用并标明答案DOCX来源。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q6",
+      "status": "fail",
+      "source_pages": [
+        3
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q6.md",
+      "candidate_sha256": "3d23388ea3652af088ce23f72ef741e808cb65d34170abb39c2720e49853749b",
+      "candidate_lines": [
+        8,
+        35,
+        40,
+        47
+      ],
+      "answer_against_source": "C",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "参考答案原文标为“（无）”；答案DOCX第1页明确给出6．C。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "补录答案来源及6．C。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q7",
+      "status": "fail",
+      "source_pages": [
+        3
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q7.md",
+      "candidate_sha256": "0c06384c675997617ef6362878120ee4044ede65be0c6ddf047ffe4becd90dbf",
+      "candidate_lines": [
+        8,
+        25,
+        27,
+        33,
+        52,
+        60
+      ],
+      "answer_against_source": "B",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "原卷第3页右侧“突发事件”定义框文字被插入左栏句子中（第25行“有所……突发事件所变通”），材料与定义框的栏结构/阅读顺序丢失。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "按第3页左右栏重排：左栏题干与四项，右栏单独保留“突发事件”定义框；答案B可沿用。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q8",
+      "status": "fail",
+      "source_pages": [
+        3
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q8.md",
+      "candidate_sha256": "7f548609c804639bbc95cee83226c3b9f09d161b4810ba945f8527c248d4474d",
+      "candidate_lines": [
+        8,
+        25,
+        33,
+        52,
+        60
+      ],
+      "answer_against_source": "B",
+      "defects": [
+        "分值字段仍为“缺失”；其余题干、选项与答案B和原卷第3页核对一致。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q9",
+      "status": "fail",
+      "source_pages": [
+        3
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q9.md",
+      "candidate_sha256": "fae179ffa634a7f941f1ddb2c0bc8f1c5eb72d3ce03aa4f2f1bd4a72a96e6792",
+      "candidate_lines": [
+        8,
+        25,
+        34,
+        53,
+        60
+      ],
+      "answer_against_source": "C",
+      "defects": [
+        "分值字段仍为“缺失”；其余题干、选项与答案C和原卷第3页核对一致。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q10",
+      "status": "fail",
+      "source_pages": [
+        4
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q10.md",
+      "candidate_sha256": "81b2e537bbd8a7b77ca4fbe33ad404292743acb60cf000d378882ce0aa0b7bad",
+      "candidate_lines": [
+        8,
+        25,
+        28,
+        80,
+        81
+      ],
+      "answer_against_source": "A",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "Q10 native末尾第28行多出“我国人均储蓄率”，这是第4页Q11右侧图表标题，不属于Q10；造成跨题图表文字串入。",
+        "第4页图像依赖也把Q11图表作为Q10依赖。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "删除Q10末尾Q11图表标题；将图表依赖归到Q11。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q11",
+      "status": "fail",
+      "source_pages": [
+        4
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q11.md",
+      "candidate_sha256": "03bef5ee292e9650cbe67db30c246f3212f3225833489fe465e87502a14a8d00",
+      "candidate_lines": [
+        8,
+        25,
+        57,
+        69,
+        79,
+        80
+      ],
+      "answer_against_source": "C",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "参考答案原文标为“（无）”；答案DOCX第1页明确给出11．C。",
+        "Q11题面只写“右图”，native正文没有图表标题、坐标和折线数据；虽然质量标记列出第4页整页图像依赖，但没有题目级图表/裁切引用，图表完整性需补。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "补录答案来源及11．C。",
+        "把第4页Q11“我国人均储蓄率”图表作为题目级可打开图引用，核对2017—2022坐标、折线和数值。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q12",
+      "status": "fail",
+      "source_pages": [
+        4
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q12.md",
+      "candidate_sha256": "a990844bcee7efcfc2fb2c0188c9b4e3c5edf50c0a6f0ae55ff0850ddf483de8",
+      "candidate_lines": [
+        8,
+        25,
+        38,
+        57,
+        74
+      ],
+      "answer_against_source": "A",
+      "defects": [
+        "分值字段仍为“缺失”；题面与答案A和原卷第4页核对一致。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q13",
+      "status": "fail",
+      "source_pages": [
+        4
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q13.md",
+      "candidate_sha256": "ce925f130b7c9121ddb70bb80be8ff2a3a13644cbbcad360116b6cbcd45f629e",
+      "candidate_lines": [
+        8,
+        25,
+        66,
+        67
+      ],
+      "answer_against_source": "D",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "第4页图像依赖指向figure_objects=2，但实际图表属于Q11；Q13本身没有图，引用范围不精确。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "移除Q13错误的第4页图像依赖；若采用整页证据，须标明仅为同页核验而非Q13题图。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q14",
+      "status": "fail",
+      "source_pages": [
+        5
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q14.md",
+      "candidate_sha256": "39b729e68da8ca036a0e05ffcf7ffe23083140a6f1819229bca2dbc5baa96798",
+      "candidate_lines": [
+        8,
+        25,
+        91,
+        92
+      ],
+      "answer_against_source": "B",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "原卷第5页右上方互联网/传统名誉权图及双向箭头已在整页引用中可见，但MD未提供题目级裁切/内嵌图链接；现有路径需按项目根目录解释。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "补题目级diagram引用（或明确整页p005为证据页），核对三组箭头均为双向。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q15",
+      "status": "fail",
+      "source_pages": [
+        5
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q15.md",
+      "candidate_sha256": "fc2a38f99ed6df9902d1954721ce87357a349268d39b6acfcb2e4c9bdee43fda",
+      "candidate_lines": [
+        8,
+        25,
+        39,
+        74,
+        75
+      ],
+      "answer_against_source": "D",
+      "defects": [
+        "分值字段仍为“缺失”。",
+        "选项D第39行写成“充当法定当货币”，原卷第5页为“充当法定货币”，多出“当”字。",
+        "第5页图像依赖实际对应Q14图，不属于Q15。"
+      ],
+      "repair_candidate": [
+        "分值改为3分。",
+        "将D项恢复为原值“用‘尤里米’充当法定货币进行交易……”。",
+        "移除Q15的Q14图像依赖。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q16",
+      "status": "pass",
+      "source_pages": [
+        6
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q16.md",
+      "candidate_sha256": "de4c8a205651d57d34fd1dd402796b931f1094fdc1f11a379078c6106ed08b69",
+      "candidate_lines": [
+        8,
+        21,
+        57,
+        84,
+        113,
+        125,
+        126
+      ],
+      "answer_against_source": "—",
+      "defects": [],
+      "repair_candidate": []
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q17",
+      "status": "fail",
+      "source_pages": [
+        7
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q17.md",
+      "candidate_sha256": "0db59b75c75ed69cd65a80f52e02acf8c215a43efc4bbd0ea34284be99832d7b",
+      "candidate_lines": [
+        24,
+        28,
+        74,
+        104,
+        239,
+        251,
+        252
+      ],
+      "answer_against_source": "—",
+      "defects": [
+        "左栏“市场上技术转让……”与右侧图表/数据来源在native第28行交错，原卷第7页图表和正文栏结构未保持。",
+        "正式评分材料从第104行开始不仅含Q17，还继续串入完整Q18、Q19、Q20、Q21评分材料，导致Q17评分边界污染。",
+        "第7页整页图像依赖可打开，但未提供Q17图表的题目级裁切。"
+      ],
+      "repair_candidate": [
+        "按第7页左右栏重建Q17题面并单独挂图表。",
+        "正式评分材料只保留细则DOCX第22—40段Q17，删除Q18—Q21串入块。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q18",
+      "status": "fail",
+      "source_pages": [
+        7
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+      "candidate_sha256": "484f1204f9e6228bf899fa3e387367037978e5c25cfda5448543d649d031f8f1",
+      "candidate_lines": [
+        41,
+        47,
+        67,
+        73,
+        85,
+        86
+      ],
+      "answer_against_source": "—",
+      "defects": [
+        "分值与题面时间线正确，参考答案正确，但正式评分材料原文明确写“未找到”；细则DOCX第41—53段实际存在Q18正式细则。",
+        "rubric_status仅有参考答案，未形成Q18的正式评分闭环；第7页图像引用为整页，需题目级时间线图引用。"
+      ],
+      "repair_candidate": [
+        "补入细则DOCX第41—53段为Q18正式评分材料并改状态为已匹配。",
+        "保留第7页四节点时间线并提供题目级图引用。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q19",
+      "status": "fail",
+      "source_pages": [
+        8
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q19.md",
+      "candidate_sha256": "76bd12dbc5b0c8fd14d99a11f5e07ef8b2c3b8591eebf8d825c43c0b9827b39e",
+      "candidate_lines": [
+        34,
+        36,
+        62,
+        86,
+        97
+      ],
+      "answer_against_source": "—",
+      "defects": [
+        "Q19第34—50行已保留评分材料来源块，但“正式评分材料原文”第62—63行又写“未找到”，rubric_status仍为“仅有参考答案”；同一细则DOCX第74—86段确有Q19正式评分材料，内部状态自相矛盾。"
+      ],
+      "repair_candidate": [
+        "把现有Q19评分材料来源块提升为正式评分材料，改rubric_status为已匹配正式材料；保留答案来源为非评分依据。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q20",
+      "status": "fail",
+      "source_pages": [
+        8
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q20.md",
+      "candidate_sha256": "641bb8bc1d8afa8390e951dc1f14fcbc5dd586ee2c65e8da4933f55391ee5111",
+      "candidate_lines": [
+        25,
+        28,
+        42,
+        68,
+        78
+      ],
+      "answer_against_source": "—",
+      "defects": [
+        "原卷第8页右侧传统外交/公共外交注释框文字在native第25行插入左栏句子，双栏阅读顺序被破坏。",
+        "正式评分材料原文写“未找到”，但细则DOCX第87—95段实际有Q20正式细则；rubric_status仅有参考答案。"
+      ],
+      "repair_candidate": [
+        "按第8页左右栏分离题干与注释框。",
+        "补入细则DOCX第87—95段并改状态为已匹配正式材料。"
+      ]
+    },
+    {
+      "question_id": "BJ-2023-XC-YIMO-Q21",
+      "status": "pass",
+      "source_pages": [
+        9
+      ],
+      "candidate_md": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q21.md",
+      "candidate_sha256": "209716a9d44dbb1a66604b02a495e31dda5945a6a667d3c9fb0b202998d6b8ab",
+      "candidate_lines": [
+        8,
+        21,
+        111,
+        144,
+        180,
+        192,
+        193
+      ],
+      "answer_against_source": "—",
+      "defects": [],
+      "repair_candidate": []
+    }
+  ],
+  "global_unresolved": [
+    "candidate image paths are written as assets/... or evidence/...; from the question MD directory those literal relative paths do not resolve, while the same files exist under the dataset root DeepSeek_政治题库资料库_20260918/.",
+    "page-level references do not prove question-level crop correspondence when one page contains multiple questions/figures; Q3/Q4, Q10/Q11/Q13, Q14/Q15 and Q17/Q18 require question-specific image mapping.",
+    "评分材料DOCX includes handwritten/image evidence; the source was visually opened, but any repair must preserve the original image evidence rather than rely only on extracted text."
+  ],
+  "do_not_promote": true
+}

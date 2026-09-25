@@ -29,6 +29,12 @@ TREES = [
     f'{BOOK3}/主代理修订',
     f'{BOOK3}/协作/交接历史', f'{BOOK3}/协作/题源覆盖台账',
     '共享题库',
+    # 2026-09-24 流程优化线（规格、回执、测试脚本、归属表与各书清单、Codex 分析；不含 195MB 中间产物）
+    '后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924',
+    '后勤管理/20260923_脚本化与跨书工具/交接_20260924',
+    '后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924',
+    '后勤管理/20260923_脚本化与跨书工具/Codex记录分析_20260924',
+    '后勤管理/20260923_脚本化与跨书工具/证据',
 ]
 # 单文件纳入
 FILES = [
@@ -38,6 +44,29 @@ FILES = [
     'Claude协作同步_20260914/collab.py', 'Claude协作同步_20260914/sync.py',
     'Claude协作同步_20260914/books.json', 'Claude协作同步_20260914/sources.json',
     'Claude协作同步_20260914/云端同步.py',
+    # 2026-09-24 流程优化线：给云端做工具用的文档
+    '后勤管理/20260923_脚本化与跨书工具/给Codex的提速指令_20260924.md',
+    '后勤管理/20260923_脚本化与跨书工具/给Codex的下一步指令_20260924晚.md',
+    '后勤管理/20260923_脚本化与跨书工具/00_结论与待裁定.md',
+    'DeepSeek_政治题库资料库_20260918/README_FOR_AI.md',
+    'DeepSeek_政治题库资料库_20260918/PROGRESS.md',
+]
+# 2026-09-24：按后缀过滤的目录（题库精简版：只要逐题文字、索引、脚本，不带原件与页图）
+FILTERED_TREES = [
+    ('DeepSeek_政治题库资料库_20260918/questions', {'.md', '.json'}),
+    ('DeepSeek_政治题库资料库_20260918/questions_reused', {'.md', '.json'}),
+    ('DeepSeek_政治题库资料库_20260918/indexes', None),
+    ('DeepSeek_政治题库资料库_20260918/scripts', {'.py', '.json', '.md'}),
+]
+FILTER_SKIP_DIRS = {'sources', 'assets', 'tmp'}
+# 2026-09-24：项目外的其余六本书工作头（用户 09-24 确认），放进仓库 其他书工作头/
+EXTERNAL = [
+    ('/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修四哲学续作_20260908/交付/哲学宝典_修订稿_R10_漏节点与附录补全及触发词修正版_20260908.docx', '其他书工作头/哲学'),
+    ('/Users/wanglifei/Desktop/2026模拟题/文化_v6.9续作_20260908/工作稿/2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx', '其他书工作头/文化'),
+    ('/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/选必一_v11.13续作_20260908/work/选必一_当代国际政治与经济_主客观题宝典_v11.14_修订工作稿_20260908.docx', '其他书工作头/选必一'),
+    ('/Users/wanglifei/Desktop/2026模拟题/选必二_v15.0续作_20260908/工作稿/选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx', '其他书工作头/选必二'),
+    ('/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/选必三思维_v6.4续作_20260908/选必三思维宝典_v6.20_丰台补题分页修订工作稿_20260908.docx', '其他书工作头/思维'),
+    ('/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/推理_v7.31续作_20260908/输出/选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx', '其他书工作头/推理'),
 ]
 SKIP_NAMES = {'.DS_Store', '__pycache__', 'Thumbs.db'}
 
@@ -64,6 +93,8 @@ def copy_if_changed(src: Path, dst: Path, stats):
             int(dst.stat().st_mtime) == int(src.stat().st_mtime):
         return
     dst.parent.mkdir(parents=True, exist_ok=True)
+    if dst.exists() and not os.access(dst, os.W_OK):   # 仓库里的只读副本（Skill 文件 r--r--r--）先改可写再覆盖
+        os.chmod(dst, dst.stat().st_mode | 0o200)
     shutil.copy2(src, dst)
     stats['copied'] += 1
 
@@ -84,6 +115,20 @@ def wanted_files():
     for rel in FILES:
         if (PROJECT / rel).is_file():
             out.append((PROJECT / rel, rel))
+    for rel, exts in FILTERED_TREES:
+        root = PROJECT / rel
+        if not root.exists():
+            continue
+        for dirpath, dirnames, filenames in os.walk(root, followlinks=True):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_NAMES and d not in FILTER_SKIP_DIRS]
+            for fn in filenames:
+                p = Path(dirpath) / fn
+                if not skip(p) and (exts is None or p.suffix.lower() in exts):
+                    out.append((p, p.relative_to(PROJECT).as_posix()))
+    for src, dst_dir in EXTERNAL:
+        p = Path(src)
+        if p.is_file():
+            out.append((p, f'{dst_dir}/{p.name}'))
     state = json.loads(BOOK3_STATE.read_text(encoding='utf-8'))
     head = Path(state['working_head'])
     for p in (head, head.with_suffix('.pdf')):

@@ -1,0 +1,310 @@
+{
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2020-BJ-GAOKAO-Q1": "88f27805812047af68f7a1f1a67b3d2be060ccbeec633a106a9b6341f135f692",
+    "BJ-2020-BJ-GAOKAO-Q2": "066d4885dc11f202ff2b9ee3e85884c70a172ff547dc2d5929493dee7a799588",
+    "BJ-2020-BJ-GAOKAO-Q3": "4313b98443b7085964ff4795485a94a8e67f7ee7db5bd5f35d34e75f7cf1d17a",
+    "BJ-2020-BJ-GAOKAO-Q4": "1bf5d276c3603648aad1f006f32c3d7ce5a8f3f27867a360868dca787ef63d17",
+    "BJ-2020-BJ-GAOKAO-Q5": "d596853533e596ea21cb263607079d247b135b757a08c715a55870b79b94a303",
+    "BJ-2020-BJ-GAOKAO-Q6": "87ea4b69fb659745b58646fb3d78b3d6b8f700c2640d30b61abd3978ee24f260",
+    "BJ-2020-BJ-GAOKAO-Q7": "d7d40952f6f5db8ea3df1c9d8471a1fdc98c1c26b2cc4446243dfc2a05e9d7d1",
+    "BJ-2020-BJ-GAOKAO-Q8": "fa44bfeba1f4efc81e34b7079d4cdc45620c868e19704aa2583ea35586f4c2f1",
+    "BJ-2020-BJ-GAOKAO-Q9": "de2c7bf08f7273ef44b9996ddbadb59aa18336ccd86d31a7c894f7afdae8b598",
+    "BJ-2020-BJ-GAOKAO-Q10": "895046e391d5d9875fb1724b1363340a2efd2326f5b1ae11f465d844d6427a1f",
+    "BJ-2020-BJ-GAOKAO-Q11": "927a22eecf772793427fa4c2804f5f5504e0cdfb95b9aac16cdb929f2a78e74e",
+    "BJ-2020-BJ-GAOKAO-Q12": "766d3f4e732b8df95fd43db7da195dee73c444e8552f89953ba644264dd9f044",
+    "BJ-2020-BJ-GAOKAO-Q13": "4f160b5fc0b113fb4414379847dcd06437d0f96fd412df327051a98bf926e809",
+    "BJ-2020-BJ-GAOKAO-Q14": "0fe44004514deb609d2cf69dfffdca6bdcffadf8574c9d37f84a82896b076030",
+    "BJ-2020-BJ-GAOKAO-Q15": "d06a02ce3b345fa671736880ee06ba91875e42ae2df1fb09e27da730bd11d14f",
+    "BJ-2020-BJ-GAOKAO-Q16": "7b4888b2c7b48f54dc3efb80343798801fc512206a9d3da59d6c1d2c167ae48c",
+    "BJ-2020-BJ-GAOKAO-Q17": "90fda72750780ebde4d3485a71c72bfe6a40926f3207a20f0a0f957a60a51248",
+    "BJ-2020-BJ-GAOKAO-Q18": "f4ba00045f5184338e6d8d96ad936f9440b1b59d5a92f1f24b33aa92669d5335",
+    "BJ-2020-BJ-GAOKAO-Q19": "7ed61d8a45cb20a7da8d37a8ec53ad06bec36a6ada184992748c574e4c062735",
+    "BJ-2020-BJ-GAOKAO-Q20": "85f4eb76de5a0f961b4f8ecc040cc9d90a8fc37555d694bcbb959e90e1005e3a",
+    "BJ-2020-BJ-GAOKAO-Q21": "b4e69c56b250bccd6c70912602faf070ed09f2734fdf644bd9c222b5131bc337"
+  },
+  "source_pages": {
+    "teacher": 18,
+    "formal_rubric": 4
+  },
+  "source_page_total": 22,
+  "source_page_map": {
+    "BJ-2020-BJ-GAOKAO-Q1": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q2": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8,
+        9
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q3": {
+      "paper": [
+        1,
+        2
+      ],
+      "answer": [
+        9
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q4": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        9,
+        10
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q5": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        10
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q6": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        10
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q7": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        11
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q8": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        11
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q9": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        11,
+        12
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q10": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        12
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q11": {
+      "paper": [
+        3,
+        4
+      ],
+      "answer": [
+        12,
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q12": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q13": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q14": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        14
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q15": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        14
+      ],
+      "rubric": []
+    },
+    "BJ-2020-BJ-GAOKAO-Q16": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        15
+      ],
+      "rubric": [
+        1
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q17": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        15,
+        16
+      ],
+      "rubric": [
+        1,
+        2
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q18": {
+      "paper": [
+        5,
+        6
+      ],
+      "answer": [
+        16
+      ],
+      "rubric": [
+        2
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q19": {
+      "paper": [
+        6,
+        7
+      ],
+      "answer": [
+        17
+      ],
+      "rubric": [
+        2,
+        3
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q20": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        17,
+        18
+      ],
+      "rubric": [
+        3
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q21": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        18
+      ],
+      "rubric": [
+        3,
+        4
+      ]
+    }
+  },
+  "source_roles": {
+    "teacher": "Sd09df25048f5",
+    "formal_rubric": "Sd28336f73700",
+    "source_index": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2020-BJ-GAOKAO/acceleration_integrated_v2_20260922/candidates/sources/index.json",
+    "source_inventory": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2020-BJ-GAOKAO/acceleration_integrated_v2_20260922/candidates/sources/source_inventory.json"
+  },
+  "primary_review_receipt": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2020-BJ-GAOKAO_v2_primary_review.json",
+    "sha256": "0d7233d0d94cdf6251a5b8efe93ea4452319ae003bc237537be7aa06e7c32cce"
+  },
+  "independent_review_receipt": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2020-BJ-GAOKAO/acceleration_integrated_v2_20260922/verification/independent_review.json",
+    "sha256": "6807976e1e77e93654f1ef8388d465f49ee642ef29d0e0ffa732ffcbbf5c5c8b",
+    "bound_final_sha256": "fe6216fa895f4da220a8a360aba887108f4d8339597eda398eec38e594d52b41"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "教师版 p1–p7 E0，p8–p18 E3；正式评分 p1–p4 E1 仅 Q16–Q21",
+    "无个人学生答卷、批注、实得分；学生层 N/A_with_basis",
+    "Q2细小票面文字用中国邮政官方同图交叉核验，external corroboration不替代低清E0原图",
+    "Q10局部微字受原图像素限制；原图与可辨文字保留",
+    "Q17三条曲线各22点均为读图约值；末点日期按等距推约6/8而非原图印字"
+  ],
+  "active_support": {
+    "path": "sources/visual_completion_20260922.md",
+    "sha256": "66153328f1a7f28b4da3ab997bfc41b626a8225b92977d9594a244e17a49c360"
+  },
+  "v4_review_receipts": {
+    "targeted": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2020-BJ-GAOKAO/independent_v4_sol_east_20260922/verification.json",
+      "sha256": "0c5a6aa69e943c96a8b0df2f587b6677f6fe21eee23b3ef72339a7728d4b1e2a"
+    },
+    "e1": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2020-BJ-GAOKAO/independent_v4_sol_east_20260922/e1_delta_verification.json",
+      "sha256": "224263616d9e83702966b16a8b92654086989e5102ff569619175a3bb08659b8"
+    }
+  },
+  "v4_primary_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2020-BJ-GAOKAO_v4_primary_review.json",
+    "sha256": "9697add81b6397f428cf8f207cf0bbcf8dac97b0d415fc32b39712d4ed73d22e"
+  },
+  "controller_delta_history": [
+    {
+      "delta_id": "bj2020-r2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "applied_at": "2026-09-22T20:26:38.410421+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2020-BJ-GAOKAO/bj2020-r2_merge.json",
+      "question_hashes_updated": {
+        "BJ-2020-BJ-GAOKAO-Q10": "895046e391d5d9875fb1724b1363340a2efd2326f5b1ae11f465d844d6427a1f",
+        "BJ-2020-BJ-GAOKAO-Q13": "4f160b5fc0b113fb4414379847dcd06437d0f96fd412df327051a98bf926e809",
+        "BJ-2020-BJ-GAOKAO-Q17": "90fda72750780ebde4d3485a71c72bfe6a40926f3207a20f0a0f957a60a51248",
+        "BJ-2020-BJ-GAOKAO-Q19": "7ed61d8a45cb20a7da8d37a8ec53ad06bec36a6ada184992748c574e4c062735",
+        "BJ-2020-BJ-GAOKAO-Q20": "85f4eb76de5a0f961b4f8ecc040cc9d90a8fc37555d694bcbb959e90e1005e3a"
+      }
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-22T20:26:59.299759+00:00"
+}

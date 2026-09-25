@@ -1,0 +1,235 @@
+{
+  "exam_id": "BJ-2023-DC-ERMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "finally_accepted": false,
+  "question_count": 21,
+  "score_total": 100,
+  "source_pages": {
+    "paper_physical": 12,
+    "answer_physical": 1
+  },
+  "page_details": {
+    "paper_printed": 11,
+    "paper_blank_tail": [
+      12
+    ],
+    "answer_logical": 2
+  },
+  "question_hashes": {
+    "BJ-2023-DC-ERMO-Q1": "639d7e0823f0437a44cf81f1026860a3438e8d6dc4995aa6543cb3dfba85f9b0",
+    "BJ-2023-DC-ERMO-Q10": "4ef7b46f847aa93ed23fe931b199a59f92b1e6e10d49d2ecb4924f45f3b12a05",
+    "BJ-2023-DC-ERMO-Q11": "81fdb30200bd586dd0f96a5f3b0ce2a447128ae9fd8af8c19505df46524d5077",
+    "BJ-2023-DC-ERMO-Q12": "3c0b29d734579b0f1afe1f304331fa5176d35db287a90b0b2de7f68f2728e84f",
+    "BJ-2023-DC-ERMO-Q13": "948eb7f29e7af933322f29f905cd85369d57175d5eedb21ded1e060033868b53",
+    "BJ-2023-DC-ERMO-Q14": "2759ce9f476d4046f8a6bb25b3b73bee216a7bb9be57a018c60f94222fa7ef0c",
+    "BJ-2023-DC-ERMO-Q15": "dcfcb63b4d6aab9201c16e4b13e1f36004ebfc774c5fed1b8e3ea9941522b9e7",
+    "BJ-2023-DC-ERMO-Q16": "041c8a09b1d72bfe0d432dda9371669da4b75ac8550d9bcd648ff3bf322cd426",
+    "BJ-2023-DC-ERMO-Q17": "7f7f67424adeb8bd97047bd3fa71138c42b59b4d6d0b5247c30fdafd7de36e16",
+    "BJ-2023-DC-ERMO-Q18": "d4d37faf077b3f64bdb1921cee0cf4ec624ac7e3f77f9ce54d42b9302ecb6386",
+    "BJ-2023-DC-ERMO-Q19": "683e346d1a0a2e28d9fd49abad20c4515b2735a475d41dd6970346560d898a8a",
+    "BJ-2023-DC-ERMO-Q2": "0c47d06e4d5c84c6d1b10a5bd9e83ae6020fd7488c84504fab46c49f2f0d881a",
+    "BJ-2023-DC-ERMO-Q20": "abea4385d0e92abfe5c60aa7400ba5e3d7d132ad428033c85c14ebe2c9e247e2",
+    "BJ-2023-DC-ERMO-Q21": "3a175f65937ebbee51a59bde6a59f70d307823568abdbcdb012da13587111f65",
+    "BJ-2023-DC-ERMO-Q3": "2f8f07c41fddc6967f55cdc215676e65594414583019a1ea7d9f6ab992ae38dd",
+    "BJ-2023-DC-ERMO-Q4": "3d58c6ba07aa22484d1a8fe353e8dbda2ed7f569379b9c2c830822939a26d5a7",
+    "BJ-2023-DC-ERMO-Q5": "4f442492d9dd6a78117ac6837423966fe65785bda044d12e53daa6b0bebaa9c1",
+    "BJ-2023-DC-ERMO-Q6": "9d9a36578f0d758f17ff3e8510ccafbff1d1f2e7046d635fbd26b38ad235be16",
+    "BJ-2023-DC-ERMO-Q7": "9d3932a69ea581c4106db38e747747b8bc258064f6faa17c0a37a51dae11bb25",
+    "BJ-2023-DC-ERMO-Q8": "185dc863b13fcd4c695561b40a32585ba64031df04e306d059c6430dc7f6a5bc",
+    "BJ-2023-DC-ERMO-Q9": "b21992c90a77690bd3a6386bc35c7106d766009b521ecbb0a50be9264c51b879"
+  },
+  "source_page_map": {
+    "paper": {
+      "physical_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "question_pages": {
+        "Q1": [
+          1
+        ],
+        "Q2": [
+          1
+        ],
+        "Q3": [
+          2
+        ],
+        "Q4": [
+          2
+        ],
+        "Q5": [
+          2
+        ],
+        "Q6": [
+          3
+        ],
+        "Q7": [
+          3
+        ],
+        "Q8": [
+          3
+        ],
+        "Q9": [
+          4
+        ],
+        "Q10": [
+          4
+        ],
+        "Q11": [
+          4
+        ],
+        "Q12": [
+          4
+        ],
+        "Q13": [
+          5
+        ],
+        "Q14": [
+          5
+        ],
+        "Q15": [
+          5
+        ],
+        "Q16": [
+          6
+        ],
+        "Q17": [
+          6
+        ],
+        "Q18": [
+          7,
+          8
+        ],
+        "Q19": [
+          8,
+          9
+        ],
+        "Q20": [
+          10
+        ],
+        "Q21": [
+          11
+        ]
+      }
+    },
+    "answer": {
+      "physical_pages": [
+        1
+      ],
+      "logical_pages": [
+        1,
+        2
+      ],
+      "e3_questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "e1_questions": [
+        16,
+        21
+      ]
+    }
+  },
+  "e3_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "e1_questions": [
+    16,
+    21
+  ],
+  "student_samples": "N/A_with_basis",
+  "conversion_unresolved": [],
+  "source_unresolved": [],
+  "source_limitations": [
+    "E3覆盖Q1-Q21；E1同题等级信息仅Q16/Q21，其他19题不得升格E1",
+    "学生样本为N/A_with_basis",
+    "Q8为本次create-only题，原共享题面无Q8"
+  ],
+  "legacy_metadata": {
+    "candidate_manifest_missing_supporting_file": "source_evidence.json",
+    "candidate_manifest_missing_supporting_file_is_payload": false
+  },
+  "primary_visual": [
+    "Q2 actual diagram prior view and v4 exact structure delta",
+    "Q15 source apparatus prior view and v4 conservative description",
+    "Q19 source answer作为 prior view and v4 one-character restoration",
+    "two active fullsource transcripts and frontmatter replacing placeholders"
+  ],
+  "independent_chain": "integrated_review.v1 mechanical review; independent_review.json lineage and source transcripts/page coverage retained",
+  "primary_review_sha256": "03dc2417e9f490bfa5fe871515a1d410889c249de3ff3df01f2b08871964f043",
+  "independent_review_sha256": "19388fbf0e8632282259c0c5d47a1d82d2e1a244fbf3076c9c657d5dd0eac45e",
+  "review_chain": {
+    "primary_review": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-DC-ERMO_v4_primary_review.json",
+      "sha256": "03dc2417e9f490bfa5fe871515a1d410889c249de3ff3df01f2b08871964f043"
+    },
+    "independent_review": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready_versions/BJ-2023-DC-ERMO_source_completion_v4_20260922/verification/independent_review.json",
+      "sha256": "19388fbf0e8632282259c0c5d47a1d82d2e1a244fbf3076c9c657d5dd0eac45e"
+    }
+  },
+  "primary_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-DC-ERMO_v4_primary_review.json",
+    "sha256": "03dc2417e9f490bfa5fe871515a1d410889c249de3ff3df01f2b08871964f043",
+    "decision": "deltas_pass_integration_pending"
+  },
+  "independent_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready_versions/BJ-2023-DC-ERMO_source_completion_v4_20260922/verification/independent_review.json",
+    "sha256": "19388fbf0e8632282259c0c5d47a1d82d2e1a244fbf3076c9c657d5dd0eac45e",
+    "mergeable": true
+  },
+  "materialization_sha256": "1cff452a4bbec642fc8c4bccc6131e36579f226ea5e7e99bed4a670784db2b5d",
+  "source_page_total": 13,
+  "accepted_at": "2026-09-22T17:15:58.964278+00:00"
+}

@@ -1,0 +1,328 @@
+{
+ "batch_id": "c032",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "choice",
+ "n_units": 10,
+ "units": [
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q2",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "2",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 9-17，选项标记 4）]\n\n2. 人大代表之家、人大代表活动站和民情联络点，是人大代表密切联系群众、开展履职活动、践行全过程人民民主的重要阵地。某区推动人大代表“家站点”发挥更大作用，进一步优化布局、完善功能、加强信息化建设，迭代升级“家站点”。\n\n完善设施配备合理规划布局                              加强信息化建设配备必要办公设备，提供舒根据代表数量、选区分布等                        探索打造“码上见”等线上适接待环境，设置宣传栏、因素科学选址，形成“通用                        代表“家站点”，实现线上展示架，展示代表信息、工版+”等模式。                             线下齐发力。\n作动态等内容。\n\n人大代表“家站点”的迭代升级（     ）\n①完善人大组织系统，优化整合资源②推动民主管理规范化，提升服务品质③体现科技赋能，畅通民意收集新渠道④延伸人大代表履职触角，增强工作实效\nA. ①②       B. ①③           C. ②④             D. ③④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 24-49，选项标记 4）]\n\n2.人大代表之家、人大代表活动站和民情联络点，是人大代表密切联系群众、开展履职活动、践行全过程\n人民民主的重要阵地。某区推动人大代表“家站点”发挥更大作用，进一步优化布局、完善功能、加强信\n息化建设，迭代升级“家站点”。\n完善设施配备\n合理规划布局\n根据代表数量、选区分布等\n因素科学选址，形成“通用\n版+”等模式。\n配备必要办公设备，提供舒\n适接待环境，设置宣传栏、\n展示架，展示代表信息、工\n加强信息化建设\n探索打造“码上见”等线上\n代表“家站点”，实现线上\n线下齐发力。\n作动态等内容。\n人大代表“家站点”的迭代升级（）\n①完善人大组织系统，优化整合资源\n②推动民主管理规范化，提升服务品质\n③体现科技赋能，畅通民意收集新渠道\n④延伸人大代表履职触角，增强工作实效\nA.①②\nB. ①③\nC.②④\nD.③④\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p001。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p001](assets/source_pages/p001.png)\n\n原卷 p001 三列表格已按原生列序、框线和分组结构化转写；不以线性OCR替换。\n\n### [原卷 p001 表格结构（E0图文转写，不替代原图）]\n\n| 合理规划布局 | 完善设施配备 | 加强信息化建设 |\n|---|---|---|\n| 根据代表数量、选区分布等因素科学选址，形成“通用版+”等模式。 | 配备必要办公设备，提供舒适接待环境，设置宣传栏、展示架，展示代表信息、工作动态等内容。 | 探索打造“码上见”等线上代表“家站点”，实现线上线下齐发力。 |\n\n原题表格为三列等框线布局；箭头/流程关系不跨列，三列共同支撑“家站点”迭代升级。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q2`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q2.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [1]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①②       B. ①③           C. ②④             D. ③④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p009；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q3",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "3",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，补足缺失的原卷角色）]\n\n3. 如图所示，北京市构建了以“一清单、一平台、一张网”为基础的养老服务体系。下列说法正确的是（   ）\n①该体系引导多方各司其职、协同联动，为老年群体保驾护航\n②“一清单”是从消费端满足多样化、多层次的养老服务需求\n③“一平台”以基层自治为主导，保障老年群体的基本权益\n④“一张网”依托养老事业和养老产业，不断完善养老服务\nA. ①③　　B. ①④　　C. ②③　　D. ②④\n\n原卷角色文本在父稿切分中缺失；以上文字由原卷 p001—p002 原页复核补足，图面见本地原卷页与 `assets/figures/Q3_diagram.png`。\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p001, p002。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p001](assets/source_pages/p001.png)\n- 原卷页：[p002](assets/source_pages/p002.png)\n\n原卷 p002 的养老服务体系图已实际打开并转写四层箭头、三分支和框内文字；局部低清处保留原图作为最终核对依据。\n\n### [原卷 p002 养老服务体系图结构（E0图文转写，不替代原图）]\n\n图题：**构建具有首都特色的养老服务体系**。虚线框内由上方总括线分为“一清单”“一平台”“一张网”三支，均为自上而下箭头。\n\n- **一清单** → “各街道（乡镇）辖区内老年人需求养老服务方案” → “组织各类养老服务市场主体” → “设计形成一篮子普惠养老服务供给清单”。\n- **一平台** → “以街道（乡镇）为单位” → “建设居家、社区、机构养老三位一体的区域养老服务中心”。\n- **一张网** → “以区直属老年服务指导中心为统筹” → “街道（乡镇）养老服务中心为枢纽” → “养老机构、社区养老服务驿站为延伸网点” → “加盟专业服务商为协同网点”。\n\n本转写按原图框线、方向、三分支和层级记录；低分辨率文字仍以 `assets/figures/Q3_diagram.png` 与 `assets/source_pages/p002.png` 为准。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q3`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q3.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [1, 2]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①③　　B. ①④　　C. ②③　　D. ②④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p009；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q4",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 28-31，选项标记 4）]\n\n4. “人民医护工作者”路生梅，扎根黄土高原，守护群众健康，为贫困地区人民服务 50 多年；“人民教育家”黄大年，带领团队，为中国“巡天探地潜海”填补多项技术空白；“人民卫士”巴依卡·凯力迪别克，在帕米尔高原上巡边 37 年，在生命禁区为戍边战士引路……他们的事迹启示我们（     ）\n①要在为国尽责、为民服务的实践中实现个人价值、展现人生风采②只有能力卓越的人，才能把握住难得的人生机遇，创造精彩的人生③自觉汲取榜样力量，不断修身立德，为他人和社会做出自己的贡献④要以积极的态度创造条件为社会做贡献，进而追求社会对自我的肯定\nA. ①③           B. ①④      C. ②③      D. ②④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 85-96，选项标记 4）]\n\n4. “人民医护工作者”路生梅，扎根黄土高原，守护群众健康，为贫困地区人民服务 50多年；“人民教\n育家”黄大年，带领团队，为中国“巡天探地潜海”填补多项技术空白；“人民卫士”巴依卡•凱力迪别\n克，在帕米尔高原上巡边37年，在生命禁区为戍边战士引路••⋯他们的事迹启示我们（）\n①要在为国尽责、为民服务的实践中实现个人价值、展现人生风采\n②只有能力卓越的人，才能把握住难得的人生机遇，创造精彩的人生\n③自觉汲取榜样力量，不断修身立德，他人和社会做出自己的贡献\n④要以积极的态度创造条件为社会做贡献，进而追求社会对自我的肯定\nA. ①③\nB. ①④\nC. ②③\nD. ②④\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p002。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p002](assets/source_pages/p002.png)\n\n原页无独立图形对象；普通段落与四项选择按原印核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q4`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q4.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [2]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①③           B. ①④      C. ②③      D. ②④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p009, p010；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q5",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "5",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 31-34，选项标记 4）]\n\n5. 借助网络直播，山区的“绿色”茶叶、“青色”果蔬、“金色”粮油走出大山，城市居民有口福了，乡亲们的腰包鼓起来了；通过远程教育，边疆地区的学生与北京师生同上一堂课，课堂内容丰富了，师生视野开阔了……指尖触动，就能乐享线上生活，融入时代发展。下列说法正确的是（      ）\n①互联网重塑生产生活方式，为老百姓带来具体可感的变化②依托网络整合资源，有助于解决发展不平衡不充分的问题③运用网络资源填平数字鸿沟，让偏远地区群众搭上信息化快车④我国网信事业取得巨大成就，成为全球数字经济的拓荒者引领者\nA. ①②           B. ①③      C. ②④      D. ③④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 96-107，选项标记 4）]\n\n5.借助网络直播，山区的“绿色”茶叶、“青色”果蔬、“金色”粮油走出大山，城市居民有口福了，乡\n亲们的腰包鼓起来了；通过远程教育，边疆地区的学生与北京师生同上一堂课，课堂内容丰富了，师生视\n野开阔了•⋯指尖触动，就能乐享线上生活，融入时代发展。下列说法正确的是（）\n①互联网重塑生产生活方式，为老百姓带来具体可感的变化\n②依托网络整合资源，有助于解决发展不平衡不充分的问题\n③运用网络资源填平数字鸿沟，让偏远地区群众搭上信息化快车\n④我国网信事业取得巨大成就，成为全球数字经济的拓荒者引领者\nA. ①②\nB. ①③\nC.②④\nD.③④\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p002。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p002](assets/source_pages/p002.png)\n\n原页无独立图形对象；段落与四项选择按原印核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q5`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q5.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [2]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①②           B. ①③      C. ②④      D. ③④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p010；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q6",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 34-45，选项标记 4）]\n\n6. 2024 年北京中秋国庆彩灯游园会（“京彩灯会”）在园博园盛大举行，本次灯会以国家非物质文化遗产自贡彩灯技艺为基础，与北京传统风俗文化、首都时代精神符号创意融合，使游客在欣赏璀璨灯光、非遗技艺的同时，还能通过不同主题区、不同灯组深切感受北京胡同、北京生活、北京风俗的独特韵味，感受\n\n第2页/共18页\n\n### [原卷 p003 续文与选项（E0补全）]\n\n文物、国画、诗词等中华优秀传统文化新的光彩与生命力。“京彩灯会”的举办（       ）\n\n①展现了中华优秀传统文化的独特魅力，增强文化自信\n②推动了非遗技艺与区域文化创新融合，丰富文化供给\n③提供了沉浸式文化消费新场景，满足了人民群众基本文化需求\n④打造了全面展示中华传统文化的平台，促进中外文化交流融合\n\nA. ①②　　B. ①③　　C. ②④　　D. ③④\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p002, p003。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p002](assets/source_pages/p002.png)\n- 原卷页：[p003](assets/source_pages/p003.png)\n\n原页无独立图形对象；跨页题干续接关系已核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q6`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q6.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [2, 3]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①②　　B. ①③　　C. ②④　　D. ③④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p010；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q7",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "7",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 45-51，选项标记 4）]\n\n7. 下图漫画给我们的哲学启示有（    ）\n\nA. 集中精力关注当下，就能活出最美的样子\nB. 运用超前思维思考明天，创造出幸福的人生\nC. 从实际出发，从当下做起，生活才能少些迷茫\nD. 弄清昨天明天和当下各自的意义，是取得成功的关键\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 124-131，选项标记 4）]\n\n7. 下图漫画给我们的哲学启示有（）\n《为昨天懊恼，替明天\n担心，不如把握当下》\nA. 集中精力关注当下，就能活出最美的样子\nB. 运用超前思维思考明天，创造出幸福的人生\nC.从实际出发，从当下做起，生活才能少些迷茫\nD.弄清昨天明天和当下各自的意义，是取得成功的关键\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p003。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p003](assets/source_pages/p003.png)\n\n原卷 p003 漫画已实际打开；画面含日历30、1、2，人物抓住‘1’与‘2’，题注‘《为昨天懊恼，替明天担心，不如把握当下》’。\n\n### [原卷 p003 漫画结构（E0图文转写，不替代原图）]\n\n画框内上方为三张日历页：左“30”、中“1”、右“2”；下方人物向上伸出双手，左手抓住“30”与“1”之间区域，右手抓住“2”页，画面中心有撕落纸片/弧线。图下注文为《为昨天懊恼，替明天担心，不如把握当下》。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q7`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q7.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [3]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. 集中精力关注当下，就能活出最美的样子\nB. 运用超前思维思考明天，创造出幸福的人生\nC.从实际出发，从当下做起，生活才能少些迷茫\nD.弄清昨天明天和当下各自的意义，是取得成功的关键",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p010；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收整题",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q9",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "9",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 57-71，选项标记 4）]\n\n9. 某中学以“赓续红色血脉传承红色基因”为主题，精心策划并组织了陕西、贵州、甘肃、湖南等几条研学路线，每个学生都选择了一条研学路线。据此，下列说法逻辑正确的是（      ）\n\n第3页/共18页\n\n### [原卷 p004 四个逻辑命题（E0补全）]\n\nA. 由“小李既没报陕西研学，也没报贵州研学”为真，能推出“小李报湖南研学”为真\nB. 由“小张或者去甘肃游学，或者去湖南游学”为真，能推出“小张去甘肃游学”为真\nC. 由“王同学在研学中有所收获”为真，能推出“王同学主动将研学中的所见所闻与学科知识建立联系”为真\nD. 由“赵同学主动将研学中的所见所闻与学科知识建立联系”为真，能推出“赵同学在研学中有所收获”为真\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p003, p004。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p003](assets/source_pages/p003.png)\n- 原卷页：[p004](assets/source_pages/p004.png)\n\n原页无独立图形对象；四个逻辑选项逐行保留。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q9`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q9.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [3, 4]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. 由“小李既没报陕西研学，也没报贵州研学”为真，能推出“小李报湖南研学”为真\nB. 由“小张或者去甘肃游学，或者去湖南游学”为真，能推出“小张去甘肃游学”为真\nC. 由“王同学在研学中有所收获”为真，能推出“王同学主动将研学中的所见所闻与学科知识建立联系”为真\nD. 由“赵同学主动将研学中的所见所闻与学科知识建立联系”为真，能推出“赵同学在研学中有所收获”为真",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p011；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q10",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "10",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 71-74，选项标记 4）]\n\n10. 生活中，有人“吃一堑，长一智”，有人却“在同一地方摔倒多次”；有人能“闻一知十”，有人“举一”却不能“反三”。以下说法正确的是（       ）\n①“吃一堑，长一智”启示我们要从特殊推出一般，寻找规律性②人之所以会“在同一地方摔倒多次”，是因为没有运用演绎推理③“闻一知十”启示我们要从思维抽象到思维具体，开启创新之门④“举一”却不能“反三”的人是因为没有正确运用类比推理\nA. ①③         B. ①④          C. ②③         D. ②④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 386-395，选项标记 0）]\n\n10.【答案】B\n【详解】①：“吃一堑，长一智”意思是，受一次挫折，便得到一次教训，增长一分才智。这启示我们要\n善于运用归纳推理，从特殊推出一般，寻找规律性，①符合题意。\n②：人之所以会“在同一地方摔倒多次”，是因为没有运用归纳推理，②说法错误。\n③：“闻一知十”意思是，听到一件事，可以推知十件事。这启示我们要善于思考，从感性具体到思维抽\n象，③说法错误。\n④：“举一反三”意思是，拿已知的一件事理去推知相类似的其他事理。有人“举一” 却不能“反三”，\n是因为没有正确运用类比推理，④符合题意。\n故本题选B。\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p004。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p004](assets/source_pages/p004.png)\n\n原页无独立图形对象；三组俗语与四个判断选项按原印核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q10`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q10.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [4]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①③         B. ①④          C. ②③         D. ②④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p011；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q11",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "11",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 74-78，选项标记 4）]\n\n11. 李某在社交平台发布博文“地铁上的小乘客，一个人上学……太可爱了”，并附有该小乘客吴某的正面照片。次日，吴某的母亲张某发帖称照片中是自己 7 岁的女儿，认为李某行为不妥，要求其删除照片。\n李某不予理会，双方为此发生纠纷，张某向法院提起诉讼。法院认为李某的行为构成侵权，判令其赔礼道歉，作出合理赔偿。下列认识正确的是（      ）\n①李某未经同意公布他人照片不妥，侵害他人的名誉权②法院基于对未成年人肖像权的特殊保护做出本案判决③李某有发布网络信息的权利，但权利与义务不可割裂④本案对于促进网络空间法治化治理具有积极示范意义\nA. ①②         B. ①③          C. ②④         D. ③④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 395-403，选项标记 0）]\n\n11.【答案】D\n【详解】①：李某未经同意公布他人照片，侵害了他人的肖像权，①说法错误。\n②：法院做出本案判决是基于对公民肖像权的一般保护，而不是“未成年人肖像权的特殊保护”②排除。\n③：权利与义务是统一的，不可割裂。李某有发布网络信息的权利，但也应履行遵守宪法和法律的义务，\n③符合题意。\n④：本案中，李某未经允许擅自使用他人肖像，侵犯了其肖像权。法院的判决结果彰显我国互联网司法高\n度重视人格权保护的司法精神，对于促进网络空间法治化治理具有积极示范意义，④符合题意。\n故本题选D。\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p004。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p004](assets/source_pages/p004.png)\n\n原页无独立图形对象；案例段落与四项判断按原印核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q11`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q11.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [4]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①②         B. ①③          C. ②④         D. ③④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p011；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2025-FT-QIMO-Q12",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "num": "12",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / native，位置 78-81，选项标记 4）]\n\n12. 游客王某夫妇到某收费景区游玩，王某因雨后的观景台面十分湿滑不慎摔倒，导致其腿骨骨折，王某与景区负责公司就赔偿问题发生纠纷。下列说法正确的是（           ）\n①王某购买门票到景区内游玩，双方之间的旅游合同即依法成立②景区采取了相应的保障措施保护游客的人身安全，王某应承担部分违约责任③王某作为完全民事行为能力人，在景区内摔倒造成身体伤害，应自行承担责任④景区未能举证证明对游客的人身安全尽到保障义务，应当承担民事侵权责任\nA. ①③         B. ①④          C. ②③         D. ②④\n\n### [原卷 OCR 候选（未逐字对照，不得直接采用）]\n> OCR 候选存在真实错字与串行（见 README 第 6 节），回原页对照前不得采用。\n\n### [来源：`2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf`（角色 原卷 / ocr_candidate，位置 403-519，选项标记 0，已在分节标题处截断）]\n\n12.【答案】B\n第11页/共18页\n\n<<<OCR p013.ocr.txt>>>\n\n===== p013.png =====\n高，①符合题意。\n②：全球公共产品是指那些具有消费或使用上的非竞争性和受益上的非排他性的产品或服务，它们能够\n全世界的人们共同享受或使用。材料没有涉及我国提供了更多的全球公共物品，②不符合题意。\n③：从我国出口的每10辆汽车中有4辆是电动汽车，每10辆轨道机车中有7辆是电力机车，体现了我国\n新发展理念见成效，绿色成为我国外贸高质量发展鲜明底色，③符合题意。\n④：营商环境改善强调有利于促进外商投资，而材料强调我国贸易进出口，没有涉及营商环境改善，④不\n符合题意。\n故本题选 A。\n第二部分\n二．本部分共6题，共55分。\n16.【答案】从实践、一切从实际出发、联系观、发展观、矛盾观等角度作答。\n观点鲜明，能明确表达自己的见解：紧扣观点，综\n水平4\n合运用所学知识展开论述；逻辑严密，条理清晰\n水平3\n观点比较明确，能表达自己的见解；能扣住观点展\n开论述，知识运用比较准确：逻辑性较强，有条\n理\n水平2\n观点不明确；论述不能集中指向观点，罗列知识；\n知识运用不正确；论述缺乏逻辑，条理性差\n水平1\n应答与试题无关；或重复试题内容；或没有应答\n示例：①量变是质变的前提，质变是量变的必然结果。在工作中，注意脚踏实地，从小事做起，注重量的\n积累，做到懂得注意事物的数量方面，实现胸中有“数”。\n②质变为新的量变开辟道路，在量变达到一定程度时，要注意抓住时机，做到有计划、有方案，从而促成\n质变。\n③当需要保持事物性质的稳定性时，就必须把量变控制在一定范围内，坚持适度原则。注意决定事物质量\n的数量界限，防止胸中无“数”和犯错误。\n④事物的性质是由主要矛盾的主要方面决定的，我们在工作生活中，都要懂得注意基本的统计、主要的百\n分比，做到胸中有“数”。\n（原题无答案，此答案仅供参考）\n【分析】背景素材：毛泽东谈胸中有“数”的工作方法\n考点考查：把握世界的规律\n能力考查：描述和阐释事物、论证和探究问题\n核心素养：政治认同、科学精神、公共参与\n【详解】第一步：审设问。明确主体、作答范围、问题限定和作答角度。\n第13页/共18页\n\n<<<OCR p016.ocr.txt>>>\n\n===== p016.png =====\n关键信息③：“放得活”与“管得住”的关系一可从社会主义市场经济体制角度分析有效市场和有政府\n相结合，推动高质量发展。\n第三步：整合信息，组织答案。注意设问限定以及教材知识与材料、时政信息等相结合。\n【小问3详解】\n第一步：审设问，明确知识范围、问题限定和作答角度。\n本题考查《政治与法治》知识，说明法治如何护航高水平社会主义市场经济体制建设。需要调用全面依法\n治国的有关知识，从措施角度分析作答。\n第二步：审材料。提取关键词，链接教材知识。\n关键信息①：《中华人民共和国反垄断法》《中华人民共和国外商投资法》《优化营商环境条例》等法律法\n规陆续出台一可从科学立法角度分析立法机关科学立法为护航高水平社会主义市场经济体制建设提供法律\n依据和法治保障；\n关键信息②：明晰执法主体的权限、职责、程序、任务，将行政执法工作公开化，增强执法工作的透明\n度，严格执法责任一可从严格执法角度分析行政机关严格执法，规范、公正、文明执法，提高护航高水平\n社会主义市场经济体制建设的执法水平和执法能力；\n关键信息③：缩短诉讼周期，降低经营主体诉讼成本一可从公正司法角度分析司法机关维护高水平社会主\n义市场经济发展中公平正义，维护市场主体的的合法权益。\n关键信息④：多元化纠纷解决机制、推动相关法律法规的宣传、教育、引导工作，推动企业形成自觉守\n法、遇事找法、解决问题靠法的常态化思维一可从法治社会、全民守法角度分析建设法治社会，推动全民\n守法，提高市场经济参与者的法治意识和法治观念。\n第三步：整合信息，组织答案。注意设问限定以及教材知识与材料、时政信息等相结合。\n19.【答案】①根据《中华人民共和国劳动法》和《劳动合问法》规定，劳动者应当完成劳动任务，遵守\n劳动纪律和职业道德。尹某没有履行劳动者的义务，违反了相关法律规定，不符合敬业等社会主义核心价\n值观；②购物中心要求解除与尹某的劳动合网，符合《中华人民共和国劳动介同法》第三十九条的规定，\n因此，法院驳回尹某的诉讼请求，法院的裁判保护了用人单位合理的用工自主权，引导劳动者坚持权利义\n务相统一，构建合理健康的劳动关系。\n【分析】背景素材：劳动合同纠纷具体案例\n考点考查：劳动争议解决方式、劳动者权利和义务\n能力考查：描述和阐释事物、论证和探究问题\n核心素养：政治认同、科学精神、法治意识\n【详解】第一步：审设问。明确主体、作答范围、问题限定和作答角度。\n本题要求考生运用《法律与生活》相关知识阐释法院的裁判理由，为原因类主观试题。考生根据材料中信\n息和相关法律规定，分析法院作出该裁判的原因即可。\n第二步：审材料，通过标点符号、段落等，提取材料有效信息。\n有效信息①：尹某存在违反公司管理规章制度等问题；后来消极怠工，经常无故旷工一可联系劳动者权利\n和义务的关系分析尹某没有履行自己的劳动义务，并且不符合敬业等社会主义核心价值观。\n第16页/共18页\n\n<<<OCR p017.ocr.txt>>>\n\n===== p017.png =====\n有效信息②：购物中心多次提醒之后，尹某仍未改变，购物中心遂向尹某发出解除劳动合同通知书一可联\n系《中华人民共和国劳动合同法》规定的用人单位可以解除劳动合同的情形分析购物中心解除尹某劳动合\n同是符合法律规定的。\n③：根据设问“运用《法律与生活》相关知识阐释法院的裁判理由”一可分析法院裁判对构建合理健康的\n劳动关系的意义。\n第三步：整合信息，组织答案。注意设问限定以及教材知识与材料、时政信息等相结合。\n20.【答案】\n中非达成一系列战略性共识符合和平与发展的时代主题，是基于国家间共同利益构建中非命运共同体，在\n平等互利基础上开展合作，落实共商共建共享的全球治理观，有利于推动建设相互尊重、公平正义、合作\n共赢的新型国际关系，有利于中非携手推进现代化，构建人类命运共同体。\n【分析】背景素材：中非合作论坛北京峰会\n考点考查：当今时代主题、世界多极化、影响国际关系的决定性因素、推动经济全球化的发展、推进世界\n和平与发展的有效途径\n能力考查：描述和阐述事物、论证和探究问题\n核心素养：政治认同、科学精神\n【详解】第一步：审设问。明确主体、知识范围、问题限定和作答角度。\n本题要求考生阐明中非达成一系列战略性共识的理论逻辑和价值意蕴，“理论逻辑”即理论原因，“价值\n意蕴”即作用和意义。考生需要调用《当代国际政治与经济》的有关知识，从当今时代主题、世界多极化、\n影响国际关系的决定性因素等角度分析作答。\n第二步：审材料。提取关键词，链接教材知识。\n关键词①：一致同意在涉及彼此核心利益和重大关切问题上继续相互坚定支持一可从国际关系决定因素的\n角度分析中非之间有着广泛的共同利益由此达成一系列共识。\n关键词②：一致同意携手推动构建人类命运共同体，推进落实全球发展倡议、全球安全倡议、全球文明倡\n议一可从当今时代的主题、构建人类命运共同体等角度分析。\n关键词③：一致同意打破“小院高墙”，反对“脱钩断链”，抵制单边主义、保护主义一可联系建立新型\n国际关系的角度分析其意义。\n第三步：整合信息，组织答案。注意设问限定以及教材知识与材料、时政信息等相结合。\n21.【答案】观察视角：要结合具体制度，从理论和实践两个层面阐述制度优势。\n\n### [当前证据裁决与历史候选记录]\n\n- 当前卷状态：本题内容已合入共享BANK（见[r3合并回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/bj-2025-ft-qimo-r3-cumulative-release_merge.json)）；整卷待控制器验收。\n- 独立复核：r1整卷内容B为21/21 PASS；r2/r3累计发布包B为pass_with_residual（仅核发布包绑定与既有B链，不代表新整卷B或验收）。见[整卷内容B回执](../../../后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json)、[累计包B回执](../../../后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json)。\n- E0原卷角色：`S89765092a6f2`；源 SHA256：`89765092a6f26242da94c2aca30992e3b2a42cf803733f8b63641227d1780e70`；原卷页：p004。\n- E0原印分值：3分（原卷第一部分题头“本部分共15题，每题3分”，不是由公开答案反推）。\n- rubric_status（本候选按同卷正式载体/可见题号核定）：**存在候选**。\n- E3答案/讲评与E1正式评分材料严格分层；不把原卷后附公开答案、学生痕迹或候选细则升格为E1。\n\n### [E0原卷页与结构化图文转写]\n\n- 原卷页：[p004](assets/source_pages/p004.png)\n\n原页无独立图形对象；景区责任案例段落与四项判断按原印核对。\n\n### [逐题来源与状态]\n\n- question_id: `BJ-2025-FT-QIMO-Q12`\n- parent_path: `DeepSeek_政治题库资料库_20260918/questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q12.md`（父 SHA 见 `coverage/question_layers.jsonl`）\n- paper_source_id: `S89765092a6f2`；paper_pages: [4]\n- rubric_source_id: `S360d57a4b250`；rubric_status: `存在候选`\n- 父SHA、候选SHA及逐题分层：[coverage/question_layers.jsonl](coverage/question_layers.jsonl)；全卷谱系：[lineage.json](lineage/lineage.json)。\n- student_material_status: `N/A_with_basis_missing_source`\n- 历史候选字段（生成时）：candidate_promotion: `false`；shared_write_scope: `none`（仅记录candidate_v2生成时的隔离状态，不表示当前题库状态）。\n\n### [复核记录与历史关注项]\n\n- 历史生产记录：初始candidate_v2由单一生产工位生成；生成时独立复核尚未完成，后续已由不同实例完成r1整卷内容B复核（21/21 PASS）及r2/r3限定范围复核。\n- 原候选复核计划关注项（历史）：原卷页/图文布局、Q2/Q3/Q7/Q13/Q15/Q19/Q20结构、Q16—Q20正式题号配对、E0/E1/E3分层、分值字段、父/候选SHA及shared_write_scope；实际复核范围及结论见上方回执。",
+   "options_text": "A. ①③         B. ①④          C. ②③         D. ②④",
+   "answer_key": {
+    "text": "### [E3答案/讲评（非独立参考答案）]\n\n- 原卷同一PDF后附公开答案/讲评页：p011, p012；这些页属于同一原卷嵌入附录，不是独立参考答案文件。\n- E3只作来源层保留，不替代E0题面，也不提升为E1正式评分依据。\n- 本地证据页：答案/讲评源页目录 `assets/source_pages/`，完整原卷副本见 `sources/original/BJ-2025-FT-QIMO_paper.pdf`。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [E1正式评分材料原文（本题未确认正式题号配对）]\n\nN/A_with_basis：评分PPTX为同卷综合教学/评分载体；本轮按载体中可见题号核对后，未找到可把本题升格为正式E1的稳定题号配对。候选原文仍完整保存在 `sources/cache/S360d57a4b250/processed.full.md`，不得据相关段落反推本题正式分值。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+  "summary": "按 verify_publish_review.json 的 3 条 blocker + 5 条 major 逐条返修 scripts/publish_review.py（760→1050 行）：工作区根覆盖前置存在性+SHA门（blocker1）、回滚顺序改成“先撤销本次写入再移回归档、最后整体删归档目录”（blocker2）、写入目标一律过 dl._frozen_hits 且 dry-run 也不放过（blocker3）、事务收尾改成“复核在前、回执在后”并把归档目录/回执/备份纳入回滚与不完整核对（major4）、review_entry/review_history 自身是符号链接直接拒绝且中央状态/清单/先看这里都过 _confine（major5）、dry-run 前置算出全部写入目标给出逐文件 {action,src,dst,sha256} 计划并把 GuardRefusal 与 Gate 的退出码彻底分开（major6）、中央状态新增 review_entry/review_manifest/latest_rendered_docx_sha256/latest_rendered_pages 四个字段且清单显式写 previous_review_archive/source_state（major7）、候选目录必须落在项目根内且形如 …/协作/候选/<谁>/<批次>/ 否则门 FAIL（major8）；顺手修的 minor：--report 被 guard_write 拒绝时中文提示+exit 3且不打印 traceback、验收 JSON 同时认 expected_current_working_head_sha256/expected_working_head_sha256 两个别名键并核工作头磁盘文件 SHA、批次号解析优先匹配 batch(\\d+)/第(\\d+)批不再拿第一个数字充数、central_state_backup 模板不含 {stamp} 时自动套时间戳子目录不覆盖旧备份、manifest_sha256_ok 死代码改成真正比较清单内容与候选 SHA。修复过程中在自建回归用例里发现并顺手修了一处我自己引入的新 bug：_rollback 因为先看这里.md 本身也在 registered/moved 列表里被物理搬进归档目录，第2步“移回归档”检查 exists() 早于第4步用 backup_dir 还原，导致明明已正确复原却被误报“回滚不完整”——已改成对 central/manifest/note 这三个有独立备份的文件跳过“移回”判定，只由 backup_dir 还原+第5步统一核对真实状态。",
+  "files": {
+    "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py",
+    "lines": 1050,
+    "data_dir_created": false,
+    "changed_only_this_file": true,
+    "scratch_worked_in": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/publish_review.py",
+    "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/run_tests_publish_review.py",
+    "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py",
+    "reviewer_repro_rerun_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/publish_review_verify.py（原文件的临时副本，仅用于对着修好的脚本重跑一遍，未改动、未发布）",
+    "reviewer_repro_results": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify_rerun/results.json",
+    "pycache_check": "对比修改前后 skills/scripts/__pycache__ 文件列表，只有 book_incremental/check_drill_admission/source_intake 三个旧 cpython-312 缓存，未新增 publish_review 相关文件"
+  },
+  "usage": "命令行与写权语义不变（见工具文件头）。新增门：candidate_root（候选目录形态）、write_targets（逐文件 containment/存在性/frozen 预检，替代原来只在 --apply 里做的零散检查）；write_targets 门的 FAIL 会在 gates 列表里给出，dry-run 的 targets.files 现在是逐文件 {action,src,dst,sha256} 清单而不再只有三个目录。行为变化：工作区根若已存在同名但内容不同的文件，直接门 FAIL 拒绝（不再静默覆盖，需要人工先处理/搬走旧文件）；review_entry/review_history 本身是符号链接、或任一写入目标落在任何已登记冻结册目录，dry-run 也会立即 GuardRefusal 退出 3。",
+  "tests": [
+    {"input": "全套 run_tests_publish_review.py（含原有必测①②③④ + 本次新增回归①共 11 项子用例）", "result": "74/74 [PASS]，exit 0", "seconds": 4.2},
+    {"input": "R1：工作区根预置同名异容手改稿，--apply", "result": "exit 2（write_targets 门 FAIL），手改稿内容原封不动，dry-run 同样报告", "seconds": 0.1},
+    {"input": "R2/R4：固定命名模板（新 stem 与旧登记文件同名）+ 第6步（中央状态写入）晚期故障注入", "result": "exit 2；回滚后中央状态/清单/先看这里与写入前逐字节一致；审阅入口恢复为旧版内容而不是双双消失；归档目录整体删除；不留 PROMOTED 回执", "seconds": 0.1},
+    {"input": "R3：clone 真实 bixiu2.json 并改 frozen=false，--profile 指向该副本但 paths.* 仍是真实必修二目录，dry-run", "result": "exit 3（GuardRefusal，点名冻结册），不写任何文件；对照真实 bixiu3/bixiu2 --apply 仍是各自正确的门结果", "seconds": 0.1},
+    {"input": "R5a/R5b：review_history / review_entry 本身是指向沙盒外的符号链接，dry-run", "result": "两者均 exit 3，外部目录未产生任何新文件", "seconds": 0.1},
+    {"input": "R6a/R6b/R6c/R6d：dry-run 逐文件计划完整性、--label 含 ../ 的 stem 注入、缺 paths.review_history、工作区根目标本身是符号链接（dry-run 与 --apply 都测）", "result": "计划含 archive_dir 等全部条目；label 注入与缺 review_history 都在 dry-run 阶段 write_targets 门 FAIL（exit 2）；工作区根符号链接 dry-run 与 --apply 都是 GuardRefusal exit 3（不再是 --apply 时被吞成 2）", "seconds": 0.2},
+    {"input": "R7：正常 apply 后核中央状态新字段", "result": "review_entry/review_manifest 正确指向新文件、latest_rendered_docx_sha256/pages 更新为候选、新清单 previous_review_archive 指向本次归档、source_state 指向中央状态文件", "seconds": 0.1},
+    {"input": "R8：候选目录直接放在工作区根（不在 协作/候选/ 下），dry-run", "result": "exit 2（candidate_root 门 FAIL），工作区根未新建 发布准备 目录", "seconds": 0.1},
+    {"input": "R9/R9b：中央状态 latest_batch='R31续修_batch51' 时 --batch 52/40 的批次门", "result": "52 时正确读出 51 并 PASS（51→52）；40 时正确判定倒退 FAIL，不再被 'R31' 的 31 误导放过", "seconds": 0.1},
+    {"input": "R10：--report 指向不存在的目录", "result": "exit 3，stderr 是中文拒绝提示，不含 Traceback", "seconds": 0.1},
+    {"input": "R11：central_state_backup 模板不含 {stamp}（真实 bixiu3 现状），发布前预置一份旧备份", "result": "旧备份文件内容不被覆盖（自动套时间戳子目录），本次 apply 仍正常成功", "seconds": 0.1},
+    {"input": "重跑审查者原创的 publish_review_verify.py（A1–A18 共 31 例，独立对抗性复验脚本，未改动，只把它指向修好的脚本重跑）", "result": "31/31 例全部给出预期结果：A1/A2 晚期故障回滚后 diff 只有 backup 目录新增（明示例外）、无 changed；A3 同名场景被 write_targets 门提前拦下（未到需要回滚的地步，更安全）；A4_ok/A4_fault 手改稿 SHA 前后一致、拒绝覆盖；A5a/b/c 符号链接全部 GuardRefusal exit 3；A6 路径穿越 dry-run 与 apply 都 exit 2 且无残留；A7/A7_real_bixiu2_* 全部 exit 3 并点名冻结册；A8/A8b candidate_root 门 FAIL；A9 双别名键+磁盘工作头核对生效；A9b 工作头被人工改动即 FAIL；A10 中央状态/清单新字段正确；A11 --report 拒绝 exit 3 无 traceback；A12 六种畸形输入均 exit 2 无 traceback；A13 缺 review_history dry-run 即 exit 2；A14 批次解析歧义已修；A15 dry-run 计划含逐文件条目；A16 无 stamp 备份模板不再覆盖旧备份；A17 health 门与 bh.run_health 结论一致；A18 真实 bixiu3 batch52/53 dry-run 结论与此前一致、真实文件 SHA/mtime 全程未变", "seconds": 3.5},
+    {"input": "真实数据 dry-run：--profile bixiu3 --batch 52，真实必修三验收 JSON、真实中央状态/接管.json（只读）", "result": "exit 2；ownership FAIL（接管.json phase=offered）、batch_monotonic FAIL（52→52）、review_entry FAIL（已是此版）；其余门 PASS；测试前后对 11 项真实输入做 SHA+mtime 快照，完全一致", "seconds": 0.35}
+  ],
+  "replaces": "同一工具在同一位置就地修订，不新增/不删除其它文件；publish_review_verify.py（独立审查者脚本）未改动，只在本会话的 scratchpad 里临时复制了一份来重跑复验，不影响 Skill 母版。",
+  "known_limits": [
+    "行数增至 1050 行，超出规格“目标 ≤900 行”的建议值；本次优先修复安全/正确性缺陷（frozen 越权、符号链接逃逸、回滚顺序、覆盖保护）而未做额外精简，交由后续如需要再瘦身。",
+    "candidate_root 门用通用正则 `/协作/候选/[^/]+/[^/]+/?$` + 落在 paths.root 内来判定，没有强制逐段匹配 profiles 里的 paths.candidate_dir_pattern 占位符结构（因为沙盒测试用的 profile 副本常常不带这个字段）；已在代码注释里写明这个取舍。",
+    "工作区根“已存在同名异容文件”目前一律门 FAIL 拒绝，没有实现规格建议的另一种做法（显式 --overwrite-workspace 参数+自动备份后覆盖）；如果后续确有需要覆盖工作区根旧文件的场景，需要人工先处理/搬走该文件，或由主代理决定要不要加这个显式开关。",
+    "note 文件在 --note 缺省时仍是整页替换为机器生成的最小链接页，没有实现“保留旧先看这里里非本批次的教研前言”（工作量较大，需要解析旧 markdown 结构才能安全保留）；这一点在原验收报告里就是 minor，本次未修，沿用现状。",
+    "未实现 profile_lib.detect_profile 在缺省 --profile 时的自动探测（CLI 仍要求显式 --profile）；规格描述里提到过这个能力，但改成可选参数涉及 argparse 结构调整，为避免引入新的行为分支影响已验证路径，本次保持 --profile 必填。"
+  ],
+  "profile_fields_needed": [
+    "publish.central_state_fields", "publish.note_file", "publish.preserve", "render.identity_file",
+    "publish.archive_to", "publish.central_state_backup", "naming.batch_label", "handoff.owner_file"
+  ],
+  "needs_user_decision": [
+    "是否要给工作区根新增一个显式 --overwrite-workspace 开关（当前策略是发现同名异容文件一律拒绝，需要人工先处理）。",
+    "真实 bixiu3 的 publish.central_state_backup 模板不含 {stamp}；本次工具侧已自动兜底（撞车时套时间戳子目录），是否要顺手把 profiles/bixiu3.json 的模板也补上 {stamp}（不在本工具修改范围内，需要主代理另行改 profiles/）。"
+  ],
+  "issues_resolved": [
+    {"desc": "blocker1：--apply 复制候选到工作区根时，同名异容文件会被 shutil.copy2 静默覆盖、不备份、回滚不恢复", "how": "在 dry-run 也会跑的 compute_targets() 里预检 ws/{stem}.docx|pdf：已存在且 SHA 不同即 write_targets 门 FAIL（两种模式都挡）；SHA 相同才跳过；do_apply 里保留同样的防御性复核", "test": "R1、A4_ok/A4_fault"},
+    {"desc": "blocker2：回滚顺序错误，先移回归档文件（同名时被跳过）再删新建文件，新 stem 与旧登记文件同名时审阅入口 docx/pdf 双双消失", "how": "_rollback 改成先撤销本次所有新写入（含晋升回执），再移回归档文件，最后整体删除本次新建的归档目录；回滚完成后逐一核对 SHA，不一致就在返回文案里明确写“回滚不完整”", "test": "R2、A3（现被 blocker1 的门提前拦下，更安全）"},
+    {"desc": "blocker3：冻结册只按当前 profile.frozen 判定，写入目标从不过路径级冻结检查，能用 frozen=false 的 profile 副本绕过真实冻结册", "how": "新增 _check_frozen_target()，对审阅入口/工作区根/归档历史/中央状态/清单/先看这里/候选目录（含备份与回执）逐一跑 dl._frozen_hits；命中即 GuardRefusal 退出 3，dry-run 也不放过", "test": "R3、A7/A7_real_bixiu2_dry/A7_real_bixiu2_apply"},
+    {"desc": "major4：任一步失败后仍留半成品——归档目录里的清单副本/指纹文件/先看这里、已存在的晋升回执被覆盖不还原、复核前就写回执导致 status=PROMOTED 残留", "how": "回执改成写在写后复核通过之后（事务的最后一步）；晋升回执与其它三个中央文件一样先备份、失败时恢复；归档目录改成整体 rmtree 而不是只在“空目录”时删", "test": "R4（含在 R2 测试里）、A1、A2"},
+    {"desc": "major5：符号链接逃逸——review_entry/review_history 自身是指向 root 外的符号链接时，.resolve() 悄悄把写入带出树外；中央状态/清单/先看这里从不过 _confine", "how": "build_context 里在 .resolve() 之前先用 _reject_symlink() 检查 review_entry/review_history/workspace 的原始配置路径；compute_targets/do_apply 里把中央状态、清单、先看这里也过 _confine + _reject_symlink", "test": "R5a、R5b、A5a、A5b"},
+    {"desc": "major6：dry-run 不预检写入目标也不给逐文件计划；stem 含 '../' 、缺 review_history、工作区根目标是外链等情况都要到 --apply 才炸；GuardRefusal 被 do_apply 的 except-all 改写成退出码 2", "how": "新增 compute_targets()，在 run() 里 dry-run 和 --apply 都会调用，产出 targets.files 逐文件 {action,src,dst,sha256} 列表并做 containment/frozen/存在性检查；stem 含路径分隔符/上级目录直接 write_targets 门 FAIL；archive_to 渲染越界或缺 review_history 同样门 FAIL；do_apply 的异常处理拆成 GuardRefusal 单独一支（保持退出码 3）和其余异常（Gate，退出码 2）两支", "test": "R6a/R6b/R6c/R6d、A6、A13、A15、A5c"},
+    {"desc": "major7：中央状态更新遗漏 review_entry/review_manifest/latest_rendered_docx_sha256/latest_rendered_pages；新清单沿用旧的 previous_review_archive/source_state 等陈旧值", "how": "central_state_fields 默认值补上这四个字段并在 do_apply 第6步写入；新清单显式写 previous_review_archive=本次归档目录、source_state=中央状态文件路径，其余继承字段打包进 carried_over_from_previous_manifest 列表标注来源", "test": "R7、A10"},
+    {"desc": "major8：候选根目录只从 --docx 父目录推断，不核对是否落在 …/协作/候选/<谁>/<批次>/，候选放别处时备份/回执写进书稿工作区根", "how": "新增 gate_candidate_root()：候选目录必须落在 paths.root 内且形如 …/协作/候选/<谁>/<批次>/，不符合就门 FAIL（两种模式都查）", "test": "R8、A8、A8b"},
+    {"desc": "minor：--report 被 guard_write 拒绝时未捕获 GuardError，打印 Python traceback、退出码 1", "how": "main() 里把 dl.guard_write(...) 包进 try/except dl.GuardError，中文提示+退出码 3（与其余“拒绝写出”场景一致）", "test": "R10、A11"},
+    {"desc": "minor：验收 JSON 父稿 SHA 核对只认 expected_current_working_head_sha256 一个键，也不核工作头磁盘文件是否被人工改动", "how": "gate_acceptance 里两个别名键都读（expected_current_working_head_sha256 优先，其次 expected_working_head_sha256）；新增对中央状态记录的工作头文件做磁盘 sha256_file 核对，不存在或不符都算 FAIL", "test": "A9、A9b（沿用审查者复验脚本，未在本地新增独立用例，因为已被覆盖）"},
+    {"desc": "minor：批次递增门用 re.search(r'\\\\d+', ...) 拿字符串里第一个数字，'R31续修_batch52' 这类会被读成 31，放过倒退批次", "how": "新增 _parse_batch_num()：优先匹配 batch(\\\\d+) 或 第(\\\\d+)批，否则要求字符串里只有唯一一段数字，否则判定为解析歧义（WARN/FAIL），不再无脑取第一个数字", "test": "R9、R9b、A14"},
+    {"desc": "minor：真实 bixiu3 的 publish.central_state_backup 模板不含 {stamp}，同一候选目录第二次发布/重试会覆盖上一次的备份", "how": "backup_dir 若已存在且非空，自动在其下再套一层 stamp() 时间戳子目录，不覆盖已有内容", "test": "R11、A16"},
+    {"desc": "minor：写后复核 manifest_sha256_ok 是文件与自身比较的恒真式死代码", "how": "改成读回清单内容，比较其 docx_sha256/pdf_sha256 是否等于本次候选的实际 SHA（有意义的复核）", "test": "含在 R1/R7/sandbox1 apply 的 recheck 断言里"},
+    {"desc": "本次修复过程中自己引入又自己发现的问题：_rollback 把“先看这里.md”这类本身也走归档搬移、同时又有独立 backup_dir 备份的文件，在“移回归档”阶段错误地判定为回滚不完整", "how": "_rollback 对 central_path/manifest_path/note_path 这三个有独立 backup_dir 备份的路径，在“移回归档”环节直接跳过（改由 backup_dir 还原），归档里对应的残留副本随第 3 步整体删除归档目录一并清掉；只用第 5 步对真实磁盘状态做最终核对", "test": "重跑 publish_review_verify.py 的 A1/A2（回归前 stderr 会误报“回滚不完整”，回归后消失）"}
+  ],
+  "issues_deferred": [
+    {"desc": "先看这里.md 无 --note 时整页替换为机器生成的最小链接页，未保留旧文件里非本批次的教研前言段落", "why": "解析并安全保留旧 markdown 结构的工作量明显超出本次 blocker/major 返修范围，且原验收报告标注为 minor；沿用现状，交主代理决定是否值得单独排期"},
+    {"desc": "--profile 缺省时按 profile_lib.detect_profile(docx) 自动探测书册", "why": "规格里提到这个能力，但改成可选参数涉及 argparse 结构调整，为避免给已验证的门/回滚路径引入新的行为分支，本次保持 --profile 必填，不在返修范围内新增功能"},
+    {"desc": "候选目录形态门未强制逐段匹配 profiles 里 paths.candidate_dir_pattern 的占位符结构，只用通用正则+落在 root 内判定", "why": "多数沙盒/测试场景下的 profile 副本不带 candidate_dir_pattern 字段，严格逐段匹配会让这些合法测试场景也被拒；通用正则已能拦住 blocker8 的真实攻击面（候选放在工作区根/审阅入口子目录等）"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "summary": "扩展 drill_tool.py（v1.1.0→v1.2.0），实现 drill.layout=='card'（题卡式单练；也认 profile_probe 草案里的 'cards' 复数写法）的 extract 与 check：识别逻辑完全在本工具内实现（bh.collect_drill 对 card 没有专门分支，会退化成 paragraph 逻辑产生误判，不能直接复用）；只借用 bh.walk() 已经打好的 it['part'] 定位题卡所在的两个部分，按标题正则（默认兼容选必二'A1-001｜题源'与推理'A1-01 题源'两种真实写法）切卡，逐卡提取题干/题源/答案/解析。check 至少核：A1/A2 张数相等、逐张题源一致、A2 复述的题干片段能否在 A1 找到（不要求整体逐字相等——推理书 A2 只挑需纠正的选项落地是书稿编排约定，若按整体相等判会对着正常书稿全数假报 FAIL，已用负例验证过这条边界）、A1 不含答案/解析等标签、A2 有答案有解析、答案字母合法（仅核字符集合，不核是否真的对应正确题肢，是形式核验不是教学判断）。build 仍未实现，按规格如实拒绝并列出所需配置字段（drill.card.build_template / id_format / rebuild_zones），不伪造。table3、paragraph 两个既有版式的 extract/check/build 代码路径未改动一行，原测试 run_tests_drill_tool.py 全过（含两处按本次改动更新过预期的 card 专属断言）。",
+  "files": {
+    "modified": [
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py"
+    ],
+    "tests_added_or_updated": [
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_drill_card.py（新增，card 版式专测：两本书 extract/check 正例＋3 条负例）",
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_drill_tool.py（就地更新：把原来断言 card 一律 Abort(2) 的两处——选必二 r22 extract 与 build 拒绝信息里的字段名——改成断言新的真实行为；其余全部断言原样未动，未新增/未删除任何其他用例）"
+    ],
+    "not_touched": [
+      "batch_health.py", "docx_lib.py", "apply_patch.py", "profile_lib.py",
+      "profiles/*.json（本批未登记任何正式 profile，两本书仍用 profile_probe 草案）",
+      "collab.py（未运行）"
+    ],
+    "drill_tool_py": {"sha256": "4a3e2fa48d5fe420e45b0a65e2e84a97eb3c7afa872a5f2cd6124addc1f27cff", "lines": 1623, "version": "1.2.0"}
+  },
+  "usage": [
+    "drill_tool.py extract --docx 选必二r22.docx --out items.json --profile xuanbi2.draft.json（或已登记的 xuanbi2.json）--report r.json",
+    "drill_tool.py check --docx 选必二r22.docx --profile xuanbi2.draft.json --report r.json",
+    "drill_tool.py build ... --profile <card 配置>  → 明确 Abort(2)，退出码 2，stderr 列出 drill.card.build_template/id_format/rebuild_zones"
+  ],
+  "tests": [
+    {"input": "选必二 r22（card，profile_probe 现生成草案）extract", "result": "146/146，a1_a2_count_mismatch=false，退出 0", "seconds": 0.3},
+    {"input": "选必二 r22 check", "result": "146 张全配对；仅 1 条真实 FAIL（A2-087 缺【解析】，真实书稿缺口，非工具 bug），退出 1", "seconds": 0.3},
+    {"input": "推理 v7.50（card，profile_probe 现生成草案）extract", "result": "144/144，a1_a2_count_mismatch=false，退出 0", "seconds": 0.2},
+    {"input": "推理 v7.50 check", "result": "144 张全配对，0 FAIL，退出 0（验证了'A2 只复述需纠正选项'不误判为题干不一致）", "seconds": 0.2},
+    {"input": "负例①：临时副本删一张 A1 卡（编号 002：标题+正文段整段移除）check", "result": "抓到'A1/A2 题卡张数不相等'与'A2 有但 A1 缺失的题卡编号=[002]'，退出 1", "seconds": 0.3},
+    {"input": "负例②：临时副本 A2-005 截断掉【解析】（保留【答案】）check", "result": "抓到'A2 题卡缺解析'于编号 005（连同真实的 087），退出 1", "seconds": 0.3},
+    {"input": "负例③：临时副本 A1-004 混入'【答案】D。'文本 check", "result": "抓到'A1 题卡混入答案/解析等不该出现的标签'，labels=['【答案】']，退出 1", "seconds": 0.3},
+    {"input": "回归①：B3_52（table3）extract→check→build 往返", "result": "676/676，round-trip diff=0，未点名段落 C14N 不变，与改动前完全一致（未改 table3 代码路径）", "seconds": 17},
+    {"input": "回归②：B2_230（table3，冻结册）extract/check（只读）+ 临时 frozen:false 副本往返", "result": "820/820，round-trip diff=0，真实冻结册 build 仍拒绝退出 3，真实文件 SHA/mtime 测试前后逐一相同", "seconds": 45},
+    {"input": "回归③：哲学 R10（paragraph，profile_probe 草案）extract", "result": "646/646（未改 paragraph 代码路径，与改动前一致）", "seconds": 0.4},
+    {"input": "完整重跑 run_tests_drill_tool.py（含以上全部 table3/paragraph/build 回归用例，共约 60 条断言）", "result": "全部用例：PASS，四个真实输入文件（B3_52/B2_230/哲学R10/选必二r22）测试前后 SHA/mtime 逐一相同，Skill scripts/__pycache__ 无新增字节码", "seconds": 190}
+  ],
+  "known_limits": [
+    "build 未实现 drill.layout=='card'：题卡结构（标题＋题干＋答案/解析＋可能嵌表格）比三列表复杂得多，不能像 table3 那样直接借同组相邻行当模板；调用会 Abort(2) 并列出所需配置字段（drill.card.build_template/id_format/rebuild_zones），已在文件头与本回执列出，留给下一轮或人工。",
+    "card 版式的 --admission（准入裁决核对）未实现，同样 Abort(2)，不是配置缺失是功能缺失。",
+    "card 版式'答案字母合法'只核字符集合（drill.card.answer_alphabet_regex，默认 [A-D①-⑩]），不核该字母是否真的对应正确题肢——那是教学判断，规格'不做教学判断'条明确排除；默认字符集只到 D/⑩，五选项以上或用别的记号的书需要主代理按需登记新的正则。",
+    "card 版式'A1/A2 题干一致'不是要求整体逐字相等，是'A2 复述的每个片段能否在 A1 找到'（子串核对）：选必二绝大多数卡 A2 侧完全不复述题干（没有可比对象，只核题源与编号配对）；推理书 A2 侧只复述需要纠正的选项、正确选项常常整段不印，这是两本书各自的书稿编排约定，不是数据缺口——若改成整体逐字相等，会对着两本真实书稿产生系统性假 FAIL（改之前跑出过 146/144 张全部假报，已在过程中发现并改掉，不是遗留风险，写在这里存档）。",
+    "两本书都还没有正式登记的 profile（profiles/xuanbi2.json、profiles/reasoning.json 均不存在），本批全程用 profile_probe 现生成的草案（drill.layout='cards'，drill.part 已能覆盖题卡所在的两个部分），未做任何登记动作，也没有修改 profiles/ 目录；主代理确认后按下面 profile_fields_needed 登记。",
+    "本文件目前 1623 行，超出规格'drill_tool ≤ 1200 行'的目标（改动前已是 1337 行，本次新增约 290 行含大量中文说明注释）；未做进一步瘦身，如实记录，未来若要精简优先削减注释而非删检查逻辑。",
+    "card 识别用的是'标题段落文本匹配正则'而不是'样式白名单'：选必二用 'Index Line' 样式、推理用 'ExampleTitle' 样式作标题，但代码没有限定样式，只要求该段不在表格内且文本匹配 title_regex 就当标题——两本书验证下来没有误命中，但如果某本书的正文里恰好出现形如 'A1-数字+分隔符+文字' 的句子，会被误当卡边界，登记正式 profile 时如遇到这种书，需要加 drill.card.title_style 限定样式（本批未加这个字段，两本书用不到）。"
+  ],
+  "profile_fields_needed": {
+    "drill.layout": "'card'（正式登记用单数；profile_probe 草案生成的 'cards' 复数工具也认，但登记进 profiles/*.json 时建议统一成规格 00_规格.md 六节写的 'card'）",
+    "drill.part": "题卡所在的两个部分 id（复用 table3/paragraph 也在用的字段），选必二=[\"APPX1\",\"APPX2\"]，推理=[\"A1\",\"A2\"]（两本书草案里已经有，登记时原样带过去即可）",
+    "drill.card.title_regex": "可选，不给则用默认 r'^(A[12])-(\\d+)[｜\\s]+(.*)$'（两本书都吃得下：选必二分隔符是｜，推理是空格）",
+    "drill.card.stem_label": "可选，默认 '【题目】'；推理每卡都有这一行，选必二没有，两本书都不用单独登记",
+    "drill.card.answer_label": "可选，默认 '【答案】'，两本书一致，不用登记",
+    "drill.card.analysis_labels": "可选，默认 ['【解析】','【逐项解析】']；选必二用【解析】，推理用【逐项解析】，默认列表已两个都收，不用登记",
+    "drill.card.a1_forbidden_labels": "可选，默认 ['【答案】','【解析】','【逐项解析】','【错肢分析】']，两本书够用",
+    "drill.card.note_prefixes": "可选，默认 [drill.correction_marker（'纠正：'）, '提示：']；推理书里有的选项用'提示：……原题给定答案为 X'代替'纠正：'，已收进默认值，不用登记",
+    "drill.card.answer_alphabet_regex": "可选，默认 r'[A-D①②③④⑤⑥⑦⑧⑨⑩]'，两本书够用；若后续有 5 选项以上或用别的记号的书，登记时需要按那本书的实际写法改这个正则"
+  }
+}

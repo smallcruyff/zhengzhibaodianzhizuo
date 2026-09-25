@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "package_id": "controller_ready_r6_BJ-2026-CY-QIMO_20260922",
+  "generated_at": "2026-09-22T09:58:42.871601+00:00",
+  "r5_intermediate": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/controller_ready_r5",
+    "status": "rejected_intermediate_do_not_use",
+    "package_manifest_sha256": "f4ed02c84f4b1c9e4e3058aa7866203c52247570f9472f822d8bf99143ba6d8a"
+  },
+  "source_current": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/candidates",
+    "status": "read_only_source",
+    "self_check_sha256": "c6bd2019d7c9e573e889905f80a4d54a228439622797bb4e8333fa460da7e4d8",
+    "output_sha256_sha256": "c96cd0b1dcd24837427a416f5dbef3461c16eb0b60abd56b19dbcba10db4e243"
+  },
+  "r6_output": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/controller_ready_r6",
+    "status": "fresh_package_under_construction"
+  },
+  "summary": {
+    "question_count": 21,
+    "top_level_candidate_markdown_count": 22,
+    "changed_question_count": 21,
+    "changed_supporting_markdown_count": 1,
+    "path_reference_replacements_total": 65,
+    "evidence_prefix_replacements": 44,
+    "roles_prefix_replacements": 21,
+    "q18_content_repairs": 2
+  },
+  "entries": [
+    {
+      "file": "candidates/00_exam_front_matter.md",
+      "question_id": null,
+      "r5_sha256": "46e1f50757603181acfc222113ebb732206e5013e8d07c0f0ce34ea490e31111",
+      "source_current_sha256": "46e1f50757603181acfc222113ebb732206e5013e8d07c0f0ce34ea490e31111",
+      "r6_sha256": "3180954598ddd0031e9262896b485a3d60cae2000b25c56b930711a56851ba64",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 4,
+        "../roles/": 0
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q1.md",
+      "question_id": "BJ-2026-CY-QIMO-Q1",
+      "r5_sha256": "22a551a30992ba8eae9520cb1542192c863763ebd0deb247550a84ff21d51d61",
+      "source_current_sha256": "22a551a30992ba8eae9520cb1542192c863763ebd0deb247550a84ff21d51d61",
+      "r6_sha256": "dfa3ebab1bc45009cc599a979327c9a34e112a840fb564b5d4f0de4df7b48fac",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q10.md",
+      "question_id": "BJ-2026-CY-QIMO-Q10",
+      "r5_sha256": "2099cd6b373466d9a8bd00a9b733a4d9204458e87a8b40026b9fc2583f24f47a",
+      "source_current_sha256": "2099cd6b373466d9a8bd00a9b733a4d9204458e87a8b40026b9fc2583f24f47a",
+      "r6_sha256": "a532b7d28aa6f6cb07bf18fead0f96e91f9805b50b4f17e7ddeb334b05c0337d",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q11.md",
+      "question_id": "BJ-2026-CY-QIMO-Q11",
+      "r5_sha256": "15c98fe0b10544fbf07ab70ae472c542768dd3a501b27a9e9c07a4390584b763",
+      "source_current_sha256": "15c98fe0b10544fbf07ab70ae472c542768dd3a501b27a9e9c07a4390584b763",
+      "r6_sha256": "a819b84e91594ecaea97c9ad42cbde8e68b45d8a01c83495e523cda1f9646e18",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q12.md",
+      "question_id": "BJ-2026-CY-QIMO-Q12",
+      "r5_sha256": "3c53649ae76f6691fc7d26080fae6985114d052dbc0e42e8279ded4b7bb76ce1",
+      "source_current_sha256": "3c53649ae76f6691fc7d26080fae6985114d052dbc0e42e8279ded4b7bb76ce1",
+      "r6_sha256": "eaa571a972d7a0b6c1d27e2ea0c019f649171c97b4d9616d6b1dff0420f72ef4",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q13.md",
+      "question_id": "BJ-2026-CY-QIMO-Q13",
+      "r5_sha256": "3519e8a497bcd8ee2e4d35040a09eb0322ad58f86e6194de3a41bb6790657d90",
+      "source_current_sha256": "3519e8a497bcd8ee2e4d35040a09eb0322ad58f86e6194de3a41bb6790657d90",
+      "r6_sha256": "2280d702d7b0f11d0b78f16130d547e0aaa0c10ef8630585c0d69ee2e0ebdc88",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q14.md",
+      "question_id": "BJ-2026-CY-QIMO-Q14",
+      "r5_sha256": "91bd8f28a48958249075d2b81301c7bba68b53de3758fddb7334649187f72be0",
+      "source_current_sha256": "91bd8f28a48958249075d2b81301c7bba68b53de3758fddb7334649187f72be0",
+      "r6_sha256": "186350b89ffefd2882fea24f550138aa399a1a612439fc3ce619941b280744e4",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q15.md",
+      "question_id": "BJ-2026-CY-QIMO-Q15",
+      "r5_sha256": "f586303c7cced23d2bc5f8e2da9ac1fa10e1648e5b5d8e38266369a4519acdbd",
+      "source_current_sha256": "f586303c7cced23d2bc5f8e2da9ac1fa10e1648e5b5d8e38266369a4519acdbd",
+      "r6_sha256": "9fec4e4c97696e0d965e59cddb699f9e79e8f1462f4f886474c89b77650f3dbf",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "question_id": "BJ-2026-CY-QIMO-Q16",
+      "r5_sha256": "4c5a3e15f739e3d09acd4f92dbf677b722637e5ea9b7afc544a5d083493e6ed9",
+      "source_current_sha256": "4c5a3e15f739e3d09acd4f92dbf677b722637e5ea9b7afc544a5d083493e6ed9",
+      "r6_sha256": "0d4e4ab1b96577128d53cd2e079142ecb23c615be1706688ea05c4b3051f4fdb",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 4,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q17.md",
+      "question_id": "BJ-2026-CY-QIMO-Q17",
+      "r5_sha256": "257891a39172d075107ae404923374f85c351db53d294dfdec84385dc6895b9d",
+      "source_current_sha256": "257891a39172d075107ae404923374f85c351db53d294dfdec84385dc6895b9d",
+      "r6_sha256": "f6836bf37bc92ce1fd7ecb9ea092c865efe4e37da86f7b2dd690bcfb45957124",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 2,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "question_id": "BJ-2026-CY-QIMO-Q18",
+      "r5_sha256": "96757979f4efaa29191473488e226fe5de102aa00e534ae26d8cf36fd56db6c7",
+      "source_current_sha256": "96757979f4efaa29191473488e226fe5de102aa00e534ae26d8cf36fd56db6c7",
+      "r6_sha256": "8c3fa74769518163c08bf2e9269485c8f98f012e88f5993827450c39176aeef9",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 3,
+        "../roles/": 1
+      },
+      "content_repairs": [
+        "E1 line 3 removes misplaced “需结合材料” while retaining suspicious typo",
+        "E1 line 4 restores exact “（1分，需结合材料）”"
+      ]
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "question_id": "BJ-2026-CY-QIMO-Q19",
+      "r5_sha256": "e6b2db9082b95de2df156968c6d695b5733f69a4bd958c0bf0835d934722dca8",
+      "source_current_sha256": "e6b2db9082b95de2df156968c6d695b5733f69a4bd958c0bf0835d934722dca8",
+      "r6_sha256": "6210fe0f49b962b153b5fb004c988faf0603b1ebdf80b7267aece4660e09d493",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 6,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q2.md",
+      "question_id": "BJ-2026-CY-QIMO-Q2",
+      "r5_sha256": "cc6b8f8af4dec4b169ef3121890d0c2a1be801116d1521928f0fafa029a83dcd",
+      "source_current_sha256": "cc6b8f8af4dec4b169ef3121890d0c2a1be801116d1521928f0fafa029a83dcd",
+      "r6_sha256": "38ce237c64b1a683bc3edae1f2aa0ef6a002695f39660015ba3783e5f957f6cb",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q20.md",
+      "question_id": "BJ-2026-CY-QIMO-Q20",
+      "r5_sha256": "5c06ce9445f1ea26fb4de6cf07d87a9951265de3ffb560b3d928d38f32071bfc",
+      "source_current_sha256": "5c06ce9445f1ea26fb4de6cf07d87a9951265de3ffb560b3d928d38f32071bfc",
+      "r6_sha256": "ff5f80d8a6ef52bfe6cc541c75ec14e2980a2dfff8b00c416c4fbb41cca29432",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 2,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "question_id": "BJ-2026-CY-QIMO-Q21",
+      "r5_sha256": "7ba079ce081396ec94037779f628ef7e0ba258761dd75e927a7b6b8bf0a682e2",
+      "source_current_sha256": "7ba079ce081396ec94037779f628ef7e0ba258761dd75e927a7b6b8bf0a682e2",
+      "r6_sha256": "37f7e6ef9a9c1dc19ca79fc45c9e280edb2b8deeb7f275d1130528372a343589",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 4,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q3.md",
+      "question_id": "BJ-2026-CY-QIMO-Q3",
+      "r5_sha256": "93830a44524e4b890c127ca24b2f63e15ad5bcaceb29ab3e60a83825a17203c5",
+      "source_current_sha256": "93830a44524e4b890c127ca24b2f63e15ad5bcaceb29ab3e60a83825a17203c5",
+      "r6_sha256": "7ff49eef9018f069f5fbd0b6e0ca969bb5ca8e43bbed452af7e2be6db3af0f6b",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q4.md",
+      "question_id": "BJ-2026-CY-QIMO-Q4",
+      "r5_sha256": "ed8076b936374945b8cd3efe46a3ddf3f27e7d99780aab3bb3bf52f5241a8d5e",
+      "source_current_sha256": "ed8076b936374945b8cd3efe46a3ddf3f27e7d99780aab3bb3bf52f5241a8d5e",
+      "r6_sha256": "201575e31d1e56a01993d183d81a586e1e9fc5e617828c9471af0fee0b97725e",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 3,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q5.md",
+      "question_id": "BJ-2026-CY-QIMO-Q5",
+      "r5_sha256": "45b7eae74751e01001a923daa21142058e26d9faf5e38001b8dedb71a8319856",
+      "source_current_sha256": "45b7eae74751e01001a923daa21142058e26d9faf5e38001b8dedb71a8319856",
+      "r6_sha256": "0080324f18bec05cbc2ecf4750303d52f9cb4945cc30fd1db1d718ecdac918d0",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q6.md",
+      "question_id": "BJ-2026-CY-QIMO-Q6",
+      "r5_sha256": "92803c4023b4e38b6cfee12faf5a63f0d1a7b83295bf177471a5d5b531b5ec2e",
+      "source_current_sha256": "92803c4023b4e38b6cfee12faf5a63f0d1a7b83295bf177471a5d5b531b5ec2e",
+      "r6_sha256": "edfb953d6c9d631796464c61987deaa5fe359d9ff15859192416bd55128bef78",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 3,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q7.md",
+      "question_id": "BJ-2026-CY-QIMO-Q7",
+      "r5_sha256": "f129a3df357b9e7ff766efc2760ede3926714c1a0dce3bbd04eb221981a7acd2",
+      "source_current_sha256": "f129a3df357b9e7ff766efc2760ede3926714c1a0dce3bbd04eb221981a7acd2",
+      "r6_sha256": "62d82ee7d64baaa0c61eff79fe045aa4cb0e3291e6117ae2f7db4b76ac55a10b",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q8.md",
+      "question_id": "BJ-2026-CY-QIMO-Q8",
+      "r5_sha256": "d1e114248927047bfcc416462a12492722adad9cca34335ec687b17ef4e3456d",
+      "source_current_sha256": "d1e114248927047bfcc416462a12492722adad9cca34335ec687b17ef4e3456d",
+      "r6_sha256": "9bfd1208790a6399dd22cbdc507c21abea7b829f18cc8b7a628f2037922e3769",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q9.md",
+      "question_id": "BJ-2026-CY-QIMO-Q9",
+      "r5_sha256": "7218a1357c89ae915c947544ba2603a2294ba5549eded49270d73fedf4a53e58",
+      "source_current_sha256": "7218a1357c89ae915c947544ba2603a2294ba5549eded49270d73fedf4a53e58",
+      "r6_sha256": "fc2d61bf11172d23546026f82cf03b903bd6f64bf71a5fa5d23c0ed238ab15fb",
+      "changed_from_source": true,
+      "changed_from_r5": true,
+      "path_replacements": {
+        "../evidence/": 1,
+        "../roles/": 1
+      },
+      "content_repairs": []
+    }
+  ],
+  "integrity_guards": {
+    "current_source_candidates_modified": false,
+    "r5_modified": false,
+    "shared_question_bank_modified": false,
+    "index_modified": false,
+    "manifest_modified": false
+  }
+}

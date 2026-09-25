@@ -1,0 +1,127 @@
+{
+ "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+ "status": "accepted_for_all_available_sources",
+ "question_hashes": {
+  "BJ-2023-HD-ERMO-Q1": "5789912e66f01fb0de8f22c565ac7594f704b0c3b1b9dc7f280a9ab9ca62b680",
+  "BJ-2023-HD-ERMO-Q2": "96c81c83122032a69b2d46f9e86a6de4778d9aef3023dd52e97b90c31bc15d82",
+  "BJ-2023-HD-ERMO-Q3": "8973f2d827d2377f5f854c36a34e0eb965aa945e0c9dfccfc462c61a14fd8873",
+  "BJ-2023-HD-ERMO-Q4": "1140cd003defaf7b4062db2a0ce5f43c7f5cf0a2c887911afb27e56f47406746",
+  "BJ-2023-HD-ERMO-Q5": "23010f8e65c36fe2b718481f915dbd124b8567aaa52695f7f899a3e1dab7d002",
+  "BJ-2023-HD-ERMO-Q6": "6c9332c8c582d93af1e530b6a2487ab29f4adff66eed94614525016e211e7965",
+  "BJ-2023-HD-ERMO-Q7": "692fa16223f22d929d613fe916687a4dbda2c71c2110b6ee020b63fb0b9ddf4a",
+  "BJ-2023-HD-ERMO-Q8": "c7634e02c04f1635e3445f98caea510f6adacd3f0e5edfb70f56a90f71a5a7c6",
+  "BJ-2023-HD-ERMO-Q9": "9cad0e26c23d94c55cdae15b7e2c7d3a1e4a23dfc1fa58376ab30e73c4d6b17d",
+  "BJ-2023-HD-ERMO-Q10": "1d10f0cdd05bc2a0407677e80474de8f21a9b2f491307a0f5e372e2f3b6830d8",
+  "BJ-2023-HD-ERMO-Q11": "3129f3265f856ed81b679db74932161e09eeb785a903c0e3edc26fc6f130fee7",
+  "BJ-2023-HD-ERMO-Q12": "b105bae8f22c5674c557e2ab6950c5a584bc2c41df60dce54580e4c15dbb4adc",
+  "BJ-2023-HD-ERMO-Q13": "ddddedc173eba3cf2bc51a0df9a33383f2bc198657324bb9905c05beff5737fe",
+  "BJ-2023-HD-ERMO-Q14": "5ed70c1cc565342485c4b6216bbd65cc169bff4b51208471661830068a70fdb3",
+  "BJ-2023-HD-ERMO-Q15": "11f83918b7e0affe74ff132f28e6dfcd40a9507a67f8e36bdf7b12a6f9e5e99c",
+  "BJ-2023-HD-ERMO-Q16": "b36b0c5f50113a299e7fb743e39ca6a05a9853af04546e9b5b557064e7a6d59c",
+  "BJ-2023-HD-ERMO-Q17": "d978d6e9b278c81d880e8fdbd9043543a4ced7226befa0e2d39820a05f47cb3d",
+  "BJ-2023-HD-ERMO-Q18": "4374aae3d15bbe68b077fa87d37960de96aae0619258ed1cd88519920bf309fe",
+  "BJ-2023-HD-ERMO-Q19": "95561de45ff5364f2274ffdc7985e6403ac0cff213bf90470a6f8fb6d71b3130",
+  "BJ-2023-HD-ERMO-Q20": "0e4c5ce98a636e9e50546625d50a8304fa02ba213e9b33ff59fc7583f66f530c",
+  "BJ-2023-HD-ERMO-Q21": "fef167e1d3c933b4ad9bd372a126b888362d86baf17c9dcedc54b97d8ffcb602"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "Q1-Q15没有对应题级E1材料；原件范围内缺少该证据，题目MD按N/A_with_basis保留，不推断分值或标准答案。",
+  "无个人学生样卷/个人原答、批注或实得分；s38/s43为群体性阅卷反馈，已作为讲评转写且未冒充个体样例。",
+  "原卷印刷标题为‘第二学期期末练习／2023.05’，工程卷号与评分材料登记为海淀二模；身份差异并列保留，题面未静默改名。"
+ ],
+ "source_index_path_base": "shared exam directory",
+ "controller_delta_history": [
+  {
+   "delta_id": "bj-2023-hd-ermo-r3",
+   "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+   "applied_at": "2026-09-23T01:43:26.666890+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/bj-2023-hd-ermo-r3_merge.json",
+   "question_hashes_updated": {
+    "BJ-2023-HD-ERMO-Q11": "3129f3265f856ed81b679db74932161e09eeb785a903c0e3edc26fc6f130fee7",
+    "BJ-2023-HD-ERMO-Q16": "bfc34d39de97b7452d83b86062d4a1a4f391291e3065079e604a0ac9779dc3e3",
+    "BJ-2023-HD-ERMO-Q17": "d978d6e9b278c81d880e8fdbd9043543a4ced7226befa0e2d39820a05f47cb3d",
+    "BJ-2023-HD-ERMO-Q18": "4374aae3d15bbe68b077fa87d37960de96aae0619258ed1cd88519920bf309fe",
+    "BJ-2023-HD-ERMO-Q19": "35424fb9c2bca8499581ab70caf11c3d4800e59652435c4ed04df5cd18461a87",
+    "BJ-2023-HD-ERMO-Q20": "51fdd55253c9c64d069af4881054d9f6aa9713e73d590c158e99905b9c927e74",
+    "BJ-2023-HD-ERMO-Q21": "94e1c67f63a628a9a9885f80aafb05770de91fdd353658c7fd202e743cac0acd"
+   }
+  },
+  {
+   "delta_id": "bj-2023-hd-ermo-ctl1",
+   "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+   "applied_at": "2026-09-23T01:43:48.462309+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/bj-2023-hd-ermo-ctl1_merge.json",
+   "question_hashes_updated": {
+    "BJ-2023-HD-ERMO-Q19": "95561de45ff5364f2274ffdc7985e6403ac0cff213bf90470a6f8fb6d71b3130",
+    "BJ-2023-HD-ERMO-Q20": "0e4c5ce98a636e9e50546625d50a8304fa02ba213e9b33ff59fc7583f66f530c",
+    "BJ-2023-HD-ERMO-Q21": "170754140db12e0b7fc533aac6f38871dfd939a09efe5bccb9ffcbbe7a826183"
+   }
+  },
+  {
+   "delta_id": "bj-2023-hd-ermo-r4",
+   "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+   "applied_at": "2026-09-23T02:49:17.690187+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/bj-2023-hd-ermo-r4_merge.json",
+   "question_hashes_updated": {
+    "BJ-2023-HD-ERMO-Q11": "3129f3265f856ed81b679db74932161e09eeb785a903c0e3edc26fc6f130fee7",
+    "BJ-2023-HD-ERMO-Q16": "b36b0c5f50113a299e7fb743e39ca6a05a9853af04546e9b5b557064e7a6d59c",
+    "BJ-2023-HD-ERMO-Q17": "d978d6e9b278c81d880e8fdbd9043543a4ced7226befa0e2d39820a05f47cb3d",
+    "BJ-2023-HD-ERMO-Q18": "4374aae3d15bbe68b077fa87d37960de96aae0619258ed1cd88519920bf309fe",
+    "BJ-2023-HD-ERMO-Q19": "95561de45ff5364f2274ffdc7985e6403ac0cff213bf90470a6f8fb6d71b3130",
+    "BJ-2023-HD-ERMO-Q20": "0e4c5ce98a636e9e50546625d50a8304fa02ba213e9b33ff59fc7583f66f530c",
+    "BJ-2023-HD-ERMO-Q21": "170754140db12e0b7fc533aac6f38871dfd939a09efe5bccb9ffcbbe7a826183"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2023_hd_ermo_q21",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:22.537244+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/g7_r2_bj_2023_hd_ermo_q21_merge.json",
+   "question_hashes_updated": {
+    "BJ-2023-HD-ERMO-Q21": "fef167e1d3c933b4ad9bd372a126b888362d86baf17c9dcedc54b97d8ffcb602"
+   }
+  }
+ ],
+ "exam_id": "BJ-2023-HD-ERMO",
+ "accepted": true,
+ "question_count": 21,
+ "score_total": 100,
+ "source_pages": {
+  "rubric": 43,
+  "paper": 8,
+  "answer": 3
+ },
+ "source_page_total": 54,
+ "source_roles": {
+  "rubric": "Scd8eee06ecf3",
+  "paper": "Sdf79f0c4f74e",
+  "answer": "S0a294f8799f7"
+ },
+ "bounded_residual": [
+  {
+   "qid": "BJ-2023-HD-ERMO-Q21",
+   "location": "评分PPT s38动画显示状态",
+   "partial_reading": "静态PNG只显示‘1. 2. 3. 4.《》’编号；原生XML文字层完整记录四条群体性学生问题总结并已逐条转写。逐步显现/动画状态本身无法由单张静态图复现，原PPTX及静态页图均保留。",
+   "affects_answering": false,
+   "basis": "s38是群体讲评反馈页，不是题面或正式评分采分依据；完整四条文字由原生文字层交叉核验。"
+  }
+ ],
+ "review_receipts": {
+  "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/primary_review_accept.json",
+  "independent": [
+   "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/r1_verify/verification.json",
+   "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/r3_verify/verification.json",
+   "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2023-HD-ERMO/r4_verify/verification.json"
+  ]
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "codex-bj-2023-hd-ermo-accept-20260922",
+   "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+   "at": "2026-09-23T02:57:45.378118+00:00"
+  }
+ ],
+ "source_conversion_accepted": true,
+ "accepted_at": "2026-09-23T02:58:50.460261+00:00"
+}

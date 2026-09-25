@@ -1,0 +1,1616 @@
+{
+  "schema_version": 1,
+  "receipt_type": "isolated_full_visual_audit_candidate",
+  "exam_id": "BJ-2024-DC-YIMO",
+  "created_at": "2026-09-22T03:11:14.484659+00:00",
+  "readonly_shared_scope": true,
+  "promotion_performed": false,
+  "source_files": {
+    "original_paper": {
+      "path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/试卷/试卷.pdf",
+      "sha256": "74cdfac9253763bf12c9443d036ebbeab12693ba7015a2f335d19ccfcab6d96b",
+      "pages": 12,
+      "visual_opened_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "answer_candidate_S7b4eece29632": {
+      "path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/补充材料/北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治答案(1).pdf",
+      "sha256": "7b4eece2963205d8ac02ef13063307a3dad70cf6542b6169f3ed34276f16e115",
+      "pages": 1,
+      "visual_opened_pages": [
+        1
+      ],
+      "role": "pending_independent_adjudication"
+    },
+    "rubric_analysis_S4b2073bcc9e2": {
+      "path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/细则.pptx",
+      "sha256": "4b2073bcc9e26f626b49b66dd6e0c64ec93650292d50719806830d7aea9fa3ce",
+      "slides": 74,
+      "visual_opened_slides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "role": "analysis_or_scoring_material_candidate_not_automatically_E1"
+    }
+  },
+  "manifest_identity": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+    "sha256_at_audit_start": "c98eda420d293ed4ba7c617401ab7a0f48a3d234e605f462b25b3ec2ca4012be"
+  },
+  "parent_question_sha256_at_audit_start": {
+    "BJ-2024-DC-YIMO-Q1.md": "ae0ea1c78340bbf1584557644592a23c7c91c8b0e2c19a7e28a20013c50a0dd7",
+    "BJ-2024-DC-YIMO-Q10.md": "79715c86a2d0c631286da2a386a38631a19e93c9f761db0c9c04b98f69188657",
+    "BJ-2024-DC-YIMO-Q11.md": "7f635a226875641f00d3156f940db48d8d6719d7c29a72282169efd451d083fc",
+    "BJ-2024-DC-YIMO-Q12.md": "91dd69be68410a8a1210fc1100d4f4bb8d79f966eeeb14e9aef64ed9e3bbc2e7",
+    "BJ-2024-DC-YIMO-Q13.md": "f8792d8e6dba663e10d32746e755e0e2d6c0539e82ace77c9983787476a231e8",
+    "BJ-2024-DC-YIMO-Q14.md": "7b24cfdf7d83467bba846af35ba4be140b5109d2d3af6997be37d278fe95a55f",
+    "BJ-2024-DC-YIMO-Q15.md": "4d5cf9621f6a5257253782a0eb2cc78ea0a5e801a6ee7fd6f6c0472e77424bce",
+    "BJ-2024-DC-YIMO-Q16.md": "d7aea00b88fe53e137d80064e18c66de1634fe91e2d6ed89b3368e34dc8fe5ce",
+    "BJ-2024-DC-YIMO-Q17.md": "baf5af8a7cc82f9d428da222deb9c8db691aa002fcf76589e9a188f23cc3f994",
+    "BJ-2024-DC-YIMO-Q18.md": "3c7feee045153f1a81906b5951c3991c2d4e1b0cfa9b0caaae2fd23e26afcca4",
+    "BJ-2024-DC-YIMO-Q19.md": "d665412c7b1988c84766a6a27e22bb899e9432ca3fb7ce1fce03d50bcc18007b",
+    "BJ-2024-DC-YIMO-Q2.md": "81f2b5d33fa628af5f9976a040728f4c83a90801f337f059529fb59c19398543",
+    "BJ-2024-DC-YIMO-Q20.md": "d5c58b8be5036d7a2455e733df931b14d523b8e7df5a2269bb974585fbbfc10a",
+    "BJ-2024-DC-YIMO-Q21.md": "5f4baa9b8796c05d253c721e9acadb7222509864fa7075dacc134aa8e769eee1",
+    "BJ-2024-DC-YIMO-Q3.md": "c9020c57f65fd2a0424c1b063c167f8abf2dafb15f2b8381e1a6435e5ad16df6",
+    "BJ-2024-DC-YIMO-Q4.md": "ec4767cf6e7d407b82cfebb6cd623405553727fad4e59b7400220f81c051c692",
+    "BJ-2024-DC-YIMO-Q5.md": "42c2a36376b8334ff21e9e0d172d2e0d6242872aca342bdb0e678ad6736e8ed4",
+    "BJ-2024-DC-YIMO-Q6.md": "92be5ef64e14b9ecf8df9bdd6ae78d6cbeda8ff060eebdd4558a3225222f8a6f",
+    "BJ-2024-DC-YIMO-Q7.md": "2997ec383021aab0274bb35a856a88244e119ce7378d7258c28ca6bef7f335a2",
+    "BJ-2024-DC-YIMO-Q8.md": "f87edfa4f72ebd6c9162bb47c391d78b4b0d3ada8bd6d4001cf57c77e8e468b3",
+    "BJ-2024-DC-YIMO-Q9.md": "6da59b01baf478f65c4aa2128383a02e8972426dacf2beaa4cf2410c14e7565e"
+  },
+  "question_count": 21,
+  "question_records": [
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q1",
+      "parent_sha256": "ae0ea1c78340bbf1584557644592a23c7c91c8b0e2c19a7e28a20013c50a0dd7",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+      "candidate_sha256": "56db508dab134dcc0715f92b54e19863a1f2fddf7ec6ffb58b828b2b616ab23e",
+      "pages": [
+        1
+      ],
+      "slides": [
+        3
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q2",
+      "parent_sha256": "81f2b5d33fa628af5f9976a040728f4c83a90801f337f059529fb59c19398543",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q2.md",
+      "candidate_sha256": "ae829f55d3f90f0b10e43821d26b659002395ee034e699f6e9aaa6f7f4eed6ca",
+      "pages": [
+        1
+      ],
+      "slides": [
+        4
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q3",
+      "parent_sha256": "c9020c57f65fd2a0424c1b063c167f8abf2dafb15f2b8381e1a6435e5ad16df6",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q3.md",
+      "candidate_sha256": "e8f712bf014bd4a614185188bd4284acd7e52c23c38172431e64f8d642f66c25",
+      "pages": [
+        2
+      ],
+      "slides": [
+        5
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q4",
+      "parent_sha256": "ec4767cf6e7d407b82cfebb6cd623405553727fad4e59b7400220f81c051c692",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q4.md",
+      "candidate_sha256": "ba40437d4af0d7caea581dfb8bf374ed6d9855457dff7aa6cba20d4ac8df3d17",
+      "pages": [
+        2
+      ],
+      "slides": [
+        6,
+        7
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q5",
+      "parent_sha256": "42c2a36376b8334ff21e9e0d172d2e0d6242872aca342bdb0e678ad6736e8ed4",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q5.md",
+      "candidate_sha256": "bd373994acccd8f9561353c245c83fff102ddc18689503a7f6f2b573aadf24b5",
+      "pages": [
+        2
+      ],
+      "slides": [
+        8
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q6",
+      "parent_sha256": "92be5ef64e14b9ecf8df9bdd6ae78d6cbeda8ff060eebdd4558a3225222f8a6f",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q6.md",
+      "candidate_sha256": "53f64cc1c2004307e71cd34586a796832bed7a0d6aae3e98d8f5c032c2007346",
+      "pages": [
+        3
+      ],
+      "slides": [
+        9,
+        10
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q7",
+      "parent_sha256": "2997ec383021aab0274bb35a856a88244e119ce7378d7258c28ca6bef7f335a2",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q7.md",
+      "candidate_sha256": "3a49e9cc3ebf65746adb48a2efd791a69f906086a3c22d65848f2bc4fdad4749",
+      "pages": [
+        3
+      ],
+      "slides": [
+        11
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q8",
+      "parent_sha256": "f87edfa4f72ebd6c9162bb47c391d78b4b0d3ada8bd6d4001cf57c77e8e468b3",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q8.md",
+      "candidate_sha256": "d3dc341d5c18d8df73343d3071848761600e2a82935eb2b8317a94c329cfd227",
+      "pages": [
+        3
+      ],
+      "slides": [
+        12
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q9",
+      "parent_sha256": "6da59b01baf478f65c4aa2128383a02e8972426dacf2beaa4cf2410c14e7565e",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q9.md",
+      "candidate_sha256": "e5756a14b2224b2d3fb1cf7c030dab48eeea5cd0c87a1b42c21921ece8bc0d4d",
+      "pages": [
+        3
+      ],
+      "slides": [
+        13
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q10",
+      "parent_sha256": "79715c86a2d0c631286da2a386a38631a19e93c9f761db0c9c04b98f69188657",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q10.md",
+      "candidate_sha256": "eb97a9de16e4b0c8f063eb693c23fa323c1dec42995777ac8bd787c8ab4ddc36",
+      "pages": [
+        4
+      ],
+      "slides": [
+        14,
+        15
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q11",
+      "parent_sha256": "7f635a226875641f00d3156f940db48d8d6719d7c29a72282169efd451d083fc",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q11.md",
+      "candidate_sha256": "b63becc0dc838049786817b51c54d5e56295aed61a933dbe1973ace0ce38186e",
+      "pages": [
+        4
+      ],
+      "slides": [
+        18,
+        19
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q12",
+      "parent_sha256": "91dd69be68410a8a1210fc1100d4f4bb8d79f966eeeb14e9aef64ed9e3bbc2e7",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q12.md",
+      "candidate_sha256": "e2b2f1e8b1a3c849cdea31736d1716dfc37fdb7b699b436279280a2e693f139a",
+      "pages": [
+        4
+      ],
+      "slides": [
+        20
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q13",
+      "parent_sha256": "f8792d8e6dba663e10d32746e755e0e2d6c0539e82ace77c9983787476a231e8",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q13.md",
+      "candidate_sha256": "9800b2981b456c18963cd3804f7d25525601d88ec1f9c86597f37d3bf278314f",
+      "pages": [
+        5
+      ],
+      "slides": [
+        21
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q14",
+      "parent_sha256": "7b24cfdf7d83467bba846af35ba4be140b5109d2d3af6997be37d278fe95a55f",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q14.md",
+      "candidate_sha256": "6262406030854080a4559168b5eb920e69753b6cb440d6f276fbf6548c5f2bef",
+      "pages": [
+        5
+      ],
+      "slides": [
+        22
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q15",
+      "parent_sha256": "4d5cf9621f6a5257253782a0eb2cc78ea0a5e801a6ee7fd6f6c0472e77424bce",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q15.md",
+      "candidate_sha256": "be4be6657c4fba18f9674e489d16b4907e803c2774cdc544c3cabfe0e0d0daf1",
+      "pages": [
+        5
+      ],
+      "slides": [
+        23
+      ],
+      "student_samples": [],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "parent_sha256": "d7aea00b88fe53e137d80064e18c66de1634fe91e2d6ed89b3368e34dc8fe5ce",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q16.md",
+      "candidate_sha256": "a0d7b41e36439590993cae322b11db71ce558c9545c63db4b72c8cb88e2f2623",
+      "pages": [
+        6
+      ],
+      "slides": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "student_samples": [
+        {
+          "slide": 28,
+          "score": "7.0",
+          "note": "手写答卷，右侧在线评分显示7.0；未将难辨字静默改写。"
+        },
+        {
+          "slide": 29,
+          "score": "7.0",
+          "note": "手写答卷，右侧在线评分显示7.0；保留原图及涂改。"
+        },
+        {
+          "slide": 30,
+          "score": "0",
+          "note": "画面有红色“没答题”，右侧显示0；表示空答示例。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q17",
+      "parent_sha256": "baf5af8a7cc82f9d428da222deb9c8db691aa002fcf76589e9a188f23cc3f994",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q17.md",
+      "candidate_sha256": "35920ebd148737590ffae02d3788f2fe6a7a523882ee7deaf092f57066140912",
+      "pages": [
+        6
+      ],
+      "slides": [
+        33,
+        34,
+        35
+      ],
+      "student_samples": [
+        {
+          "slide": 35,
+          "score": "7.0",
+          "note": "手写答卷，右侧在线评分显示7.0；保留原图及批改界面。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "parent_sha256": "3c7feee045153f1a81906b5951c3991c2d4e1b0cfa9b0caaae2fd23e26afcca4",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q18.md",
+      "candidate_sha256": "c90e5ffdc9c7c08bf72bbec218646704a49b8f766cb796231a8e6463273d87f2",
+      "pages": [
+        7,
+        8
+      ],
+      "slides": [
+        40,
+        41,
+        42,
+        45,
+        46,
+        47,
+        50,
+        51,
+        52
+      ],
+      "student_samples": [
+        {
+          "slide": 42,
+          "score": "8.0",
+          "note": "第18题（1），右侧显示8.0；红色采分标记保留。"
+        },
+        {
+          "slide": 46,
+          "score": "6.0",
+          "note": "第18题（2），右侧显示6.0；手写原答与批改界面保留。"
+        },
+        {
+          "slide": 47,
+          "score": "6.0",
+          "note": "第18题（2）另一张手写答卷，右侧显示6.0；涂改保留。"
+        },
+        {
+          "slide": 52,
+          "score": "6.0",
+          "note": "第18题（3），右侧显示6.0；原手写内容保留。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q19",
+      "parent_sha256": "d665412c7b1988c84766a6a27e22bb899e9432ca3fb7ce1fce03d50bcc18007b",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q19.md",
+      "candidate_sha256": "dd6cc48363cc6482b5e97d9d1b12402fcec04e62e56fdcac0c9403d222b83ead",
+      "pages": [
+        9
+      ],
+      "slides": [
+        57,
+        58
+      ],
+      "student_samples": [
+        {
+          "slide": 58,
+          "score": "未在画面中显示",
+          "note": "手写样卷图像；未把无法稳定辨认的字强行转写。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q20",
+      "parent_sha256": "d5c58b8be5036d7a2455e733df931b14d523b8e7df5a2269bb974585fbbfc10a",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q20.md",
+      "candidate_sha256": "e65c37f475de511e6be74363a1433f2ff79e2c08304a0b9d747a29dac2c95aa1",
+      "pages": [
+        9
+      ],
+      "slides": [
+        63,
+        64,
+        65
+      ],
+      "student_samples": [
+        {
+          "slide": 65,
+          "score": "8.0",
+          "note": "第20题手写样卷，画面左侧红色“8分”及逐点红色标记保留。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q21",
+      "parent_sha256": "5f4baa9b8796c05d253c721e9acadb7222509864fa7075dacc134aa8e769eee1",
+      "candidate_path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q21.md",
+      "candidate_sha256": "66903ad1bde5130ee65fe0eeec523a8725402fb6e4b9ad1aab81871244afccae",
+      "pages": [
+        10
+      ],
+      "slides": [
+        71,
+        72,
+        73,
+        74
+      ],
+      "student_samples": [
+        {
+          "slide": 73,
+          "score": "未在画面中显示",
+          "note": "第21题手写样卷，原图保留，字迹不作猜测性规范化。"
+        },
+        {
+          "slide": 74,
+          "score": "未在画面中显示",
+          "note": "第21题另一张手写样卷，原图及底部作答区提示保留。"
+        }
+      ],
+      "promotion_status": "not_promotable"
+    }
+  ],
+  "whole_exam_gate": {
+    "question_text_and_visual_structure": "candidate_visual_pass_21_of_21",
+    "answers": "candidate_layer_only_S7_role_pending",
+    "formal_rubric": "not_confirmed_E1",
+    "student_layer": "image_preserved_for_Q16_Q21_but_handwriting_not_fully_transcribed; no student source found for Q1_Q15",
+    "source_page_coverage": "pass_all_12_paper_pages_and_all_74_pptx_slides_accounted_for",
+    "promotion_status": "not_promotable",
+    "blocking_reasons": [
+      "S7b4eece29632 source-role adjudication pending",
+      "independent second reviewer not yet run on this candidate",
+      "handwritten student samples require bounded uncertainty/image-first treatment"
+    ]
+  },
+  "asset_inventory": {
+    "original_pages": [
+      {
+        "path": "assets/original/p001.png",
+        "sha256": "ab378c5c48004930de4b1e697812dbe728604864510167943715b407c1eb0020"
+      },
+      {
+        "path": "assets/original/p002.png",
+        "sha256": "4539ded57209bea26824311ef51372797b481b09bbd67cd467ccfbd2bb178aee"
+      },
+      {
+        "path": "assets/original/p003.png",
+        "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+      },
+      {
+        "path": "assets/original/p004.png",
+        "sha256": "24bd513dd43906fb8337c440ff0ceb7a0be94b28ff80bf5c16529b7c472c39f7"
+      },
+      {
+        "path": "assets/original/p005.png",
+        "sha256": "13053abd7a9a9cb4171ab24637dd1942b789a6256ac6cc4f602f0a1571e39630"
+      },
+      {
+        "path": "assets/original/p006.png",
+        "sha256": "a846c50777339eaa029702b7cca92893728eb84f10c4f343e040a99cf113bfa2"
+      },
+      {
+        "path": "assets/original/p007.png",
+        "sha256": "fe5084379a2dc0faebbd630d2fc9553a2cde09f4b91fdb5b28bb3f30d034e021"
+      },
+      {
+        "path": "assets/original/p008.png",
+        "sha256": "3fd55ae67f5e3c973dbb64cf1a59b809f8f82ec7ab238fdb9c629252038c20db"
+      },
+      {
+        "path": "assets/original/p009.png",
+        "sha256": "fd0f301ce43257d508972b0f873118e8b9f28263c019527111adaa7c26de80b8"
+      },
+      {
+        "path": "assets/original/p010.png",
+        "sha256": "0d25cb80e740b53920ade33e63f6518462e046160fbe4a752c370a336f0c5264"
+      },
+      {
+        "path": "assets/original/p011.png",
+        "sha256": "d586f67b2c3d9869dd4d69d14abbf65f8c12e7f035383a4c02d59e66881e7600"
+      },
+      {
+        "path": "assets/original/p012.png",
+        "sha256": "d586f67b2c3d9869dd4d69d14abbf65f8c12e7f035383a4c02d59e66881e7600"
+      }
+    ],
+    "answer_pages": [
+      {
+        "path": "assets/answer/p001.png",
+        "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+      }
+    ],
+    "rubric_slides": [
+      {
+        "path": "assets/rubric/p-01.png",
+        "sha256": "d64641cf5a030bb24f0f78a4d7c591caac909d4f9238c47edd32e27ebad33cb1"
+      },
+      {
+        "path": "assets/rubric/p-02.png",
+        "sha256": "96d34456a467ffef31382f0e0ef7a6ef6ff5a2429b0462a305f32ba7c712b207"
+      },
+      {
+        "path": "assets/rubric/p-03.png",
+        "sha256": "807ba55231192cc7ec21c1e16b12884eacd9bb1351916b605334ba3f29b4642a"
+      },
+      {
+        "path": "assets/rubric/p-04.png",
+        "sha256": "b58d6a7ed211874382041b9d378ed08e542874713b84fa5d364ac122d2dcb689"
+      },
+      {
+        "path": "assets/rubric/p-05.png",
+        "sha256": "72ad31a1435a295487aa843c73ec4d2958e650d227d08ea89ca087418ed22618"
+      },
+      {
+        "path": "assets/rubric/p-06.png",
+        "sha256": "06a151c60758441a56934a6c0d0893ecfb2fc6d07110ae04f83ddc550a1d5631"
+      },
+      {
+        "path": "assets/rubric/p-07.png",
+        "sha256": "617580e1e78a549598ace7846553be5ed7bac5d42a6b5e795343141d193ae5d7"
+      },
+      {
+        "path": "assets/rubric/p-08.png",
+        "sha256": "73cae588e4385e3e0bf53ba794488ab3c5d7e84d285562c35e3e891a6f3a9ee4"
+      },
+      {
+        "path": "assets/rubric/p-09.png",
+        "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+      },
+      {
+        "path": "assets/rubric/p-10.png",
+        "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+      },
+      {
+        "path": "assets/rubric/p-11.png",
+        "sha256": "d9e8755b7086008dd2198b729b932b6aabec4436c476cbec8580ecaf1cd6923f"
+      },
+      {
+        "path": "assets/rubric/p-12.png",
+        "sha256": "72d9d919afe35b59446f031bbcd762b665d1ab32443d2f959612cd3cf6842880"
+      },
+      {
+        "path": "assets/rubric/p-13.png",
+        "sha256": "fbf9b55a0889a68674d7c52842993ee1ee0e9e7bb7b010081d80aa4aa1558e6e"
+      },
+      {
+        "path": "assets/rubric/p-14.png",
+        "sha256": "de8dd2d92ffb00e6e3fa60a6adef1e0732e58d44efb6b5d0b2dcd46bb54ea210"
+      },
+      {
+        "path": "assets/rubric/p-15.png",
+        "sha256": "a5d4d9544c1f8daed5e5b5ceed25d4940c3655950cb86a0a14c7efd0d64663f6"
+      },
+      {
+        "path": "assets/rubric/p-16.png",
+        "sha256": "43c4f50238408826d799fa1a36daa0ff560f1151d4163e58c2063f1d363cd633"
+      },
+      {
+        "path": "assets/rubric/p-17.png",
+        "sha256": "28f424b34fc03e3e27a21d19d40085381600be7ccd396516c34337e7da571ed2"
+      },
+      {
+        "path": "assets/rubric/p-18.png",
+        "sha256": "0c750924d5edfe365d24e61ec889aff31b05c9468e936761609e3e96e49be041"
+      },
+      {
+        "path": "assets/rubric/p-19.png",
+        "sha256": "4956b6e1e03c62a0bc27e880fc90c1c43b29a1a90090e68dfd27ce0967a497ca"
+      },
+      {
+        "path": "assets/rubric/p-20.png",
+        "sha256": "98328dfcc317c7a286cdb309f93963297b490186144d7405d8eb6ccc0b0163f8"
+      },
+      {
+        "path": "assets/rubric/p-21.png",
+        "sha256": "10c56d63328b588fe1e49eeba1600726683079aa06ffbad8a7f0eaadc9a4b1f4"
+      },
+      {
+        "path": "assets/rubric/p-22.png",
+        "sha256": "c30d57c4dfceebeaf033db53ba0224f51a40b90da086bd116f455e997b533b85"
+      },
+      {
+        "path": "assets/rubric/p-23.png",
+        "sha256": "82212b95244408f2cc32959bf123b2f26bb32ff073ebe48eb91c0bde6bfa897b"
+      },
+      {
+        "path": "assets/rubric/p-24.png",
+        "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+      },
+      {
+        "path": "assets/rubric/p-25.png",
+        "sha256": "32cb7e01d034f5fce31531f6498a0723faf8d14d93100a8a83b75e9006dcee8a"
+      },
+      {
+        "path": "assets/rubric/p-26.png",
+        "sha256": "ea296e3216f106a0acf499b72e86fa2372ebc2fe8d1077c2bcb5e1f181d2ed64"
+      },
+      {
+        "path": "assets/rubric/p-27.png",
+        "sha256": "cfec71777293d21704ca58681d0856a5356303fce2cbca434d93cf686211ef9f"
+      },
+      {
+        "path": "assets/rubric/p-28.png",
+        "sha256": "c44f9186280b231319b91d03e8b325653d29dcc73137db9575967e30618dbb78"
+      },
+      {
+        "path": "assets/rubric/p-29.png",
+        "sha256": "92c81ab8231044149e228819ee3492cab69d004bd9642e465bbb200edfb2bd47"
+      },
+      {
+        "path": "assets/rubric/p-30.png",
+        "sha256": "24d12908c0d68f6e816d4dc634a048622a7febaee021d70f4010886b6a1fcd3e"
+      },
+      {
+        "path": "assets/rubric/p-31.png",
+        "sha256": "ef7fec230782bedceb19cedddf7f3ab7d4eb6140b85b7fe30811edcc76fb680e"
+      },
+      {
+        "path": "assets/rubric/p-32.png",
+        "sha256": "b7d33d8566e04b916bdc319671f3f56f704e1100e7b911db9da19ee1282e966a"
+      },
+      {
+        "path": "assets/rubric/p-33.png",
+        "sha256": "4d2ed8dd7dbeab1c492d9291e342663d7aae7ff2754fec4aa4565e4b9988ecef"
+      },
+      {
+        "path": "assets/rubric/p-34.png",
+        "sha256": "8a55260ddee4a6403260402128fb49a76cc4bceb848017eeeb74643ae58af75f"
+      },
+      {
+        "path": "assets/rubric/p-35.png",
+        "sha256": "6281683852b032b73de3fdaf36f9a3d3e427005b3aa8abf42a7b4ef0cc882b3b"
+      },
+      {
+        "path": "assets/rubric/p-36.png",
+        "sha256": "2361e4869ea76224488d630a4250162866b01c7d2b1c3ad5bf5b3dcabef0264b"
+      },
+      {
+        "path": "assets/rubric/p-37.png",
+        "sha256": "c7d07dd566d4e6bc139a231edaccff4d45483d58339e6ebcdf6d556471bb7818"
+      },
+      {
+        "path": "assets/rubric/p-38.png",
+        "sha256": "8806b017c9672dbce06089bb0f0c53d13117ca5a11c71ca62129af34e683017a"
+      },
+      {
+        "path": "assets/rubric/p-39.png",
+        "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+      },
+      {
+        "path": "assets/rubric/p-40.png",
+        "sha256": "62f8790044ddb9c8e598a50a23029280e7ce936f22fcb924c513d1aa11bb7680"
+      },
+      {
+        "path": "assets/rubric/p-41.png",
+        "sha256": "a0cc3b9edb3f8eebc534e9e0ca89eb853b67acafcf467e469c216c2775e2a8ae"
+      },
+      {
+        "path": "assets/rubric/p-42.png",
+        "sha256": "0a462631c7d97d75097f1d4724841b56885b586ed3db2c97426aaae32ad2adcb"
+      },
+      {
+        "path": "assets/rubric/p-43.png",
+        "sha256": "519af11d2b73ea12c46de9435fa74f1c28e92109a926a12e9ead5e9a87794e6d"
+      },
+      {
+        "path": "assets/rubric/p-44.png",
+        "sha256": "c8c593fe396cc09fc2e5e1d5a01ef865457c81514951520f60b09050a210b878"
+      },
+      {
+        "path": "assets/rubric/p-45.png",
+        "sha256": "6441a5277488ee37bb9f6a75b2e161d304a063bdff897022dcdab1ef9ac4a4e8"
+      },
+      {
+        "path": "assets/rubric/p-46.png",
+        "sha256": "81ae5d004ee8a6f7299fd66a25111c170664154ab986d29b7de41cbebb3bd280"
+      },
+      {
+        "path": "assets/rubric/p-47.png",
+        "sha256": "446543a3d2af84cab6df127030867bbe1b0ab88b44e76ec0a7c910baabc01a55"
+      },
+      {
+        "path": "assets/rubric/p-48.png",
+        "sha256": "4f092d349313e1152ed7d7e511a3d8d466fcc1a9e3fe3d5d47a3f26d3d338a9d"
+      },
+      {
+        "path": "assets/rubric/p-49.png",
+        "sha256": "5f98ad1b1bb40e9090a365d4f445d0a55078831ab61d35682b5760164448d6b3"
+      },
+      {
+        "path": "assets/rubric/p-50.png",
+        "sha256": "0e9c68e571de3762927c640d8375c3c80540c3d1a6dd114667c2632c99cd2b47"
+      },
+      {
+        "path": "assets/rubric/p-51.png",
+        "sha256": "6e000628b8959f0edd053d8c047bec83437358223529c7ba13ecc298f42b6cd7"
+      },
+      {
+        "path": "assets/rubric/p-52.png",
+        "sha256": "e624b3efc72d6279c2c93516114399f9b2f429fb46d2270e3a16f6f70be4474c"
+      },
+      {
+        "path": "assets/rubric/p-53.png",
+        "sha256": "9adedc7aa77918cd86c22cc2ce3df9d4d73074e0d89c4ff66bac3efa38116935"
+      },
+      {
+        "path": "assets/rubric/p-54.png",
+        "sha256": "69dd4817e80b5ed99639b65c7569448561a6a218ce44b5b60146601a95f378f7"
+      },
+      {
+        "path": "assets/rubric/p-55.png",
+        "sha256": "a6236a5a244cca7a1160977151f60355e11452430304185187d4ab726bc90eca"
+      },
+      {
+        "path": "assets/rubric/p-56.png",
+        "sha256": "1ba0694e8219d1c79c4f2ea23f034d09967fed45d091fc71058a0280e43aa001"
+      },
+      {
+        "path": "assets/rubric/p-57.png",
+        "sha256": "8516d3503567f6d2c840b167d61adc529be7bf01f442ff7c21339209ef9ec198"
+      },
+      {
+        "path": "assets/rubric/p-58.png",
+        "sha256": "efbe41ce88a54436e893e51908f7d1cafdea165faa00c272b7345010c07a3995"
+      },
+      {
+        "path": "assets/rubric/p-59.png",
+        "sha256": "da90ca76ce9323cff905aa718920f7a39c58fb3e284fa1192f465780da6da8e2"
+      },
+      {
+        "path": "assets/rubric/p-60.png",
+        "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+      },
+      {
+        "path": "assets/rubric/p-61.png",
+        "sha256": "b950d54f9eb19ee5e5f8d281f7479fc4fe84ced89f3b201840574be332c83ca4"
+      },
+      {
+        "path": "assets/rubric/p-62.png",
+        "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+      },
+      {
+        "path": "assets/rubric/p-63.png",
+        "sha256": "8e618d038a6db7434608057e9dbca95d314fcf2df08b592cd96d9fc5a2d9ea6d"
+      },
+      {
+        "path": "assets/rubric/p-64.png",
+        "sha256": "fa63bad3e366e3643e70966098d684af73ad03ba84348fda935ad1bc9f93c26d"
+      },
+      {
+        "path": "assets/rubric/p-65.png",
+        "sha256": "6253273bea865b87b9e466b358d32c0a77689ed14d2666db4f9606984fca8846"
+      },
+      {
+        "path": "assets/rubric/p-66.png",
+        "sha256": "24c11d889e0682954d7b6d77b23822eab367092427f72ab08290648bbc4c17c1"
+      },
+      {
+        "path": "assets/rubric/p-67.png",
+        "sha256": "967c79ada35fe391e666bb8bc86999db2a871431247af44b29ace4757851627e"
+      },
+      {
+        "path": "assets/rubric/p-68.png",
+        "sha256": "ab826ab2651275933d73208adbbcec5fa9cccf0436c446e98b7e3b03983ca21e"
+      },
+      {
+        "path": "assets/rubric/p-69.png",
+        "sha256": "c31bd605156c9b905c8512f93d6df40ee2f2f6cebb2e62beed2e9b26b9938537"
+      },
+      {
+        "path": "assets/rubric/p-70.png",
+        "sha256": "fe5eb1a674f43229d08a1dfe7d380ab48bb9a3de787f2b2d3fbee1f43e10f0c0"
+      },
+      {
+        "path": "assets/rubric/p-71.png",
+        "sha256": "3226092d183a498f6798a5beebe7522e5b48dfa6382af757f8799b603f98f26b"
+      },
+      {
+        "path": "assets/rubric/p-72.png",
+        "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+      },
+      {
+        "path": "assets/rubric/p-73.png",
+        "sha256": "4b344ba9b7397520cd6973837040c12b688e00db448d81ae98b41b0a66f53dc2"
+      },
+      {
+        "path": "assets/rubric/p-74.png",
+        "sha256": "02671b6e73a12803242955c8cf0370a4396afff71b959ff0f0a861b0beb1318b"
+      }
+    ],
+    "ocr_text": [
+      {
+        "path": "assets/ocr/p001.ocr.txt",
+        "sha256": "8c6b57efd0cf1717995e09eb24501c6c22581dc752bb683184305b43daaed00c"
+      },
+      {
+        "path": "assets/ocr/p002.ocr.txt",
+        "sha256": "bd3cfc67af0a1585d8228fdb4380761624113b937bfbbf239c5d9b19be63e041"
+      },
+      {
+        "path": "assets/ocr/p003.ocr.txt",
+        "sha256": "2982d60d41ac2d519fd3f7ef19395b879931569dc3f90e0d3b6dec4972f388a5"
+      },
+      {
+        "path": "assets/ocr/p004.ocr.txt",
+        "sha256": "9c5fed34e1c83973e1ce22c769a89d8672519e3f21cba8b9d551e9b5a72eb19d"
+      },
+      {
+        "path": "assets/ocr/p005.ocr.txt",
+        "sha256": "d1490700b89f9aedc7f66204faaa30b969c75701a0045acdef9085aace3da621"
+      },
+      {
+        "path": "assets/ocr/p006.ocr.txt",
+        "sha256": "759de32cf6e7d2ff083712416b87a5e4770419bebcd86fd22a5fba2fde5f200f"
+      },
+      {
+        "path": "assets/ocr/p007.ocr.txt",
+        "sha256": "25fcf0465d3b7e0b54f6c6e416515cd48b6addcf3faecbb384c9f2719c2caa25"
+      },
+      {
+        "path": "assets/ocr/p008.ocr.txt",
+        "sha256": "635fa38471cc2224b1bc55631dab4973775a5cb0200c07a8439263d4706b9ab5"
+      },
+      {
+        "path": "assets/ocr/p009.ocr.txt",
+        "sha256": "068ec6f2b0e84881ea28f9ca828205a6e1eeeb41f8cb1b69a3e1aa264bb09460"
+      },
+      {
+        "path": "assets/ocr/p010.ocr.txt",
+        "sha256": "2c75888fcccf3f5d03395bff5086604e6417340fb626ff4add293405a6cc17da"
+      },
+      {
+        "path": "assets/ocr/p011.ocr.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "assets/ocr/p012.ocr.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "assets/ocr/p001.ocr.txt",
+        "sha256": "476c8beb236452ed36a727632607b48c37d5dbc920c9b573f66051f7a3aa9e48"
+      }
+    ],
+    "pptx_text": [
+      {
+        "path": "assets/pptx_text/slide001.txt",
+        "sha256": "6200a94feeded368bcb9250ef1270a0f6fdc5935f070d26c3290e2fb7eb6c04f"
+      },
+      {
+        "path": "assets/pptx_text/slide002.txt",
+        "sha256": "7d97b6fb05fc7646c38907bfddf06bc69c062594674529c6642b3bafad76ceac"
+      },
+      {
+        "path": "assets/pptx_text/slide003.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide004.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide005.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide006.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide007.txt",
+        "sha256": "3b673695671133f309921fba434d35009d84a50cc179692a268bef679ecfd622"
+      },
+      {
+        "path": "assets/pptx_text/slide008.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide009.txt",
+        "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+      },
+      {
+        "path": "assets/pptx_text/slide010.txt",
+        "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+      },
+      {
+        "path": "assets/pptx_text/slide011.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide012.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide013.txt",
+        "sha256": "bb7aea4a86866e50f34b3813ef8aae0d936b3f28d668a99803ffd60cce5ca557"
+      },
+      {
+        "path": "assets/pptx_text/slide014.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide015.txt",
+        "sha256": "f7b3a9f4cf931feb6801efa9953c7821a7ccf892b3054493b71e2e2278b7bbcf"
+      },
+      {
+        "path": "assets/pptx_text/slide016.txt",
+        "sha256": "717b0b689c362ac69a4357c5cbd887cda4667f1a1789f6ef870a4036064273c7"
+      },
+      {
+        "path": "assets/pptx_text/slide017.txt",
+        "sha256": "cdd47503079a15f48ff1ee98fcd8206793b09e440255b6139e5fce6190de8072"
+      },
+      {
+        "path": "assets/pptx_text/slide018.txt",
+        "sha256": "739fb48d4e3742be7ba16577b8032019082a379e3c5193d8558655bcd02ece19"
+      },
+      {
+        "path": "assets/pptx_text/slide019.txt",
+        "sha256": "b6c79425f7d8bd40f3bf06248469920d7acb6ace8dcc50c95c99cddb8bd518d3"
+      },
+      {
+        "path": "assets/pptx_text/slide020.txt",
+        "sha256": "ee8731b75d4b9c383dcf96a2aa2089dadc818f9b0e6ab126ec3628dd13c80fb6"
+      },
+      {
+        "path": "assets/pptx_text/slide021.txt",
+        "sha256": "3aec1f49f8edd229d468ef1b9eb5e8b30b6f4a5f5c67f9c03076a6abb1a98dc1"
+      },
+      {
+        "path": "assets/pptx_text/slide022.txt",
+        "sha256": "63be65b78b0c30cf8f48595666b148127d1b57f8329edff1ba5a17d6f504c21b"
+      },
+      {
+        "path": "assets/pptx_text/slide023.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide024.txt",
+        "sha256": "a4ab4f6cff2a053d479bc8265ba4208cd14647c3c11c96c34ef9f6064072f1df"
+      },
+      {
+        "path": "assets/pptx_text/slide025.txt",
+        "sha256": "609b0f7e32b9ba857888c65f79111e422c6f3a46d69e120a6ccefc8ea7a6ca11"
+      },
+      {
+        "path": "assets/pptx_text/slide026.txt",
+        "sha256": "6c5c01315ab2daa33449b68933404372dde4df3e0959f172e48b8c82a368cc1f"
+      },
+      {
+        "path": "assets/pptx_text/slide027.txt",
+        "sha256": "54b7787686db526e2b2b0a482eb935f23cc6e4c8a6bff2ea8c46b415de6375dc"
+      },
+      {
+        "path": "assets/pptx_text/slide028.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide029.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide030.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide031.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide032.txt",
+        "sha256": "3aee0a9d9303b4941fadfadde879e1cc8b9b8acd26723b50c436cd4c5e5ca191"
+      },
+      {
+        "path": "assets/pptx_text/slide033.txt",
+        "sha256": "133b91b9ec00c0d4f2bcdc4dcc339a8bf2b5d641ce7ba1981776cf95c1022858"
+      },
+      {
+        "path": "assets/pptx_text/slide034.txt",
+        "sha256": "d96f3c7b7d754e7371ff1455c6b59a2a74134a246955247bf9ecc18ec11c3f2f"
+      },
+      {
+        "path": "assets/pptx_text/slide035.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide036.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide037.txt",
+        "sha256": "c2a4ea6d82ca6eb970bd9b2d39c5f4453ab911e136188020d5748b092f39eacd"
+      },
+      {
+        "path": "assets/pptx_text/slide038.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide039.txt",
+        "sha256": "a8c856f598a3cacd1db54564da4ab14b326c7948127b1a4549a6134f7d84a76f"
+      },
+      {
+        "path": "assets/pptx_text/slide040.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide041.txt",
+        "sha256": "2fcddc1d824dd303b131331e6711d72da814e7ac81bc8c6a3fe7cfc603786d63"
+      },
+      {
+        "path": "assets/pptx_text/slide042.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide043.txt",
+        "sha256": "befa4ec52145c2e77904c6b31f4530683d140995a9171b9eccafe8fe1f2af4d2"
+      },
+      {
+        "path": "assets/pptx_text/slide044.txt",
+        "sha256": "15b144d0a4e9b185e602a426b2180fa04167c7ffd5e5e9c2b8ab5e8d7ac547d6"
+      },
+      {
+        "path": "assets/pptx_text/slide045.txt",
+        "sha256": "9e92daf33c58805c95ab8a20379e5ebbdb1175b25838958b0dcd507e114e557c"
+      },
+      {
+        "path": "assets/pptx_text/slide046.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide047.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide048.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide049.txt",
+        "sha256": "632c25ba46dfa5da196808f9168f13685196d68e88a38e68a9c5fe14c6a49380"
+      },
+      {
+        "path": "assets/pptx_text/slide050.txt",
+        "sha256": "52e85968447b4aa1faeae9ab5e3f1df7488cc38b1fcbc0aa813aec5d21684f94"
+      },
+      {
+        "path": "assets/pptx_text/slide051.txt",
+        "sha256": "e6bf0967531b09fbdbf1fb589a186f5e53aea9c5a8896b2d650ecbe4cb378af2"
+      },
+      {
+        "path": "assets/pptx_text/slide052.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide053.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide054.txt",
+        "sha256": "476621c90edb3079e83bec3a8c3a30c2e028a3ee1e072d23bba2c83c7c679029"
+      },
+      {
+        "path": "assets/pptx_text/slide055.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide056.txt",
+        "sha256": "c41c920c9eb67259d442f6fba8fb8fbfdfd7e7264a49a196dc0388a5c9de8090"
+      },
+      {
+        "path": "assets/pptx_text/slide057.txt",
+        "sha256": "56315d2d2e223cbe1ae2a2e4801a069f75ef89056c36baea2aaaede608d74ca3"
+      },
+      {
+        "path": "assets/pptx_text/slide058.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide059.txt",
+        "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+      },
+      {
+        "path": "assets/pptx_text/slide060.txt",
+        "sha256": "93e4c446d77833d35d26432ce82894ef9617d063d6a50fe7fc3959c8f517c0fb"
+      },
+      {
+        "path": "assets/pptx_text/slide061.txt",
+        "sha256": "2dce9812a14178ff79705f63e93d92cece36b41e362e7cdefdc44b20cba2aec1"
+      },
+      {
+        "path": "assets/pptx_text/slide062.txt",
+        "sha256": "0158582f66c43e9bd129697687ae9945ff89eabc5964fe93bd98a0eae0d822fc"
+      },
+      {
+        "path": "assets/pptx_text/slide063.txt",
+        "sha256": "344ac74c3154983badbb9c04099825fcb0738be1c52980462519d2c58ea64410"
+      },
+      {
+        "path": "assets/pptx_text/slide064.txt",
+        "sha256": "308f71248dc61a785b3c8b4ea84ab66c73f7f900f5e8236a2a5ba40fe39b369b"
+      },
+      {
+        "path": "assets/pptx_text/slide065.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide066.txt",
+        "sha256": "835d85c37d7825b00f3a76c5d7c28bf841b85b8756fea766047ef2cc8e50d9e2"
+      },
+      {
+        "path": "assets/pptx_text/slide067.txt",
+        "sha256": "7d982005de7417eebc85a48c01a4452c6a7284422bde035226ed3c8d04535132"
+      },
+      {
+        "path": "assets/pptx_text/slide068.txt",
+        "sha256": "16065320acd6522105aa1f945481a0a5280d7eac41947e05badca15a88817039"
+      },
+      {
+        "path": "assets/pptx_text/slide069.txt",
+        "sha256": "81126d58cb50f86dd229a1d7c618861aa2af1abc06880e74fb3a5313a19d3cec"
+      },
+      {
+        "path": "assets/pptx_text/slide070.txt",
+        "sha256": "bfabeaa7767e5530c66d0eafd725b2c09dd188727ede9ddc56bf4e00313132f6"
+      },
+      {
+        "path": "assets/pptx_text/slide071.txt",
+        "sha256": "d3525ca89655ec222aaf996b2e261e4b9d1921b6173cb2746839b8e71e03df24"
+      },
+      {
+        "path": "assets/pptx_text/slide072.txt",
+        "sha256": "45637c68e4465fbc72e20b51b9016f3db6989442a1610382572abefda4158da6"
+      },
+      {
+        "path": "assets/pptx_text/slide073.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "assets/pptx_text/slide074.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "pptx_embedded": [
+      {
+        "path": "assets/pptx_embedded/slide002_shape01.png",
+        "sha256": "c5ee576708e7a77b0d33e3f0d169873b95db3dd05c7d7efa2eba46f2ba7351e0"
+      },
+      {
+        "path": "assets/pptx_embedded/slide002_shape02.png",
+        "sha256": "3c0d3cd309f0f4178f26596fc0211806a75b74f910fc635696523deb1d0209c8"
+      },
+      {
+        "path": "assets/pptx_embedded/slide003_shape01.png",
+        "sha256": "eef5031b4231835a942937aa4e7ba336f8e0ce7aa4a255290a2fb6d19ec44592"
+      },
+      {
+        "path": "assets/pptx_embedded/slide004_shape01.png",
+        "sha256": "4f6166ba84b7e2631d10f5cb94c500b8de509ab628093ceb2194e87074f86fc6"
+      },
+      {
+        "path": "assets/pptx_embedded/slide005_shape01.png",
+        "sha256": "e249e286881dfe75b983c5484fdcf16bed10e6c9e6896f56994cafba09581b5e"
+      },
+      {
+        "path": "assets/pptx_embedded/slide006_shape01.png",
+        "sha256": "356314b469e605b44192b798c3cfda83d942cf1906fe99e21bb7c096fd635c5f"
+      },
+      {
+        "path": "assets/pptx_embedded/slide007_shape02.png",
+        "sha256": "fe4472307a20ab19e2a60113805ff8b486030d5c78372b1d65a408617fba49ec"
+      },
+      {
+        "path": "assets/pptx_embedded/slide008_shape01.png",
+        "sha256": "34793b215d267c473fb57cff73a41b03fae9557b26a7607b8bc7969f06f8a8bc"
+      },
+      {
+        "path": "assets/pptx_embedded/slide009_shape01.png",
+        "sha256": "55df5295dd4a76effa09d4b725ecc7fe05ef5333fa7cc01f6c4553ab8193805e"
+      },
+      {
+        "path": "assets/pptx_embedded/slide010_shape01.png",
+        "sha256": "55df5295dd4a76effa09d4b725ecc7fe05ef5333fa7cc01f6c4553ab8193805e"
+      },
+      {
+        "path": "assets/pptx_embedded/slide011_shape01.png",
+        "sha256": "1dd3a5c812f497b949987bf7f55cd6043a0a72e7743f0a49e5dacdad7039b9ce"
+      },
+      {
+        "path": "assets/pptx_embedded/slide012_shape01.png",
+        "sha256": "aa7b578cacdb6a11d11fba0a8774ddbe8785597d294b6d5eb924e6b7fde6d72d"
+      },
+      {
+        "path": "assets/pptx_embedded/slide013_shape01.png",
+        "sha256": "56da9453eaa57626468b2f43f7335a11b445efdab1bd5d93cab996eed336e8b8"
+      },
+      {
+        "path": "assets/pptx_embedded/slide013_shape02.png",
+        "sha256": "2a01ec298e2e9d460261ae7333f04dfa1cc1be0822f3f6838711d9d481fed815"
+      },
+      {
+        "path": "assets/pptx_embedded/slide014_shape01.png",
+        "sha256": "26521f8c282c717b3a077e57cde42de23621bea624de35e78fd97b4e64e7eac4"
+      },
+      {
+        "path": "assets/pptx_embedded/slide015_shape01.png",
+        "sha256": "26521f8c282c717b3a077e57cde42de23621bea624de35e78fd97b4e64e7eac4"
+      },
+      {
+        "path": "assets/pptx_embedded/slide017_shape01.png",
+        "sha256": "7bb3711f608cffa149e86d2791111dc76af505f557e1298984e62432d9515cb7"
+      },
+      {
+        "path": "assets/pptx_embedded/slide017_shape03.png",
+        "sha256": "8699b5b9cd2a67a84f232ec396e1c757ac6970b8425fd12a436a53668112a2ef"
+      },
+      {
+        "path": "assets/pptx_embedded/slide018_shape01.png",
+        "sha256": "d123c2341be49fcda5b0f6bada000c57d5a90d3de868d0fe13583ca3ca409674"
+      },
+      {
+        "path": "assets/pptx_embedded/slide019_shape03.png",
+        "sha256": "9dabe42d4e7c89be1beb86ce457a54e2b5694dcbb3d07a327c14e7fbd3a5d2f7"
+      },
+      {
+        "path": "assets/pptx_embedded/slide020_shape01.png",
+        "sha256": "3442c3ed928d2fdcf438c9c814f7ddbe4b5f56edde5ea4dae1b16daa7b0c89c2"
+      },
+      {
+        "path": "assets/pptx_embedded/slide021_shape01.png",
+        "sha256": "3e11e70120ed16088936ad043736cdcc72253793b7a189b1afee225062d0b788"
+      },
+      {
+        "path": "assets/pptx_embedded/slide021_shape05.png",
+        "sha256": "e2028efeb2807f4bc4bc46720bfafaa75edd75dcf7507d8b49fe6b428d950b13"
+      },
+      {
+        "path": "assets/pptx_embedded/slide022_shape01.png",
+        "sha256": "6f83e0f8e9a0d4074e897a6708d01e2dc3fae5b6a1f9b58be71baf229c8b4ba4"
+      },
+      {
+        "path": "assets/pptx_embedded/slide023_shape01.png",
+        "sha256": "35de78b14215c15086530f494cd1cc9e60775ad571df8a4183988a4a3cccfbc7"
+      },
+      {
+        "path": "assets/pptx_embedded/slide025_shape02.png",
+        "sha256": "6d04edf095d3be65389487a373ea1c681ace579b1ca91b395f00307a42d47fa6"
+      },
+      {
+        "path": "assets/pptx_embedded/slide031_shape02.png",
+        "sha256": "4235de8b8944f0dfbd2d6773a224ffdad8b8455587cbaf6b6387e1558a79fa7b"
+      },
+      {
+        "path": "assets/pptx_embedded/slide033_shape01.png",
+        "sha256": "76e58584e7573bb3ff0cdb9d6bdcb18d275178d2aa76aa12bd250b958e110e0f"
+      },
+      {
+        "path": "assets/pptx_embedded/slide034_shape02.png",
+        "sha256": "76e58584e7573bb3ff0cdb9d6bdcb18d275178d2aa76aa12bd250b958e110e0f"
+      },
+      {
+        "path": "assets/pptx_embedded/slide035_shape01.jpg",
+        "sha256": "5873354459ba943365b11710ee752c8df30fb2401105923258951a2b30b364a1"
+      },
+      {
+        "path": "assets/pptx_embedded/slide036_shape01.png",
+        "sha256": "d7cd38738bb6297bc74ded9bc1a60b6870c8fef084e30d8f93d11e03b5c566ed"
+      },
+      {
+        "path": "assets/pptx_embedded/slide038_shape01.png",
+        "sha256": "04ba96cc2e37bdc54a3bb06128ad00945e5606474e31a720b2f3e49af8c8acaa"
+      },
+      {
+        "path": "assets/pptx_embedded/slide040_shape01.png",
+        "sha256": "5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed"
+      },
+      {
+        "path": "assets/pptx_embedded/slide041_shape02.png",
+        "sha256": "5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed"
+      },
+      {
+        "path": "assets/pptx_embedded/slide042_shape01.jpg",
+        "sha256": "577fac160db86cd37e1b47a4fda4a13e04a611fda7feabed5389811276f0c819"
+      },
+      {
+        "path": "assets/pptx_embedded/slide044_shape01.png",
+        "sha256": "e9af7830de3fc9b87fa06fc381af13b7096adbabf286c45b1718cd6043c14b1b"
+      },
+      {
+        "path": "assets/pptx_embedded/slide044_shape02.png",
+        "sha256": "d7604883eb0017d66a8b50d707675ccd4d3d591b7b2ad159010ba5ebc2125651"
+      },
+      {
+        "path": "assets/pptx_embedded/slide045_shape02.png",
+        "sha256": "03cf7cef1ae08d63105915c0ca19acc8c86fd057b2ebc618a178823d1f13cb34"
+      },
+      {
+        "path": "assets/pptx_embedded/slide046_shape01.jpg",
+        "sha256": "013d34f61e76fd619da09ee5cb4e56880230abc34fb47efa7572fbb4c5a94d2c"
+      },
+      {
+        "path": "assets/pptx_embedded/slide047_shape01.jpg",
+        "sha256": "6defde081f32a2a16c4845e5605ff8e6a4a4eeed76fa2b4a5a0645e833089e36"
+      },
+      {
+        "path": "assets/pptx_embedded/slide048_shape02.png",
+        "sha256": "15e2568d8ff868e5bb99e56bb6243b8cb77060e31a402fc4b96873ab5593ed17"
+      },
+      {
+        "path": "assets/pptx_embedded/slide050_shape02.png",
+        "sha256": "bb4d1349e9adf36c7c8e8e09d2e29cf163412818b5a969fe2c86263224867f2a"
+      },
+      {
+        "path": "assets/pptx_embedded/slide052_shape01.jpg",
+        "sha256": "5e6165078aa11635701799706850d87a9cfb8a9ef0a2dba5d59b6bae3c1ee5c6"
+      },
+      {
+        "path": "assets/pptx_embedded/slide053_shape01.png",
+        "sha256": "a3f1e0e400ecc1f6d5240fd7e67805562cb2755c53f531d8198a304e336898e5"
+      },
+      {
+        "path": "assets/pptx_embedded/slide055_shape02.png",
+        "sha256": "dc271cc4a8f2d7df1e289e965c2b2c70f5456e542fb57dfd5f1a06a53bbf9269"
+      },
+      {
+        "path": "assets/pptx_embedded/slide057_shape02.png",
+        "sha256": "c4794e4cc3f459224e681a8cd72426c69553b27e8c607ae572a919b955a44310"
+      },
+      {
+        "path": "assets/pptx_embedded/slide058_shape01.png",
+        "sha256": "0e1f2a64e43731944f7ce812148bd0ab6a64542c945219448b509b73bcf62f68"
+      },
+      {
+        "path": "assets/pptx_embedded/slide059_shape01.png",
+        "sha256": "62d57a547edbb7cc9c4b983aa56049ba036752e0d4b573ac3220b856b3f75dc3"
+      },
+      {
+        "path": "assets/pptx_embedded/slide063_shape01.png",
+        "sha256": "017c4e078af5630244fc71f47e237bf1b8ed4ea326e79192a71bed8924aad350"
+      },
+      {
+        "path": "assets/pptx_embedded/slide065_shape01.png",
+        "sha256": "7b21efe345af35cc51db260d47dabf6a7e239ee056647a49d11a8810be330e48"
+      },
+      {
+        "path": "assets/pptx_embedded/slide069_shape02.png",
+        "sha256": "cfa8076c133892bc6b26a00af134d11b5f0e4c5164f71ded66fbbd8889ec758b"
+      },
+      {
+        "path": "assets/pptx_embedded/slide070_shape02.png",
+        "sha256": "1a60a6f90048315431c00adf6b76596ddf73aea92f42aaebb913e1afef4b5c89"
+      },
+      {
+        "path": "assets/pptx_embedded/slide073_shape01.jpg",
+        "sha256": "6121c83b5f8fe7c2c14a8802909ebb42665def13819c0952cbee70e05873a21e"
+      },
+      {
+        "path": "assets/pptx_embedded/slide074_shape01.jpg",
+        "sha256": "56474ae0594dab503d418870fa9833301b89430eba42f714133d8e3956c367ee"
+      }
+    ],
+    "pptx_native_all": [
+      {
+        "path": "assets/pptx_native_all.md",
+        "sha256": "caff0636e0052bb2cec649eeab9dd4c902c1fdcf234966a05e1ab1f88733fbe6"
+      }
+    ]
+  },
+  "post_build_checks": {
+    "candidate_count": 21,
+    "candidate_sha_records": [
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q1",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+        "sha256": "56db508dab134dcc0715f92b54e19863a1f2fddf7ec6ffb58b828b2b616ab23e"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q2",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q2.md",
+        "sha256": "ae829f55d3f90f0b10e43821d26b659002395ee034e699f6e9aaa6f7f4eed6ca"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q3",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q3.md",
+        "sha256": "e8f712bf014bd4a614185188bd4284acd7e52c23c38172431e64f8d642f66c25"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q4",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q4.md",
+        "sha256": "ba40437d4af0d7caea581dfb8bf374ed6d9855457dff7aa6cba20d4ac8df3d17"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q5",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q5.md",
+        "sha256": "bd373994acccd8f9561353c245c83fff102ddc18689503a7f6f2b573aadf24b5"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q6",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q6.md",
+        "sha256": "53f64cc1c2004307e71cd34586a796832bed7a0d6aae3e98d8f5c032c2007346"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q7",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q7.md",
+        "sha256": "3a49e9cc3ebf65746adb48a2efd791a69f906086a3c22d65848f2bc4fdad4749"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q8",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q8.md",
+        "sha256": "d3dc341d5c18d8df73343d3071848761600e2a82935eb2b8317a94c329cfd227"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q9",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q9.md",
+        "sha256": "e5756a14b2224b2d3fb1cf7c030dab48eeea5cd0c87a1b42c21921ece8bc0d4d"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q10",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q10.md",
+        "sha256": "eb97a9de16e4b0c8f063eb693c23fa323c1dec42995777ac8bd787c8ab4ddc36"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q11",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q11.md",
+        "sha256": "b63becc0dc838049786817b51c54d5e56295aed61a933dbe1973ace0ce38186e"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q12",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q12.md",
+        "sha256": "e2b2f1e8b1a3c849cdea31736d1716dfc37fdb7b699b436279280a2e693f139a"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q13",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q13.md",
+        "sha256": "9800b2981b456c18963cd3804f7d25525601d88ec1f9c86597f37d3bf278314f"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q14",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q14.md",
+        "sha256": "6262406030854080a4559168b5eb920e69753b6cb440d6f276fbf6548c5f2bef"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q15",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q15.md",
+        "sha256": "be4be6657c4fba18f9674e489d16b4907e803c2774cdc544c3cabfe0e0d0daf1"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q16",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q16.md",
+        "sha256": "a0d7b41e36439590993cae322b11db71ce558c9545c63db4b72c8cb88e2f2623"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q17",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q17.md",
+        "sha256": "35920ebd148737590ffae02d3788f2fe6a7a523882ee7deaf092f57066140912"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q18",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q18.md",
+        "sha256": "c90e5ffdc9c7c08bf72bbec218646704a49b8f766cb796231a8e6463273d87f2"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q19",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q19.md",
+        "sha256": "dd6cc48363cc6482b5e97d9d1b12402fcec04e62e56fdcac0c9403d222b83ead"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q20",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q20.md",
+        "sha256": "e65c37f475de511e6be74363a1433f2ff79e2c08304a0b9d747a29dac2c95aa1"
+      },
+      {
+        "question_id": "BJ-2024-DC-YIMO-Q21",
+        "path": "candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q21.md",
+        "sha256": "66903ad1bde5130ee65fe0eeec523a8725402fb6e4b9ad1aab81871244afccae"
+      }
+    ],
+    "asset_link_count": 147,
+    "asset_link_errors": [],
+    "asset_links_status": "pass",
+    "shared_write_check": "pass_no_shared_question_or_manifest_write"
+  },
+  "write_scope": {
+    "written_under_receipt": [
+      "audit.json",
+      "audit.md",
+      "source_coverage.md",
+      "source_extract_manifest.json",
+      "source_extracts/",
+      "source_render/",
+      "pptx_assets/",
+      "assets/",
+      "candidates/"
+    ],
+    "not_written": [
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-DC-YIMO",
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+      "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/试卷/试卷.pdf",
+      "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/补充材料/北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治答案(1).pdf",
+      "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/细则.pptx",
+      "all shared indexes and question-bank assets"
+    ]
+  }
+}

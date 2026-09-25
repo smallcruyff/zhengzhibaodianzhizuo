@@ -1,0 +1,207 @@
+{
+  "exam_id": "BJ-2024-BJ-GAOKAO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-BJ-GAOKAO-Q1": "1ad50b720005da1357a29f9d62315352cbf94abf82c4f978d819aaec2db10e48",
+    "BJ-2024-BJ-GAOKAO-Q2": "a59f73c9af608bc93f8a930927e5499062e8d7e0cf596ada5476f939666d6b77",
+    "BJ-2024-BJ-GAOKAO-Q3": "d9a56c233efb6c97e98968357d48f7fb13d243823eae3ffa79413782fe3fa007",
+    "BJ-2024-BJ-GAOKAO-Q4": "6468990f30e60e341c775d81adbe66d43bc347fb0e659967e6cef15745e79b17",
+    "BJ-2024-BJ-GAOKAO-Q5": "011ae7a932be9d27ddf3ca839ca33f81870d4ebd3ffc394ee1ebd55e30c2b4bd",
+    "BJ-2024-BJ-GAOKAO-Q6": "3230b36954c0710d9528f70e6b6d105d2ae60b9b4afb8876a6ce081c8ebb40ce",
+    "BJ-2024-BJ-GAOKAO-Q7": "b59ad9066ffacbaa622701df477062928c88016d747e8654cf9bcefeff287ec6",
+    "BJ-2024-BJ-GAOKAO-Q8": "e57186392dd9e4135f27862598f84c2670137c1cef2a9c83acedc99e9a1e66c0",
+    "BJ-2024-BJ-GAOKAO-Q9": "49abc044075528e33a4b962ce9e52c03988a23583d2b38683a0118320b81e299",
+    "BJ-2024-BJ-GAOKAO-Q10": "43a60fc6389103f344861be00acf037e3b936fb164486680558e812760a2e30a",
+    "BJ-2024-BJ-GAOKAO-Q11": "812350090ca02fdf89da8f2f836fc8bfa6f959c9b5038aea7f4b5e71a16f1b82",
+    "BJ-2024-BJ-GAOKAO-Q12": "1629f31b94e5b9b42975de856247f531832fbac2acaf05c94148069f6cf8816e",
+    "BJ-2024-BJ-GAOKAO-Q13": "4c60dedddb20ea3b86b80d117422a16820742f584218bbb1cea83b8ab8ad4e72",
+    "BJ-2024-BJ-GAOKAO-Q14": "e1297f44c6539d3a72785313f40bc4269a27855847ea5540f89627d06f108ff4",
+    "BJ-2024-BJ-GAOKAO-Q15": "eb3af57396c94f12428180a3018c78ef1eaded6c2a21bf8d68c6bdd3389b5447",
+    "BJ-2024-BJ-GAOKAO-Q16": "16bc29d058470de344cdcaef2c046770859a8fe40af0d93727bfb30d5c26779d",
+    "BJ-2024-BJ-GAOKAO-Q17": "a2456a93b7ab009b7b9cf90eb8dce9fce21be9938888e404a989c4c4b3e85201",
+    "BJ-2024-BJ-GAOKAO-Q18": "c197e98bc4d11c2d9c77657318ea32c5cdf44892a484b6b53339ed2a42e4c3c6",
+    "BJ-2024-BJ-GAOKAO-Q19": "326eb43d219115a10dd1371624d7e9d01a6bb36e958f0bc311f32d1e9bc1ef69",
+    "BJ-2024-BJ-GAOKAO-Q20": "97e5205d731346fde893b93cdaa607dd548ebdefd679618a9189451614d901de",
+    "BJ-2024-BJ-GAOKAO-Q21": "47cc79ec5cfc665b61722399e26bbcc82305f6fa363fa8c5b97b96aae23bc685"
+  },
+  "source_pages": {
+    "teacher": 13,
+    "试题分析材料": 53
+  },
+  "source_page_total": 66,
+  "source_roles": {
+    "teacher": "Sbe05e583ba6a",
+    "试题分析材料": "Se0d7d1a5fd45"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "无评分细则来源",
+    "N/A_with_basis：同卷来源清单未提供独立参考答案文件；教师版PDF内嵌答案与逐题解析按E3转写。",
+    "N/A_with_basis：未提供官方发布的独立评分细则；第三方教研分析PDF中明确的逐点赋分文字仅按E2保留，不升级为E1。",
+    "N/A_with_basis：未提供独立学生答卷扫描；Q19分析页存在来源性质未定的手写插图/批注，按有界残留保留原图，不宣称为真实考生答卷。",
+    "来源角色：教师版 Sbe05e583ba6a 提供题面/E3；第三方试题分析材料 Se0d7d1a5fd45 提供讲评与E2候选评分文字，不作官方原卷或E1。",
+    "E1 正式评分细则: manifest exceptions 记录“无评分细则来源”，本卷无官方发布的独立评分细则文件",
+    "独立学生样卷（除 Q19 分析页批注外）: manifest 未提供独立学生答卷来源；两份原件均为教师用题面/答案合订本与第三方教研PPT，非考生答卷"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第21页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第24页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第29页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "BJ-2024-BJ-GAOKAO-Q17",
+      "location": "试题分析PPT 第31页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第33页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第36页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "BJ-2024-BJ-GAOKAO-Q18",
+      "location": "试题分析PPT 第37页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第40页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第44页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第49页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "README",
+      "location": "试题分析PPT 第50页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    },
+    {
+      "qid": "BJ-2024-BJ-GAOKAO-Q21",
+      "location": "试题分析PPT 第53页",
+      "partial_reading": "OCR 文本可读，未逐字视觉复核；内容为往年对照材料或已与其他已核实来源交叉一致",
+      "affects_answering": false,
+      "round": "c1"
+    }
+  ],
+  "review_receipts": {
+    "previous_acceptance": {
+      "rounds": [
+        "c1",
+        "k1",
+        "k1_metadata",
+        "r2",
+        "r3",
+        "r4_score",
+        "r4_score_c1"
+      ],
+      "primary": "BJ-2024-BJ-GAOKAO/primary_review_accept.json",
+      "independent": [
+        "BJ-2024-BJ-GAOKAO/c1_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/k1_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/k1_metadata_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/r2_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/r3_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/r4_score_verify/verification.json",
+        "BJ-2024-BJ-GAOKAO/r4_score_c1_verify/verification.json"
+      ]
+    },
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/primary_review/BJ-2024-BJ-GAOKAO.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/independent_review/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-BJ-GAOKAO/retro-batch2-bj-2024-bj-gaokao-20260924_merge.json",
+    "prior_reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign/BJ-2024-BJ-GAOKAO.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign_stagefix/BJ-2024-BJ-GAOKAO.json",
+    "rounds": [
+      "r1",
+      "r2",
+      "r3",
+      "c1"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-bj-gaokao-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T07:47:59.718972+00:00"
+    },
+    {
+      "spec_id": "bj-2024-bj-gaokao-state2-retro-batch2-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:31:31.620201+00:00"
+    },
+    {
+      "spec_id": "bj-2024-bj-gaokao-state3-retro-batch2-status-fix-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:59:44.598008+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T11:00:56.256411+00:00",
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch2-bj-2024-bj-gaokao-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T10:11:06.834266+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-BJ-GAOKAO/retro-batch2-bj-2024-bj-gaokao-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2024-BJ-GAOKAO-Q10": "43a60fc6389103f344861be00acf037e3b936fb164486680558e812760a2e30a",
+        "BJ-2024-BJ-GAOKAO-Q11": "812350090ca02fdf89da8f2f836fc8bfa6f959c9b5038aea7f4b5e71a16f1b82",
+        "BJ-2024-BJ-GAOKAO-Q16": "16bc29d058470de344cdcaef2c046770859a8fe40af0d93727bfb30d5c26779d",
+        "BJ-2024-BJ-GAOKAO-Q17": "a2456a93b7ab009b7b9cf90eb8dce9fce21be9938888e404a989c4c4b3e85201",
+        "BJ-2024-BJ-GAOKAO-Q18": "c197e98bc4d11c2d9c77657318ea32c5cdf44892a484b6b53339ed2a42e4c3c6"
+      }
+    }
+  ]
+}

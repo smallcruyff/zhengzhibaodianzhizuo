@@ -1,0 +1,232 @@
+{
+ "batch_id": "s017",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "subjective",
+ "n_units": 7,
+ "units": [
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q19#1",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "19",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P09\n- page_asset: [p09.png](assets/legacy_30_assets/pages/p09.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n19.(9分)\n甲公司从乙公司购入一批电视，约定2024年3月10日发货。乙公司如约发\n货后，甲公司不便收货，双方约定货物由快递仓库代为储存至3月20日，仓储费用\n由乙公司承担。3月19日，甲公司表示依然不便收货，需要延长仓储时间至3月\n30日，乙公司回复“可以”。双方无其他磋商内容。\n3月30日，甲公司收货并垫付全部仓储费用后，向乙公司要求“尾款扣除仓储\n费用后支付”，乙公司表示拒绝承担3月21日及以后的仓储费用，甲公司因此拒绝\n支付尾款。双方协商未果，欲通过诉讼解决争议。\n(1)请你选择其中一方进行代理，并撰写起诉状。（7分)\n民事起诉状\n原告：\n被告：\n诉讼请求：\n事实与理由：\n望法院判如所请。\nXXX\n×年×月×日\n(2分)\n(2)为避免类似问题产生，我们应该\n高三思想政治第9页(共11页)\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P09 图表/框线/表单结构已实际查看。\n- Q19 总分9；(1)7分、(2)2分；民事起诉状框和填空结构保留。\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- Q18(2) 有一项 complete_placement=false；Q19(1) 四项 complete_placement=false；这些是原图边界，不删、不补齐。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 原卷锁定 Q19=9，Q19(1)=7，Q19(2)=2。Q19(1)诉讼请求2分、事实2分、理由按阅卷来源1/2个分别2/3分；Q19(2)合同内容清晰明确2分，仅协商1分，诚信/全面履行单列不给分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收第1问",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。 题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q19#2",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "19",
+   "subq": "2",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P09\n- page_asset: [p09.png](assets/legacy_30_assets/pages/p09.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n19.(9分)\n甲公司从乙公司购入一批电视，约定2024年3月10日发货。乙公司如约发\n货后，甲公司不便收货，双方约定货物由快递仓库代为储存至3月20日，仓储费用\n由乙公司承担。3月19日，甲公司表示依然不便收货，需要延长仓储时间至3月\n30日，乙公司回复“可以”。双方无其他磋商内容。\n3月30日，甲公司收货并垫付全部仓储费用后，向乙公司要求“尾款扣除仓储\n费用后支付”，乙公司表示拒绝承担3月21日及以后的仓储费用，甲公司因此拒绝\n支付尾款。双方协商未果，欲通过诉讼解决争议。\n(1)请你选择其中一方进行代理，并撰写起诉状。（7分)\n民事起诉状\n原告：\n被告：\n诉讼请求：\n事实与理由：\n望法院判如所请。\nXXX\n×年×月×日\n(2分)\n(2)为避免类似问题产生，我们应该\n高三思想政治第9页(共11页)\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P09 图表/框线/表单结构已实际查看。\n- Q19 总分9；(1)7分、(2)2分；民事起诉状框和填空结构保留。\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- Q18(2) 有一项 complete_placement=false；Q19(1) 四项 complete_placement=false；这些是原图边界，不删、不补齐。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 原卷锁定 Q19=9，Q19(1)=7，Q19(2)=2。Q19(1)诉讼请求2分、事实2分、理由按阅卷来源1/2个分别2/3分；Q19(2)合同内容清晰明确2分，仅协商1分，诚信/全面履行单列不给分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收第2问",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第2问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第2问单独给出结论/所需模块。 题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q20",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "20",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P10\n- page_asset: [p10.png](assets/legacy_30_assets/pages/p10.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n20.（7分）\n\n当今世界正经历百年未有之大变局，人类社会发展正处于十字路口。中国的“三大倡议”深刻回答“人类向何处去”的世界之问、历史之问、时代之问，为彷徨求索的世界点亮前行之路。\n\n倡议｜背景｜行动\n\n第1行｜全球发展倡议｜背景：全球发展面临诸多困难和挑战，经济复苏乏力，发展鸿沟加剧，国家间和各国内部发展不平衡、不充分问题日益突出。｜行动：截至2023年6月底，中国与150多个国家、30多个国际组织签署了200多份共建“一带一路”合作文件，形成一大批标志性项目和惠民生的“小而美”项目。设立多个合作发展基金，惠及亚洲、非洲、拉丁美洲等地区100多个国家……\n\n第2行｜全球安全倡议｜背景：当今世界，局部动荡频繁发生，粮食安全、能源资源安全、网络安全、恐怖主义等全球性问题更加突出。｜行动：中国累计派出联合国维和人员5万余人次，在联合国安理会常任理事国中人数最多。倡导处理南海问题“双轨思路”……\n\n第3行｜全球文明倡议｜背景：当今世界，百年未有之大变局加速演进，经济全球化、世界多极化、文化多样化深入发展，不同文明的交汇、碰撞甚至冲突日趋频繁。｜行动：2023年，召开中国共产党与世界政党高层对话会，面向世界首次提出全球文明倡议。开展形式多样的民间外交、公共外交活动，促进各国人民相知相亲……\n\n结合材料，运用《当代国际政治与经济》知识，说明中国的“三大倡议”如何助力人类走向美好未来。\n\n高三思想政治第10页（共11页）\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P10 图表/框线/表单结构已实际查看。\n- Q20 三大倡议背景/行动三列表格保留，不扁平化。\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- 本题学生图完整落位状态按 JSON 逐项保留。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 三大倡议各路径1分+效果1分，总论1分，共7分。保留阅卷来源原文，不把学生答案当正式槽。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判 | downgrade=B1:rubric_unreadable_not_OUT;B2:rubric_unreadable_not_OUT;B3:rubric_unreadable_not_OUT;PH:rubric_unreadable_not_OUT;CU:rubric_unreadable_not_OUT;X2:rubric_unreadable_not_OUT;MI:rubric_unreadable_not_OUT;RE:rubric_unreadable_not_OUT",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q21",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "21",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P11\n- page_asset: [p11.png](assets/legacy_30_assets/pages/p11.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n21.（7分）\n\n实现中华民族伟大复兴，是近代以来中华民族最伟大的梦想。100多年来，中国共产党领导中国人民的一切奋斗，归根到底都是为了实现社会主义现代化和中华民族伟大复兴。\n\n【虚线圆角框标题】我国发展的诸多战略性有利条件\n【框内项目】\n◆ 中国共产党的坚强领导\n◆ 中国特色社会主义制度的显著优势\n◆ 持续快速发展积累的坚实基础\n◆ 长期稳定的社会环境\n◆ 自信自强的精神力量\n\n在新中国成立以来特别是改革开放以来长期探索和实践基础上，我国由一穷二白到全面小康，已踏上以中国式现代化全面推进强国建设、民族复兴的新征程。\n\n当今世界变乱交织，百年变局加速演进，我国发展战略机遇和风险挑战并存。\n\n时与势在我们一边，这是我们定力和底气所在，也是我们的决心和信心所在。\n\n实现中华民族伟大复兴进入了不可逆转的历史进程。结合材料，综合运用所学，分析以上战略性有利条件在这一历史进程中是如何发挥作用的。\n\n高三思想政治第11页（共11页）\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P11 图表/框线/表单结构已实际查看。\n- Q21 虚线圆角战略条件框和五条条件保留；目标 PPTX slide1 图层见下。\n\n### [来源角色：按证据单元分层（Q21 q21_scoring.pptx）]\n\n- 原件：[q21_scoring.pptx](sources/legacy_30_sources/originals/q21_scoring.pptx)；SHA-256：bdc183dc9541edf3ec26e517b9b69ed5e59bc4ae2bb558bf66b766e5842e835d。\n- **角色边界：**按证据单元分层：本页答案示例保持 E3；页末“细则：至少3个点，2个点4分，3个点7分”是阅卷总结载体中对应 Q21 的评分条件，登记为 E1。上方评分补充 PDF 及其视觉转写仍保留为另一项来源；实际学生原答仍在下方 STUDENT_LAYER。\n\n### [原生文字对象1]\n\n```text\n可以从中国共产党的领导，中国特色社会主义制度优势，中华民族精神等角度回答。\n```\n\n### [原生文字对象2]\n\n```text\n示例：\n党的领导：中国共产党始终发挥总揽全局、协调各方的领导核心作用，以人民为中心，团结带领中国人民接续奋斗，开辟伟大道路，建立伟大功业，是实现民主复兴的根本政治保证。\n制度优势：中国特色社会主义制度和国家治理体系，发挥新型举国体制优势，将制度优势转化为治理效能，为实现中华民族伟大复兴提供可靠的制度保障。\n经济：持续快速发展积累的坚实基础，我国坚持基本经济制度，经济稳步高质量发展，为实现中华民族伟大复兴提供坚实的物质保障。 ；\n社会：主动把握新机遇，顺势而为，化解风险挑战，坚持总体国家安全观，加强社会治安综合治理，为实现中华民族伟大复兴提供稳定的社会条件和良好的内部环境。\n文化：自信自强是中华民族的固有品格，中华民族自强不息的民族精神，增强了中国人民战胜风险挑战的志气、底气，为实现中华民族伟大复兴提供了强大精神动力。或坚定四个自信。\n细则：至少3个点，2个点4分，3个点7分\n```\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- 本题学生图完整落位状态按 JSON 逐项保留。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 目标 PPTX slide1为完整 Q21(7分)题图；slide2 native XML含党的领导、制度、经济、社会、文化示例及“至少3个点，2个点4分、3个点7分”。slide3—9隔离为非目标示例/外链，不并入本题。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "已收整题",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q16",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "16",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n16.（7分）\n\n中华民族是世界上伟大的民族，有着5000多年源远流长的文明历史，为人类文明进步作出了不可磨灭的贡献。\n\n牛皮封面、飘口烫金、书口刷红……作为法国国礼的《论语导读》如今典藏于中国国家图书馆。《论语》的早期翻译和导读曾对孟德斯鸠和伏尔泰的哲学思想给予启发。17至18世纪，中国的思想、文化和技术“东学西传”，促成欧洲不断认识中国、改进自身，感受中华文明的深厚积淀。\n\n题内图片文字说明：法文本《论语导读》；（法）弗朗索瓦·贝尼耶译，1688年抄本。\n\n中国共产党领导中国人民成功走出了中国式现代化道路，创造了人类文明新形态，为促进世界文明交流互鉴，推动构建人类命运共同体贡献了中国方案、中国智慧、中国力量。\n\n马克思说，“凡是民族作为民族所做的事情，都是他们为人类社会而做的事情”。结合材料，运用《哲学与文化》知识，谈谈对此观点的理解。\n\n### [原卷页图证据]\n- 原卷第 6 页：![原卷第6页](assets/original/p006.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 25 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n```\n- 幻灯片 26: ![细则/讲评 PPTX slide 26](assets/rubric/p-26.png)；文字层文件：`assets/pptx_text/slide026.txt`。\n\n### [幻灯片 26 原生文字层（逐字保留）]\n\n```text\n解释：坚持共性和个性的统一（普特统一或整体与部分）。各具特色民族文化构成世界文化多样性，一个民族文化成就既属于本民族，也属于整个世界；既是本民族人民劳动智慧的结晶，也融入了其他民族文化有益成果。（2分，哲学1分，文化1分）\n\n论证：联系观点，文化交流和交融是文化发展的动力。社会生活本质上是实践。文化与文明都是实践的产物。党领导中国人民在革命和建设的实践中创造人类文明新形态，推动人类文明繁荣。要维护各民族文化多样性，相互交流、借鉴。推进构建新型国际关系（国际关系民主化），推动构建人类命运共同体。（3分，哲学1分；论证2分：文化1分，写出国际关系或共同体也可得1分）\n\n要求：科学的价值观符合社会发展规律和人民根本利益。中华文明新形态蕴含全人类共同价值，坚持人民为中心，坚守中华文化立场，为世界文化繁荣做出贡献。文化自信，走出去（2分，哲学1分，文化1分。“人民”“立场”“自信”等）\n\n16题阅卷细则（哲学3分，任意2个哲学观点的3分，1个观点2分；文化4分，解释关系1分，分析论证2分，要求举措1分）\n```\n- 幻灯片 27: ![细则/讲评 PPTX slide 27](assets/rubric/p-27.png)；文字层文件：`assets/pptx_text/slide027.txt`。\n\n### [幻灯片 27 原生文字层（逐字保留）]\n\n```text\n16题答案示例\n    坚持共性和个性的统一（普特统一）。各具特色民族文化构成世界文化多样性（2分），文化成就既是民族的，也是世界的；既是本民族人民劳动智慧的结晶，也融入了其他民族文化有益成果。\n   文化交流和交融是文化发展的动力（2分）。社会生活本质上是实践。文化与文明都是实践的产物。党领导中国人民在革命和建设的实践中创造人类文明新形态，推动人类文明繁荣。要维护各民族文化多样性，相互交流、借鉴。推进构建新型国际关系（国际关系民主化），推动构建人类命运共同体。\n    科学的价值观符合社会发展规律和人民根本利益。中华文明新形态蕴含全人类共同价值，坚持人民为中心，坚守中华文化立场，坚持文化自信，为世界文化繁荣做出贡献。（2分）\n```\n- 幻灯片 28: ![细则/讲评 PPTX slide 28](assets/rubric/p-28.png)；文字层文件：`assets/pptx_text/slide028.txt`。\n\n### [幻灯片 28 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 29: ![细则/讲评 PPTX slide 29](assets/rubric/p-29.png)；文字层文件：`assets/pptx_text/slide029.txt`。\n\n### [幻灯片 29 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 30: ![细则/讲评 PPTX slide 30](assets/rubric/p-30.png)；文字层文件：`assets/pptx_text/slide030.txt`。\n\n### [幻灯片 30 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q16-S1：slide 28，得分 7.0/7]\n\n来源：`assets/student_samples/pptx_media/slide28_image26.jpeg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide28.png`。\n\n画面题头为“16.（7分）”，右侧红色显示“7.0”，右侧小框显示 `16(7.0分)` 和输入值 `7`。答案区为连续黑色手写，分为 ①—④；没有可以安全区分为教师红笔的逐点标记。\n\n可辨手写转写（原有行序）：\n\n```text\n① 矛盾具有普遍性、[uncertain]，要用对立统一的观点看问题。不同民族的文化有着不同的特点，[uncertain]，为人类文明进步作出贡献。\n\n② [可辨开头] 实践是认识的基础，[uncertain]；[uncertain]\n\n③ [可辨开头] 联系具有普遍性、客观性，事物之间相互联系，[uncertain]；中华文化[uncertain]世界文化多样性，[uncertain]。\n\n④ [可辨开头] 价值观对人们的实践活动[uncertain]。价值观[uncertain]；[uncertain]\n```\n\n说明：slide 28 的拍屏摩尔纹和倾斜使第 ②—④ 点的部分字形无法达到安全逐字级别；这些区域没有用答案或讲评内容补齐。完整黑色笔迹、下划线和页面边界以原图为准。右下方还可见第 17 题题头。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image26.jpeg`；原图尺寸：`713×536`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide28_image26.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide28.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide28.png)。\n- 原生文字层：[assets/student_samples/native_text/slide028.txt](assets/student_samples/native_text/slide028.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[95, 145, 610, 390]`。\n- 画面可见实得分：`7.0`；分值范围：`16 / 7 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 7.0; right input 7; label 16(7.0分)。\n- 可见批注/标记/涂改：black handwritten underlines/line writing；红色逐点标记：`none_safely_separable`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[95, 145, 610, 215]`：first numbered answer line has perspective and screen moire; one or more concept words uncertain。\n  - `[95, 215, 610, 300]`：second/third numbered answer lines; several handwritten characters not stable。\n  - `[95, 300, 610, 390]`：fourth numbered answer lines and ending; do not infer from rubric。\n\n### [Q16-S2：slide 29，得分 7.0/7]\n\n来源：`assets/student_samples/pptx_media/slide29_image27.jpeg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide29.png`。\n\n画面题头为“16.（7分）”，右侧在线评分显示 7。答案区是另一张手写样卷，能看到 ①—④ 的分点、若干下划线/改写痕迹；未见可安全分离的红色逐点批注。\n\n可辨手写转写（不对难辨字作规范化）：\n\n```text\n① [开头可辨为] 矛盾/矛盾的观点[uncertain]；[uncertain]对立统一的观点看问题。不同民族的文化有着不同的特点，[uncertain]。\n\n② [可辨片段] 中国共产党领导中国人民走出中国式现代化道路，创造了人类文明新形态；[uncertain]\n\n③ [可辨片段] 中国[uncertain]促进世界文明交流互鉴、相互融合，不仅[uncertain]，也让世界文化变得更加绚丽多彩；[uncertain]\n\n④ [可辨片段] [uncertain]价值观/人民[uncertain]；中华文明新形态[uncertain]，中国式现代化[uncertain]。\n\n最后，[可辨片段] 我们应[uncertain]文化自信，推动中华优秀传统文化[uncertain]，为世界[uncertain]。\n```\n\n说明：该样本的第 ①—④ 点之间有连写、覆盖和局部涂改；`assets/student_samples/pptx_media/slide29_image27.jpeg` 是 PPTX 内嵌原始拍屏图，保留了比渲染页更多的上下边界。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image27.jpeg`；原图尺寸：`571×428`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide29_image27.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide29.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide29.png)。\n- 原生文字层：[assets/student_samples/native_text/slide029.txt](assets/student_samples/native_text/slide029.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[42, 132, 555, 365]`。\n- 画面可见实得分：`7.0`；分值范围：`16 / 7 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 7.0; right input 7。\n- 可见批注/标记/涂改：black underlines; black overwriting/possible self-correction；红色逐点标记：`none_safely_separable`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[42, 132, 555, 205]`：first numbered paragraph; several opening concept characters merged。\n  - `[42, 205, 555, 300]`：second/third paragraphs; inserted/overwritten characters。\n  - `[42, 300, 555, 365]`：last paragraph and conclusion; ending characters unstable。\n\n### [Q16-S3：slide 30，得分 0/7]\n\n来源：`assets/student_samples/pptx_media/slide30_image28.jpeg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide30.png`。\n\n画面顶部红色大字可辨为“没答哲学”，右侧红色分数显示 0；这不是学生笔迹，作为教师/阅卷界面批注单列。学生答案区仍有三段黑色手写：\n\n```text\n① 中华民族的文化成就[可辨为“既是/又是民族的，也是世界的”][uncertain]。中华民族有5000年源远流长、博大精深的历史文化，为世界文明的发展做出了不可磨灭的贡献。\n\n② 中国共产党领导中国人民走出了中国式现代化道路，创造了人类文明新形态，不仅促进了自身发展，也为世界上[uncertain]发展中国家提供了发展经验。\n\n③ 中国秉持对外开放，世界文明交流互鉴、相互融合，不仅为中华民族[uncertain]世界民族之林[uncertain]，也让世界文化变得更加绚丽多彩。中国[uncertain]推动构建人类命运共同体[uncertain]，中国方案、中国智慧、中国力量，[uncertain]。\n```\n\n页面没有看到学生在答案区写出的哲学角度；红色“没答哲学”和 0 分应原样保留，不能把学生的文化角度答案改判为 7 分。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image28.jpeg`；原图尺寸：`668×501`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide30_image28.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide30.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide30.png)。\n- 原生文字层：[assets/student_samples/native_text/slide030.txt](assets/student_samples/native_text/slide030.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[25, 130, 650, 458]`。\n- 画面可见实得分：`0`；分值范围：`16 / 7 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 0; right input 0。\n- 可见批注/标记/涂改：large red overlay reads 没答哲学; black student underlines；红色逐点标记：`large_overlay_not_student_text`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[25, 130, 650, 250]`：first numbered paragraph; red overlay does not cover the main answer but perspective affects several characters。\n  - `[25, 250, 650, 360]`：second paragraph; country/development phrase partly unstable。\n  - `[25, 360, 650, 458]`：third paragraph; lower line partly affected by low resolution。\n\n学生层结论（Q16）：以上 3 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案与通用等级描述（S7b4eece29632，独立主观参考答案＋通用等级层；角色已裁定，不作为逐点E1）：\n\n可从联系、发展、中华文化等角度回答。\n\n等级水平｜等级描述｜分值\n水平4｜观点鲜明，能明确表达自己的见解；紧扣问题，综合运用所学知识展开论述；逻辑严密，条理清晰｜5～7分\n水平3｜观点比较明确，能表达自己的见解；能扣住问题展开论述，知识运用比较准确；逻辑性较强，有条理｜3～4分\n水平2｜观点不明确；论述不能集中指向问题，罗列知识；知识运用不正确；论述缺乏逻辑，条理性差｜1～2分\n水平1｜应答与试题无关；或重复试题内容；或没有应答｜0分\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 25: ![细则/讲评 PPTX slide 25](assets/rubric/p-25.png)；文字层文件：`assets/pptx_text/slide025.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q17",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "17",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n17.（7分）\n\n近年来，共享单车在解决群众最后一公里出行难题上发挥了积极作用。但在方便百姓生活的同时，共享单车领域的相关企业为抢占市场，无序投放了大量车辆，也给传统监管方式带来挑战。\n\n某市政府公开拍卖城区共享单车特许经营权，拍卖成功后，不再允许未竞得特许经营权的共享单车企业继续在当地运营，安排其“有序退出市场”。\n\n【资料卡】\n\n◇《中华人民共和国反垄断法》第十条：行政机关和法律、法规授权的具有管理公共事务职能的组织不得滥用行政权力，排除、限制竞争。\n\n◇根据国务院《优化营商环境条例》，对全国统一的市场准入负面清单外的领域，各市场主体皆可平等进入。共享单车不在前述负面清单中。\n\n结合材料，从经济和法治的角度，对该市政府的做法加以评析。\n\n### [原卷页图证据]\n- 原卷第 6 页：![原卷第6页](assets/original/p006.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 33 原生文字层（逐字保留）]\n\n```text\n参考答案：这一做法滥用了行政权力，限制其他共享单车企业准入经营，违反了市场准入负面清单。在一定程度上遏制了共享单车无序投放，但阻碍了正常的市场竞争，损害了经营者和消费者合法权益。政府应运用法治思维和法治方式履行职责，确保行政权在法治框架内运行，维护公平公正的市场竞争秩序，创新监管方式，引导经营者有序规范投放。\n```\n- 幻灯片 34: ![细则/讲评 PPTX slide 34](assets/rubric/p-34.png)；文字层文件：`assets/pptx_text/slide034.txt`。\n\n### [幻灯片 34 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：是何+影响+措施。\n\n是何（2分）：这一做法滥用了行政权力，限制其他共享单车企业准入经营，违反了市场准入负面清单（违反了……的法律规定）。\n 影响（2分）：在一定程度上遏制了共享单车无序投放，但阻碍了正常的市场竞争，损害了经营者和消费者合法权益。（只要较准确写出不利影响即得2分）\n 措施(3分)：政府应运用法治思维和法治方式履行职责，确保行政权在法治框架内运行（或依法行政），维护公平公正的市场竞争秩序，创新监管方式，引导经营者有序规范投放。（经济和法治两个角度都有给3分，任写一个角度给2分）\n另：通篇肯定政府行为，给1分\n```\n- 幻灯片 35: ![细则/讲评 PPTX slide 35](assets/rubric/p-35.png)；文字层文件：`assets/pptx_text/slide035.txt`。\n\n### [幻灯片 35 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q17-S1：slide 35，得分 7.0/7]\n\n来源：`assets/student_samples/pptx_media/slide35_image31.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide035_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide35.png`。\n\n可辨手写转写：\n\n```text\n该市政府做法是错误的，干扰市场竞争。\n\n① 以政府未依法履行经济建设、社会管理职能，但没有依法行政，违反了《反垄断法》的规定，仅允许竞得拍卖权的共享单车企业等进入，排除了市场竞争；\n\n② 不利于维护市场秩序，发挥市场在资源配置中的决定性作用，限制了市场公平竞争，阻碍了优胜劣汰的市场退出机制，易造成市场混乱；\n\n③ 侵犯了企业合法权益，不利于诚信守法经营，易造成垄断，缺乏创新动力，间接损害了消费者合法权益；\n\n④ 该政府应坚持依法行政，依“条例”允许主体等进入，平等权规范公平文明执法，维护市场基础制度规则统一，坚持毫不动摇鼓励、支持、引导非公有制经济等参与市场竞争，促进[uncertain]市场秩序。\n```\n\n可见批注/改写：第 ① 点“拍得/竞得特许经营权的主体”等字句附近有黑色插入性批注，视觉上可辨为“[不符合/不符]‘案例’要求”一类提示；该批注的个别字形不稳定，故不把方括号内内容当作确定原文。右侧红色 `7.0`、输入框 `7` 和提交界面保留。没有另见红色逐点给分。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image31.jpeg`；原图尺寸：`1188×661`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide35_image31.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide35.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide35.png)。\n- 原生文字层：[assets/student_samples/native_text/slide035.txt](assets/student_samples/native_text/slide035.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[37, 90, 1030, 650]`。\n- 画面可见实得分：`7.0`；分值范围：`17 / 7 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 7.0; right input 7; label 17(7.0分)。\n- 可见批注/标记/涂改：black insertion/annotation near first numbered point; underlines；红色逐点标记：`no_red_point_marks_other_than_score`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[530, 175, 790, 235]`：small black insertion/annotation over line 3, visually close to 不符合/不符‘案例’要求; exact characters not certified。\n  - `[760, 590, 1030, 650]`：last conclusion phrase partly compressed。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide035_shape01.jpg](assets/student_samples/native_shape_refs/slide035_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n学生层结论（Q17）：以上 1 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案（S7b4eece29632，独立主观参考答案层；角色已裁定，不作为逐点E1）：\n\n这一做法滥用了行政权力，限制其他共享单车企业准入经营，违反了市场准入负面清单。在一定程度上遏制了共享单车无序投放，但阻碍了正常的市场竞争，损害了经营者和消费者合法权益。政府应运用法治思维和法治方式履行职责，确保行政权在法治框架内运行，维护公平公正的市场竞争秩序，创新监管方式，引导经营者有序规范投放。\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 33: ![细则/讲评 PPTX slide 33](assets/rubric/p-33.png)；文字层文件：`assets/pptx_text/slide033.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q18#1",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "18",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n18.（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。\n\n【材料】\n\n图1：北京市人才资源总量（万人）。图中比较2013年与2022年，标注增长36.7%。注：北京市拥有90多所大学、1000多所科研院所；加强人才国际交流，积极吸纳海外高端人才和留学人才。\n\n图2：北京市全社会研究与试验发展（R&D）经费投入（亿元）。图中比较2013年与2022年，标注增长136.8%。注：北京市全社会R&D经费投入位居全国前列；2022年全社会R&D经费中，基础研究经费占比为16.6%，占比逐年稳步提升。\n\n北京已建成相对完善的数字基础设施，2023年，全市实现数字经济增加值18766.7亿元，占地区生产总值的比重为42.9%；依托中关村加快推进高水平科技自立自强先行先试改革，实施24项重大改革措施，出台50多项配套改革措施，出台科研项目经费“包干制”、技术攻关“揭榜挂帅”等政策……北京正充分发挥首都优势，逐“新”而行。\n\n（1）根据材料，概括北京在发展新质生产力方面的优势，并运用《经济与社会》知识，分析这些优势如何助力新质生产力发展。（8分）\n\n如何发展新质生产力？政协破题。\n\n甲地：将“前瞻布局未来产业，积极培育发展新质生产力”作为政协重点调研课题，实地调研，学习先发地区经验，召开座谈会，充分听取各方意见。\n\n乙地：推进智能高铁2.0发展；推动高等院校、科研院所与企业开展生物医药领域人才培养战略合作；利用数字技术为畜牧业节粮提效，注入新质生产力……科学技术界、医药卫生界、农业界等界别委员围绕新质生产力建真言谋良策。\n\n丙地：政协召开“关于以科技创新推动企业协同发展”的重点提案督办会，提案主办单位科技局、工信局重点汇报提案办理情况，并与委员进行交流。\n\n（2）结合材料，分析政协在推动新质生产力发展中所发挥的作用。（6分）\n\n传统产业在我国制造业中占比超80%，是现代化产业体系的基底。多年来，我国轻工、纺织、机械等传统产业带动效应强、产业关联度大、国际市场占有率高，是我国参与国际竞争的生力军。但也存在低端产能过剩、高端供给不足、产业基础不牢、创新能力薄弱等问题，对数字化、智能化有着庞大、迫切的实际需求。\n\n当前，从人形机器人到量子计算机，从脑机接口到6G网络设备……中国未来产业正在科技新赛道上加速前进。未来材料、未来网络等能够广泛渗透传统产业链上下游各个环节，引领传统优势产业高端化、智能化、绿色化转型。\n\n（3）发展新质生产力，要正确认识传统产业和未来产业的关系。结合材料，运用《逻辑与思维》知识，谈谈你的看法。（6分）\n\n### [原卷页图证据]\n- 原卷第 7 页：![原卷第7页](assets/original/p007.png)；页面原图含题面、表格/图表/题内图片及页脚。\n- 原卷第 8 页：![原卷第8页](assets/original/p008.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 40 原生文字层]\n\n（原生文字对象数：0；原生空文件 SHA-256：`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。）\n\n### [幻灯片 40 视觉 source payload 补足（本轮候选）]\n\n完整逐字转写、两张图表的轴/刻度/增长标注/注释、对象坐标、PPTX 关系和原图 SHA 见 `../../visual_transcription.md#幻灯片-40--q18非选择题第（1）问原题材料`、`../../visual_transcription.json`、`../../object_map.json`。\n见本轮 sidecar：[逐字转写](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/visual_transcription.md#幻灯片-40--q18非选择题第（1）问原题材料)、[结构化转写](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/visual_transcription.json)、[对象映射](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/object_map.json)。\n\n机器可读正文：\n\n```text\n18．（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。\n材料\n左图：北京市人才资源总量；（万人）；纵轴0—900每100一格；2013年、2022年；按纵轴估读两柱约600万人、约800万人（原图无柱顶数值标签）；灰色箭头由2013年柱指向2022年柱并向右上，标注36.7%；注：北京市拥有90多所大学、1000多所科研院所；加强人才国际交流，积极吸纳海外高端人才和留学人才。\n右图：北京市全社会研究与试验发展（R&D）经费投入；（亿元）；纵轴0—3000每500一格；2013年、2022年；按纵轴估读两柱约1200亿元、约2800亿元（原图无柱顶数值标签）；灰色箭头由2013年柱指向2022年柱并向右上，标注136.8%；注：北京市全社会R&D经费投入位居全国前列；2022年全社会R&D经费中，基础研究经费占比为16.6%，占比逐年稳步提升。\n北京已建成相对完善的数字基础设施，2023年，全市实现数字经济增加值18766.7亿元，占地区生产总值的比重为42.9%；依托中关村加快推进高水平科技自立自强先行先试改革，实施24项重大改革措施，出台50多项配套改革措施，出台科研项目经费“包干制”、技术攻关“揭榜挂帅”等政策……北京正充分发挥首都优势，逐“新”而行。\n（1）根据材料，概括北京在发展新质生产力方面的优势，并运用《经济与社会》知识，分析这些优势如何助力新质生产力发展。（8分）\n```\n\n原生对象映射：`pic id=3/name=图片 2`，EMU `[1110438,611568,9594138,5634863]`，`rId2 → ppt/media/image34.png`；嵌图 SHA-256 `5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed`。图表、箭头、坐标、柱形和灰色换行标记均为嵌图内部内容，不是可单独提取的 native text/shape；没有手写批注。\n- 可见版式标记：定义行末、材料标签行末、材料正文行末及设问行末均见灰色“↵”；据原图与对象映射，这是可见的换行/版式符号，不作题面文字。\n- 幻灯片 41: ![细则/讲评 PPTX slide 41](assets/rubric/p-41.png)；文字层文件：`assets/pptx_text/slide041.txt`。\n\n### [幻灯片 41 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n拓展阅读：让科技创新为新质生产力发展注入强大动能  阴和俊\n\n优势：教育、人才优势突出，研发投入持续增长，数字经济成为重要引擎，科技体制改革持续深化。（2分）\n如何助力：\n①教育、人才优势提高劳动者素质，为新质生产力提供创新型人才（人才支撑）；\n②研发投入的增长提高原始创新能力，有助于形成颠覆性技术和重大原创成果；    ③数字经济赋能产业发展，与实体经济深度融合，推动新型工业化；\n④科技体制改革推动形成与新质生产力相适应的生产关系，以体制机制创新带动科技创新。（6分）\n```\n- 幻灯片 42: ![细则/讲评 PPTX slide 42](assets/rubric/p-42.png)；文字层文件：`assets/pptx_text/slide042.txt`。\n\n### [幻灯片 42 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 45: ![细则/讲评 PPTX slide 45](assets/rubric/p-45.png)；文字层文件：`assets/pptx_text/slide045.txt`。\n\n### [幻灯片 45 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：主体+做法（措施）+结果\n\n政协作为社会主义协商民主的重要渠道和专门协商机构，\n聚焦党和国家中心任务，参政议政，广泛反映各方建议，为发展新质生产力凝心聚力；\n政协委员通过调研，形成高质量的提案，为促进新质生产力发展建言献策；\n政协开展督办协商活动，进行民主监督，推动提案落实。\n```\n- 幻灯片 46: ![细则/讲评 PPTX slide 46](assets/rubric/p-46.png)；文字层文件：`assets/pptx_text/slide046.txt`。\n\n### [幻灯片 46 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 47: ![细则/讲评 PPTX slide 47](assets/rubric/p-47.png)；文字层文件：`assets/pptx_text/slide047.txt`。\n\n### [幻灯片 47 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 50: ![细则/讲评 PPTX slide 50](assets/rubric/p-50.png)；文字层文件：`assets/pptx_text/slide050.txt`。\n\n### [幻灯片 50 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：紧扣二者关系，从是何+如何角度阐述。\n\n传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。\n发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；要运用超前思维布局建设未来产业，完善现代化产业体系。（6分）\n```\n- 幻灯片 51: ![细则/讲评 PPTX slide 51](assets/rubric/p-51.png)；文字层文件：`assets/pptx_text/slide051.txt`。\n\n### [幻灯片 51 原生文字层（逐字保留）]\n\n```text\n理论+分析 3+3 \n是何：传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。（2分）\n如何：发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；（2分）要运用超前思维布局建设未来产业，完善现代化产业体系。（2分）\n变通：二者关系：辩证统一、对立统一；传统产业：辩证思维、矛盾观点；\n未来产业：创新思维、科学思维、矛盾分析法等替代原理分。\n\n1、逻辑思维原理+经济语言分析，学生片面运用逻辑或经济回答。分析不到位，不是围绕二者关系谈。\n2、单一角度运用如创新思维回答，没有从材料中读出辩证思维角度。\n3、对传统产业与未来产业的关系理解有误。如，把二者理解为新旧事物；认为未来产业是传统产业的辩否；认为传统产业经过量的积累实现质的飞跃后变成未来产业等。\n4、关系类试题应该是二者相互作用，学生只谈未来产业引导传统产业转型，不谈传统产业对未来产业的支撑作用。\n```\n- 幻灯片 52: ![细则/讲评 PPTX slide 52](assets/rubric/p-52.png)；文字层文件：`assets/pptx_text/slide052.txt`。\n\n### [幻灯片 52 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q18-S1：slide 42，18（1），得分 8.0/8]\n\n来源：`assets/student_samples/pptx_media/slide42_image35.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide042_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide42.png`。\n\n右侧红色显示 8.0；右侧小问栏可见 `18(2.0分)` 输入 2 和 `18(6.0分)` 输入 6。当前页从第 18 题（1）开始，底部已经露出（2）题头和下一行，故这里只转写当前页可见区域，不推断后续页。\n\n```text\n（1）（8分）依托优势：北京人才资源总量增加，包含科研院所和高校资源，[uncertain]。\n\n经费投入大幅提升，数字经济[uncertain]发展，科技体制、[uncertain]改革[uncertain]。\n\n如何：人才资源量增加，创新型人才增多，[uncertain]；[uncertain]。\n\n促进技术创新和发展，转变经济增长方式，推动经济发展[uncertain]。\n\n依托[uncertain]数字基础设施，推动数字经济发展，降低[uncertain]成本，促进[uncertain]发展。\n\n科研经费占比逐年提升，为创新发展注入活力，促进新质生产力发展；[uncertain]。\n\n北京建设数字基础设施，实现数字经济[uncertain]，依托[uncertain]改革措施，推动[uncertain]。\n\n（2）（6分）△ 政协开展调研课题，召开座谈会，充分发挥[uncertain]……（本页下缘截断）\n```\n\n说明：Q18（1）的数字、专业名词和连词有多处受拍屏纹理影响，未用题面或评分文字反填。原图中的 2 分、6 分小问栏和红色 8.0 是评分证据。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image35.jpeg`；原图尺寸：`1325×994`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide42_image35.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide42.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide42.png)。\n- 原生文字层：[assets/student_samples/native_text/slide042.txt](assets/student_samples/native_text/slide042.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[15, 80, 1115, 910]`。\n- 画面可见实得分：`8.0`；分值范围：`18(1) / 8 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 8.0; right inputs 2 and 6 for the two 18 subparts。\n- 可见批注/标记/涂改：black handwriting; black underlines；红色逐点标记：`no_separately_readable_red_point_marks`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[15, 80, 1115, 250]`：advantage summary; multiple characters obscured by screen raster。\n  - `[15, 250, 1115, 560]`：how-portion lines; several terms unstable。\n  - `[15, 560, 1115, 910]`：lower part of (1) plus start of (2), page crop boundary。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide042_shape01.jpg](assets/student_samples/native_shape_refs/slide042_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S2：slide 46，18（2），得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide46_image39.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide046_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide46.png`。\n\n可辨手写转写：\n\n```text\n（2）（6分）政协发挥政治协商、民主监督、参政议政职能，政协委员围绕新质生产力建言献策、凝聚共识，充分发挥[uncertain]。\n\n政协通过召开座谈会、组织协商，听取各方意见，提出[uncertain]建议，推动[uncertain]发展。\n\n政协协商民主制度具有独特优势，政协委员围绕新质生产力建言献策，发挥协调作用，推动[uncertain]。\n\n政协委员通过提案和协商履行职责，提案主办单位与委员交流，推动问题解决。\n\n通过督办提案、沟通协调，发挥民主监督职能，推动政府/有关部门改进工作。\n```\n\n说明：原图上部是上一小问末行的截断片段，下部出现“（3）（6分）”题头但没有完整（3）答案；本转写不把下缘以外的内容补入。右侧红色 6.0、小问栏 `18-2(6.0分)` 与输入值 `6` 原样保留。画面中有黑色下划线、圈写、插入字和覆盖笔画，无法确定每一笔是学生自改还是阅卷标记，故不强行归类。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image39.jpeg`；原图尺寸：`1016×762`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide46_image39.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide46.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide46.png)。\n- 原生文字层：[assets/student_samples/native_text/slide046.txt](assets/student_samples/native_text/slide046.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[65, 90, 900, 700]`。\n- 画面可见实得分：`6.0`；分值范围：`18(2) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-2(6.0分); right input 6。\n- 可见批注/标记/涂改：black underlines; circle/rewriting; possible black marking strokes；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[65, 90, 900, 220]`：top continuation from previous subpart, deliberately not reconstructed。\n  - `[65, 220, 900, 600]`：18(2) answer; several words affected by screen moire。\n  - `[65, 600, 900, 700]`：start of 18(3), cropped at lower edge。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide046_shape01.jpg](assets/student_samples/native_shape_refs/slide046_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S3：slide 47，18（2）另一份样卷，得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide47_image40.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide047_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide47.png`。\n\n可辨手写转写：\n\n```text\n（2）（6分）① [开头有覆盖/涂改，稳定可辨片段] 围绕/政协履行[uncertain]职能，围绕新质生产力建言献策，促进[uncertain]。\n\n政协协商民主制度具有独特优势，能够充分发挥协商民主作用，推动[uncertain]；[uncertain]。\n\n② 政协委员[uncertain]围绕新质生产力建言献策，提出[uncertain]，充分发挥[uncertain]作用，推动[uncertain]。\n\n③ 政协[uncertain]发挥民主监督作用，召开提案督办会，推动有关部门办理提案；[uncertain]。\n\n（3）（6分）① 我认为传统产业与未来产业[uncertain]，要[uncertain]。\n```\n\n可见批注/涂改：第（2）题开头有多处黑色覆盖线；中部有圈号、上方插入字（视觉上像“[uncertain]”），第③点附近有删除线和重写；下方第（3）题开头也有下划线。右侧红色 6.0、输入框 6 和绿色提交/确认图标保留；底部系统栏可见“试题 18-2”“密号 -18590496”“评卷量 284”“速度 18.61秒/份”“平均分 3.99分”“用时 00:00:53”。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image40.jpeg`；原图尺寸：`1175×881`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide47_image40.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide47.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide47.png)。\n- 原生文字层：[assets/student_samples/native_text/slide047.txt](assets/student_samples/native_text/slide047.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[70, 130, 1000, 750]`。\n- 画面可见实得分：`6.0`；分值范围：`18(2) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-2(6.0分); right input 6; green submit/confirm icon。\n- 可见批注/标记/涂改：black strikethrough; black insertion/correction; underlines; circled point numbers；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[70, 130, 1000, 260]`：previous-subpart tail and start of 18(2) overlap。\n  - `[70, 260, 1000, 650]`：18(2) answer with multiple overwritten words and annotation strokes。\n  - `[70, 650, 1000, 750]`：start of 18(3) is visible but lower answer is outside image。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide047_shape01.jpg](assets/student_samples/native_shape_refs/slide047_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S4：slide 52，18（3），得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide52_image43.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide052_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide52.png`。\n\n可辨手写转写：\n\n```text\n（3）（6分）要用联系观点、全面的观点[uncertain]。传统产业与\n未来产业相互联系、相互补充，传统产业是[uncertain]发展的基础，未来产业[uncertain]。\n\n传统产业发展，[uncertain]；要努力打造[uncertain]，再产业是[uncertain]。\n\n传统产业[uncertain]，要用未来产业带动[uncertain]，推动传统产业转型升级，实现高质量发展。\n\n要用辩证的观点看待，认识到传统产业与未来产业相互联系、相互促进，二者[uncertain]。\n```\n\n说明：页面上缘有上一小问末尾残行；（3）答案正文从“要用联系观点……”开始。可见的下划线、黑色覆盖/改写和右侧“更改”下拉界面保留。右侧红色 6.0、小问栏 `18-3(6.0分)` 与输入值 6 为画面分数。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image43.jpeg`；原图尺寸：`1129×635`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide52_image43.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide52.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide52.png)。\n- 原生文字层：[assets/student_samples/native_text/slide052.txt](assets/student_samples/native_text/slide052.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[70, 75, 1000, 590]`。\n- 画面可见实得分：`6.0`；分值范围：`18(3) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-3(6.0分); right input 6。\n- 可见批注/标记/涂改：black underlines; black overwriting; 更改 dropdown；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[70, 75, 1000, 125]`：upper fragment from preceding subpart。\n  - `[70, 125, 1000, 540]`：18(3) handwriting; several terms unstable。\n  - `[70, 540, 1000, 590]`：final line/end punctuation and lower crop。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide052_shape01.jpg](assets/student_samples/native_shape_refs/slide052_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n学生层结论（Q18）：以上 4 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案（S7b4eece29632，独立主观参考答案层；角色已裁定，不作为逐点E1）：\n\n（1）教育、人才优势突出，研发投入持续增长，数字经济成为重要引擎，科技体制改革持续深化。（2分）\n教育、人才优势提高劳动者素质，为新质生产力提供创新型人才；研发投入的增长提高原始创新能力，有助于形成颠覆性技术和重大原创成果；数字经济赋能产业发展，与实体经济深度融合，推动新型工业化；科技体制改革推动形成与新质生产力相适应的生产关系，以体制机制创新带动科技创新。（6分）\n\n（2）政协作为社会主义协商民主的重要渠道和专门协商机构，聚焦党和国家中心任务，参政议政，广泛反映各方建议，为发展新质生产力凝心聚力；政协委员通过调研，形成高质量的提案，为促进新质生产力发展建言献策；政协开展督办协商活动，进行民主监督，推动提案落实。（6分）\n\n（3）传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；要运用超前思维布局建设未来产业，完善现代化产业体系。（6分）\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 40: ![细则/讲评 PPTX slide 40](assets/rubric/p-40.png)；文字层文件：`assets/pptx_text/slide040.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收第1问",
+    "B3": "已收第1问",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收第1问",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。"
+  }
+ ]
+}

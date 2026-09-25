@@ -1,0 +1,21 @@
+{
+  "schema": "historical-14-page-metadata/2026-09-22",
+  "exam_id": "BJ-2023-FT-YIMO",
+  "use": "history_only_not_active_locator",
+  "old_derivative": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/BJ-2023-FT-YIMO_task_packet_assets/丰台_临时渲染14页.pdf",
+    "sha256": "c194ffebed062469f8a1501086d37277271890c59d3403a76bd4c6846341325b",
+    "pages": 14,
+    "role": "historical_missing_glyph_derivative_only"
+  },
+  "old_source_page_coverage": {
+    "path": "history/historical_14page_source_page_coverage.json",
+    "sha256": "07a74177f3fcec2a5428856163bdca0dafcd7d0a55a015f4384bf32d90adcc1e"
+  },
+  "active_page_coverage": {
+    "path": "visual_witness/35page/page_coverage.json",
+    "sha256": "f3000158b485499de692522f2fbb2adbc8beb7e7bf997eb1b40645a89e47a013",
+    "pages": 35
+  },
+  "prohibition": "Do not use 14-page page numbers as active positioning or formal original-exam pagination."
+}

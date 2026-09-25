@@ -1,0 +1,8 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_MI,conflict_script_out,admission,evidence,script_tier,rule_version
+BJ-2024-DC-ERMO-Q15,BJ-2024-DC-ERMO-Q15,BJ-2024-DC-ERMO,15,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO,18,选择题,,整题,COLLECTED,MI;B2;PH,完整题-选择题照收,缺答案键,确定,2026-09-24-attribution-v1
+BJ-2025-FT-ERMO-Q4,BJ-2025-FT-ERMO-Q4,BJ-2025-FT-ERMO,4,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2026-DC-ERMO-Q2,BJ-2026-DC-ERMO-Q2,BJ-2026-DC-ERMO,2,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2026-SJS-ERMO-Q2,BJ-2026-SJS-ERMO-Q2,BJ-2026-SJS-ERMO,2,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2026-FT-QIMO-Q20,BJ-2026-FT-QIMO-Q20,BJ-2026-FT-QIMO,20,主观题,,整题,COLLECTED,MI,完整题-有E1,E1,倾向,2026-09-24-attribution-v1
+BJ-2024-BJ-GAOKAO-Q4,BJ-2024-BJ-GAOKAO-Q4,BJ-2024-BJ-GAOKAO,4,选择题,,整题,COLLECTED,MI,完整题-选择题照收,缺答案键,倾向,2026-09-24-attribution-v1

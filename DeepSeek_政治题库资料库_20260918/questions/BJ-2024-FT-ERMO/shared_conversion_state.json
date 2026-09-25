@@ -1,0 +1,80 @@
+{
+  "exam_id": "BJ-2024-FT-ERMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-FT-ERMO-Q1": "dd244fc65b83236e5aa2d0736c1715d0a2f62e2f5abf7d37b131da01424b1cf6",
+    "BJ-2024-FT-ERMO-Q2": "b3d2a66a602bb8b8597aa1b27d9b8f35ed493e585515aa8ad80ebe8a3d52c78b",
+    "BJ-2024-FT-ERMO-Q3": "b0af3707ba93faebbf6acf377c33173fcf25774f33a2eb573bc79ef07d4d5b9c",
+    "BJ-2024-FT-ERMO-Q4": "fc6228d675320eac7d8e103a706ff027b8781ee8efe4bac573b245efd9bfe4d2",
+    "BJ-2024-FT-ERMO-Q5": "cb25e2b5689c75ae2266c5a9812da73ea2f55ff1ada76ba557f0f137a6726230",
+    "BJ-2024-FT-ERMO-Q6": "271430fbf73fea98e73edd260d85aa684b1f465e2051fe6ddbd4b1488f846b17",
+    "BJ-2024-FT-ERMO-Q7": "4091f0426411bb61854c1640b7dd88f61c89d47d677fcab7d3a582cf419f277e",
+    "BJ-2024-FT-ERMO-Q8": "381c82b44146fb544ba0d8939221bc9b7925da93bca056a78d23e4be3a1f6c7d",
+    "BJ-2024-FT-ERMO-Q9": "c53f6dfb3bb8aab41acabb62d81454537528299afa4f361ee1b20f0dcca609cb",
+    "BJ-2024-FT-ERMO-Q10": "0477e34d0df6a28178ad010b26a66b25482bf31cc3ca15baf9587a6c0a8724de",
+    "BJ-2024-FT-ERMO-Q11": "0fd90e47c2d43076d3477d21ed5d73bd1d1188a4a051ea15eb4b68bc596b54d1",
+    "BJ-2024-FT-ERMO-Q12": "abe72db278e35edc41b12b9168b7c903d6c2a5948fc50173822c7335acad1db9",
+    "BJ-2024-FT-ERMO-Q13": "6b53949c761643c8dfe92ee44d383cf87f040a3ab959c85e67465d9a8de3820e",
+    "BJ-2024-FT-ERMO-Q14": "c0a05cffb00771b1d861d98b0627e6c1884bf5c926705a806fd25df92e45f24d",
+    "BJ-2024-FT-ERMO-Q15": "b077363d3b3d57959d3f2bd9817c1fca7814cb67d6e72d4f2d0816881194f68f",
+    "BJ-2024-FT-ERMO-Q16": "263d07df43c981f28dd121721dc0ef15a8b728123f7b76de3b323ffe4823f42a",
+    "BJ-2024-FT-ERMO-Q17": "bb1245b4496db15a893c3094dfb07ad3b9c8456b4465c6503624288629421bb0",
+    "BJ-2024-FT-ERMO-Q18": "e2377ee637a60cdbcc5199c5540097e8c5f7ea02396b1edd8151bfa3d12d9216",
+    "BJ-2024-FT-ERMO-Q19": "855545eeb5d3d28537566a7f754c472055559b6eb99ae8243df706d2aba930ba",
+    "BJ-2024-FT-ERMO-Q20": "a2104f4c77c709e298dba28b62f95002b20a1da70934d0db947b49f53128493d",
+    "BJ-2024-FT-ERMO-Q21": "3c34f09c01e3e3c7f71d02c61e3b54e0fe2859df6420b8ff7f61882ff8c25fcb"
+  },
+  "source_pages": {
+    "paper": 8,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 8,
+  "source_roles": {
+    "paper": "S57ddd500c48e",
+    "rubric": "S71fcaa9e66af"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "独立参考答案文件（Q1-Q21）: 沿用 r1 结论：本卷无独立答案文件，只有评分 DOCX 内嵌选择题答案表（Q1-Q15）和主观题参考答案/评分标准（Q16-Q21）。本轮未发现新证据改变此结论。",
+    "题级正式细则E1（Q1-Q15，客观题）: 沿用 r1 结论：评分DOCX只含一张选择题答案字母表，无逐题给分/扣分说明，不构成E1，记为仅E3。",
+    "学生示例、教师批注、评分标记、实得分（Q1-Q21）: 沿用 r1 结论：已打开来源只有原卷PDF与评分细则DOCX，未提供学生答题卡、学生原答、教师批注或实得分。",
+    "全卷独立参考答案文件: 已打开来源只有原卷试卷.pdf与评分细则.docx；未发现独立答案文件；manifest.exceptions已记录'无独立参考答案文件'",
+    "全卷学生示例/教师批注/评分标记/实得分: 已打开来源只有原卷试卷.pdf与评分细则.docx；未提供学生答题卡、学生原答、教师批注或实得分",
+    "Q1-Q15题级正式评分细则E1: 评分DOCX内嵌答案表(image1.png)只给出单字母答案，无逐题给分点/等级说明，只构成E3来源，不构成E1；各题MD已如此标注，本轮未改变"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "README",
+      "location": "评分DOCX内嵌图word/media/image1.png顶部标题行",
+      "partial_reading": "无法辨认（原图像素限制，源图本身在顶端已裁掉字符上半部分，仅余极小残笔画，非本工位渲染或压缩导致）",
+      "affects_answering": false,
+      "round": "c1"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "c1"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-ft-ermo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:05:08.772935+00:00"
+    },
+    {
+      "spec_id": "bj-2024-ft-ermo-state2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:06:36.862860+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-22T22:06:44.901653+00:00"
+}

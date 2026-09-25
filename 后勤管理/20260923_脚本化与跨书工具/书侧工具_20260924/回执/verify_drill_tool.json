@@ -1,0 +1,107 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "extract --out / check --report / build --report 的 JSON 输出守卫 guard_json 只拦冻结册目录，不拦受保护根。可以在必修三审阅入口、协作/、工作区根、中央状态目录、Skill scripts/、项目根新建 JSON 文件，属越权写。规格一·7 要求用 guard_write(kind='.json')，只允许 …/协作/候选/<谁>/<批次>/构建/ 或系统临时目录。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → 6 例 [BUG] guard_json 受保护位置：00_必修三最新审查稿/、必修三_最新Skill修订_20260913/协作/、必修三_最新Skill修订_20260913/、/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/、scripts/、项目根。结果均为 {'drill_tool.guard_json': 'ALLOWED', 'docx_lib.guard_write(kind=.json)': 'refused'}。取证时只调用函数，没有真正写出，事后 find 确认无残留。代码见 drill_tool.py 176-203 行：只查 frozen 的 workspace/aux_workspace/review_entry/review_history。",
+   "fix": "guard_json 改为先调 dl.guard_write(out, None 或非冻结 prof, inputs, kind='.json', overwrite=_is_own_json(out))，再补“冻结册只读抽取可写临时目录/构建目录”的放行。受保护根与 WRITE_ALLOW_RX 的口径必须和 docx_lib 相同。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "金标准往返在 B2_230 上不成立：extract→build 之后单练区的文字和格式都变了。回执写的是“round-trip 内容 0 差异”，但它比对的是经过 bh.norm 去空白、重新聚合后的字段，看不出原稿与输出的差别。规格六要求“同文字、同格式，单练区逐段文字相同、run 颜色一致”。原因是 build 用全书第一条正确/错误 A2 行当所有行的模板，并固定写成“N、+制表符”。",
+   "evidence": "复跑编写者测试得到 b2_230_copy.docx→b2_230_build.docx，再用 drill_tool_verify/rt_detail.py 和 fmt_detail.py 按单元格对齐比对：题肢栏 380 个单元格文字不同，其中 326 个在序号后多了制表符（原“3、实施适度宽松…”变成“3、\\t实施…”），54 个原稿纠正与题干同段，被拆成两段（单练区段落数 5268→5322）。pPr 不同：题肢栏 1469 段、判断栏 382 段、题源栏 388 段，例如行距由 line=320 exact、after=0 变为 line=240 auto、after=40，会改分页。题源 run 颜色 2D2D2D 被改成 000000（表 871，“2026通州一模7”）。结果文件为 drill_tool_verify/rt_b2.json、rt_b2_detail.json、fmt_b2.json。",
+   "fix": "逐行保留：未改动的记录（按 a2.table/row 和 text 核对未变）原样复制原 tr；只有新增或修改的行才用“同组相邻行”做模板。模板的序号分隔符和 pPr 从同组原行取，不要取全书第一行。测试改为逐段原文比较，外加 run 颜色和 pPr/rPr 的 C14N 比较，不能用 norm 后的字段。"
+  },
+  {
+   "severity": "major",
+   "desc": "items.json 里的 stem/correction/source 取自 bh.norm（删除全部空白），build 写回的就是去掉空白的文本，真实 B3_52 往返后单练区也有文字变化。凡是含半角空格的题肢（数字与汉字之间、英文缩写等）都会被悄悄改掉。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] B3_52 往返单练区逐段文字：n=2。原文“分析研究 2025 年经济工作”在 A1、A2 中都变成“分析研究2025年经济工作”，见 cases/RESULTS.json。也可用 rt_compare.py 复现：text_diff=2，color/format diff=0。",
+   "fix": "extract 从单元格原文（it['text'] 去掉序号前缀）取 stem/correction/source，不做 norm；bh.norm 只用于比较。"
+  },
+  {
+   "severity": "major",
+   "desc": "error_runs 只存子串、不存位置。build 用 remaining.find(seg) 找第一次出现处，如果红色片段前面有同样的黑字，红色会落到错误位置，而且退出码为 0。写后的 bh 单练门只查“有没有红”，查不出位置不对。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] 重复片段的红色位置：原行“29、\\t而不是利长远的“潜绩”，树什么样的政绩——做群众看得见的“显绩”[而不是利长远的“潜绩”]纠正：…”，往返后变成“29、\\t[而不是利长远的“潜绩”]，树什么样的政绩——…而不是利长远的“潜绩”…”（方括号表示红色），exit=0。",
+   "fix": "extract 给每个 error_run 记下它在 stem 中的起止偏移（或记 runs 序列 [{text,color}]），build 按偏移上色；子串在 stem 中出现不止一次又没有偏移时中止（退出码 2）。"
+  },
+  {
+   "severity": "major",
+   "desc": "build 会删掉 A1/A2 表格里的全部 tr 再重建，表内的非条目行（表头、组内小标题等）会被悄悄删除，退出码为 0。extract 已经看到 non_item_rows=1，但 build 不检查这一项。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] A2 表内表头行：在一张 A2 表首插入“题肢｜判断｜题源”表头，extract 报 non_item_rows=1，build exit=0，输出里表头消失（header_kept=False）。",
+   "fix": "只替换能认成条目的行，非条目行留在原位；或者父稿 non_item_rows>0 时中止（退出码 2），并列出这些行。"
+  },
+  {
+   "severity": "major",
+   "desc": "extract 用 zip(A1, A2) 按位置配对，A1/A2 条数不同时静默截断，退出码仍为 0。用这份 items.json 做 build，会丢掉多出来的 A2 条目，写后体检也能通过，因为 A1/A2 都是重建的，条数重新对齐。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] A1 缺一行时：删掉 B3_52 副本 A1 的最后一行，extract exit=0，count=675、a1=675、a2=676；build exit=0，输出 A2 由 676 变为 675，最后一条 A2 题肢被删。",
+   "fix": "a1_count≠a2_count 时 extract 退出 1 或 2，records 按 A2 全量输出（a1 缺的填 null）；build 在 items['a1_a2_count_mismatch'] 为真或 count≠a2_count 时拒绝。"
+  },
+  {
+   "severity": "major",
+   "desc": "失败时留下半成品。build 先写出 .docx，最后才对 --report 做守卫，报告路径被拒或目标已存在时，退出码是 3 或 2，但候选 docx 已经留在磁盘上。extract 也是先写 items.json 再检查 --report。这违反规格一·4“任何一条校验失败→整批中止、不留输出文件”。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] build 报告路径被拒后是否留下 docx：{'exit': 3, 'docx_left': True}；报告目标已存在（非本工具的 json）：{'exit': 2, 'docx_left': True}；extract 的 --report 为 .txt：{'exit': 2, 'items_left': True}。",
+   "fix": "在 cmd_build/cmd_extract 开头、任何写出之前先对 --report（以及 --out）调用守卫；写报告失败时回滚已写出的主输出。"
+  },
+  {
+   "severity": "major",
+   "desc": "check 没有做到规格要求的几项检查：序号连续、A1/A2 题干逐字一致（bh 只比前 20 字）、分组标签格式。编写者也没有做规格④的 check 负例。以下两类错误全部漏报，工具只报了原本就有的 16 条“题源为空”。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → 8 个 check 负例中，A1 填答案、A2 不选、错误项缺纠正、题干前 20 字不一致、A1/A2 题源不一致、题源为空这 6 个都能抓到；[BUG] A1A2题干第20字后不一致：hits=[]；[BUG] A1A2同步跳号：hits=[]。另外 bh.check_drill 原本就用 x['stem'][:20] 比较（batch_health.py 约 1000 行），drill_tool 没有补。",
+   "fix": "在 drill_tool.check 里补齐（不动 bh）：全书或各组序号 1..N 连续（按配置）；A1/A2 stem 全文逐字相等；分组标签按 drill.group_label_regex 或 group_style 核对。每一项都加进测试负例。"
+  },
+  {
+   "severity": "major",
+   "desc": "--admission 语义不完整：cda.verify 返回的 excluded 条目仍在书里时，工具不报任何发现（status='pass'）；决策文件里 input_sha256 与候选不符也不核对，check_drill_admission.main 本身会核这一项。另外候选 id 用的是“group:no”，text 用的是带“\\t”和纠正的 A2 单元格全文，和真实准入文件的 id/statement 口径对不上，实际上很难用。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] --admission 有 3 条 exclude（书里仍在）且 input_sha256='000…'：admission_status='pass'，excluded_count=3，准入类 findings=0（exit=1 只是因为原稿有 16 条题源为空）。",
+   "fix": "excluded_ids 与书内现存条目有交集时逐条报 FAIL；decisions.input_sha256 存在时与候选（或父稿）SHA 比对；statement 用去掉序号和制表符的纯题干，不带纠正。"
+  },
+  {
+   "severity": "major",
+   "desc": "规格要求 paragraph/card 两种版式都要做 extract/check/build，实际只有 table3 能 build。card（选必二 r22）extract 返回 0 条，退出码仍是 0，也没有按规格列出“缺哪些配置字段”。编写者已在 known_limits 如实说明，但这是规格明确要求的功能，缺了就不能算完成。",
+   "evidence": "复跑 run_tests_drill_tool.py：选必二 r22 extract exit=0，count=0（草案 layout='cards'）；哲学 R10 extract 646/646，build 直接 Abort(2)（drill_tool.py 550-551 行）。哲学 646 已核实：条目编号 1..646 连续无重号，规格“约 645”只是约数，这一项不算工具的问题。",
+   "fix": "至少要做到：card 版式 extract 返回 0 条时退出 2 并列出所需字段（item 卡片标题正则、【解析】标记、卡片样式等）；paragraph 版式按“条目段+纠正段”序列实现 build，或把缺口写进 needs_user_decision 由主代理裁定。"
+  },
+  {
+   "severity": "minor",
+   "desc": "verdict=正确 的条目如果带 correction，build 会静默丢弃（_build_a2_tr 491 行），不报错也不告警。error_runs 同理，会给“正确”行上红色，只触发 bh 的 CANDIDATE。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → [BUG] “正确”项带 correction：exit=0，correction_silently_dropped=True。",
+   "fix": "正确项带 correction 或 error_runs 时中止（2）或至少写进报告 warnings。"
+  },
+  {
+   "severity": "minor",
+   "desc": "写后单练门出现 FAIL 时退出码是 2，规格一·6 规定“写后体检出现新 FAIL”为 1。而且工具只要有 FAIL 就中止，不区分是不是新增的：父稿原本就有单练 FAIL 时（比如哲学 R10 有 2 条）永远无法 build。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → 写后单练门 FAIL（错误项缺纠正）：exit=2。输出和临时文件都没有残留，这一点合格。",
+   "fix": "与父稿的 FAIL 集合做差集，只有新增 FAIL 才中止，退出码按规格定为 1。"
+  },
+  {
+   "severity": "minor",
+   "desc": "build 不核对 items.json 的 source_sha256 与父稿是否一致。组号就是表格序号，属于位置性定位。这次 B3_51 的 items 套到 B3_52 被拒，只是因为表格序号刚好不同（257 对 328）。如果父稿只改了单练文字、表格序号没变（例如 03→04→52），旧 items 会静默覆盖新改动。",
+   "evidence": "/usr/bin/python3 -B /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py --out /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases → 旧父稿(B3_51)的 items.json 套到 B3_52：exit=2，报错是“group=257 不是识别到的 A2 表格序号”，不是 SHA 不符。drill_tool.py 569-593 行没有读取 items['source_sha256']。",
+   "fix": "items.source_sha256≠父稿 SHA 时默认拒绝（2），需要显式加 --allow-rebase 才放行，并在报告里列出 a2.text 已变化的行。"
+  }
+ ],
+ "checked": [
+  "复跑编写者测试 run_tests_drill_tool.py（复制到 drill_tool_verify/builder_rerun/ 运行）：exit 0，结论与回执一致（B3_52 676/676、题源为空 16、+3 条后 679/679、B2_230 820/820、冻结拒写 exit 3、哲学 646/646、选必二 0）",
+  "16 条“题源为空”核实为真实空单元格（A1/A2 两侧 tc 文本都为空，无 vMerge），不是误报",
+  "drill_tool check 的 drill 类发现与 batch_health.Analysis 的 drill 门逐条比对：B3_52 为 0 对 0，B2_230 为 5 对 5（3 CANDIDATE“单练导语出现不选”、2 WARN），完全一致，summary 也相等；drill_tool 另外只多报“题源为空”",
+  "B3_52 往返：单练区 4345 段中只有 2 段文字不同（空白被 norm 删掉），run 颜色、trPr/tcPr/pPr/rPr 的 C14N 都为 0 差异，未点名段落 bad=[]",
+  "B2_230 往返（frozen:false 临时配置副本 + 临时输入拷贝）：380 个单元格文字不同，约 2200 段 pPr 不同，见 blocker",
+  "规格④ check 负例 8 个：6 个抓到，2 个漏报（第 20 字之后的题干差异、A1/A2 同步跳号）",
+  "冻结册：真实 B2_230 加 --profile bixiu3 → exit 3；临时符号链接指向真实 B2_230 加 frozen:false 配置副本 → exit 3（detect_profile 会 resolve）；--out 或 JSON 经符号链接目录指向冻结册 → 两个守卫都拒绝；输出经符号链接等于输入 → exit 3，输入 SHA 不变",
+  "写后体检 FAIL：不留输出，不留 .docx_lib_* 和 .drill_tool_verify_* 临时文件",
+  "不同父稿（B3_51）的 items 套到 B3_52：被拒（exit 2），但原因是组号不匹配",
+  "哲学 646：编号 1..646 连续、无重号，A1/A2 前缀全部一致，确认不是多认；2 条 FAIL（645、646 缺红）是书稿本身的问题",
+  "drill_tool.py 共 769 行（≤1200），文件头有 sys.dont_write_bytecode；bh.read_docx 与 _top_level_tables 的表格编号口径一致（depth0，含 sdt 展开）",
+  "测试前后 12 个真实输入/受保护脚本和配置的 SHA 与 mtime 全部未变（snap_before/after.json）。scripts/__pycache__ 内容未变（仍是 3 个旧 .pyc）；scripts/ 只新增 drill_tool_verify.py",
+  "旁注：00_必修三最新审查稿/ 下的 __verify_never_written__.json 在本复核开始前已经存在，本复核期间被别的进程删除（审查目录 mtime 03:20）。它不是本复核产生或删除的，本复核的探针名是 drill_items_probe_never_written.json，从未写出；请主代理留意，可能有其他 verifier 真的写进过审阅入口"
+ ],
+ "files": [
+  "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/cases/RESULTS.json",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/rt_b2_detail.json",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/fmt_b2.json",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/rt_b3.json",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_verify/builder_rerun/rerun.log"
+ ],
+ "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/verify_drill_tool.json"
+}

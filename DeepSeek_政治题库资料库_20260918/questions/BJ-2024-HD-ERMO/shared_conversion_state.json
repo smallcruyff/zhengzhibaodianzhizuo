@@ -1,0 +1,75 @@
+{
+  "exam_id": "BJ-2024-HD-ERMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-HD-ERMO-Q1": "d0344433ca3d298c69181ccdb6e344614466e9c04d5c54ad7fd55827d178ad13",
+    "BJ-2024-HD-ERMO-Q2": "69f22864c580edf8426d8552dc8aca603b9617897ef563bad9a8b7b5d11e6053",
+    "BJ-2024-HD-ERMO-Q3": "07eeadf877b245c783c100660c0e733f318274756e3bb29400e229749d867131",
+    "BJ-2024-HD-ERMO-Q4": "f7e2369464abfb0d3f180f76b5726a480fef60523c67ed53019bfda11be170f8",
+    "BJ-2024-HD-ERMO-Q5": "6269fc681c8f0c515edd91e9ede4dae367ad239dbdb202279f1e7c58d8ef5b97",
+    "BJ-2024-HD-ERMO-Q6": "b5fe161b83e2543b4bf48e6a784be152fd81f7d74d3dc87453b3de2747e38cf9",
+    "BJ-2024-HD-ERMO-Q7": "b0633288352aec8c760c3693679c824539d3fde384de4cff06bbcff9ceef7974",
+    "BJ-2024-HD-ERMO-Q8": "8fce1852d3822c82b16e74c947c559086c0ff66a738917615e62ed67398e06ee",
+    "BJ-2024-HD-ERMO-Q9": "fbd222d5117d8127caabba4784eea85418a0155cd4fa374f6f442a1afcd8ab31",
+    "BJ-2024-HD-ERMO-Q10": "c856b7c1e5cc07e549b6d398afec39899f83e17776aded6509ae6a32c3b47f0b",
+    "BJ-2024-HD-ERMO-Q11": "c0eb475b8b18282e919604f2912d16af11e906b76e62a245a0277c1efcdc7300",
+    "BJ-2024-HD-ERMO-Q12": "15560085ab50b3cb0a504b970e6255a2b7d5de4dff755b1425564b2ffcde1f71",
+    "BJ-2024-HD-ERMO-Q13": "d0759f49cb6d9ab0de9875ba3a0f22630dedd451d2dfd2416ccec96ad1111074",
+    "BJ-2024-HD-ERMO-Q14": "9e334e40e1fce1a29e2297c0404dd565aa4dcb9c3fd02be3cf64a442ae24826f",
+    "BJ-2024-HD-ERMO-Q15": "3193426a81d8a29b7f7aa22f58d13e380a1f3ab755cc6c0c8100650a193e6451",
+    "BJ-2024-HD-ERMO-Q16": "a1167e7d84d7b731df01af6f5498185f84b191bb15719fa754ec994d7fc2418f",
+    "BJ-2024-HD-ERMO-Q17": "580035d86b30421b939794da7950d2812cea8309be0fbd2639f17ca87ede5d14",
+    "BJ-2024-HD-ERMO-Q18": "285c1d1f455290fe239f38209f2d0f0faad66f20a4aabc2fee61be4b3f2c197c",
+    "BJ-2024-HD-ERMO-Q19": "185792f76605006a82f3d3045e6eff95920eb76533264158adb10dcc3d578a9e",
+    "BJ-2024-HD-ERMO-Q20": "6d32496788d1e36ec5389cd1a59965bec0f2b25a011209f340e1e7675a1c7d17",
+    "BJ-2024-HD-ERMO-Q21": "4234de7b219a49ad27b88c336cbbf629e4309d85fd61eec9d6cbc66fcffe14e8"
+  },
+  "source_pages": {
+    "paper_1_docx_or_pptx_unpaged": 0,
+    "paper_2": 8,
+    "answer_docx_or_pptx_unpaged": 0,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 8,
+  "source_roles": {
+    "paper_1": "S13d454fdd813",
+    "paper_2": "S5355283f436e",
+    "answer": "S8f109fb09efc",
+    "rubric": "S227192d22e10"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "学生样卷/教师批注/实得分: manifest 三个来源（原卷/参考答案/评分材料）均无学生答卷或手写批注；role_boundaries.md 与本轮核对一致：student layer N/A_with_basis。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "全部21题（S13相关4文件）",
+      "location": "candidate/sources/{source_copies,ooxml,mapping,authority_pdf}/S13d454fdd813* 与 2024-HD-ERMO-试卷.pdf",
+      "partial_reading": "n/a",
+      "affects_answering": false,
+      "round": "r2"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "c1",
+      "c2",
+      "c3"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-hd-ermo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:28:42.100925+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:30:06.122838+00:00"
+}

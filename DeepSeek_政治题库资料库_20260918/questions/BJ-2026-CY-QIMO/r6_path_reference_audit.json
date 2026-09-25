@@ -1,0 +1,473 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "package_id": "controller_ready_r6_BJ-2026-CY-QIMO_20260922",
+  "generated_at": "2026-09-22T09:58:42.863435+00:00",
+  "scope": "all top-level Markdown under R6/candidates; every backtick code reference beginning evidence/ or roles/",
+  "reference_count": 65,
+  "by_root": {
+    "evidence": 44,
+    "roles": 21
+  },
+  "legacy_parent_prefix_count": 0,
+  "missing_count": 0,
+  "out_of_candidates_tree_count": 0,
+  "pass": true,
+  "references": [
+    {
+      "file": "candidates/00_exam_front_matter.md",
+      "line": 9,
+      "code_reference": "evidence/paper_pages/p001.png",
+      "resolved": "candidates/evidence/paper_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/00_exam_front_matter.md",
+      "line": 9,
+      "code_reference": "evidence/paper_pages/p008.png",
+      "resolved": "candidates/evidence/paper_pages/p008.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/00_exam_front_matter.md",
+      "line": 10,
+      "code_reference": "evidence/rubric_pages/p001.png",
+      "resolved": "candidates/evidence/rubric_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/00_exam_front_matter.md",
+      "line": 10,
+      "code_reference": "evidence/rubric_pages/p004.png",
+      "resolved": "candidates/evidence/rubric_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q1.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p001.png",
+      "resolved": "candidates/evidence/paper_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q1.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q10.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p003.png",
+      "resolved": "candidates/evidence/paper_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q10.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q11.md",
+      "line": 33,
+      "code_reference": "evidence/paper_pages/p003.png",
+      "resolved": "candidates/evidence/paper_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q11.md",
+      "line": 53,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q12.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p003.png",
+      "resolved": "candidates/evidence/paper_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q12.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q13.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p003.png",
+      "resolved": "candidates/evidence/paper_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q13.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q14.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p004.png",
+      "resolved": "candidates/evidence/paper_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q14.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q15.md",
+      "line": 40,
+      "code_reference": "evidence/paper_pages/p004.png",
+      "resolved": "candidates/evidence/paper_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q15.md",
+      "line": 60,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "line": 35,
+      "code_reference": "evidence/figures/Q16_p004_stage.png",
+      "resolved": "candidates/evidence/figures/Q16_p004_stage.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "line": 35,
+      "code_reference": "evidence/paper_pages/p004.png",
+      "resolved": "candidates/evidence/paper_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "line": 38,
+      "code_reference": "evidence/paper_pages/p004.png",
+      "resolved": "candidates/evidence/paper_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "line": 59,
+      "code_reference": "evidence/rubric_pages/p001.png",
+      "resolved": "candidates/evidence/rubric_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q16.md",
+      "line": 73,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q17.md",
+      "line": 36,
+      "code_reference": "evidence/paper_pages/p005.png",
+      "resolved": "candidates/evidence/paper_pages/p005.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q17.md",
+      "line": 64,
+      "code_reference": "evidence/rubric_pages/p001.png",
+      "resolved": "candidates/evidence/rubric_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q17.md",
+      "line": 78,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "line": 49,
+      "code_reference": "evidence/paper_pages/p005.png",
+      "resolved": "candidates/evidence/paper_pages/p005.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "line": 49,
+      "code_reference": "evidence/paper_pages/p006.png",
+      "resolved": "candidates/evidence/paper_pages/p006.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "line": 92,
+      "code_reference": "evidence/rubric_pages/p002.png",
+      "resolved": "candidates/evidence/rubric_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q18.md",
+      "line": 106,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 43,
+      "code_reference": "evidence/figures/Q19_p006_policy_table.png",
+      "resolved": "candidates/evidence/figures/Q19_p006_policy_table.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 43,
+      "code_reference": "evidence/paper_pages/p006.png",
+      "resolved": "candidates/evidence/paper_pages/p006.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 43,
+      "code_reference": "evidence/paper_pages/p007.png",
+      "resolved": "candidates/evidence/paper_pages/p007.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 46,
+      "code_reference": "evidence/paper_pages/p006.png",
+      "resolved": "candidates/evidence/paper_pages/p006.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 46,
+      "code_reference": "evidence/paper_pages/p007.png",
+      "resolved": "candidates/evidence/paper_pages/p007.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 76,
+      "code_reference": "evidence/rubric_pages/p003.png",
+      "resolved": "candidates/evidence/rubric_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q19.md",
+      "line": 90,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q2.md",
+      "line": 43,
+      "code_reference": "evidence/paper_pages/p001.png",
+      "resolved": "candidates/evidence/paper_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q2.md",
+      "line": 63,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q20.md",
+      "line": 40,
+      "code_reference": "evidence/paper_pages/p007.png",
+      "resolved": "candidates/evidence/paper_pages/p007.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q20.md",
+      "line": 69,
+      "code_reference": "evidence/rubric_pages/p003.png",
+      "resolved": "candidates/evidence/rubric_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q20.md",
+      "line": 83,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "line": 41,
+      "code_reference": "evidence/figures/Q21_p008_discussion_boxes.png",
+      "resolved": "candidates/evidence/figures/Q21_p008_discussion_boxes.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "line": 41,
+      "code_reference": "evidence/paper_pages/p008.png",
+      "resolved": "candidates/evidence/paper_pages/p008.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "line": 44,
+      "code_reference": "evidence/paper_pages/p008.png",
+      "resolved": "candidates/evidence/paper_pages/p008.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "line": 67,
+      "code_reference": "evidence/rubric_pages/p004.png",
+      "resolved": "candidates/evidence/rubric_pages/p004.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q21.md",
+      "line": 81,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q3.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p001.png",
+      "resolved": "candidates/evidence/paper_pages/p001.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q3.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q4.md",
+      "line": 32,
+      "code_reference": "evidence/figures/Q04_p002_rui_gu_tu.png",
+      "resolved": "candidates/evidence/figures/Q04_p002_rui_gu_tu.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q4.md",
+      "line": 32,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q4.md",
+      "line": 35,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q4.md",
+      "line": 55,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q5.md",
+      "line": 33,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q5.md",
+      "line": 53,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q6.md",
+      "line": 40,
+      "code_reference": "evidence/figures/Q06_p002_condition_box.png",
+      "resolved": "candidates/evidence/figures/Q06_p002_condition_box.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q6.md",
+      "line": 40,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q6.md",
+      "line": 43,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q6.md",
+      "line": 63,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q7.md",
+      "line": 33,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q7.md",
+      "line": 53,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q8.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p002.png",
+      "resolved": "candidates/evidence/paper_pages/p002.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q8.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q9.md",
+      "line": 37,
+      "code_reference": "evidence/paper_pages/p003.png",
+      "resolved": "candidates/evidence/paper_pages/p003.png",
+      "exists": true
+    },
+    {
+      "file": "candidates/BJ-2026-CY-QIMO-Q9.md",
+      "line": 57,
+      "code_reference": "roles/page_coverage_links.json",
+      "resolved": "candidates/roles/page_coverage_links.json",
+      "exists": true
+    }
+  ]
+}

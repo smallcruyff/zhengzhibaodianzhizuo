@@ -1,0 +1,35 @@
+{
+ "verdict": "PASS_WITH_ISSUES",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "这是第五轮修复带出的新问题。diff 现在给每个非复杂插入段都生成 ppr_xml 和 runs[].rpr_xml，而 apply 遇到这两个字段就只用 runs[].text 和原样 XML。同一规格里给人看的 text、style、keep_next、runs[].bold/color 全部被静默忽略，check 和 apply 都不提示。主代理审 diff 补丁时，最自然的做法就是改 paragraphs[].text 的措辞，或改样式、加粗。这样改之后，apply 仍然 rc=0，写出的是 diff 原文，与没改时的输出字节完全相同，主代理会以为改动已经生效。第四轮以前，无格式的简单段只有 text 字段，改 text 是会生效的；现在所有插入段都带 runs，这条路径被整体换掉了。另外，词表只查 runs 文字，不查 text，所以 text 里写了禁用词 check 也放行。这一项不会把禁用词写进书稿，但说明 text 已经成了死字段。",
+   "evidence": "repro/confirm_attack.py C1 与 repro/c1b.py（结果在 confirm_attack_C1_C2_C3_C4_C5.json）。取 F4 生成的 diff 补丁 f4g_patch.json，把 paragraphs[0].text 改成'主代理改写后的新说法。'，style 改成'heading 3'，keep_next 改成 true，runs[0].bold 改成 true、color 改成 FF0000。check rc=1（pending），apply rc=0。写出段 257 的文字仍是'这是一段普通黑色补充说明。'，pStyle 仍是 aff9，keepNext=False，run 为 (None,False)。输出 sha256 为 7943141420e3…，与只改 text 的 c1_out.docx 相同，也就是全部修改都被丢掉了。apply 报告里没有任何'忽略'提示。对照组：删掉 ppr_xml 和 runs 后用同样字段 apply，写出'主代理改写后的新说法。'，pStyle=31，keepNext=True。另外，text 改成'本题讲解待核。'时 check rc=1，不报词表。",
+   "fix": "check_ops 对同时带 runs/ppr_xml 的插入段做一致性校验：text 与 ''.join(runs[].text) 不一致，或 style/keep_next 与 ppr_xml 里的 pStyle/keepNext 不一致，或 bold/color 与 rpr_xml 不一致时，一律 Abort，并给出中文提示'diff 产物请改 runs[].text，或删掉 ppr_xml/rpr_xml 后按手写规格改'。或者 diff 不再同时输出这些冗余的给人看字段。补回归用例：改 text、改 style、改 bold 各一条，都必须 rc=2。"
+  },
+  {
+   "severity": "minor",
+   "desc": "fix5 声称修好了 final 的 minor③，实际只修了一半。final 原文写的是'replace_paragraph 或 replace_text 带 restore'，fix5 的 restore_replace_ops 只收 op=='replace_paragraph'。replace_text 带 source_zone=restore 时，把 title 段改得不再像标题，写后这一段变成 heading，工程词照样写出，rc=0。",
+   "evidence": "C4 用段 1514'选择例题 2　2024顺义二模第9题'（zone=title）做了两个 replace_text 变体，都带 source_zone=restore。old 取前 6 字、new 为'本题讲解待核，'时，rc=0，写后 zone=heading，文字为'本题讲解待核，　2024顺义二模第9题'。old 取整段、new 为'本题讲解待核，暂按旧版。'时，rc=0，写后 zone=heading。对照组 replace_paragraph 走同样路径时 rc=2（F1、C4rp，以及测试 t25 的 wordlist_leak 都已触发）。",
+   "fix": "把 restore_replace_ops 的筛选条件扩到 op in ('replace_paragraph','replace_text')，并补 t25 的 replace_text 版本。"
+  },
+  {
+   "severity": "minor",
+   "desc": "fix5 的 minor④（_own_json）只把 source_zone/allow_complex 当作'已授权'的标志。主代理只改了 approval_ref（或只改了 op 文字）而没有加这两个字段时，再跑一次 diff --out 写同一路径，仍会静默覆盖。final 的修复建议里本来包含'approval_ref 仍是自动值'这一条。",
+   "evidence": "C5：diff 产物只把 approval_ref 改成'主代理已审 第52批'，再 diff --out 写同一路径，rc=0，文件被覆盖（approval_ref_only_untouched=false）。加 source_zone 时 rc=3，文件不变；--report 指向该补丁时 rc=3。R4 原命令重跑：rc=3，authorization_lost=false，已修好。",
+   "fix": "_own_json 同时要求 approval_ref 仍是 diff 自动生成的值；或者对比现有文件与本次将要写出的内容，只要 ops 或顶层字段有非自动的差异，就拒绝覆盖。"
+  }
+ ],
+ "checked": [
+  "final major（diff 插入段格式保真）已修好。F4/F5 原命令重跑：绿色锚点后插入无格式段、加粗锚点后插入无格式段、jc=center 段、默认样式段，四个场景 apply 都是 rc=0，回放出来的 pStyle/keepNext/jc/run(color,bold) 与目标完全一致（F4_green 为 (None,False)，不再是 008000；F5_jc 为 center）。",
+  "51→52 真实数据（f6_real.py 原脚本重跑，insert-only 158 条 op，D1652 排除）：apply rc=0。981 个可配对插入段中，有效加粗/颜色不符 0 个（上一轮是 533），jc/ind 不符 0 个（上一轮是 470），keepNext 不符 0 个。更严的变体 f6_strict/f6_strict2：981 段 pPr 的 C14N 全部一致；逐字符比 exclusive C14N 的 rPr，不符 0 个。剩下的差异只有 w14:paraId/rsid 属性、xml:space，以及空文字 run 被丢弃（107 段，全都不可见）。",
+  "零宽字符（final minor F3）已修好。原命令 check 和 apply 都 rc=2，报'命中禁用词表 工程标签:待核'。变体 U+2060、软连字符 U+00AD、多个零宽字符连用、replace_text 路径、把禁用词拆进两个 run 并在中间加零宽字符，check 全部 rc=2。",
+  "uniq_anchor 按 norm 判重（final minor⑤）已修好。f6_amb.py 重跑后，51→52 补丁中 norm 重复且没有 index_hint 的锚点由 6 条变为 0 条，t24b 也通过。",
+  "restore replace_paragraph 写后复核（final minor F1）已修好。F1 与变体 C4rp（另一个 title 段）都 rc=2，已删除输出。t25 断言 wordlist_leak 非空，结果 PASS。replace_text 变体没有覆盖到，见 issues。",
+  "_own_json（final minor R4）：r3attack.py R4 原命令 rc=3，authorization_lost=false，已修好。approval_ref-only 变体仍会覆盖，见 issues。",
+  "ppr_xml/rpr_xml 新攻击面：rpr_xml 带 DOCTYPE 外部实体（file://）时，rc=2 报'不是合法的 XML 片段'，没有泄漏本地文件内容。ppr_xml 伪装成题目标题样式并带工程词时，check 就以词表 rc=2 拦下，没有写出。ppr_xml 里写不存在的 pStyle 能通过 check；rpr_xml 带 w:vanish 能写出隐藏文字。这两项都属于补丁作者主动写的格式，不会误导也不会越权，按 minor 以下处理，不单列。",
+  "04→52 金标准回放（replay.py 04 52）：diff 30 条 replace_paragraph，apply rc=0，用时 4.5 秒。文字流逐段一致，keepNext/pStyle 不一致均为 0，没有字面 tab。彩色 run 15279→15099，hyperlink 32→2，与上一轮相同，没有退化。51→52 全量回放：diff rc=0，1652 条 op（921/572/159），format_changes 212 条（188 条 replace_paragraph_format、24 条 insert_format），insert_run_extra_format 不再出现。apply 在 D0859 表格唯一段处按设计中止。",
+  "run_tests_apply_patch.py：复制到 scratchpad/booktools/apply_patch_confirm/rerun/ 后用 /usr/bin/python3 -B 运行，共 42 条，失败 0，exit 0，输出'全部关键断言通过'。",
+  "纪律：真实输入 B3_52、B3_03、B3_04、同版身份.json、B3_51、B2_230、04_编号与考法计数.json 以及 apply_patch.py 本身，测试前后 SHA256 与 mtime 一致（snap_before.json 与 snap_after.json 用 cmp 比对相同）。scripts/__pycache__ 与 scripts/ 的目录列表前后相同。项目根的条目列表前后相同。审阅入口 00_必修三最新审查稿/ 的内容不变，只有父目录项目根的 mtime 变化，属于并行活动；项目根没有新增条目。测试/ 目录下没有生成 out/。本复核没有改任何工具，没有运行 collab.py，没有启动子代理，没有发消息。产物全部在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch_confirm 下。"
+ ]
+}

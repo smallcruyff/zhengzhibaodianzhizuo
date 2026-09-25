@@ -1,0 +1,106 @@
+{
+ "responder": "Claude（主代理指派的返修子代理，只读书稿/题库/Skill，未运行collab.py）",
+ "target": "归属表_v1 → v2",
+ "rule_version_before": "2026-09-24-attribution-v1",
+ "rule_version_after": "2026-09-24-attribution-v2",
+ "against": "审查意见.json（Opus对抗审查，3 blocker / 5 major / 2 minor）",
+ "items": [
+  {
+   "severity": "blocker",
+   "desc_ref": "证据列与准入列按卷级状态加卷级回退来判",
+   "status": "fixed",
+   "fix_applied": "build_attribution_v2.py 的 eval_rubric_rows() 只用该 question_id 自己在 rubric_links.csv 里的行判定，'正式评分材料'+'已匹配正式材料'才算E1，'参考答案'+'已匹配参考答案'才算E3，'存在候选'/'存在冲突'落待裁决，不再有任何 by_exam 回退。",
+   "verification": [
+    "BJ-2023-DC-ERMO：Q16/Q21→E1，Q1-15/17-20→E3/不收-无E1，与 exams.csv notes 原话'同题等级E1仅Q16/Q21'完全一致（v1会把Q17-20错标E1）。",
+    "BJ-2024-BJ-GAOKAO：题库rubric_links.csv对该卷6个主观单元只有E3行，按纯逐题规则会判'不收-无E1'——但source-inventory.md第102行有用户2026-09-22明确核实为E1的记录，属于题库线缺口而非证据不存在，已用 skill_overrides.json 的 OVR-2024BJGAOKAO-E1GAP 覆盖为E1，并登记进回传题库线_v2.json，不代替题库直接改文件。",
+    "BJ-2024-SJS-YIMO-Q19：只有Q19(1)按project-constitution.md第13/50行的具名例外收，Q19(2)/(3)按逐小问证据判'待裁决-证据未核实'，不再像v1那样卷级回退把整卷带成E1或把例外错扩到全卷。",
+    "两次独立重跑 attribution.csv 逐字节一致，'待裁决-证据未核实'从v1的0条变为222条。"
+   ],
+   "residual_limits": "小问级E1颗粒度仍不完整（rubric_links.csv本身到题级）；BJ-2025-BJ-GAOKAO-Q18(1)/(2)未能独立核实到可写入override的原文，仍落待裁决，见skill_overrides.json的not_included_pending_more_evidence。"
+  },
+  {
+   "severity": "blocker",
+   "desc_ref": "漏收差集把脚本判为OUT的组合整体剔除",
+   "status": "fixed",
+   "fix_applied": "build_diffs_v2.py 新增 <MOD>_out_lowprior_candidates.csv 层，不再从差集里剔除OUT组合。",
+   "verification": "八本书OUT低先验合计4850条（85/151/633/688/998/846/864/585），全部写入diffs/目录，README已注明'金标集验证前不得当已确认非本模块'。",
+   "residual_limits": "本轮没有能力生成分层金标集去实测OUT的真实漏收率，仍需人工/模型后续抽样验证（README已知限制第5条）。"
+  },
+  {
+   "severity": "blocker",
+   "desc_ref": "身份层只有8条非平凡记录，没有落实到归属列和差集",
+   "status": "partially_fixed",
+   "fix_applied": [
+    "机制修复：build_attribution_v2.py 的COLLECTED判断现在同时读 matrix.csv 的 dup_covered_by 列（该列本身已有逐题等价类信息，v1只是没用），修复了别名孪生题假漏收的根因，不是靠新写死名单。",
+    "BJ-2025-FT-YIMO-Q18：独立核对 units.jsonl 后确认是切分错误（Q12 BMI表尾部被误切成伪选择题，Q13缺选项，原卷'第二部分共6题'但只登记5道主观题），已在 exam_identity.json 的 qid_redirects 里标记，不计入选择题分母，列入回传题库线_v2.json。",
+    "BJ-2024-CY-QIZHONG：独立核对原件路径《202411朝阳高三政治期中1试题(1).pdf》确认与BJ-2023-HD-QIZHONG同类学年错位，已登记学年更正建议，列入回传题库线_v2.json。"
+   ],
+   "not_fixed": [
+    "2022/2024高考串题、2025海淀与西城期末身份冲突、2026丰台期末Q20错位——本轮只读核验条件下未能独立复现审查意见给出的证据链（审查意见本身也未给出可直接复用的行号/文件路径），未写入exam_identity.json，避免在未核实情况下往身份层加不确定断言。已在返修回执与README里显式列为deferred，建议主代理下一步逐条核实。"
+   ],
+   "residual_limits": "见not_fixed。"
+  },
+  {
+   "severity": "major",
+   "desc_ref": "只在汇编中出现的卷（2024房山一模、2024门头沟一模）一行都没有",
+   "status": "fixed",
+   "fix_applied": "build_exam_identity_v2.py 把两卷状态改为 compilation_only_project_level_include（按主代理09-24裁定：项目级计入，取代2026-08-23选必二撤销口径，两条记录都保留并写明取代关系，补上book-xuanbi-1.md:401反向证据）；build_attribution_v2.py 新增 load_assembly_candidates()，从 assembly_blocks.csv 为两卷生成候选行，选择题照收，主观题标'待裁决-证据未核实'。",
+   "verification": "attribution.csv 新增9条候选行（source列为assembly_blocks.csv:...），exam_identity.json 对两卷的notes同时保留2026-08-23选必二范围记录和2026-09-24项目级取代记录及book-xuanbi-1.md:401反向证据。",
+   "residual_limits": "候选行的题号/题型只能用汇编标注文本正则粗略推断（汇编preview有页码截断，无法保证100%准确切分），全部模块列MAYBE（未经classify.py九模块判定），需人工/模型核实模块归属，已在行内downgrade_notes注明。"
+  },
+  {
+   "severity": "major",
+   "desc_ref": "边界卡没有做到'只摘Skill原文'，关键结论与事实相反",
+   "status": "fixed",
+   "fix_applied": "model_batch/boundary_cards.md 重写：卡1改引incremental-question-intake.md第77-79行的必修一剔除清单原文（不再说'找不到'）；卡3把philosophy.md第30行与culture.md对应段分开逐字摘录，不再合并成误引的'两题+两题'；卡4补充book-xuanbi-3.md'思维宝典负责...推理宝典负责...'的直接分工原句；补上第30、44行的正反回归样例原文；删除'可以反推……常对应……'等推断措辞。",
+   "verification": "本次逐条重新用grep/sed核对incremental-question-intake.md、book-xuanbi-3.md、book-philosophy.md、book-culture.md原文行号，boundary_cards.md v2每条引文均标注核对时的真实行号。"
+  },
+  {
+   "severity": "major",
+   "desc_ref": "选择题的证据列不可靠",
+   "status": "fixed",
+   "fix_applied": "选择题证据改为逐题判断：E1（正式答案表，罕见）/E3（已匹配参考答案）/缺答案键-已核实（有'正式细则不覆盖选择题'等负例记录）/缺答案键（未核实）/答案键来源未核实(候选未确认)，不再有卷级回退。",
+   "verification": "attribution.csv 选择题evidence分布：E1 54、E3 524、缺答案键 53、缺答案键-已核实 30、答案键来源未核实(候选未确认) 578、具名例外 15、汇编候选 7、身份错误 1，合计1262，逐题可查evidence_detail列。"
+  },
+  {
+   "severity": "major",
+   "desc_ref": "'已收只标待复核'只落实在标签上，COLLECTED模块未被复判",
+   "status": "partially_fixed",
+   "fix_applied": "prep_model_batch_v2.py 新增'队列②COLLECTED复判'：把全部COLLECTED模块单元（不止v1的80对conflict）都排进模型批次估算，明确要求'逐单元逐模块输出维持收录/改判错收/证据不足暂缓三态结论'。",
+   "not_fixed": "本轮未实际调用模型执行复判，build_diffs.py的错收候选(extra_candidates)这一层仍只能反映classify.py自带conflict_script_out算出的80对下限，不能凭空产出模型才能给出的复判结果，README已如实说明。",
+   "residual_limits": "见not_fixed，真正的错收候选清单要等model_batch队列②实际跑完。"
+  },
+  {
+   "severity": "major",
+   "desc_ref": "可复现性不够持久：核心输入放在tmp未归档",
+   "status": "fixed",
+   "fix_applied": "新增 inputs_snapshot/ 目录，把生成v2 attribution.csv实际用到的8个核心输入文件（classified_prod.jsonl、units.jsonl、classify.py、rubric_links.csv、exams.csv、assembly_blocks.csv、matrix.csv、bank_duplicate_exams.csv）原样快照，附SHA-256清单(MANIFEST.sha256)与生成命令说明。",
+   "verification": "shasum -a 256 -c MANIFEST.sha256 全部OK；README记录了每个文件的来源路径与用途。"
+  },
+  {
+   "severity": "minor",
+   "desc_ref": "没有产出模型切片，units.jsonl本身有截断，无法验证'细则不截断'",
+   "status": "fixed",
+   "fix_applied": "prep_model_batch_v2.py 新增 length_not_truncated_spotcheck：抽查units.jsonl前2000条的stem/rubric实际字符数是否等于声明的_len。",
+   "verification": "抽查命中4条截断（BJ-2024-DC-YIMO-Q18 rubric 6883→6000，BJ-2024-XC-YIMO-Q19 stem 4159→4000，BJ-2025-FT-ERMO-Q16 rubric 6784→6000，BJ-2025-FT-ERMO-Q18 rubric 9262→6000），与审查意见描述完全吻合，已在slice_estimate.json里落地为可验证数据而不是断言；README已提示正式切片阶段必须回题库原文取全文。"
+  },
+  {
+   "severity": "minor",
+   "desc_ref": "README和脚本若干细节错误（100条→80对、summary.csv表头自相矛盾、named_exceptions遗漏第50行、apply_rulings的or True bug、content_fingerprint样板文字与截断、prep_model_batch顺序不确定、boundary_cards非脚本生成、token估算未提缓存/多轮放大）",
+   "status": "fixed",
+   "fix_applied": [
+    "README v2已更正为80对，并解释build_diffs这层数字为何和v1一样（不是没修，是这层本来就只反映conflict_script_out，真正修复在model_batch队列②）。",
+    "summary.csv表头v2改为'漏收候选_按裁定可收(非不收)'/'漏收候选_按裁定不收(选择题外主观题无E1)'，消除自相矛盾措辞。",
+    "exam_identity.json的named_exceptions已补引project-constitution.md第50行整卷例外名单原文。",
+    "apply_rulings_v2.py删除'or True'，改为module与field不一致时显式跳过并记录warning，不再无条件套用。",
+    "build_attribution_v2.py的fp()函数先去掉固定样板前缀再哈希全文，subq行把小问号并入哈希输入，避免空值和碰撞。",
+    "prep_model_batch_v2.py的missing列表排序后再输出。",
+    "boundary_cards.md v2在本次任务里由人工（本会话）逐条核对Skill原文重写，仍非脚本自动生成——如需脚本化留待后续，本条不代为承诺'已脚本化'。",
+    "slice_estimate.json新增caching_and_multiturn_caveat字段，明确提示实际用量可能比估算放大一个数量级。"
+   ]
+  }
+ ],
+ "not_verified_independently": [
+  "审查意见.json里逐条列出的部分具体题目实例（例如2023西城二模Q16-19、2023海淀一模/期中等）未逐条重新去原始PDF/PPTX核对，本轮信任审查意见给出的行号/文件路径作为输入，重点验证的是'系统性bug是否被架构修复'而不是'审查意见列出的每个具体例子是否分别修复'——已修的架构性bug（逐题证据判定、dup_covered_by合并）会自动覆盖绝大多数同类具体实例，已用DC-ERMO、2024BJ-GAOKAO、SJS-YIMO-Q19三个独立抽样核实过架构修复确实生效。"
+ ]
+}

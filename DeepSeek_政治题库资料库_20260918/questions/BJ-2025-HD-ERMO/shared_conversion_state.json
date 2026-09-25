@@ -1,0 +1,98 @@
+{
+  "exam_id": "BJ-2025-HD-ERMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2025-HD-ERMO-Q1": "0d6dd55261732bcf4ce6f4992ef8d55030c05cf8f13de6a97c8dffa10c4b1dd1",
+    "BJ-2025-HD-ERMO-Q2": "b2d3496a3a9f43681ab54e860d6c5e6626527b091ad2c7e8835965b30ea9c75f",
+    "BJ-2025-HD-ERMO-Q3": "d7d8bf6e6316569ec3cd931830c88a4e78b576fc76bc7278f1c72a3c777f232c",
+    "BJ-2025-HD-ERMO-Q4": "e31f7d087ba9e183a7323fad16101bbacc8b4041388f9c34aea7716f92a67193",
+    "BJ-2025-HD-ERMO-Q5": "ae476702e7c8c979f2efa652976788d7860b4078fa273dc818e2fccfdd5e26bf",
+    "BJ-2025-HD-ERMO-Q6": "3ecb3e0a77870a68095689178b5ed1b3b53c11806673cfc307e8bed570049146",
+    "BJ-2025-HD-ERMO-Q7": "45bd6ce91b0be3f3e0e0b21a10a5490fdfb37b802c5e75b3cd41c286a0088ae4",
+    "BJ-2025-HD-ERMO-Q8": "bd2726fb13e22dd575bab4f42dee7273b60fb4e2783c7058d09539dc1e22db35",
+    "BJ-2025-HD-ERMO-Q9": "406081b43671fdb5102895a3264bc92ed52666deb66095d8869233b5729edd91",
+    "BJ-2025-HD-ERMO-Q10": "b75a0935071cd4102b5edaf34242bcb8b4b8e1b633dca436cbff6230aa14e50a",
+    "BJ-2025-HD-ERMO-Q11": "85dd625fbd114bfc6d63a15736edbff1af0b3f451e228e73b2753c48b42de257",
+    "BJ-2025-HD-ERMO-Q12": "c0588f204f9d36cd6a8da07d33b267631f168432c816a15981ce060b88d26282",
+    "BJ-2025-HD-ERMO-Q13": "abff6ddd4c49da8e594a263c6e463cb3ad6a305b676f18812c9021f9e2471aab",
+    "BJ-2025-HD-ERMO-Q14": "daee8abbc64b8b9c148ccbdcc67f11b47bd1903274d347f5aa6054222d6bb6a0",
+    "BJ-2025-HD-ERMO-Q15": "56d26f021013c42b53229825a5d4baf4145030130858dea55e7e0a43fd6ffcce",
+    "BJ-2025-HD-ERMO-Q16": "e468777cdfc655d741e5597b7bc25028f2f10a19168bfa5aa1281b5dcbdcb779",
+    "BJ-2025-HD-ERMO-Q17": "0be26e956708ffbaa5514792c5a3e0722cb0cae1c14dcdc5fbd76822d815b36b",
+    "BJ-2025-HD-ERMO-Q18": "3451d8f2d258a9f2058fc2fe440f56362f56a5c64ad6b8bfb668ee396c609282",
+    "BJ-2025-HD-ERMO-Q19": "1a29c34835cdf228fafec3563da36b3bbd4bf3b024967ab6674893e0d1de6817",
+    "BJ-2025-HD-ERMO-Q20": "4fe28b31ecb2b64e5fc7e82299bbf8bced8767ebb80c9406acde5271b04fa858",
+    "BJ-2025-HD-ERMO-Q21": "32db2ffa6df1ac79e1ad401e258a30791ac989cade09529587f5c5cbbdb1d131",
+    "BJ-2025-HD-ERMO-Q22": "d179fd362606be6230e3f99e658426ac5cca7914001ccb9247ddc0761c2b249e"
+  },
+  "source_pages": {
+    "paper": 8,
+    "lecture": 71,
+    "rubric_1_docx_or_pptx_unpaged": 0,
+    "rubric_2_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 79,
+  "source_roles": {
+    "paper": "S7ff16fecb25f",
+    "lecture": "S086cafc0d843",
+    "rubric_1_docx_or_pptx_unpaged": "Sfc56fdd304fd",
+    "rubric_2_docx_or_pptx_unpaged": "S10b5fafe8824"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "N/A_with_basis：conversion_manifest记录无独立参考答案文件；题MD中正式评分细则标为E1，讲评/学生示例分层保留，不据常识或E1补造独立E3。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2025-HD-ERMO-Q20",
+      "location": "讲评PDF p46 学生手写行2—7；红绿框叠压处",
+      "partial_reading": "可稳定读到分散字词“发展”“全面”“共享”“②”“人民”“③”“④”；其余连写跨度保持未读，细分位置见sources/transcriptions/q20_student_samples/p046.md。",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "BJ-2025-HD-ERMO-Q20",
+      "location": "讲评PDF p49 学生手写行3—5；蓝框覆盖处",
+      "partial_reading": "可读短片“发展”“②辩证思维具有动态性”“共同富裕”；句间连写不拼接，细分位置见sources/transcriptions/q20_student_samples/p049.md。",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "BJ-2025-HD-ERMO-Q20",
+      "location": "讲评PDF p51 页面底部与印刷标题分离的学生短句",
+      "partial_reading": "仅确认底行存在；逐字读不稳，按图定位为约x=400—1760、y=1730—2030；“罗列、不回应问题”为教师印刷标题，不归入学生文字。",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "BJ-2025-HD-ERMO-Q20",
+      "location": "讲评PDF p47、p50 已有学生答卷转写",
+      "partial_reading": "逐字片段与行序沿用父canonical，p47页右缘有父记录的已闭合片段，p50保留若干难辨处；页面转写见p047.md与p050.md。",
+      "affects_answering": false,
+      "round": "r1"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1"
+    ],
+    "primary": "BJ-2025-HD-ERMO/primary_review_r1_20260923.json",
+    "independent": [
+      "../group_2025_west/BJ-2025-HD-ERMO/independent_review/verification.json",
+      "../group_2025_west/BJ-2025-HD-ERMO/luna_max_audit_r1_20260923/B_r1_verify/verification.json"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-hd-ermo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T14:43:22.820570+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T14:54:06.982611+00:00"
+}

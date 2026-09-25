@@ -1,0 +1,76 @@
+{
+ "schema": "qpack-rulings/1",
+ "version": 1,
+ "updated_at": "2026-09-23",
+ "note": "只登记能在 references/user-requirements-ledger.md 找到 REQ 条目的用户裁定；qpack 读取时逐条核对总账，找不到的一律拒收。裁定只改变“这一节按什么角色用”，不改题库原文，也不提升证据等级：被裁定改角色的候选小节仍标 bank_candidate，须看原页。题库线（Luna）是否同步由题库负责人决定。",
+ "rulings": [
+  {
+   "req_id": "REQ-20260922-CONCISE-2024RUBRIC",
+   "scope": {"exam_ids": ["BJ-2024-BJ-GAOKAO"]},
+   "source": {
+    "source_id": "Se0d7d1a5fd45",
+    "sha256": "e0d7d1a5fd4585f7519773b7118f4f161de68adfdce95be6c1587fa185b3eff1",
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/历年高考题及细则/2024年北京市高考政治试题分析(1).pdf"
+   },
+   "effect": {
+    "type": "promote_section",
+    "role": "e1",
+    "heading_regex": "^候选评分材料",
+    "body_regex": "Se0d7d1a5fd45",
+    "note": "用户确认《2024年北京市高考政治试题分析(1)》内【细则】为2024高考正式细则，按E1使用；节内可能同时有等级表、示例等非【细则】块，哪些块属【细则】须对原页判断"
+   },
+   "bank_position": "题库 2026-09-23T07:50Z 验收该卷时把这份PDF定为第三方E2候选，“正式评分材料原文”写“未找到”",
+   "basis": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/user-requirements-ledger.md#REQ-20260922-CONCISE-2024RUBRIC",
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/source-inventory.md#2020—2025 北京高考归档核验（2024试题分析条）"
+   ]
+  },
+  {
+   "req_id": "REQ-BX3-20260922-GK25Q21-RESTORE",
+   "scope": {"keys": ["BJ-2025-BJ-GAOKAO-Q21"]},
+   "source": {
+    "source_id": "S132a504a16fe",
+    "sha256": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/历年高考题及细则/2025北京细则.pdf",
+    "page": 5
+   },
+   "effect": {
+    "type": "page_pointer",
+    "role": "e1",
+    "pages": ["questions/BJ-2025-BJ-GAOKAO/assets/rubric_pages/p005.png"],
+    "note": "《2025北京细则》p5第21题旁红批“假的”不否定该评分，按同题正式评分E1使用；题库该题E1层未写正文，正文须看原页"
+   },
+   "bank_position": "题库 BJ-2025-BJ-GAOKAO-Q21.md 的“E1评分层（严格不升格）”只留页级指针（E1_candidate_pending）",
+   "basis": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/user-requirements-ledger.md#REQ-BX3-20260922-GK25Q21-RESTORE",
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/source-inventory.md#2020—2025 北京高考归档核验（2025北京细则条）"
+   ]
+  },
+  {
+   "req_id": "REQ-PROJ-20260822-001",
+   "scope": {"exam_ids": ["BJ-2024-SY-ERMO", "BJ-2026-SJS-QIMO", "BJ-2026-BJ-GAOKAO"]},
+   "effect": {
+    "type": "e1_exception",
+    "add_layers": ["e3"],
+    "note": "三套具名例外（2024顺义二模、2026石景山期末、2026北京高考）允许不取得正式评分细则；官方参考答案只作E3，不虚构固定分、替代关系、封顶或E1槽。题库若已有E1正文仍照常截取"
+   },
+   "basis": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/user-requirements-ledger.md#REQ-PROJ-20260822-001",
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/bixiu3.json#sources.no_e1_exceptions"
+   ]
+  },
+  {
+   "req_id": "REQ-BX2-20260827-001",
+   "scope": {"keys": ["BJ-2024-SJS-YIMO-Q19"], "subq": ["1"], "books": ["bixiu2"]},
+   "effect": {
+    "type": "e1_exception",
+    "add_layers": ["e3"],
+    "note": "必修二特批：2024石景山一模Q19（1）题级无E1确认例外，讲评PPT与教师版答案只作方向性E3；只覆盖该小问，不外推到别册"
+   },
+   "basis": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/user-requirements-ledger.md#REQ-BX2-20260827-001",
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/bixiu2.json#sources.no_e1_exceptions.questions"
+   ]
+  }
+ ]
+}

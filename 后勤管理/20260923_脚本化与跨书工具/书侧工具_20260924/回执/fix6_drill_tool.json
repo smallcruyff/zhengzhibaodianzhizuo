@@ -1,0 +1,38 @@
+{
+  "summary": "第六轮收口返修（对应 回执/confirm_drill_tool.json 唯一一条 major①：\"一修一增\"漏洞）：_new_fails() 原来用\"候选稿键在不在父稿键集合（set）里\"做集合比较，同一次 build 如果既修好一条父稿原有 FAIL、又新增一条与父稿另一条 FAIL 内容键完全相同的条目（如把缺题源的条目复制一份），候选稿这个键的出现次数其实比父稿多了一次，但集合比较看不出\"次数\"，会把新增那条也当成\"父稿已有\"漏放过去，同规则 FAIL 条数计数兜底那一层也不变（因为总数没变），导致 build 退出码 0 并写出候选稿。改法：base_key_n = Counter(_fail_content_key(f) for f in base_fails)，候选稿逐条按遍历顺序累加 seen_key_n[key]，一旦某个键在候选稿里出现的次数超过父稿该键的计数，超出的那些条目（按遍历顺序取多出来的）才算新增；未超出的沿用父稿基线不算。rule 分组计数兜底原样保留（任一规则 FAIL 总数比父稿多，该规则下候选稿全部 FAIL 都算新增）。只改了 _new_fails() 一个函数（连文档字符串在内净增约 6 行），未动 _fail_content_key 判定字段、未重构、未精简其他部分；未改 batch_health.py/docx_lib.py/profile_lib.py/profiles/，未运行 collab.py，未启子代理、未开新会话、未给其他会话发消息。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_drill_tool.py"
+  ],
+  "tests": [
+    {
+      "input": "开发期在 scratchpad /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool/fix6/ 下复用 confirm 轮已验证的 vattack.py（V2 用例：B3_52 修好第 36 条题源为空、同时在第 38 条题源为空条目后插入一份其深拷贝，题源仍为空），TMPDIR 指向本目录内 tmp/、/usr/bin/python3 -B",
+      "result": "[OK] V2 修一条题源为空+复制另一条题源为空条目（计数不变）→ 应 exit 1：exit=1、out_exists=false，stderr 正确报出新增 1 条题源为空 FAIL（39 号，之前被漏判为\"与父稿相同\"）；同时重跑 V1/V3 两个既有变体无回归（0 bugs of 3）",
+      "seconds": "~20"
+    },
+    {
+      "input": "开发期在同一目录跑 final_attack.py 全量既有攻击用例（N1/N1b/N2/N3/N4a/N4b/N5/N6/N6b/N7/N8/N9），确认修复没有引入新的漏判/误判",
+      "result": "DONE 1 bugs of 16——唯一的\"BUG\"是 N3（测试脚本自身把父稿原有的\"题源为空\"\"分组标签\"FAIL 也算进 ins_check_fails 导致误报，8 行 A1 的 stem/blank/source/colored 全部正确，两条路径 exit=0），与本轮 confirm.json 记录的已知测试脚本误报一致，不是工具回归",
+      "seconds": "~230"
+    },
+    {
+      "input": "在 官方 测试/run_tests_drill_tool.py 里追加\"第六轮返修回归用例 fix6-1\"（用真实 B3_52 的 _b3items：挑 2 条题源为空的记录，修好第 1 条、在第 2 条后插入其深拷贝作为新增条目），先在 scratchpad booktools/drill_tool/run6/ 跑通，再原地重跑落地文件、/usr/bin/python3（3.9.6，无 -B，与脚本内其余用例一致）",
+      "result": "RESULTS.json 全部用例（含旧有 r1~r3、fix5-1~fix5-4b、本轮新增 fix6-1）通过，脚本最终打印\"全部用例： PASS\"，退出码 0；fix6-1 单条：exit=1（expect 1）、fix6_1_out.docx 不存在；4 个真实输入（B3_52/B2_230/哲学R10/选必二r22）测试前后 SHA/mtime 逐一相同（B3_52=c007d719…、B2_230=d33a3f93…，与上一轮记录一致）；/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 测试前后仍只有 3 个旧的 cpython-312 pyc（book_incremental/check_drill_admission/source_intake），无新增",
+      "seconds": "~360"
+    }
+  ],
+  "known_limits": [
+    "_fail_content_key 的判定字段展开本身未变（仍是 confirm.json 里已确认无误的口径），本轮只改 _new_fails 的计数方式，_fail_content_key 与 rule 计数兜底两层判定逻辑的组合关系不变。",
+    "多重集合比较是按候选稿 FAIL 的遍历顺序（items.records 里出现的先后）判定\"哪几条算超出\"，如果同一键的多条 FAIL 之间没有其他可区分字段，报告里具体点名的是遍历顺序中排在后面的那些条目，而不是特意挑出\"新插入的那条\"；这不影响判定结果（该键确有超额、build 该拦仍会拦、exit 1 且不留输出），只影响 stderr 里具体展示的是哪一条 excerpt，不构成漏判。",
+    "drill_tool.py 行数由第五轮的 1331 行增至 1337 行（本轮净增 6 行，含加长的函数文档字符串），仍超出规格 ≤1200 行的目标，与第五轮 known_limits 已如实说明的情况一致，未新增超标幅度之外的意外增长，由主代理裁定。"
+  ],
+  "profile_fields_needed": [],
+  "issues_resolved": [
+    {
+      "desc": "major①收口：_new_fails 用\"候选稿内容键在不在父稿键集合（set）里\"做集合比较，同一次 build 里如果同时修好一条父稿原有 FAIL、又新增一条与父稿另一条 FAIL 内容键完全相同的条目（如把缺题源的条目复制一份），候选稿这个键的出现次数比父稿多了一次，但集合比较和\"按 rule 计数\"的兜底（总数不变时不触发）都看不出这次超额，build 误判无新增、退出码 0 并写出候选稿，stderr 还会说\"与父稿原有 FAIL 相同，不算新增\"。",
+      "how": "_new_fails 改为对内容键做多重集合（collections.Counter）比较：base_key_n 记录父稿每个键出现的次数；候选稿逐条累加 seen_key_n[key]，一旦某键在候选稿里的累计出现次数超过父稿该键的计数，超出的那部分条目才算新增（未超出的沿用父稿基线，不算）。按 rule 分组计数的兜底原样保留、逻辑不变（任一规则 FAIL 总数比父稿多，该规则下候选稿全部 FAIL 都算新增）。",
+      "test": "开发期复现：TMPDIR=.../fix6/tmp /usr/bin/python3 -B vattack.py V2（B3_52 修好第 36 条题源为空、复制第 38 条题源为空条目为新的第 39 条）：修复前 exit=0 且 V2_out.docx 存在（confirm.json 已记录的原始复现）；修复后 exit=1、out_exists=false，stderr 报出新增 1 条题源为空 FAIL（第 39 条）。落地后官方测试 fix6-1（run_tests_drill_tool.py，用真实 B3_52 数据）复现同一场景，exit=1（expect 1）、fix6_1_out.docx 不存在，全部用例仍打印 PASS，4 个真实输入 SHA/mtime 测试前后相同。"
+    }
+  ],
+  "issues_deferred": []
+}

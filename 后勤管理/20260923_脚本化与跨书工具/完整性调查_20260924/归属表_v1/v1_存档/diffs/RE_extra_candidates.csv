@@ -1,0 +1,8 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_RE,conflict_script_out,admission,evidence,script_tier,rule_version
+BJ-2022-BJ-GAOKAO-Q9,BJ-2022-BJ-GAOKAO-Q9,BJ-2022-BJ-GAOKAO,9,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,不明,2026-09-24-attribution-v1
+BJ-2024-DC-YIMO-Q8,BJ-2024-DC-YIMO-Q8,BJ-2024-DC-YIMO,8,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2024-FT-ERMO-Q9,BJ-2024-FT-ERMO-Q9,BJ-2024-FT-ERMO,9,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,不明,2026-09-24-attribution-v1
+BJ-2024-XC-YIMO-Q11,BJ-2024-XC-YIMO-Q11,BJ-2024-XC-YIMO,11,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2026-FT-YIMO-Q8,BJ-2026-FT-YIMO-Q8,BJ-2026-FT-YIMO,8,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,倾向,2026-09-24-attribution-v1
+BJ-2026-HD-QIMO-Q12,BJ-2026-HD-QIMO-Q12,BJ-2026-HD-QIMO,12,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,不明,2026-09-24-attribution-v1
+BJ-2026-FT-ERMO-Q9,BJ-2026-FT-ERMO-Q9,BJ-2026-FT-ERMO,9,选择题,,整题,COLLECTED,RE,完整题-选择题照收,E1,不明,2026-09-24-attribution-v1

@@ -1,0 +1,57 @@
+{
+  "schema": "docx-footer-structure-registry/2026-09-22",
+  "exam_id": "BJ-2023-FT-YIMO",
+  "source_docx_sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+  "footer_definitions": [
+    {
+      "part": "word/footer1.xml",
+      "packaged_path": "source_structure/footer/footer1.xml",
+      "sha256": "f14475501c16e5a4549198333f1afa608028b4e3a018499221bdc09af314f92c",
+      "bytes": 3191,
+      "dynamic_fields": [
+        {
+          "field": "PAGE",
+          "instruction": "page",
+          "cached_display": "1",
+          "dynamic": true
+        },
+        {
+          "field": "SECTIONPAGES",
+          "instruction": "sectionpages",
+          "cached_display": "3",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "part": "word/footer2.xml",
+      "packaged_path": "source_structure/footer/footer2.xml",
+      "sha256": "f14475501c16e5a4549198333f1afa608028b4e3a018499221bdc09af314f92c",
+      "bytes": 3191,
+      "dynamic_fields": [
+        {
+          "field": "PAGE",
+          "instruction": "page",
+          "cached_display": "1",
+          "dynamic": true
+        },
+        {
+          "field": "SECTIONPAGES",
+          "instruction": "sectionpages",
+          "cached_display": "3",
+          "dynamic": true
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "both_footer_parts_contain": [
+      "dynamic PAGE",
+      "dynamic SECTIONPAGES"
+    ],
+    "cached_display": "1/3",
+    "cached_display_is_not_fixed_page_count": true,
+    "source_docx_fixed_page_count": null,
+    "35_page_render_is_original_page_identity": false
+  }
+}

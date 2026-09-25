@@ -1,0 +1,54 @@
+{
+  "summary": "新增 scripts/apply_patch.py（check/apply/diff 三子命令），按批准的补丁 JSON 把段落级修改机械落到 DOCX：锚点定位、题面零改写守卫、学生正文词表过滤、已应用检测、写后 postcondition 与未点名段落不变复核全部实现并用 B3_52/B2_230/B3_03/B3_04/B3_51 真实数据测过；diff 生成的补丁与 B3_51→B3_52 这种大改之间的复现率是 62.1%（个别逐条可行、整批仍会因单条题面区/复杂段落中止），如实记在 known_limits，没有伪造通过。",
+  "files": {
+    "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py",
+    "lines": 982,
+    "data_dir_created": false,
+    "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/run_tests_apply_patch.py",
+    "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_apply_patch.py",
+    "diff_reproduction_analysis_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/diff_reproduction_analysis.py",
+    "diff_reproduction_analysis_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/diff_reproduction_analysis.py",
+    "test_outputs_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/"
+  },
+  "usage": "apply_patch.py check --docx 父稿.docx --patch p.json [--profile bixiu3] [--report r.json]\napply_patch.py apply --docx 父稿.docx --patch p.json --out 候选.docx [--profile bixiu3] [--report r.json] [--health]\napply_patch.py diff  --old A.docx --new B.docx --out p.json [--book bixiu3] [--report r.json]\n补丁格式 baodian_patch_v1、op 种类（replace_text/replace_paragraph/insert_after/insert_before/delete_paragraph/set_format/set_keepnext）、anchor 字段（text/contains/style/prev/block/index_hint）、source_zone 规则、退出码 0/1/2/3 全部写在工具文件头（--help 可看到）。",
+  "tests": [
+    {"input": "B3_52（c007d719…，19861 段/347 表）", "result": "父稿 SHA 错 → exit 2", "seconds": 0.61},
+    {"input": "B3_52，14 条 op（每种 op≥2 条，覆盖表格单元格段、红/蓝色 run、跨 run 的 old）", "result": "check → exit 1（14 pending）", "seconds": 2.06},
+    {"input": "同上，apply --health", "result": "exit 0，写出候选，体检未新增 FAIL；写后逐段核对 replace_text/replace_paragraph/insert_after/insert_before/delete_paragraph 全部生效", "seconds": 6.48},
+    {"input": "5 条幂等友好 op（anchor 用不被编辑触及的稳定子串/唯一样式，而不是被替换掉的旧文字本身）", "result": "首次 apply exit 0；对输出重新 check（parent_sha 换成输出自身）→ exit 0，5/5 already_applied", "seconds": "4.12+1.11"},
+    {"input": "1 条 delete_paragraph，先 apply 再对输出 check 同一 op", "result": "如实暴露限制：删除后段落本身不存在，anchor.text 无法再命中，第二次 check 报 anchor_error（exit 2）而不是 already_applied——已写入 known_limits，未伪造通过", "seconds": "3.71+0.79"},
+    {"input": "负例：锚点 0 命中", "result": "exit 2", "seconds": 0.79},
+    {"input": "负例：锚点多命中（182 段）", "result": "exit 2，报告列出候选段号/样式/文字", "seconds": 0.74},
+    {"input": "负例：old 与段内实际文字不符", "result": "exit 2", "seconds": 0.80},
+    {"input": "负例：同段 replace_text + delete_paragraph 冲突", "result": "exit 2", "seconds": 1.02},
+    {"input": "负例：锚点落在题面区（zone=source）却未给 source_zone", "result": "exit 2", "seconds": 0.92},
+    {"input": "负例：新文字含工程标签“（待核）”", "result": "exit 2（命中 工程标签:待核）", "seconds": 0.79},
+    {"input": "负例：输出落 00_必修三最新审查稿（审阅入口）", "result": "exit 3，未写出", "seconds": 0.78},
+    {"input": "负例：输出落必修二工作区目录（冻结册目录）", "result": "exit 3，未写出", "seconds": 0.79},
+    {"input": "负例：输出落 Skill scripts 目录本身", "result": "exit 3，未写出", "seconds": 0.79},
+    {"input": "B2_230（d33a3f93…，冻结册），check 1 条 op", "result": "exit 1（可检查）", "seconds": 1.47},
+    {"input": "B2_230，apply 同一 op", "result": "exit 3（冻结册拒写），未写出", "seconds": 1.46},
+    {"input": "diff --old B3_03 --new B3_04", "result": "生成 344 条 replace_paragraph；整批 apply 到 B3_03 在第 1 条即因“锚点在题面区未标 source_zone”中止（diff 不知道教学语义，如实中止不留输出）", "seconds": "1.67+0.80"},
+    {"input": "diff --old B3_04 --new B3_52（目录回填 30 处）", "result": "生成 30 条 replace_paragraph；整批 apply 在第 1 条即因“目录段含超链接/域，结构过复杂”中止（v1 明确不处理域代码类段落，属已知边界）", "seconds": "1.51+0.79"},
+    {"input": "diff --old B3_51 --new B3_52（压力测试，19021→19861 段）", "result": "生成 1652 条（replace_paragraph 921/delete_paragraph 572/insert_after 159）；整批 apply 同样在第 1 条复杂段落即中止；另跑逐条可行性画像（不查同段冲突）：1026/1652 单条本身站得住（62.1%），失败原因 source_zone_missing 585、complex_paragraph 34、anchor_ambiguous 6、forbidden_word 1", "seconds": "2.00+0.79+0.72"},
+    {"input": "真实输入文件（B3_52/B3_03/B3_04/B3_51/B2_230）测试前后 SHA+mtime", "result": "全部未变", "seconds": 0}
+  ],
+  "replaces": [
+    "必修二 Fable5 规划执行/DeepSeek 夜间全量差分的 patch_*.json + workers/*/patch_meta.json（旧格式按 body_index 定位，新工具改按锚点定位，不再依赖段落下标）"
+  ],
+  "known_limits": [
+    "diff() 生成的补丁与真实大改（B3_51→B3_52）之间的整批复现率低：apply 是整批要么全过要么中止，diff 不带教学语义（不会自动补 source_zone、不认表格结构变化），逐条可行性画像显示约 62% 的条目单独看是站得住的，但只要有 1 条不过整批就不落盘——这是设计使然（题面零改写门优先于图省事），不是 bug；真正跨批回放建议由主代理/Codex 对 diff 输出逐条核准、按需补 source_zone/allow_complex 后再喂给 apply。",
+    "diff() 对表格结构变化（增删行列）、目录/域代码段落（PAGEREF、超链接）只能生成 replace_paragraph 并在 apply 时因“结构过复杂”正确拒绝——这类改动本就该由 layout_prepare.py 处理，不在 apply_patch v1 范围内。",
+    "delete_paragraph 没有真正的“幂等重放”：段落删除后从文档树里彻底消失，第二次 check 用同一个 anchor.text 会得到 anchor_error（找不到段落）而不是 already_applied；已在文件头与本回执如实说明，未伪造成功。",
+    "insert_after/insert_before 的 already_applied 判定是启发式的（比对锚点紧邻位置的段落文字是否已等于要插入的内容），只覆盖“完全没有位移”的简单场景；如果锚点后面还有其它 op 插入了别的段落，位置会偏移，启发式可能判不出来（转而当作待处理，重复插入）——已在实测的 5 条幂等 op 里验证可行，但不保证任意组合都对。",
+    "replace_text 的跨 run 支持限定在纯 w:t 字符范围内，不支持 old 跨越 w:tab/w:sym 字符——命中即 Abort，转给人工/其它工具处理，不会静默出错。",
+    "表格结构（增删行列）明确不在 v1 范围，遇到需要新增/删除表格行列的补丁一律按“结构过复杂”处理并中止。",
+    "工具正文 982 行，略超规格里“目标 ≤900 行”的软指标（文件头中文说明本身约 120 行）；未为凑行数删减安全校验或说明，如实报告。",
+    "只测试了本工具自己生成的 diff 补丁与实测 14+5+1 条手写补丁；没有拿到别的真实“主代理批准的补丁 JSON”样本，所以 approved_by/approval_ref 字段目前只做存在性记录，没有格式或台账联动校验（按规格属于'交主代理判断'范围，不是本工具工作）。"
+  ],
+  "profile_fields_needed": [],
+  "needs_user_decision": [
+    "diff() 生成的补丁在真实大改（第51→52批规模）上整批复现率不高（约62%单条可行，但整批必须逐条补 source_zone/allow_complex 才能一次性重放），这符合规格“安全优先于省事”的原则，但要不要在 layout_prepare/publish_review 完成前，先让 apply_patch 承担“阶段性回归重放”这类用法，需要您确认可接受的使用方式（人工逐条核准后再喂 diff 输出，还是暂不用于大规模回归）。",
+    "工具正文 982 行超过规格软指标 900 行，是否要我进一步精简（例如把补丁格式说明搬到单独的 references 文档、文件头只留一句指向），还是维持现状（把完整格式写在文件头方便直接读代码理解）。"
+  ]
+}

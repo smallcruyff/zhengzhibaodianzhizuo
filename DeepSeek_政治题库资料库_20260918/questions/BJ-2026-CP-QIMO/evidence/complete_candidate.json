@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CP-QIMO",
+  "built_at": "2026-09-22T06:52:18.609922+00:00",
+  "manifest_guard_sha256_before": "964c41f9a832daaa77a967daa2f7c49ac84c25fae6866393f8d88fb67141c736",
+  "manifest_guard_sha256_after": "964c41f9a832daaa77a967daa2f7c49ac84c25fae6866393f8d88fb67141c736",
+  "manifest_unchanged": true,
+  "scope": "isolated complete candidate; shared bank/index/manifest untouched",
+  "sources": [
+    {
+      "role": "教师版_题面及参考答案",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026昌平期末/2026北京昌平高三（上）期末政治（教师版）.docx",
+      "sha256": "e748323b3f419a877db5c83e85b15d10e5bc3d6656804485ecbec8f7c70fd29a",
+      "copied_to": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/sources/teacher.docx",
+      "rendered_pages": 10,
+      "opened_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source_id": "Se748323b3f41"
+    },
+    {
+      "role": "正式评分材料",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026昌平期末/2026昌平政治期末细则(1).pdf",
+      "sha256": "ff41058b55ac2a7b2673ec2319619786bff87335a6c1d763faea128db0694191",
+      "copied_to": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/sources/scoring.pdf",
+      "rendered_pages": 3,
+      "opened_pages": [
+        1,
+        2,
+        3
+      ],
+      "source_id": "Sff41058b55ac"
+    },
+    {
+      "role": "复用清洗后教师版Markdown",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Se748323b3f41.full.md",
+      "sha256": "31fa21139d8fc168f350b1932e2e4cebc3ff733c277084316bd8ef79f0b44f56",
+      "read_only": true
+    },
+    {
+      "role": "复用清洗后评分Markdown",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Sff41058b55ac.full.md",
+      "sha256": "cc5b315eb80f30a3dda9aeea900ceb0450fb6be2735f3b4c6405b271cc78d0df",
+      "read_only": true
+    }
+  ],
+  "question_count": 21,
+  "question_files": [
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q1",
+      "parent_sha256": "9030ed6bdf92f419ba18aea8c0fe0d6281ac29b488272b0827a794dfa58df06a",
+      "candidate_sha256": "d9715746ca9dda523c97261613520b56d95ffd9941634b4c4cdc7514a484b06a",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        1
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [
+        "image1.png"
+      ],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q2",
+      "parent_sha256": "981af89ee3cfcc9df1c4edc7984527a080d4505fffefef9f6c25c8cdbd370806",
+      "candidate_sha256": "6e2baf39d46782ab516ef7e489adbea0325494cef187f24372548f70daa276c1",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        1,
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q3",
+      "parent_sha256": "0142df94d226e68e399c2010949f8b9cbe4e40b0cc7dd17a7a1a4d87de3d3cca",
+      "candidate_sha256": "27251714c8f8a7f41acf5062edcc5b1795850de1978edb4db97ffe61f7093c72",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        1
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q4",
+      "parent_sha256": "30c510d778e1cedbbfe0ad0d2c2e10b0c920bc8138120928cc2225cd678d8c12",
+      "candidate_sha256": "5d4ba43007096f3ab410f62b776a1fb0ad579de4be843e5e642df5981a22119a",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        1,
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q5",
+      "parent_sha256": "b8598e81d466cfc7d9770a8a0c1a7550a3cd607fb2e2de3414805406348b684a",
+      "candidate_sha256": "3208411ddc00a97b22a07cc942ddeb9017bbf4279029e2d8f2d9c540bffbdda4",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q6",
+      "parent_sha256": "3e0ff34f0f6d78928cf243d23a0d3eeda056f7f57d75dbf8accc1fed3c6c4b69",
+      "candidate_sha256": "c095ba3ca8b37bb5c2b270144dd1c4cc79d3282928b49d549e120be058976cb9",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q7",
+      "parent_sha256": "2b43384dacd2b2dfe9ce2e994a18784f7f3f29e6094026900b7ef655d1f8f86e",
+      "candidate_sha256": "a138ebbdd0225aaa9ce853e96c92ae64c706ec07b77dc359f967c5e706bd1105",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        2
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q8",
+      "parent_sha256": "ce65fd4fa4199e9f1cb0912573fa7a8b888a23a1c4dcd0263e7443860bdfd85d",
+      "candidate_sha256": "10fc91b10a61ee57a60608975840c110ac7c10317fc96220994a84e2a7bde911",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        2,
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q9",
+      "parent_sha256": "01fe7236fe16108152bb88d74a7746dcaea985efab3a6a055624ec84514af48a",
+      "candidate_sha256": "a20bab9810b94eee2356d3ccebbc9732c079551a16fec6221f357656c500dc9c",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q10",
+      "parent_sha256": "33c2039f740c0c4c1ffb361895fb76a9b9da7e4d4b7bec427d12f9c9d6cb3fd7",
+      "candidate_sha256": "7a60e49ca2f2a327e42f7c7fec5dd5b67869848019e56068cb65f4c99116f651",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q11",
+      "parent_sha256": "dcd7f6e47234c4d440f1463d97967479367d66714080625ead8c417956577d26",
+      "candidate_sha256": "6894f080f32d1b91f6fa967cec56040769217c91a1c3066e2037eae90169c3c3",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q12",
+      "parent_sha256": "3b45da015809a3bf72a9bc2474c83b9ccadda60c0ca96d6b98b5f5c98a70cc9f",
+      "candidate_sha256": "c8e51bae67ea16cba022a049629638ef2c8d520d84c6658e8702cd19bcd079f3",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        3
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q13",
+      "parent_sha256": "5a9f709dcd03ead1247f5fecfcde988cceb972767d6e670b60dce9e96de8a36a",
+      "candidate_sha256": "a3add7973cba266747d80e2485a2fae0cae304883426bb223127d706aab3c614",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        3,
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q14",
+      "parent_sha256": "7babf26f74c410ee2fce7fc4d0cb33b9318eb5526d558886ee76fdfb8700af99",
+      "candidate_sha256": "8ed9bc9f8d24aff23aa72b57117627f2e9ff008e13b54c6b46d38cb7c62eb5d2",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q15",
+      "parent_sha256": "ea85e0ca31281c7b15a8e1b89fce461c94c1308654d85c29cb6fe7f8f25a01d5",
+      "candidate_sha256": "ae0bdb5b1f00895061836b7dd2da28be2f01bf5c1e231f322c866045f8d3af5a",
+      "score": 3,
+      "score_text": "3分",
+      "teacher_pages": [
+        4
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [],
+      "media": [],
+      "rubric_status": "not_applicable_choice",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q16",
+      "parent_sha256": "9306b51ff8fe7d000a651b692fb2276c2bdf7cdaa0def5b528d5ee28222c48c4",
+      "candidate_sha256": "4377270c9b896b66b87149d9953fac234d0ace01681c953962b7164d55c24398",
+      "score": null,
+      "score_text": "原题未逐题标注；第二部分合计55分（不据总分倒推）",
+      "teacher_pages": [
+        4,
+        5
+      ],
+      "answer_pages": [
+        7
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": [
+        "image2.png",
+        "image3.png"
+      ],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q17",
+      "parent_sha256": "e11731ff2a041f8e28f2c448bc9d073d357c855dcebcb955306410d4dfbdb4c9",
+      "candidate_sha256": "b1180b08bf9ce815bb6f393b2bf580aac4dc9aa799adc29a0694d9a763dc277b",
+      "score": 8,
+      "score_text": "8分（正式评分材料明确）",
+      "teacher_pages": [
+        5
+      ],
+      "answer_pages": [
+        7,
+        8
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": [],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q18",
+      "parent_sha256": "d059a7cf059234115d5e30c2e918f6113a9bb9d531b283391c86bc1602949206",
+      "candidate_sha256": "8c5044cff9baf3b51290d7c31bcdc35879f18ec9367b2f373470a98187260e08",
+      "score": 8,
+      "score_text": "8分（正式评分材料明确）",
+      "teacher_pages": [
+        5
+      ],
+      "answer_pages": [
+        8
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "media": [],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q19",
+      "parent_sha256": "c1f52c486f7fd9366a0b05a681fa31feb1d56339eb88e0842f28cc1f2613df4f",
+      "candidate_sha256": "e47efb62d8e0d725794f920ddaa333f13ec4cb1d36083cfe0efc2b047ce4ce80",
+      "score": null,
+      "score_text": "原题未逐题标注；第二部分合计55分（不据总分倒推）",
+      "teacher_pages": [
+        5,
+        6
+      ],
+      "answer_pages": [
+        8,
+        9
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "media": [],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q20",
+      "parent_sha256": "c8bc6cd3c127035239674ebf985846cf61f397d9acb9b9cf70d2b704b7b20a8c",
+      "candidate_sha256": "54ae39118c8ce879f209bfea985116f7fdb2909d2788a42d6ddcdc78a92b1d1b",
+      "score": null,
+      "score_text": "原题未逐题标注；第二部分合计55分（不据总分倒推）",
+      "teacher_pages": [
+        6
+      ],
+      "answer_pages": [
+        9
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "media": [
+        "image4.png"
+      ],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    },
+    {
+      "question_id": "BJ-2026-CP-QIMO-Q21",
+      "parent_sha256": "aa6e36a58d2c1ea5ef67bd1c2232c437223fadc012a41dd1243425d2bf5f60f9",
+      "candidate_sha256": "d37570dd9af49b6dfbddee763f740f6d8e0a4599a9d6e255bf2cc747875e2492",
+      "score": null,
+      "score_text": "原题未逐题标注；第二部分合计55分（不据总分倒推）",
+      "teacher_pages": [
+        6,
+        7
+      ],
+      "answer_pages": [
+        9,
+        10
+      ],
+      "rubric_pages": [
+        2,
+        3
+      ],
+      "media": [],
+      "rubric_status": "E1_formal_scoring_standard",
+      "student_layer": "N/A_with_basis"
+    }
+  ],
+  "coverage": {
+    "exam_front_matter": "complete",
+    "questions": "21/21",
+    "teacher_rendered_pages": "10/10（旧渲染快照，字形缺失）+ 16/16（本轮 Claude 私有 fontconfig 重渲染，完全可读，交叉核对一致）",
+    "rubric_pages": "3/3",
+    "answers": "Q1-Q15 answer key + Q16-Q21 full teacher E3",
+    "formal_rubric": "Q16-Q21 full PDF text E1 with page mapping; Q21 levels retained without inferred fixed score",
+    "embedded_media": "4/4",
+    "image_links": "4/4",
+    "student_layer": "N/A_with_basis"
+  },
+  "figure_transcription": {
+    "md": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/figure_transcription/figures.md",
+    "md_sha256": "bc34b178f73d1e01f7bcf57cfa373e4c0f665f86e027b070773da8dc54c9bd18",
+    "json": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/figure_transcription/figures.json",
+    "json_sha256": "b23617cfc102044281890bccc33e042b6d3442507e39a932027860bf34ef1dfe"
+  },
+  "limitations": [
+    "缺独立原卷；题面以教师版 DOCX 身份保留。",
+    "缺独立参考答案；教师版答案保持 E3。",
+    "缺学生样卷/批注/实得分页；各题记录有依据的 N/A，不宣称不存在。",
+    "教师版旧渲染快照（10页）中文正文部分字形缺失；本轮（Claude 2026-09-22）已用私有 fontconfig 重新渲染同一 DOCX 得到 16 页完全可读版本并逐页交叉核对，题面、选项、表格、图片内容一致；同一 DOCX 另有一份独立产生的 15 页可读渲染（review/readable_teacher_render/），三次渲染页数不同证明该文件分页随字体环境变化，页码仅供定位参考，不是稳定的绝对页码。",
+    "Q16/Q19/Q20/Q21逐题分值未在现有来源明确标出，不由55分合计倒推；Q17=8、Q18=8按评分材料原文记录。"
+  ],
+  "candidate_status": "content_complete_with_declared_source_limits_pending_independent_review",
+  "shared_modified": false,
+  "revision_note_r1_claude": {
+    "date": "2026-09-22",
+    "changed_files": [
+      "BJ-2026-CP-QIMO-Q7.md（表格表头误用修正，改为不误用首行为表头）",
+      "BJ-2026-CP-QIMO-Q16.md（评分PDF文本层 Kangxi 部首编码缺陷修复）",
+      "BJ-2026-CP-QIMO-Q17.md（同上修复 + 阅读顺序修正）",
+      "BJ-2026-CP-QIMO-Q18.md（同上修复 + 删除孤立分页小标题）",
+      "BJ-2026-CP-QIMO-Q19.md（同上修复 + 补充原图黄色高亮说明）",
+      "BJ-2026-CP-QIMO-Q20.md（同上修复 + 阅读顺序修正 + 图片标题改为逐字照录并补充坐标估读）",
+      "BJ-2026-CP-QIMO-Q21.md（同上修复 + 删除孤立分页小标题）",
+      "全部 21 题追加统一“页码说明”提示行",
+      "sources/Sff41058b55ac_rubric_full.md（同源修复）",
+      "evidence/figure_transcription/figures.json、figures.md（Q20 图片转录修正）"
+    ],
+    "not_changed": "evidence/page_coverage_links.json、answer_role.json、e1_rubric.json、sol_spot_check.*、q16_image3_repair.*、independent_verification_r2.*、student_samples.json 内容未改动，仍为旧组历史记录；其中涉及页码/候选哈希的字段是历史快照，可能与本轮候选文件不完全一致，以本文件与 self_check.json 的刷新值为准。",
+    "basis": "对照评分 PDF 250dpi 原生渲染与教师版 DOCX 私有 fontconfig 16 页重渲染逐字核对；详见本轮 findings.json。"
+  }
+}

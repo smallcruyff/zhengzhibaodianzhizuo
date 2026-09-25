@@ -1,0 +1,63 @@
+{
+  "exam_id": "BJ-2026-CP-QIMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-CP-QIMO-Q1": "d9715746ca9dda523c97261613520b56d95ffd9941634b4c4cdc7514a484b06a",
+    "BJ-2026-CP-QIMO-Q2": "6e2baf39d46782ab516ef7e489adbea0325494cef187f24372548f70daa276c1",
+    "BJ-2026-CP-QIMO-Q3": "27251714c8f8a7f41acf5062edcc5b1795850de1978edb4db97ffe61f7093c72",
+    "BJ-2026-CP-QIMO-Q4": "5d4ba43007096f3ab410f62b776a1fb0ad579de4be843e5e642df5981a22119a",
+    "BJ-2026-CP-QIMO-Q5": "3208411ddc00a97b22a07cc942ddeb9017bbf4279029e2d8f2d9c540bffbdda4",
+    "BJ-2026-CP-QIMO-Q6": "c095ba3ca8b37bb5c2b270144dd1c4cc79d3282928b49d549e120be058976cb9",
+    "BJ-2026-CP-QIMO-Q7": "a138ebbdd0225aaa9ce853e96c92ae64c706ec07b77dc359f967c5e706bd1105",
+    "BJ-2026-CP-QIMO-Q8": "10fc91b10a61ee57a60608975840c110ac7c10317fc96220994a84e2a7bde911",
+    "BJ-2026-CP-QIMO-Q9": "a20bab9810b94eee2356d3ccebbc9732c079551a16fec6221f357656c500dc9c",
+    "BJ-2026-CP-QIMO-Q10": "7a60e49ca2f2a327e42f7c7fec5dd5b67869848019e56068cb65f4c99116f651",
+    "BJ-2026-CP-QIMO-Q11": "6894f080f32d1b91f6fa967cec56040769217c91a1c3066e2037eae90169c3c3",
+    "BJ-2026-CP-QIMO-Q12": "c8e51bae67ea16cba022a049629638ef2c8d520d84c6658e8702cd19bcd079f3",
+    "BJ-2026-CP-QIMO-Q13": "a3add7973cba266747d80e2485a2fae0cae304883426bb223127d706aab3c614",
+    "BJ-2026-CP-QIMO-Q14": "8ed9bc9f8d24aff23aa72b57117627f2e9ff008e13b54c6b46d38cb7c62eb5d2",
+    "BJ-2026-CP-QIMO-Q15": "ae0bdb5b1f00895061836b7dd2da28be2f01bf5c1e231f322c866045f8d3af5a",
+    "BJ-2026-CP-QIMO-Q16": "381a41c1064141e7f02a430c7fb136292c6cee95aadeb5649b6b9030936b01ae",
+    "BJ-2026-CP-QIMO-Q17": "b1180b08bf9ce815bb6f393b2bf580aac4dc9aa799adc29a0694d9a763dc277b",
+    "BJ-2026-CP-QIMO-Q18": "b24c043b20818bc7ebc0424f55c6b412d5df82afbe1c74570ca40083c13cf94b",
+    "BJ-2026-CP-QIMO-Q19": "9eb12014c33eb29e1e5697f41dad1c1611b7783aeeb0b61dbed3ab75e94df248",
+    "BJ-2026-CP-QIMO-Q20": "6e03761bfc4071f61a62c4bf9b878769411f70da870aef986479fabbbabc9a57",
+    "BJ-2026-CP-QIMO-Q21": "3502c98fe16c7711a39885e57978752dc66ff714c5f60a623cbf7097e6341daa"
+  },
+  "source_pages": {
+    "teacher_docx_or_pptx_unpaged": 0,
+    "rubric": 3
+  },
+  "source_page_total": 3,
+  "source_roles": {
+    "teacher": "Se748323b3f41",
+    "rubric": "Sff41058b55ac"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "缺原卷来源",
+    "无独立参考答案文件",
+    "题级总分: 教师版题面未逐题标注；E1只有题内评分点或等级条件，未标出这四题的题级总分。",
+    "题级分值依据：教师版卷首明示总分100，第一部分15题每题3分共45；E1明确Q17、Q18各8分，已知题级分值合计61。Q16、Q19、Q20、Q21题级总分未明示；Q19（1）六个1分评分点及Q20（2）前三项各2分只保留在E1小问/评分点，不折算成整题分。55分仅为第二部分总计，不做题间分摊。"
+  ],
+  "bounded_residual": [],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-cp-qimo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T15:30:11.174093+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T15:36:04.407613+00:00"
+}

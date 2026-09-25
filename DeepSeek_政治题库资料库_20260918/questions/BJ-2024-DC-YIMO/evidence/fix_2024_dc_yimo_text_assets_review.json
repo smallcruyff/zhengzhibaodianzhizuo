@@ -1,0 +1,2794 @@
+{
+  "schema_version": "full-candidate-text-asset-repair-review.v1",
+  "review_id": "fix_2024_dc_yimo_text_assets",
+  "reviewed_at": "2026-09-22T03:32:07.099956+00:00",
+  "status": "candidate_fixed_pending_independent_recheck",
+  "promotion": false,
+  "reviewer": {
+    "agent": "/root/fix_2024_dc_yimo_text_assets",
+    "mode": "isolated_full_candidate_text_asset_repair",
+    "skill": "beijing-gaokao-politics 6.3.8-20260921",
+    "shared_write": false
+  },
+  "scope": {
+    "exam_id": "BJ-2024-DC-YIMO",
+    "question_count": 21,
+    "candidate_set": "完整复制 audit_2024_dc_yimo_full Q1-Q21 并完成指定文字/角色修正",
+    "candidate_status": "candidate_only_not_merged",
+    "shared_question_bank_modified": false,
+    "conversion_manifest_modified": false
+  },
+  "inputs": {
+    "audit": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/audit.json",
+      "sha256": "eae975bbc284096c46fdc79440ecadd8dd4d4ea305778e45f70496ea13e676a9"
+    },
+    "verification": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/verify_2024_dc_yimo_audit/verification.json",
+      "sha256": "f9dcfc962cadbea5fa3037a5bb7eb7e2072ac463efce188306cec4ea0e1cc15c"
+    },
+    "role_adjudication": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/adjudicate_answer_roles_batch_a/adjudication.json",
+      "sha256": "63dc6536ce49e24668237b4344334b90680bc1989f702b48b856adf143c520a1"
+    },
+    "audit_candidates_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO",
+    "audit_assets_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/assets"
+  },
+  "output": {
+    "root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets",
+    "candidates_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO",
+    "assets_dir": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets",
+    "candidate_count": 21,
+    "asset_count": 229,
+    "review_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/review.json"
+  },
+  "source_role_repair": {
+    "S7b4eece29632": {
+      "canonical_role": "评分材料",
+      "classification": "混合载体",
+      "label": "混合载体：独立参考答案＋Q16/Q21题级通用等级评分标准；不是纯参考答案，也不是完整逐点细则",
+      "layers": {
+        "Q1-Q15": "独立答案键层；可作为参考答案内容，不证明主观E1细则",
+        "Q16": "主观参考答案＋5～7/3～4/1～2/0分通用等级区间；无题级固定采分槽",
+        "Q17-Q20": "主观参考答案；Q18保留小问总分/答案结构，不作为逐点E1",
+        "Q21": "主观参考答案＋5～7/3～4/1～2/0分通用等级区间；无题级固定采分槽"
+      },
+      "generic_level_scope": "仅Q16/Q21保留5～7、3～4、1～2、0分通用等级区间；不得拆成逐点E1采分槽",
+      "adjudication_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/adjudicate_answer_roles_batch_a/adjudication.json",
+      "adjudication_sha256": "63dc6536ce49e24668237b4344334b90680bc1989f702b48b856adf143c520a1"
+    },
+    "S4b2073bcc9e2": {
+      "canonical_role": "评分材料",
+      "label": "本卷详细题级评分主载体",
+      "use": "74页PPTX承载本卷详细题级评分/试题分析；合并稿应明确其为详细正式评分主载体",
+      "slides": 74,
+      "source_path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/细则.pptx",
+      "source_sha256": "4b2073bcc9e26f626b49b66dd6e0c64ec93650292d50719806830d7aea9fa3ce"
+    }
+  },
+  "text_repairs": [
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q4",
+      "old": "◇",
+      "new": "✧",
+      "count": 3,
+      "basis": "原卷 p002 视觉核验；问卷调查三条装饰符号均为四角星样式",
+      "source_asset": "assets/original/p002.png"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q15",
+      "old": "①更好地探索极地、实现思维与存在的同一性创造了物质条件",
+      "new": "①为更好地探索极地、实现思维与存在的同一性创造了物质条件",
+      "count": 1,
+      "basis": "原卷 p005 OCR/视觉核验；选项①原文含‘为’",
+      "source_asset": "assets/original/p005.png"
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "old": "飘口鎏金",
+      "new": "飘口烫金",
+      "count": 1,
+      "basis": "原卷 p006 OCR/视觉核验",
+      "source_asset": "assets/original/p006.png"
+    }
+  ],
+  "ocr_asset_split": {
+    "old_collision": {
+      "path": "assets/ocr/p001.ocr.txt",
+      "recorded_original_sha256": "8c6b57efd0cf1717995e09eb24501c6c22581dc752bb683184305b43daaed00c",
+      "actual_overwritten_sha256": "476c8beb236452ed36a727632607b48c37d5dbc920c9b573f66051f7a3aa9e48",
+      "cause": "原审计构建先复制原卷 p001 OCR，后复制答案 p001 OCR 到同一路径；后者覆盖前者"
+    },
+    "new_paths": [
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p001.ocr.txt",
+        "path": "assets/ocr/original/p001.ocr.txt",
+        "sha256": "8c6b57efd0cf1717995e09eb24501c6c22581dc752bb683184305b43daaed00c"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p002.ocr.txt",
+        "path": "assets/ocr/original/p002.ocr.txt",
+        "sha256": "bd3cfc67af0a1585d8228fdb4380761624113b937bfbbf239c5d9b19be63e041"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p003.ocr.txt",
+        "path": "assets/ocr/original/p003.ocr.txt",
+        "sha256": "2982d60d41ac2d519fd3f7ef19395b879931569dc3f90e0d3b6dec4972f388a5"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p004.ocr.txt",
+        "path": "assets/ocr/original/p004.ocr.txt",
+        "sha256": "9c5fed34e1c83973e1ce22c769a89d8672519e3f21cba8b9d551e9b5a72eb19d"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p005.ocr.txt",
+        "path": "assets/ocr/original/p005.ocr.txt",
+        "sha256": "d1490700b89f9aedc7f66204faaa30b969c75701a0045acdef9085aace3da621"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p006.ocr.txt",
+        "path": "assets/ocr/original/p006.ocr.txt",
+        "sha256": "759de32cf6e7d2ff083712416b87a5e4770419bebcd86fd22a5fba2fde5f200f"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p007.ocr.txt",
+        "path": "assets/ocr/original/p007.ocr.txt",
+        "sha256": "25fcf0465d3b7e0b54f6c6e416515cd48b6addcf3faecbb384c9f2719c2caa25"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p008.ocr.txt",
+        "path": "assets/ocr/original/p008.ocr.txt",
+        "sha256": "635fa38471cc2224b1bc55631dab4973775a5cb0200c07a8439263d4706b9ab5"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p009.ocr.txt",
+        "path": "assets/ocr/original/p009.ocr.txt",
+        "sha256": "068ec6f2b0e84881ea28f9ca828205a6e1eeeb41f8cb1b69a3e1aa264bb09460"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p010.ocr.txt",
+        "path": "assets/ocr/original/p010.ocr.txt",
+        "sha256": "2c75888fcccf3f5d03395bff5086604e6417340fb626ff4add293405a6cc17da"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p011.ocr.txt",
+        "path": "assets/ocr/original/p011.ocr.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "source_layer": "original_paper",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p012.ocr.txt",
+        "path": "assets/ocr/original/p012.ocr.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "source_layer": "answer_candidate_S7",
+        "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/answer/p001.ocr.txt",
+        "path": "assets/ocr/answer/p001.ocr.txt",
+        "sha256": "476c8beb236452ed36a727632607b48c37d5dbc920c9b573f66051f7a3aa9e48"
+      }
+    ],
+    "readme": {
+      "path": "assets/ocr/README.md",
+      "sha256": "8e2ad8442db96e23e7a743f1c7460754cf687101159ed16173fe27059119e13e"
+    },
+    "ambiguous_root_path_present": false
+  },
+  "candidate_records": [
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q1",
+      "question_number": 1,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+      "source_sha256": "56db508dab134dcc0715f92b54e19863a1f2fddf7ec6ffb58b828b2b616ab23e",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+      "candidate_sha256": "0d01847789ecd65769ff2bf0b453269ab2b185269c376bbfdaf268f336a609ce",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p001.png",
+          "exists": true,
+          "sha256": "ab378c5c48004930de4b1e697812dbe728604864510167943715b407c1eb0020"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-03.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-03.png",
+          "exists": true,
+          "sha256": "807ba55231192cc7ec21c1e16b12884eacd9bb1351916b605334ba3f29b4642a"
+        },
+        {
+          "target": "../../assets/pptx_text/slide003.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide003.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q2",
+      "question_number": 2,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q2.md",
+      "source_sha256": "ae829f55d3f90f0b10e43821d26b659002395ee034e699f6e9aaa6f7f4eed6ca",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q2.md",
+      "candidate_sha256": "d4799fadb2731dce271669a0222d0860f9ba1868d34e8e4134e545a77a004fb3",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p001.png",
+          "exists": true,
+          "sha256": "ab378c5c48004930de4b1e697812dbe728604864510167943715b407c1eb0020"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-04.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-04.png",
+          "exists": true,
+          "sha256": "b58d6a7ed211874382041b9d378ed08e542874713b84fa5d364ac122d2dcb689"
+        },
+        {
+          "target": "../../assets/pptx_text/slide004.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide004.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q3",
+      "question_number": 3,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q3.md",
+      "source_sha256": "e8f712bf014bd4a614185188bd4284acd7e52c23c38172431e64f8d642f66c25",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q3.md",
+      "candidate_sha256": "cea1346e8a80086d83a750a649c48df913a59ae8ffbfb0162f1669d1aaa0fd16",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p002.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p002.png",
+          "exists": true,
+          "sha256": "4539ded57209bea26824311ef51372797b481b09bbd67cd467ccfbd2bb178aee"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-05.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-05.png",
+          "exists": true,
+          "sha256": "72ad31a1435a295487aa843c73ec4d2958e650d227d08ea89ca087418ed22618"
+        },
+        {
+          "target": "../../assets/pptx_text/slide005.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide005.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q4",
+      "question_number": 4,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q4.md",
+      "source_sha256": "ba40437d4af0d7caea581dfb8bf374ed6d9855457dff7aa6cba20d4ac8df3d17",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q4.md",
+      "candidate_sha256": "545799486cba25e9aa738ca480552d549cc2bec9ca6b45bddcfd698be5c3c86e",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary",
+        "Q4_decorative_symbol"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p002.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p002.png",
+          "exists": true,
+          "sha256": "4539ded57209bea26824311ef51372797b481b09bbd67cd467ccfbd2bb178aee"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-06.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-06.png",
+          "exists": true,
+          "sha256": "06a151c60758441a56934a6c0d0893ecfb2fc6d07110ae04f83ddc550a1d5631"
+        },
+        {
+          "target": "../../assets/rubric/p-07.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-07.png",
+          "exists": true,
+          "sha256": "617580e1e78a549598ace7846553be5ed7bac5d42a6b5e795343141d193ae5d7"
+        },
+        {
+          "target": "../../assets/pptx_text/slide006.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide006.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide007.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide007.txt",
+          "exists": true,
+          "sha256": "3b673695671133f309921fba434d35009d84a50cc179692a268bef679ecfd622"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q5",
+      "question_number": 5,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q5.md",
+      "source_sha256": "bd373994acccd8f9561353c245c83fff102ddc18689503a7f6f2b573aadf24b5",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q5.md",
+      "candidate_sha256": "a786f01842baaeefdd129aa07defbfd27c408686105a3bf73d660dc40b1b4694",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p002.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p002.png",
+          "exists": true,
+          "sha256": "4539ded57209bea26824311ef51372797b481b09bbd67cd467ccfbd2bb178aee"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-08.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-08.png",
+          "exists": true,
+          "sha256": "73cae588e4385e3e0bf53ba794488ab3c5d7e84d285562c35e3e891a6f3a9ee4"
+        },
+        {
+          "target": "../../assets/pptx_text/slide008.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide008.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q6",
+      "question_number": 6,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q6.md",
+      "source_sha256": "53f64cc1c2004307e71cd34586a796832bed7a0d6aae3e98d8f5c032c2007346",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q6.md",
+      "candidate_sha256": "89cb1bead847d182bc914cc644cf8260018fa84bfdae06740448c43139e718ee",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p003.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p003.png",
+          "exists": true,
+          "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-09.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-09.png",
+          "exists": true,
+          "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+        },
+        {
+          "target": "../../assets/rubric/p-10.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-10.png",
+          "exists": true,
+          "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+        },
+        {
+          "target": "../../assets/pptx_text/slide009.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide009.txt",
+          "exists": true,
+          "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+        },
+        {
+          "target": "../../assets/pptx_text/slide010.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide010.txt",
+          "exists": true,
+          "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q7",
+      "question_number": 7,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q7.md",
+      "source_sha256": "3a49e9cc3ebf65746adb48a2efd791a69f906086a3c22d65848f2bc4fdad4749",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q7.md",
+      "candidate_sha256": "d65b8dcd9dbb32ad341e6db4db9bb808a47051efa67b0fffb79aca8693846aab",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p003.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p003.png",
+          "exists": true,
+          "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-11.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-11.png",
+          "exists": true,
+          "sha256": "d9e8755b7086008dd2198b729b932b6aabec4436c476cbec8580ecaf1cd6923f"
+        },
+        {
+          "target": "../../assets/pptx_text/slide011.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide011.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q8",
+      "question_number": 8,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q8.md",
+      "source_sha256": "d3dc341d5c18d8df73343d3071848761600e2a82935eb2b8317a94c329cfd227",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q8.md",
+      "candidate_sha256": "895f2de9c720a0a7f558efdcd79fa6b7cf7d604615cc77ffe5196457ffa4a0f8",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p003.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p003.png",
+          "exists": true,
+          "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-12.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-12.png",
+          "exists": true,
+          "sha256": "72d9d919afe35b59446f031bbcd762b665d1ab32443d2f959612cd3cf6842880"
+        },
+        {
+          "target": "../../assets/pptx_text/slide012.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide012.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q9",
+      "question_number": 9,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q9.md",
+      "source_sha256": "e5756a14b2224b2d3fb1cf7c030dab48eeea5cd0c87a1b42c21921ece8bc0d4d",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q9.md",
+      "candidate_sha256": "02b54a40ffcf68695a6b00354ac552507878ca2aae52186d15fa1d5fad8fdf52",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p003.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p003.png",
+          "exists": true,
+          "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-13.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-13.png",
+          "exists": true,
+          "sha256": "fbf9b55a0889a68674d7c52842993ee1ee0e9e7bb7b010081d80aa4aa1558e6e"
+        },
+        {
+          "target": "../../assets/pptx_text/slide013.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide013.txt",
+          "exists": true,
+          "sha256": "bb7aea4a86866e50f34b3813ef8aae0d936b3f28d668a99803ffd60cce5ca557"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q10",
+      "question_number": 10,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q10.md",
+      "source_sha256": "eb97a9de16e4b0c8f063eb693c23fa323c1dec42995777ac8bd787c8ab4ddc36",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q10.md",
+      "candidate_sha256": "83b6c87ee7ffb440a2aa139fac351d23a5fb308baa08ead29d39aa8ba2cf9d35",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p004.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p004.png",
+          "exists": true,
+          "sha256": "24bd513dd43906fb8337c440ff0ceb7a0be94b28ff80bf5c16529b7c472c39f7"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-14.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-14.png",
+          "exists": true,
+          "sha256": "de8dd2d92ffb00e6e3fa60a6adef1e0732e58d44efb6b5d0b2dcd46bb54ea210"
+        },
+        {
+          "target": "../../assets/rubric/p-15.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-15.png",
+          "exists": true,
+          "sha256": "a5d4d9544c1f8daed5e5b5ceed25d4940c3655950cb86a0a14c7efd0d64663f6"
+        },
+        {
+          "target": "../../assets/pptx_text/slide014.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide014.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide015.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide015.txt",
+          "exists": true,
+          "sha256": "f7b3a9f4cf931feb6801efa9953c7821a7ccf892b3054493b71e2e2278b7bbcf"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q11",
+      "question_number": 11,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q11.md",
+      "source_sha256": "b63becc0dc838049786817b51c54d5e56295aed61a933dbe1973ace0ce38186e",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q11.md",
+      "candidate_sha256": "f09f9e832bd9b14345a2d2734122394e45923b2929d72021edfaf4357c93a104",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p004.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p004.png",
+          "exists": true,
+          "sha256": "24bd513dd43906fb8337c440ff0ceb7a0be94b28ff80bf5c16529b7c472c39f7"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-18.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-18.png",
+          "exists": true,
+          "sha256": "0c750924d5edfe365d24e61ec889aff31b05c9468e936761609e3e96e49be041"
+        },
+        {
+          "target": "../../assets/rubric/p-19.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-19.png",
+          "exists": true,
+          "sha256": "4956b6e1e03c62a0bc27e880fc90c1c43b29a1a90090e68dfd27ce0967a497ca"
+        },
+        {
+          "target": "../../assets/pptx_text/slide018.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide018.txt",
+          "exists": true,
+          "sha256": "739fb48d4e3742be7ba16577b8032019082a379e3c5193d8558655bcd02ece19"
+        },
+        {
+          "target": "../../assets/pptx_text/slide019.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide019.txt",
+          "exists": true,
+          "sha256": "b6c79425f7d8bd40f3bf06248469920d7acb6ace8dcc50c95c99cddb8bd518d3"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q12",
+      "question_number": 12,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q12.md",
+      "source_sha256": "e2b2f1e8b1a3c849cdea31736d1716dfc37fdb7b699b436279280a2e693f139a",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q12.md",
+      "candidate_sha256": "0b964629ea87e960b9a19f17746ffeb27b1b19cfd5e4648c9b315399a05c1df8",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p004.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p004.png",
+          "exists": true,
+          "sha256": "24bd513dd43906fb8337c440ff0ceb7a0be94b28ff80bf5c16529b7c472c39f7"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-20.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-20.png",
+          "exists": true,
+          "sha256": "98328dfcc317c7a286cdb309f93963297b490186144d7405d8eb6ccc0b0163f8"
+        },
+        {
+          "target": "../../assets/pptx_text/slide020.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide020.txt",
+          "exists": true,
+          "sha256": "ee8731b75d4b9c383dcf96a2aa2089dadc818f9b0e6ab126ec3628dd13c80fb6"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q13",
+      "question_number": 13,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q13.md",
+      "source_sha256": "9800b2981b456c18963cd3804f7d25525601d88ec1f9c86597f37d3bf278314f",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q13.md",
+      "candidate_sha256": "21a08c70a237948419beaf27f34c8c5cad9793bf360c1c7c827c438d7b38d3df",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p005.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p005.png",
+          "exists": true,
+          "sha256": "13053abd7a9a9cb4171ab24637dd1942b789a6256ac6cc4f602f0a1571e39630"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-21.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-21.png",
+          "exists": true,
+          "sha256": "10c56d63328b588fe1e49eeba1600726683079aa06ffbad8a7f0eaadc9a4b1f4"
+        },
+        {
+          "target": "../../assets/pptx_text/slide021.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide021.txt",
+          "exists": true,
+          "sha256": "3aec1f49f8edd229d468ef1b9eb5e8b30b6f4a5f5c67f9c03076a6abb1a98dc1"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q14",
+      "question_number": 14,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q14.md",
+      "source_sha256": "6262406030854080a4559168b5eb920e69753b6cb440d6f276fbf6548c5f2bef",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q14.md",
+      "candidate_sha256": "bf884cf5d36247469740aaf791f8af1c6d0578dc6419e2bb886bb158b1b0a7f8",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p005.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p005.png",
+          "exists": true,
+          "sha256": "13053abd7a9a9cb4171ab24637dd1942b789a6256ac6cc4f602f0a1571e39630"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-22.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-22.png",
+          "exists": true,
+          "sha256": "c30d57c4dfceebeaf033db53ba0224f51a40b90da086bd116f455e997b533b85"
+        },
+        {
+          "target": "../../assets/pptx_text/slide022.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide022.txt",
+          "exists": true,
+          "sha256": "63be65b78b0c30cf8f48595666b148127d1b57f8329edff1ba5a17d6f504c21b"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q15",
+      "question_number": 15,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q15.md",
+      "source_sha256": "be4be6657c4fba18f9674e489d16b4907e803c2774cdc544c3cabfe0e0d0daf1",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q15.md",
+      "candidate_sha256": "3d5171d9426861a89245ad96c5830c36c4d3c226e95acbcc822977278cd5bf18",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_choice_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary",
+        "Q15_missing_为"
+      ],
+      "student_interface_sha256_before": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_sha256_after": "526b1fdd4f1c082f933b1558a348d0f6e7ce2e0c138fc13e9ff04e159db93f08",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p005.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p005.png",
+          "exists": true,
+          "sha256": "13053abd7a9a9cb4171ab24637dd1942b789a6256ac6cc4f602f0a1571e39630"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-23.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-23.png",
+          "exists": true,
+          "sha256": "82212b95244408f2cc32959bf123b2f26bb32ff073ebe48eb91c0bde6bfa897b"
+        },
+        {
+          "target": "../../assets/pptx_text/slide023.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide023.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q16",
+      "question_number": 16,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q16.md",
+      "source_sha256": "a0d7b41e36439590993cae322b11db71ce558c9545c63db4b72c8cb88e2f2623",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q16.md",
+      "candidate_sha256": "0d0c4ad6bd2fae999971be2c2e8fbf9a357fefb0f9954347ea589f937ca3ef7a",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_generic_level_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary",
+        "Q16飘口烫金"
+      ],
+      "student_interface_sha256_before": "3e99fed1ca1532867ee6e3ac75bdcb42bb7e01ce577b326f4e72bf08a0e2197b",
+      "student_interface_sha256_after": "3e99fed1ca1532867ee6e3ac75bdcb42bb7e01ce577b326f4e72bf08a0e2197b",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p006.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p006.png",
+          "exists": true,
+          "sha256": "a846c50777339eaa029702b7cca92893728eb84f10c4f343e040a99cf113bfa2"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-25.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-25.png",
+          "exists": true,
+          "sha256": "32cb7e01d034f5fce31531f6498a0723faf8d14d93100a8a83b75e9006dcee8a"
+        },
+        {
+          "target": "../../assets/rubric/p-26.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-26.png",
+          "exists": true,
+          "sha256": "ea296e3216f106a0acf499b72e86fa2372ebc2fe8d1077c2bcb5e1f181d2ed64"
+        },
+        {
+          "target": "../../assets/rubric/p-27.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-27.png",
+          "exists": true,
+          "sha256": "cfec71777293d21704ca58681d0856a5356303fce2cbca434d93cf686211ef9f"
+        },
+        {
+          "target": "../../assets/rubric/p-28.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-28.png",
+          "exists": true,
+          "sha256": "c44f9186280b231319b91d03e8b325653d29dcc73137db9575967e30618dbb78"
+        },
+        {
+          "target": "../../assets/rubric/p-29.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-29.png",
+          "exists": true,
+          "sha256": "92c81ab8231044149e228819ee3492cab69d004bd9642e465bbb200edfb2bd47"
+        },
+        {
+          "target": "../../assets/rubric/p-30.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-30.png",
+          "exists": true,
+          "sha256": "24d12908c0d68f6e816d4dc634a048622a7febaee021d70f4010886b6a1fcd3e"
+        },
+        {
+          "target": "../../assets/rubric/p-28.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-28.png",
+          "exists": true,
+          "sha256": "c44f9186280b231319b91d03e8b325653d29dcc73137db9575967e30618dbb78"
+        },
+        {
+          "target": "../../assets/rubric/p-29.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-29.png",
+          "exists": true,
+          "sha256": "92c81ab8231044149e228819ee3492cab69d004bd9642e465bbb200edfb2bd47"
+        },
+        {
+          "target": "../../assets/rubric/p-30.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-30.png",
+          "exists": true,
+          "sha256": "24d12908c0d68f6e816d4dc634a048622a7febaee021d70f4010886b6a1fcd3e"
+        },
+        {
+          "target": "../../assets/pptx_text/slide025.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide025.txt",
+          "exists": true,
+          "sha256": "609b0f7e32b9ba857888c65f79111e422c6f3a46d69e120a6ccefc8ea7a6ca11"
+        },
+        {
+          "target": "../../assets/pptx_text/slide026.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide026.txt",
+          "exists": true,
+          "sha256": "6c5c01315ab2daa33449b68933404372dde4df3e0959f172e48b8c82a368cc1f"
+        },
+        {
+          "target": "../../assets/pptx_text/slide027.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide027.txt",
+          "exists": true,
+          "sha256": "54b7787686db526e2b2b0a482eb935f23cc6e4c8a6bff2ea8c46b415de6375dc"
+        },
+        {
+          "target": "../../assets/pptx_text/slide028.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide028.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide029.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide029.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide030.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide030.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q17",
+      "question_number": 17,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q17.md",
+      "source_sha256": "35920ebd148737590ffae02d3788f2fe6a7a523882ee7deaf092f57066140912",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q17.md",
+      "candidate_sha256": "cafe360eee5731d3e24b224bc3a3ed3f00cb2180b5fddb5132a2673c56516a65",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_subjective_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "634fa023db7ac7598af64f5b82725d185433bdf41c92bda6bd8612f4d643684b",
+      "student_interface_sha256_after": "634fa023db7ac7598af64f5b82725d185433bdf41c92bda6bd8612f4d643684b",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p006.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p006.png",
+          "exists": true,
+          "sha256": "a846c50777339eaa029702b7cca92893728eb84f10c4f343e040a99cf113bfa2"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-33.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-33.png",
+          "exists": true,
+          "sha256": "4d2ed8dd7dbeab1c492d9291e342663d7aae7ff2754fec4aa4565e4b9988ecef"
+        },
+        {
+          "target": "../../assets/rubric/p-34.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-34.png",
+          "exists": true,
+          "sha256": "8a55260ddee4a6403260402128fb49a76cc4bceb848017eeeb74643ae58af75f"
+        },
+        {
+          "target": "../../assets/rubric/p-35.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-35.png",
+          "exists": true,
+          "sha256": "6281683852b032b73de3fdaf36f9a3d3e427005b3aa8abf42a7b4ef0cc882b3b"
+        },
+        {
+          "target": "../../assets/rubric/p-35.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-35.png",
+          "exists": true,
+          "sha256": "6281683852b032b73de3fdaf36f9a3d3e427005b3aa8abf42a7b4ef0cc882b3b"
+        },
+        {
+          "target": "../../assets/pptx_text/slide033.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide033.txt",
+          "exists": true,
+          "sha256": "133b91b9ec00c0d4f2bcdc4dcc339a8bf2b5d641ce7ba1981776cf95c1022858"
+        },
+        {
+          "target": "../../assets/pptx_text/slide034.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide034.txt",
+          "exists": true,
+          "sha256": "d96f3c7b7d754e7371ff1455c6b59a2a74134a246955247bf9ecc18ec11c3f2f"
+        },
+        {
+          "target": "../../assets/pptx_text/slide035.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide035.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q18",
+      "question_number": 18,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q18.md",
+      "source_sha256": "c90e5ffdc9c7c08bf72bbec218646704a49b8f766cb796231a8e6463273d87f2",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q18.md",
+      "candidate_sha256": "04775c1b59016261571dfeebd5d58536260fc79f4e04d1a0977fac109a10962a",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_subjective_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "14d36a04cae707c27dc9e885988ad69509f6f03b4be11c75a7f84432211fe6f7",
+      "student_interface_sha256_after": "14d36a04cae707c27dc9e885988ad69509f6f03b4be11c75a7f84432211fe6f7",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p007.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p007.png",
+          "exists": true,
+          "sha256": "fe5084379a2dc0faebbd630d2fc9553a2cde09f4b91fdb5b28bb3f30d034e021"
+        },
+        {
+          "target": "../../assets/original/p008.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p008.png",
+          "exists": true,
+          "sha256": "3fd55ae67f5e3c973dbb64cf1a59b809f8f82ec7ab238fdb9c629252038c20db"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-40.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-40.png",
+          "exists": true,
+          "sha256": "62f8790044ddb9c8e598a50a23029280e7ce936f22fcb924c513d1aa11bb7680"
+        },
+        {
+          "target": "../../assets/rubric/p-41.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-41.png",
+          "exists": true,
+          "sha256": "a0cc3b9edb3f8eebc534e9e0ca89eb853b67acafcf467e469c216c2775e2a8ae"
+        },
+        {
+          "target": "../../assets/rubric/p-42.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-42.png",
+          "exists": true,
+          "sha256": "0a462631c7d97d75097f1d4724841b56885b586ed3db2c97426aaae32ad2adcb"
+        },
+        {
+          "target": "../../assets/rubric/p-45.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-45.png",
+          "exists": true,
+          "sha256": "6441a5277488ee37bb9f6a75b2e161d304a063bdff897022dcdab1ef9ac4a4e8"
+        },
+        {
+          "target": "../../assets/rubric/p-46.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-46.png",
+          "exists": true,
+          "sha256": "81ae5d004ee8a6f7299fd66a25111c170664154ab986d29b7de41cbebb3bd280"
+        },
+        {
+          "target": "../../assets/rubric/p-47.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-47.png",
+          "exists": true,
+          "sha256": "446543a3d2af84cab6df127030867bbe1b0ab88b44e76ec0a7c910baabc01a55"
+        },
+        {
+          "target": "../../assets/rubric/p-50.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-50.png",
+          "exists": true,
+          "sha256": "0e9c68e571de3762927c640d8375c3c80540c3d1a6dd114667c2632c99cd2b47"
+        },
+        {
+          "target": "../../assets/rubric/p-51.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-51.png",
+          "exists": true,
+          "sha256": "6e000628b8959f0edd053d8c047bec83437358223529c7ba13ecc298f42b6cd7"
+        },
+        {
+          "target": "../../assets/rubric/p-52.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-52.png",
+          "exists": true,
+          "sha256": "e624b3efc72d6279c2c93516114399f9b2f429fb46d2270e3a16f6f70be4474c"
+        },
+        {
+          "target": "../../assets/rubric/p-42.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-42.png",
+          "exists": true,
+          "sha256": "0a462631c7d97d75097f1d4724841b56885b586ed3db2c97426aaae32ad2adcb"
+        },
+        {
+          "target": "../../assets/rubric/p-46.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-46.png",
+          "exists": true,
+          "sha256": "81ae5d004ee8a6f7299fd66a25111c170664154ab986d29b7de41cbebb3bd280"
+        },
+        {
+          "target": "../../assets/rubric/p-47.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-47.png",
+          "exists": true,
+          "sha256": "446543a3d2af84cab6df127030867bbe1b0ab88b44e76ec0a7c910baabc01a55"
+        },
+        {
+          "target": "../../assets/rubric/p-52.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-52.png",
+          "exists": true,
+          "sha256": "e624b3efc72d6279c2c93516114399f9b2f429fb46d2270e3a16f6f70be4474c"
+        },
+        {
+          "target": "../../assets/pptx_text/slide040.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide040.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide041.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide041.txt",
+          "exists": true,
+          "sha256": "2fcddc1d824dd303b131331e6711d72da814e7ac81bc8c6a3fe7cfc603786d63"
+        },
+        {
+          "target": "../../assets/pptx_text/slide042.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide042.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide045.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide045.txt",
+          "exists": true,
+          "sha256": "9e92daf33c58805c95ab8a20379e5ebbdb1175b25838958b0dcd507e114e557c"
+        },
+        {
+          "target": "../../assets/pptx_text/slide046.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide046.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide047.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide047.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide050.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide050.txt",
+          "exists": true,
+          "sha256": "52e85968447b4aa1faeae9ab5e3f1df7488cc38b1fcbc0aa813aec5d21684f94"
+        },
+        {
+          "target": "../../assets/pptx_text/slide051.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide051.txt",
+          "exists": true,
+          "sha256": "e6bf0967531b09fbdbf1fb589a186f5e53aea9c5a8896b2d650ecbe4cb378af2"
+        },
+        {
+          "target": "../../assets/pptx_text/slide052.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide052.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q19",
+      "question_number": 19,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q19.md",
+      "source_sha256": "dd6cc48363cc6482b5e97d9d1b12402fcec04e62e56fdcac0c9403d222b83ead",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q19.md",
+      "candidate_sha256": "36ac64471fe27717830b01b4786ccce99f50bf253bce606a25538b78fabce7f0",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_subjective_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "27b209d66363e5cf973f974bfb6971a0e2651b26ed565eb5875e3755df7381e7",
+      "student_interface_sha256_after": "27b209d66363e5cf973f974bfb6971a0e2651b26ed565eb5875e3755df7381e7",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p009.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p009.png",
+          "exists": true,
+          "sha256": "fd0f301ce43257d508972b0f873118e8b9f28263c019527111adaa7c26de80b8"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-57.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-57.png",
+          "exists": true,
+          "sha256": "8516d3503567f6d2c840b167d61adc529be7bf01f442ff7c21339209ef9ec198"
+        },
+        {
+          "target": "../../assets/rubric/p-58.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-58.png",
+          "exists": true,
+          "sha256": "efbe41ce88a54436e893e51908f7d1cafdea165faa00c272b7345010c07a3995"
+        },
+        {
+          "target": "../../assets/rubric/p-58.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-58.png",
+          "exists": true,
+          "sha256": "efbe41ce88a54436e893e51908f7d1cafdea165faa00c272b7345010c07a3995"
+        },
+        {
+          "target": "../../assets/pptx_text/slide057.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide057.txt",
+          "exists": true,
+          "sha256": "56315d2d2e223cbe1ae2a2e4801a069f75ef89056c36baea2aaaede608d74ca3"
+        },
+        {
+          "target": "../../assets/pptx_text/slide058.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide058.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q20",
+      "question_number": 20,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q20.md",
+      "source_sha256": "e65c37f475de511e6be74363a1433f2ff79e2c08304a0b9d747a29dac2c95aa1",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q20.md",
+      "candidate_sha256": "47915d432bd2fd48b187e8fd57b18e39fef020039d806c8d00be20e0a25c2b6e",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_subjective_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "283776a635e6e0d3f4bcec1828ff907cfc9e0ed78e691e6f7f1bf5522782c70f",
+      "student_interface_sha256_after": "283776a635e6e0d3f4bcec1828ff907cfc9e0ed78e691e6f7f1bf5522782c70f",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p009.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p009.png",
+          "exists": true,
+          "sha256": "fd0f301ce43257d508972b0f873118e8b9f28263c019527111adaa7c26de80b8"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-63.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-63.png",
+          "exists": true,
+          "sha256": "8e618d038a6db7434608057e9dbca95d314fcf2df08b592cd96d9fc5a2d9ea6d"
+        },
+        {
+          "target": "../../assets/rubric/p-64.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-64.png",
+          "exists": true,
+          "sha256": "fa63bad3e366e3643e70966098d684af73ad03ba84348fda935ad1bc9f93c26d"
+        },
+        {
+          "target": "../../assets/rubric/p-65.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-65.png",
+          "exists": true,
+          "sha256": "6253273bea865b87b9e466b358d32c0a77689ed14d2666db4f9606984fca8846"
+        },
+        {
+          "target": "../../assets/rubric/p-65.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-65.png",
+          "exists": true,
+          "sha256": "6253273bea865b87b9e466b358d32c0a77689ed14d2666db4f9606984fca8846"
+        },
+        {
+          "target": "../../assets/pptx_text/slide063.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide063.txt",
+          "exists": true,
+          "sha256": "344ac74c3154983badbb9c04099825fcb0738be1c52980462519d2c58ea64410"
+        },
+        {
+          "target": "../../assets/pptx_text/slide064.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide064.txt",
+          "exists": true,
+          "sha256": "308f71248dc61a785b3c8b4ea84ab66c73f7f900f5e8236a2a5ba40fe39b369b"
+        },
+        {
+          "target": "../../assets/pptx_text/slide065.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide065.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    },
+    {
+      "question_id": "BJ-2024-DC-YIMO-Q21",
+      "question_number": 21,
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q21.md",
+      "source_sha256": "66903ad1bde5130ee65fe0eeec523a8725402fb6e4b9ad1aab81871244afccae",
+      "candidate_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/candidates/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q21.md",
+      "candidate_sha256": "066c4e8972149f2eaee6f1de5780742d10fd227ad560b9a8d17ec9111e105e0b",
+      "changed_fields": [
+        "S7_source_role_label",
+        "S4_detailed_scoring_role_label",
+        "S7_answer_section_role_label",
+        "S7_answer_heading",
+        "S7_generic_level_answer_layer_label",
+        "S4_detailed_scoring_heading",
+        "S4_detailed_scoring_description",
+        "S7_source_status_summary",
+        "S4_scoring_status_summary"
+      ],
+      "student_interface_sha256_before": "a6bbe68ada2b035da5189753b425a2ed388819ee2cabfb8710a02cb56bdad23a",
+      "student_interface_sha256_after": "a6bbe68ada2b035da5189753b425a2ed388819ee2cabfb8710a02cb56bdad23a",
+      "student_interface_unchanged": true,
+      "relative_asset_links": [
+        {
+          "target": "../../assets/original/p010.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/original/p010.png",
+          "exists": true,
+          "sha256": "0d25cb80e740b53920ade33e63f6518462e046160fbe4a752c370a336f0c5264"
+        },
+        {
+          "target": "../../assets/answer/p001.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/answer/p001.png",
+          "exists": true,
+          "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+        },
+        {
+          "target": "../../assets/rubric/p-71.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-71.png",
+          "exists": true,
+          "sha256": "3226092d183a498f6798a5beebe7522e5b48dfa6382af757f8799b603f98f26b"
+        },
+        {
+          "target": "../../assets/rubric/p-72.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-72.png",
+          "exists": true,
+          "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+        },
+        {
+          "target": "../../assets/rubric/p-73.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-73.png",
+          "exists": true,
+          "sha256": "4b344ba9b7397520cd6973837040c12b688e00db448d81ae98b41b0a66f53dc2"
+        },
+        {
+          "target": "../../assets/rubric/p-74.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-74.png",
+          "exists": true,
+          "sha256": "02671b6e73a12803242955c8cf0370a4396afff71b959ff0f0a861b0beb1318b"
+        },
+        {
+          "target": "../../assets/rubric/p-73.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-73.png",
+          "exists": true,
+          "sha256": "4b344ba9b7397520cd6973837040c12b688e00db448d81ae98b41b0a66f53dc2"
+        },
+        {
+          "target": "../../assets/rubric/p-74.png",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/rubric/p-74.png",
+          "exists": true,
+          "sha256": "02671b6e73a12803242955c8cf0370a4396afff71b959ff0f0a861b0beb1318b"
+        },
+        {
+          "target": "../../assets/pptx_text/slide071.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide071.txt",
+          "exists": true,
+          "sha256": "d3525ca89655ec222aaf996b2e261e4b9d1921b6173cb2746839b8e71e03df24"
+        },
+        {
+          "target": "../../assets/pptx_text/slide072.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide072.txt",
+          "exists": true,
+          "sha256": "45637c68e4465fbc72e20b51b9016f3db6989442a1610382572abefda4158da6"
+        },
+        {
+          "target": "../../assets/pptx_text/slide073.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide073.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "target": "../../assets/pptx_text/slide074.txt",
+          "resolved": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/fix_2024_dc_yimo_text_assets/assets/pptx_text/slide074.txt",
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "all_relative_asset_links_resolve": true
+    }
+  ],
+  "asset_records": [
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/answer/p001.png",
+      "sha256": "f3baba43cee02b038296cde40670b2bac1f361993ecd57d92d0758d2e793e536"
+    },
+    {
+      "source_layer": "answer_candidate_S7",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/answer/p001.ocr.txt",
+      "path": "assets/ocr/answer/p001.ocr.txt",
+      "sha256": "476c8beb236452ed36a727632607b48c37d5dbc920c9b573f66051f7a3aa9e48"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p001.ocr.txt",
+      "path": "assets/ocr/original/p001.ocr.txt",
+      "sha256": "8c6b57efd0cf1717995e09eb24501c6c22581dc752bb683184305b43daaed00c"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p002.ocr.txt",
+      "path": "assets/ocr/original/p002.ocr.txt",
+      "sha256": "bd3cfc67af0a1585d8228fdb4380761624113b937bfbbf239c5d9b19be63e041"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p003.ocr.txt",
+      "path": "assets/ocr/original/p003.ocr.txt",
+      "sha256": "2982d60d41ac2d519fd3f7ef19395b879931569dc3f90e0d3b6dec4972f388a5"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p004.ocr.txt",
+      "path": "assets/ocr/original/p004.ocr.txt",
+      "sha256": "9c5fed34e1c83973e1ce22c769a89d8672519e3f21cba8b9d551e9b5a72eb19d"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p005.ocr.txt",
+      "path": "assets/ocr/original/p005.ocr.txt",
+      "sha256": "d1490700b89f9aedc7f66204faaa30b969c75701a0045acdef9085aace3da621"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p006.ocr.txt",
+      "path": "assets/ocr/original/p006.ocr.txt",
+      "sha256": "759de32cf6e7d2ff083712416b87a5e4770419bebcd86fd22a5fba2fde5f200f"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p007.ocr.txt",
+      "path": "assets/ocr/original/p007.ocr.txt",
+      "sha256": "25fcf0465d3b7e0b54f6c6e416515cd48b6addcf3faecbb384c9f2719c2caa25"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p008.ocr.txt",
+      "path": "assets/ocr/original/p008.ocr.txt",
+      "sha256": "635fa38471cc2224b1bc55631dab4973775a5cb0200c07a8439263d4706b9ab5"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p009.ocr.txt",
+      "path": "assets/ocr/original/p009.ocr.txt",
+      "sha256": "068ec6f2b0e84881ea28f9ca828205a6e1eeeb41f8cb1b69a3e1aa264bb09460"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p010.ocr.txt",
+      "path": "assets/ocr/original/p010.ocr.txt",
+      "sha256": "2c75888fcccf3f5d03395bff5086604e6417340fb626ff4add293405a6cc17da"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p011.ocr.txt",
+      "path": "assets/ocr/original/p011.ocr.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source_layer": "original_paper",
+      "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/source_extracts/original/p012.ocr.txt",
+      "path": "assets/ocr/original/p012.ocr.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p001.png",
+      "sha256": "ab378c5c48004930de4b1e697812dbe728604864510167943715b407c1eb0020"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p002.png",
+      "sha256": "4539ded57209bea26824311ef51372797b481b09bbd67cd467ccfbd2bb178aee"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p003.png",
+      "sha256": "47eeca73577655fbe226a3bc5660bf25983771bc554de229118555af83674c8f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p004.png",
+      "sha256": "24bd513dd43906fb8337c440ff0ceb7a0be94b28ff80bf5c16529b7c472c39f7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p005.png",
+      "sha256": "13053abd7a9a9cb4171ab24637dd1942b789a6256ac6cc4f602f0a1571e39630"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p006.png",
+      "sha256": "a846c50777339eaa029702b7cca92893728eb84f10c4f343e040a99cf113bfa2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p007.png",
+      "sha256": "fe5084379a2dc0faebbd630d2fc9553a2cde09f4b91fdb5b28bb3f30d034e021"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p008.png",
+      "sha256": "3fd55ae67f5e3c973dbb64cf1a59b809f8f82ec7ab238fdb9c629252038c20db"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p009.png",
+      "sha256": "fd0f301ce43257d508972b0f873118e8b9f28263c019527111adaa7c26de80b8"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p010.png",
+      "sha256": "0d25cb80e740b53920ade33e63f6518462e046160fbe4a752c370a336f0c5264"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p011.png",
+      "sha256": "d586f67b2c3d9869dd4d69d14abbf65f8c12e7f035383a4c02d59e66881e7600"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/original/p012.png",
+      "sha256": "d586f67b2c3d9869dd4d69d14abbf65f8c12e7f035383a4c02d59e66881e7600"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide002_shape01.png",
+      "sha256": "c5ee576708e7a77b0d33e3f0d169873b95db3dd05c7d7efa2eba46f2ba7351e0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide002_shape02.png",
+      "sha256": "3c0d3cd309f0f4178f26596fc0211806a75b74f910fc635696523deb1d0209c8"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide003_shape01.png",
+      "sha256": "eef5031b4231835a942937aa4e7ba336f8e0ce7aa4a255290a2fb6d19ec44592"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide004_shape01.png",
+      "sha256": "4f6166ba84b7e2631d10f5cb94c500b8de509ab628093ceb2194e87074f86fc6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide005_shape01.png",
+      "sha256": "e249e286881dfe75b983c5484fdcf16bed10e6c9e6896f56994cafba09581b5e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide006_shape01.png",
+      "sha256": "356314b469e605b44192b798c3cfda83d942cf1906fe99e21bb7c096fd635c5f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide007_shape02.png",
+      "sha256": "fe4472307a20ab19e2a60113805ff8b486030d5c78372b1d65a408617fba49ec"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide008_shape01.png",
+      "sha256": "34793b215d267c473fb57cff73a41b03fae9557b26a7607b8bc7969f06f8a8bc"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide009_shape01.png",
+      "sha256": "55df5295dd4a76effa09d4b725ecc7fe05ef5333fa7cc01f6c4553ab8193805e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide010_shape01.png",
+      "sha256": "55df5295dd4a76effa09d4b725ecc7fe05ef5333fa7cc01f6c4553ab8193805e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide011_shape01.png",
+      "sha256": "1dd3a5c812f497b949987bf7f55cd6043a0a72e7743f0a49e5dacdad7039b9ce"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide012_shape01.png",
+      "sha256": "aa7b578cacdb6a11d11fba0a8774ddbe8785597d294b6d5eb924e6b7fde6d72d"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide013_shape01.png",
+      "sha256": "56da9453eaa57626468b2f43f7335a11b445efdab1bd5d93cab996eed336e8b8"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide013_shape02.png",
+      "sha256": "2a01ec298e2e9d460261ae7333f04dfa1cc1be0822f3f6838711d9d481fed815"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide014_shape01.png",
+      "sha256": "26521f8c282c717b3a077e57cde42de23621bea624de35e78fd97b4e64e7eac4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide015_shape01.png",
+      "sha256": "26521f8c282c717b3a077e57cde42de23621bea624de35e78fd97b4e64e7eac4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide017_shape01.png",
+      "sha256": "7bb3711f608cffa149e86d2791111dc76af505f557e1298984e62432d9515cb7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide017_shape03.png",
+      "sha256": "8699b5b9cd2a67a84f232ec396e1c757ac6970b8425fd12a436a53668112a2ef"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide018_shape01.png",
+      "sha256": "d123c2341be49fcda5b0f6bada000c57d5a90d3de868d0fe13583ca3ca409674"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide019_shape03.png",
+      "sha256": "9dabe42d4e7c89be1beb86ce457a54e2b5694dcbb3d07a327c14e7fbd3a5d2f7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide020_shape01.png",
+      "sha256": "3442c3ed928d2fdcf438c9c814f7ddbe4b5f56edde5ea4dae1b16daa7b0c89c2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide021_shape01.png",
+      "sha256": "3e11e70120ed16088936ad043736cdcc72253793b7a189b1afee225062d0b788"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide021_shape05.png",
+      "sha256": "e2028efeb2807f4bc4bc46720bfafaa75edd75dcf7507d8b49fe6b428d950b13"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide022_shape01.png",
+      "sha256": "6f83e0f8e9a0d4074e897a6708d01e2dc3fae5b6a1f9b58be71baf229c8b4ba4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide023_shape01.png",
+      "sha256": "35de78b14215c15086530f494cd1cc9e60775ad571df8a4183988a4a3cccfbc7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide025_shape02.png",
+      "sha256": "6d04edf095d3be65389487a373ea1c681ace579b1ca91b395f00307a42d47fa6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide031_shape02.png",
+      "sha256": "4235de8b8944f0dfbd2d6773a224ffdad8b8455587cbaf6b6387e1558a79fa7b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide033_shape01.png",
+      "sha256": "76e58584e7573bb3ff0cdb9d6bdcb18d275178d2aa76aa12bd250b958e110e0f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide034_shape02.png",
+      "sha256": "76e58584e7573bb3ff0cdb9d6bdcb18d275178d2aa76aa12bd250b958e110e0f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide035_shape01.jpg",
+      "sha256": "5873354459ba943365b11710ee752c8df30fb2401105923258951a2b30b364a1"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide036_shape01.png",
+      "sha256": "d7cd38738bb6297bc74ded9bc1a60b6870c8fef084e30d8f93d11e03b5c566ed"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide038_shape01.png",
+      "sha256": "04ba96cc2e37bdc54a3bb06128ad00945e5606474e31a720b2f3e49af8c8acaa"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide040_shape01.png",
+      "sha256": "5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide041_shape02.png",
+      "sha256": "5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide042_shape01.jpg",
+      "sha256": "577fac160db86cd37e1b47a4fda4a13e04a611fda7feabed5389811276f0c819"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide044_shape01.png",
+      "sha256": "e9af7830de3fc9b87fa06fc381af13b7096adbabf286c45b1718cd6043c14b1b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide044_shape02.png",
+      "sha256": "d7604883eb0017d66a8b50d707675ccd4d3d591b7b2ad159010ba5ebc2125651"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide045_shape02.png",
+      "sha256": "03cf7cef1ae08d63105915c0ca19acc8c86fd057b2ebc618a178823d1f13cb34"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide046_shape01.jpg",
+      "sha256": "013d34f61e76fd619da09ee5cb4e56880230abc34fb47efa7572fbb4c5a94d2c"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide047_shape01.jpg",
+      "sha256": "6defde081f32a2a16c4845e5605ff8e6a4a4eeed76fa2b4a5a0645e833089e36"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide048_shape02.png",
+      "sha256": "15e2568d8ff868e5bb99e56bb6243b8cb77060e31a402fc4b96873ab5593ed17"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide050_shape02.png",
+      "sha256": "bb4d1349e9adf36c7c8e8e09d2e29cf163412818b5a969fe2c86263224867f2a"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide052_shape01.jpg",
+      "sha256": "5e6165078aa11635701799706850d87a9cfb8a9ef0a2dba5d59b6bae3c1ee5c6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide053_shape01.png",
+      "sha256": "a3f1e0e400ecc1f6d5240fd7e67805562cb2755c53f531d8198a304e336898e5"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide055_shape02.png",
+      "sha256": "dc271cc4a8f2d7df1e289e965c2b2c70f5456e542fb57dfd5f1a06a53bbf9269"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide057_shape02.png",
+      "sha256": "c4794e4cc3f459224e681a8cd72426c69553b27e8c607ae572a919b955a44310"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide058_shape01.png",
+      "sha256": "0e1f2a64e43731944f7ce812148bd0ab6a64542c945219448b509b73bcf62f68"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide059_shape01.png",
+      "sha256": "62d57a547edbb7cc9c4b983aa56049ba036752e0d4b573ac3220b856b3f75dc3"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide063_shape01.png",
+      "sha256": "017c4e078af5630244fc71f47e237bf1b8ed4ea326e79192a71bed8924aad350"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide065_shape01.png",
+      "sha256": "7b21efe345af35cc51db260d47dabf6a7e239ee056647a49d11a8810be330e48"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide069_shape02.png",
+      "sha256": "cfa8076c133892bc6b26a00af134d11b5f0e4c5164f71ded66fbbd8889ec758b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide070_shape02.png",
+      "sha256": "1a60a6f90048315431c00adf6b76596ddf73aea92f42aaebb913e1afef4b5c89"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide073_shape01.jpg",
+      "sha256": "6121c83b5f8fe7c2c14a8802909ebb42665def13819c0952cbee70e05873a21e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_embedded/slide074_shape01.jpg",
+      "sha256": "56474ae0594dab503d418870fa9833301b89430eba42f714133d8e3956c367ee"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_native_all.md",
+      "sha256": "caff0636e0052bb2cec649eeab9dd4c902c1fdcf234966a05e1ab1f88733fbe6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide001.txt",
+      "sha256": "6200a94feeded368bcb9250ef1270a0f6fdc5935f070d26c3290e2fb7eb6c04f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide002.txt",
+      "sha256": "7d97b6fb05fc7646c38907bfddf06bc69c062594674529c6642b3bafad76ceac"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide003.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide004.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide005.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide006.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide007.txt",
+      "sha256": "3b673695671133f309921fba434d35009d84a50cc179692a268bef679ecfd622"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide008.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide009.txt",
+      "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide010.txt",
+      "sha256": "969020d94460dddef5c77432f2e2e93493f7d0249e467251695f330bf6736d6b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide011.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide012.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide013.txt",
+      "sha256": "bb7aea4a86866e50f34b3813ef8aae0d936b3f28d668a99803ffd60cce5ca557"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide014.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide015.txt",
+      "sha256": "f7b3a9f4cf931feb6801efa9953c7821a7ccf892b3054493b71e2e2278b7bbcf"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide016.txt",
+      "sha256": "717b0b689c362ac69a4357c5cbd887cda4667f1a1789f6ef870a4036064273c7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide017.txt",
+      "sha256": "cdd47503079a15f48ff1ee98fcd8206793b09e440255b6139e5fce6190de8072"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide018.txt",
+      "sha256": "739fb48d4e3742be7ba16577b8032019082a379e3c5193d8558655bcd02ece19"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide019.txt",
+      "sha256": "b6c79425f7d8bd40f3bf06248469920d7acb6ace8dcc50c95c99cddb8bd518d3"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide020.txt",
+      "sha256": "ee8731b75d4b9c383dcf96a2aa2089dadc818f9b0e6ab126ec3628dd13c80fb6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide021.txt",
+      "sha256": "3aec1f49f8edd229d468ef1b9eb5e8b30b6f4a5f5c67f9c03076a6abb1a98dc1"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide022.txt",
+      "sha256": "63be65b78b0c30cf8f48595666b148127d1b57f8329edff1ba5a17d6f504c21b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide023.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide024.txt",
+      "sha256": "a4ab4f6cff2a053d479bc8265ba4208cd14647c3c11c96c34ef9f6064072f1df"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide025.txt",
+      "sha256": "609b0f7e32b9ba857888c65f79111e422c6f3a46d69e120a6ccefc8ea7a6ca11"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide026.txt",
+      "sha256": "6c5c01315ab2daa33449b68933404372dde4df3e0959f172e48b8c82a368cc1f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide027.txt",
+      "sha256": "54b7787686db526e2b2b0a482eb935f23cc6e4c8a6bff2ea8c46b415de6375dc"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide028.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide029.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide030.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide031.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide032.txt",
+      "sha256": "3aee0a9d9303b4941fadfadde879e1cc8b9b8acd26723b50c436cd4c5e5ca191"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide033.txt",
+      "sha256": "133b91b9ec00c0d4f2bcdc4dcc339a8bf2b5d641ce7ba1981776cf95c1022858"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide034.txt",
+      "sha256": "d96f3c7b7d754e7371ff1455c6b59a2a74134a246955247bf9ecc18ec11c3f2f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide035.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide036.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide037.txt",
+      "sha256": "c2a4ea6d82ca6eb970bd9b2d39c5f4453ab911e136188020d5748b092f39eacd"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide038.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide039.txt",
+      "sha256": "a8c856f598a3cacd1db54564da4ab14b326c7948127b1a4549a6134f7d84a76f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide040.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide041.txt",
+      "sha256": "2fcddc1d824dd303b131331e6711d72da814e7ac81bc8c6a3fe7cfc603786d63"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide042.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide043.txt",
+      "sha256": "befa4ec52145c2e77904c6b31f4530683d140995a9171b9eccafe8fe1f2af4d2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide044.txt",
+      "sha256": "15b144d0a4e9b185e602a426b2180fa04167c7ffd5e5e9c2b8ab5e8d7ac547d6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide045.txt",
+      "sha256": "9e92daf33c58805c95ab8a20379e5ebbdb1175b25838958b0dcd507e114e557c"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide046.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide047.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide048.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide049.txt",
+      "sha256": "632c25ba46dfa5da196808f9168f13685196d68e88a38e68a9c5fe14c6a49380"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide050.txt",
+      "sha256": "52e85968447b4aa1faeae9ab5e3f1df7488cc38b1fcbc0aa813aec5d21684f94"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide051.txt",
+      "sha256": "e6bf0967531b09fbdbf1fb589a186f5e53aea9c5a8896b2d650ecbe4cb378af2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide052.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide053.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide054.txt",
+      "sha256": "476621c90edb3079e83bec3a8c3a30c2e028a3ee1e072d23bba2c83c7c679029"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide055.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide056.txt",
+      "sha256": "c41c920c9eb67259d442f6fba8fb8fbfdfd7e7264a49a196dc0388a5c9de8090"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide057.txt",
+      "sha256": "56315d2d2e223cbe1ae2a2e4801a069f75ef89056c36baea2aaaede608d74ca3"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide058.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide059.txt",
+      "sha256": "2a076c11bf1d419b2fb0e77388120357cb35432ac8b4a1f1b911059d2a72bad0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide060.txt",
+      "sha256": "93e4c446d77833d35d26432ce82894ef9617d063d6a50fe7fc3959c8f517c0fb"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide061.txt",
+      "sha256": "2dce9812a14178ff79705f63e93d92cece36b41e362e7cdefdc44b20cba2aec1"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide062.txt",
+      "sha256": "0158582f66c43e9bd129697687ae9945ff89eabc5964fe93bd98a0eae0d822fc"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide063.txt",
+      "sha256": "344ac74c3154983badbb9c04099825fcb0738be1c52980462519d2c58ea64410"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide064.txt",
+      "sha256": "308f71248dc61a785b3c8b4ea84ab66c73f7f900f5e8236a2a5ba40fe39b369b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide065.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide066.txt",
+      "sha256": "835d85c37d7825b00f3a76c5d7c28bf841b85b8756fea766047ef2cc8e50d9e2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide067.txt",
+      "sha256": "7d982005de7417eebc85a48c01a4452c6a7284422bde035226ed3c8d04535132"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide068.txt",
+      "sha256": "16065320acd6522105aa1f945481a0a5280d7eac41947e05badca15a88817039"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide069.txt",
+      "sha256": "81126d58cb50f86dd229a1d7c618861aa2af1abc06880e74fb3a5313a19d3cec"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide070.txt",
+      "sha256": "bfabeaa7767e5530c66d0eafd725b2c09dd188727ede9ddc56bf4e00313132f6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide071.txt",
+      "sha256": "d3525ca89655ec222aaf996b2e261e4b9d1921b6173cb2746839b8e71e03df24"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide072.txt",
+      "sha256": "45637c68e4465fbc72e20b51b9016f3db6989442a1610382572abefda4158da6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide073.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/pptx_text/slide074.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-01.png",
+      "sha256": "d64641cf5a030bb24f0f78a4d7c591caac909d4f9238c47edd32e27ebad33cb1"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-02.png",
+      "sha256": "96d34456a467ffef31382f0e0ef7a6ef6ff5a2429b0462a305f32ba7c712b207"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-03.png",
+      "sha256": "807ba55231192cc7ec21c1e16b12884eacd9bb1351916b605334ba3f29b4642a"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-04.png",
+      "sha256": "b58d6a7ed211874382041b9d378ed08e542874713b84fa5d364ac122d2dcb689"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-05.png",
+      "sha256": "72ad31a1435a295487aa843c73ec4d2958e650d227d08ea89ca087418ed22618"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-06.png",
+      "sha256": "06a151c60758441a56934a6c0d0893ecfb2fc6d07110ae04f83ddc550a1d5631"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-07.png",
+      "sha256": "617580e1e78a549598ace7846553be5ed7bac5d42a6b5e795343141d193ae5d7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-08.png",
+      "sha256": "73cae588e4385e3e0bf53ba794488ab3c5d7e84d285562c35e3e891a6f3a9ee4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-09.png",
+      "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-10.png",
+      "sha256": "a6faccc74f34703e64e03e315a6855dda9f11c7abf8faed5177be91d46a052df"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-11.png",
+      "sha256": "d9e8755b7086008dd2198b729b932b6aabec4436c476cbec8580ecaf1cd6923f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-12.png",
+      "sha256": "72d9d919afe35b59446f031bbcd762b665d1ab32443d2f959612cd3cf6842880"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-13.png",
+      "sha256": "fbf9b55a0889a68674d7c52842993ee1ee0e9e7bb7b010081d80aa4aa1558e6e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-14.png",
+      "sha256": "de8dd2d92ffb00e6e3fa60a6adef1e0732e58d44efb6b5d0b2dcd46bb54ea210"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-15.png",
+      "sha256": "a5d4d9544c1f8daed5e5b5ceed25d4940c3655950cb86a0a14c7efd0d64663f6"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-16.png",
+      "sha256": "43c4f50238408826d799fa1a36daa0ff560f1151d4163e58c2063f1d363cd633"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-17.png",
+      "sha256": "28f424b34fc03e3e27a21d19d40085381600be7ccd396516c34337e7da571ed2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-18.png",
+      "sha256": "0c750924d5edfe365d24e61ec889aff31b05c9468e936761609e3e96e49be041"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-19.png",
+      "sha256": "4956b6e1e03c62a0bc27e880fc90c1c43b29a1a90090e68dfd27ce0967a497ca"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-20.png",
+      "sha256": "98328dfcc317c7a286cdb309f93963297b490186144d7405d8eb6ccc0b0163f8"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-21.png",
+      "sha256": "10c56d63328b588fe1e49eeba1600726683079aa06ffbad8a7f0eaadc9a4b1f4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-22.png",
+      "sha256": "c30d57c4dfceebeaf033db53ba0224f51a40b90da086bd116f455e997b533b85"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-23.png",
+      "sha256": "82212b95244408f2cc32959bf123b2f26bb32ff073ebe48eb91c0bde6bfa897b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-24.png",
+      "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-25.png",
+      "sha256": "32cb7e01d034f5fce31531f6498a0723faf8d14d93100a8a83b75e9006dcee8a"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-26.png",
+      "sha256": "ea296e3216f106a0acf499b72e86fa2372ebc2fe8d1077c2bcb5e1f181d2ed64"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-27.png",
+      "sha256": "cfec71777293d21704ca58681d0856a5356303fce2cbca434d93cf686211ef9f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-28.png",
+      "sha256": "c44f9186280b231319b91d03e8b325653d29dcc73137db9575967e30618dbb78"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-29.png",
+      "sha256": "92c81ab8231044149e228819ee3492cab69d004bd9642e465bbb200edfb2bd47"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-30.png",
+      "sha256": "24d12908c0d68f6e816d4dc634a048622a7febaee021d70f4010886b6a1fcd3e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-31.png",
+      "sha256": "ef7fec230782bedceb19cedddf7f3ab7d4eb6140b85b7fe30811edcc76fb680e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-32.png",
+      "sha256": "b7d33d8566e04b916bdc319671f3f56f704e1100e7b911db9da19ee1282e966a"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-33.png",
+      "sha256": "4d2ed8dd7dbeab1c492d9291e342663d7aae7ff2754fec4aa4565e4b9988ecef"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-34.png",
+      "sha256": "8a55260ddee4a6403260402128fb49a76cc4bceb848017eeeb74643ae58af75f"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-35.png",
+      "sha256": "6281683852b032b73de3fdaf36f9a3d3e427005b3aa8abf42a7b4ef0cc882b3b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-36.png",
+      "sha256": "2361e4869ea76224488d630a4250162866b01c7d2b1c3ad5bf5b3dcabef0264b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-37.png",
+      "sha256": "c7d07dd566d4e6bc139a231edaccff4d45483d58339e6ebcdf6d556471bb7818"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-38.png",
+      "sha256": "8806b017c9672dbce06089bb0f0c53d13117ca5a11c71ca62129af34e683017a"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-39.png",
+      "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-40.png",
+      "sha256": "62f8790044ddb9c8e598a50a23029280e7ce936f22fcb924c513d1aa11bb7680"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-41.png",
+      "sha256": "a0cc3b9edb3f8eebc534e9e0ca89eb853b67acafcf467e469c216c2775e2a8ae"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-42.png",
+      "sha256": "0a462631c7d97d75097f1d4724841b56885b586ed3db2c97426aaae32ad2adcb"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-43.png",
+      "sha256": "519af11d2b73ea12c46de9435fa74f1c28e92109a926a12e9ead5e9a87794e6d"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-44.png",
+      "sha256": "c8c593fe396cc09fc2e5e1d5a01ef865457c81514951520f60b09050a210b878"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-45.png",
+      "sha256": "6441a5277488ee37bb9f6a75b2e161d304a063bdff897022dcdab1ef9ac4a4e8"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-46.png",
+      "sha256": "81ae5d004ee8a6f7299fd66a25111c170664154ab986d29b7de41cbebb3bd280"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-47.png",
+      "sha256": "446543a3d2af84cab6df127030867bbe1b0ab88b44e76ec0a7c910baabc01a55"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-48.png",
+      "sha256": "4f092d349313e1152ed7d7e511a3d8d466fcc1a9e3fe3d5d47a3f26d3d338a9d"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-49.png",
+      "sha256": "5f98ad1b1bb40e9090a365d4f445d0a55078831ab61d35682b5760164448d6b3"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-50.png",
+      "sha256": "0e9c68e571de3762927c640d8375c3c80540c3d1a6dd114667c2632c99cd2b47"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-51.png",
+      "sha256": "6e000628b8959f0edd053d8c047bec83437358223529c7ba13ecc298f42b6cd7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-52.png",
+      "sha256": "e624b3efc72d6279c2c93516114399f9b2f429fb46d2270e3a16f6f70be4474c"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-53.png",
+      "sha256": "9adedc7aa77918cd86c22cc2ce3df9d4d73074e0d89c4ff66bac3efa38116935"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-54.png",
+      "sha256": "69dd4817e80b5ed99639b65c7569448561a6a218ce44b5b60146601a95f378f7"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-55.png",
+      "sha256": "a6236a5a244cca7a1160977151f60355e11452430304185187d4ab726bc90eca"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-56.png",
+      "sha256": "1ba0694e8219d1c79c4f2ea23f034d09967fed45d091fc71058a0280e43aa001"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-57.png",
+      "sha256": "8516d3503567f6d2c840b167d61adc529be7bf01f442ff7c21339209ef9ec198"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-58.png",
+      "sha256": "efbe41ce88a54436e893e51908f7d1cafdea165faa00c272b7345010c07a3995"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-59.png",
+      "sha256": "da90ca76ce9323cff905aa718920f7a39c58fb3e284fa1192f465780da6da8e2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-60.png",
+      "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-61.png",
+      "sha256": "b950d54f9eb19ee5e5f8d281f7479fc4fe84ced89f3b201840574be332c83ca4"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-62.png",
+      "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-63.png",
+      "sha256": "8e618d038a6db7434608057e9dbca95d314fcf2df08b592cd96d9fc5a2d9ea6d"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-64.png",
+      "sha256": "fa63bad3e366e3643e70966098d684af73ad03ba84348fda935ad1bc9f93c26d"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-65.png",
+      "sha256": "6253273bea865b87b9e466b358d32c0a77689ed14d2666db4f9606984fca8846"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-66.png",
+      "sha256": "24c11d889e0682954d7b6d77b23822eab367092427f72ab08290648bbc4c17c1"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-67.png",
+      "sha256": "967c79ada35fe391e666bb8bc86999db2a871431247af44b29ace4757851627e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-68.png",
+      "sha256": "ab826ab2651275933d73208adbbcec5fa9cccf0436c446e98b7e3b03983ca21e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-69.png",
+      "sha256": "c31bd605156c9b905c8512f93d6df40ee2f2f6cebb2e62beed2e9b26b9938537"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-70.png",
+      "sha256": "fe5eb1a674f43229d08a1dfe7d380ab48bb9a3de787f2b2d3fbee1f43e10f0c0"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-71.png",
+      "sha256": "3226092d183a498f6798a5beebe7522e5b48dfa6382af757f8799b603f98f26b"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-72.png",
+      "sha256": "7325fd6b49ce8d753571898966b159cd5e8da13aa8359a201ea51b532c58933e"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-73.png",
+      "sha256": "4b344ba9b7397520cd6973837040c12b688e00db448d81ae98b41b0a66f53dc2"
+    },
+    {
+      "source_layer": "copied_from_audit_assets",
+      "path": "assets/rubric/p-74.png",
+      "sha256": "02671b6e73a12803242955c8cf0370a4396afff71b959ff0f0a861b0beb1318b"
+    }
+  ],
+  "checks": {
+    "candidate_count": 21,
+    "candidate_sha_recorded": true,
+    "relative_asset_link_count": 147,
+    "relative_asset_link_errors": [],
+    "relative_asset_links_status": "pass",
+    "student_interface_unchanged_count": 21,
+    "student_interface_unchanged_all": true,
+    "stale_S7_pending_markers": 0,
+    "stale_S7_candidate_markers": 0,
+    "stale_S4_unconfirmed_markers": 0,
+    "new_S7_role_markers": 21,
+    "new_S4_role_markers": 21,
+    "Q4_sparkle_exact": true,
+    "Q15_为_present": true,
+    "Q16_烫金_present": true,
+    "split_ocr_record_count": 13,
+    "split_ocr_all_sha_match": true,
+    "ambiguous_ocr_root_absent": true,
+    "asset_record_count": 229,
+    "asset_record_all_sha_match": true,
+    "manifest_sha256_before": "c98eda420d293ed4ba7c617401ab7a0f48a3d234e605f462b25b3ec2ca4012be",
+    "manifest_sha256_after": "c98eda420d293ed4ba7c617401ab7a0f48a3d234e605f462b25b3ec2ca4012be",
+    "manifest_modified_by_this_task": false,
+    "shared_question_bank_modified_by_this_task": false,
+    "shared_indexes_modified_by_this_task": false,
+    "raw_sources_modified_by_this_task": false
+  },
+  "handoff": {
+    "next_action": "由独立复核工位读取Q1-Q21修正候选、审计回执和拆分后的13份OCR，核对角色元数据与三处字面修复后，再决定是否合并；本回执不晋升共享题库。",
+    "shared_files_written": [],
+    "candidate_only_output": true,
+    "student_layer": "原学生样卷/批注/实得分接口逐字保留；仍按原审计结论为图像优先、手写层未完整转写。"
+  }
+}

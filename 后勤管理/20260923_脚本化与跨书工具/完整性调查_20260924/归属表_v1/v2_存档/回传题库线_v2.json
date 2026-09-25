@@ -1,0 +1,42 @@
+{
+ "rule_version": "2026-09-24-identity-v2",
+ "purpose": "题库侧待修正条目清单，只读记录，不由本工具直接修改题库文件；由题库负责人(Luna线)核实后处理。",
+ "items": [
+  {
+   "exam_id": "BJ-2023-HD-QIZHONG",
+   "field": "school_year",
+   "current_value": "2022-2023学年",
+   "proposed_value": "2023-2024学年",
+   "evidence": "原件文件名《2023北京海淀高三（上）期中政治（教师版）.docx》\"高三（上）\"=2023秋季学期",
+   "action": "更正 indexes/exams.csv 的 school_year 字段",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-CY-QIZHONG",
+   "field": "school_year",
+   "current_value": "2023-2024学年",
+   "proposed_value": "2024-2025学年",
+   "evidence": "原件文件名《202411朝阳高三政治 期中1试题(1).pdf》\"202411\"=2024年11月=2024秋季学期",
+   "action": "更正 indexes/exams.csv 的 school_year 字段",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2025-FT-YIMO",
+   "field": "question_split(Q13/Q18)",
+   "current_value": "Q18登记为选择题(实为Q12 BMI表尾部误切)，Q13缺选项，真实主观题\"第18题\"未登记",
+   "proposed_value": "重新切分：Q13补回真实选项；新增真实主观题Q18(1)(2)；删除/合并现有伪Q18选择题条目",
+   "evidence": "units.jsonl中BJ-2025-FT-YIMO-Q18的stem为BMI表残片；原卷\"第二部分共6题\"但题库只登记5道主观题(16/17/19/20/21)",
+   "action": "回原卷PDF重新OCR/切分第12-19题区间",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-BJ-GAOKAO",
+   "field": "rubric_links覆盖缺口",
+   "current_value": "indexes/rubric_links.csv对该卷全部主观题只有已匹配参考答案(E3)行，没有正式评分材料(E1)行",
+   "proposed_value": "补登《2024年北京市高考政治试题分析(1)》为该卷主观题的正式评分材料匹配行",
+   "evidence": "source-inventory.md第102行：用户2026-09-22确认该文件【细则】为2024高考正式细则，按E1使用",
+   "action": "把该PDF逐题跑一遍rubric_links匹配流程，登记material_kind=正式评分材料/pair_status=已匹配正式材料",
+   "status": "pending_luna"
+  }
+ ]
+}

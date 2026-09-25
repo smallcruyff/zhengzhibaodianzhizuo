@@ -1,0 +1,86 @@
+{
+  "schema": "source-inventory/2026-09-22",
+  "exam_id": "BJ-2023-FT-YIMO",
+  "source_authority": {
+    "same_exam_authoritative_original_sources": [],
+    "same_exam_answer_sources": [],
+    "same_exam_formal_rubric_sources": [],
+    "candidate_unclassified_sources": [
+      {
+        "source_id": "Sd68e0801a751",
+        "role": "教师版/转录题源候选",
+        "role_class": "candidate_teacher_version_transcription",
+        "evidence_role": "E3/source_material_only",
+        "authority": "not_independent_original_answer_or_formal_rubric",
+        "project_copy_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+        "desktop_source_path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+        "rel_path": "2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+        "sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+        "bytes": 290159,
+        "alias_sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+        "aliases_match": true,
+        "format": "docx",
+        "fixed_page_count": null,
+        "native_structure": {
+          "paragraphs": 302,
+          "tables": 6,
+          "drawings": 4,
+          "candidate_question_range": "Q1-Q22",
+          "native_text_evidence": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/evidence/Sd68e0801a751/native_text/parts.jsonl",
+          "processed_markdown": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Sd68e0801a751.full.md"
+        },
+        "role_basis": [
+          "标题序列显示为北京市丰台区2023届高三下学期一模考试政治试题。",
+          "同一 DOCX 同时含 Q1-Q22 题面、【答案】、【分析】/【详解】及 Q16/Q22 载体内等级描述。",
+          "因此可作完整教师版/转录题源候选和嵌入答案的 E3 来源，不能冒充独立原卷、独立参考答案或 E1 正式细则。"
+        ]
+      }
+    ],
+    "classification": "candidate_teacher_version_transcription; E3/source_material_only",
+    "do_not_substitute": [
+      {
+        "exam_id": "BJ-2023-FT-ERMO",
+        "role": "原卷/答案",
+        "limit": "同一地区但为2023二模，不能替代一模来源。"
+      }
+    ]
+  },
+  "native_structure": {
+    "paragraphs": 302,
+    "tables": 6,
+    "drawings": 4,
+    "candidate_question_range": "Q1-Q22",
+    "native_text_evidence": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/evidence/Sd68e0801a751/native_text/parts.jsonl",
+    "processed_markdown": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Sd68e0801a751.full.md"
+  },
+  "processed_evidence": {
+    "source_id": "Sd68e0801a751",
+    "native_parts": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/evidence/Sd68e0801a751/native_text/parts.jsonl",
+    "figure_objects": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/evidence/Sd68e0801a751/figure_objects.jsonl",
+    "visual_transcript_in_shared_evidence": false
+  },
+  "visual_derivative": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/BJ-2023-FT-YIMO_task_packet_assets/丰台_临时渲染14页.pdf",
+    "sha256": "c194ffebed062469f8a1501086d37277271890c59d3403a76bd4c6846341325b",
+    "expected_sha256": "c194ffebed062469f8a1501086d37277271890c59d3403a76bd4c6846341325b",
+    "page_count": 14,
+    "canonical_status": "non_canonical_libreoffice_derivative_for_structure_and_page_position_only",
+    "opened_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "source_role_conclusion": "角色可从未知收窄为教师版/转录题源候选，但不能写入共享 exam_files/source_manifest 或改变原题库角色。"
+}

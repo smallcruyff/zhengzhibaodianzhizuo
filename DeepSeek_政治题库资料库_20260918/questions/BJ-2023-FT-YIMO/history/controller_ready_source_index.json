@@ -1,0 +1,36 @@
+[
+  {
+    "source_id": "Sd68e0801a751",
+    "role": "教师版/转录题源候选",
+    "role_class": "candidate_teacher_version_transcription",
+    "evidence_role": "E3/source_material_only",
+    "authority": "not_independent_original_answer_or_formal_rubric",
+    "project_copy_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+    "desktop_source_path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+    "rel_path": "2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+    "sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+    "bytes": 290159,
+    "alias_sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+    "aliases_match": true,
+    "format": "docx",
+    "fixed_page_count": null,
+    "native_structure": {
+      "paragraphs": 302,
+      "tables": 6,
+      "drawings": 4,
+      "candidate_question_range": "Q1-Q22",
+      "native_text_evidence": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/evidence/Sd68e0801a751/native_text/parts.jsonl",
+      "processed_markdown": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Sd68e0801a751.full.md"
+    },
+    "role_basis": [
+      "标题序列显示为北京市丰台区2023届高三下学期一模考试政治试题。",
+      "同一 DOCX 同时含 Q1-Q22 题面、【答案】、【分析】/【详解】及 Q16/Q22 载体内等级描述。",
+      "因此可作完整教师版/转录题源候选和嵌入答案的 E3 来源，不能冒充独立原卷、独立参考答案或 E1 正式细则。"
+    ],
+    "packaged": true,
+    "packaged_path": "candidates/sources/originals/Sd68e0801a751_丰台.docx",
+    "packaged_sha256": "d68e0801a751dc44f64f0caf1a74e5240de83df23521175aff46cdff1ae8e657",
+    "transcript_path": "candidates/sources/transcripts/Sd68e0801a751.txt",
+    "transcript_sha256": "cc2973f9f1656f1243dce99313913e1f52a7e1b84010381fd535cb88d975d2fd"
+  }
+]

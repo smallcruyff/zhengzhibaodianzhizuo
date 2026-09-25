@@ -1,0 +1,42 @@
+{
+ "summary": "第五轮返修（针对 final_layout_prepare.json 的 1 major + 2 minor）：目录同版闸改为以同版身份记录（SHA 绑定）为准——repair --toc 缺省要求 identity=='match' 才回填，没有记录（identity=unrelated/not_found）一律 Abort(2)，除非显式 --allow-unbound-pdf \"理由\" 才降级到正文对位率兜底，且改成双向（新增反向对位：PDF 文字行能否在 DOCX 文字流里找到，复用 bx.align 调换角色）都须达标；身份记录冲突（docx_mismatch/pdf_mismatch）任何开关都不放行。check 从不采信对位率，无记录的页码差异一律进 toc_version_problems（附 identity/method/align_ratio/reverse_align_ratio），不再计入可修 pending。同时把 check 的 keepNext 长链闸退出码改成与 repair 一致（blocked 非零也 exit 1，report 写 blocked_note），并清掉 plan_keepnext 里跟当前默认值矛盾的过时注释。",
+ "files": [
+  "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/layout_prepare.py（唯一改动文件，56200 → 64845 字节，1050 → 1153 行）",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_layout_prepare.py（同步本轮新增/改判用例：fix5-0～fix5-8，并改判 fix4-1、加固 fix4-2/fix4-3、扩展 fix4-8）"
+ ],
+ "issues_resolved": [
+  {
+   "desc": "1【major】目录同版闸只看正文对位率就放行，证明不了分页相同：同文字不同分页（N2 插页错版）测不出来；对位率本身对局部删段/增段不敏感（单向缺陷）。",
+   "how": "prove_same_version 改判：identity=='match'（身份记录 docx_sha256/pdf_sha256 都对上）直接判成立，不再要求对位率；identity 为 docx_mismatch/pdf_mismatch（记录冲突）无论 soft、无论开关一律 Abort(2)/返回 False；identity 为 unrelated/not_found（没有能证明这一对 docx/pdf 同版的记录）——repair（soft=False）缺省直接 Abort(2)，不计算对位率，除非显式传 --allow-unbound-pdf '理由'（新增 CLI 开关，repair 子命令）；传了才退回对位率兜底，且改成双向：正向沿用原 bx.load_docx+bx.pdf_stream+bx.align，反向新增 _pdf_line_paras()（把 PDF 逐页文字按行拆成伪段落）+ 用同一个 bx.align 调换角色（PDF 行当 paras、DOCX 侧签名串当 stream）算 PDF 文字行能否在 DOCX 里找到，两个方向都须 ≥ toc.pdf_align_min 才放行；放行也只是降级（result.pdf_same_version_proven=false），stderr 写 WARN'未经 SHA 绑定，页码可能与最终分页不符'。check（soft=True）不看这个开关：identity!='match' 时永远不采信对位率，ok 恒 False，但仍算出双向对位率供参考。do_check 的 toc 处理相应改写：identity!='match' 时，plan_toc 算出的页码差异（不论多少条）整体挪进 toc_version_problems（一条 dict，含 identity/method/align_ratio/reverse_align_ratio/threshold/diff_count/diffs），不再计入 repairable_plan.toc / pending（原先只要对位率达标就直接算进可修 pending，这正是本轮要修的 bug）。",
+   "test": "run_tests_layout_prepare.py fix5-0～fix5-6、fix5-1（原 fix4-1 改判）：①N2 插页错版（B3_52 真实 PDF 插一张空白页，文字全同、分页后移，当 B3_04 的 --toc-pdf）→ repair 无开关 Abort(2)，check 把 30 处页码差异算进 toc_version_problems 而非 pending（fix5-4，复现终审证据①并确认已堵死）；②B3_04 删 120/600 段正文（标题不动）配旧的 目录定位/04.pdf、用 --allow-unbound-pdf 放行——120 段（约 0.6%）双向对位率仍双双达标、按规则放行，如实记 known_limits（fix5-5）；600 段（约 3%）反向对位率跌破阈值、拒绝执行（fix5-6，复现终审证据②并确认大规模删段已堵死，小规模是双向对位率这种文字证据的固有局限，不是代码 bug）；③金标准 04→52 用 --allow-unbound-pdf 重跑，输出仍与 B3_52 逐字节相同（fix5-0 旁的 golden 用例）；④在临时目录给 04 与其定位 PDF 写一份匹配的 同版身份.json（sha256 抄真实文件的）→ 不带开关也通过，identity=match（fix5-2）；⑤B3_51 的真实 PDF（03 本身没有独立渲染的 PDF，按任务说明用 B3_51 代替）配 04 → 无开关拒绝（fix5-3）；⑥身份记录冲突（B3_52 配51批 PDF、B3_51 配 B3_52 PDF）即使加 --allow-unbound-pdf 依然 Abort(2)，验证开关只放行'没有记录'不放行'记录冲突'（fix4-2/fix4-3 加固）。"
+  },
+  {
+   "desc": "2【minor】check 与 repair 的 keepNext 长链闸退出码不一致：pending=0 但有 blocked 时 check exit 0，repair --keepnext 却因为同一批 blocked 而 exit 2，主代理看 check 通过再跑 repair 会意外失败。",
+   "how": "do_check 新增 blocked_total = sum(blocked_count.values())，退出码改为 `1 if (rep['pending'] or blocked_total) else 0`；report 新增 blocked_note 字段，非零时写 '有 N 项会被长链闸挡住，repair 将中止（除非显式加 --allow-blocked）'，stdout 摘要同步带这个字段。",
+   "test": "扩展 fix4-8 用例（monkeypatch plan_keepnext 强制候选 + max_keep_next_chain=0 必然触发长链闸）：新增断言 code_check == 1（此前用例只记录了 code_check 却没断言）且 report.blocked_note 非空，与 repair 的 exit 2（都不是 0）口径一致，见 fix5-7 记录项。真实数据侧：B3_03 check 打印的 blocked_note 在有 blocked 时也如实给出（工具自身运行时用真实数据核对过一次，未发现异常）。"
+  },
+  {
+   "desc": "3【minor】plan_keepnext 函数体内注释过时且自相矛盾：一边说 pagination.keep_next_labels '两册配置尚未登记'、缺省该套用必修三两个标签值，一边紧接着说缺省 []、bixiu3 已登记。",
+   "how": "删掉矛盾的两句过时说法，合并成一段连贯注释：字段是什么、缺省 []、2026-09-24 起 bixiu3 已登记、check/repair 口径一致。没有触碰这个函数的行为（labels 缺省仍是 []，从 bh.cfg 读取，不在代码里给全局默认值）。",
+   "test": "fix5-8：从源码里用正则精确截出 plan_keepnext 这一个函数体（不是全文件搜索，避免跟 pagination.max_keep_next_chain——另一个至今真的没登记进任何 profile、文件头那句'两册配置尚未登记'原样成立的字段——撞了同一段中文而误判），断言旧的矛盾句子不在这段源码里。"
+  }
+ ],
+ "issues_deferred": [],
+ "profile_fields_needed": [
+  "toc.pdf_align_min（沿用前几轮的报告，仍未登记；缺省 0.98，仅在 --allow-unbound-pdf 兜底路径和 check 的诊断分支里用到，match 路径不再需要它）",
+  "pagination.max_keep_next_chain（沿用前几轮的报告，仍未登记；缺省 20）"
+ ],
+ "tests": {
+  "cmd": "先在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare/ 跑：PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 run_tests_layout_prepare.py；再复制到测试目录跑同一份确认一致。",
+  "result": "47/47 PASS（37 条原有回归 + fix4 系列 10 条，含本轮改判的 fix5-1（原 fix4-1）与加固的 fix4-2/fix4-3/fix4-8 + fix5-0/2/3/4/5/6/7/8 共 9 条新用例），两条金标准仍逐字节成立：B3_03 repair(--numbering --method-counts --keepnext) == B3_04；B3_04 repair(--toc, 目录定位/04.pdf, --allow-unbound-pdf) == B3_52。",
+  "regression_file_updated": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_layout_prepare.py（已同步本轮全部新增/改判用例，与 scratchpad 里跑过的版本逐字节相同）",
+  "discipline": "只改了 layout_prepare.py 本身；未运行 collab.py；未启动子代理/新会话；辅助脚本与测试产物只落在 scratchpad/booktools/ 下；测试前后核对 B3_52/B3_52_PDF/B3_03/B3_04/B3_04_PDF/B3_51/B3_51_PDF/B2_230/B2_230_PDF 及 batch_health.py/block_index.py/docx_lib.py/profile_lib.py 的 SHA256+mtime 未变（snap_before.json/snap_after.json 逐一比对，diff=0，唯一变化是 layout_prepare.py 本身）；Skill scripts/__pycache__ 测试前后仍只有原有 book_incremental.cpython-312.pyc / check_drill_admission.cpython-312.pyc / source_intake.cpython-312.pyc 三个文件，没有新增；指向真实受保护目录的用例（回归#8 系列、fix4-2/fix4-3 的身份冲突文件）全部只调用会被拒绝的命令或读取只读身份文件，未在其中新建任何文件；/usr/bin/python3 3.9.6 运行全程。"
+ },
+ "known_limits": [
+  "--allow-unbound-pdf 兜底路径的双向正文对位率仍是文字证据，永远证明不了分页相同（这正是本轮 major 要解决的核心问题：真正的证明只能来自同版身份记录）——它只能兜住'内容明显不对'的情况，对'分页不同、文字完全相同'的错版（如 N2）完全无感，好在这种情况已经被'没有记录就 Abort(2)'这道闸单独拦住，不依赖对位率。",
+  "双向对位率对小规模文字改动不敏感：实测删除 120 段正文（约全书 0.6%）时，正向对位率几乎不降（单向缺陷，原有局限），反向对位率也仍有 99.1%，双双高于 0.98 的阈值，仍会被 --allow-unbound-pdf 放行；删除 600 段（约 3%）时反向对位率才跌到 96.7%、低于阈值被拦下。也就是说这条兜底路径对'大规模'改写有效，对'十几到大约一百段量级'的改写可能测不出来——这不是代码缺陷，是文字对位这种方法本身的检测粒度上限；真正要防的场景应该走同版身份记录（identity=match），--allow-unbound-pdf 从设计上就只是'确认是同一份文字、放弃分页正确性保证'的人工降级口子。",
+  "反向对位（_pdf_line_paras）按 PDF 页面文字的换行粗切成伪段落，粒度比 DOCX 段落粗（一段可能横跨多行/多个伪段落），个别版式（例如整段被 PDF 渲染成异常的单行超长文本，或图片/公式占位导致的文字错位）可能让某些行匹配失真；只在 811 页级别的 B3_52/B3_04 真实数据上验证过，未覆盖表格密集或图片密集页面的专项场景。",
+  "layout_prepare.py 本轮从 1050 行涨到 1153 行，进一步超出规格'一、9'的 ≤900 行目标（上一轮回执已提过、主代理知情）；本轮新增的 identity 双向对位与相关注释是主要增量，未做压缩，仍待主代理决定是放宽行数上限还是后续专项瘦身。",
+  "toc.pdf_align_min、pagination.max_keep_next_chain 两个字段沿用前几轮状态，仍未登记进 profiles/bixiu2.json、profiles/bixiu3.json（代码给了缺省值，行为不受影响，只是配置面未落地）。"
+ ]
+}

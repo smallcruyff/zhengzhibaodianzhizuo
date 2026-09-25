@@ -1,0 +1,40 @@
+{
+  "snapshot_rubric_links": "DeepSeek_政治题库资料库_20260918/indexes/rubric_links.csv",
+  "snapshot_rubric_links_sha256": "d9b1416465389e18a2fdd608f2462576b9cdd14d54e7ae0a9a041b621da14c57",
+  "snapshot_current_formal_rows": [
+    "Q1",
+    "Q3",
+    "Q16",
+    "Q17",
+    "Q20"
+  ],
+  "production_reconciliation": {
+    "formal_questions": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "candidate_only_questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      21
+    ],
+    "basis": "同一S360d57a4b250 PPTX实际可见题号及其连续正式评分载体：Q16页7-10、Q17页16-20、Q18页25/31-34/38-41、Q19页46-48、Q20页52-53；原snapshot的Q1/Q3行与PPTX可见题号不一致，保留为原始索引事实但不据错配升格。",
+    "shared_indexes_modified": false
+  }
+}

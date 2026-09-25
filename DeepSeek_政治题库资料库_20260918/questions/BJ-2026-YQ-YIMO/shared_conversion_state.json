@@ -1,0 +1,99 @@
+{
+  "exam_id": "BJ-2026-YQ-YIMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-YQ-YIMO-Q1": "ee2b4297e758552c222fd42d75cca7dad47394ab2d1d3d73d86cf434a0d44cfd",
+    "BJ-2026-YQ-YIMO-Q2": "01325027b3b048945f766582635acfcb424d18d177ba928d24072a91b071b7c0",
+    "BJ-2026-YQ-YIMO-Q3": "61814ab6086a2c833f3fe09d2ebd526d9725122dad86f44ef10bc647e4664c36",
+    "BJ-2026-YQ-YIMO-Q4": "2959d7782dfec318b14b8e46aa80c9d7d0d3445435c674da549969eda774321a",
+    "BJ-2026-YQ-YIMO-Q5": "14356458f751fbbac6de58f93975c1cfe7d5ec59410c6d8514e1234f334a1bd4",
+    "BJ-2026-YQ-YIMO-Q6": "2f15815127c5272b8615923b6aafe9bec6fc3a2944dc8a8cc861ba2bf9b0030f",
+    "BJ-2026-YQ-YIMO-Q7": "ac767df822e4a1536be26111c5dd37b97b2dc8b9f1fb6c15f21e95fb0acfb032",
+    "BJ-2026-YQ-YIMO-Q8": "4268b30e7adb4a6caea019b51a4bb65f03ce2708771072e620ed8a653be00852",
+    "BJ-2026-YQ-YIMO-Q9": "2f2bcfb3f4610d922a64cd598f6f83c310c2dc9e00c7df5cad0ca830636ac030",
+    "BJ-2026-YQ-YIMO-Q10": "35511968d0a72e679854536233c82aae4282294a0ef62475f1b01bd74c46204a",
+    "BJ-2026-YQ-YIMO-Q11": "f510365f5659bb50680c5cdaba0173d1a517a14a7ef4a694e85afeff9a911a2b",
+    "BJ-2026-YQ-YIMO-Q12": "a2d1445c8b054758d21f59390b02f5025be6e625df0d81ab6b46f3e22a928484",
+    "BJ-2026-YQ-YIMO-Q13": "8006687b901142b32fec42c6fe2b37c9e2731b68cb2a1cdad21bc6f0a5a1bcc3",
+    "BJ-2026-YQ-YIMO-Q14": "0e7d31a2de36c2fa8c9674a68eb1a7a7578448a6fa5fc6b832be276fb8255511",
+    "BJ-2026-YQ-YIMO-Q15": "edb52ab6eec2e2f02998bc4d1a7e4c728ce2167ac563eb5d92ac7df970753229",
+    "BJ-2026-YQ-YIMO-Q16": "9c20f44df87938766f2ed58464533fb2115efb3f795136be41b4ed1f6a402461",
+    "BJ-2026-YQ-YIMO-Q17": "c54580e08dad0775ff7ee4c19455cbcac46e7720d1517e4e122e7be9d8e293e3",
+    "BJ-2026-YQ-YIMO-Q18": "1c2392a5325efe8630404a9fa21202212db73021e351c3b85197a068803bc43c",
+    "BJ-2026-YQ-YIMO-Q19": "47852c2f029a32bb53ee11839a57140a88a0b54f0bdc0c8a994dabb96333b53e",
+    "BJ-2026-YQ-YIMO-Q20": "b9ca4e715a5cb0f2ded2cb2fc775ee519c39d4d3b756d22ab7018bedb6b96292"
+  },
+  "source_pages": {
+    "paper_pdf": 9,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 9,
+  "source_roles": {
+    "paper_pdf": "Scc9193041171",
+    "rubric_docx_or_pptx_unpaged": "S2e0f67df1ab7"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件；E3答案表与Q16–Q20答案/细则已从原卷PDF及评分DOCX按来源角色保留。",
+    "评分DOCX无固定分页；原件61个原生段落、3个原生表格，另渲染3页核对。",
+    "Q6原卷PDF p2嵌图中的右侧/斜排小字仍无法可靠辨认；保留原图、页位、【?】与局部读法，B确认其不影响A–D作答。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q6",
+      "location": "原卷p2海关示意图右侧及斜排小字",
+      "partial_reading": "可辨“海关”“海南岛”；有两个相反方向的箭头及线条路径；右侧标签/斜排字标“【?】”并保留原图",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "VOLUME",
+      "location": "原卷p1页数说明与实际PDF页脚",
+      "partial_reading": "p1印“本试卷共8页”；当前PDF页脚标第1页/共9页至第9页/共9页",
+      "affects_answering": false,
+      "round": "r1"
+    }
+  ],
+  "review_receipts": {
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-YQ-YIMO/root_acceptance_prep_20260923/primary_review_acceptance.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923_D_BJ-2026-YQ-YIMO/r1/r1_verify/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923_D_BJ-2026-YQ-YIMO/r1/r1_verify/q6_impact_addendum.md",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923_D_BJ-2026-YQ-YIMO/r1/r1_verify/q6_merge_disposition_addendum.md"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-YQ-YIMO/matrix_20260923_yq_yimo_r1_merge.json"
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-yq-yimo-state1-codex-20260923",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-23T23:39:10.933202+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T07:26:29.953815+00:00",
+  "controller_delta_history": [
+    {
+      "delta_id": "bj-2026-yq-yimo-retro-q20-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T07:23:56.773229+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-YQ-YIMO/bj-2026-yq-yimo-retro-q20-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2026-YQ-YIMO-Q20": "b9ca4e715a5cb0f2ded2cb2fc775ee519c39d4d3b756d22ab7018bedb6b96292"
+      }
+    }
+  ],
+  "reacceptance_history": [
+    {
+      "at": "2026-09-24T00:26:22.240915-07:00",
+      "prior_status": "accepted_for_all_available_sources",
+      "prior_accepted_at": "2026-09-23T23:48:56.174415+00:00",
+      "reason": "Q20题MD已按独立复核补丁变更，旧验收指纹只对旧字节有效；保留旧回执，重新进入签验门禁，不降低审查标准。",
+      "backup": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/root_yq_q20/before_reopen_for_resign"
+    }
+  ]
+}

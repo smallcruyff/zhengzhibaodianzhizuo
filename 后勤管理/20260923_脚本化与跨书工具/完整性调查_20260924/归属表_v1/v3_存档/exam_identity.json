@@ -1,0 +1,2489 @@
+{
+ "rule_version": "2026-09-24-identity-v3",
+ "generated_by": "build_exam_identity_v3.py（只读脚本，零模型token）",
+ "sources_read": [
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/assembly_blocks.csv",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/bank_duplicate_exams.csv",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/matrix.csv",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/source-inventory.md",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/book-xuanbi-1.md",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/user-requirements-ledger.md",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/project-constitution.md",
+  "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/三路调查与审查摘要.txt"
+ ],
+ "legend": {
+  "status": {
+   "active": "正常登记，无已知身份问题",
+   "retired_duplicate_registration": "exams.csv 自身已标记撤销的重复登记",
+   "duplicate_registration_alias": "本表新判定的重复登记别名，canonical_of 指向正式条目",
+   "compilation_only_no_exam_row": "只在汇编中出现，题库未单独登记该卷",
+   "compilation_only_project_level_include": "只在汇编中出现，按2026-09-24用户裁定项目级计入（选择题照收，主观题按E1判）",
+   "school_year_correction_pending_confirm": "学年字段疑似写错，本表给出改正建议和依据，未直接改题库",
+   "active_distinct_from_qizhong": "曾被误合并为另一张卷，本条目确认二者应分别计数"
+  }
+ },
+ "qid_redirects": {
+  "BJ-2025-FT-YIMO-Q18": {
+   "kind": "split_error_fake_choice_question",
+   "exclude_from_admission": true,
+   "note": "题库把该题登记为选择题（4个选项），但 units.jsonl 的 stem 实际是 “18.54~24 正常/24~28 超重/≥28 肥胖”——这是Q12题干里BMI分级表的尾部行随页面换行被误切成“Q18”，选项A-D的文字与Q13“下列选项中犯了与示例相同逻辑错误的是”一题的语境高度吻合，而题库里Q13的stem恰好缺选项（只到“第4页/共11页”截断）。可确认这是抽取阶段的切分错误，不是一道真实独立的第18题。该卷原卷“第二部分共6题”，但题库只登记了Q16/17/19/20/21五道主观题，真实的主观题“第18题”未被登记为任何 qid，书稿如引用“2025丰台一模Q18(1)”，指的是这道缺失的真实主观题，不是题库里的这个伪选择题。本表不猜测真实Q18内容，只标记该qid不计入选择题“照收”分母，并将“回补真实Q18、修正Q13选项归属”列入回传题库线清单，不直接改题库文件。"
+  }
+ },
+ "dup_alias_qid_pairs": [
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q1",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q1"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q2",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q2"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q3",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q3"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q4",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q4"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q5",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q5"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q6",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q6"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q7",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q7"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q8",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q8"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q9",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q9"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q10",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q10"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q11",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q11"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q12",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q12"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q13",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q13"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q14",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q14"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q15",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q15"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q16",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q25"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q17",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q17"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q19",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q19"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q20",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q20"
+  },
+  {
+   "canonical_qid": "BJ-2024-HD-QIZHONG-Q21",
+   "alias_qid": "BJ-2025-HD-QIZHONG-Q21"
+  }
+ ],
+ "assembly_pending_review": {
+  "resolved": [
+   {
+    "region_label": "门头沟一模",
+    "num": "8",
+    "resolved_exam_id": "BJ-2024-MTG-YIMO",
+    "resolution_evidence": "book-xuanbi-1.md:308 “门头沟一模Q8=D”与assembly_blocks.csv该题号一致，且308行与“2024房山一模Q14=C”同句共享“2024”年份限定，锁定为2024届（原assembly_blocks.csv因文本匹配未达门槛而候选2025/2026门头沟一模，本表用独立的Skill官方答案键反向核实覆盖该候选年份）。"
+   },
+   {
+    "region_label": "门头沟一模",
+    "num": "11",
+    "resolved_exam_id": "BJ-2024-MTG-YIMO",
+    "resolution_evidence": "book-xuanbi-1.md:308 “门头沟一模Q11=C（旧候选A已纠正为正式键C）”，同上锁定为2024届。"
+   },
+   {
+    "region_label": "房山一模",
+    "num": "15",
+    "resolved_exam_id": "BJ-2024-FS-YIMO",
+    "resolution_evidence": "book-xuanbi-1.md:308 “2024房山一模…Q15=D”，锁定为2024届。"
+   }
+  ],
+  "unresolved": [
+   {
+    "region_label": "门头沟一模",
+    "num": "14",
+    "note": "assembly_blocks.csv候选年份BJ-2025-MTG-YIMO/BJ-2026-MTG-YIMO均未达匹配门槛；book-xuanbi-1.md未见对\"门头沟一模Q14\"的可核实具体结论，无法反向锁定为2024届，本表不代为裁定，按待复核纳入候选（不计入任何模块分母），见回传题库线_v3.json。"
+   },
+   {
+    "region_label": "门头沟一模",
+    "num": "20",
+    "note": "assembly_blocks.csv preview原文为\"（门头沟一模，20）\"（block_index=5，assembly_id=ASM-2024届各区一模试题分类汇编选必3），候选年份亦未达匹配门槛，book-xuanbi-1.md未见对应可核实结论，本表不代为裁定，按待复核纳入候选（不计入任何模块分母）。"
+   }
+  ]
+ },
+ "unresolved_notes": [
+  {
+   "topic": "书稿标签重定向（确认意见_v2.json blocker①第⑤条示例\"2025朝阳期中\"→BJ-2026-CY-QIZHONG）",
+   "status": "deferred",
+   "reason": "已用 grep 遍历 .claude/skills/beijing-gaokao-politics/references/ 下全部 book-*.md、source-inventory.md、user-requirements-ledger.md，未找到\"2025朝阳期中\"或其他书稿字面标签与真实exam_id不一致的可引用原文；BJ-2026-CY-QIZHONG 的 exams.csv 记录本身也未发现类似 BJ-2024-CY-QIZHONG/BJ-2023-HD-QIZHONG 的\"文件名月份 vs 登记学年\"错位证据。找不到可引用原文时按规则不代为猜测重定向，留待主代理或下一轮核实后补登。"
+  }
+ ],
+ "exams": {
+  "ASM-2024届各区一模试题分类汇编必修1": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编必修1",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编必修2 ": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编必修2 ",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编必修3": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编必修3",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编必修4": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编必修4",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编选必1": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编选必1",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编选必2": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编选必2",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-2024届各区一模试题分类汇编选必3": {
+   "exam_id": "ASM-2024届各区一模试题分类汇编选必3",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-北京2024各区《经济与社会》考题-wlfwlf": {
+   "exam_id": "ASM-北京2024各区《经济与社会》考题-wlfwlf",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "unknown",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "ASM-北京及2024各区《经济与社会》考题-wlf": {
+   "exam_id": "ASM-北京及2024各区《经济与社会》考题-wlf",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "unknown",
+      "stage": "unknown",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2020-BJ-GAOKAO": {
+   "exam_id": "BJ-2020-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2020",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2021-BJ-GAOKAO": {
+   "exam_id": "BJ-2021-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2021",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2022-BJ-GAOKAO": {
+   "exam_id": "BJ-2022-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2022",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-BJ-GAOKAO": {
+   "exam_id": "BJ-2023-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-CY-ERMO": {
+   "exam_id": "BJ-2023-CY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "朝阳",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-CY-YIMO": {
+   "exam_id": "BJ-2023-CY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "朝阳",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-DC-ERMO": {
+   "exam_id": "BJ-2023-DC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "东城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-DC-YIMO": {
+   "exam_id": "BJ-2023-DC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "东城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2023-FT-ERMO": {
+   "exam_id": "BJ-2023-FT-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "丰台",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-FT-YIMO": {
+   "exam_id": "BJ-2023-FT-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "丰台",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-HD-ERMO": {
+   "exam_id": "BJ-2023-HD-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "海淀",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2023-HD-QIMO": {
+   "exam_id": "BJ-2023-HD-QIMO",
+   "status": "retired_duplicate_registration",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [
+    "exams.csv 自带撤销说明：重复登记已撤销：本登记的两份来源实为2023海淀二模（第二学期期末练习）原卷与答案，已归 BJ-2023-HD-ERMO；不存在2023海淀高三第一学期期末原件（见 claude_bank_20260922/HD2023_identity）。"
+   ],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "海淀",
+      "stage": "期末",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "retired_duplicate_registration"
+     }
+    }
+   ]
+  },
+  "BJ-2023-HD-QIZHONG": {
+   "exam_id": "BJ-2023-HD-QIZHONG",
+   "status": "school_year_correction_pending_confirm",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {
+    "school_year": {
+     "current_value": "2022-2023学年",
+     "proposed_value": "2023-2024学年",
+     "evidence": "题库原件路径文件名为《2023北京海淀高三（上）期中政治（教师版）.docx》——“高三（上）”即2023年秋季学期，对应2023—2024学年，而不是exams.csv当前登记的2022-2023学年。"
+    }
+   },
+   "notes": [
+    "三路调查与审查摘要.txt 第129行（blind_spots）已指出该卷“exams.csv 里写的是2022-2023学年，但题面材料出现‘2023年9月’，实为2023—2024学年”。",
+    "必修三台账称此卷“2023海淀期中”，必修二台账称“2024海淀期中”；history 线把它和“2023海淀一模（原名：2023海淀高三下期中）”误合并——两者是不同卷，已在本表分别登记，不应再合并。",
+    "不改题库文件；已列入回传题库线清单（回传题库线_v2.json）。"
+   ],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "海淀",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    },
+    {
+     "type": "source_map_or_exam_files_path",
+     "path": "2023模拟题/2023各区模拟题(1)/期末和期中/2023北京海淀高三（上）期中政治（教师版）.docx"
+    },
+    {
+     "type": "critic_summary_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/三路调查与审查摘要.txt",
+     "line": 129
+    }
+   ]
+  },
+  "BJ-2023-HD-YIMO": {
+   "exam_id": "BJ-2023-HD-YIMO",
+   "status": "active_distinct_from_qizhong",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [
+    "原件路径含“各区一模/海淀/…第二学期期中练习”，是2023海淀高三下学期期中练习（一模性质），与 BJ-2023-HD-QIZHONG（2023高三上学期期中）是两份不同的卷。history 线曾把二者当同一卷合并、误报“必修三台账缺2023海淀一模”（三路调查与审查摘要.txt 第120行已更正）。"
+   ],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "海淀",
+      "stage": "一模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    },
+    {
+     "type": "critic_summary_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/三路调查与审查摘要.txt",
+     "line": 120
+    }
+   ]
+  },
+  "BJ-2023-XC-ERMO": {
+   "exam_id": "BJ-2023-XC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "西城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2023-XC-YIMO": {
+   "exam_id": "BJ-2023-XC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2023",
+      "school_year": "2022-2023学年",
+      "region": "西城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-BJ-GAOKAO": {
+   "exam_id": "BJ-2024-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-CY-ERMO": {
+   "exam_id": "BJ-2024-CY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "朝阳",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-CY-QIZHONG": {
+   "exam_id": "BJ-2024-CY-QIZHONG",
+   "status": "school_year_correction_pending_confirm",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {
+    "school_year": {
+     "current_value": "2023-2024学年",
+     "proposed_value": "2024-2025学年",
+     "evidence": "题库原件路径含《202411朝阳高三政治 期中1试题(1).pdf》——“202411”即2024年11月，对应2024年秋季学期→2024-2025学年，而不是exams.csv当前登记的2023-2024学年；与BJ-2023-HD-QIZHONG是同类“文件名年月 vs 登记学年”错位问题。"
+    }
+   },
+   "notes": [
+    "审查意见.json blocker③证据：“BJ-2024-CY-QIZHONG 的原件为‘202411…期中’，材料写‘2024年9月’，exams.csv 登记为2023-2024学年，属于同类学年错误，但没有登记。”本表按其提示核实原件路径后确认登记。",
+    "不改题库文件；已列入回传题库线清单（回传题库线_v2.json）。"
+   ],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "朝阳",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    },
+    {
+     "type": "source_file_path",
+     "path": "2024模拟题/2024朝阳期中/试卷/补充材料/202411朝阳高三政治 期中1试题(1).pdf"
+    }
+   ]
+  },
+  "BJ-2024-CY-YIMO": {
+   "exam_id": "BJ-2024-CY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "朝阳",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-DC-ERMO": {
+   "exam_id": "BJ-2024-DC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "东城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-DC-YIMO": {
+   "exam_id": "BJ-2024-DC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "东城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-FT-ERMO": {
+   "exam_id": "BJ-2024-FT-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "丰台",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-FT-YIMO": {
+   "exam_id": "BJ-2024-FT-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "丰台",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-HD-ERMO": {
+   "exam_id": "BJ-2024-HD-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "海淀",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-HD-QIZHONG": {
+   "exam_id": "BJ-2024-HD-QIZHONG",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [
+    "BJ-2025-HD-QIZHONG"
+   ],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2024-2025学年",
+      "region": "海淀",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-HD-YIMO": {
+   "exam_id": "BJ-2024-HD-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "海淀",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-SJS-YIMO": {
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "石景山",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ],
+   "named_exceptions": [
+    {
+     "kind": "named_exception_item_level_no_rubric",
+     "scope": "Q19(1)",
+     "evidence": "project-constitution.md special_override 行（第13行）：“2026-08-27 用户明确特批 2024 石景山一模第 19 题第（1）问为题级无正式细则例外”；第50行重申“该特批只覆盖这一小问，不扩张到同卷其他题目”。"
+    }
+   ]
+  },
+  "BJ-2024-XC-ERMO": {
+   "exam_id": "BJ-2024-XC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "西城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-XC-YIMO": {
+   "exam_id": "BJ-2024-XC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "西城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-BJ-GAOKAO": {
+   "exam_id": "BJ-2025-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-CP-ERMO": {
+   "exam_id": "BJ-2025-CP-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "昌平",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "materialized_pending_fidelity_acceptance"
+     }
+    }
+   ]
+  },
+  "BJ-2025-CY-ERMO": {
+   "exam_id": "BJ-2025-CY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "朝阳",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-CY-QIMO": {
+   "exam_id": "BJ-2025-CY-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "朝阳",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-CY-YIMO": {
+   "exam_id": "BJ-2025-CY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "朝阳",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-DC-ERMO": {
+   "exam_id": "BJ-2025-DC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "东城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-DC-QIMO": {
+   "exam_id": "BJ-2025-DC-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "东城",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-DC-YIMO": {
+   "exam_id": "BJ-2025-DC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "东城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-FS-YIMO": {
+   "exam_id": "BJ-2025-FS-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "房山",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-FT-ERMO": {
+   "exam_id": "BJ-2025-FT-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "丰台",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-FT-QIMO": {
+   "exam_id": "BJ-2025-FT-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "丰台",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-FT-YIMO": {
+   "exam_id": "BJ-2025-FT-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "丰台",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-HD-ERMO": {
+   "exam_id": "BJ-2025-HD-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "海淀",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-HD-QIMO": {
+   "exam_id": "BJ-2025-HD-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "海淀",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-HD-QIZHONG": {
+   "exam_id": "BJ-2025-HD-QIZHONG",
+   "status": "duplicate_registration_alias",
+   "canonical_of": "BJ-2024-HD-QIZHONG",
+   "aliases": [],
+   "corrections": {},
+   "notes": [
+    "coverage.py bank_duplicate_exams.csv：BJ-2024-HD-QIZHONG 与 BJ-2025-HD-QIZHONG 重复登记，共同题 20 道（题号偏移 qa=21 vs qb=22）。题级对应不是简单同号一一对应：matrix.csv 的 dup_of 列已给出逐题对应关系（例如2024 Q16↔2025 Q25），2025 Q16/Q18 在 matrix.csv 中无对应，本表不重复枚举，归属表生成时直接读 matrix.csv 的 dup_of/dup_covered_by 逐题合并，不按'同号即孪生'的粗糙假设处理（blocker③修复）。"
+   ],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "海淀",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    },
+    {
+     "type": "bank_duplicate_exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/bank_duplicate_exams.csv",
+     "row": {
+      "exam_a": "BJ-2024-HD-QIZHONG",
+      "exam_b": "BJ-2025-HD-QIZHONG",
+      "dup_questions": "20",
+      "qa": "21",
+      "qb": "22",
+      "kind": "duplicate_registration"
+     }
+    }
+   ]
+  },
+  "BJ-2025-HD-YIMO": {
+   "exam_id": "BJ-2025-HD-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "海淀",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-MTG-YIMO": {
+   "exam_id": "BJ-2025-MTG-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "门头沟",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-SJS-YIMO": {
+   "exam_id": "BJ-2025-SJS-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "石景山",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-SY-YIMO": {
+   "exam_id": "BJ-2025-SY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "顺义",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-XC-ERMO": {
+   "exam_id": "BJ-2025-XC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "西城",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2025-XC-QIMO": {
+   "exam_id": "BJ-2025-XC-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "西城",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-XC-YIMO": {
+   "exam_id": "BJ-2025-XC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "西城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2025-YQ-YIMO": {
+   "exam_id": "BJ-2025-YQ-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2025",
+      "school_year": "2024-2025学年",
+      "region": "延庆",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-BJ-GAOKAO": {
+   "exam_id": "BJ-2026-BJ-GAOKAO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "unknown",
+      "region": "北京",
+      "stage": "高考",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ],
+   "named_exceptions": [
+    {
+     "kind": "named_exception_whole_exam_no_rubric",
+     "evidence": "project-constitution.md special_override 行（第13行）：“2026-08-22 用户明确宣布 2026 北京高考为第三套整卷无正式细则例外”；第50行同列此卷为全项目三份整卷例外之一。"
+    }
+   ]
+  },
+  "BJ-2026-CP-ERMO": {
+   "exam_id": "BJ-2026-CP-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "昌平",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-CP-QIMO": {
+   "exam_id": "BJ-2026-CP-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "昌平",
+      "stage": "期末",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-CY-ERMO": {
+   "exam_id": "BJ-2026-CY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "朝阳",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-CY-QIMO": {
+   "exam_id": "BJ-2026-CY-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "朝阳",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-CY-QIZHONG": {
+   "exam_id": "BJ-2026-CY-QIZHONG",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "朝阳",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-CY-YIMO": {
+   "exam_id": "BJ-2026-CY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "朝阳",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-DC-ERMO": {
+   "exam_id": "BJ-2026-DC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "东城",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-DC-QIMO": {
+   "exam_id": "BJ-2026-DC-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "东城",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-DC-YIMO": {
+   "exam_id": "BJ-2026-DC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "东城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-FS-ERMO": {
+   "exam_id": "BJ-2026-FS-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "房山",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-FS-YIMO": {
+   "exam_id": "BJ-2026-FS-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "房山",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-FT-ERMO": {
+   "exam_id": "BJ-2026-FT-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "丰台",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-FT-QIMO": {
+   "exam_id": "BJ-2026-FT-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "丰台",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-FT-YIMO": {
+   "exam_id": "BJ-2026-FT-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "丰台",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-HD-ERMO": {
+   "exam_id": "BJ-2026-HD-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "海淀",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-HD-QIMO": {
+   "exam_id": "BJ-2026-HD-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "海淀",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-HD-QIZHONG": {
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "海淀",
+      "stage": "期中",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-HD-YIMO": {
+   "exam_id": "BJ-2026-HD-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "海淀",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-MTG-YIMO": {
+   "exam_id": "BJ-2026-MTG-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "门头沟",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-SJS-ERMO": {
+   "exam_id": "BJ-2026-SJS-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "石景山",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2026-SJS-QIMO": {
+   "exam_id": "BJ-2026-SJS-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "石景山",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "pending"
+     }
+    }
+   ],
+   "named_exceptions": [
+    {
+     "kind": "named_exception_whole_exam_no_rubric",
+     "scope": "Q1-Q20",
+     "evidence": "exams.csv 本行 notes 原话：“Q1-Q20按2026石景山期末具名无正式细则例外使用E3”（题库自身登记）；project-constitution.md 第50行同列此卷为全项目三份整卷例外之一；book-philosophy.md、book-culture.md的“书末E3例外”白名单同样列了“2026石景山期末”（书用法范围，不是证据资格上限，理由同上条）。"
+    }
+   ]
+  },
+  "BJ-2026-SJS-YIMO": {
+   "exam_id": "BJ-2026-SJS-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "石景山",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-SY-ERMO": {
+   "exam_id": "BJ-2026-SY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "顺义",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-SY-YIMO": {
+   "exam_id": "BJ-2026-SY-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "顺义",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-TZ-QIMO": {
+   "exam_id": "BJ-2026-TZ-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "通州",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-TZ-YIMO": {
+   "exam_id": "BJ-2026-TZ-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "通州",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-XC-ERMO": {
+   "exam_id": "BJ-2026-XC-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "西城",
+      "stage": "二模",
+      "has_paper": "N",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-XC-QIMO": {
+   "exam_id": "BJ-2026-XC-QIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "西城",
+      "stage": "期末",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "accepted_verified"
+     }
+    }
+   ]
+  },
+  "BJ-2026-XC-YIMO": {
+   "exam_id": "BJ-2026-XC-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "西城",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "pending"
+     }
+    }
+   ]
+  },
+  "BJ-2026-YQ-YIMO": {
+   "exam_id": "BJ-2026-YQ-YIMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2026",
+      "school_year": "2025-2026学年",
+      "region": "延庆",
+      "stage": "一模",
+      "has_paper": "Y",
+      "has_rubric": "Y",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ]
+  },
+  "BJ-2024-SY-ERMO": {
+   "exam_id": "BJ-2024-SY-ERMO",
+   "status": "active",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [],
+   "evidence": [
+    {
+     "type": "exams.csv_row",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+     "fields": {
+      "year": "2024",
+      "school_year": "2023-2024学年",
+      "region": "顺义",
+      "stage": "二模",
+      "has_paper": "Y",
+      "has_rubric": "N",
+      "extract_status": "all_available_source_conversion_accepted"
+     }
+    }
+   ],
+   "named_exceptions": [
+    {
+     "kind": "named_exception_whole_exam_no_rubric",
+     "evidence": "project-constitution.md 第50行：“全项目当前只有2024顺义二模、2026石景山期末和2026北京高考三份具名试卷属于整卷无正式评分细则例外”——证据资格是整卷级；exams.csv本行notes原话：“独立E3参考答案，非E1”；book-philosophy.md、book-culture.md的“书末E3例外”白名单是该书目前实际动用例外的用法范围（各自记“两题”），不是证据资格的上限，本表evidence列按第50行的整卷证据资格填写，各册具体收几题仍由各册自定。"
+    }
+   ]
+  },
+  "BJ-2024-MTG-YIMO": {
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "status": "compilation_only_project_level_include",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [
+    "exams.csv 无该 exam_id 独立行；仅在汇编（['ASM-2024届各区一模试题分类汇编必修1', 'ASM-2024届各区一模试题分类汇编必修2 ', 'ASM-2024届各区一模试题分类汇编选必2']）中以“已解析出处但本库无此卷（原料缺口）”登记，4 个区块。按用户2026-09-24裁定 REQ-PROJ-20260924-SCOPE-E1 项目级计入：选择题照收，主观题按同题同小问E1判定（暂无原卷/正式评分载体时标待裁决-证据未核实）。",
+    "记录①（2026-08-23，选必二范围内，source-inventory.md第152行）：“用户于2026-08-23确认2024门头沟一模从未上传到本项目数据源。此前取得的门头沟原卷/参考答案及其Q12、Q13、Q19记录属于跨项目或外部线索污染，撤销其本项目题源身份；不得进入选必二正文、A1/A2、Excel、题量、评分统计或证据门。”——该条上下文明确限定在选必二一册的证据门禁。",
+    "记录②（2026-09-24，项目级，user-requirements-ledger.md REQ-PROJ-20260924-SCOPE-E1）：“只要有细则的都收。没细则的只收选择题”“只在汇编里出现的卷同此处理（2024门头沟一模、房山一模按此项目级计入、只收选择题，取代2026-08-23选必二以‘非本项目上传数据源’撤销门头沟一模的口径；选必二重做时按新口径处理）”——已写入 incremental-question-intake.md“纳入范围”第9行。",
+    "取代关系：记录②是2026-09-24用户明确针对记录①的口径更新，逐字写明“取代……撤销门头沟一模的口径”，本表按记录②执行，记录①仍完整保留作为历史依据，不删除。",
+    "反向证据（补审查意见提到的缺口）：book-xuanbi-1.md 第401行：“2024门头沟一模Q18已确认属于本项目选必一题源，纠正历史‘题源边界待核’状态；当前载体仍只提供E3参考答案，没有同卷独立正式E1，因此只修订审计状态，不改正文和正式槽。”——即选必一已经把该卷Q18的题源身份问题单独核实为“确认属于本项目”，与记录①“撤销题源身份”并存的表面矛盾，实际是“选必二在2026-08-23误用了跨项目污染证据、选必一后来单独核实同一份汇编题源没有污染问题”，两册各自的证据链本来就不同源，本次项目级裁定统一按记录②的新口径执行，不需要再区分。",
+    "必修三第52批仍引用该卷的汇编题肢（三路调查与审查摘要.txt第131行）——与项目级计入口径一致，不冲突。",
+    "v3补充（book-xuanbi-1.md:307-308,401,51逐字核对）：客观正式键闭环Q8=D、Q10=D、Q11=C（“门头沟Q11旧候选A已纠正为正式键C”）；主观Q18“已确认属于本项目选必一题源”但“仍只提供E3参考答案，没有同卷独立正式E1”（第401行）。line 308“正文9个实际题块与正式键9/9一致”，覆盖房山一模Q14/Q15、门头沟一模Q8/Q10/Q11、丰台二模Q14/Q15、2025海淀二模Q14/Q15共9题，均已装入选必一正文——门头沟Q8/Q10/Q11属于其中3题。这批逐题事实已同步进 skill_overrides.json 与 attribution.csv 的候选行，本条只在身份层留存出处，不代表本表因此把选必二105-08-23的撤销证据也一并推翻（两条历史记录并存，取代关系见上文manual条目）。"
+   ],
+   "evidence": [
+    {
+     "type": "assembly_blocks.csv_rows",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/assembly_blocks.csv",
+     "sample_evidence": [
+      "汇编标注 (2024门头沟一模7)；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）",
+      "汇编标注 （2024门头沟一模4）；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）",
+      "汇编标注 （2024门头沟一模6）；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）"
+     ]
+    },
+    {
+     "type": "source-inventory.md_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/source-inventory.md",
+     "line": 152
+    },
+    {
+     "type": "source-inventory.md_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/source-inventory.md",
+     "line": 136
+    },
+    {
+     "type": "user-requirements-ledger.md_section",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/user-requirements-ledger.md",
+     "anchor": "REQ-PROJ-20260924-SCOPE-E1"
+    },
+    {
+     "type": "book-xuanbi-1.md_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/book-xuanbi-1.md",
+     "line": 401
+    },
+    {
+     "type": "critic_summary_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/三路调查与审查摘要.txt",
+     "line": 131
+    }
+   ]
+  },
+  "BJ-2024-FS-YIMO": {
+   "exam_id": "BJ-2024-FS-YIMO",
+   "status": "compilation_only_project_level_include",
+   "canonical_of": null,
+   "aliases": [],
+   "corrections": {},
+   "notes": [
+    "exams.csv 无该 exam_id 独立行；仅在汇编（['ASM-2024届各区一模试题分类汇编必修2 ', 'ASM-2024届各区一模试题分类汇编选必2']）中以“已解析出处但本库无此卷（原料缺口）”登记，5 个区块。按用户2026-09-24裁定 REQ-PROJ-20260924-SCOPE-E1 项目级计入：选择题照收，主观题按同题同小问E1判定（暂无原卷/正式评分载体时标待裁决-证据未核实）。",
+    "source-inventory.md 第136行：2024房山一模只在分类汇编中出现，原卷与正式评分载体尚未取得，登记为“汇编线索／原卷与E1继续检索”，不是确认无细则。",
+    "按 REQ-PROJ-20260924-SCOPE-E1 项目级计入：选择题照收，主观题需同题同小问E1才收，目前原卷全文未取得，暂只能生成候选行(见assembly_blocks候选)，题面/题型只能按汇编标注文本粗略推断，不能核实完整题面，主观题一律标“待裁决-证据未核实”。",
+    "v3补充（book-xuanbi-1.md:307-308,51逐字核对）：客观正式键闭环Q14=C、Q15=D；主观Q18(2)“本轮主观E1新闭环7题”之一（line307），且line51“房山一模Q18(2)的‘开源’释义在7个重复落位全部恢复四边框”佐证该题已在选必一正文多处落位，不是候选状态。line308“正文9个实际题块与正式键9/9一致”覆盖房山一模Q14/Q15在内的9题。这批逐题事实已同步进 skill_overrides.json 与 attribution.csv 的候选行。"
+   ],
+   "evidence": [
+    {
+     "type": "assembly_blocks.csv_rows",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/assembly_blocks.csv",
+     "sample_evidence": [
+      "汇编标注 （2024房山一模2）；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）",
+      "汇编标注 （2024房山一模）19）；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）",
+      "汇编标注 （2024房山一模12）；该卷不在本库（已核实工作区与全部已授权原料根均无此卷）"
+     ]
+    },
+    {
+     "type": "source-inventory.md_line",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/source-inventory.md",
+     "line": 136
+    },
+    {
+     "type": "user-requirements-ledger.md_section",
+     "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/.claude/skills/beijing-gaokao-politics/references/user-requirements-ledger.md",
+     "anchor": "REQ-PROJ-20260924-SCOPE-E1"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "q2_stamp_glyph_inventory.v1",
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "question_id": "BJ-2020-BJ-GAOKAO-Q2",
+  "source_image": {
+    "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/embedded/img-000.png",
+    "sha256": "1662b5d2c0d91d3a0a5e0728b9faf46097deda4e255db092b0a97d204630f656",
+    "dimensions": "235x127",
+    "boundary": "完整保留，未裁切/重绘"
+  },
+  "legible_or_reliably_cross_checked": [
+    {
+      "glyph": "众志成城 抗击疫情",
+      "location": "两枚票面上方红色标题（左右各一处）",
+      "basis": "原图/原页可见；同图清晰版逐字核对"
+    },
+    {
+      "glyph": "众",
+      "location": "中部连接两枚邮票的红色主图形",
+      "basis": "原图/原页图形清晰可辨"
+    },
+    {
+      "glyph": "1.20元",
+      "location": "左票左下、右票右下",
+      "basis": "同图清晰版及中国邮政发行通告核对；原图低清小数点和单位细节不稳定"
+    },
+    {
+      "glyph": "中国邮政 CHINA",
+      "location": "左票下方",
+      "basis": "同图清晰版核对；原图低清但文字带形可见"
+    },
+    {
+      "glyph": "CHINA 中国邮政",
+      "location": "右票下方",
+      "basis": "同图清晰版核对；原图低清但文字带形可见"
+    },
+    {
+      "glyph": "特11-2020",
+      "location": "左票、右票票底编号",
+      "basis": "同图清晰版及中国邮政发行通告核对；原图微字不稳定"
+    },
+    {
+      "glyph": "(2-1)",
+      "location": "左票票底右侧图序",
+      "basis": "同图清晰版核对；原图微字不稳定"
+    },
+    {
+      "glyph": "(2-2)",
+      "location": "右票票底右侧图序",
+      "basis": "同图清晰版核对；原图微字不稳定"
+    },
+    {
+      "glyph": "COVID-19",
+      "location": "中部下方圆形红斜杠标识内",
+      "basis": "同图清晰版核对；原图仅能看见圆形标识/字母块状轮廓"
+    },
+    {
+      "glyph": "（2-1）众志成城；（2-2）抗击疫情",
+      "location": "套票图序/图名映射",
+      "basis": "中国邮政官方发行通告，作为同图交叉核验，不把外部说明冒称原题像素直读"
+    }
+  ],
+  "unreadable_or_not_inferred": [
+    {
+      "region": "左票背景楼宇、乡村/防疫场景中的微小字符或标牌",
+      "reason": "235x127源图中像素不足",
+      "action": "保留线稿构成描述，不补写字符"
+    },
+    {
+      "region": "右票背景救治/支援/方舱等场景中的微小字符或标牌",
+      "reason": "235x127源图中像素不足",
+      "action": "保留背景场景描述，不补写字符"
+    },
+    {
+      "region": "人物口罩、防护服、车辆和设备上的微型文字/符号",
+      "reason": "无法稳定区分具体字形",
+      "action": "不猜写"
+    },
+    {
+      "region": "红色“众”字和中央圆标内除已核对文字外的细部符号",
+      "reason": "部分细节为图形纹样而非可读文字",
+      "action": "只描述可见图形，不转成文字"
+    },
+    {
+      "region": "原题低清图中任何未列出的英文/中文微字",
+      "reason": "无法可靠辨认",
+      "action": "不补写"
+    }
+  ],
+  "cross_check_sources": [
+    "https://www.chinapost.com.cn/cn/stamp/2005/0528-1.html",
+    "https://www.chinapost.com.cn/res/ChinaPostJT/stamp/20050526.jpg"
+  ],
+  "shared_modified": []
+}

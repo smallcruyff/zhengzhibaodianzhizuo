@@ -1,0 +1,111 @@
+{
+  "verdict": "FAIL",
+  "issues": [
+    {
+      "severity": "blocker",
+      "desc": "--apply 第2步把候选复制到工作区根时，若同名文件已存在且内容不同（人工改稿、早先候选、Word 另存），直接 shutil.copy2 覆盖：不备份、不拒绝、不记入 created，回滚也不恢复。前身 promote_b52 是 assert not newhead.exists()。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A4：工作区根预置 必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx（内容 HAND-EDITED-BY-USER，sha 384bdad70724c862）。A4_ok：rc=0，该文件变为 b1251fc30aecff65，沙盒内任何位置都找不到原内容的副本（copies_of_hand_edit_anywhere=[]）。A4_fault（第6步注入故障）：rc=2，已“回滚”，但手改稿仍是 b1251fc30aecff65，原内容丢失。代码 publish_review.py:575-580。",
+      "fix": "dry-run 阶段就检查 ws/{stem}.docx|pdf：已存在且 SHA 不同 → 门 FAIL（或要求显式 --overwrite-workspace 并先备份进 central_state_backup）；已存在且 SHA 相同才跳过；凡写入前已存在的目标都先备份，回滚时恢复。"
+    },
+    {
+      "severity": "blocker",
+      "desc": "回滚顺序错误：_rollback 先“移回归档文件”（条件是原位置不存在），再删除本次新建文件。新 stem 与旧登记文件同名时（命名模板不含 {n} 的固定审阅副本名），移回被跳过、随后新副本又被删，审阅入口 docx/pdf 双双消失、旧稿滞留归档目录；同时工作区根的同名工作头被新内容覆盖且不恢复，中央状态却已回滚为旧 SHA，二者不再一致。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A3（naming.docx_stem='必修三_最新审阅稿'，旧登记文件同名，第6步写中央状态时注入 RuntimeError）：rc=2；回滚后 review_entry 只剩 ['.review-manifest.json','先看这里.md']；diff.removed=[review_entry/必修三_最新审阅稿.docx, .pdf]，二者出现在 review_history/第51批_原样审阅_*/ 下；diff.changed=[workspace/必修三_最新审阅稿.docx]（中央状态 working_head 指向它但内容已是新稿）。代码 publish_review.py:693-703、575-580。",
+      "fix": "回滚先删除/还原本次写入的目标（对“写前已存在”的目标从备份还原），再把归档文件移回；或在 dry-run 门里拒绝“新 stem 与现有登记名/工作头同名”。回滚后逐一核对审阅入口与工作区根的 SHA 与发布前一致，不一致就明确报告“回滚不完整”。"
+    },
+    {
+      "severity": "blocker",
+      "desc": "冻结册只按 prof['frozen'] 判定，写入目标从不过 docx_lib.guard_write/_frozen_hits 那样的路径级冻结检查。把真实 bixiu2 配置复制一份改 frozen=false（规格第5条允许的测试做法），用 --profile 路径传入：冻结门 PASS，targets 全部是真实 00_必修二最新审查稿、必修二工作区根、真实 当前基线.json；此时只剩写权/验收门挡着（真实必修二 接管.json 现为 phase=owned）。其余三件工具都经 guard_write 对同一路径拒写。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A7（只 dry-run，未写）：rc=2，gates=[frozen PASS '未冻结', ownership FAIL(owner=claude:f032…, phase='owned'), acceptance FAIL, batch_monotonic WARN, review_entry FAIL, …]；targets.review_entry=/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修二最新审查稿；同一目标调用 dl.guard_write → '落在冻结册目录（必修二《经济与社会》），拒绝写出'。对照：--profile bixiu2 dry-run rc=2 frozen FAIL，--apply rc=3（正确）。",
+      "fix": "在 gate_frozen 之外，把全部写入目标（审阅入口、工作区根、归档目录、中央状态、清单、先看这里、备份/回执目录）逐一过 dl._frozen_hits（或 guard_write 的冻结部分），命中已登记冻结册目录即 GuardRefusal 退出 3；dry-run 也要算出并检查这些目标。"
+    },
+    {
+      "severity": "major",
+      "desc": "“任一步失败 → 按备份回滚、不留半成品”不成立：回滚只还原中央状态/清单/先看这里并移回 docx/pdf；归档目录里的清单副本、被搬走的先看这里、归档实物指纹.json 使目录非空而保留；已存在的 发布准备/晋升回执.json 被覆盖且不还原，写回执后失败会残留 status=PROMOTED 的回执；备份目录也留下。编写者的故障注入只在最早一步（归档 mkdir 失败）做，所以没暴露。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A1（第6步注入）：rc=2，diff.added 含 review_history/第51批_原样审阅_*/{.review-manifest.json,先看这里.md,归档实物指纹.json} 与 发布准备/状态备份/*。A2（预置旧回执 {\"status\":\"OLD_RECEIPT\"}，写回执后注入）：rc=2，回执变为 {\"status\":\"PROMOTED\",…}，diff.changed=[…/发布准备/晋升回执.json]。A5c、A6 同样留下归档目录。编写者原测试 sandbox2 也留下 发布准备/状态备份/<stamp>（find -newer 可见），其“全树一致”只核了审阅入口。",
+      "fix": "created/overwritten 清单覆盖归档目录内所有新文件和晋升回执；回滚时删除本次新建的归档目录整体、把被覆盖的回执从备份还原；回执改为复核通过后最后写，或先写 .tmp 复核后再 rename；测试对每一步（1–8）分别注入故障并比较沙盒全树 SHA（备份目录可列为明示例外）。"
+    },
+    {
+      "severity": "major",
+      "desc": "防符号链接逃逸只对“自身已 resolve 的目录”做 containment：review_entry、review_history 本身若是指向 paths.root 之外的符号链接，写入照常进行；中央状态、清单、先看这里从不 _confine；do_apply 里 allow_publish_dirs 定义后从未使用。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A5a：review_history 为指向沙盒外 outside/hist 的链接 → rc=0，归档（含 第51批 docx/pdf、清单、先看这里、指纹）全部写到 outside/hist/第51批_原样审阅_*/。A5b：review_entry 为指向 outside/entry 的链接 → rc=0，新 docx/pdf/清单/先看这里写在 outside/entry。代码 publish_review.py:218-245（build_context 全部 .resolve()）、514（allow_publish_dirs 未用）、549-550、611、624、649。",
+      "fix": "以未解析的配置路径与 realpath(paths.root)（及显式声明的外部位置如中央状态目录）为准做 containment：每个写入目标 realpath 必须落在 realpath(paths.root) 或其声明白名单内；review_entry/review_history 自身是符号链接时直接拒绝（退出 3）；中央状态/清单/先看这里同样过 _confine。"
+    },
+    {
+      "severity": "major",
+      "desc": "dry-run 不预检写入目标，也不输出规格要求的逐文件计划（每个复制/归档/更新文件的目标路径与 SHA）。因此 stem 渲染出 ../、工作区目标是外链、配置缺 review_history（归档模板渲染到文件系统根 /第51批_原样审阅_*）等情况 dry-run 都是 exit 0，要到 --apply 已经搬走旧稿后才失败；且 _confine 的 GuardRefusal 在 try 内被转成 Gate，退出码成了 2 而不是规格的 3。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A15：dry-run 计划键只有 actor,batch,gates,gates_pass,inputs,mode,naming,profile,profile_fields_needed,review_entry_unknown_items,targets,tool,version；targets 只有三个目录，无归档目录、无逐文件清单。A6：--label '../../review_history/x' → dry-run rc=0（naming.rendered='必修三_修订52_../../review_history/x', problem=null），apply rc=2 且留下归档目录。A5c：ws 目标为外链 → dry-run rc=0 全 PASS，apply rc=2（非 3）。A13：无 review_history → dry-run rc=0，apply 报 OSError: [Errno 30] Read-only file system: '/第51批_原样审阅_20260924_030732'（只因 / 只读才没写成）。",
+      "fix": "把目标计算（stem、ws/审阅入口目标、归档目录、备份目录、回执路径）挪到门之前，dry-run 输出逐文件 {src,dst,action,sha256} 计划，并对每个目标做 containment/存在性/冻结检查；stem 禁止含路径分隔符；review_history 缺失或 archive_to 渲染为绝对路径且不在 root 内 → 门 FAIL；GuardRefusal 不要被 BaseException 分支改写成退出码 2。"
+    },
+    {
+      "severity": "major",
+      "desc": "中央状态字段更新不全：规格明列 review_entry/review_manifest，前身 publish_b52 还更新 latest_rendered_docx_sha256/latest_rendered_pages；本工具都不动。发布后真实必修三中央状态的 review_entry 会指向已被归档搬走、不存在的旧 docx，latest_rendered_* 停在旧版。新清单沿用旧清单时 previous_review_archive、body_changed、verified、source_state 等旧键原样保留，previous_review_archive 指向上上次归档。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A10：apply rc=0 后 central.review_entry=…/review_entry/必修三政治与法治宝典_R31续修_第51批_阶段审查稿.docx（exists=False），latest_rendered_docx_sha256='OLD'，latest_rendered_pages=3；新清单 previous_review_archive='/old/第50批_原样审阅'，实际归档是 review_history/第51批_原样审阅_*。真实中央状态现有这些键（review_entry、review_manifest、latest_rendered_docx_sha256、latest_rendered_pages），真实清单有 previous_review_archive/body_changed/verified/source_state。",
+      "fix": "central_state_fields 默认值加 review_entry、review_manifest、latest_rendered_docx_sha256、latest_rendered_pages，并照 publish_b52 赋值；新清单显式写 previous_review_archive=本次归档目录、source_state=中央状态路径，对无法由本工具判定的旧键（body_changed、verified 等）删除或标记为继承自上一版。"
+    },
+    {
+      "severity": "major",
+      "desc": "候选根目录只由 --docx 的父目录推断（父目录叫 构建 就取上一级），不核对是否落在 …/协作/候选/<谁>/<批次>/ 下。候选放在工作区根（或其他目录）时，状态备份与 晋升回执.json 直接写进书稿工作区根的 发布准备/。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A8：候选 docx 放在沙盒 workspace/ → apply rc=0，receipt=…/workspace/发布准备/晋升回执.json，backup=…/workspace/发布准备/状态备份/<stamp>，workspace 根新增 发布准备 目录。代码 publish_review.py:248-251、516-519、652。",
+      "fix": "candidate_root 必须匹配 paths.candidate_dir_pattern / WRITE_ALLOW_RX 的 …/协作/候选/<谁>/<批次>/ 形态，否则门 FAIL；备份/回执目录同样过 guard（允许 构建/ 与 发布准备/）。"
+    },
+    {
+      "severity": "minor",
+      "desc": "--report 被 guard_write 拒绝时 GuardError 未捕获：打印 traceback、退出码 1（规格：拒绝写出为 3，异常转中文提示）；且计划已先打印到 stdout，调用方易误读为“有待处理项”。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A11：--report <不存在目录>/r.json → rc=1，stderr 含 'Traceback'、'docx_lib.GuardError: 输出目录不存在'；--report r.txt 同样 rc=1 带 traceback。代码 publish_review.py:749-755（在 try 之外）。",
+      "fix": "在 run 之前先 guard_write 报告路径，捕获 GuardError → 中文提示、退出 3。"
+    },
+    {
+      "severity": "minor",
+      "desc": "父稿核对偏弱：只认 expected_current_working_head_sha256，前身 publish_b52 同时接受 expected_working_head_sha256；验收只写别名键且值错误时只给 WARN、dry-run exit 0 可发布。也不核中央状态 working_head 文件的磁盘 SHA 是否仍等于记录（前身会拒绝）。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A9：验收仅含 expected_working_head_sha256='000…0' → acceptance WARN '未给 expected_current_working_head_sha256'，rc=0。A9b：working_head 磁盘文件改为别的内容 → 全部门 PASS，rc=0。对照前身 publish_b52.py:197-211。",
+      "fix": "两个键都读，任何一个给出且不等于中央状态即 FAIL；另核 sha256(working_head 文件)==working_head_sha256，不一致 FAIL（工作头已被人工改动）。"
+    },
+    {
+      "severity": "minor",
+      "desc": "批次递增门取中央状态 latest_batch 里的第一个数字，形如 'R31续修_batch52' 会被读成 31，放过倒退批次。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A14：latest_batch='R31续修_batch52'，--batch 40 → batch_monotonic PASS '31 → 40'。代码 publish_review.py:324。（真实必修三现为 'batch52'，暂不触发）",
+      "fix": "优先匹配 batch(\\d+)/第(\\d+)批，其次取最后一个数字；解析歧义时 FAIL 而非取第一个。"
+    },
+    {
+      "severity": "minor",
+      "desc": "真实 bixiu3 配置 publish.central_state_backup='{candidate}/发布准备/状态备份'（不含 {stamp}），工具按模板直接 exist_ok 写同名文件：同一候选目录再次发布或失败重试会覆盖前一次备份（真实第52批该目录已有备份）。",
+      "evidence": "/usr/bin/python3 -B ~/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1（结果 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json，日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log） 用例 A16：预置 状态备份/central_state.json={\"EARLIER_BACKUP\": true}，apply（注入失败）后该文件被改写为本次中央状态内容。代码 publish_review.py:516-519、533-537。",
+      "fix": "模板不含 {stamp} 时自动追加时间戳子目录，或目标文件已存在即拒绝；在 profile_fields_needed 里提示 bixiu3 模板补 {stamp}。"
+    },
+    {
+      "severity": "minor",
+      "desc": "代码与文档细节：复核项 manifest_sha256_ok 是 sha256_file(x)==sha256_file(x) 恒真；522-523 行为死代码；docstring 说 --health 未接受 FAIL 用退出码 1，实际是门 FAIL→2；冻结册 dry-run 退出 2（规格“退出 3，dry-run 也明说拒绝”可读作 dry-run 也应 3，需主代理定口径）；不支持规格提到的 detect_profile（--profile 必填）；没给 --note 时整页替换先看这里，丢掉前身保留的样稿前言，也不同步工作区 本轮修订与审查说明.md。",
+      "evidence": "publish_review.py:666 'manifest_sha256_ok': sha256_file(manifest_path) == sha256_file(manifest_path)；522-523 if … : pass；35-36 与 494/500 对照；715 add_argument('--profile', required=True)；614-624。用例 A7_real_bixiu2_dry rc=2。前身 publish_b52.py:472-473（保留样稿前言）、464-470（同步 ws_note）。",
+      "fix": "manifest 复核改成与写入内容的 SHA 比较；删死代码；统一退出码文档；按规格支持 --profile 缺省时 detect_profile(docx)；无 --note 时保留旧先看这里里的非批次段落或门 WARN。"
+    },
+    {
+      "severity": "minor",
+      "desc": "（非本工具缺陷，但影响本工具真实 dry-run 结论）真实审阅入口 00_必修三最新审查稿 下有清单外文件 __verify_never_written__.json（2026-09-24 02:25，内容是 layout_prepare 1.1.0 的 check 报告，输入来自 $SCRATCH/booktools/layout_prepare/out/），说明另一件工具或其复验曾把报告写进审阅入口。publish_review 的 review_entry 门正确把它报为 FAIL。",
+      "evidence": "ls -la 00_必修三最新审查稿 → '-rw-r--r-- 2424 Sep 24 02:25 __verify_never_written__.json'；head 显示 \"tool\": {\"name\": \"layout_prepare\", \"version\": \"1.1.0\", \"mode\": \"check\"}。用例 A18_real_b52/b53：review_entry FAIL 列出该文件。本次复验前后快照（74 项，含审阅入口全部文件 SHA/mtime）无变化，该文件不是本次产生。",
+      "fix": "主代理核实来源后决定是否移除；排查 layout_prepare 的 --report 守卫（应拒绝落在受保护根内非 构建/ 的路径）。本工具无需改。"
+    }
+  ],
+  "checked": [
+    "重跑编写者测试：拷贝 run_tests_publish_review.py 到 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/rerun/ 运行（原脚本按自身所在目录写 out/，直接跑 后勤管理/ 下那份会把沙盒写进项目目录，故只跑 scratch 副本）：全部 PASS，与回执 tests 一致；但其故障注入只覆盖归档 mkdir 失败一种，且“全树一致”只核审阅入口，sandbox2 残留 发布准备/状态备份/<stamp>",
+    "新增 publish_review_verify.py（scripts/ 下，仅新增）构造 A1–A18 共 31 条用例记录：晚期故障注入(A1/A2)、同名回滚(A3)、工作区覆盖(A4)、符号链接逃逸(A5a/b/c)、--label 路径逃逸(A6)、冻结册绕过与真实 bixiu2 dry/apply(A7)、候选位置(A8/A8b)、父稿别名与工作头磁盘 SHA(A9/A9b)、中央状态/清单陈旧指针(A10)、--report 守卫(A11)、畸形输入 6 例(A12)、缺 review_history(A13)、批次解析(A14)、dry-run 计划完整性(A15)、无 stamp 备份模板(A16)、health 门 vs batch_health(A17)、真实数据 dry-run batch52/53(A18)",
+    "畸形输入（pdf_pages='abc'、binding pdf_pages 为字符串、approved='true'、验收为数组、PDF 损坏、--batch 第52批）：均退出 2、无 traceback、不写文件——通过",
+    "health 门与 batch_health 一致：B3_04＋目录定位PDF，bh.run_health FAIL=48、6 条规则；gate_health 未接受→FAIL 列同 6 条，全部接受→WARN，部分接受→FAIL 列剩余 5 条——一致",
+    "真实数据 dry-run：bixiu3 --batch 52 → ownership FAIL(phase=offered)、batch_monotonic FAIL(52→52)、review_entry FAIL(已是此版＋__verify_never_written__.json)、acceptance/same_version_identity PASS，与回执一致；--batch 53 → acceptance FAIL(batch 不符)、batch_monotonic PASS",
+    "冻结册：真实 bixiu2 --apply 退出 3、dry-run frozen FAIL 退出 2；frozen=false 副本可绕过（见 blocker）",
+    "真实文件保护：测试前后对 74 项做 SHA+mtime 快照（00_必修三/必修二最新审查稿全部文件、B3_52 docx/pdf/验收/同版身份、候选 发布准备/、中央状态、两册 接管.json、必修二 当前基线.json、第51批归档、profiles/、__pycache__、工作区根与历史目录列表），前后完全一致",
+    "__pycache__：前后均只有 book_incremental/check_drill_admission/source_intake 三个 cpython-312 旧文件，无新增",
+    "不适用项：跨 run 文字、表格单元格、题面区保护——publish_review 只复制文件、不改 DOCX 内容，无此类路径；docx 字节级不变由 A4/A10 等用例的 SHA 复核间接覆盖",
+    "与前身对照：publish_b52.py（父稿别名键、工作头磁盘 SHA、review_entry/review_manifest/latest_rendered_* 更新、保留样稿前言）、promote_b52.py（assert not newhead.exists()）",
+    "未做：真实 811 页 PDF 的 --health 端到端（用 B3_04＋目录定位PDF 进程内等价覆盖）；未对真实必修三做任何 --apply"
+  ],
+  "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/verify_publish_review.json",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review_verify.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1/results.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/run1.log",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/rerun/rerun.log",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/snap_before.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_verify/snap_after.json"
+  ]
+}

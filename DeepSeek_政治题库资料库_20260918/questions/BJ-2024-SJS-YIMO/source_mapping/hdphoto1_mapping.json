@@ -1,0 +1,172 @@
+{
+  "schema_version": "docx_media_object_mapping.v1",
+  "exam_id": "BJ-2024-SJS-YIMO",
+  "status": "PASS_MAPPED_OBJECT_LEVEL_BOUNDARY",
+  "disposition": "mapped_enhancement_layer_not_orphan",
+  "source_docx": {
+    "path": "../sources/试卷.docx",
+    "absolute_source": "/Users/wanglifei/Desktop/2024模拟题/石景山一模/试卷/试卷.docx",
+    "role": "原卷 DOCX",
+    "bytes": 353125,
+    "sha256": "f581620be44a4c2cae69e737697ee15d754603627ddd385dd6be1c207c5e43f6",
+    "document_xml": {
+      "archive_member": "word/document.xml",
+      "bytes": 299614,
+      "sha256": "992d14c8937b10840c81a8cc07e80b5eebfa8117701623341d32bca2f018b4bc"
+    },
+    "relationships_xml": {
+      "archive_member": "word/_rels/document.xml.rels",
+      "bytes": 2923,
+      "sha256": "3bbac2a80184ea2c8c9755aa8b108e172989d86fefefe62f16545a9e0118de69"
+    }
+  },
+  "question_mapping": {
+    "question_id": "BJ-2024-SJS-YIMO-Q7",
+    "question_number": 7,
+    "source_logical_page": 2,
+    "word10_primary_pages": [2],
+    "docx_body_child_index": 38,
+    "document_paragraph_index": 38,
+    "preceding_question_paragraph_index": 37,
+    "following_options_paragraph_index": 39,
+    "paragraph_text": "",
+    "mapping_basis": [
+      "Q7 text is body paragraph 37 immediately before the image paragraph",
+      "the image paragraph is body child/paragraph 38",
+      "Q7 options are body paragraph 39 immediately after the image paragraph",
+      "01/11 source coverage maps Q7 to source page 2 and Word-10 page 2"
+    ]
+  },
+  "base_image": {
+    "asset": "image2.png",
+    "source_member": "word/media/image2.png",
+    "relationship_id": "rId13",
+    "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+    "relationship_target": "media/image2.png",
+    "path_in_delta": "../assets/original_media/image2.png",
+    "bytes": 12935,
+    "sha256": "102afb6f57c6d64ce62546aa4cfeaa995dee077e70fffaf745a46644fe5450cc",
+    "dimensions_px": [1268, 288],
+    "word_object": {
+      "wp_docPr_id": "435995270",
+      "wp_docPr_name": "图片 1",
+      "pic_cNvPr_id": "435995270",
+      "wp_inline_extent_emu": [4762500, 1081720],
+      "pic_spPr_extent_emu": [4772836, 1084068],
+      "blip_fill": "stretch/fillRect",
+      "document_xml_blip_count_for_rId13": 1
+    },
+    "visual_transcription": {
+      "caption": "概念外延关系图（甲、乙、丙、丁）",
+      "panel_order": ["甲", "乙", "丙", "丁"],
+      "panels": [
+        {
+          "panel": "甲",
+          "nodes": [
+            {"id": "jia_outer", "label": "S", "shape": "outer_circle"},
+            {"id": "jia_inner", "label": "P", "shape": "inner_circle", "inside": "jia_outer"}
+          ],
+          "relations": [{"from": "jia_inner", "to": "jia_outer", "kind": "containment", "visual_reading": "P在S内"}]
+        },
+        {
+          "panel": "乙",
+          "nodes": [
+            {"id": "yi_left", "label": "S", "shape": "circle_left"},
+            {"id": "yi_right", "label": "P", "shape": "circle_right"},
+            {"id": "yi_intersection", "label": null, "shape": "overlap_region", "text_status": "未标"}
+          ],
+          "relations": [{"from": "yi_left", "to": "yi_right", "kind": "overlap", "visual_reading": "S与P相交"}]
+        },
+        {
+          "panel": "丙",
+          "nodes": [
+            {"id": "bing_outer", "label": "Q", "shape": "outer_circle"},
+            {"id": "bing_s", "label": "S", "shape": "left_region", "inside": "bing_outer"},
+            {"id": "bing_p", "label": "P", "shape": "right_region", "inside": "bing_outer"},
+            {"id": "bing_divider", "label": null, "shape": "vertical_divider", "text_status": "无文字"}
+          ],
+          "relations": [{"from": "bing_outer", "to": ["bing_s", "bing_p"], "kind": "partition_by_vertical_divider"}]
+        },
+        {
+          "panel": "丁",
+          "nodes": [
+            {"id": "ding_outer", "label": "Q", "shape": "outer_circle"},
+            {"id": "ding_s", "label": "S", "shape": "left_region", "inside": "ding_outer"},
+            {"id": "ding_p", "label": "P", "shape": "middle_region", "inside": "ding_outer"},
+            {"id": "ding_right", "label": null, "shape": "right_region", "inside": "ding_outer", "text_status": "未标"},
+            {"id": "ding_divider_1", "label": null, "shape": "vertical_divider", "text_status": "无文字"},
+            {"id": "ding_divider_2", "label": null, "shape": "vertical_divider", "text_status": "无文字"}
+          ],
+          "relations": [{"from": "ding_outer", "to": ["ding_s", "ding_p", "ding_right"], "kind": "partition_by_two_vertical_dividers"}]
+        }
+      ],
+      "text_status": "base PNG is visually readable; no missing labels in the four-panel diagram"
+    }
+  },
+  "hdphoto_layer": {
+    "asset": "hdphoto1.wdp",
+    "source_member": "word/media/hdphoto1.wdp",
+    "relationship_id": "rId14",
+    "relationship_type": "http://schemas.microsoft.com/office/2007/relationships/hdphoto",
+    "relationship_target": "media/hdphoto1.wdp",
+    "path_in_delta": "../assets/original_media/hdphoto1.wdp",
+    "file_type": "JPEG-XR",
+    "bytes": 36877,
+    "sha256": "5b5e0c0e7922f99f879cd1136b2ce31d796c095d1ba8967df1533c307a0071d0",
+    "standalone_visible_payload": false,
+    "parent_blip_relationship": "rId13",
+    "parent_asset": "image2.png",
+    "effect": {
+      "element": "a14:imgEffect",
+      "effect_type": "brightnessContrast",
+      "bright": "40000",
+      "contrast": "40000"
+    },
+    "semantic_transcription": "无独立题号、标签或文字节点；仅为 Q7 image2.png 的 Word 图像增强层",
+    "decode_boundary": {
+      "classification": "bounded_object_level",
+      "reason": "WDP is a linked enhancement layer, not a second semantic image; it was retained byte-for-byte and not separately rasterized in this runtime",
+      "not_a_missing_file": true,
+      "no_text_guessing": true
+    }
+  },
+  "relation_topology": {
+    "document_xml_reference_counts": {"rId13": 1, "rId14": 1},
+    "edges": [
+      {
+        "from": "word/document.xml::pic:blip",
+        "to": "word/media/image2.png",
+        "relationship_id": "rId13",
+        "kind": "base_image"
+      },
+      {
+        "from": "word/document.xml::pic:blip/a:extLst/a14:imgProps/a14:imgLayer",
+        "to": "word/media/hdphoto1.wdp",
+        "relationship_id": "rId14",
+        "kind": "image_enhancement_layer",
+        "parent_edge": "rId13"
+      }
+    ],
+    "xml_evidence": {
+      "relationship_rows": [
+        "<Relationship Id=\"rId13\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"media/image2.png\"/>",
+        "<Relationship Id=\"rId14\" Type=\"http://schemas.microsoft.com/office/2007/relationships/hdphoto\" Target=\"media/hdphoto1.wdp\"/>"
+      ],
+      "blip_fragment": "<a:blip r:embed=\"rId13\"><a:extLst><a:ext uri=\"{BEBA8EAE-BF5A-486C-A8C5-ECC9F3942E4B}\"><a14:imgProps><a14:imgLayer r:embed=\"rId14\"><a14:imgEffect><a14:brightnessContrast bright=\"40000\" contrast=\"40000\"/></a14:imgEffect></a14:imgLayer></a14:imgProps></a:ext></a:extLst></a:blip>"
+    }
+  },
+  "evidence_links": {
+    "source_docx": "../sources/试卷.docx",
+    "base_image": "../assets/original_media/image2.png",
+    "hdphoto_layer": "../assets/original_media/hdphoto1.wdp",
+    "q7_candidate": "../BJ-2024-SJS-YIMO-Q7.md"
+  },
+  "guards": {
+    "original_docx_modified": false,
+    "shared_question_bank_modified": false,
+    "manifest_modified": false,
+    "01_through_12_modified": false,
+    "merge_performed": false,
+    "whole_exam_acceptance": false
+  }
+}

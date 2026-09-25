@@ -1,0 +1,76 @@
+{
+  "exam_id": "BJ-2024-HD-YIMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-HD-YIMO-Q1": "15f78f84a45ba8e906c8a6a246721a9ba98b5ad58aa46e0350bc9c557b4ec2e8",
+    "BJ-2024-HD-YIMO-Q2": "c172e6e71f524b8af8d3e7f8e82da8faf1c208b53dfcefa883c38d63061907a2",
+    "BJ-2024-HD-YIMO-Q3": "b4495351f34ea58f75a82ec3047ed41e656dca072dfab83e103f3a75e080176f",
+    "BJ-2024-HD-YIMO-Q4": "4bbba0786bf871799f3eaebf66c77a4d7577e2d308d785a041c7031dabafa199",
+    "BJ-2024-HD-YIMO-Q5": "8e9f04f5a789545204c2ec4386b6b4863433b2c16dfecaca0cf6c44dd7def25e",
+    "BJ-2024-HD-YIMO-Q6": "7337e5d2ecf228bc53c3a0526eaaa0c97fee1fabde75cfd1c7f35ed0480aba41",
+    "BJ-2024-HD-YIMO-Q7": "7320e92718d7b0a61587ba2b0df9c61d7be7a2a2f08c99d71008824c4ecc4280",
+    "BJ-2024-HD-YIMO-Q8": "dfbf6be73d841223cfe2f48c938a93d15d7b85ede5eb3d4b521759135287c460",
+    "BJ-2024-HD-YIMO-Q9": "5dbbcdb57be42e0212e25cfca879ace48d2525355f483beac6d27c632444fd1f",
+    "BJ-2024-HD-YIMO-Q10": "22441dbcce9d06162a1a96c20238bb2c91ac41ba51a85c8d54ee04e87a4b1ab7",
+    "BJ-2024-HD-YIMO-Q11": "d75bf99a895eb682675566f1422ea825f6bf6e42a7aba323fb1e622e53ebb58f",
+    "BJ-2024-HD-YIMO-Q12": "d80631202deca961d21287417b4a4e251e1b5077931b96d5e6578880770b604c",
+    "BJ-2024-HD-YIMO-Q13": "8d476a9a20672117baf3182bb667341d4d1771a5223cd648ec3ee1ae36368fc9",
+    "BJ-2024-HD-YIMO-Q14": "64fb9d8131c2e2e9139a2f727d22db4d6af4b73c5314907b895220953cab3ea8",
+    "BJ-2024-HD-YIMO-Q15": "68a27a6999ca4a6e0138a6c7cdcadc3453d92f6e53f139d09a179097fc1976b0",
+    "BJ-2024-HD-YIMO-Q16": "8312aadbcaf6c6ce8693f15392bd840876738606299efeb69d5bf83d87c90899",
+    "BJ-2024-HD-YIMO-Q17": "503d099af45e6f19983fb7a9c1327f9e36ba6358a187194802488cc001914be3",
+    "BJ-2024-HD-YIMO-Q18": "8eb1dabfef1daaf139b15f432c72c436f91fa9680c39c908e1228ecfb2d4af75",
+    "BJ-2024-HD-YIMO-Q19": "e421e0475e5d1d150916b1c4b94ac8169e29679c2f5c67e84b09d95e3d56c853",
+    "BJ-2024-HD-YIMO-Q20": "b8da57e1a45f96ccd2b2c51777928e192ef1591f5b9e2433ed25c36f6288d75f"
+  },
+  "source_pages": {
+    "paper": 8,
+    "answer_docx_or_pptx_unpaged": 0,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 8,
+  "source_roles": {
+    "paper": "S4bc0edec2a08",
+    "answer": "S98d1d762f302",
+    "rubric": "Sb692254ceb1b"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "学生样卷/教师批注/实得分（全部20题）: 原件清单仅含原卷PDF（试卷.pdf）、参考答案DOCX（一模政治-答案.docx）、细则DOCX（细则.docx）三份文件，均为标准化印刷/文档件，无扫描学生作答页或批改痕迹；沿用已有各题md中\"N/A_with_basis\"记录，本轮未发现相反证据",
+    "学生样卷/教师批注/实得分（全卷）: 沿用c1/c1_verify已确认的结论：原卷PDF、参考答案DOCX、评分材料DOCX三份原件均未包含学生作答样卷、批注或实得分，本轮未改变此结论。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2024-HD-YIMO-Q3",
+      "location": "assets/embedded/img-000.png 右侧背景细杆刻度",
+      "partial_reading": "可见一根带刻度的细杆，刻度线密集但数字/单位无法辨认",
+      "affects_answering": false,
+      "round": "r1"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "c1",
+      "c2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-hd-yimo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:05:08.713401+00:00"
+    },
+    {
+      "spec_id": "bj-2024-hd-yimo-state2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:06:36.804397+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-22T22:06:44.901653+00:00"
+}

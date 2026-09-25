@@ -1,0 +1,98 @@
+{
+  "tool": {
+    "name": "layout_prepare",
+    "version": "1.1.0",
+    "mode": "check"
+  },
+  "profile": {
+    "book_id": "bixiu3",
+    "frozen": false
+  },
+  "inputs": {
+    "docx": {
+      "path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare/out/t1_labels_stripped.docx",
+      "sha256": "ee6d3580d762e5e9190b781021bc99b3841eb294c60f565525ffc356e52bb8f5",
+      "paragraphs": 19861
+    }
+  },
+  "stats": {
+    "numbering": {
+      "titles_checked": 734
+    },
+    "method_counts": {
+      "bearers": 94,
+      "bearers_without_count": 8
+    },
+    "keepnext": {},
+    "toc": {
+      "entries": 32
+    }
+  },
+  "gate_counts_bh_reference": {
+    "toc": {
+      "FAIL": 1
+    }
+  },
+  "repairable_plan": {
+    "numbering": [],
+    "method_counts": [],
+    "keepnext": [
+      {
+        "para": 72,
+        "rule": "标签行未设 keepNext（pagination.keep_next_labels）",
+        "excerpt": "【思维链条】"
+      },
+      {
+        "para": 75,
+        "rule": "标签行未设 keepNext（pagination.keep_next_labels）",
+        "excerpt": "【答案落点】"
+      },
+      {
+        "para": 83,
+        "rule": "标签行未设 keepNext（pagination.keep_next_labels）",
+        "excerpt": "【思维链条】"
+      },
+      {
+        "para": 86,
+        "rule": "标签行未设 keepNext（pagination.keep_next_labels）",
+        "excerpt": "【答案落点】"
+      },
+      {
+        "para": 120,
+        "rule": "标签行未设 keepNext（pagination.keep_next_labels）",
+        "excerpt": "【思维链条】"
+      }
+    ],
+    "toc": []
+  },
+  "repairable_plan_count": {
+    "numbering": 0,
+    "method_counts": 0,
+    "keepnext": 5,
+    "toc": 0
+  },
+  "toc_version_problems": [],
+  "pending": 5,
+  "findings": [
+    {
+      "check": "toc",
+      "level": "FAIL",
+      "rule": "PAGEREF 目标与超链接锚点不一致",
+      "src": "docx",
+      "where": {
+        "para": 6,
+        "part": "FRONT",
+        "node": "目录",
+        "example": null,
+        "style": "目录一级",
+        "zone": "toc"
+      },
+      "excerpt": "总括答题点\t4",
+      "hyperlink": "c50_h000",
+      "pageref": "r45_h001",
+      "pageref_heading": "一、三统一：党的领导、人民当家作主、依法治国的有机统一",
+      "anchor_heading": "总括答题点"
+    }
+  ],
+  "findings_total": 1
+}

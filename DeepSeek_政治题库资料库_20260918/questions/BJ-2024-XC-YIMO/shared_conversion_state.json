@@ -1,0 +1,93 @@
+{
+  "exam_id": "BJ-2024-XC-YIMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 19,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-XC-YIMO-Q1": "718709abd39a2ae4b9c7a394c1e737df02be5be2271b00982429377661ebb80a",
+    "BJ-2024-XC-YIMO-Q2": "8f886e176dd2064f5162229e4bf63d3ac9bcd8f0c2a539a533e3785dff2b88b6",
+    "BJ-2024-XC-YIMO-Q3": "d3c87ae01eaa6897a4a446276616320a4672f6c01c9a2baa2a73fbbdcfc64a6c",
+    "BJ-2024-XC-YIMO-Q4": "173ad4177727c6594513e535158cd05b23e8a1d133d891759caebd23ad6bf371",
+    "BJ-2024-XC-YIMO-Q5": "676680f779f742a29770f3c89f5e10485cbed4519eafe93fb0871a1b2a88de88",
+    "BJ-2024-XC-YIMO-Q6": "ae4c57f97a66a0de2aca4ef51a49e05fe6b94913cada2fc182385d31167cd397",
+    "BJ-2024-XC-YIMO-Q7": "b0295390ce260e00393bf8665eaf86c84733ddced27b2a7f5947f00c7a0e5a81",
+    "BJ-2024-XC-YIMO-Q8": "b10bf6c31b55650a456a8481959cc3c4e5db243007686ad82772a7314a8504c4",
+    "BJ-2024-XC-YIMO-Q9": "4a14ceee019264e9f042c0c2df60bd828d849e65d3b831cd86ce3dea365ddd31",
+    "BJ-2024-XC-YIMO-Q10": "292e154402f5dc5b690dec9188652ec626d264e65df32b44df2d0acb9ee3dba7",
+    "BJ-2024-XC-YIMO-Q11": "30fc3a39da263b70f8608119df7baeae2f283a537eb028dfa9908a1f650b0557",
+    "BJ-2024-XC-YIMO-Q12": "affa5faecfb26020bf8c83a87fbd755df2840a8dae7e49fde4c4c1cf34268253",
+    "BJ-2024-XC-YIMO-Q13": "6b80cb219413200b066bda479326e8fa51db7121edd02411ed428c2de5984897",
+    "BJ-2024-XC-YIMO-Q14": "b89acc6fae932e2445371de129a76e08f6fdd2f83eeef7d774275bfaf549482e",
+    "BJ-2024-XC-YIMO-Q15": "4d84f9495d2f71e041c458b0944fbfbb9d7c4986d6076c93a107bacfbde40ce3",
+    "BJ-2024-XC-YIMO-Q16": "dafe5244ebc66ee4ec2b0b2aa5af865fef7dcadb8127dfba7c25bd7bc9310f72",
+    "BJ-2024-XC-YIMO-Q17": "32c79e443b28aebad44d5d5f3aedcebb63c939ffb195ad05df5e83a2ba5d56be",
+    "BJ-2024-XC-YIMO-Q18": "0930eb10dc344fd2ccb77b63f2a5b456539ae6daa3bd92a91812a0f0eae8b537",
+    "BJ-2024-XC-YIMO-Q19": "7602f481efb61869e61813bde291e4853fbc985d62663c3485b44954aa42e890"
+  },
+  "source_pages": {
+    "paper_docx_or_pptx_unpaged": 0,
+    "answer_docx_or_pptx_unpaged": 0,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 0,
+  "source_roles": {
+    "paper": "S2aa2ee045f75",
+    "answer": "S91e28443e7a1",
+    "rubric": "Sf7bcf000f212"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "学生示例/教师批注/实得分（全部19题）: 沿用 r1 裁定：已检索“2024模拟题/西城一模”全部现存文件，未发现学生答卷、逐题示例、教师批注、评分标记或实得分记录；本轮未发现新增学生材料来源。",
+    "对 c1_verify items 数组的 failed items: c1_verify items 数组只有 README.md 一项，verdict=pass，没有 failed 项；本轮无需处理 items 层面的 fail，只处理 new_defects",
+    "对 README.md 的进一步修改: README.md 未被 c1_verify 判定有缺陷（verdict=pass，且独立复核逐项通过），本轮原样继承 c1 candidate，不做改动"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q19",
+      "location": "image12.wmf 雷达图：日本-先进通信、英国-量子信息两轴端点",
+      "partial_reading": "约3.5-4.0（日本-先进通信）；约4.0-4.5（英国-量子信息）",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "Q1",
+      "location": "image4.png 人物拉丁姓名",
+      "partial_reading": "Yacine Boaziz（候选，另一读法 Yacine Baaziz）",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "Q15",
+      "location": "image11.png 右侧竖排作者签名",
+      "partial_reading": "保留原生题注“卫吴元：《龙腾四海》”，签名字形本身不猜写",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "Q1",
+      "location": "image2海报人物英文名",
+      "partial_reading": "上方人物疑为“Victor Cadena”（MD记候选Codena），下方“Alvaro Pa?os Cubillo”波浪号待定",
+      "affects_answering": false,
+      "controller_adjudication": "海报人物英文拼写，主控裁定minor，不影响作答"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "c1",
+      "c2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-xc-yimo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:28:42.504357+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:30:06.122838+00:00"
+}

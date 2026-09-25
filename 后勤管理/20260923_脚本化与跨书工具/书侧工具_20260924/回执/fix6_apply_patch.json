@@ -1,0 +1,92 @@
+{
+  "summary": "第六轮（收口轮）返修，落实 confirm_apply_patch.json 的 1 条 major + 2 条 minor：①插入段同时带原样格式（ppr_xml/runs[].rpr_xml）和给人看字段（text/style/keep_next/runs[].bold/color）时，check 阶段核对两者是否一致，不一致即中止并提示改 runs[].text 或删去 ppr_xml/rpr_xml；②restore 写后复核扩大到 replace_text（与 replace_paragraph 同口径）；③diff --out 覆盖守卫新增比对 approval_ref 是否与本次 diff 会自动生成的值一致，配合已有的 approved_by 前缀与 op 授权字段检查，三者任一被动过都拒绝覆盖（exit 3）。三条均已实现并各配至少一条真实数据回归用例，全部 42 条原有金标准 + 5 条新增共 47 条全部通过。只改了 apply_patch.py 本身，改动 87 行（1850→1937 行），未重构、未精简。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_apply_patch.py"
+  ],
+  "changes": [
+    {
+      "where": "新增 _CONSISTENCY_HINT / _ppr_authentic_fmt() / _rpr_authentic_fmt()（紧接 _parse_ppr_rpr_fragment 之后）",
+      "what": "_ppr_authentic_fmt(ppr_el) 从已解析的 w:pPr 取出 pStyle 的 styleId 与 keepNext 是否存在；_rpr_authentic_fmt(rpr_el) 从已解析的 w:rPr 取出 bold 是否存在与 color 的 val。两个都是纯读取的小函数，供 check_ops 用已解析出的原样格式反推'给人看字段'该有的值，不重新解析 XML。"
+    },
+    {
+      "where": "check_ops() 的 insert_after/insert_before 分支（原 ppr_xml/rpr_xml 提前校验处）",
+      "what": "第六轮 major①：在原有'ppr_xml/rpr_xml 格式本身合法性'校验基础上，新增一致性校验——① spec 带 ppr_xml 时，若同时给了 style，用 _resolve_style_id 解析出的 styleId 必须等于 ppr_xml 里的实际 pStyle；若给了 keep_next，其布尔值必须等于 ppr_xml 里 keepNext 是否存在。②某个 run 带 rpr_xml 时，若该 run 给了 bold，必须等于 rpr_xml 里 w:b 是否存在；若给了 color，必须等于 rpr_xml 里 w:color 的 val。③只要这个插入段带了 ppr_xml 或任一 run 带了 rpr_xml，且 spec 同时有 runs 与 text，text 必须等于 runs[].text 拼接结果。任一不一致都 Abort，中文提示统一为'…（diff 产物请改 runs[].text，或删去 ppr_xml/rpr_xml 改用手写格式）'。完全没有 ppr_xml/rpr_xml 的手写规格不受影响，仍走 _build_paragraph 原来的 style/keep_next/bold/color 覆盖逻辑。词表检查本身已经是按 runs[].text 拼接（_new_texts_of 优先取 runs，text 只在没有 runs 时才用），不需要改动，本轮只是确认并在 issues_resolved 里说明。"
+    },
+    {
+      "where": "cmd_apply() 写后复核：restore_replace_ops 的筛选条件",
+      "what": "第六轮 minor②：把 `op.get('op') == 'replace_paragraph'` 扩到 `op.get('op') in ('replace_paragraph', 'replace_text')`，其余逻辑（用 idx_of_mem 把 elem_by_id 记录的段落元素身份换算成输出文件段号、按输出重新分区、区位不再是 source/title 时补跑一遍词表）完全不变——apply_replace_text 跟 apply_replace_paragraph 一样是原地改同一个 <w:p> 元素，elem_by_id/idx_of_mem 这套桥接对两者天然通用，不需要额外分支。"
+    },
+    {
+      "where": "_own_json()（purpose='patch' 分支）+ cmd_diff() 里 --out 的调用点",
+      "what": "第六轮 minor③：_own_json 新增两个可选参数 expected_approved_by / expected_approval_ref；purpose=='patch' 时，除了原有的 approved_by 必须以 'diff:' 开头、ops 里不得带 source_zone/allow_complex 之外，新增：若调用方传了 expected_approved_by/expected_approval_ref，现有文件的 approved_by/approval_ref 必须与之逐字相等，否则视为'已被人动过'，拒绝覆盖。cmd_diff() 在算出这次会写出的 approved_by='diff:apply_patch'、approval_ref=f'{old.name} -> {new.name}' 后，把这两个值原样传给 _own_json 做比对（旧调用点不传这两个参数的场景，如 --report 分支，行为完全不变，向后兼容）。"
+    }
+  ],
+  "tests": [
+    {
+      "input": "run_tests_apply_patch.py（新增 t27-t31 共 5 条），复制到 /private/tmp/.../scratchpad/booktools/apply_patch/rerun/ 后用 env PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B 运行；TOOL/SCRIPTS 常量本身就指向真实 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/，所以这就是对真实 Skill 脚本的验证，不是对拷贝的验证",
+      "result": "47/47 全部通过（42 条原有金标准 + t27/t28/t29/t30/t31 共 5 条新增全部通过）",
+      "seconds": 200
+    },
+    {
+      "input": "t5b/t26b 两条既有回归用例的夹具修正：这两条测的是'纯 diff 产物、没人碰过，diff --out 仍可覆盖'，但测试助手 write_patch() 原来无条件写 approval_ref='run_tests_apply_patch'（与真实 diff 会算出的值不同），第六轮新守卫上线后会把它们误判成'approval_ref 被动过'。改法：给 write_patch() 增加可选 approval_ref 参数，这两条改传真实的自动值 f'{B3_03.name} -> {B3_04.name}'，其余测试不受影响",
+      "result": "t5b、t26b 仍按原意通过（rc=0，可覆盖）；未改动的其余 40 条既有用例逐条核对未受影响",
+      "seconds": 0
+    },
+    {
+      "input": "t27/t28/t29（major①）：用真实 diff（在 B3_52 教学区锚点段后插一段纯黑色文字）生成带 ppr_xml/runs[].rpr_xml 的插入段，分别把 text 改成别的措辞、把 style 改成另一个真实存在的样式名、把某个带 rpr_xml 的 run 的 bold 取反，check 命中即中止",
+      "result": "三条 check_rc 均为 2，错误信息分别含 'text'/'style'/'bold' 字样与统一提示语，未测出漏判",
+      "seconds": 4
+    },
+    {
+      "input": "t30（minor②）：找到 B3_52 里真实的例题标题段（zone=title），用 replace_text 只改前 6 个字（不是整段），新文字里带一个真实禁用词，source_zone=restore",
+      "result": "check_rc in (0,1)（词表因锚点在 title 区、source_zone=restore 而豁免），apply_rc=2，报'题面零改写复核不通过'，report 里 wordlist_leak 非空，输出已删除——与 t25（replace_paragraph 版）同口径",
+      "seconds": 3
+    },
+    {
+      "input": "t31（minor③）：write_patch 写一份 approved_by='diff:apply_patch'、ops 里无 source_zone/allow_complex、但 approval_ref 被人为改成'主代理已审 第52批'的补丁，diff --old B3_03 --new B3_04 --out 指向同一路径",
+      "result": "rc=3，文件字节前后完全一致（before==after）",
+      "seconds": 3
+    }
+  ],
+  "known_limits": [
+    "本轮只处理 confirm_apply_patch.json 的 3 条裁定（major①、minor②、minor③），checked 里列出的其余项（51→52/04→52 金标准回放、零宽字符、uniq_anchor、restore replace_paragraph 写后复核、_own_json 授权字段判断、ppr_xml/rpr_xml 新攻击面）均已在第五轮验证通过，本轮未重新改动，也未重新逐项重放（全部 42 条既有回归用例在 47/47 里原样重跑并通过，视为对这些既有修复的持续验证）。",
+    "工具文件本轮增至 1937 行，继续超出规格 ≤900 行目标（比第五轮末尾又增加约 87 行，主要是一致性校验函数与中文注释），仍未做瘦身，沿用既有安排：需要另开专门的瘦身批次处理，不在本轮（收口轮，只修不重构）范围内。",
+    "直接在 /Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/ 这个真实路径下运行 run_tests_apply_patch.py 会因为该目录落在 guard_write 的受保护目录范围内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）而导致除极少数不写文件的用例外全部因 rc=3 提前失败——这是第五轮就已确认的既有限制，不是本轮引入的问题；本轮验证沿用第五轮方法，把测试脚本复制到 scratchpad 后运行（TOOL/SCRIPTS 仍指向真实 Skill 脚本），未改动这一限制本身。"
+  ],
+  "profile_fields_needed": [],
+  "issues_resolved": [
+    {
+      "desc": "插入段同时带原样格式（ppr_xml/runs[].rpr_xml）和给人看的字段（text/style/keep_next/runs[].bold/color）时，_build_paragraph 只认原样格式，给人看字段被静默忽略：主代理审阅补丁时如果改的是 text/style/bold 而不是 runs[].text/ppr_xml/rpr_xml，apply 仍写出原文，rc=0 却没有任何改动生效，也没有提示。",
+      "how": "check_ops 在 check 阶段对每个带 ppr_xml/rpr_xml 的插入段做一致性校验：text（若有）必须等于 runs[].text 拼接；style/keep_next（若有）必须与 ppr_xml 里的 pStyle/keepNext 一致；runs[].bold/color（若有）必须与该 run 的 rpr_xml 一致。任一不一致就 Abort，中文提示明确指向'改 runs[].text，或删去 ppr_xml/rpr_xml 改用手写格式'两条路，不允许再有'按原样格式为准、静默丢弃给人看字段'的路径存在。词表检查本来就已经按 runs[].text 拼接结果（不是 text）在查（_new_texts_of 的既有实现），确认无需改动。",
+      "test": "t27（text 改写不一致，check rc=2）、t28（style 改成另一个真实存在的样式名，check rc=2）、t29（某个带 rpr_xml 的 run 的 bold 取反，check rc=2）；三条都用真实 diff 产出的补丁做基础，只改一个字段，不是从零手写一份可能本身就不合法的补丁。"
+    },
+    {
+      "desc": "restore 写后区位+词表复核（第五轮 minor③）只覆盖了 replace_paragraph，replace_text 带 source_zone=restore 把题面标题段的前几个字改写成不像标题的文字、新文字命中禁用词表时，写后该段区位已经漂出 source/title，但没有人补跑词表，apply 仍 rc=0 把工程词写进了教学正文。",
+      "how": "restore_replace_ops 的筛选条件从只收 op=='replace_paragraph' 扩到 op in ('replace_paragraph', 'replace_text')；两者在 do_apply 里都是原地改同一个 <w:p> 元素，elem_by_id/idx_of_mem 这套'写出前段落身份→写出后段号'的桥接对两者完全通用，不需要为 replace_text 单独写一套复核逻辑。",
+      "test": "t30：用真实的例题标题段做 replace_text（只改前 6 个字，不是整段替换），check 因 restore 豁免通过，apply 用写后重开的区位复核发现该段已不在 source/title 区，对新文字补跑词表命中禁用词，rc=2，报'题面零改写复核不通过'，输出已删除，与 t25（replace_paragraph 版本）同口径同结果。"
+    },
+    {
+      "desc": "diff --out 覆盖守卫（_own_json）只看 approved_by 是否仍以 'diff:' 开头、以及 ops 里是否带 source_zone/allow_complex，没有比对 approval_ref。主代理只把 approval_ref 改成审阅说明文字（没有加 source_zone/allow_complex，也没有改 approved_by），再跑一次 diff --out 到同一路径仍会被判定'还没批准'而静默覆盖，把审阅痕迹连同旧内容一起冲掉。",
+      "how": "_own_json 新增 expected_approved_by/expected_approval_ref 两个可选参数；purpose=='patch' 时，若调用方传了这两个值，现有文件的 approved_by/approval_ref 必须与之逐字相等才算'还没被人动过'，否则拒绝覆盖。cmd_diff() 把这次调用会写出的自动值（'diff:apply_patch' 与 f'{old.name} -> {new.name}'）传给 _own_json 做比对；--report 分支等其它调用点不传这两个参数，行为不受影响。",
+      "test": "t31：approved_by 仍是 'diff:apply_patch'、ops 无授权字段，只把 approval_ref 改成人写的说明文字，diff --out 到同一路径，rc=3，文件字节前后完全一致；对照组 t5b/t26b（approval_ref 也是自动值、确未被动过）仍可正常覆盖，确认新守卫没有误伤原有场景。"
+    }
+  ],
+  "discipline_check": {
+    "only_apply_patch_py_modified_in_skill_dir": true,
+    "no_other_scripts_or_profiles_modified": true,
+    "collab_py_not_run": true,
+    "no_subagents_spawned": true,
+    "no_new_sessions_or_messages": true,
+    "protected_dirs_untouched": "对真实受保护目录（/Users/wanglifei/.codex/skills/beijing-gaokao-politics 及其 scripts/、必修三/必修二各审阅目录、项目根）只调用了守卫/判定函数（check_ops/_own_json 等）或以只读方式打开真实 docx，未新增文件；辅助脚本、测试夹具与运行产物全部落在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/ 下",
+    "python_executable": "/usr/bin/python3 (3.9.6)，测试运行统一加 PYTHONDONTWRITEBYTECODE=1 与 -B",
+    "pycache_check": "运行前后 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 内容一致（book_incremental/check_drill_admission/source_intake 三个 cpython-312.pyc，均与本轮改动无关），未新增；scripts/ 目录文件列表前后一致，只有 apply_patch.py 内容按任务要求变化",
+    "real_input_sha_mtime_check": "B3_52、B3_03、B3_04、B2_230、B3_51 五个真实输入的 SHA256 与 mtime 在测试前后完全一致（snap_before.json 与测试后重新计算逐一比对，见 tests 部分）；apply_patch.py 本身按任务要求做了修改，其 SHA/mtime 变化是预期的编辑结果，不属于'真实输入'范畴"
+  },
+  "final_test_run": {
+    "scratch_run": "47/47 全部通过（TOOL/SCRIPTS 指向真实 Skill 脚本，测试驱动脚本本身复制到 scratchpad 运行，产物落在 scratchpad 的 out/ 子目录）",
+    "note": "在测试脚本原始路径（后勤管理/.../测试/）直接运行会因该目录落在 guard_write 的受保护目录范围内而大面积 rc=3（第五轮已知限制，非本轮引入，未在本轮处理），因此仍按第五轮确立的方法在 scratchpad 验证真实 Skill 脚本"
+  },
+  "issues_deferred": [],
+  "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/fix6_apply_patch.json"
+}

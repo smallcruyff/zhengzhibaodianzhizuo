@@ -1,0 +1,12 @@
+﻿exam_a,exam_b,dup_questions,qa,qb,kind
+BJ-2024-HD-QIZHONG,BJ-2025-HD-QIZHONG,20,21,22,duplicate_registration
+BJ-2022-BJ-GAOKAO,BJ-2024-BJ-GAOKAO,3,21,21,shared_or_reused_questions
+BJ-2025-BJ-GAOKAO,BJ-2026-FT-QIMO,1,21,21,shared_or_reused_questions
+BJ-2024-HD-ERMO,BJ-2026-FT-QIMO,1,21,21,shared_or_reused_questions
+BJ-2024-BJ-GAOKAO,BJ-2026-FT-YIMO,1,21,21,shared_or_reused_questions
+BJ-2023-FT-YIMO,BJ-2026-FT-YIMO,1,22,21,shared_or_reused_questions
+BJ-2025-HD-QIMO,BJ-2025-XC-QIMO,1,22,21,shared_or_reused_questions
+BJ-2026-CP-QIMO,BJ-2026-FT-YIMO,1,21,21,shared_or_reused_questions
+BJ-2025-BJ-GAOKAO,BJ-2026-FT-ERMO,1,21,22,shared_or_reused_questions
+BJ-2024-BJ-GAOKAO,BJ-2025-FT-ERMO,1,21,21,shared_or_reused_questions
+BJ-2024-BJ-GAOKAO,BJ-2026-HD-QIZHONG,1,21,22,shared_or_reused_questions

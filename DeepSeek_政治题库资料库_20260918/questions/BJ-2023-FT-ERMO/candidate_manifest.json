@@ -1,0 +1,159 @@
+{
+  "schema": "md-question-candidate/2026-09-22",
+  "exam_id": "BJ-2023-FT-ERMO",
+  "status": "isolated_canonical_integrated_v2_pending_controller_review",
+  "created_at": "2026-09-22T07:31:47.946629+00:00",
+  "question_count": 22,
+  "question_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "points_total": 100,
+  "source_files": [
+    {
+      "source_id": "Sd92728609289",
+      "role": "原卷",
+      "path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二试卷.pdf",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二试卷.pdf",
+      "sha256": "d9272860928903ecbea4e56d5c3779e3fdfbaff8764b37f66dcf3732dc4bdf26",
+      "page_count": 10,
+      "opened_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "source_id": "Saccdd9d42a77",
+      "role": "参考答案",
+      "path": "/Users/wanglifei/Desktop/2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二（答案）.pdf",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二（答案）.pdf",
+      "sha256": "accdd9d42a770f7051e40186931a172089f04e8ba38198f321aeeade9fb3c032",
+      "page_count": 2,
+      "opened_pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "formal_rubric": {
+    "status": "not_available_same_exam_formal_rubric",
+    "sources": []
+  },
+  "student_examples": {
+    "status": "N/A_with_basis",
+    "sources": []
+  },
+  "all_source_pages_opened": {
+    "Sd92728609289": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "Saccdd9d42a77": [
+      1,
+      2
+    ]
+  },
+  "question_files": [
+    "candidates/BJ-2023-FT-ERMO-Q1.md",
+    "candidates/BJ-2023-FT-ERMO-Q2.md",
+    "candidates/BJ-2023-FT-ERMO-Q3.md",
+    "candidates/BJ-2023-FT-ERMO-Q4.md",
+    "candidates/BJ-2023-FT-ERMO-Q5.md",
+    "candidates/BJ-2023-FT-ERMO-Q6.md",
+    "candidates/BJ-2023-FT-ERMO-Q7.md",
+    "candidates/BJ-2023-FT-ERMO-Q8.md",
+    "candidates/BJ-2023-FT-ERMO-Q9.md",
+    "candidates/BJ-2023-FT-ERMO-Q10.md",
+    "candidates/BJ-2023-FT-ERMO-Q11.md",
+    "candidates/BJ-2023-FT-ERMO-Q12.md",
+    "candidates/BJ-2023-FT-ERMO-Q13.md",
+    "candidates/BJ-2023-FT-ERMO-Q14.md",
+    "candidates/BJ-2023-FT-ERMO-Q15.md",
+    "candidates/BJ-2023-FT-ERMO-Q16.md",
+    "candidates/BJ-2023-FT-ERMO-Q17.md",
+    "candidates/BJ-2023-FT-ERMO-Q18.md",
+    "candidates/BJ-2023-FT-ERMO-Q19.md",
+    "candidates/BJ-2023-FT-ERMO-Q20.md",
+    "candidates/BJ-2023-FT-ERMO-Q21.md",
+    "candidates/BJ-2023-FT-ERMO-Q22.md"
+  ],
+  "figure_assets": [
+    "../assets/figures/BJ-2023-FT-ERMO-Q12_civil_code_card.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q13_dispute_table.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q17_water_governance_form.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q18_opening_context.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q18_reform_timeline.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q19_copyright_flow_and_card.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q20_social_security_data.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q6_carbon_incentive_flow.png",
+    "../assets/figures/BJ-2023-FT-ERMO-Q9_tu-te-chan_table.png"
+  ],
+  "shared_files_modified": [],
+  "promotion": "none",
+  "parent_candidate_manifest_sha256": "5a16f5cff905bf92eecba9495a1949e221355af893e3cf22e81cb6df426f1a10",
+  "front_matter_file": "candidates/exam_front_matter.md",
+  "delta_scope": {
+    "changed_question_ids": [
+      "BJ-2023-FT-ERMO-Q6",
+      "BJ-2023-FT-ERMO-Q19"
+    ],
+    "unchanged_question_count": 20,
+    "figures_frozen": true,
+    "source_roles_frozen": true,
+    "canonical_assets_materialization": "applied_inside_isolated_integrated_package_only; ../assets -> assets; not applied to shared bank"
+  },
+  "evidence_boundary": {
+    "answer_layer": "E3_only",
+    "formal_rubric": "not_available_same_exam_formal_rubric",
+    "student_layer": "N/A_with_basis",
+    "independent_review": "targeted_small_delta_review_passed; integrated_package_review_pending"
+  },
+  "integration": {
+    "parent_manifest_sha256": "5a16f5cff905bf92eecba9495a1949e221355af893e3cf22e81cb6df426f1a10",
+    "source_delta_candidate_manifest_sha256": "d5186b6c453e80e7e14c961bec9f58426b6328f38135ce0d3696bc378a73a9ae",
+    "canonical_question_link_prefix": "assets/",
+    "visual_asset_count": 21,
+    "source_carrier_count": 2,
+    "shared_files_modified": [],
+    "merge_executed": false,
+    "controller_ready_claim": false,
+    "baseline_question_sha_manifest": "../baseline_question_sha256.json",
+    "asset_sha_manifest": "../asset_manifest.json"
+  }
+}

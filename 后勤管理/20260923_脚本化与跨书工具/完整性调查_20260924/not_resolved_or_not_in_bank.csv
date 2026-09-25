@@ -1,0 +1,114 @@
+﻿book,layer,id,raw,status,key,cands,notes,fp_suggest,fp_top
+philosophy,block,B0191,2026年顺义一模第16题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+philosophy,block,B0333,2026年顺义一模第16题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+philosophy,block,B0435,2026年顺义一模第16题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+philosophy,block,B0551,2026年顺义一模第16题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+philosophy,block,B1051,2026年顺义一模第16题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+culture,block,B0037,2026 年顺义一模第 16 题,no_question_md,BJ-2026-SY-YIMO-Q16,,[],,{}
+culture,drill,D0413,2026年房山一模第1题,no_question_md,BJ-2026-FS-YIMO-Q1,,[],,
+culture,drill,D0414,2026年房山一模第8题,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+culture,drill,D0834,2026年房山一模第1题,no_question_md,BJ-2026-FS-YIMO-Q1,,[],,
+culture,drill,D0835,2026年房山一模第8题,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+xuanbi1,block,B0085,2024年房山一模第18题第（2）问,exam_not_in_bank,BJ-2024-FS-YIMO-Q18,,[],,{}
+xuanbi1,block,B0093,2024—2025学年海淀期中第12题,ambiguous,,"[""BJ-2024-HD-QIZHONG-Q12"", ""BJ-2025-HD-QIZHONG-Q12"", ""BJ-2025-HD-YIMO-Q12""]","[""第二学期期中练习按海淀惯例可能是一模（BJ-2025-HD-YIMO），列为候选"", ""探针分不出（最高 5、次高 5；门槛：≥4 且领先≥2）""]",,"{""BJ-2024-HD-QIZHONG-Q12"": 5, ""BJ-2025-HD-QIZHONG-Q12"": 5, ""BJ-2024-CY-YIMO-Q21"": 1}"
+xuanbi1,block,B0095,2024年门头沟一模第8题,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,"{""BJ-2023-HD-QIZHONG-Q21"": 1, ""BJ-2023-HD-QIZHONG-Q9"": 1, ""BJ-2024-HD-ERMO-Q7"": 1}"
+xuanbi1,block,B0124,2024年门头沟一模第10题,exam_not_in_bank,BJ-2024-MTG-YIMO-Q10,,[],,{}
+xuanbi1,block,B0141,2024年房山一模第14题,exam_not_in_bank,BJ-2024-FS-YIMO-Q14,,[],,"{""BJ-2025-FT-ERMO-Q15"": 1, ""BJ-2025-MTG-YIMO-Q11"": 1, ""BJ-2026-SJS-YIMO-Q20"": 1}"
+xuanbi1,block,B0199,2024—2025学年海淀期中第13题,ambiguous,,"[""BJ-2024-HD-QIZHONG-Q13"", ""BJ-2025-HD-QIZHONG-Q13"", ""BJ-2025-HD-YIMO-Q13""]","[""第二学期期中练习按海淀惯例可能是一模（BJ-2025-HD-YIMO），列为候选"", ""探针分不出（最高 5、次高 5；门槛：≥4 且领先≥2）""]",,"{""BJ-2024-HD-QIZHONG-Q13"": 5, ""BJ-2025-HD-QIZHONG-Q13"": 5}"
+xuanbi1,block,B0270,2024年门头沟一模第11题,exam_not_in_bank,BJ-2024-MTG-YIMO-Q11,,[],,"{""BJ-2025-CY-ERMO-Q21"": 2, ""BJ-2025-MTG-YIMO-Q5"": 2, ""BJ-2023-FT-YIMO-Q21"": 1}"
+xuanbi1,block,B0280,2024年房山一模第18题第（2）问,exam_not_in_bank,BJ-2024-FS-YIMO-Q18,,[],,{}
+xuanbi1,block,B0293,2024—2025学年海淀期中第14题,ambiguous,,"[""BJ-2024-HD-QIZHONG-Q14"", ""BJ-2025-HD-QIZHONG-Q14"", ""BJ-2025-HD-YIMO-Q14""]","[""第二学期期中练习按海淀惯例可能是一模（BJ-2025-HD-YIMO），列为候选"", ""探针分不出（最高 3、次高 1；门槛：≥4 且领先≥2）""]",,"{""BJ-2024-HD-QIZHONG-Q14"": 3, ""BJ-2025-HD-QIZHONG-Q14"": 1}"
+xuanbi1,block,B0326,2024—2025学年海淀期中第15题,ambiguous,,"[""BJ-2024-HD-QIZHONG-Q15"", ""BJ-2025-HD-QIZHONG-Q15"", ""BJ-2025-HD-YIMO-Q15""]","[""第二学期期中练习按海淀惯例可能是一模（BJ-2025-HD-YIMO），列为候选"", ""探针分不出（最高 5、次高 5；门槛：≥4 且领先≥2）""]",,"{""BJ-2024-HD-QIZHONG-Q15"": 5, ""BJ-2025-HD-QIZHONG-Q15"": 5, ""BJ-2024-XC-YIMO-Q14"": 1}"
+xuanbi1,block,B0349,2024年房山一模第15题,exam_not_in_bank,BJ-2024-FS-YIMO-Q15,,[],,{}
+mind,block,B0121,2025年朝阳期中第13题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q13,,[],BJ-2026-CY-QIZHONG-Q13,"{""BJ-2026-CY-QIZHONG-Q13"": 5}"
+bixiu2,block,B0009,2025 朝阳期中 第17题（跨模块）,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q17,,[],BJ-2026-CY-QIZHONG-Q17,"{""BJ-2026-CY-QIZHONG-Q17"": 4, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B0072,2025 朝阳期中 第7题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q7,,[],BJ-2026-CY-QIZHONG-Q7,"{""BJ-2026-CY-QIZHONG-Q7"": 5}"
+bixiu2,block,B0115,2026 丰台期末 第12题,no_question_md,BJ-2026-FT-QIMO-Q12,,[],BJ-2026-FT-QIMO-Q11,"{""BJ-2026-FT-QIMO-Q11"": 5}"
+bixiu2,block,B0136,2025 朝阳期中 第16题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q16,,[],BJ-2026-CY-QIZHONG-Q16,"{""BJ-2026-CY-QIZHONG-Q16"": 4, ""BJ-2022-BJ-GAOKAO-Q19"": 1, ""BJ-2023-BJ-GAOKAO-Q19"": 1}"
+bixiu2,block,B0150,2025 朝阳期中 第6题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],BJ-2026-CY-QIZHONG-Q6,"{""BJ-2026-CY-QIZHONG-Q6"": 5}"
+bixiu2,block,B0184,2024 海淀期中 第23题（跨模块）,no_question_md,BJ-2024-HD-QIZHONG-Q23,,[],BJ-2023-HD-QIZHONG-Q23,"{""BJ-2023-HD-QIZHONG-Q23"": 5, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B0186,2025 朝阳期中 第17题（跨模块）,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q17,,[],BJ-2026-CY-QIZHONG-Q17,"{""BJ-2026-CY-QIZHONG-Q17"": 4, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B0288,2025 朝阳期中 第21题 第（1）问,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q21,,[],BJ-2026-CY-QIZHONG-Q21,"{""BJ-2026-CY-QIZHONG-Q21"": 5, ""BJ-2024-CY-ERMO-Q16"": 1, ""BJ-2024-HD-YIMO-Q17"": 1}"
+bixiu2,block,B0386,2025 朝阳期中 第21题 第（1）问,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q21,,[],BJ-2026-CY-QIZHONG-Q21,"{""BJ-2026-CY-QIZHONG-Q21"": 5, ""BJ-2024-CY-ERMO-Q16"": 1, ""BJ-2024-HD-YIMO-Q17"": 1}"
+bixiu2,block,B0428,2025 朝阳期中 第21题 第（1）问,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q21,,[],BJ-2026-CY-QIZHONG-Q21,"{""BJ-2026-CY-QIZHONG-Q21"": 5, ""BJ-2024-CY-ERMO-Q16"": 1, ""BJ-2024-HD-YIMO-Q17"": 1}"
+bixiu2,block,B0499,2025 朝阳期中 第1题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],BJ-2026-CY-QIZHONG-Q1,"{""BJ-2026-CY-QIZHONG-Q1"": 5}"
+bixiu2,block,B0632,2025 朝阳期中 第17题（跨模块）,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q17,,[],BJ-2026-CY-QIZHONG-Q17,"{""BJ-2026-CY-QIZHONG-Q17"": 4, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B0701,2024 海淀期中 第22题（跨模块）,no_question_md,BJ-2024-HD-QIZHONG-Q22,,[],BJ-2023-HD-QIZHONG-Q22,"{""BJ-2023-HD-QIZHONG-Q22"": 5, ""BJ-2023-CY-ERMO-Q17"": 1, ""BJ-2023-DC-ERMO-Q19"": 1}"
+bixiu2,block,B0766,2025 朝阳期中 第17题（跨模块）,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q17,,[],BJ-2026-CY-QIZHONG-Q17,"{""BJ-2026-CY-QIZHONG-Q17"": 4, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B0850,2025 朝阳期中 第16题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q16,,[],BJ-2026-CY-QIZHONG-Q16,"{""BJ-2026-CY-QIZHONG-Q16"": 4, ""BJ-2022-BJ-GAOKAO-Q19"": 1, ""BJ-2023-BJ-GAOKAO-Q19"": 1}"
+bixiu2,block,B0880,2025 朝阳期中 第21题 第（1）问,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q21,,[],BJ-2026-CY-QIZHONG-Q21,"{""BJ-2026-CY-QIZHONG-Q21"": 5, ""BJ-2024-CY-ERMO-Q16"": 1, ""BJ-2024-HD-YIMO-Q17"": 1}"
+bixiu2,block,B0937,2025 朝阳期中 第16题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q16,,[],BJ-2026-CY-QIZHONG-Q16,"{""BJ-2026-CY-QIZHONG-Q16"": 4, ""BJ-2022-BJ-GAOKAO-Q19"": 1, ""BJ-2023-BJ-GAOKAO-Q19"": 1}"
+bixiu2,block,B0991,2025 朝阳期中 第17题（跨模块）,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q17,,[],BJ-2026-CY-QIZHONG-Q17,"{""BJ-2026-CY-QIZHONG-Q17"": 4, ""BJ-2023-BJ-GAOKAO-Q19"": 1, ""BJ-2023-DC-ERMO-Q20"": 1}"
+bixiu2,block,B1003,2025 朝阳期中 第2题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],BJ-2026-CY-QIZHONG-Q2,"{""BJ-2026-CY-QIZHONG-Q2"": 5}"
+bixiu2,block,B1045,2025 朝阳期中 第5题,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],BJ-2026-CY-QIZHONG-Q5,"{""BJ-2026-CY-QIZHONG-Q5"": 5}"
+bixiu2,drill,D0033,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0034,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0042,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0080,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0115,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0178,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D0197,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D0266,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D0305,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D0307,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu2,drill,D0313,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D0393,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D0625,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D0673,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0695,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0716,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu2,drill,D0734,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu2,drill,D0853,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0854,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0862,2025朝阳期中2,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q2,,[],,
+bixiu2,drill,D0900,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0935,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D0998,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D1017,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D1086,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D1125,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D1127,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu2,drill,D1133,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D1213,2025朝阳期中6,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q6,,[],,
+bixiu2,drill,D1445,2025朝阳期中5,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q5,,[],,
+bixiu2,drill,D1493,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D1515,2025朝阳期中1,exam_not_in_bank,BJ-2025-CY-QIZHONG-Q1,,[],,
+bixiu2,drill,D1536,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu2,drill,D1554,2026丰台期末12,no_question_md,BJ-2026-FT-QIMO-Q12,,[],,
+bixiu3,block,B0108,2026房山一模第8题,no_question_md,BJ-2026-FS-YIMO-Q8,,[],BJ-2026-FS-YIMO-Q7,"{""BJ-2026-FS-YIMO-Q7"": 5}"
+bixiu3,drill,D0006,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0007,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0026,2026房山一模8,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+bixiu3,drill,D0037,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0040,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0068,2026房山一模8,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+bixiu3,drill,D0075,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0107,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D0207,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0217,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D0437,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0440,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D0485,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D0487,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D0488,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D0542,2024房山一模9,exam_not_in_bank,BJ-2024-FS-YIMO-Q9,,[],,
+bixiu3,drill,D0543,2024房山一模9,exam_not_in_bank,BJ-2024-FS-YIMO-Q9,,[],,
+bixiu3,drill,D0545,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D0682,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0683,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0702,2026房山一模8,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+bixiu3,drill,D0713,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0716,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0744,2026房山一模8,no_question_md,BJ-2026-FS-YIMO-Q8,,[],,
+bixiu3,drill,D0751,2024门头沟一模1,exam_not_in_bank,BJ-2024-MTG-YIMO-Q1,,[],,
+bixiu3,drill,D0783,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D0883,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D0893,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D1113,2024房山一模10,exam_not_in_bank,BJ-2024-FS-YIMO-Q10,,[],,
+bixiu3,drill,D1116,2024门头沟一模3,exam_not_in_bank,BJ-2024-MTG-YIMO-Q3,,[],,
+bixiu3,drill,D1161,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D1163,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D1164,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,
+bixiu3,drill,D1218,2024房山一模9,exam_not_in_bank,BJ-2024-FS-YIMO-Q9,,[],,
+bixiu3,drill,D1219,2024房山一模9,exam_not_in_bank,BJ-2024-FS-YIMO-Q9,,[],,
+bixiu3,drill,D1221,2024门头沟一模8,exam_not_in_bank,BJ-2024-MTG-YIMO-Q8,,[],,

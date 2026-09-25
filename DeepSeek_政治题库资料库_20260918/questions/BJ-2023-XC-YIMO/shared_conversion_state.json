@@ -1,0 +1,116 @@
+{
+  "exam_id": "BJ-2023-XC-YIMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2023-XC-YIMO-Q1": "ea699deeb0781516b0cd03f627fc5cf7f09cbb5b201bc602263c3d1d9718df3f",
+    "BJ-2023-XC-YIMO-Q2": "6384a17c12dd349b83288001a9bb80e2ceeee5c042867c3ec216db4965941ede",
+    "BJ-2023-XC-YIMO-Q3": "7f0deb518b8534a56d7d4c3cbc65112a3bf111019e29c34fdc4ea11751f7c722",
+    "BJ-2023-XC-YIMO-Q4": "7d8012b5776a4ccb1a6e84ee0433392d145dde0f0c22d0d7b1540c14e1b75b21",
+    "BJ-2023-XC-YIMO-Q5": "3e6e633ab7b1b908f87458478c8857fe323ea4d5e15a9d3f1e493a4beb3ef650",
+    "BJ-2023-XC-YIMO-Q6": "f4a8b482b6e401d544ed1a74bb25beb4c9d2e0645cc8b302289fc8ff74d7308f",
+    "BJ-2023-XC-YIMO-Q7": "e9875b7e97d96b7e5cd3b1ea221a205e7001afedb2cbe9ff6ff75902ac14d741",
+    "BJ-2023-XC-YIMO-Q8": "9a744c6e20660a7eeeca6da7b7955e4d417223bc798ad1f920806065a15448bb",
+    "BJ-2023-XC-YIMO-Q9": "13906f05c5a8587be8d39011037e8f12277f94081feb808a452552d3a59f1f32",
+    "BJ-2023-XC-YIMO-Q10": "6928a5cdfbd52d0ca3d7363f4b3cfee26e0d48564dae5e60ec57c3b0e4908fff",
+    "BJ-2023-XC-YIMO-Q11": "1d3e483bcd466f700160d820c4a458a9666da42c50947aa893b4833f9fc7cd97",
+    "BJ-2023-XC-YIMO-Q12": "d735657dd693980d62b23e27555c1eccf63fb2f3fbc67bc4d4159251c93eb8a7",
+    "BJ-2023-XC-YIMO-Q13": "3be811f9ed414286fec918d81e902a8d8dca20361e0d7a83af3acee6f01f6e7c",
+    "BJ-2023-XC-YIMO-Q14": "e8c72425c550c90c22fea11d336cf8f0e72a8ef465281382174f7419b9d3a5a6",
+    "BJ-2023-XC-YIMO-Q15": "5c14706f11e566a3284fb2b613629faba3bb089667c2ad2a1a6136c0d3ab7675",
+    "BJ-2023-XC-YIMO-Q16": "a210b7be55be430aa16e4a259e86f94cd67d7ccb5ecabd24e6013432d1fdc972",
+    "BJ-2023-XC-YIMO-Q17": "66e8d51f9d040e342e713b194d154664882213dd1e6e96eb3539edc8faed309a",
+    "BJ-2023-XC-YIMO-Q18": "26b6485955c775d56cb87dfaddf5cebc5c50708b47d0bfed1775b5ee6f84bcf1",
+    "BJ-2023-XC-YIMO-Q19": "ff9709b30b9fe9dab5b9169b9b7243ae5b3b30515809927038fb52703bd15e0d",
+    "BJ-2023-XC-YIMO-Q20": "87515d421acbcf3b7d3a4b87bdafb5a49b514c2b030f4117578503e41569390a",
+    "BJ-2023-XC-YIMO-Q21": "209716a9d44dbb1a66604b02a495e31dda5945a6a667d3c9fb0b202998d6b8ab"
+  },
+  "source_pages": {
+    "paper": 9,
+    "answer_docx_or_pptx_unpaged": 0,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 9,
+  "source_roles": {
+    "paper": "S848e2ed7e079",
+    "answer": "S86c2eb361038",
+    "rubric": "S9140266498fe"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "E1(Q1-Q15选择题): 原卷p001统一说明第一部分15题每题3分且为客观选择题，评分细则DOCX仅覆盖16-21题共6道主观题，全文核对确认不含逐题选择题细则，属原件结构性缺失，非转写遗漏",
+    "学生样卷(Q1-Q17,Q19-Q21): 评分DOCX仅在Q18段落（“附满分卷”）嵌入3幅学生样卷图；其余各题评分材料未附样卷图，原件本无",
+    "Q11/Q14/Q16/Q17/Q18/exam_front_matter/Q16资产 本轮重新审查: 均已在c1_verify中独立复核为pass，任务范围仅要求处理failed items与new_defects（均在Q2/Q3），故本轮不重新审查，原样继承"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q18",
+      "location": "样卷一首句“体现党”后被划改的约4字学生原字",
+      "partial_reading": "仅确认上方有教师批注“领导之误”，划改本身笔画重叠无法确认",
+      "affects_answering": false,
+      "round": "r1",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    },
+    {
+      "qid": "Q18",
+      "location": "样卷二第三段全文（“全过程人民民主入法坚持了全面依法治国…”）",
+      "partial_reading": "仅可辨“有利于…”等零散片段",
+      "affects_answering": false,
+      "round": "r1",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    },
+    {
+      "qid": "Q18",
+      "location": "样卷三第一段中段（“为国家发展指明大政方针”后）及末句连接词",
+      "partial_reading": "大意可辨但个别字连笔存疑，已用〔难辨〕标出具体字位",
+      "affects_answering": false,
+      "round": "r1",
+      "controller_adjudication": "主控裁定：学生样卷手写（学生层）或站牌装饰小字，不影响作答；原图、页位与部分读法已保留，两轮独立复核认同（用户2026-09-22规则）"
+    },
+    {
+      "qid": "Q16",
+      "location": "学生示例样卷第2段“做到建议符合__实际”",
+      "partial_reading": "二字连笔，可能为“客观”或“科学”",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "Q16",
+      "location": "学生示例样卷评分软件面板",
+      "partial_reading": "数值本身在原始截图右边界之外",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "Q18",
+      "location": "样卷一/二/三既有难辨字与批注（r1轮遗留）",
+      "partial_reading": "见Q18.md“学生样卷、教师批注与评分标记”一节各处〔难辨〕标记",
+      "affects_answering": false,
+      "round": "c2"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "c1",
+      "c2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2023-xc-yimo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:05:08.883963+00:00"
+    },
+    {
+      "spec_id": "bj-2023-xc-yimo-state2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:06:36.976612+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-22T22:06:44.901653+00:00"
+}

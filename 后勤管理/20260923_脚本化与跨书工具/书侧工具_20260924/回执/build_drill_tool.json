@@ -1,0 +1,57 @@
+{
+  "summary": "新增 scripts/drill_tool.py：A1/A2 单练的 extract/check/build 三个子命令，判定全部复用 batch_health（bh.collect_drill / bh.check_drill / bh.walk），本工具只补 bh 没做的“题源是否为空”检查、可选的 --admission 逐条准入核对（复用 check_drill_admission.verify），以及 build（把批准后的 items.json 重新生成 A1/A2 区域的表格行）。在 B3_52（table3，676/676）与 B2_230（冻结册，table3，820/820，只读+临时 frozen:false 配置副本往返）上做了真实数据的抽取/核对/生成往返，round-trip 内容 0 差异；额外做了“组内新增 3 条题肢”的写路径测试，写后 bh.check_drill 门 0 FAIL。哲学 R10（paragraph）用 profile_probe 草案配置能抽出 646/646（规格提示约 645/645，草案未经确认，如实记录不强行凑数）；选必二 r22（card）如实报告“认不出”（0 条），因为 bh.collect_drill 和本工具都没有为 card 题卡版式单独实现识别逻辑。build 目前只支持 drill.layout=='table3'。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py"
+  ],
+  "usage": [
+    "python3 drill_tool.py extract --docx X.docx --out items.json [--profile bixiu3] [--report r.json]",
+    "python3 drill_tool.py check --docx X.docx [--admission decisions.json] [--profile bixiu3] [--report r.json]",
+    "python3 drill_tool.py build --docx 父稿.docx --items approved.json --out 候选.docx [--profile bixiu3] [--expect-sha 父稿SHA] [--order as-given|alternate] [--seed N] [--report r.json]",
+    "退出码：0 成功/无待办；1 check 发现待处理（含 --admission 校验失败）；2 输入/配置错误或结构中止（不留输出）；3 拒绝写出（守卫/冻结册/写权）。"
+  ],
+  "tests": [
+    {"input": "B3_52（必修三政治与法治宝典_第52批_意见修改审阅稿.docx，非冻结）",
+     "result": "extract 676/676 non_item_rows=0；check summary a1=676 a2=676，自查“题源为空”FAIL=16（真实书稿缺口，非工具 bug）；build 原样往返（items.json 未改）后 re-extract 与原始 items.json 逐条字段（group/no/stem/verdict/error_runs/correction/source）0 差异；docx_lib.unchanged_paragraphs 对未点名段落核对 bad=[]，touched_before==touched_after==4345",
+     "seconds": 5.0},
+    {"input": "B3_52 组 328 内新增 3 条题肢（1 正确 2 错误，含 error_runs/correction/source）后 build",
+     "result": "build 成功写出；对输出跑 check：bh.check_drill 门（check=='drill'）FAIL=0；A1/A2 由 676/676 变为 679/679，编号仍是全书连续 1..679",
+     "seconds": 5.5},
+    {"input": "负例：error_runs 片段不在 stem 里 / group 不是已识别的 A2 表格序号 / verdict 不在 drill.a2_allowed / --expect-sha 与父稿不符",
+     "result": "四种负例均退出码 2，均不留输出文件",
+     "seconds": 0.9},
+    {"input": "负例：--out 落在必修三审阅入口 00_必修三最新审查稿/ 下",
+     "result": "docx_lib.guard_write 拒绝，退出码 3，不留输出文件",
+     "seconds": 0.1},
+    {"input": "B2_230（修订230，冻结册）",
+     "result": "extract 只读得到 820/820 non_item_rows=0；check 只读 counts={FAIL:0, WARN:2, CANDIDATE:3}（信息性，本册已冻结不处理）；真实 bixiu2 配置下 build 立即拒绝退出码 3、不留输出；用临时目录里一份 frozen:false 的配置副本 + 输入文件的临时拷贝（避免 --docx 路径被 detect_profile 认成真实 bixiu2 而按真实配置拒绝，这一步本身也验证了不能靠 --profile 绕过真实冻结判定）走通写路径往返，re-extract 与原始 items.json 逐条字段 0 差异；测试前后核对 B2_230 真实文件 SHA/mtime 未变",
+     "seconds": 14.1},
+    {"input": "哲学 R10（无正式配置，用 profile_probe.py 生成草案 philosophy.draft.json，drill.layout 探测为 paragraph）",
+     "result": "extract 认出 646/646（non_item_rows=25）；check 有 2 条 FAIL（A2 错误行缺红色错处，草案未确认，可能是探测误差或书稿本身遗留问题，未深究——按规格“认出多少算多少，不强行凑数”）；规格提示的口径是约 645/645，本次是 646/646，量级一致；build 未在此版式上测试（drill_tool 的 build 目前只支持 table3，见 known_limits）",
+     "seconds": 0.9},
+    {"input": "选必二 r22（无正式配置，用 profile_probe.py 生成草案 xuanbi2.draft.json，drill.layout 探测为 cards）",
+     "result": "extract 如实得到 0 条（layout='cards' 不是 table3 也不是已登记的 paragraph，bh.collect_drill 对未知 layout 一律走 paragraph 分支的 item_regex 匹配，题卡版式的标题/正文形态与之不符，认不出任何条目）——诚实失败，未伪造识别结果；规格提示实际有 146 张 A2 题卡，如需支持需要在 bh 或 drill_tool 里新增 card 专属识别逻辑（未实现）",
+     "seconds": 0.3},
+    {"input": "--admission 集成：从 B3_52 extract 出的 676 条生成完整/不完整两份决策文件核对",
+     "result": "决策条数不全（5/676）→ 报告 admission.status='fail'，check_drill_admission.verify 抛的“缺少或多出逐条准入裁决”被收进一条 FAIL；决策条数补全（676/676，全部 retain）→ admission.status='pass'，candidate_count=retained_count=676",
+     "seconds": 1.3}
+  ],
+  "replaces": [
+    "必修三_最新Skill修订_20260913/题肢检查/build_drill_report.py（认条目/核对，已被 extract+check 用 bh.collect_drill/bh.check_drill 的统一路径取代）",
+    "必修二_周六成品冲刺_20260910/scripts/export_independent_drills.py、merge_approved_drills.py、drill_source_format.py、build191_*_drills_merge.py（导出/合并/生成，已被 extract/check/build 按配置运行取代——但 build 目前只覆盖 table3，二者原脚本处理的正是这个版式，替代是完整的）",
+    "scripts/check_drill_admission.py 未被替代——drill_tool 只是在 check 命令里可选地调用它做核对，仍是独立可单用的工具"
+  ],
+  "known_limits": [
+    "build 只支持 drill.layout=='table3'（两本已登记书 bixiu2/bixiu3 都是这个版式）；paragraph 版式的 build 未实现——段落式没有整“行”可替换，需要另一套按段落序列拼接/插入的模板规则，留给下一轮或人工；本工具在段落式上只做了 extract/check。",
+    "card（整题题卡，如选必二）版式：bh.collect_drill 本身没有为 card 单独分支，未知 layout 一律退回 paragraph 分支解析；drill_tool 同样没有另写 card 识别逻辑，选必二 r22 上如实得到 0 条，不伪造识别结果。如需支持，需要新的“按题卡标题分块、卡内找【解析】栏”识别规则，工作量接近再实现一遍 bh.walk 的例题块识别，建议给 bh 加而不是在 drill_tool 里另起一套。",
+    "build 生成新行时数字与题干之间固定用“N、”+制表符分隔，与两本已登记书实际格式一致，不做“换个分隔符”的通用化。",
+    "build 用整份 A1/A2 区域重新生成（每个分组用该分组第一条“正确”和第一条“错误”A2 记录的原始行 XML 当模板），不是“只改被点名的行、其余原样保留字节”；round-trip 测试证明文字、颜色、行数、其余段落 C14N 都对得上，但表格内部个别历史遗留的段落切分差异（比如原稿个别行的纠正段落结构不一致）会被规整成统一模板的结构，这是规格“以第一条记录为模板重新生成”本身要求的效果，不是数据丢失（B2_230 往返时 touched_before=5268 而模板规整后 touched_after=5322，差值正好是原稿里结构不统一的“错误”行数，逐条字段核对仍 0 差异）。",
+    "--order alternate 是启发式交替（按错误/正确条数较多的一侧起头逐条交替），不保证满足 drill.alternation.max_same_run_per_table（该值本身在配置里就是 WARN 级提示值，不是用户原话的硬指标），seed 只影响“哪一侧先出”这一步、不产生进一步随机决策，记录 seed 只为回执可追溯。",
+    "check 里“可选对照正文核对被选题肢应为正确”（规格里标注为可选）未实现：需要把题源字符串与例题块重新配对、解析该例题【答案】结构，工作量接近 bh.diff_source 一整套，超出本工具“薄封装”的定位，留给主代理按需扩展。",
+    "题源为空的检查只对 table3 版式做了（paragraph 版式本来就没有独立的题源栏，恒为空字符串，不检查）。"
+  ],
+  "profile_fields_needed": [],
+  "needs_user_decision": [
+    "哲学（philosophy）、选必二（xuanbi2）目前都没有登记进 scripts/profiles/ 的正式配置，本次测试用的是 profile_probe.py 生成、未经确认的草案；如果要在这两本书上正式用 drill_tool，需要先由主代理按规则确认草案（尤其选必二的 card 版式需要先决定要不要给 bh 加 card 识别逻辑，再决定是否值得为 drill_tool 补 card 版本的 build）。",
+    "B3_52 单练里有 16 条 A2 记录题源为空（本工具新增的“题源非空”检查发现，bh.check_drill 本身不查这条）；是真实的内容缺口还是本册本来就允许部分题源留空，需要主代理按当前必修三真实进度裁定，不是本工具能替主代理判断的事。"
+  ]
+}

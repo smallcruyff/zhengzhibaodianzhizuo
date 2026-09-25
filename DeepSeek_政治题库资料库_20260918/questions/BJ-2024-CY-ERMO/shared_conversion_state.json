@@ -1,0 +1,133 @@
+{
+  "exam_id": "BJ-2024-CY-ERMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "source_pages": {
+    "original_paper": 8,
+    "formal_rubric": 5,
+    "supplement_readable_witness": 3
+  },
+  "question_hashes": {
+    "BJ-2024-CY-ERMO-Q1": "7f79c3a1b61639641fecd49c7a922f980daa7e9974f5bf5f4f1ae1e805cc410f",
+    "BJ-2024-CY-ERMO-Q2": "d081e7433c681be1bab6f16384b75a29352737975c0c4bd2a64fc49e95597cc9",
+    "BJ-2024-CY-ERMO-Q3": "acf7a384f94e97d2a62799b353bc570f62e141e56cac51711180aa76bb53ba26",
+    "BJ-2024-CY-ERMO-Q4": "2e6b4dbf2388d76d380c2463a22031af8c509041baf442ed2cb43f7b4eafaed3",
+    "BJ-2024-CY-ERMO-Q5": "348e11d4cc61ed9ca25be4fbd87ba38419628c01dc782990d544ec9b8d2d9d86",
+    "BJ-2024-CY-ERMO-Q6": "e99b3957dd239a1e868b632edd1744b4b83dc01dc3f995bdfc0d244dabe1d52e",
+    "BJ-2024-CY-ERMO-Q7": "e90da5614f60dd4bcf9d1b24c93971924e4e1e0dd3023a64157c5a8352a6717b",
+    "BJ-2024-CY-ERMO-Q8": "bd60e70372c404dd2927373a5290147af4a6aa95f461091d6986939a9649eefb",
+    "BJ-2024-CY-ERMO-Q9": "f1a96e5ca168e6f45ff566b17b068c68e8d0a9173f47bb4713e6bc2779c1c1d7",
+    "BJ-2024-CY-ERMO-Q10": "784fc0dc635f83b2af6c7c3692ea21bd342eb375f8648882fb48f59a63102c3b",
+    "BJ-2024-CY-ERMO-Q11": "43e743e362e974b1a55bf3a658ab7c07e81182693a3a720ce69e2f663de114f0",
+    "BJ-2024-CY-ERMO-Q12": "b6eea4671f58293eff18431c17b1beab519b2768450e816a4bbc145d87f2997f",
+    "BJ-2024-CY-ERMO-Q13": "c710617d5744bfb878c0e7ee1a105b79fe6447073963031770c128efc56d4687",
+    "BJ-2024-CY-ERMO-Q14": "e80648ed5bb08b4597a3ce3778b1929b64c6188c018053b0c5c23fc0df178dc4",
+    "BJ-2024-CY-ERMO-Q15": "339dd8678cefa036954338bbc9066f9b3d31f5629f24b091ad515a1fe672f326",
+    "BJ-2024-CY-ERMO-Q16": "98e3476303451d46eb36ad142715a7f1688291db15c87f4af6d4d6165efaeac8",
+    "BJ-2024-CY-ERMO-Q17": "abb4e0782895a2adc045735603a34b7b65051c52f58ddd2d9522ebcc5772f1bc",
+    "BJ-2024-CY-ERMO-Q18": "7ef66933707a73b5becdac852ba001bc2befdf2f2fde678cf4a2195a183dc85d",
+    "BJ-2024-CY-ERMO-Q19": "2dda5cfe4b1fd187a4b268e3283bd67971110f8a68d02084d51bbe2f4283b8c8",
+    "BJ-2024-CY-ERMO-Q20": "51ce5622713d60d1eff12cd23cf0348eb2e210a0f3fec0bb0148e6e28044a547"
+  },
+  "parent_question_hashes": {
+    "BJ-2024-CY-ERMO-Q1": "6786d5aecedf9363f6fbc6f6e198a7782034ef4ba0e4a5f680d3161d9cc205d0",
+    "BJ-2024-CY-ERMO-Q2": "63e05195ed023b56e835edcfd655377c40dc5552d54d0fe8b1182a159660bc44",
+    "BJ-2024-CY-ERMO-Q3": "c05b683797c8850e29d389ba2c8bbcaba19ff0464c4d74b60127cdb5b4932f41",
+    "BJ-2024-CY-ERMO-Q4": "ebc49a3aead711bfe55c5e4c2a86ac4bc9fdc72f795ad4dc6da87e8169daf0a2",
+    "BJ-2024-CY-ERMO-Q5": "34f0b4c525101f2f079f30cf14933fcbd5cc88307d1d7d41b03fc1380e3a65f5",
+    "BJ-2024-CY-ERMO-Q6": "f209e76938841f793728d1f89c6196b8ad6291835f75b0332ffa8520f48f20ce",
+    "BJ-2024-CY-ERMO-Q7": "cd96f1c11546003a58f623d5fe091294f2709d03217d1d126acc9b226c466ed7",
+    "BJ-2024-CY-ERMO-Q8": "b970de05356124024a7a906236598115871989b64dea738f95fe9c2cfcf4b277",
+    "BJ-2024-CY-ERMO-Q9": "5c59944ac76e92ec7f617b61ac3728676ad2f20e1d703cdfa623e4473f90a86d",
+    "BJ-2024-CY-ERMO-Q10": "fe29428a973e62ef71e69515e9f972a1bde73e6b898bf103dc8b171388091f89",
+    "BJ-2024-CY-ERMO-Q11": "f4bb149dd250a3de4889d2da26326cc2719f409cc79f7b4c87d5ccf7106f3e0b",
+    "BJ-2024-CY-ERMO-Q12": "b01e3d7e5e6a0380fb6ed99a008df947dba819e2374789ac349b7caf4570c3d1",
+    "BJ-2024-CY-ERMO-Q13": "c21c3c8ca54c81f0cfa585fb864ed4572fbf56843116b7acba6aca4051c3c0e4",
+    "BJ-2024-CY-ERMO-Q14": "291a80cbb3857c16656a4dd55575ab6d8a9c1aa0e2b1665aff611be11659895b",
+    "BJ-2024-CY-ERMO-Q15": "5017d746e721d4e54f0fdcd9a9a51c83e8dc813cd60078c598eed430765680dd",
+    "BJ-2024-CY-ERMO-Q16": "04b26fbba3850ecbe3968c12043e9daeec96bb6dfef9d442acfafbdba4ce9681",
+    "BJ-2024-CY-ERMO-Q17": "b28198524729194e04c9a2fe80e2089fc9086948efd3c83c93e5297f5a4e11af",
+    "BJ-2024-CY-ERMO-Q18": "020141f8e2c42aa6caaa4622e7a15a65d16fbaad90d19f20edd92200353ef803",
+    "BJ-2024-CY-ERMO-Q19": "dca12fdc2e92770af4f7df2d7aa9a98db765497e6059caad30ed837d6d66ed25",
+    "BJ-2024-CY-ERMO-Q20": "730dba3843ca8f584f83f77edf5bc6c28a6da5c4c722d63cc769613db4c55b48"
+  },
+  "source_roles": "sources/source_roles.json",
+  "e1_page_map": {
+    "Q16": [
+      "p1",
+      "p2"
+    ],
+    "Q17": [
+      "p2",
+      "p3"
+    ],
+    "Q18": [
+      "p3"
+    ],
+    "Q19": [
+      "p3",
+      "p4",
+      "p5"
+    ],
+    "Q20": [
+      "p5"
+    ]
+  },
+  "e3_map": {
+    "Q1-Q15": {
+      "role": "E3",
+      "location": "Table0",
+      "link": "sources/transcripts/supplement_docx_native.md#表格-0"
+    },
+    "Q16": {
+      "role": "E3",
+      "location": "P5-P12",
+      "link": "sources/transcripts/supplement_docx_native.md#p5-p12"
+    },
+    "Q17": {
+      "role": "E3",
+      "location": "P13-P15",
+      "link": "sources/transcripts/supplement_docx_native.md#p13-p15"
+    },
+    "Q18": {
+      "role": "E3",
+      "location": "P17-P19",
+      "link": "sources/transcripts/supplement_docx_native.md#p17-p19"
+    },
+    "Q19": {
+      "role": "E3",
+      "location": "P21-P24",
+      "link": "sources/transcripts/supplement_docx_native.md#p21-p24"
+    },
+    "Q20": {
+      "role": "E3",
+      "location": "P28-P30",
+      "link": "sources/transcripts/supplement_docx_native.md#p28-p30"
+    }
+  },
+  "source_coverage_history": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-ERMO_v38_source_coverage_history.json",
+  "source_limitations": [
+    "正式细则E1只覆盖Q16-Q20；补充DOCX为E3覆盖Q1-Q20，通用等级表不升E1",
+    "没有个人学生原答、批注或实得分，保持N/A_with_basis",
+    "旧补充DOCX两页缺字见证仅作历史"
+  ],
+  "conversion_unresolved": [],
+  "accepted_at": "2026-09-22T14:24:56.725096+00:00",
+  "controller_acceptance_evidence": {
+    "primary": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-ERMO_v38_primary_review.json",
+      "sha256": "8cf822f98c40f107c9f7f47c40da3e6173c6ed9500203fb9d08440a3a3499d55"
+    },
+    "independent": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-CY-ERMO/39_source_transcription_recheck/recheck_after_38.json",
+      "sha256": "f894137f79cb95e2af48b5ca1058685e5f0778ef7343691bd9dc5176862ab415"
+    },
+    "postchecks": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-ERMO_v38_postchecks.json",
+      "sha256": "fd3b0942a3353b7a423929fb2e2af6ec1f574f26644d0b88e1ce285fc762631c"
+    }
+  }
+}

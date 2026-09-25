@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "reviewer_role": "independent_visual_content_reviewer",
+  "review_mode": "full independent cross-review; candidate/transcription workstation separated",
+  "reviewed_at": "2026-09-21T23:46:32-07:00",
+  "shared_modified": false,
+  "candidate_modified": false,
+  "result": "FAIL_not_merge_ready",
+  "merge_ready": false,
+  "summary": {
+    "question_count": 21,
+    "status_counts": {"pass": 19, "fail": 2, "uncertain": 1},
+    "content_conversion_status": "FAIL_pending_Q11_and_Q19_repairs",
+    "source_limit_status": "Q1-Q15无选择题答案/E1、全卷无独立答案和学生层；均按N/A或不适用处理，不单独判转换失败。",
+    "content_only_note": "Q1-Q15题面/分值/页位本身通过；其‘细则继续检索’只是应清理的状态标签，不是缺源转换失败。",
+    "hard_defects": ["Q11选项A把原卷‘商标法’误写为‘著作权法’", "Q19 E1漏写‘或宏观调控’"],
+    "non_blocking_caution": "Q21裁切图只到同学丁对话框的倒数第二行；完整p008页和候选题面包含最后一行。"
+  },
+  "inputs": {
+    "candidate_root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO",
+    "paper_source": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/evidence/sources/paper.pdf",
+      "source_id": "Se1a49527cb4c",
+      "sha256": "e1a49527cb4c175f3de69c5cb429216b35938f336f1417fd9df9d955c3e98399",
+      "pages": 8
+    },
+    "rubric_source": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO/evidence/sources/rubric.pdf",
+      "source_id": "S487b2d15b3a3",
+      "sha256": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a",
+      "pages": 4
+    },
+    "candidate_output_sha256_manifest": {
+      "path": "output_sha256.json",
+      "sha256": "3387a8dff27c2c118d6872d853c2e633cfd71f3c23345ac5b78b6f4316174252",
+      "listed_files_checked": 68,
+      "missing": 0,
+      "mismatched": 0
+    },
+    "missing_expected_sources": [
+      "独立选择题答案键/参考答案",
+      "学生原答、学生样卷、教师批注、评分标记、实得分载体"
+    ]
+  },
+  "opened_evidence": {
+    "paper_pages_opened": [1, 2, 3, 4, 5, 6, 7, 8],
+    "rubric_pages_opened": [1, 2, 3, 4],
+    "paper_page_assets": {
+      "p001.png": "9712cba0091a00a6edc636b23be0c95e575aab8059f7dd739cba148407500372",
+      "p002.png": "604bd28eece5ea80e112fc0e36197193f3f4880a04e8e3dc83a28d23fd6feba9",
+      "p003.png": "3439e5d9b9f80e07c1a5eea81e2b913f165cc79cbe5a5ce80eb9e95d7e853479",
+      "p004.png": "279df0d166c5fab587eb8bb204e234eaab6a9a376ec0dc8340f91fc6f9ce6c88",
+      "p005.png": "1cf8d11b69504c90efd3c3256a64b6afbce8c10aa75be9ab19e6cc98904833c6",
+      "p006.png": "c474ac12b149298aa0279ecf60f2570aad126bc5d14fab34a1c96fbcc5fbc30e",
+      "p007.png": "57ddfee796204d362e32492d7e6c15a8f2785efe025182843e1c2aa1e6de7c97",
+      "p008.png": "d9eabda7ae4dda28f260c1100b88ba81c98ebdff0414c32fc5e4e3c8b41e23e3"
+    },
+    "rubric_page_assets": {
+      "p001.png": "ea412719fde8453858cafd86051d58f14badb2f8bf9e90e4cb3a2590e91a5591",
+      "p002.png": "b2b85fad33a9edc6e601081f70eb64718cc04fa81fd5365cfd9b05c2c959cd63",
+      "p003.png": "bf5ce5e21b41318944745c07c24bc2daf3234b3b32660f7deae3787c61bd03df",
+      "p004.png": "0fa18d11560427cce254775049bc55c08345fbec46d529a563880ea836242367"
+    },
+    "complex_assets": {
+      "Q4": {"path": "evidence/figures/Q04_p002_rui_gu_tu.png", "sha256": "90ef516958bd980d88ad4cf679f5a0aa232be5ec50b883d1cfb83d01fb1d9d2b", "opened": true, "finding": "图像及《瑞谷图轴》题注完整。"},
+      "Q6": {"path": "evidence/figures/Q06_p002_condition_box.png", "sha256": "a7ca1b6651e73a346ed44eb1b2f1b8413c20c5cfdfe71d9d1bb9dbc97d68e137", "opened": true, "finding": "三条判断及框线完整；整页p002同步保留。"},
+      "Q16": {"path": "evidence/figures/Q16_p004_stage.png", "sha256": "dcb38cc5d863c82ad6ccc1b0a9962ab6d380ffb3563a23d2a94e82fa4b037de8", "opened": true, "finding": "舞台图主体完整；Q16题面跨p004-p005闭合。"},
+      "Q19": {"path": "evidence/figures/Q19_p006_policy_table.png", "sha256": "4bfc81e18dde0ac38b36d8bc818749ea19308af76747705da2e1eb7be86cc833", "opened": true, "finding": "政策表三行、列框线及表内文字完整；p006-p007跨页闭合。"},
+      "Q21": {"path": "evidence/figures/Q21_p008_discussion_boxes.png", "sha256": "b327abfb90a8d6c9d3ef5dfe7e03edef57e1289a3c22d788da7977d5652bb1a1", "opened": true, "finding": "教师框和甲/乙/丙/丁框上部可见，但裁图在丁框最后一行前结束；完整p008仍可回查。"}
+    }
+  },
+  "global_checks": {
+    "identity_front_matter": "pass",
+    "question_count": "pass_21",
+    "choice_score": "pass_15x3=45",
+    "subjective_score": "pass_Q16-Q21=8+8+15+8+8+8=55",
+    "total_score": "pass_100",
+    "cross_page_boundaries": "pass_Q16_p004-p005_Q18_p005-p006_Q19_p006-p007",
+    "e1_same_question_subquestion_boundary": "pass_for_Q16-Q21; Q18(1)/Q18(2) kept separate within rubric p002",
+    "choice_rubric_boundary": "source_limit_with_metadata_cleanup_Q1-Q15_should_say_‘不适用（选择题）’_not_‘细则继续检索’",
+    "answer_source": "pass_N/A_with_basis_no_answer_source; no answer inferred from rubric",
+    "student_layer": "pass_N/A_with_basis_no_student_source",
+    "source_page_coverage": "pass_8_paper_plus_4_rubric_opened",
+    "source_and_link_sha": "pass_source_PDFs_pages_and_five_asset_links_exist_and_hash",
+    "rubric_content": "fail_Q19 one exact E1 alternative word omitted"
+  },
+  "candidate_sha256": {
+    "Q1": "d3360dcf238fe537d022f32372761fc02de3d82ab9109cb1cf457e8ed9bc7b8d",
+    "Q2": "40eebe656849744b319938ede355032e11b3f3d39b577750b2813e3cf633c892",
+    "Q3": "6f82bcdecced8871c6cb0db73b5ca4db5de15ad6676921255712e9ebabbc8c8e",
+    "Q4": "2e065fce6005793b272045019270760edc383e516bc2fd237290333198fd3cf3",
+    "Q5": "144d9683f8107a9792d60039a14ee4f11b63fa56a62e89790d6b8b50b8a77e26",
+    "Q6": "95aa5ae7e2b7b717a03ac57561010e7ba130c8596ee9f160866d1b54ae76f6ec",
+    "Q7": "ba72f87d085576c40c30636e9eeb8a91dabf9709600f9006c6d9e0f65bf04702",
+    "Q8": "2d59d2317bcd3cce1b54c0c047070c70fd2fb5d5455baa88a24dfdb3e17e26e3",
+    "Q9": "d459d21644134dccd02f21db983d1ee2cfee4381e948d8c0d52e74fab4adc1da",
+    "Q10": "b769ec5dbc9a1ade29561c1c721156eb0587a22fe35b53a222bba9546238bc9e",
+    "Q11": "e8b081961aaa0518d6488b8f60f881ab3ca7cf683c9fbcaea855cf1d983c7828",
+    "Q12": "4cd608201565dc6ac6643614ed8441db935116113980ea014d5cad6a30bf95cf",
+    "Q13": "999e32d9ce24334a349e636ea415de4a2466f33e616261f92aa7ed8331bb320d",
+    "Q14": "1bfea23fb84e66567a9ad6d6fcf96aa9d8d38d00e185006ca8b57edfbbb05f56",
+    "Q15": "5fed10adf04638336b3ddf7fa792e3c4b2fd31bfa6ead5f28226f9e1ef26f004",
+    "Q16": "31f3500196bc1cd32c6c4cfdba73b5aa24ceca11aba505cca4cef7e34ecbbc4f",
+    "Q17": "257891a39172d075107ae404923374f85c351db53d294dfdec84385dc6895b9d",
+    "Q18": "9ecd60e59aec1f05c055e84bd74aac48119289c1d91cd49d46b4ed874c4e1c1e",
+    "Q19": "4690b68daea5456f570fd2dda8e151ad7fc339202bf5ee19328d6c611d31739e",
+    "Q20": "5c06ce9445f1ea26fb4de6cf07d87a9951265de3ffb560b3d928d38f32071bfc",
+    "Q21": "54f78cfe3b1a25a2cf177176c916eb807bf7a50735707f809d8ac3c7bb13128d"
+  },
+  "question_reviews": [
+    {"question_id": "BJ-2026-CY-QIMO-Q1", "status": "pass", "paper_pages": [1], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q2", "status": "pass", "paper_pages": [1], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q3", "status": "pass", "paper_pages": [1], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q4", "status": "pass", "paper_pages": [2], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "figure": "pass_complete", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q5", "status": "pass", "paper_pages": [2], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q6", "status": "pass", "paper_pages": [2], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "figure_box": "pass_complete", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q7", "status": "pass", "paper_pages": [2], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q8", "status": "pass", "paper_pages": [2], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q9", "status": "pass", "paper_pages": [3], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q10", "status": "pass", "paper_pages": [3], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q11", "status": "fail", "paper_pages": [3], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "fail_text_and_metadata", "rubric_status": "fail_metadata", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["Q11选项A候选为‘受著作权法保护’，原卷p003为‘受商标法保护’；另有选择题rubric状态错误。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q12", "status": "pass", "paper_pages": [3], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q13", "status": "pass", "paper_pages": [3], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q14", "status": "pass", "paper_pages": [4], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q15", "status": "pass", "paper_pages": [4], "rubric_pages": [], "score": 3, "checks": {"stem_options_score": "pass", "part_boundary": "pass", "rubric_status": "source_limit_label_cleanup", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["来源限制：选择题无E1；候选标签‘细则继续检索’应规范化为‘不适用（选择题）’，不构成内容转换失败。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q16", "status": "pass", "paper_pages": [4, 5], "rubric_pages": [1], "score": 8, "checks": {"stem_cross_page": "pass", "figure": "pass", "e1_same_question": "pass", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": []},
+    {"question_id": "BJ-2026-CY-QIMO-Q17", "status": "pass", "paper_pages": [5], "rubric_pages": [1], "score": 8, "checks": {"stem": "pass", "e1_same_question": "pass", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": []},
+    {"question_id": "BJ-2026-CY-QIMO-Q18", "status": "pass", "paper_pages": [5, 6], "rubric_pages": [2], "score": 15, "checks": {"two_subquestions": "pass_7+8", "stem_cross_page": "pass", "e1_same_question_subquestion": "pass", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": []},
+    {"question_id": "BJ-2026-CY-QIMO-Q19", "status": "fail", "paper_pages": [6, 7], "rubric_pages": [3], "score": 8, "checks": {"stem_cross_page": "pass", "figure_table": "pass", "e1_question_match": "pass", "e1_text_fidelity": "fail_one_word", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["细则p003角度1核心做法原文为‘政府履行经济职能（或宏观调控）’，候选Q19.md省为‘政府履行经济职能（宏观调控）’，漏‘或’。"]},
+    {"question_id": "BJ-2026-CY-QIMO-Q20", "status": "pass", "paper_pages": [7], "rubric_pages": [3], "score": 8, "checks": {"stem": "pass", "e1_same_question": "pass", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": []},
+    {"question_id": "BJ-2026-CY-QIMO-Q21", "status": "uncertain", "paper_pages": [8], "rubric_pages": [4], "score": 8, "checks": {"stem": "pass", "boxes_full_page": "pass", "e1_same_question": "pass", "figure_crop": "uncertain_partial", "answer": "N/A_with_basis_pass", "student": "N/A_with_basis_pass"}, "defects": ["Q21裁图在同学丁对话框最后一行前截断；完整p008和题面文字保留最后一行，因此是资产边界不确定，不是题面缺失。"]}
+  ],
+  "defects_and_unresolved": [
+    {
+      "id": "F1",
+      "status": "open_candidate_metadata_defect",
+      "scope": "Q1-Q15 and E1 role summaries",
+      "severity": "metadata_only_not_conversion_failure",
+      "detail": "选择题不要求主观题E1。当前15个候选文件、complete_candidate.json/question_index、complete_candidate.md、roles/e1_rubric.*及相关汇总把Q1-Q15写为‘细则继续检索’，这会错误制造E1未决。应统一改为‘不适用（选择题）’（可加无答案源说明），并从E1 unresolved/真实未决中移除。答案仍保持N/A，不从题干或细则补造。"
+    },
+    {
+      "id": "F2",
+      "status": "open_candidate_text_defect",
+      "scope": "Q11 option A",
+      "severity": "hard_for_merge",
+      "source_location": "evidence/paper_pages/p003.png, Q11 option A",
+      "candidate_location": "candidates/BJ-2026-CY-QIMO-Q11.md:27",
+      "old_value": "A. 虚拟数字人甲作为独创性智力成果构成美术作品，受著作权法保护",
+      "required_value": "A. 虚拟数字人甲作为独创性智力成果构成美术作品，受商标法保护",
+      "detail": "原卷视觉页及独立OCR均清楚显示‘商标法’。候选把错误选项改成了另一法律，改变题面语义。"
+    },
+    {
+      "id": "F3",
+      "status": "open_candidate_e1_fidelity_defect",
+      "scope": "Q19 E1 angle 1",
+      "severity": "hard_for_merge",
+      "source_location": "evidence/rubric_pages/p003.png, Q19 angle 1 core method",
+      "candidate_location": "candidates/BJ-2026-CY-QIMO-Q19.md:60",
+      "old_value": "有为政府与有效市场有机结合／政府履行经济职能（宏观调控）／市场发挥在资源配置中的决定性作用。",
+      "required_value": "有为政府与有效市场有机结合／政府履行经济职能（或宏观调控）／市场发挥在资源配置中的决定性作用。",
+      "detail": "漏掉‘或’会把两个可替代表述改成并列/括号限定关系；E1必须保留原评分条件。"
+    },
+    {
+      "id": "U1",
+      "status": "bounded_asset_uncertainty",
+      "scope": "Q21 figure crop",
+      "severity": "uncertain_not_text_blocking",
+      "detail": "Q21_p008_discussion_boxes.png尺寸1360x1040，裁到同学丁第二行‘拥有世界上规模最大’后结束，未显示‘的教育体系，多层次人才队伍既能冲击科技前沿，又能落地先进设计。’完整p008及Q21候选题面有该句。若该裁图要作为‘四个对话框完整资产’，应补全；否则应明确它只是定位裁图。"
+    },
+    {
+      "id": "U2",
+      "status": "source_limitation",
+      "scope": "whole_exam answer layer",
+      "severity": "not_candidate_hard_failure",
+      "detail": "输入仅有原卷与正式主观题细则，无独立答案键/参考作答；所有题答案层N/A_with_basis正确，不得据细则补造。"
+    },
+    {
+      "id": "U3",
+      "status": "source_limitation",
+      "scope": "whole_exam student layer",
+      "severity": "not_candidate_hard_failure",
+      "detail": "输入无学生原答、样卷、批注、评分标记或实得分；逐题N/A_with_basis正确。"
+    }
+  ],
+  "required_repairs_before_merge": [
+    {"id": "R1", "blocking": false, "targets": ["candidates/BJ-2026-CY-QIMO-Q1.md through Q15.md", "complete_candidate.json", "complete_candidate.md", "roles/e1_rubric.json", "roles/e1_rubric.md"], "action": "把Q1-Q15 rubric状态统一为‘不适用（选择题）’，移除其‘细则继续检索’未决；答案与学生层保持N/A。"},
+    {"id": "R2", "blocking": true, "target": "candidates/BJ-2026-CY-QIMO-Q11.md", "action": "仅将Q11选项A中的‘著作权法’改为原卷‘商标法’，并重新计算该候选SHA/父稿合并记录。"},
+    {"id": "R3", "blocking": true, "target": "candidates/BJ-2026-CY-QIMO-Q19.md", "action": "在Q19 E1角度1核心做法中恢复‘或宏观调控’，保留正式评分替代关系，并重新计算候选SHA。"},
+    {"id": "R4", "blocking": false, "target": "evidence/figures/Q21_p008_discussion_boxes.png and candidates/assets/evidence/Q21_p008_discussion_boxes.png", "action": "若按完整图像资产合并，补全同学丁框最后一行；若保留现图，明确其为定位裁图并以完整p008为图像权威。"
+    }
+  ],
+  "write_scope": {
+    "only_written": ["review_r2/independent_verification.json", "review_r2/independent_verification.md"],
+    "not_modified": ["candidates/", "evidence/", "roles/", "complete_candidate.*", "output_sha256.json", "shared question bank", "conversion_manifest.json", "index"]
+  }
+}

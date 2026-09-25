@@ -1,0 +1,82 @@
+{
+  "exam_id": "BJ-2023-HD-QIZHONG",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 23,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2023-HD-QIZHONG-Q1": "4e9ffca5527986cd39194f668d6cfbb3634fec24cbe84c0b4371959d2fc16750",
+    "BJ-2023-HD-QIZHONG-Q2": "52bbadd0da8077ae106bc0cbda981fae7c90aa2dd0863310441a5c341ff8dae3",
+    "BJ-2023-HD-QIZHONG-Q3": "426993dd801b594b18d80a1b7b96660be8cd3e2e867069ea92141245539d9a00",
+    "BJ-2023-HD-QIZHONG-Q4": "00c299030738de8dc67974e4b44b2a262488f9593a4930835b913b73c6f88317",
+    "BJ-2023-HD-QIZHONG-Q5": "afac6a91445cae95d9306f7ef3a31b0f5d344853186307eca838caa9f3fc906d",
+    "BJ-2023-HD-QIZHONG-Q6": "df7440c7aa97c83ec45e57e5ebc15306282bf6aa85cd1f6a4fdb6025b7e43b91",
+    "BJ-2023-HD-QIZHONG-Q7": "74355e317919d76b90a9e605aeeaf1cbeb53795d51a074a47e5fa509d830ec3e",
+    "BJ-2023-HD-QIZHONG-Q8": "150c7ae51ef1c3ecd3daf4240421e790972775219b072d79036c3f89a3cd0a62",
+    "BJ-2023-HD-QIZHONG-Q9": "11c9df510c4504faf42008df9f4d7041aec052f9ca7f10cb4501d224fd641814",
+    "BJ-2023-HD-QIZHONG-Q10": "b8323f2776e04075a60ef30e0b3b06258b3fa04c234f6bbcf2e7efccda59031e",
+    "BJ-2023-HD-QIZHONG-Q11": "672e9d30dfcf943fd953c8ff8846298a52661e76d821b67d12e632a624a81045",
+    "BJ-2023-HD-QIZHONG-Q12": "5d5655ff94e6c9897d8188d35c22916b66823a7dedca7839004cf74c0f995461",
+    "BJ-2023-HD-QIZHONG-Q13": "a51db61f7d6be49780568eac1b6f421788464eb729307ed741e3c01ddc0f4b26",
+    "BJ-2023-HD-QIZHONG-Q14": "6ab5255e05057680718cab76ea28fcc2ddc25cbcdff29a61d506e5f601f8648d",
+    "BJ-2023-HD-QIZHONG-Q15": "b745b88cc38c4115cbea80aeb6b7ae951b7e8ab4bce31f28fa4b53917a541457",
+    "BJ-2023-HD-QIZHONG-Q16": "ab5764270ca887604f5f28d3a3014479adbb7a0173fff1d2d9edb2b6cc7ac273",
+    "BJ-2023-HD-QIZHONG-Q17": "52cf52455be3301b29c0cdd0c3564e1f7a636f3fc212bac26436a9945781802c",
+    "BJ-2023-HD-QIZHONG-Q18": "efd4e0b4277e4f64ce77521ec22b1e6b40c7cd47ef321daae0b7712dc33d0b99",
+    "BJ-2023-HD-QIZHONG-Q19": "4aaf803fde4abeddc5babb5a6f11734ba2439465347297913bfaea384927a5a6",
+    "BJ-2023-HD-QIZHONG-Q20": "e46f06e0f4583855f8e678ce85c05de029ef2c35909c242afd12369c40ae10cd",
+    "BJ-2023-HD-QIZHONG-Q21": "bf83aae0261d750f7da839375155b5b872b40014ec56bf83e9ea952dc3bd104b",
+    "BJ-2023-HD-QIZHONG-Q22": "cec088faa5905da03e98cd55338cae2b27a759c9e676d887c9fc2b0aaab0d796",
+    "BJ-2023-HD-QIZHONG-Q23": "560d9b0f45bde20f6b9cf9eb17fab8b302771d7e378b8003a2dbd3bf7cd0984e"
+  },
+  "source_pages": {
+    "teacher_docx_or_pptx_unpaged": 0,
+    "rubric": 4
+  },
+  "source_page_total": 4,
+  "source_roles": {
+    "teacher": "S007642ce939e",
+    "rubric": "Sfe51d8a7d585"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "学生样卷/批注/评分标记/实得分（全部23题）: 教师版10页与评标PDF 4页（10张截图）均已逐页/逐图查看，未见任何个人学生答卷、手写原答、圈划、教师批注或个人实得分样卷；评标截图内容均为面向全体阅卷教师的标准讲解，不是某一份具体学生答卷。记 N/A_with_basis，不阻断验收。",
+    "选择题（Q1-Q15）正式评分细则E1: 评标PDF全4页共10张截图已逐张查看确认，仅覆盖Q16-Q23主观题评分标准，不含第一部分选择题内容；选择题以标准答案字母对错计分，本身无需分点细则。记 N/A_with_basis，不阻断验收。",
+    "选择题Q1-Q15的E1/学生样卷、全卷学生批注: 本轮范围不涉及这些层，沿用c1/r1既有判定（评标PDF仅覆盖Q16-Q23，全卷无学生样卷）",
+    "身份裁定依据：receipts/claude_bank_20260922/HD2023_identity/identity_report.json；索引重组回执见同目录 restructure_receipt_*.json"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2023-HD-QIZHONG-Q20",
+      "location": "assets/source_pages/rubric/embedded/p003_img1.jpeg（20题评分表）",
+      "partial_reading": "原图用蓝色标注类别小标题，candidate未对蓝色类别标题单独说明配色（内容本身已完整转写）",
+      "affects_answering": false,
+      "round": "c2"
+    },
+    {
+      "qid": "BJ-2023-HD-QIZHONG-Q23",
+      "location": "assets/source_pages/rubric/embedded/p004_img2.jpeg（23题评分双框）",
+      "partial_reading": "candidate只在“知识逻辑角度”后注明绿色高亮，未对“问题回应”重复注明同样的绿色高亮（内容本身已完整转写）",
+      "affects_answering": false,
+      "round": "c2"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "c1",
+      "c2"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2023-hd-qizhong-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:32:34.461638+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:32:36.474400+00:00"
+}

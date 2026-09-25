@@ -1,0 +1,374 @@
+{
+  "schema_version": "1.0",
+  "receipt_type": "source_role_adjudication_batch",
+  "created_at": "2026-09-21",
+  "coordinator": "/root/adjudicate_answer_roles_batch_a",
+  "read_only": true,
+  "scope": {
+    "exam_ids": [
+      "BJ-2024-DC-YIMO",
+      "BJ-2024-XC-YIMO",
+      "BJ-2024-XC-ERMO"
+    ],
+    "source_ids": [
+      "S7b4eece29632",
+      "S91e28443e7a1",
+      "S85ebe0578ce8"
+    ],
+    "question_asked": "判定当前被标为评分材料的三个来源是否应识别为独立参考答案或混合载体，并给出exam_files/exams/questions/rubric_links的精确修改建议。"
+  },
+  "overall_conclusion": {
+    "S7b4eece29632": "混合载体；含完整客观答案键和主观参考答案，同时含Q16、Q21两张带分值区间的通用等级表。因标题含‘评分标准’且同卷已有正式细则PPTX，源级评分材料标签保留，但必须把has_answer置Y并把答案层单独标明；不可把该PDF的答案文字或通用表误当成完整逐点细则。",
+    "S91e28443e7a1": "独立参考答案（附一张通用等级描述表；非题级正式评分细则）。应从评分材料改为参考答案；同卷正式细则仍由Sf7bcf000f212承载。",
+    "S85ebe0578ce8": "独立参考答案（附两张通用等级描述表；非题级正式评分细则）。应从评分材料改为参考答案；同卷正式细则仍由Sf2e1772f20ed承载。",
+    "shared_finding": "三个文件均不含学生样卷、学生原答、教师批注、阅卷评分标记或个人实得分；不能据此补学生层。三份来源均含可直接用于AI读取的答案内容，且不得因为其位于‘细则/补充材料’目录而继续全部归入评分材料。"
+  },
+  "read_context": {
+    "common_entry": {
+      "path": "00_协作入口.md",
+      "sha256": "77381d395a6d1191e7a655298f9e665eee547c912069af3230c81c54e17a88a6"
+    },
+    "skill": {
+      "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/SKILL.md",
+      "revision": "6.3.8-20260921",
+      "sha256": "77cf0d3bfe2d15b9b750dec6dffbbf605a264874555cd6a8dcf057e346ecb8bd"
+    },
+    "skill_agents": {
+      "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/AGENTS.md",
+      "revision": "6.3.5-20260921",
+      "sha256": "3be3136540b9d3f0ee50c57ef6c027375f7aaced746d7af311598039a65d4868"
+    },
+    "evidence_policy": {
+      "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/evidence-policy.md",
+      "revision": 13,
+      "read": true
+    }
+  },
+  "index_snapshot": {
+    "source_manifest.csv": {
+      "path": "DeepSeek_政治题库资料库_20260918/indexes/source_manifest.csv",
+      "sha256": "c03d45354134018f8e49ac44f48eb5e47240ffa84005e78f5c18f477f0a50f1d"
+    },
+    "exam_files.csv": {
+      "path": "DeepSeek_政治题库资料库_20260918/indexes/exam_files.csv",
+      "sha256": "6f76d707d66f336aa88a73700886d6151554e59cb65887ea64f1ed8c80d5234c"
+    },
+    "exams.csv": {
+      "path": "DeepSeek_政治题库资料库_20260918/indexes/exams.csv",
+      "sha256": "a3e0bab650b7f60437cc8cfa1780cb747a0845a1dd4926c4370d9363e2c02882"
+    },
+    "questions.csv": {
+      "path": "DeepSeek_政治题库资料库_20260918/indexes/questions.csv",
+      "sha256": "5f52b95747a9c76d856028f181fc227ae069a4a9a25330991bca77787a694b81"
+    },
+    "rubric_links.csv": {
+      "path": "DeepSeek_政治题库资料库_20260918/indexes/rubric_links.csv",
+      "sha256": "8cc5c2104aa30545f405f7e8ceaba7b2610c0a5604bc873baa369ac33473d8c7"
+    },
+    "conversion_manifest.json": {
+      "path": "后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+      "sha256": "05fbd6a9f2d423aff3ab3e1cdc632e8b887071f9abd80c9f486919df7cdfa8ad"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "S7b4eece29632",
+      "exam_id": "BJ-2024-DC-YIMO",
+      "decision": {
+        "canonical_role": "评分材料",
+        "canonical_label": "混合载体：独立参考答案＋题级通用等级评分标准；不是纯参考答案，也不是完整逐点细则",
+        "four_way_classification": "混合载体",
+        "mixed_carrier": true,
+        "mixed_carrier_scope": "原生标题为‘思想政治参考答案及评分标准’。同一物理文件同时给出Q1-Q15客观答案键、Q16-Q21主观参考答案，以及放在Q16和Q21之后的两张相同的等级水平/等级描述表。两张表有5～7、3～4、1～2、0分区间，但没有题级采分点、固定知识/材料评分槽、替代关系、封顶、扣分条件或学生样卷。",
+        "is_formal_scoring_material": true,
+        "formal_scoring_scope": "仅承认原件明确给出的Q16/Q21通用等级区间和其原生评分标准身份；完整题级评分仍以同卷S4b2073bcc9e2的74页细则/试题分析为主，不从本文件臆拆固定槽。",
+        "is_independent_answer_source": true,
+        "is_exam_paper": false,
+        "is_student_sample": false,
+        "is_teacher_annotated_sample": false,
+        "has_choice_answer_key": true,
+        "has_subjective_reference_answers": true,
+        "has_point_by_point_scoring": false,
+        "has_generic_level_table": true,
+        "has_student_sample": false,
+        "confidence": "high",
+        "rationale": [
+          "原件标题不是单纯‘细则’，而是‘参考答案及评分标准’，并在同一页明确列出Q1-Q15答案键。",
+          "视觉复核的两页逻辑版面含Q16-Q21全部主观答案/方向；Q18还显示(1)2+6分、(2)6分、(3)6分等小问总分/答案结构。",
+          "Q16和Q21的等级表是通用论述质量表，虽带分值区间，但没有本题知识点、材料分析或替代答案的逐点结构。",
+          "同卷S4b2073bcc9e2的‘细则.pptx’已承载更细的题级评分内容；本PDF的答案层必须保留，不能因路径含‘细则’而被误识为仅评分材料。",
+          "PDF无文字层，正文为约1730个矢量绘图对象；机器OCR只作候选，答案键和题级范围以原始渲染图核定。"
+        ]
+      },
+      "source_identity": {
+        "original_path": "/Users/wanglifei/Desktop/2024模拟题/2024东城一模/细则/补充材料/北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治答案(1).pdf",
+        "shared_copy_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/2024模拟题/2024东城一模/细则/补充材料/北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治答案(1).pdf",
+        "rel_path": "2024模拟题/2024东城一模/细则/补充材料/北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治答案(1).pdf",
+        "format": "pdf",
+        "bytes": 2611809,
+        "sha256": "7b4eece2963205d8ac02ef13063307a3dad70cf6542b6169f3ed34276f16e115",
+        "original_and_shared_copy_same_sha256": true,
+        "source_manifest_line": 36,
+        "exam_files_line": 36,
+        "pdf_structure": {
+          "pdfinfo_pages": 1,
+          "logical_pages_in_spread": 2,
+          "text_layer_chars": 0,
+          "vector_drawing_objects": 1730,
+          "annots": 0,
+          "embedded_xobjects": 0,
+          "creation_date": "2024-03-20T18:59:53+08:00"
+        },
+        "visual_evidence": {
+          "rendered_page": "DeepSeek_政治题库资料库_20260918/evidence/S7b4eece29632/pages/p001.png",
+          "rendered_page_sha256": "f56da787f609a17e143f6d036a730aeb44434dbd9cf3338386e021566fed46cd",
+          "ocr_candidate": "DeepSeek_政治题库资料库_20260918/evidence/S7b4eece29632/visual_transcript/p001.ocr.txt",
+          "ocr_candidate_sha256": "9bcc0f55aa193b78a8ebdc78e55b1b6dd87d141ff9e970a0535d19816bd9d37f",
+          "ocr_status": "candidate_only; Q20标题在OCR中漏出，不能代替原图"
+        }
+      },
+      "content_scope": {
+        "document_title": "北京市东城区2023-2024学年度第二学期高三综合练习（一）思想政治参考答案及评分标准 2024.4",
+        "choice_answer_key": {
+          "questions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+          "key_sequence": "C,B,A,A,D,D,A,D,B,C,A,B,D,C,C",
+          "score_statement": "本部分共15题，每题3分，共45分"
+        },
+        "subjective_reference_answers": {
+          "Q16": {"score_header": "（7分）", "scope": "可从联系、发展、中华文化等角度回答", "generic_level_table": true},
+          "Q17": {"score_header": "（7分）", "scope": "行政权力、市场准入负面清单、市场竞争、经营者和消费者权益、政府依法履职与监管"},
+          "Q18": {"score_header": "（20分）", "subquestions": {"（1）": "2分+6分", "（2）": "6分", "（3）": "6分"}, "scope": "教育人才、研发投入、数字经济、科技体制改革；政协协商民主；传统产业与未来产业"},
+          "Q19": {"score_header": "（6分）", "scope": "诉讼时效、赡养义务、老年人权益、公序良俗、人文关怀与和谐家庭"},
+          "Q20": {"score_header": "（8分）", "scope": "设备更新和以旧换新、物流成本、产业链供应链、制度型开放、市场准入、两个市场两种资源"},
+          "Q21": {"score_header": "（7分）", "scope": "以人民为中心发展思想、系统优化、现代化产业体系", "generic_level_table": true}
+        },
+        "generic_level_tables": {
+          "Q16_after": {"rows": ["水平4", "水平3", "水平2", "水平1"], "ranges": ["5～7分", "3～4分", "1～2分", "0分"], "question_specific_slots": false},
+          "Q21_after": {"rows": ["水平4", "水平3", "水平2", "水平1"], "ranges": ["5～7分", "3～4分", "1～2分", "0分"], "question_specific_slots": false}
+        },
+        "absent_content": [
+          "无学生作答样卷、优秀/低分示例、错误遗漏、涂改圈划、教师批注、阅卷评分标记或个人实得分",
+          "无题级逐点知识分/材料分、替代答案、封顶或扣分条件；这些应回到同卷S4b2073bcc9e2核验"
+        ]
+      },
+      "same_exam_formal_source": {
+        "source_id": "S4b2073bcc9e2",
+        "rel_path": "2024模拟题/2024东城一模/细则/细则.pptx",
+        "format": "pptx",
+        "pages": 74,
+        "role": "评分材料",
+        "use": "题级细则/试题分析主载体"
+      },
+      "index_rows_observed": {
+        "exams_csv": {"line": 32, "has_answer": "N", "has_rubric": "Y"},
+        "exam_files_csv": {"line": 36, "role": "评分材料"},
+        "questions_csv": {"lines": [356, 357, 358, 359, 360], "question_ids": ["BJ-2024-DC-YIMO-Q16", "BJ-2024-DC-YIMO-Q17", "BJ-2024-DC-YIMO-Q18", "BJ-2024-DC-YIMO-Q19", "BJ-2024-DC-YIMO-Q21"]},
+        "rubric_links_csv": {"lines": [276, 278, 280, 282, 284, 286, 288, 290, 292, 294, 296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316], "question_ids": ["Q1", "Q3", "Q4", "Q16", "Q17", "Q18", "Q19", "Q21", "Q2", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15", "Q20"]}
+      },
+      "recommended_index_changes": {
+        "do_not_apply_here": true,
+        "exam_files": {
+          "line": 36,
+          "role": {"from": "评分材料", "to": "评分材料", "action": "retain at source level because the native title contains‘评分标准’ and Q16/Q21 carry official generic score bands"},
+          "role_evidence": "replace path-only evidence with: 混合载体；原生标题为‘思想政治参考答案及评分标准’，含Q1-Q15答案键及Q16-Q21参考答案；Q16/Q21附5～7、3～4、1～2、0分通用等级表；无题级逐点槽；同卷S4b2073bcc9e2承载详细评分。"
+        },
+        "exams": {
+          "line": 32,
+          "has_answer": {"from": "N", "to": "Y"},
+          "has_rubric": {"from": "Y", "to": "Y"},
+          "notes": "S7是答案键/主观参考答案与通用等级标准混合载体；题级细则主载体为S4b2073bcc9e2；无学生样卷层。"
+        },
+        "questions": {
+          "lines": [356, 357, 358, 359, 360],
+          "recommended_role_by_question": {
+            "Q16": "评分材料（保留通用等级表；不得拆出固定槽）",
+            "Q17": "参考答案",
+            "Q18": "参考答案；小问总分/答案结构保留，但不得把其答案段当逐点E1",
+            "Q19": "参考答案",
+            "Q21": "评分材料（保留通用等级表；不得拆出固定槽）"
+          },
+          "missing_row": "source S7视觉原件还含Q20（8分）完整答案，但questions.csv当前没有S7的Q20行；应在视觉定位‘physical p001 / logical page 2 / Q20’后新增一行，role=参考答案、score_value=8、variant=ocr_candidate或等价视觉候选，不能沿用不存在的OCR line_range。"
+        },
+        "rubric_links": {
+          "lines": [276, 278, 280, 292, 294, 296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316],
+          "answer_only_questions": "Q1-Q15：material_role从评分材料改为参考答案，material_kind从正式评分材料改为参考答案，pair_status改为已匹配参考答案；证据注明‘答案键，不证明主观E1’。",
+          "mixed_questions": "Q16、Q21：保留material_role=评分材料、material_kind=正式评分材料，用证据注明仅为通用等级区间，详细题级评分见S4b2073bcc9e2；Q17-Q20：material_role改为参考答案、material_kind改为参考答案、pair_status改为已匹配参考答案。Q20现有rubric_links行316可直接改角色，不要重复新增链接。",
+          "aggregate_status": "不要因本裁定改写exam_rubric_status总状态；正式评分状态仍由S4b2073bcc9e2决定。"
+        },
+        "conversion_manifest": {
+          "task": "BJ-2024-DC-YIMO",
+          "sources": "S7源级继续位于sources['评分材料']，不复制成第二份sources['参考答案']；通过exams.has_answer=Y和题级分层保留答案层。",
+          "exceptions": {"remove": "无独立参考答案文件", "reason": "S7本身提供独立答案键和主观参考答案。"}
+        }
+      }
+    },
+    {
+      "source_id": "S91e28443e7a1",
+      "exam_id": "BJ-2024-XC-YIMO",
+      "decision": {
+        "canonical_role": "参考答案",
+        "canonical_label": "独立参考答案（附通用等级描述；非正式题级评分细则）",
+        "four_way_classification": "独立参考答案",
+        "mixed_carrier": true,
+        "mixed_carrier_scope": "文档主体是Q1-Q15答案键和Q16-Q19参考答案；Q17之后附一张四级通用等级描述表。该表没有分值区间、题级采分点或固定评分槽，因此不改变参考答案主角色。",
+        "is_formal_scoring_material": false,
+        "is_independent_answer_source": true,
+        "is_exam_paper": false,
+        "is_student_sample": false,
+        "is_teacher_annotated_sample": false,
+        "has_choice_answer_key": true,
+        "has_subjective_reference_answers": true,
+        "has_point_by_point_scoring": false,
+        "has_generic_level_table": true,
+        "has_student_sample": false,
+        "confidence": "high",
+        "rationale": [
+          "原生标题为‘西城区高三统一测试试卷 思想政治答案及评分参考 2024.4’，第一部分直接给出Q1-Q15答案键。",
+          "第二部分给出Q16-Q19完整参考作答，Q18含（1）1分、（2）1分、（3）6分，Q19含各小问总分标题和完整作答，但正文没有逐点替代/扣分/封顶规则。",
+          "唯一表格位于Q17之后，是不带分值区间的通用水平1-4描述，不构成题级E1。",
+          "同卷Sf7bcf000f212的细则.docx才包含Q16-Q19题级固定评分、替代答案和材料分等正式信息。",
+          "OOXML无图形、嵌入对象、批注或修订；不存在学生样卷层。"
+        ]
+      },
+      "source_identity": {
+        "original_path": "/Users/wanglifei/Desktop/2024模拟题/西城一模/细则/补充材料/2024.4高三统一测试思想政治答案.docx",
+        "shared_copy_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/2024模拟题/西城一模/细则/补充材料/2024.4高三统一测试思想政治答案.docx",
+        "rel_path": "2024模拟题/西城一模/细则/补充材料/2024.4高三统一测试思想政治答案.docx",
+        "format": "docx",
+        "bytes": 42156,
+        "sha256": "91e28443e7a1bb0e34bca296c1123a8f31b6e7ed15bdb682f73f9dd8f5a8a0a2",
+        "original_and_shared_copy_same_sha256": true,
+        "source_manifest_line": 82,
+        "exam_files_line": 82,
+        "docx_structure": {"paragraphs": 45, "tables": 1, "body_children_including_sectpr": 47, "media_entries": 0, "drawings": 0, "pict": 0, "objects": 0, "comments": 0, "tracked_insertions": 0, "tracked_deletions": 0, "rendered_pages": 2},
+        "native_xml_sha256": "f7d98cf70023c800cd8a21a4d81bf3da512e13ec4f3b115ff09412f8a973a5ac",
+        "native_text_evidence": {
+          "raw_path": "DeepSeek_政治题库资料库_20260918/evidence/S91e28443e7a1/native_text/raw.md",
+          "raw_sha256": "da4d13a0264f83068211dabf31dcfb490121fbaf8c056a78560477b792c50550"
+        }
+      },
+      "content_scope": {
+        "document_title": "西城区高三统一测试试卷 思想政治答案及评分参考 2024.4",
+        "choice_answer_key": {"questions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "key_sequence": "C,A,D,B,B,C,A,D,D,A,B,C,B,A,C", "score_statement": "第一部分共15题，每题3分，共45分"},
+        "subjective_reference_answers": {
+          "Q16": {"score_header": "（7分）", "scope": "市人大立法、问题导向、科学/民主立法、全过程人民民主"},
+          "Q17": {"score_header": "（9分）", "scope": "生态价值观、人与自然和谐共生、实践与认识、联系发展、对立统一、否定之否定", "generic_level_table": true},
+          "Q18": {"score_header": "（8分）", "subquestions": {"（1）": "1分", "（2）": "1分", "（3）": "6分"}, "scope": "回避制度、诉讼代理人、成年子女赡养及法律对道德建设的促进"},
+          "Q19": {"score_header": "（31分）", "subquestions": {"（1）": "3分", "（2）": "2分", "（3）": "1分", "（4）": "9分", "（5）": "6分", "（6）": "10分"}, "scope": "未来产业数据、举国体制、概念关系、新型举国体制、科学/辩证/创新思维、国际竞争与开放"}
+        },
+        "generic_level_table": {"rows": ["水平4", "水平3", "水平2", "水平1"], "score_ranges": [], "question_specific_slots": false, "placement": "Q17之后"},
+        "absent_content": [
+          "无题级逐点知识分/材料分、固定槽、替代关系、封顶或扣分条件",
+          "无学生作答样卷、教师批注、阅卷评分标记或个人实得分"
+        ]
+      },
+      "same_exam_formal_source": {"source_id": "Sf7bcf000f212", "rel_path": "2024模拟题/西城一模/细则/细则.docx", "format": "docx", "role": "评分材料", "use": "Q16-Q19题级正式评分细则"},
+      "index_rows_observed": {
+        "exams_csv": {"line": 41, "has_answer": "N", "has_rubric": "Y"},
+        "exam_files_csv": {"line": 82, "role": "评分材料"},
+        "questions_csv": {"lines": [778, 779, 780, 781], "question_ids": ["BJ-2024-XC-YIMO-Q16", "BJ-2024-XC-YIMO-Q17", "BJ-2024-XC-YIMO-Q18", "BJ-2024-XC-YIMO-Q19"]},
+        "rubric_links_csv": {"lines": [898, 900, 902, 904, 906, 908, 910, 912, 914, 916, 918, 920, 922, 924, 926, 928, 930, 932], "row_count": 18}
+      },
+      "recommended_index_changes": {
+        "do_not_apply_here": true,
+        "exam_files": {"line": 82, "role": {"from": "评分材料", "to": "参考答案"}, "role_evidence": "文档原生标题为‘答案及评分参考’，含Q1-Q15答案键、Q16-Q19参考答案和一张通用等级描述表；无题级E1细则；正式评分由Sf7bcf000f212承载。"},
+        "exams": {"line": 41, "has_answer": {"from": "N", "to": "Y"}, "has_rubric": {"from": "Y", "to": "Y"}, "notes": "S91为独立参考答案，附通用等级描述，不含学生层；正式题级评分仍由Sf7bcf000f212提供。"},
+        "questions": {"lines": [778, 779, 780, 781], "change": {"role": ["评分材料", "参考答案"]}},
+        "rubric_links": {"lines": [898, 900, 902, 904, 906, 908, 910, 912, 914, 916, 918, 920, 922, 924, 926, 928, 930, 932], "change": {"material_role": ["评分材料", "参考答案"], "material_kind": ["正式评分材料", "参考答案"], "pair_status": ["当前状态", "已匹配参考答案"]}, "exam_rubric_status": "保留考试级正式评分状态，不因S91角色变更覆盖Sf7正式细则的状态；证据附注‘本行仅证明答案，不证明E1’。"},
+        "answer_key_index_gap": "S91原件给出Q1-Q15完整答案键，但现有questions/rubric_links因原题索引缺Q5而没有BJ-2024-XC-YIMO-Q5的S91关联行；待Q5题行补齐后增加一条参考答案链接，不能把缺行解释为原件缺答案。",
+        "conversion_manifest": {"sources": {"from": "评分材料", "to": "参考答案"}, "exceptions": {"remove": "无独立参考答案文件", "reason": "S91为独立参考答案文件"}}
+      }
+    },
+    {
+      "source_id": "S85ebe0578ce8",
+      "exam_id": "BJ-2024-XC-ERMO",
+      "decision": {
+        "canonical_role": "参考答案",
+        "canonical_label": "独立参考答案（附两张通用等级描述；非正式题级评分细则）",
+        "four_way_classification": "独立参考答案",
+        "mixed_carrier": true,
+        "mixed_carrier_scope": "文档主体是Q1-Q15答案键和Q16-Q19参考答案；Q17之后、Q18之后各附一张内容相同的四级通用等级描述表。两张表没有分值区间、题级采分点或固定评分槽。",
+        "is_formal_scoring_material": false,
+        "is_independent_answer_source": true,
+        "is_exam_paper": false,
+        "is_student_sample": false,
+        "is_teacher_annotated_sample": false,
+        "has_choice_answer_key": true,
+        "has_subjective_reference_answers": true,
+        "has_point_by_point_scoring": false,
+        "has_generic_level_table": true,
+        "has_student_sample": false,
+        "confidence": "high",
+        "rationale": [
+          "原生标题为‘西城区高三模拟测试试卷 思想政治答案及评分参考 2024.5’，第一部分直接给出Q1-Q15答案键。",
+          "第二部分给出Q16-Q19完整参考作答，其中Q18有四个小问的总分标题（8、10、6、9分），但没有逐点替代/扣分/封顶规则。",
+          "两张表都是不带分值区间的通用水平1-4描述，不能登记为同题E1评分槽。",
+          "同卷Sf2e1772f20ed的细则.docx才包含题级固定评分、替代答案、任选关系和材料分等正式信息。",
+          "OOXML无图形、嵌入对象、批注或修订；不存在学生样卷层。"
+        ]
+      },
+      "source_identity": {
+        "original_path": "/Users/wanglifei/Desktop/2024模拟题/西城二模/细则/补充材料/高三模拟测试思想政治答案.docx",
+        "shared_copy_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/原材料/2024模拟题/西城二模/细则/补充材料/高三模拟测试思想政治答案.docx",
+        "rel_path": "2024模拟题/西城二模/细则/补充材料/高三模拟测试思想政治答案.docx",
+        "format": "docx",
+        "bytes": 43143,
+        "sha256": "85ebe0578ce81b181f9de0a1de0850bdd12c651609b8c9f8232c9aead56d3fd8",
+        "original_and_shared_copy_same_sha256": true,
+        "source_manifest_line": 87,
+        "exam_files_line": 87,
+        "docx_structure": {"paragraphs": 27, "tables": 2, "body_children_including_sectpr": 30, "media_entries": 0, "drawings": 0, "pict": 0, "objects": 0, "comments": 0, "tracked_insertions": 0, "tracked_deletions": 0, "rendered_pages": 2},
+        "native_xml_sha256": "a52ed8078c309f2ded74cb01dc1205f45cddab935f3ec651437974e206ee0bc2",
+        "native_text_evidence": {
+          "raw_path": "DeepSeek_政治题库资料库_20260918/evidence/S85ebe0578ce8/native_text/raw.md",
+          "raw_sha256": "f9a3901668afbc67426857ce02f8fe8ee472ab1fa1d0b647072c82a08bbd2266"
+        }
+      },
+      "content_scope": {
+        "document_title": "西城区高三模拟测试试卷 思想政治答案及评分参考 2024.5",
+        "choice_answer_key": {"questions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "key_sequence": "B,D,D,D,C,D,A,C,B,B,B,A,C,A,C", "score_statement": "第一部分共15题，每题3分，共45分"},
+        "subjective_reference_answers": {
+          "Q16": {"score_header": "（8分）", "scope": "依法诚信经营、惩罚性赔偿、民事权利边界、消费者理性维权、价值取向平衡"},
+          "Q17": {"score_header": "（9分）", "scope": "人类社会进程、生产力与生产关系、经济基础与上层建筑、马克思主义中国化时代化、创新发展、国际竞争与全球化", "generic_level_table": true},
+          "Q18": {"score_header": "（33分）", "subquestions": {"（1）": "8分", "（2）": "10分", "（3）": "6分", "（4）": "9分"}, "scope": "归纳推理、法治保护农用地、国有经济与乡村振兴、文化/经济/基层治理/思维等角度", "generic_level_table": true},
+          "Q19": {"score_header": "（5分）", "scope": "人类命运共同体、反对集团政治和实力逻辑、全球协作与国际秩序"}
+        },
+        "generic_level_tables": {
+          "after_Q17": {"rows": ["水平4", "水平3", "水平2", "水平1"], "score_ranges": [], "question_specific_slots": false},
+          "after_Q18": {"rows": ["水平4", "水平3", "水平2", "水平1"], "score_ranges": [], "question_specific_slots": false}
+        },
+        "absent_content": [
+          "无题级逐点知识分/材料分、固定槽、替代关系、封顶或扣分条件",
+          "无学生作答样卷、教师批注、阅卷评分标记或个人实得分"
+        ]
+      },
+      "same_exam_formal_source": {"source_id": "Sf2e1772f20ed", "rel_path": "2024模拟题/西城二模/细则/细则.docx", "format": "docx", "role": "评分材料", "use": "Q16-Q19题级正式评分细则"},
+      "index_rows_observed": {
+        "exams_csv": {"line": 40, "has_answer": "N", "has_rubric": "Y"},
+        "exam_files_csv": {"line": 87, "role": "评分材料"},
+        "questions_csv": {"lines": [817, 818, 819, 820], "question_ids": ["BJ-2024-XC-ERMO-Q16", "BJ-2024-XC-ERMO-Q17", "BJ-2024-XC-ERMO-Q18", "BJ-2024-XC-ERMO-Q19"]},
+        "rubric_links_csv": {"lines": [934, 936, 938, 940, 942, 944, 946, 948, 950, 952, 954, 956, 958, 960, 962, 964], "row_count": 16}
+      },
+      "recommended_index_changes": {
+        "do_not_apply_here": true,
+        "exam_files": {"line": 87, "role": {"from": "评分材料", "to": "参考答案"}, "role_evidence": "文档原生标题为‘答案及评分参考’，含Q1-Q15答案键、Q16-Q19参考答案和两张通用等级描述表；无题级E1细则；正式评分由Sf2e1772f20ed承载。"},
+        "exams": {"line": 40, "has_answer": {"from": "N", "to": "Y"}, "has_rubric": {"from": "Y", "to": "Y"}, "notes": "S85为独立参考答案，附两张通用等级描述，不含学生层；正式题级评分仍由Sf2e1772f20ed提供。"},
+        "questions": {"lines": [817, 818, 819, 820], "change": {"role": ["评分材料", "参考答案"]}},
+        "rubric_links": {"lines": [934, 936, 938, 940, 942, 944, 946, 948, 950, 952, 954, 956, 958, 960, 962, 964], "change": {"material_role": ["评分材料", "参考答案"], "material_kind": ["正式评分材料", "参考答案"], "pair_status": ["当前状态", "已匹配参考答案"]}, "exam_rubric_status": "保留考试级正式评分状态，不因S85角色变更覆盖Sf2正式细则的状态；证据附注‘本行仅证明答案，不证明E1’。"},
+        "answer_key_index_gap": "S85原件给出Q1-Q15完整答案键，但现有原题/题号索引缺Q1、Q4、Q15，因此rubric_links没有三条对应S85行；待这些题行补齐后增加参考答案链接，不能把缺行解释为原件缺答案。",
+        "conversion_manifest": {"sources": {"from": "评分材料", "to": "参考答案"}, "exceptions": {"remove": "无独立参考答案文件", "reason": "S85为独立参考答案文件"}}
+      }
+    }
+  ],
+  "non_mutation": {
+    "shared_indexes_modified": false,
+    "shared_manifest_modified": false,
+    "question_bank_modified": false,
+    "raw_source_modified": false,
+    "only_written": [
+      "后勤管理/MD全库流水线_20260921/receipts/adjudicate_answer_roles_batch_a/adjudication.json",
+      "后勤管理/MD全库流水线_20260921/receipts/adjudicate_answer_roles_batch_a/adjudication.md"
+    ],
+    "rendering_note": "DOCX来源已用本机LibreOffice渲染为2页作版面确认；由于宿主缺少中文字体，正文判断以原生OOXML/native_text为准。S7已直接查看持久化p001渲染图。"
+  }
+}

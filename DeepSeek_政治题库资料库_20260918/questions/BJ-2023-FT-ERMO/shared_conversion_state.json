@@ -1,0 +1,54 @@
+{
+  "exam_id": "BJ-2023-FT-ERMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": 100,
+  "source_pages": {
+    "paper": 10,
+    "answer": 2
+  },
+  "question_hashes": {
+    "BJ-2023-FT-ERMO-Q1": "5bcae46fe75bd60e36562565e24407efef2ad2d4af2f530cbe224155cde3bc0d",
+    "BJ-2023-FT-ERMO-Q2": "c8d2ee861d8831dfa42c63bb265083a2adaa7438bd88ecd2cdb1f4c0caf35d61",
+    "BJ-2023-FT-ERMO-Q3": "6908b4e1d5d958626509f7571ffa197b1430874f546bbc7f24586cbd97743b6a",
+    "BJ-2023-FT-ERMO-Q4": "90017356ccbe77071a8726d211b4dcd93395c8f769959418d9867d33eb6bb5df",
+    "BJ-2023-FT-ERMO-Q5": "9f9624ce3b1976fdc97355f714498bea4048884c5a4511f35097091da8aef976",
+    "BJ-2023-FT-ERMO-Q6": "faeab18adca8d49d76cba849b5f1203591cc6dee392a1f250f44b4f389dad5f9",
+    "BJ-2023-FT-ERMO-Q7": "f5a77873c37989e8d36988a10fb4175b0009364ebfe09cc6dcdb6a2abd76f086",
+    "BJ-2023-FT-ERMO-Q8": "6e5441606f03786efd3d6f0e10bf44c9fffadabf9df638bcfdbbb7abd6c5f0c0",
+    "BJ-2023-FT-ERMO-Q9": "c2c42266a42af067a8c270a36df79f6cbdda7a32937c1cb9608fb03dd4b1e4a3",
+    "BJ-2023-FT-ERMO-Q10": "1633bed3e2a4c757d34454dda77041e94cb092899ed18fad09374763e04a048e",
+    "BJ-2023-FT-ERMO-Q11": "79b64d569eff29fce6231d4b25221a759c185b9cc3acbc0fec3678c54c0dcb87",
+    "BJ-2023-FT-ERMO-Q12": "086629b8e93ab86f6d89afb3eb608b52edfb5051f9f0de0d61f7d37bf18416e7",
+    "BJ-2023-FT-ERMO-Q13": "d64c55d5370182dd0de5c9bedde1186dcb88f9196f7b16c0c2516926039d35e9",
+    "BJ-2023-FT-ERMO-Q14": "8a8a450a3a1ad42be7b48f2c9de50710db363ea823d604923987ff09f912ca20",
+    "BJ-2023-FT-ERMO-Q15": "630f759d4f14f93f15cbc63557206dc2024ba154fbf2a68d7d13ceeed82ac424",
+    "BJ-2023-FT-ERMO-Q16": "af5ddc7951b67d5a4a068a23e4947a203fb83f2afc521d0da8c50c92df023fd3",
+    "BJ-2023-FT-ERMO-Q17": "30876316cc6a446517ce0744bf16df228dda9a6632cbe1d8a978b46f8dc79366",
+    "BJ-2023-FT-ERMO-Q18": "465e638108dbafbd977828ab023921f10fd6020c89370c823f2652a9621cb423",
+    "BJ-2023-FT-ERMO-Q19": "9b72524680125862b74010016c3df31c8f78322b14deb635bfce4483e8a67525",
+    "BJ-2023-FT-ERMO-Q20": "09d1fba0b3b3e96c4589d348993312213b17c56c7bd2574cba0a6297012fdb26",
+    "BJ-2023-FT-ERMO-Q21": "c9a29b6e43245a1462ce0b4efd1e48ac2f25dcf6614c2638dc3b3817edc8cb1a",
+    "BJ-2023-FT-ERMO-Q22": "95952d14327967e59a3b746efe01c93483d8fa821fabd54c7d7916011dd422b8"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "现有来源为原卷10页与同卷参考答案2页；答案保持E3 only，不升级正式E1",
+    "正式同卷评分细则未提供",
+    "无个人学生原答、批注或实得分来源；student layer=N/A_with_basis"
+  ],
+  "primary_review_path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-FT-ERMO_v2_primary_review.json",
+  "primary_review_sha256": "9bab4cf5e286f71f32fd8d24fb62ed9740d1507a086a2f037adec47b93ed3e90",
+  "independent_review_path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-FT-ERMO/versioned_small_delta_v2_20260922/acceleration_integrated_v2_20260922/independent_review/review.json",
+  "independent_review_sha256": "9c602abc06676a3a8f1de3288738d04f9e010330581dac787b19098674ba0d5c",
+  "candidate_manifest_sha256": "28098b84aed771ddab84a5e2be11d72af4afa37c390e132d2d386c75dcaf0cbe",
+  "materialization_sha256": "5c76ba1ad93fc442504d2c67c8e941f241e5f5fdf3cfeebdc27b6184ecb2c169",
+  "source_carrier_ids": [
+    "Sd92728609289",
+    "Saccdd9d42a77"
+  ],
+  "canonical_variant": "visual_checked_shared",
+  "accepted_at": "2026-09-22T18:10:11.553833+00:00"
+}

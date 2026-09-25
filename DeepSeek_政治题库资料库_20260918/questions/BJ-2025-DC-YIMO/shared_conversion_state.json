@@ -1,0 +1,73 @@
+{
+  "exam_id": "BJ-2025-DC-YIMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2025-DC-YIMO-Q1": "bb5f357e4cd512da1f11d5a18f580c002ee90e7bb7098e92e501eca2db4d0923",
+    "BJ-2025-DC-YIMO-Q2": "84fd86fbda11d4274dfcf0b2b8bed412c50caa15f775fc460c9ca00dc5099835",
+    "BJ-2025-DC-YIMO-Q3": "d4d153de1fc48e55c2a6f548abb4287769accde7b15a04b10b80b398c9d93763",
+    "BJ-2025-DC-YIMO-Q4": "cbe9ceddffed39476a37a1e85d8b2051eadf51387d904423a0222e2710ae69f5",
+    "BJ-2025-DC-YIMO-Q5": "b6c2e50b43329f267d702cf262cb8c19d63528d049b0c463445b0551d0abc837",
+    "BJ-2025-DC-YIMO-Q6": "bd1b8b50b9083b0ecc4102595699fa7496b94f0390df8783d9139777edaeb352",
+    "BJ-2025-DC-YIMO-Q7": "eb9a3815b0382425da18e2a078ff09878b0c02bee14dd90d2d41164ee0f0ea19",
+    "BJ-2025-DC-YIMO-Q8": "0d7edaaa7e3bbbec17fdebcca1fe5275cabf5af5e4e89848c7c17ede34fb54ff",
+    "BJ-2025-DC-YIMO-Q9": "14edadbbd346ceb12535decb698616722f72f9960e3d83a7944d5e9a06f5185b",
+    "BJ-2025-DC-YIMO-Q10": "51a1620b054850eea5580803903fe0b88b4dec6dd1d50bf15d3fd1c3a3f65fb9",
+    "BJ-2025-DC-YIMO-Q11": "dd502ef56ae2e12acc676e4723f13171fadfb98f3b32faa94f76fa7f3e4d6878",
+    "BJ-2025-DC-YIMO-Q12": "4b5d280d8a5b944c308bf24803ee9082a64d6800e3ac79b2275d65bf4d8deb7d",
+    "BJ-2025-DC-YIMO-Q13": "d1b0aca809d58add294773fd88433d0f55856e315bde644b9772b60bc53ffab4",
+    "BJ-2025-DC-YIMO-Q14": "64425f7ba8fead646d0dd996213755b9c44b6a2a95f3e935e66d9f734cd90e3c",
+    "BJ-2025-DC-YIMO-Q15": "866ca74fc68dfe21648f9021b3487ac0de9f5998c723dd45ed0f4703727479c7",
+    "BJ-2025-DC-YIMO-Q16": "90f9a6c3e442cdee98ccf1017efbd273c9bcbad0a5bac9ebb3b5934d3835103c",
+    "BJ-2025-DC-YIMO-Q17": "23c961744f52f4e2913bec4cf94d5f35aed26d10ed54317d718170ea54c81a2d",
+    "BJ-2025-DC-YIMO-Q18": "c28e24da9e8a6ba48d524cfbdba20e77b8c6554754df42dcbf59b77773944caf",
+    "BJ-2025-DC-YIMO-Q19": "5b9e3cc7bfcf7e830c8bffd8f25a11a63bd12e6b4ec27f4c0f864637d64ddbfb",
+    "BJ-2025-DC-YIMO-Q20": "afe018a94c9c65827ccf01da0ac16067ddb963006db18bf92f6f5a540998e1ae",
+    "BJ-2025-DC-YIMO-Q21": "06ba6f2144cd23096cdd0d2a4a34fde691abe7ac7cd3bb4a458c2f83f1a58336"
+  },
+  "source_pages": {
+    "paper": 9,
+    "rubric": 6
+  },
+  "source_page_total": 15,
+  "source_roles": {
+    "paper": "S46c444a91d49",
+    "rubric": "Sc254bbee61da"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件；原卷p8参考答案逐字保留为E3。",
+    "Q1–Q15没有题级正式E1评分材料；不得以E3答案或混合等级表补造E1。",
+    "Q16–Q21正式评分材料为细则PDF各题“本题标准和变通”段；学生表现与教学启示只保留为报告文字，不当作学生原答或正式评分点。",
+    "未提供学生作答、批注、教师批改界面或实得分；学生层按N/A_with_basis。",
+    "Q5漫画右侧署名微字保留原图、p2页位及部分读法；像素不足以可靠辨认，且不影响作答。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q5",
+      "location": "原卷PDF p2漫画右侧署名微字；原图 assets/figures/BJ-2025-DC-YIMO-Q5_cartoon.png",
+      "partial_reading": "署名所在行位置可定位，但现有像素不足以逐字可靠转写；不猜作者姓名。",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "round": "r1 independent GPT-6 Luna/max B",
+      "basis": "独立复核与主控亲看原图确认该署名不影响作答；按用户规则保留原图、页位和部分读法。"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-dc-yimo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T10:14:28.395789+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T10:16:20.743095+00:00"
+}

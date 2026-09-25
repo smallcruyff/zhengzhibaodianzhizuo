@@ -1,0 +1,2 @@
+{"ts": "2026-09-24T00:00:00-07:00", "ruler": "示例-不是真实裁定", "scope": {"unit_id": "BJ-2024-CY-ERMO-Q20"}, "field": "归属_X2", "value": "IN", "reason": "示例：假设主代理核实细则后确认该小问选必二可用角度成立", "rule_version": "2026-09-24-attribution-v1"}
+{"ts": "2026-09-24T00:00:00-07:00", "ruler": "示例-不是真实裁定", "scope": {"qid": "BJ-2024-CY-ERMO-Q20"}, "field": "admission", "value": "完整题-有E1", "reason": "示例：格式演示，qid粒度会应用到该题所有小问行", "rule_version": "2026-09-24-attribution-v1"}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "docx-readable-support-independent-review.v1",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "reviewer": "group_2025_east_leader_independent_of_support_producer",
+  "overall": "PASS_SUPPORT_AND_Q19_EXACT_DELTA_INDEPENDENTLY_REVIEWED",
+  "scope": "new DOCX readable support only; existing exam/scanned supplement/22 question metadata not redone",
+  "source_identity": {
+    "original_and_isolated_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "same_sha": true,
+    "source_id": "S73c36c3077dc"
+  },
+  "render_review": {
+    "derived_pdf_pages": 22,
+    "page_images_present": 22,
+    "pages_visually_opened_independently": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
+    "p001_p021_chinese_readable": true,
+    "p022_border_only_residual": true,
+    "replacement_glyphs_or_boxes_observed": false,
+    "left_E3_right_E1_table_structure_visible": true
+  },
+  "native_and_pagination_review": {
+    "ooxml_body_tables": 7,
+    "ooxml_table_dimensions": "7 x (1 row, 2 columns)",
+    "native_word_page_count_recorded": 12,
+    "native_word_anchor_pages_opened": [10,11],
+    "native_word_anchor_result": "PASS_Q22_two_page_anchor_readable",
+    "derived_page_map_result": "PASS_question_and_table_logical_anchors",
+    "mapping_limit_preserved": "No exact native Word page breaks were invented for p1-p9; derived 22-page pagination is not claimed equivalent to Word 12-page pagination."
+  },
+  "question_coverage": {
+    "Q16": [1,2,3,4],
+    "Q17": [4,5],
+    "Q18": [6,7,8,9],
+    "Q19": [9,10,11,12],
+    "Q20": [12,13,14],
+    "Q21": [14,15,16,17],
+    "Q22": [17,18,19,20,21,22]
+  },
+  "source_specific_finding": {
+    "status": "CONFIRMED",
+    "question_id": "BJ-2025-CY-ERMO-Q19",
+    "source_location": "DOCX table 4 right E1 column",
+    "docx_characters": 927,
+    "existing_native_md_characters": 57,
+    "finding": "The readable DOCX visibly contains the three complete suggestion/reason scoring groups before the final fallback prompt; the existing native MD/candidate E1 retains only that prompt.",
+    "source_specific_delta_sha256": "fd9c2ff9e5fb72dc9a0e80c94afcd325abf334864be8572011fa9b4144afcea6",
+    "exact_delta_status": "proposal_not_applied_independent_review_PASS",
+    "exact_delta_sha256": "98fca9b84c5b0ed296140e3f0998f295ddf0a0da84125ca5e55dd2379d525278",
+    "exact_delta_review_path": "q19_delta_verification.json",
+    "exact_delta_review_sha256": "52256b07a37bc9e43a2735774276e9184cd6080359ded59a4f677574c9e388e3"
+  },
+  "artifact_sha256": {
+    "support_manifest": "bff4a87384284ebf2bd50b327ed93d8b3dac221b353e7e5ab51caef3b677e093",
+    "production_verification": "c15dd31050f5f74cba93e9466c3ae30a3c072a8b5802b035a60cfac78fdcf8c7",
+    "page_block_map": "47016628a0f441052c34f367eebbbb76572080867332431ea09656c1a30a17bb"
+  },
+  "write_boundary": {
+    "source_docx_modified": false,
+    "controller_ready_modified": false,
+    "question_files_modified": false,
+    "shared_bank_or_indexes_modified": false,
+    "system_fonts_or_fontconfig_modified": false,
+    "writes_confined_to_review": true
+  },
+  "conclusion": "PASS for the full-page readable witness and native table/page mapping. The prior claim that only Word pages 10-11 were readable is superseded by the same-SHA isolated 22-page support, while the native 12-page pagination boundary remains explicit. Q19 is a real source-specific E1 omission; its exact delta has an independent PASS review and remains unapplied for controller single-write handling."
+}

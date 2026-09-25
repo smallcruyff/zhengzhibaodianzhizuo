@@ -1,0 +1,49 @@
+{
+  "schema": "q17_caption_delta_evidence_mapping.v1",
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "question_id": "BJ-2020-BJ-GAOKAO-Q17",
+  "source_boundary": {
+    "teacher_source_id": "Sd09df25048f5",
+    "teacher_source_pages": [5, 15, 16],
+    "teacher_pdf_role": "p1-p7原卷题面；p8-p18参考答案/解析E3",
+    "teacher_pdf_sha256": "d09df25048f53c5664cda0d4978d58a4c6b4e3075d8b31852f0ecdf245f80ee7",
+    "image_boundary": "img-006与img-007按原始PNG边界保留，不裁切、不重绘、不替换"
+  },
+  "mappings": [
+    {
+      "payload_block": "img-006 网页截图",
+      "evidence": [
+        "candidate/evidence/assets/embedded/img-006.png",
+        "candidate/evidence/source_pages/teacher/p005.png"
+      ],
+      "read_scope": [
+        "面包屑可辨为当前位置：首页 > 便民查询 > 价格监测 > 蔬菜",
+        "左侧标题便民查询；左侧菜单价格查询、价格监测",
+        "顶部栏目蔬菜、粮食、食用油、肉蛋水产、食盐、生猪市场",
+        "两行十六项网格品类；白萝卜黄色选中"
+      ],
+      "unread_boundary": "浅色背景、网站标志和未达到逐字可靠程度的微小字不扩写"
+    },
+    {
+      "payload_block": "img-007 坐标与序列",
+      "evidence": [
+        "candidate/evidence/assets/embedded/img-007.png",
+        "candidate/evidence/source_pages/teacher/p005.png"
+      ],
+      "read_scope": [
+        "纵轴单位元/斤",
+        "纵轴0至1.6、步长0.2的刻度",
+        "横轴日期；隔日标签5/18至6/7；每日标记共21点",
+        "圆点=农贸零售价格、三角=超市零售价格、方块=批发价格",
+        "表内逐日读数全部以约值记录"
+      ],
+      "unread_boundary": "不把折线图的像素约读提升为精确原始数据库数值"
+    }
+  ],
+  "not_processed": [
+    "Q2",
+    "Q20",
+    "E1内容（仅随完整父稿原样继承）"
+  ],
+  "shared_modified": []
+}

@@ -1,0 +1,616 @@
+{
+ "batch_id": "c021",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "choice",
+ "n_units": 19,
+ "units": [
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q3",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "3",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q3`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：3\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q3.md`\n- 父稿SHA-256（生成前）：`9fb009d2c71224ffa485c56187e1473e729c7dc03f8c6c7a6c19a5e9db01d3eb`\n\n### [原卷题面（完整原生转写）]\n\n3．3000 多年的建城史和近870 年的建都史培育了北京市民“天下兴亡、匹夫有责”的爱国精神，积极进取、追求进步的精神状态，胸怀坦荡、文明有礼的优秀品质，孕 育了这座城市德泽育人、容载万物的独特城市品格。可见，城市精神\n\n①是一座城市软实力的重要体现，决定着城市的未来发展\n\n②可能与经济发展实力相矛盾，先进社会意识往往带有超前性\n\n③具有鲜明的区域性和时代性，是一座城市独特的精神气质\n\n④植根于一座城市的深厚历史，反映出市民所认同的价值追求\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第1页：[整页图](source_render/original/page-01.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[1]；评分/讲评PPTX张数：[4]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第3题 `D`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第4张](source_render/rubric/slide-04.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q4",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷DOCX教师批注（不属于学生层）]\n\n- P24，Comment 0，作者 东沣 井：锚定“③世界各国对中华文化的认同，有益于不同文明交流互鉴  ”；批注：文化认同的是本民族，对其他民族文化是尊重。\n\n### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q4`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：4\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q4.md`\n- 父稿SHA-256（生成前）：`21749f273e52a3e3b82128b3fbec9635925841d3bfe57c11d2cfc703a8f484b5`\n\n### [原卷题面（完整原生转写）]\n\n4．春节作为中国传统民俗节日，不仅是阖家团圆、辞旧迎新的日子，传承着和平、和睦、和谐等中华文明理念，也承载着家庭和睦、社会包容、人与自然和谐共生等全 人类共同价值。2023 年12 月22 日，第 78 届联合国大会协商一致通过决议，将春节（农历新年）确定为联合国假日。这体现出\n\n①中国践行全球文明倡议，倡导尊重世界文明多样性\n\n②中华文明的传播力影响力，增强了文化自信的底气\n\n③世界各国对中华文化的认同，有益于不同文明交流互鉴\n\n④联合国搭建国际合作广阔平台，维护国际合作秩序\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第1页：[整页图](source_render/original/page-01.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[1]；评分/讲评PPTX张数：[5]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第4题 `A`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第5张](source_render/rubric/slide-05.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q5",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "5",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷DOCX教师批注（不属于学生层）]\n\n- P28，Comment 1，作者 东沣 井：锚定“①意识活动的自觉选择性受自然灾害等客观条件制约  ”；批注：意识活动具有自觉选择性，该段材料体现了意识活动的这一特性，但并未体现其受制约。\n\n### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q5`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：5\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q5.md`\n- 父稿SHA-256（生成前）：`3bf2c2dcffec1a8630ab4fa30aa974c734ad29470aded4c66400545d99d614db`\n\n### [原卷题面（完整原生转写）]\n\n5. 面对2023 年极端天气频发，农业农村部印发《关于紧急行动起来切实做好当前农机防灾救灾工作的通知》，要求各地农业农村部门充分预估各类灾害将给农业生产带 来的威胁，细化具有针对性、可操作性的农机防灾减灾预案措施。这体现出\n\n①意识活动的自觉选择性受自然灾害等客观条件制约\n\n②人能够把握深藏于自然天气现象背后的本质和规律\n\n③把人民群众利益作为农机防灾救灾工作的唯一标准\n\n④从事物固有的联系中把握事物，构建方案指导实践\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第1页：[整页图](source_render/original/page-01.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[1]；评分/讲评PPTX张数：[7]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第5题 `C`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第7张](source_render/rubric/slide-07.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q6",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q6`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：6\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q6.md`\n- 父稿SHA-256（生成前）：`c2efc6797c5f99e50cd242f59aadbc63c4cac4e688892d6cb569fc18a23bacfa`\n\n### [原卷题面（完整原生转写）]\n\n6．海草床可以经光合作用产生大量氧气，被誉为“海洋之肺”。近年来，受人类活动影响，全球约三分之一的海草床已经消失，严重影响到海岸带生态安全。我国科研 人员研究出了“海草培育移植法”，通过“优选种子——人工育苗——移植”的方法提 高了移植过程的人工可控性和种子成活率。这种技术\n\n①运用了联想思维，通过迁移搭建由此及彼的桥梁  ②运用了类比推理，模仿地上植物移植的技术方法\n\n③运用了超前思维，用发展眼光构想事物发展趋势  ④运用了发散思维，以寻求解决问题的多样性答案\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[8]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第6题 `A`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第8张](source_render/rubric/slide-08.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收整题",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q7",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "7",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q7`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：7\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q7.md`\n- 父稿SHA-256（生成前）：`661cf9154a0962d898c1cbfdfa6e83b71dad4612d32d08cc39be4abed5d1bb44`\n\n### [原卷题面（完整原生转写）]\n\n7．概念的外延是指具有概念所反映的本质属性的事物的范围，人们经常用图来表示概念外延之间的关系（见下图）。对此，下列说法正确的是\n\n①图甲，可以用来描述财产权和物权的关系  ②图乙，可以用来描述国体和政体的关系\n\n③图丙，如果Q 是社会主要矛盾，S 是生产力，P 是生产关系\n\n④图丁，如果Q 是领土，S 可以是领陆，P 可以是领空\n\nA．①③           B. ①④           C．②③           D．②④\n\n### [原卷嵌入图像：概念外延关系图（甲、乙、丙、丁）]\n![概念外延关系图（甲、乙、丙、丁）](assets/original_media/image2.png)\n- 图中文字、关系和箭头视觉转写：甲：S为外圈，P为S内的内圈（P属于S）。乙：S、P为相交的两个圆，交集区域未另标。丙：外圈为Q，内部由一条竖线分成左侧S、右侧P。丁：外圈为Q，内部由两条竖线划出左侧S、中间P及右侧未标区域。图下注明四图依次为“甲、乙、丙、丁”。\n\n### [原卷 DOCX 媒体拓扑补记（hdphoto1.wdp）]\n\n- `hdphoto1.wdp` 不是独立的第五幅可见题图，而是原卷 `word/media/image2.png`（本题 Q7 图）的 Word `a14:imgLayer` 增强层：`word/document.xml` 中 `rId13 → media/image2.png`，同一 `a:blip` 的扩展层为 `rId14 → media/hdphoto1.wdp`。\n- 该层唯一机器效果为 `brightnessContrast bright=\"40000\" contrast=\"40000\"`；它没有独立题号、标签或可单独解释的文字节点。基础图像仍以 `image2.png` 的逐字节资产和上方视觉转写为语义载荷。\n- 精确来源页/题号、段落与对象定位、关系链、资产 SHA 及“非孤立媒体”边界见 [hdphoto1 来源映射与机器拓扑](source_mapping/hdphoto1_mapping.json)；原始 WDP 资产见 [hdphoto1.wdp](assets/original_media/hdphoto1.wdp)。\n- WDP 单独为 JPEG-XR/HD Photo 层，在本运行环境未另行栅格化；这不构成缺文件或整页 conversion failure。其可读边界按对象级记录为“附着于 Q7 的 image2 增强层、无独立语义”；不对 WDP 像素臆造额外文字。\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[9]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账沿用 11 包 `sources/source_coverage.json`；完整原生转写沿用 `raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①③           B. ①④           C．②③           D．②④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第7题 `B`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第9张](source_render/rubric/slide-09.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q8",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "8",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q8`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：8\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q8.md`\n- 父稿SHA-256（生成前）：`ec4ff9370d7e668ea0344903397b9b0514be8195f9013e04f720c2faab9c67b4`\n\n### [原卷题面（完整原生转写）]\n\n《未成年人网络保护条例》（以下简称《条例》）经国务院第15 次常务会议通过，自2024 年1 月1 日起施行。回答第8、9 题。\n\n8. 《条例》是中国第一部专门性未成年人网络保护综合立法，重点就规范网络信息内容、保护个人信息、防治网络沉迷等作出规定。其出台历经7 年讨论、两次公开征求意见，这期间不同学科、不同领域的专家进行了多轮讨论、修改与完善。《条例》的出台\n\n①坚持了良法之治，保障未成年人的合法权利  ②创新了公民参与管理国家和社会事务的途径\n\n③体现人民意志，彰显全过程人民民主的独特优势\n\n④顺应时代要求，变革经济基础不适应上层建筑的因素\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[10]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第8题 `B`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第10张](source_render/rubric/slide-10.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q9",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "9",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q9`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：9\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q9.md`\n- 父稿SHA-256（生成前）：`f9569e866d16cd878df4922446624c3f49921d3aa84270ca33824069c17890a1`\n\n### [原卷题面（完整原生转写）]\n\n9．十三届全国政协召开第二次双周协商座谈会时，曾围绕《条例》的制定建言献策。其中，关于“建立选择性宵禁和上网时间提醒制度”等建议在修订后的未成年人保 护法“网络保护”专章中得到体现。这说明人民政协\n\n①搭建民主协商平台，为委员行使监督权提供了渠道\n\n②参与立法协商，在国家立法工作中起到了积极作用\n\n③充分履行参政议政职能，有利于推进政府严格执法\n\n④坚持问题导向，通过民主协商凝聚共识、为民尽责\n\nA．①②           B．①③           C．②④           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[11]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①③           C．②④           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第9题 `C`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第11张](source_render/rubric/slide-11.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q10",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "10",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q10`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：10\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q10.md`\n- 父稿SHA-256（生成前）：`192c3e44ce63771d0df8bb7e1ffbb3f0ce01cb9134b37c2d9c040cbb46733516`\n\n### [原卷题面（完整原生转写）]\n\n10．13 岁的小浩被网上的一款部落游戏吸引，并偷偷用母亲的支付宝向该款游戏充值虚 拟游戏币“宝石”，金额高达 4 万余元。依据上述事实和相关法律，可以推断出\n\nA．小浩是限制民事行为能力人，其交易行为可能无效\n\nB．小浩实施的行为并非真实意思表示，其交易行为无效\n\nC．小浩的行为与其年龄、智力不相适应，其交易行为无效\n\nD．小浩尚不具备完全的民事权利能力，其交易行为可能无效\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[13]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．小浩是限制民事行为能力人，其交易行为可能无效\nB．小浩实施的行为并非真实意思表示，其交易行为无效\nC．小浩的行为与其年龄、智力不相适应，其交易行为无效\nD．小浩尚不具备完全的民事权利能力，其交易行为可能无效",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第10题 `A`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第13张](source_render/rubric/slide-13.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q11",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "11",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷DOCX教师批注（不属于学生层）]\n\n- P62，Comment 2，作者 东沣 井：锚定“②由于涉案双方之间存在买卖合同关系，商家应当承担三倍惩罚性赔偿的违约责任 ”；批注：民事责任一般为补偿性，具有惩罚性，但有特殊规定的除外。例如产品责任中明知产品存在缺陷而仍然生产销售的，要承担惩罚性赔偿责任。约定的违约金或定金具有惩罚性。损害赔偿金则更多的是补偿性。\n\n### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q11`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：11\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q11.md`\n- 父稿SHA-256（生成前）：`e6dde906cb2455ea8e2294a6d92ea1f71e390612caf57ba0d56084ce1888b907`\n\n### [原卷题面（完整原生转写）]\n\n11．买家赵某连续多年在某牙膏旗舰店购买了多支“专业蛀牙修复”牙膏，因最终未达到商家宣传疗效反而导致自己错失口腔疾病最佳治疗时间而将商家诉至法院，请求 判决商家承担价款的三倍赔偿责任，以及自己看牙的医疗费损失。法院最终判决商 家赔偿其三倍价款，驳回了赵某要求商家赔偿医疗费用的诉讼请求。以下理解正确的是\n\n①商家虚假宣传行为侵犯了赵某作为消费者的知情权、自主选择权及安全消费权利\n\n②由于涉案双方之间存在买卖合同关系，商家应当承担三倍惩罚性赔偿的违约责任\n\n③牙膏不属于医疗器械、药品的范围，商家构成欺诈行为，应承担惩罚性赔偿责任\n\n④赵某如不能证明其牙病的发生与涉案产品间存在因果关系需承担举证不能的责任\n\nA．①②           B．①④           C．②③           D．③④\n\n### [原卷页图覆盖]\n\n- 原卷第2页：[整页图](source_render/original/page-02.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[2]；评分/讲评PPTX张数：[15]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①④           C．②③           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第11题 `D`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第15张](source_render/rubric/slide-15.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q12",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "12",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q12`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：12\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q12.md`\n- 父稿SHA-256（生成前）：`320bddf9fb4a3e172e6c067fd50c7c60829dd515e75cf486230b170ab72214ab`\n\n### [原卷题面（完整原生转写）]\n\n12．“冰天雪地也是金山银山。”从热闹的冰雪赛到火爆的冰雪游，从美轮美奂的冰雪雕塑到惊险刺激的冰雪运动，我国冰雪经济正展现出日益广阔的前景。文化、旅游、 体育赛事、健康养老等相关产业与冰雪经济深度融合发展，切实推动冰雪运动、冰 雪文化、冰雪装备、冰雪旅游全产业链发展。冰雪经济的发展有利于\n\n①需求创造供给，实现跨越发展，持续提升冰雪产业服务水平\n\n②创新消费场景，挖掘消费潜力，实现资源优势转为发展优势\n\n③优化营商环境，引导诚信经营，培育经济高质量发展新引擎\n\n④创新产品供给，释放产业活力，推动冰雪经济多业态共生发展\n\nA．①③           B．①④           C．②③           D．②④\n\n### [原卷页图覆盖]\n\n- 原卷第3页：[整页图](source_render/original/page-03.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[3]；评分/讲评PPTX张数：[17]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①③           B．①④           C．②③           D．②④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第12题 `D`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第17张](source_render/rubric/slide-17.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q14",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "14",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q14`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：14\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q14.md`\n- 父稿SHA-256（生成前）：`173eb6ec7cbc503f80cbfb689556485a9c5276ad5c92810846ac191d36bdd030`\n\n### [原卷题面（完整原生转写）]\n\n14．当前，新一轮科技革命和产业变革突飞猛进，以数据为关键生产要素、数字服务为核心、数字订购与交付为主要特征的数字贸易蓬勃兴起，已成为国际贸易发展的新 趋势和经济增长新引擎。\n\n2012-2022 年全球可数字化服务出口规模及增速\n\n注：2022 年，美国、英国等发达经济体数字服务出口 3.14 万亿美元，占全球市场的 77.2%。中国、印度等发展中经济体数字服务出口 9270 亿美元，在全球的占比为 22.8%，同比增长 14%。\n\n读图，据此推断正确的是\n\n①2015 年、2020 年、2022 年全球可数字化服务出口规模有明显下降\n\n②随着数字技术创新步伐加快，数字贸易为全球经济增长注入新动能\n\n③数字鸿沟是经济全球化中的重要挑战，需要深化全球数字治理与合作\n\n④全球治理体系加速变革，各经济体在数字贸易规则方面达成全面共识\n\nA．①②           B．①④           C．②③           D．③④\n\n### [原卷嵌入图像：2012—2022年全球可数字化服务出口规模及增速图]\n![2012—2022年全球可数字化服务出口规模及增速图](assets/original_media/image3.png)\n- 图中文字、关系和箭头视觉转写：柱状图表示规模（亿美元），折线表示增速（%）。横轴为2012—2022年；左纵轴0—50000，右纵轴-5%—20%。折线标注的年度增速依次为：2012年3%、2013年7%、2014年10%、2015年-3%、2016年3%、2017年8%、2018年11%、2019年5%、2020年2%、2021年16%、2022年3%。柱体总体呈波动上升趋势，但2015年出现明显骤降（柱高远低于2014年和2016年，与折线当年-3%的低点大致对应，约为其余各年柱高的五分之一左右），2021—2022年达到约四万亿美元规模；图例为“规模（亿美元）”和“增速（%）”。不臆造未在柱体上标出的精确数值。\n- 未标柱值的完整读图约值表（单位、轴、组、系列和非印刷精度边界见 [image3 机器读图表](source_mapping/image3_chart_reading.json)）：\n\n  | 年份 | 组 | 系列 | 读取轴 | 单位 | 柱高约值 | 读图边界 |\n  |---:|---|---|---|---|---:|---|\n  | 2012 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 22,000 | 柱体未印数值，非精确统计数 |\n  | 2013 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 24,000 | 柱体未印数值，非精确统计数 |\n  | 2014 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 26,500 | 柱体未印数值，非精确统计数 |\n  | 2015 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 25,500 | 柱体未印数值，非精确统计数（2026-09-22 主控像素复核：柱顶y≈253、柱底y≈449，与2014/2016柱高相近；此前“约4,500”系把压在柱身上的“-3%”折线点误作柱顶，已撤销） |\n  | 2016 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 26,500 | 柱体未印数值，非精确统计数 |\n  | 2017 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 28,500 | 柱体未印数值，非精确统计数 |\n  | 2018 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 31,500 | 柱体未印数值，非精确统计数 |\n  | 2019 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 33,500 | 柱体未印数值，非精确统计数 |\n  | 2020 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 34,000 | 柱体未印数值，非精确统计数 |\n  | 2021 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 39,500 | 柱体未印数值，非精确统计数 |\n  | 2022 | 柱状 | 全球可数字化服务出口规模 | 左轴 | 亿美元 | 约 40,500 | 柱体未印数值，非精确统计数 |\n\n  上表是按左轴刻度和柱顶像素读出的近似范围，不是图中印刷精确值；不得据此反推未显示的精确统计数。折线的右轴增速标签仍按图中印刷值保留，不与柱值混轴。\n\n### [原卷页图覆盖]\n\n- 原卷第3页：[整页图](source_render/original/page-03.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[3]；评分/讲评PPTX张数：[20]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账沿用 11 包 `sources/source_coverage.json`；完整原生转写沿用 `raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．①②           B．①④           C．②③           D．③④",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第14题 `C`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第20张](source_render/rubric/slide-20.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SJS-YIMO-Q15",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "num": "15",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [身份与父稿保护]\n\n- question_id: `BJ-2024-SJS-YIMO-Q15`\n- exam_id: `BJ-2024-SJS-YIMO`\n- 题号：15\n- 题型：选择题\n- 分值：3分\n- candidate_status: `isolated_candidate_not_accepted`\n- 共享父稿：`DeepSeek_政治题库资料库_20260918/questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q15.md`\n- 父稿SHA-256（生成前）：`dc741bb6016cdf35386f1381d097bab848a1c17b515f5cad631d5fcb2586baa4`\n\n### [原卷题面（完整原生转写）]\n\n15．2023 年是“一带一路”倡议提出十周年。作为“一带一路”倡议的“总设计师”，\n\n习近平主席在多个场合对“一带一路”建设的指导原则、丰富内涵、目标路径等进 行了深刻阐述。\n\n| 时  间 | 场    合 | 主    旨 |\n| --- | --- | --- |\n| 2013.9.7 | 纳扎尔巴耶夫大学 | 弘扬人民友谊 共同建设“丝绸之路经济带” |\n| 2016.8.17 | 推进“一带一路”建设工作座谈会 | 让“一带一路”建设造福沿线各国人民 |\n| 2018.9.3 | 中非合作论坛北京峰会 | 携手共同命运 同心促发展 |\n| 2023.10.18 | 第三届“一带一路”国际合作高峰论坛开幕式 | 建设开放包容、互联互通、共同发 展的世界 |\n\n上述资料最适合论证下列哪一观点\n\nA．倡导国际创新合作，让创新成果惠及全世界 B．推行对外开放国策，助力世界经济共同繁荣\n\nC．坚持和平发展道路，推动构建人类命运共同体 D．坚持互学互鉴，加强世界各民族文化交流融合\n\n### [原卷页图覆盖]\n\n- 原卷第3页：[整页图](source_render/original/page-03.png)\n- 原卷内附参考答案位于第7—8页，统一在下方答案层和 `raw_extraction/reference_answer_native_full.md` 记录。\n\n### [全部来源页覆盖]\n\n- 原卷页：[3]；评分/讲评PPTX张数：[21]。\n- 本候选不只依赖文字提取：原卷8页、评分PPTX 67张整页渲染均保留；图像、箭头、表格、跨页题面和原生文件均可回查。\n- 全卷页/幻灯片覆盖台账：`sources/source_coverage.json`；完整原生转写：`raw_extraction/original_native_full.md`、`raw_extraction/reference_answer_native_full.md`、`raw_extraction/rubric_native_full.md`。\n\n### [本题未决]\n\n- 学生层未提供；需后续取得学生样卷或明确确认无此类源件，才能关闭学生层缺口。\n- 同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 原卷DOCX的LibreOffice渲染页存在部分中文字体缺失；本候选以原生DOCX文字/表格、嵌入原图和原始DOCX为文字保真依据，渲染页仅作页位、结构和图像核对。",
+   "options_text": "A．倡导国际创新合作，让创新成果惠及全世界 B．推行对外开放国策，助力世界经济共同繁荣\nC．坚持和平发展道路，推动构建人类命运共同体 D．坚持互学互鉴，加强世界各民族文化交流融合",
+   "answer_key": {
+    "text": "### [参考答案（E3，同卷答案角色）]\n\n原卷内附参考答案：第15题 `C`。这是同卷参考答案（E3），不升级为正式评分细则。\n\n- 参考答案来源页：[第7页](source_render/original/page-07.png)、[第8页](source_render/original/page-08.png)。\n- 参考答案不等同于正式评分细则，不从答案文本臆拆固定评分槽。",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料边界]\n\n- rubric_status: `E3_answer_key_only_not_E1`\n- 结论：同卷评分PPTX对应页给出客观答案字母；未发现需要逐点配对的主观评分槽。不得将答案页作为主观E1。\n- 同卷评分材料页：[第21张](source_render/rubric/slide-21.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q1",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "1",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n1.当代中国的伟大社会变革，不是简单延续我国历史文化的母版，不是简单套用马克思主义经典作家设想的模板，不是其他国家社会主义实践的再版，也不是国外现代化发展的翻版。社会主义并没有定于一尊、一成不变的套路，只有把科学社会主义基本原则同本国具体实际、历史文化传统、时代要求紧密结合起来，在实践中不断探索总结，才能把蓝图变为美好现实。这说明\n\n①科学社会主义发展的一般进程是由各国地理环境、文化传统、外部因素等决定的\n\n②科学社会主义的产生、发展与资本主义社会的生产方式没有本质的、内在的关系\n\n③现实与历史之间是有联系的，当代中国的变革基于自身独特的历史和文化基础上\n\n④中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一\n\nA.①②            B.①③            C.②④          D.③④",
+   "options_text": "A.①②            B.①③            C.②④          D.③④",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：D**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q2",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "2",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n2.“探索浩瀚宇宙，发展航天事业，建设航天强国，是我们不懈追求的航天梦”。中国载人月球探测任务新飞行器名称已经确定，新一代载人飞船命名为“梦舟”，月面着陆器命名为“揽月”(如图)。\n\n下列说法正确的是\n\n①新飞行器命名通过抽象思维尽显中国式浪漫\n\n②新飞行器与其名称之间存在着必然的联系\n\n③令人遐想的命名体现意识活动的能动创造性\n\n④新飞行器的名称具有鲜明的中国文化特色\n\nA.①②     B．①③     C．②④     D．③④\n\n![梦舟与揽月命名图](assets/figures/image1.png)\n\n**图文全文**：顶部均为“中国载人月球探测任务新飞行器名称揭晓”。左图：“新一代载人飞船命名为 梦舟”；“‘梦舟’寓意载人月球探测承载中国人的航天梦，开启探索太空的新征程，也体现了与神舟、天舟飞船家族的体系传承。”右图：“月面着陆器命名 揽月”；“‘揽月’取自毛主席诗词‘可上九天揽月’，彰显中国人探索宇宙、登陆月球的豪迈与自信。”",
+   "options_text": "A.①②     B．①③     C．②④     D．③④",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：D**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收整题",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q3",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "3",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n3. 2024年开年最卷的竟然是文旅局。哈尔滨冰雪经济火爆“出圈”，在“尔滨”的带动下，各地网友纷纷喊话家乡文旅局“抄作业”“亮家底”，多地文旅主打一个“听劝”，纷纷出手加码布局，精心打造各自的文旅名片。对此认识正确的是\n\n①挖掘本地文旅资源潜力，能让各地人们过上美好生活\n\n②哈尔滨冰雪经济火爆，说明文化与经济相互交融、相互促进\n\n③文旅局打造各自的文旅名片，是政府运用矛盾分析法科学履职的体现\n\n④网友喊话家乡文旅局“抄作业”“亮家底”是运用了逆向思维的方式\n\nA.①②    B.①④    C.②③      D.③④",
+   "options_text": "A.①②    B.①④    C.②③      D.③④",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：C**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收整题",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q4",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n4.在2023年北京文化论坛的文艺晚会上，节目《同舟》由来自中国、希腊、埃及、伊拉克、印度的演奏家们，同乘一叶小舟，用来自不同文明的古老乐器，奏响了人类文明的和谐之音。这主要表现出\n\n①用艺术的创新表达，展示文化既是民族的，又是世界的\n\n②各国以共同利益为对外活动的出发点，深化对话与交流\n\n③中国强调尊重文明多样性，让文化背景不尽相同的人们更加融洽地互动起来\n\n④我们要坚守中华文化立场，彰显中国特色、中国风格和中国气派\n\nA.①②            B.①③            C.②④          D.③④\n\n![《同舟》舞台图](assets/figures/image2.png)\n\n**图示关系**：多国演奏家与众多舞者环绕一叶小舟表演，背景为中国山水画意象。",
+   "options_text": "A.①②            B.①③            C.②④          D.③④",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：B**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q5",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "5",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n5.随着新媒体时代的到来，普通人能够以“我”为主角创作“短视频”，一个个特写镜头，被放大的微观视角，这种第一人称视角下的情感和记忆的散点式叙事，丰富了城市形象的维度和容量，也更容易引发网络用户的情感共鸣。这表明，短视频\n\nA.作为塑造城市形象的直接现实性活动提升了城市的文化价值和软实力\n\nB.对塑造城市形象的价值在于其作为客体所具有的属性对主体的积极意义\n\nC.创作者从不同的角度、不同的方向进行散点式叙事是聚合思维的体现\n\nD.内容源于创作者对生活的感悟和体验并决定着城市形象的维度和容量",
+   "options_text": "A.作为塑造城市形象的直接现实性活动提升了城市的文化价值和软实力\nB.对塑造城市形象的价值在于其作为客体所具有的属性对主体的积极意义\nC.创作者从不同的角度、不同的方向进行散点式叙事是聚合思维的体现\nD.内容源于创作者对生活的感悟和体验并决定着城市形象的维度和容量",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：B**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收整题",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q6",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n6. 在生活和工作中，有些听起来似乎有道理，但仔细想起来，又疑窦丛生，这就需要学习形式逻辑，提升逻辑思维能力。下列观点和逻辑分析正确的是\n\n|  | 观点 | 逻辑分析 |\n| --- | --- | --- |\n| A | 法定继承第一顺位继承人中的子女，包括婚生子女、非婚生子女、养子女和有扶养关系的继子女。 | 对概念外延的划分犯了“多出子项”的逻辑错误 |\n| B | 若a=b，则ac=bc | 该判断中，a=b是ac=bc的充分必要条件 |\n| C | 刑法第二十条规定：“为了使国家、公共利益、本人或者他人的人身、财产和其他权利免受正在进行的不法侵害，而采取的制止不法侵害的行为，对不法侵害人造成损害的，属于正当防卫，不负刑事责任。” | 该判断属于复合判断 |\n| D | “服务员同志，请当心，你的手指浸到我的汤里去了。” / “没有关系，汤不烫，我不痛。” | 该回答违反了排中律 |",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：C**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-SY-ERMO-Q7",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "num": "7",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native＋原图视觉核验）]\n\n7.随着科技进步和数字化转型的加速，数字经济成为了我国经济发展的重要动力。数字劳动是数字经济发展的重要因素，是依托于互联网、大数据、云计算、人工智能等新型技术载体，以智力、创造力为主导，创造数字化产品的非物质劳动。只有不断加深对于数字劳动的认识，把握数字劳动的基本特征，并以此为基础构建起相关法律法规，才能确保数字劳动受到监管和保护，保证我国数字经济稳定和快速发展。如果上述结论皆为真，下列逻辑分析正确的是\n\nA.“数字劳动是数字经济发展的重要因素”是运用“种差加属概念”的方法下的定义\n\nB.数字劳动和非物质劳动是交叉关系\n\nC.构建起相关法律法规是保证我国数字经济稳定和快速发展的必要条件\n\nD.材料中假言判断的真假取决于前后件本身的真假",
+   "options_text": "A.“数字劳动是数字经济发展的重要因素”是运用“种差加属概念”的方法下的定义\nB.数字劳动和非物质劳动是交叉关系\nC.构建起相关法律法规是保证我国数字经济稳定和快速发展的必要条件\nD.材料中假言判断的真假取决于前后件本身的真假",
+   "answer_key": {
+    "text": "### [独立参考答案原文（E3）]\n\n> 原文件虽存于“细则”目录且文件名为“细则.docx”，但正文标题是“思想政治参考答案”。本题只作E3独立参考答案，不升级为E1。\n\n**选择题答案：C**",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分边界]\n\n2024顺义二模是用户确认的2024年唯一整卷无正式细则例外。本题正式评分槽为0；参考答案和通用等级表不拆为固定采分点。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": null
+  }
+ ]
+}

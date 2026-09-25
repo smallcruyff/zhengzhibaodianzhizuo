@@ -1,0 +1,70 @@
+{
+  "summary": "按 r3verify_publish_review.json 修复 1 个 blocker + 2 个 major，并顺手修了 1 个 minor（prev 批次号解析口径不一致）；其余 5 个 minor 未动（见 known_limits，原样列出理由）。只改了 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py 本身，未碰 batch_health.py/docx_lib.py/profile_lib.py/profiles/，未运行 collab.py，未启动子代理/新会话。",
+  "files": {
+    "changed": [
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py"
+    ],
+    "test_added_to": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_publish_review.py",
+    "scratch_work_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review/",
+    "reproduced_r3verify_artifacts": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/publish_review_r3verify/r3_run_after_fix2.log（复跑审查者原 r3_attacks.py，未改攻击脚本本身）"
+  },
+  "tests": {
+    "writer_tests": "94/94 [PASS]，exit 0（新增 R12a/R12b/R13/R14/R9c 共 22 条断言对应本次 3 条必修 + 1 条顺手修的 minor；其余 72 条为既有回归）。真实输入 SHA/mtime 测试前后一致；__pycache__ 未出现 publish_review 编译缓存。",
+    "how_run": "cp 测试/run_tests_publish_review.py 到 scratchpad 独立目录后 /usr/bin/python3 run_tests_publish_review.py（脚本按自身所在目录写 out/ 与 test_results.json，不写进项目 后勤管理/）",
+    "reviewer_repro_commands_rerun": {
+      "N1a_N1b_archive_preexists": "apply_rc=2（write_targets 门 FAIL），history_dir_exists_after=true，diff 全空——不再被回滚 rmtree 删除",
+      "N4_review_entry_N4_workspace_midpath_symlink": "dry_rc=3、apply_rc=3，new_files_outside_root=[]——路径中间一级符号链接被拦，不再写到根外",
+      "N7_central_state_fields": "status='第52批完成，待人工审阅；整书教研终审未完成'，active_revision_round.revision='batch52'，与本次候选 docx/pdf sha 一致——不再残留旧批次文字/字段",
+      "N9_prev_parse_bonus_fix": "archive_dst 含 '第51批_原样审阅'，不再是 '第31批_原样审阅'"
+    }
+  },
+  "known_limits": [
+    "minor（preserve 同名覆盖，无独立备份）：未修。compute_targets 目前只检查“清单登记 + 未登记未知项”两类冲突；给“审阅入口已存在、被 publish.preserve 放行、又恰好与新 stem 撞名”的文件单独加存在性 FAIL 门，会牵动 gate_review_entry 与 compute_targets 两处的判定逻辑和既有测试对 preserve 语义的假设，本轮范围之外未动，留给后续批次专门处理。",
+    "minor（dry-run 归档/备份计划仍不完整）：未修。逐文件列出归档 docx/pdf/先看这里/指纹文件的 {action,src,dst,sha256}，以及备份目录按模板渲染后再做 containment/占位符预检，工作量接近重写 compute_targets 的归档与备份两段，本轮只加了“归档目录已存在”这一条新检查（服务于 blocker 修复），未做完整逐文件计划，留待后续。",
+    "minor（候选目录形态门只认正则，不管候选是否落在 review_entry/review_history 内）：未修。按建议要用 candidate_dir_pattern 的前缀做逐段匹配，属于 gate_candidate_root 的语义调整，风险和收益需要主代理确认候选目录实际使用方式（是否真的会出现候选放进 review_history 内部的场景）后再动，本轮未改。",
+    "minor（双重故障：rmtree 失败未并入“回滚不完整”汇总）：顺手一并修了——本次改 _rollback 时，rmtree 失败分支已加入 incomplete 列表，会在返回文案末尾并入“回滚不完整，需要人工核查”。未单独在 issues_resolved 里列为一条，因为不在必须修复的 3 条范围内，这里如实说明已经带修。",
+    "minor（Skill scripts/ 下遗留 drill_tool_verify.py）：未动，也不属于本工具范围。已确认本次修复没有在 Skill scripts/ 下新增任何文件；drill_tool_verify.py 的清理需要主代理处理（移到 后勤管理/…/测试/审查者辅助脚本/）。"
+  ],
+  "issues_resolved": [
+    {
+      "desc": "[blocker] 归档目录发布前就已存在时（publish.archive_to 模板不含 {stamp}，或同一秒内 stamp 撞名），do_apply 里 archive_dir 在赋值之后、'是否已存在' 判定之前就已经确定，Gate 被 except BaseException 接住后 _rollback 无条件 rmtree，把发布前就有的历史归档（含旧审阅稿）整个删掉；dry-run 也不检查存在性，write_targets 门 PASS、退出码 0。",
+      "how": "两处修：(1) compute_targets 里对 archive_preview 新增存在性检查，发布前已存在就让 write_targets 门直接 FAIL（dry-run 就能发现，退出 2，不等 --apply）。(2) do_apply 新增 archive_created 标记，只有本次 mkdir(parents=True, exist_ok=False) 真正成功之后才置 True；_rollback 签名新增 archive_created 参数，第 3 步只有 archive_created 为真才 rmtree，否则原样保留并在回滚文案里写明'不是本次新建，原样保留，未删除'。",
+      "test": "R12a（compute_targets 存在性检查：dry-run/--apply 均 exit 2，历史归档目录及 sentinel 文件原封不动）+ R12b（直接单测 _rollback：archive_created=False 时绝不 rmtree 传入的归档目录，即使调用方仍把 archive_dir 指向了一个已存在目录）；并复跑审查者原始 N1a/N1b（apply_rc=2，history_dir_exists_after=true，diff 全空）确认修复。"
+    },
+    {
+      "desc": "[major] 符号链接防护只查路径最后一级：paths.review_entry/workspace/review_history/review_manifest/central_state 中间某一级是指向 paths.root 之外的符号链接时，_reject_symlink 不拦，_confine 又拿已经 resolve 过的目录跟自己比形同虚设，导致 --apply 把新 docx/pdf、清单、先看这里全部写到项目根之外。",
+      "how": "新增 _confine_no_escape(root, configured, resolved, what)：相对路径（review_entry/workspace/aux_workspace/review_history/review_manifest/handoff）从 root 逐级往下检查每一级是否是指向 root 之外的符号链接，并要求最终 resolve 后仍落在 realpath(root) 内；绝对路径（central_state 可能配置在项目根之外，这是合法用法）逐级检查是否存在符号链接（无论指向哪里都拒绝），并核对 realpath 与配置路径逐字符一致。在 build_context 里对这 6 类路径逐一调用，命中即 GuardRefusal（dry-run 和 --apply 都不放过）。",
+      "test": "R13（review_entry 路径中间一级 lnk_review_entry -> 沙盒外目录：dry-run/--apply 均 exit 3，外部目录不产生任何新文件）；并复跑审查者原始 N4_review_entry/N4_workspace（dry_rc=3、apply_rc=3、new_files_outside_root=[]）确认修复。"
+    },
+    {
+      "desc": "[major] --apply 更新中央状态时没有更新 status 与 active_revision_round，前身 publish_b52 会更新这两项；latest_batch/working_head 已经是新批次时，status 仍是旧批次文字，active_revision_round.revision/.docx 仍指向旧版，读中央状态判断当前轮次的主代理/collab 会被误导。",
+      "how": "_DEFAULTS['publish.central_state_fields'] 新增 'status'/'active_revision_round' 两个字段名映射；新增 _DEFAULTS['publish.central_state_status_template']（缺省仿 publish_b52 的 '第{n}批完成，待人工审阅；整书教研终审未完成'，支持 {n}/{rev} 占位符，书册可在 profiles 里覆盖）。do_apply 第 6 步仿 publish_b52 写 status 与 active_revision_round（revision/owner/docx/docx_sha256/pdf/pdf_sha256/pages/status）；若书册自定义 central_state_fields 整体覆盖、没写这两个字段名，就跳过并在 apply_result 与晋升回执里列进 central_state_fields_not_updated，不假装已更新。",
+      "test": "R14（apply 后核对 status 文案与 active_revision_round 各字段、central_state_fields_not_updated 为空）；并复跑审查者原始 N7（status/active_revision_round 均按新批次更新，previous_working_head 正确）确认修复。"
+    },
+    {
+      "desc": "[minor，顺手修] 归档目录名里的 {prev} 用 re.search(r'\\\\d+', latest_batch) 直接取第一个数字，跟已经修好的 _parse_batch_num 口径（优先匹配 batch(\\\\d+)/第(\\\\d+)批，多段数字才判歧义）不一致：latest_batch='R31续修_batch51' 时归档目录名成了'第31批_原样审阅'。",
+      "how": "run() 里计算 prev_m 改用 _parse_batch_num(...)（返回 int 或 None），三处渲染 archive_to 的 {prev} 占位符（compute_targets、run() 的 tctx、do_apply）统一改成 str(prev_m) if prev_m is not None else '0'，与批次单调门用同一套解析口径。",
+      "test": "R9c（latest_batch='R31续修_batch51' 时 dry-run 归档目录计划应含 '第51批_原样审阅'、不含 '第31批_原样审阅'）；并复跑审查者原始 N9（archive_dst 含 '第51批_原样审阅'）确认修复。"
+    }
+  ],
+  "issues_deferred": [
+    {"desc": "[minor] preserve 同名覆盖丢手改稿风险（无独立备份）", "why": "需要调整 compute_targets/gate_review_entry 对 preserve 语义的判定，牵动既有测试假设，超出本轮 blocker+major 范围，留待后续批次。"},
+    {"desc": "[minor] dry-run 归档/备份计划不完整（未逐文件列出、备份目录未按模板渲染预检）", "why": "工作量接近重写 compute_targets 归档与备份两段；本轮只补了归档目录存在性这一条（为修 blocker 服务），完整逐文件计划留待后续。"},
+    {"desc": "[minor] 候选目录形态门只用正则、不管候选是否落在 review_entry/review_history 内", "why": "需要主代理确认候选目录实际使用场景后再决定 gate_candidate_root 的语义调整方向，本轮未动。"},
+    {"desc": "[minor] Skill scripts/ 下遗留 drill_tool_verify.py", "why": "不是 publish_review.py 的缺陷，也超出本工具改动范围；已确认本次修复没有在 Skill scripts/ 下新增文件，清理交主代理处理。"}
+  ],
+  "discipline_check": {
+    "only_edited": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py",
+    "no_files_added_to_skill_scripts_dir": true,
+    "no_subagents_no_new_sessions_no_session_tools": true,
+    "scratch_dir_used": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/",
+    "protected_dir_test_cases": "R3/R5/R6d/R13 等涉及真实冻结册目录、符号链接的用例只调用守卫函数或调用预期会被拒绝的 CLI 命令；R12b 的 _rollback 单测只在 scratchpad 沙盒工作目录上操作，未涉及真实审阅入口/工作区/协作/中央状态目录；测试脚本内置真实输入 SHA/mtime 快照比对，测试前后一致（见 tests.writer_tests）。",
+    "python": "/usr/bin/python3（3.9.6）",
+    "pycache_check": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 测试前后均只有 book_incremental/check_drill_admission/source_intake 三个 cpython-312 旧文件，无 publish_review 相关新增",
+    "real_input_sha_mtime": "测试脚本 REAL_INPUTS（B3_51/52 docx/pdf/manifest/note、真实 bixiu3 profile、真实必修三中央状态、真实接管.json、真实审阅入口目录列表）测试前后完全一致（脚本内断言 'PASS: 真实输入 SHA/mtime 测试前后必须完全一致'）"
+  },
+  "final_test_run": {
+    "command": "cp 测试/run_tests_publish_review.py 到 scratchpad 全新目录后 /usr/bin/python3 run_tests_publish_review.py",
+    "result": "exit 0，94 个 [PASS]，0 个 FAIL"
+  }
+}

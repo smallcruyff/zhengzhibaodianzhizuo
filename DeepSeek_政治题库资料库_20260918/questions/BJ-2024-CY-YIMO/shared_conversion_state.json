@@ -1,0 +1,276 @@
+{
+  "exam_id": "BJ-2024-CY-YIMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-CY-YIMO-Q1": "8222d303704c8fbd8ce5c74eb61988b78d333dd58ebcb1b750f2737eb5d054c0",
+    "BJ-2024-CY-YIMO-Q2": "ac7934ae607c10194de14b0bde932dd491b096c3a8038db6bae863c672e62ba3",
+    "BJ-2024-CY-YIMO-Q3": "a2715f07aa1dfd377f25ef6a329dfa045a031c35816c232b188582eb76eefc54",
+    "BJ-2024-CY-YIMO-Q4": "e29549ed258588ae8a3730838f255f2d0efba1ed2125ad5c3754f43847d8b32d",
+    "BJ-2024-CY-YIMO-Q5": "0e3ed13d1c4265d21fb05986fe283df1b1c3b2a960ec29a03cc24b27e335b97f",
+    "BJ-2024-CY-YIMO-Q6": "3a7f80e9a27aa784d633ec032a79e1b9f1688ab1bfccbec43e338801852bf645",
+    "BJ-2024-CY-YIMO-Q7": "7f962586346ef9071aec622710d77592c85dd30af9fb692dae0020ae681ad469",
+    "BJ-2024-CY-YIMO-Q8": "b2326702a31f941771db6f5994703feef988d1f29b75ba2a2d23ad9e8da982d3",
+    "BJ-2024-CY-YIMO-Q9": "93ab4fd61d61a716434f8af25b564690c43eb6042b850bf518256cfbb8fe5039",
+    "BJ-2024-CY-YIMO-Q10": "e0ff139d0562c91cac3d1b8febfd819a05f804a08d4e2b3136ae8ad19381373f",
+    "BJ-2024-CY-YIMO-Q11": "ff21fc7ef320db7dd7f50be88bab811a772fc2c27e1908125ca1e866ef1e29e5",
+    "BJ-2024-CY-YIMO-Q12": "7da30e6156f888ba1116668f2df94d24420fb8824c13dd31bf20a45bc74d146e",
+    "BJ-2024-CY-YIMO-Q13": "5b3c9a5b1676e57b8efd6725aa1c8e11c93dc3cfad48e7cad2d4611bf4d0e3de",
+    "BJ-2024-CY-YIMO-Q14": "494fac8a73d75da0b636ac119869470df39f5ec84ec6ff9cded0a9a186b238b4",
+    "BJ-2024-CY-YIMO-Q15": "4229840ee28743e5155440bbdf1f747fbc9d32275fcd273deb652053a7ebb43f",
+    "BJ-2024-CY-YIMO-Q16": "b9ec603b0233eb0e485e1e892c0800e3631ec2ca0ea99d6a977b58ca6491186f",
+    "BJ-2024-CY-YIMO-Q17": "e91069073e702d4b77e3a165d13db88f52ed91a1c964dc78f5549ffa7f0091d5",
+    "BJ-2024-CY-YIMO-Q18": "51d5517b0aeb89a9098bd8bf7c4b537d8ab2d9b8752385060f322b683eef4c2a",
+    "BJ-2024-CY-YIMO-Q19": "e297af8852cb8d89d8713c8d3e017d96fde447e48c4526ecabcbebf37886d58b",
+    "BJ-2024-CY-YIMO-Q20": "8413c6902bda93b38a74dba2e8c80407a086f9e1decdaeb53dd4e932ddf8e694",
+    "BJ-2024-CY-YIMO-Q21": "84789a66b58211bada17df7c81535ae1a03d655f0b7c4590c3a85a25055f85c9"
+  },
+  "parent_question_hashes": {
+    "BJ-2024-CY-YIMO-Q1": "5d029d442e97ba82f8b772a0ec6eb9f6434ab9e50b154ff883b3fd93741bf926",
+    "BJ-2024-CY-YIMO-Q2": "721d42f01b253a25482ebf0bca528750688698608f4b3dab9be43c564a4b3cfa",
+    "BJ-2024-CY-YIMO-Q3": "1eecf09acac7e46426a42ea627187afdbb91c9c8ffd7448c5ac3e20206bf87c1",
+    "BJ-2024-CY-YIMO-Q4": "7fa53956d8042eb2e029597ee34ace58588fc1c8e9988073c2cf0936ff740a50",
+    "BJ-2024-CY-YIMO-Q5": "61254ab1379b44a8b950bc02da1742e563f2b522a09bdf92b0cab02995674b80",
+    "BJ-2024-CY-YIMO-Q6": "0a267b43102136809f93c1dfb31b4472ecd6aff7ae48b7304cd868ede6f174a7",
+    "BJ-2024-CY-YIMO-Q7": "6a1fe81bcbe7fc9f6b7a9604d2167b77a8452bea02dbaf43e2953d592dd1f186",
+    "BJ-2024-CY-YIMO-Q8": "f3da84b614b90416f5fcfe5be5b7e588da102e88d6f5fb7844f2672c609b07af",
+    "BJ-2024-CY-YIMO-Q9": "04657326bb2330b12eb6b1f49ecdbf1a67374c8461dc1433e15ce4043b7f9965",
+    "BJ-2024-CY-YIMO-Q10": null,
+    "BJ-2024-CY-YIMO-Q11": "3aa3d75ae9f567a4c70cde87a8ace3fc703ac9f8bcc4f6f800c32a2ac7300bc6",
+    "BJ-2024-CY-YIMO-Q12": "63b900b52f8d5cdd22f4af5635a2ac12a61a7c6755ae7cc5d13f9eaca1e86d68",
+    "BJ-2024-CY-YIMO-Q13": "f6a04475972a5d4b1a74e8bd722e57d8fa972ecbe766c9818512658d27492355",
+    "BJ-2024-CY-YIMO-Q14": "85e2e742b4aa3901489f1856d2a3138728eae7613cff9b1a99e8117509ff4f79",
+    "BJ-2024-CY-YIMO-Q15": "df0639d42c1d123ba5d92b1d17a001286f84f67fe262884ff1b88365afb9745d",
+    "BJ-2024-CY-YIMO-Q16": "98b24c1b42ad2e7cf03d2077fc79016f572ebde4a688ba39102942fc4dd642ed",
+    "BJ-2024-CY-YIMO-Q17": "ca7bacb13941eb8a01a49ae4bf58b1e191b598955bf04101a31ef9ef19fac3ae",
+    "BJ-2024-CY-YIMO-Q18": "099822392ab40bfee7d552da478a3a629b24c4496af5ca5936cb2c7a4ca7a639",
+    "BJ-2024-CY-YIMO-Q19": "470596d24ce0ddb77faa5d0d17290c05a55b03e2e72bfe93e950c79b12df913e",
+    "BJ-2024-CY-YIMO-Q20": "40f1e142743c62377ed0cfd494e680bf4b3e5eb999c7a6175b920871d11a36e2",
+    "BJ-2024-CY-YIMO-Q21": "8b0cd96e43d8aed95d0f7aa5be61b6dec4a11402d06a8f08e84699363d8419f3"
+  },
+  "source_roles": "sources/support/source_sha256.json",
+  "source_pages": {
+    "original_exam_pdf": 8,
+    "lecture_pptx_unique": 50,
+    "answer_docx_fresh_render": 3
+  },
+  "source_page_total": 61,
+  "page_details": {
+    "scoring_pptx_same_sha_deduped": true
+  },
+  "source_page_map": {
+    "BJ-2024-CY-YIMO-Q1": [
+      1
+    ],
+    "BJ-2024-CY-YIMO-Q2": [
+      1
+    ],
+    "BJ-2024-CY-YIMO-Q3": [
+      1
+    ],
+    "BJ-2024-CY-YIMO-Q4": [
+      2
+    ],
+    "BJ-2024-CY-YIMO-Q5": [
+      2
+    ],
+    "BJ-2024-CY-YIMO-Q6": [
+      2
+    ],
+    "BJ-2024-CY-YIMO-Q7": [
+      2
+    ],
+    "BJ-2024-CY-YIMO-Q8": [
+      3
+    ],
+    "BJ-2024-CY-YIMO-Q9": [
+      3
+    ],
+    "BJ-2024-CY-YIMO-Q10": [
+      3
+    ],
+    "BJ-2024-CY-YIMO-Q11": [
+      3
+    ],
+    "BJ-2024-CY-YIMO-Q12": [
+      4
+    ],
+    "BJ-2024-CY-YIMO-Q13": [
+      4
+    ],
+    "BJ-2024-CY-YIMO-Q14": [
+      4
+    ],
+    "BJ-2024-CY-YIMO-Q15": [
+      4
+    ],
+    "BJ-2024-CY-YIMO-Q16": [
+      5
+    ],
+    "BJ-2024-CY-YIMO-Q17": [
+      5
+    ],
+    "BJ-2024-CY-YIMO-Q18": [
+      6
+    ],
+    "BJ-2024-CY-YIMO-Q19": [
+      7
+    ],
+    "BJ-2024-CY-YIMO-Q20": [
+      7
+    ],
+    "BJ-2024-CY-YIMO-Q21": [
+      8
+    ]
+  },
+  "e3_map": {
+    "BJ-2024-CY-YIMO-Q1": [
+      6
+    ],
+    "BJ-2024-CY-YIMO-Q2": [
+      9
+    ],
+    "BJ-2024-CY-YIMO-Q3": [
+      10
+    ],
+    "BJ-2024-CY-YIMO-Q4": [
+      12
+    ],
+    "BJ-2024-CY-YIMO-Q5": [
+      13
+    ],
+    "BJ-2024-CY-YIMO-Q6": [
+      14
+    ],
+    "BJ-2024-CY-YIMO-Q7": [
+      15
+    ],
+    "BJ-2024-CY-YIMO-Q8": [
+      16
+    ],
+    "BJ-2024-CY-YIMO-Q9": [
+      17
+    ],
+    "BJ-2024-CY-YIMO-Q10": [
+      18
+    ],
+    "BJ-2024-CY-YIMO-Q11": [
+      19,
+      20,
+      21
+    ],
+    "BJ-2024-CY-YIMO-Q12": [
+      22
+    ],
+    "BJ-2024-CY-YIMO-Q13": [
+      23
+    ],
+    "BJ-2024-CY-YIMO-Q14": [
+      24
+    ],
+    "BJ-2024-CY-YIMO-Q15": [
+      25
+    ],
+    "BJ-2024-CY-YIMO-Q16": [
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "BJ-2024-CY-YIMO-Q17": [
+      32,
+      33
+    ],
+    "BJ-2024-CY-YIMO-Q18": [
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "BJ-2024-CY-YIMO-Q19": [
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "BJ-2024-CY-YIMO-Q20": [
+      44,
+      45,
+      46
+    ],
+    "BJ-2024-CY-YIMO-Q21": [
+      47,
+      48,
+      49
+    ]
+  },
+  "e1_map": {
+    "BJ-2024-CY-YIMO-Q1": [],
+    "BJ-2024-CY-YIMO-Q2": [],
+    "BJ-2024-CY-YIMO-Q3": [],
+    "BJ-2024-CY-YIMO-Q4": [],
+    "BJ-2024-CY-YIMO-Q5": [],
+    "BJ-2024-CY-YIMO-Q6": [],
+    "BJ-2024-CY-YIMO-Q7": [],
+    "BJ-2024-CY-YIMO-Q8": [],
+    "BJ-2024-CY-YIMO-Q9": [],
+    "BJ-2024-CY-YIMO-Q10": [],
+    "BJ-2024-CY-YIMO-Q11": [],
+    "BJ-2024-CY-YIMO-Q12": [],
+    "BJ-2024-CY-YIMO-Q13": [],
+    "BJ-2024-CY-YIMO-Q14": [],
+    "BJ-2024-CY-YIMO-Q15": [],
+    "BJ-2024-CY-YIMO-Q16": [
+      31
+    ],
+    "BJ-2024-CY-YIMO-Q17": [
+      33
+    ],
+    "BJ-2024-CY-YIMO-Q18": [
+      35
+    ],
+    "BJ-2024-CY-YIMO-Q19": [
+      43
+    ],
+    "BJ-2024-CY-YIMO-Q20": [
+      45,
+      46
+    ],
+    "BJ-2024-CY-YIMO-Q21": [
+      49
+    ]
+  },
+  "e1_subquestion_scope": [
+    "BJ-2024-CY-YIMO-Q16",
+    "BJ-2024-CY-YIMO-Q17",
+    "BJ-2024-CY-YIMO-Q18(1)",
+    "BJ-2024-CY-YIMO-Q19",
+    "BJ-2024-CY-YIMO-Q20(1)",
+    "BJ-2024-CY-YIMO-Q20(2)",
+    "BJ-2024-CY-YIMO-Q21"
+  ],
+  "source_coverage_history": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-YIMO_v37_source_coverage_history.json",
+  "primary_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-YIMO_v37_primary_review.json",
+    "sha256": "1a9a4cf7142dc15b59e2694608b422382cc42139762c36e435185c4b48b3becb"
+  },
+  "independent_recheck": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-CY-YIMO/38_independent_recheck/recheck_after_37.json",
+    "sha256": "4d4ea9b943ea7bd3ef14e61e8be5e6fae05a9e1f0c74a1b4069faf10b64477f5",
+    "verdict": "PASS"
+  },
+  "source_limitations": [
+    "正式评分PPTX E1仅覆盖Q16/Q17/Q18(1)/Q19/Q20(1)(2)/Q21；Q1-Q15与Q18(2)不升E1",
+    "讲评PPTX与答案DOCX为E3/E2参考来源，通用等级表不替代正式E1",
+    "没有个人学生原答、批注或实得分，保持N/A_with_basis",
+    "S26-S27模板重叠与讲评/评分同SHA事实保留"
+  ],
+  "conversion_unresolved": [],
+  "accepted_at": "2026-09-22T17:18:13.871226+00:00"
+}

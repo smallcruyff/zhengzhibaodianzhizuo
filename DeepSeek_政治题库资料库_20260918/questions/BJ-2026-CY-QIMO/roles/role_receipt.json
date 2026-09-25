@@ -1,0 +1,49 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "worker_role": "Luna/max transcription candidate",
+  "candidate_root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CY-QIMO",
+  "inputs": [
+    "2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+    "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf",
+    "conversion_manifest.json target entry",
+    "DeepSeek_政治题库资料库_20260918/questions/BJ-2026-CY-QIMO/Q1-Q21.md"
+  ],
+  "outputs": [
+    "candidates/Q1-Q21.md",
+    "evidence/",
+    "complete_candidate.json/.md",
+    "roles/",
+    "review/",
+    "self_check.json/.md"
+  ],
+  "opened_pages": {
+    "paper": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rubric": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "question_count": 21,
+  "not_modified": [
+    "shared question MD",
+    "conversion_manifest.json",
+    "source PDFs"
+  ],
+  "unresolved": [
+    "全卷无答案键/参考作答源：客观答案与E3均N/A（来源限制）",
+    "全卷无学生样卷、批注、评分标记、实得分：N/A（来源限制）",
+    "定点修复后待独立增量复核及Sol抽检"
+  ],
+  "exit_condition": "21题与全部来源页闭合，真实未决已列出；等待独立复核。"
+}

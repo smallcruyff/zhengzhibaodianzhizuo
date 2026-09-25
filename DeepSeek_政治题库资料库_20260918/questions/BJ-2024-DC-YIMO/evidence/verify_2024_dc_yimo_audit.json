@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "receipt_type": "independent_candidate_verification",
+  "exam_id": "BJ-2024-DC-YIMO",
+  "reviewed_at": "2026-09-21T20:20:10-07:00",
+  "review_scope": "独立复核 audit_2024_dc_yimo_full 的Q1-Q21隔离候选、父稿SHA、147个候选资产引用、原卷12页、答案PDF、74页PPTX、学生样卷与来源角色分层；不写共享题库、索引或conversion_manifest。",
+  "evidence": {
+    "audit_json": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/audit_2024_dc_yimo_full/audit.json",
+      "sha256_at_review": "未将审计回执自身SHA作为内容验收依据；其中记录值逐项重算"
+    },
+    "role_adjudication": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/adjudicate_answer_roles_batch_a/adjudication.json",
+      "sha256": "63dc6536ce49e24668237b4344334b90680bc1989f702b48b856adf143c520a1",
+      "source_id": "S7b4eece29632",
+      "exam_id": "BJ-2024-DC-YIMO"
+    }
+  },
+  "source_role_adjudication": {
+    "source_id": "S7b4eece29632",
+    "canonical_role": "评分材料",
+    "classification": "混合载体",
+    "label": "混合载体：独立参考答案＋Q16/Q21题级通用等级评分标准；不是纯参考答案，也不是完整逐点细则",
+    "layers": {
+      "Q1-Q15": "独立答案键层；可作为参考答案内容，不证明主观E1细则",
+      "Q16": "主观参考答案＋5～7/3～4/1～2/0分通用等级区间；无题级固定采分槽",
+      "Q17-Q20": "主观参考答案；Q18保留小问总分/答案结构，不作为逐点E1",
+      "Q21": "主观参考答案＋5～7/3～4/1～2/0分通用等级区间；无题级固定采分槽"
+    },
+    "formal_scoring_source": {
+      "source_id": "S4b2073bcc9e2",
+      "role": "评分材料",
+      "use": "74页PPTX承载本卷详细题级评分/试题分析；合并稿应明确其为详细正式评分主载体"
+    },
+    "student_layer_in_S7": "不存在；不得从S7补造学生样卷或实得分"
+  },
+  "checks": {
+    "source_file_sha256": {
+      "status": "pass",
+      "original_paper": {
+        "sha256": "74cdfac9253763bf12c9443d036ebbeab12693ba7015a2f335d19ccfcab6d96b",
+        "pages": 12
+      },
+      "S7_answer_pdf": {
+        "sha256": "7b4eece2963205d8ac02ef13063307a3dad70cf6542b6169f3ed34276f16e115",
+        "physical_pages": 1,
+        "logical_pages_in_spread": 2
+      },
+      "S4_rubric_pptx": {
+        "sha256": "4b2073bcc9e26f626b49b66dd6e0c64ec93650292d50719806830d7aea9fa3ce",
+        "slides": 74
+      }
+    },
+    "shared_manifest_and_parents": {
+      "manifest_path": "后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+      "manifest_sha256_at_audit_start": "c98eda420d293ed4ba7c617401ab7a0f48a3d234e605f462b25b3ec2ca4012be",
+      "manifest_sha256_at_review": "c98eda420d293ed4ba7c617401ab7a0f48a3d234e605f462b25b3ec2ca4012be",
+      "manifest_unchanged": true,
+      "parent_question_count": 21,
+      "parent_sha_matches": 21,
+      "parent_sha_mismatches": 0
+    },
+    "candidate_sha_and_links": {
+      "candidate_count": 21,
+      "candidate_sha_matches": 21,
+      "candidate_sha_mismatches": 0,
+      "recomputed_asset_link_count": 147,
+      "recorded_asset_link_count": 147,
+      "asset_link_errors": 0,
+      "unique_linked_assets": 103,
+      "linked_asset_sha_mismatches": 0,
+      "status": "pass"
+    },
+    "audit_asset_inventory": {
+      "recorded_asset_records": 229,
+      "sha_matches": 228,
+      "sha_mismatches": 1,
+      "status": "repair_required",
+      "mismatch": {
+        "path": "assets/ocr/p001.ocr.txt",
+        "recorded_sha256": "8c6b57efd0cf1717995e09eb24501c6c22581dc752bb683184305b43daaed00c",
+        "actual_sha256": "476c8beb236452ed36a727632607b48c37d5dbc920c9b573f66051f7a3aa9e48",
+        "cause": "make_assets先复制原卷p001 OCR，再复制答案p001 OCR到同名assets/ocr/p001.ocr.txt；答案文件覆盖了原卷文件，而inventory仍保留两个同路径记录",
+        "impact": "候选实际引用的103个资产均无SHA错误，但全量审计资产清单不能宣称229/229匹配；合并前须拆分原卷/答案OCR路径或重建清单"
+      }
+    },
+    "paper_page_coverage": {
+      "expected_pages": 12,
+      "rendered_pages": 12,
+      "opened_pages": 12,
+      "content_pages": [1,2,3,4,5,6,7,8,9,10],
+      "blank_pages": [11,12],
+      "blank_page_ocr_characters": {"p011": 0, "p012": 0},
+      "status": "pass"
+    },
+    "pptx_coverage": {
+      "expected_slides": 74,
+      "rendered_slides": 74,
+      "native_text_files": 74,
+      "embedded_image_files": 54,
+      "complete_native_text_file": "assets/pptx_native_all.md",
+      "status": "pass"
+    },
+    "student_samples": {
+      "sample_slides": [28,29,30,35,42,46,47,52,58,65,73,74],
+      "sample_count": 12,
+      "candidate_image_refs_present": true,
+      "visible_scores_retained": true,
+      "red_teacher_annotations_and_scoring_marks_retained_in_slide_images": true,
+      "uncertain_handwriting_silently_normalized": false,
+      "full_handwriting_transcription": false,
+      "coordinate_bounded_uncertainty_record": false,
+      "status": "image_first_retention_pass_but_student_layer_not_complete_for_acceptance"
+    },
+    "S7_answer_content": {
+      "Q1_Q15_key": "C,B,A,A,D,D,A,D,B,C,A,B,D,C,C",
+      "adjudicated_key": "C,B,A,A,D,D,A,D,B,C,A,B,D,C,C",
+      "key_match": true,
+      "Q16_Q21_reference_scope_present": true,
+      "Q16_Q21_generic_level_table_present": true,
+      "status": "content_present_but_metadata_role_stale"
+    },
+    "stale_role_markers": {
+      "candidate_files_with_S7_pending": 21,
+      "candidate_files_with_pending_source_role": 21,
+      "candidate_files_with_S4_not_automatically_E1_wording": 21,
+      "candidate_files_with_no_confirmed_E1_wording": 21,
+      "role_metadata_status": "repair_required"
+    }
+  },
+  "question_sha_checks": [
+    {"question_id":"BJ-2024-DC-YIMO-Q1","parent_sha256":"ae0ea1c78340bbf1584557644592a23c7c91c8b0e2c19a7e28a20013c50a0dd7","candidate_sha256":"56db508dab134dcc0715f92b54e19863a1f2fddf7ec6ffb58b828b2b616ab23e","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[1],"pptx_slides":[3],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q2","parent_sha256":"81f2b5d33fa628af5f9976a040728f4c83a90801f337f059529fb59c19398543","candidate_sha256":"ae829f55d3f90f0b10e43821d26b659002395ee034e699f6e9aaa6f7f4eed6ca","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[1],"pptx_slides":[4],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q3","parent_sha256":"c9020c57f65fd2a0424c1b063c167f8abf2dafb15f2b8381e1a6435e5ad16df6","candidate_sha256":"e8f712bf014bd4a614185188bd4284acd7e52c23c38172431e64f8d642f66c25","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[2],"pptx_slides":[5],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q4","parent_sha256":"ec4767cf6e7d407b82cfebb6cd623405553727fad4e59b7400220f81c051c692","candidate_sha256":"ba40437d4af0d7caea581dfb8bf374ed6d9855457dff7aa6cba20d4ac8df3d17","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":6,"paper_pages":[2],"pptx_slides":[6,7],"student_slides":[],"content_status":"minor_visual_repair: 原卷问卷项目符号为‘✧’，候选写成‘◇’"},
+    {"question_id":"BJ-2024-DC-YIMO-Q5","parent_sha256":"42c2a36376b8334ff21e9e0d172d2e0d6242872aca342bdb0e678ad6736e8ed4","candidate_sha256":"bd373994acccd8f9561353c245c83fff102ddc18689503a7f6f2b573aadf24b5","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[2],"pptx_slides":[8],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q6","parent_sha256":"92be5ef64e14b9ecf8df9bdd6ae78d6cbeda8ff060eebdd4558a3225222f8a6f","candidate_sha256":"53f64cc1c2004307e71cd34586a796832bed7a0d6aae3e98d8f5c032c2007346","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":6,"paper_pages":[3],"pptx_slides":[9,10],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q7","parent_sha256":"2997ec383021aab0274bb35a856a88244e119ce7378d7258c28ca6bef7f335a2","candidate_sha256":"3a49e9cc3ebf65746adb48a2efd791a69f906086a3c22d65848f2bc4fdad4749","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[3],"pptx_slides":[11],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q8","parent_sha256":"f87edfa4f72ebd6c9162bb47c391d78b4b0d3ada8bd6d4001cf57c77e8e468b3","candidate_sha256":"d3dc341d5c18d8df73343d3071848761600e2a82935eb2b8317a94c329cfd227","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[3],"pptx_slides":[12],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q9","parent_sha256":"6da59b01baf478f65c4aa2128383a02e8972426dacf2beaa4cf2410c14e7565e","candidate_sha256":"e5756a14b2224b2d3fb1cf7c030dab48eeea5cd0c87a1b42c21921ece8bc0d4d","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[3],"pptx_slides":[13],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q10","parent_sha256":"79715c86a2d0c631286da2a386a38631a19e93c9f761db0c9c04b98f69188657","candidate_sha256":"eb97a9de16e4b0c8f063eb693c23fa323c1dec42995777ac8bd787c8ab4ddc36","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":6,"paper_pages":[4],"pptx_slides":[14,15],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q11","parent_sha256":"7f635a226875641f00d3156f940db48d8d6719d7c29a72282169efd451d083fc","candidate_sha256":"b63becc0dc838049786817b51c54d5e56295aed61a933dbe1973ace0ce38186e","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":6,"paper_pages":[4],"pptx_slides":[18,19],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q12","parent_sha256":"91dd69be68410a8a1210fc1100d4f4bb8d79f966eeeb14e9aef64ed9e3bbc2e7","candidate_sha256":"e2b2f1e8b1a3c849cdea31736d1716dfc37fdb7b699b436279280a2e693f139a","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[4],"pptx_slides":[20],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q13","parent_sha256":"f8792d8e6dba663e10d32746e755e0e2d6c0539e82ace77c9983787476a231e8","candidate_sha256":"9800b2981b456c18963cd3804f7d25525601d88ec1f9c86597f37d3bf278314f","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[5],"pptx_slides":[21],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q14","parent_sha256":"7b24cfdf7d83467bba846af35ba4be140b5109d2d3af6997be37d278fe95a55f","candidate_sha256":"6262406030854080a4559168b5eb920e69753b6cb440d6f276fbf6548c5f2bef","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[5],"pptx_slides":[22],"student_slides":[],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q15","parent_sha256":"4d5cf9621f6a5257253782a0eb2cc78ea0a5e801a6ee7fd6f6c0472e77424bce","candidate_sha256":"be4be6657c4fba18f9674e489d16b4907e803c2774cdc544c3cabfe0e0d0daf1","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":4,"paper_pages":[5],"pptx_slides":[23],"student_slides":[],"content_status":"repair_required: 原卷‘①为更好地探索极地…’，候选遗漏‘为’"},
+    {"question_id":"BJ-2024-DC-YIMO-Q16","parent_sha256":"d7aea00b88fe53e137d80064e18c66de1634fe91e2d6ed89b3368e34dc8fe5ce","candidate_sha256":"a0d7b41e36439590993cae322b11db71ce558c9545c63db4b72c8cb88e2f2623","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":17,"paper_pages":[6],"pptx_slides":[25,26,27,28,29,30],"student_slides":[28,29,30],"content_status":"repair_required: 原卷‘飘口烫金’，候选写成‘飘口鎏金’"},
+    {"question_id":"BJ-2024-DC-YIMO-Q17","parent_sha256":"baf5af8a7cc82f9d428da222deb9c8db691aa002fcf76589e9a188f23cc3f994","candidate_sha256":"35920ebd148737590ffae02d3788f2fe6a7a523882ee7deaf092f57066140912","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":9,"paper_pages":[6],"pptx_slides":[33,34,35],"student_slides":[35],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q18","parent_sha256":"3c7feee045153f1a81906b5951c3991c2d4e1b0cfa9b0caaae2fd23e26afcca4","candidate_sha256":"c90e5ffdc9c7c08bf72bbec218646704a49b8f766cb796231a8e6463273d87f2","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":25,"paper_pages":[7,8],"pptx_slides":[40,41,42,45,46,47,50,51,52],"student_slides":[42,46,47,52],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q19","parent_sha256":"d665412c7b1988c84766a6a27e22bb899e9432ca3fb7ce1fce03d50bcc18007b","candidate_sha256":"dd6cc48363cc6482b5e97d9d1b12402fcec04e62e56fdcac0c9403d222b83ead","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":7,"paper_pages":[9],"pptx_slides":[57,58],"student_slides":[58],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q20","parent_sha256":"d5c58b8be5036d7a2455e733df931b14d523b8e7df5a2269bb974585fbbfc10a","candidate_sha256":"e65c37f475de511e6be74363a1433f2ff79e2c08304a0b9d747a29dac2c95aa1","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":9,"paper_pages":[9],"pptx_slides":[63,64,65],"student_slides":[65],"content_status":"visual_structure_pass"},
+    {"question_id":"BJ-2024-DC-YIMO-Q21","parent_sha256":"5f4baa9b8796c05d253c721e9acadb7222509864fa7075dacc134aa8e769eee1","candidate_sha256":"66903ad1bde5130ee65fe0eeec523a8725402fb6e4b9ad1aab81871244afccae","parent_sha_match":true,"candidate_sha_match":true,"asset_link_count":12,"paper_pages":[10],"pptx_slides":[71,72,73,74],"student_slides":[73,74],"content_status":"visual_structure_pass"}
+  ],
+  "repair_items": [
+    {
+      "priority": "P1",
+      "scope": "Q1-Q21 metadata/provenance",
+      "issue": "所有候选仍写‘S7正在等待独立来源角色裁定’、‘参考答案候选’以及‘正式细则未确认/PPTX不自动晋升’。这与已存在的S7独立裁定冲突，并把S4详细正式评分主载体降格为未确认材料。",
+      "required_fix": "按adjudication_batch_a更新：S7文件级canonical_role仍为‘评分材料’，但明确是混合载体；Q1-Q15为答案键层，Q17-Q20为参考答案层，Q16/Q21为参考答案＋通用等级区间层；S4b2073bcc9e2明确为74页详细题级评分主载体。不要把S7的通用等级表拆成完整E1槽。"
+    },
+    {
+      "priority": "P1",
+      "scope": "Q15",
+      "issue": "原卷p005选项①为‘为更好地探索极地、实现思维与存在的同一性创造了物质条件’，候选遗漏‘为’。",
+      "required_fix": "补回‘为’，并重新计算Q15候选SHA后复核。"
+    },
+    {
+      "priority": "P1",
+      "scope": "Q16",
+      "issue": "原卷p006正文为‘飘口烫金’，候选写成‘飘口鎏金’。",
+      "required_fix": "按原卷图改为‘烫金’，保留原图证据并重新复核。"
+    },
+    {
+      "priority": "P2",
+      "scope": "Q4",
+      "issue": "原卷p002问卷三条项目符号为四角星样式‘✧’，候选可检索文字层写成‘◇’。",
+      "required_fix": "恢复原字符或明确标注为原图装饰符号；不影响选项语义，但完整转写不应无说明替换。"
+    },
+    {
+      "priority": "P1",
+      "scope": "audit_2024_dc_yimo_full/assets/ocr",
+      "issue": "全量资产inventory的assets/ocr/p001.ocr.txt存在同名覆盖：原卷p001记录SHA为8c6b…，实际文件是答案p001 OCR，SHA为476c…；因此229条全量资产只有228条匹配。",
+      "required_fix": "拆分为例如assets/ocr/original-p001.ocr.txt与assets/ocr/answer-p001.ocr.txt（或分别置于original/answer子目录），更新asset_inventory及SHA；合并时不得让答案OCR覆盖原卷OCR。"
+    },
+    {
+      "priority": "P1",
+      "scope": "Q16-Q21学生样卷",
+      "issue": "12张学生/批改幻灯片均已链接，分数、批注、涂改和空答信息均保留；但候选明确承认未完成逐字手写转写，也没有对难辨局部给出坐标框。",
+      "required_fix": "合并前保留原图、slide页位和可见分数；对不确定手写增加局部坐标/未辨标记，或完成逐字转写并逐字复核。当前只能称‘图像保留/学生层未完成’，不能整卷验收。"
+    }
+  ],
+  "decision": {
+    "candidate_as_is": "不可直接合并",
+    "merge": "有条件可合并：完成P1/P2修复、拆分OCR同名资产并重新独立复核后可进入合并工位",
+    "whole_exam_acceptance": "不可验收",
+    "reason": "候选题面主体和来源覆盖通过，但存在两处题面漏/错字、全卷角色元数据过时、S4正式细则身份未正确表达、全量资产SHA一处冲突以及学生手写层未完成。"
+  },
+  "shared_write_check": {
+    "shared_question_bank_modified": false,
+    "shared_indexes_modified": false,
+    "conversion_manifest_modified": false,
+    "raw_sources_modified": false
+  }
+}

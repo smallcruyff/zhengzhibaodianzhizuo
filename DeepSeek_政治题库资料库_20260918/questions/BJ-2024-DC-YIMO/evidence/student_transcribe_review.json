@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "receipt_type": "student_sample_transcription_review",
+  "exam_id": "BJ-2024-DC-YIMO",
+  "reviewed_at": "2026-09-21",
+  "review_scope": "PPTX slides 28, 29, 30, 35, 42, 46, 47, 52, 58, 65, 73, 74; student handwriting, visible scores, red/black annotations, crop boundaries and source-media integrity",
+  "technical_checks": {
+    "inventory_json_valid": true,
+    "sample_count": 12,
+    "expected_student_slides": [28, 29, 30, 35, 42, 46, 47, 52, 58, 65, 73, 74],
+    "inventory_student_slides_match_expected": true,
+    "embedded_media_extracted_from_pptx": true,
+    "embedded_media_sha256_match_pptx": {
+      "slide28": true,
+      "slide29": true,
+      "slide30": true,
+      "slide35": true,
+      "slide42": true,
+      "slide46": true,
+      "slide47": true,
+      "slide52": true,
+      "slide58": true,
+      "slide65": true,
+      "slide73": true,
+      "slide74": true
+    },
+    "rendered_slide_copies_present": "12/12",
+    "native_text_layer_copies_present": "12/12",
+    "native_text_layers_empty": "12/12",
+    "native_shape_copies_present": "9/9",
+    "asset_sha256_manifest_present": true,
+    "asset_sha256_manifest_entries": 45,
+    "relative_asset_references_resolved": true,
+    "shared_question_bank_modified": false,
+    "shared_index_modified": false,
+    "shared_conversion_manifest_modified": false
+  },
+  "content_checks": {
+    "all_visible_score_claims_have_image_basis": true,
+    "scores_not_visible_left_null": true,
+    "teacher_red_overlay_and_point_marks_recorded": true,
+    "black_corrections_preserved_as_image_and_notes": true,
+    "student_text_transcribed_without_answer_key_normalization": true,
+    "uncertain_regions_have_coordinates": true,
+    "all_handwriting_unambiguously_transcribed": false,
+    "bounded_uncertainty_reason": "The source is photographed/embedded screen imagery with moire, perspective and limited native resolution; Q19 and portions of Q16/Q18/Q21 cannot be safely read character-by-character.",
+    "source_image_remains_authoritative": true
+  },
+  "sample_review": [
+    {"sample_id": "Q16-S1", "slide": 28, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q16-S2", "slide": 29, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q16-S3", "slide": 30, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q17-S1", "slide": 35, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q18-S1", "slide": 42, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q18-S2", "slide": 46, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q18-S3", "slide": 47, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q18-S4", "slide": 52, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q19-S1", "slide": 58, "status": "image_preserved_bounded_transcription", "score_verified": false, "image_preserved": true},
+    {"sample_id": "Q20-S1", "slide": 65, "status": "partial_with_bounded_uncertainty", "score_verified": true, "image_preserved": true},
+    {"sample_id": "Q21-S1", "slide": 73, "status": "partial_with_bounded_uncertainty", "score_verified": false, "image_preserved": true},
+    {"sample_id": "Q21-S2", "slide": 74, "status": "partial_with_bounded_uncertainty", "score_verified": false, "image_preserved": true}
+  ],
+  "promotion_recommendation": {
+    "promotable_to_shared_question_bank": false,
+    "reason": "This is a student-layer receipt only; the parent candidate still needs its independent source-role and question-level review. In addition, several handwritten regions remain explicitly uncertain.",
+    "next_reviewer": "Independent reviewer should inspect all 12 copied PPTX media files against transcription.md, correct only characters directly supported by pixels, and retain any unresolved glyphs with coordinates."
+  },
+  "deliverables": {
+    "transcription": "transcription.md",
+    "inventory": "inventory.json",
+    "review": "review.json",
+    "asset_file_list": "assets/file_list.txt",
+    "asset_sha256sums": "assets/sha256sums.txt"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "status": "acceleration_integrated_v2_candidate_pending_final_luna_review",
+  "questions": 21,
+  "points_total": 100,
+  "source_files": [
+    {
+      "source_id": "Sd09df25048f5",
+      "rel_path": "历年高考题及细则/2020北京高考真题政治（教师版）.pdf",
+      "sha256": "d09df25048f53c5664cda0d4978d58a4c6b4e3075d8b31852f0ecdf245f80ee7",
+      "pages": 18,
+      "adjudicated_role": "混合载体：p1-p7原卷题面；p8-p18教师版参考答案与解析（E3）"
+    },
+    {
+      "source_id": "Sd28336f73700",
+      "rel_path": "历年高考题及细则/2020北京政治高考.pdf",
+      "sha256": "d28336f737005ee888d1d4e31a79d5f11f6691afa4c4504ddb614d6129e0c42b",
+      "pages": 4,
+      "adjudicated_role": "2020年北京高考政治试题正式评分细则（Q16-Q21，E1）"
+    }
+  ],
+  "all_source_pages_opened": {
+    "Sd09df25048f5": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "Sd28336f73700": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "question_sha256": {
+    "BJ-2020-BJ-GAOKAO-Q1.md": "88f27805812047af68f7a1f1a67b3d2be060ccbeec633a106a9b6341f135f692",
+    "BJ-2020-BJ-GAOKAO-Q2.md": "0eb4576317c8d3b75579e6c8efe427d0608fa114a8c07bf38827e934cb2fe13e",
+    "BJ-2020-BJ-GAOKAO-Q3.md": "4313b98443b7085964ff4795485a94a8e67f7ee7db5bd5f35d34e75f7cf1d17a",
+    "BJ-2020-BJ-GAOKAO-Q4.md": "1bf5d276c3603648aad1f006f32c3d7ce5a8f3f27867a360868dca787ef63d17",
+    "BJ-2020-BJ-GAOKAO-Q5.md": "d596853533e596ea21cb263607079d247b135b757a08c715a55870b79b94a303",
+    "BJ-2020-BJ-GAOKAO-Q6.md": "87ea4b69fb659745b58646fb3d78b3d6b8f700c2640d30b61abd3978ee24f260",
+    "BJ-2020-BJ-GAOKAO-Q7.md": "d7d40952f6f5db8ea3df1c9d8471a1fdc98c1c26b2cc4446243dfc2a05e9d7d1",
+    "BJ-2020-BJ-GAOKAO-Q8.md": "fa44bfeba1f4efc81e34b7079d4cdc45620c868e19704aa2583ea35586f4c2f1",
+    "BJ-2020-BJ-GAOKAO-Q9.md": "f239db8a1c654256d142d3a22f78023ecd7c1171e53102d1e7a65f43df14bbe1",
+    "BJ-2020-BJ-GAOKAO-Q10.md": "de24897cb9b624b131ef5f76e87e54563553281cf79beed7ab78439d947686bb",
+    "BJ-2020-BJ-GAOKAO-Q11.md": "927a22eecf772793427fa4c2804f5f5504e0cdfb95b9aac16cdb929f2a78e74e",
+    "BJ-2020-BJ-GAOKAO-Q12.md": "766d3f4e732b8df95fd43db7da195dee73c444e8552f89953ba644264dd9f044",
+    "BJ-2020-BJ-GAOKAO-Q13.md": "549fd155b093bf93de4037a703afd3a393491f66c38e78639a1c0d4e92d7c92d",
+    "BJ-2020-BJ-GAOKAO-Q14.md": "0fe44004514deb609d2cf69dfffdca6bdcffadf8574c9d37f84a82896b076030",
+    "BJ-2020-BJ-GAOKAO-Q15.md": "d06a02ce3b345fa671736880ee06ba91875e42ae2df1fb09e27da730bd11d14f",
+    "BJ-2020-BJ-GAOKAO-Q16.md": "5c9eac3d9c1f82827a11d620a1bdf6735edf319f5578aaf4dc92b6f50c2f9296",
+    "BJ-2020-BJ-GAOKAO-Q17.md": "c2872281ef7a02629bdcdcedfccbebf05e17d9e05b5bc0e8fa69c1057c825e8e",
+    "BJ-2020-BJ-GAOKAO-Q18.md": "b61ea3453becccdd696a1cd4fd3ee977da33c00c66c9a54d14323347cabbd443",
+    "BJ-2020-BJ-GAOKAO-Q19.md": "d2cf80fc614327d5735e571c948a93d6835055d3eb18c4ab52cd0f756867a8a8",
+    "BJ-2020-BJ-GAOKAO-Q20.md": "84ba8bc12f8a8a3326c116d97ff00fa270056bc181be51af4cd95feb84e98b34",
+    "BJ-2020-BJ-GAOKAO-Q21.md": "a4e7beceda214b4670e7b404bec1fb240eae95819d83f2c132bd8996807dc97a"
+  },
+  "assets": {
+    "assets/embedded/img-000.png": "1662b5d2c0d91d3a0a5e0728b9faf46097deda4e255db092b0a97d204630f656",
+    "assets/embedded/img-001.png": "1e378ba5049b3a36444cb998e6ee46f5a2ac0544e65bccd44f0d155c26c561f8",
+    "assets/embedded/img-002.png": "34849178476f5a4467a632e42ddb7524ca315b1f3ca01d163afb5adda92d6ab2",
+    "assets/embedded/img-003.png": "ff4e23557fc0b7d876bc6e02b4c34a90b7f33b21b154647279052a3f6aaf0bca",
+    "assets/embedded/img-004.png": "6bd12fe31bef00e00fc22749e2381289d3ce1ad5100e26894cf3cb13aae4bdf0",
+    "assets/embedded/img-005.png": "cceaaddce54960e147c12aa3aca9337156213bf4b91d225f06d470c7898ad8f9",
+    "assets/embedded/img-006.png": "c0866af473e529aeb5721925b2e73d156b05d1f7e9d46ce2c99e83baf60b9379",
+    "assets/embedded/img-007.png": "541621013c474267ec978396a5363d64a23acf81149682476417efca56b2fddd",
+    "assets/embedded/img-008.png": "6ecc6ceabb10b435e0f9c5745078dea136c0611cd15c3588f81ee8d2162d7733",
+    "assets/embedded/img-009.png": "39eff46786422ae9117baeb50c0459a65fae5feacd11869c7b541518e77d2678",
+    "assets/source_pages/rubric/p001.png": "3d3a2d4389d2b4947b1ae755857e46a4e357c77633e55d08b2a2435e51e4e936",
+    "assets/source_pages/rubric/p002.png": "fdf3294def98b407959d2f6747d95b8249f28ab7e8db94a992af3fa3ed32c225",
+    "assets/source_pages/rubric/p003.png": "90e703c614a27fe344904868dc9f4350b8efb2c0a2601a70405086c5459ca8ed",
+    "assets/source_pages/rubric/p004.png": "092ed45f858d23827daa962ab8ee3b4788da79149d04fee4043e224d3191a21e",
+    "assets/source_pages/teacher/p001.png": "448c7fc39232d31b7361a7aa4770de0c4d1a975d5435005c45c9a990e2ea57e3",
+    "assets/source_pages/teacher/p002.png": "7c561c886cc3a7d2a7ce56cc1e64e7a0aaf79d17163971afc72e312bc6242edf",
+    "assets/source_pages/teacher/p003.png": "7803adac0be6dd46c4e256482aa9198af6e5ec5c8754a3362937ab990ea4e7ed",
+    "assets/source_pages/teacher/p004.png": "8d3c9ac47d161b8805ed4fd901232b10bc90287a8a2687c6806dcf34998357ef",
+    "assets/source_pages/teacher/p005.png": "ebbfd62426adc8900b40d903df8359469fa39940f6e2775ef37d9be88fdfe9a9",
+    "assets/source_pages/teacher/p006.png": "16f5f378bba11fc4c9ba69a24df2e59d53c4b478fc3bfc204c93ac4cbf1f8106",
+    "assets/source_pages/teacher/p007.png": "caad760f3dffbf1bffe32c216a72eee58d521906d4baef327c42baf5eccf3d59",
+    "assets/source_pages/teacher/p008.png": "0648b4fc6878ae331dcca3329cd21cd0bb9417a7c06fe18be4b0d1531cffa762",
+    "assets/source_pages/teacher/p009.png": "f8c0f1e564cfdf93515e9ce56ce83a79b9f2c79a6f5c884229330710fe74097b",
+    "assets/source_pages/teacher/p010.png": "9f70e86d7d164c56edb719d4aa3d06fdd90522bd8b1e63084c549a8124370f4d",
+    "assets/source_pages/teacher/p011.png": "55015c15e2282ef6fa7e5cb379742b32539edaa235e4b7be5149098544a8e668",
+    "assets/source_pages/teacher/p012.png": "eaebc488cadb642fd7d731e2b3ce1974302d63f9f751e34582926a3124026d11",
+    "assets/source_pages/teacher/p013.png": "ead736a752c7946b218fc2b8762aca4fdbed66e2ae487460a49bb8d9b6be42c1",
+    "assets/source_pages/teacher/p014.png": "a51b07fac5aa1e96988f6ac274fd43e275559bd983f7afbdf6c52d8753d3085f",
+    "assets/source_pages/teacher/p015.png": "770b9dfea26a2a8047112d1c3eca8238902790c65ef9de4aef8b9d59b49187db",
+    "assets/source_pages/teacher/p016.png": "d937fd77a7d1fd89126231a2af64c3c3228adb762a5c9cc1af34b60a34c0ab24",
+    "assets/source_pages/teacher/p017.png": "58e8331f7c1013670299838cd44f57207c49865a51a33fce283ec2c9cb906087",
+    "assets/source_pages/teacher/p018.png": "d1ec8f34fcc7fa9a397ec7e796e852e0c128b2bc9d7ad92f9ba09a8f723fac06"
+  },
+  "known_unresolved": [
+    "最终物化包尚待另一独立Luna复核；本目录不代表最终发布或共享题库已写入",
+    "共享exams.csv、exam_files.csv、questions.csv、rubric_links.csv与conversion_manifest保持未修改",
+    "Q10定向视觉delta独立复核已通过；不再保留旧候选的653/不完整65个统计转写"
+  ],
+  "shared_files_modified": [],
+  "acceleration_integrated_v2": {
+    "parent_lane": "acceleration_lane_20260922",
+    "parent_materialized_candidate_root": "controller_ready/BJ-2020-BJ-GAOKAO/candidates",
+    "parent_materialized_candidate_manifest_sha256": "89bca283e282d82d2922d5b9ebbde3cca0ade4b26a0356b3ee6d72efe2754153",
+    "q10_delta_id": "versioned_q10_visual_delta_20260922",
+    "q10_delta_candidate_sha256": "eec1769be9b9115d6569839ef480f671753d4f5b51fb65bee834350a703de874",
+    "q10_integrated_sha256": "de24897cb9b624b131ef5f76e87e54563553281cf79beed7ab78439d947686bb",
+    "other_question_count_byte_inherited": 20,
+    "asset_count_byte_inherited": 32,
+    "canonical_links": "assets/",
+    "independent_q10_review": "versioned_q10_visual_delta_20260922/independent_review/review.json",
+    "final_luna_review_pending": true,
+    "controller_ready_written": false
+  },
+  "shared_primary_hold": [
+    "Q17网页完整栏目/品类与价格曲线坐标、刻度、数值趋势未转写完整",
+    "Q20抗疫示意图各框全文与逐条箭头对应未转写完整",
+    "Q2邮票可读小字、面值与图像组成需补充核验",
+    "Q16-Q21正式细则现有题级摘要须与4页全文核对，补足原文及汇总学生问题"
+  ],
+  "caption_correction": {
+    "before_sha256": "fe206d63b4fb22950393521ddc92573d79fde424d7c6711d2f50e813d1362ff1",
+    "after_sha256": "84ba8bc12f8a8a3326c116d97ff00fa270056bc181be51af4cd95feb84e98b34",
+    "reason": "工程图像alt明确原题空框；不改原题，不代表payload已完成"
+  }
+}

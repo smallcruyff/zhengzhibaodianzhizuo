@@ -1,0 +1,49 @@
+{
+ "reviewer": "Claude 确认复核（只读，Opus）",
+ "target": "归属表_v1（内容 v2，rule_version 2026-09-24-attribution-v2）",
+ "against": ["审查意见.json", "返修回执_v2.json"],
+ "verdict": "FAIL",
+ "summary": "blocker② 已修：OUT 低先验层共 4850 条，与各模块 OUT 数逐一相等。major③、major④ 已修；minor 大体已修。重跑结果确定：exam_identity、attribution、attribution_options 在 scratchpad 重跑后与交付件逐字节一致。具名例外裁定按原意执行：2024 顺义二模、2026 石景山期末、2026 北京高考三卷整卷；2024 石景山一模只放行 Q19(1)，Q19(2)(3) 不带入。边界卡的原文摘录与 Skill 现文逐字一致。海淀期中学年只在后台建议改为 2023-2024，没有写出届别和学生版标签（按规则应为 2024 期中），属 minor。仍有 1 个 blocker、4 个 major。",
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "blocker③ 没有修好，而且出现回退。v2 直接用 matrix.csv 的 dup_covered_by 合并收录状态，没有区分“重复登记别名”和“跨卷复用或串题”。结果把不同的题标成已收，真实的漏收被藏了起来。别名卷本身仍有假漏收和双份计数。",
+   "evidence": "①不同卷之间有 20 个（单元，模块）组合靠合并被标成 COLLECTED，其中多组题面完全不同：BJ-2024-BJ-GAOKAO-Q8（2024‘觉醒年代’研学）因 2022 Q8（飞花令）被推理收录，成了 RE=COLLECTED；BJ-2022-BJ-GAOKAO-Q8 因此成了 CU=COLLECTED；BJ-2024-BJ-GAOKAO-Q13（‘截至2023年底’）成了 X2=COLLECTED，而 2022 Q13 是个人信息保护法题；BJ-2026-HD-QIZHONG-Q8（选择题）因 2024 高考 Q18（主观题）成了 B2、RE=COLLECTED。bank_duplicate_exams.csv 把这些卷对标为 shared_or_reused_questions，不是 duplicate_registration；审查摘要第89行也写明 2024 高考 Q8/9/13 是‘串题’。清单见 scratchpad/attribution_confirm/dup_merge_crossexam.txt。②别名卷仍有假漏收：matrix 里孪生题的收录值为‘M’时，dup_covered_by 是空的，于是 BJ-2025-HD-QIZHONG 的 Q2、Q15、Q19、Q21(1)(2)、Q25(1)(2) 仍在 B2_missing_candidates.csv，而它们的 2024 孪生题在 attribution 中已是 B2=COLLECTED。③分母没有按等价类合并：2024/2025 海淀期中两份登记在各书漏收表中同时列出，共 72 个（题对×模块）组合。④BJ-2025-FT-YIMO-Q18 虽已标成‘身份错误-不计入分母’，仍出现在 B2、PH、MI 三个 extra_candidates.csv 里，审查原证据说的‘三册误报错收’没有消除。⑤审查意见 blocker③⑤ 要求把书稿标签重定向进身份表（如‘2025朝阳期中’→BJ-2026-CY-QIZHONG），返修回执对这一条既没有写 fixed，也没有写 deferred。",
+   "fix": "只对 status=duplicate_registration_alias 的卷按 qid 重定向表合并，孪生题任一侧为 S、F 或 M 都算覆盖。shared_or_reused 和串题只标注，不合并收录状态；串题要回题库线处理。分母和差集按 canonical qid 去重。build_diffs 应排除‘身份错误-不计入分母’行。书稿标签重定向补进 exam_identity，或者明确列为 deferred。"
+  },
+  {
+   "severity": "major",
+   "desc": "blocker① 的系统性卷级回退已经去掉：2023 东城二模现在只有 Q16、Q21 是 E1，2024 西城二模、2024 海淀一模 Q16 为 E1，2024 高考已覆盖为 E1。但审查意见要求叠加 Skill 和 exams.csv 已写明的逐题 E1 结论，这一步只做了 5 条。原证据里的 2026 丰台一模 Q19 仍错标 E1，同类实例也还有错。",
+   "evidence": "①BJ-2026-FT-YIMO-Q19 仍为‘完整题-有E1’，X1=IN，在 X1 漏收表中属于‘按裁定可收’。book-xuanbi-1.md 第43、205、400、418行都说它只有答案方向、样卷和整题赋分，最多算 E3。②BJ-2024-CY-YIMO-Q18#2 被标为 E1，B3 已收，CU=IN；exams.csv 本卷 notes 原话是‘Q18(2)不升E1’。③Skill 记为 E1 的题被判不收或没有行：book-xuanbi-3.md 第86行写 2026 海淀二模 Q18（1）‘E1及答案均为市场调研’，本表 BJ-2026-HD-ERMO-Q18#1 却是‘不收-无E1’（X2、MI 已收）；book-xuanbi-1.md 第307行写 2026 海淀期中 Q22(1) 已闭环 E1，本表 BJ-2026-HD-QIZHONG-Q22#1 却是‘不收-无E1’（PH、X1 已收）；同一行还写 2024 房山一模 Q18(2) 已闭环 E1，本表没有这一行。④有 11 行的 evidence_detail 写着‘未在rubric_links.csv找到该题任何行(未核实,不是已确认无)’，admission 却是‘不收-无E1’，涉及 2026 海淀期中 8 行、2026 房山二模 2 行、2026 丰台二模 1 行。这与审查意见的要求（未核实的一律归‘待裁决-证据未核实’）和返修回执自己的口径矛盾，其中 10 行已被书收，会被误报为错收。",
+   "fix": "扫描 exams.csv notes 中的小问级 E1 限定（如‘不升E1’‘仅Qx’），以及各 book-*.md 的 E1 门和闭环记录，逐条补进 skill_overrides.json。eval_rubric_rows 在‘无任何行’时对主观题返回待裁决，不返回不收。"
+  },
+  {
+   "severity": "major",
+   "desc": "门头沟、房山这条裁定（汇编卷项目级计入、只收选择题）方向对了，但候选行有题型判反，覆盖也不全。书稿已经收录的这两卷题目大多不在表里。",
+   "evidence": "①题型推断反了：BJ-2024-FS-YIMO-Q17 在汇编原文里有‘（11分）同学们在学习…’，是主观题，却被标为‘选择题’和‘完整题-选择题照收’，等于无 E1 的主观题被放行。BJ-2024-FS-YIMO-Q13（‘原告A公司…’，按北京卷结构属于 Q1—15 选择题）却被标为主观题、待裁决。②只从 status=已解析的 9 个汇编块生成候选行；assembly_blocks 中‘待复核’的门头沟一模8、11、14、20 和房山一模15（均在 2024 届汇编）没有纳入。③not_resolved 表显示书稿已收：必修三收门头沟 Q1、Q3、Q8 和房山 Q9、Q10；选必一收门头沟 Q8、Q10 和房山 Q15、Q18(2)。这些题在 attribution.csv 里一行都没有，所以既不进分母，也不能复核收录对错。④book-xuanbi-1.md 第307行记 2024 房山一模 Q18(2) 已闭环 E1，第308行记房山 Q14、Q15 和门头沟 Q8、Q10、Q11 已有正式答案键。exam_identity 却写‘暂无原卷/正式评分载体’，也没有登记这条相反证据。",
+   "fix": "题型按北京卷题号区间和分值标记判定，不靠文本粗推。把‘待复核’汇编块和书稿已引用的题号并入候选行。xuanbi-1 第307、308行的 E1 和答案键记录写进 identity 和 overrides，与 source-inventory 第136行的冲突要显式登记。"
+  },
+  {
+   "severity": "major",
+   "desc": "major⑤ 只修了一半：快照已经归档，但重跑前的校验是自己对自己，无法发现题库或分类器是否变了。脚本仍然从另一会话的 /private/tmp 读分类器输入，也没有参数可以改读快照。",
+   "evidence": "README 规定的校验是‘cd inputs_snapshot && shasum -a 256 -c MANIFEST.sha256’，只比较快照文件和快照自己的清单，永远 OK，比不出线上 rubric_links.csv 或 exams.csv 是否已变。build_attribution_v2.py 第32行和 prep_model_batch_v2.py 第19行仍把 CLASSIFIER 硬编码为 /private/tmp/…/bf450d67…/scratchpad/completeness/classifier，argparse 里没有输入路径参数。tmp 一旦被清理，README 里的重跑命令就会失败。README 也没有记录 questions.csv 的签名（审查原文要求记录）。",
+   "fix": "在 README 或 MANIFEST 中写明各线上源路径，重跑前把线上文件的哈希与 MANIFEST 比对。脚本增加 --classifier-dir 或 --inputs-dir 参数，默认读 inputs_snapshot。补记 questions.csv 的哈希。"
+  }
+ ],
+ "verified_fixed": [
+  "blocker②：8 本书 out_lowprior 行数与 attribution 中各模块 OUT 数完全相等（85/151/633/688/998/846/864/585，合计 4850）",
+  "blocker① 系统部分：2023 东城二模只有 Q16、Q21 是 E1；2024 西城二模 Q16—19、2024 海淀一模 Q16 为 E1；2024 高考 6 个单元按 source-inventory 第102行覆盖为 E1；2023 海淀一模和 2023 海淀期中改为待裁决；material_kind 改为精确匹配；已收却判‘不收’的由 124 个降到 23 个（其余问题见 major 第1条）",
+  "major③：BJ-2024-BJ-GAOKAO-Q14 为 E3；选择题证据逐题判定",
+  "major④：slice_estimate 新增队列②，覆盖全部 2681 个 COLLECTED 组合",
+  "major②：边界卡摘录与 incremental-question-intake.md 第38、44、77—79行、book-xuanbi-3.md 第10行、book-philosophy.md 第30行、book-culture.md 第34行、book-reasoning.md 第20行逐字一致",
+  "BJ-2025-HD-QIZHONG Q4、Q5、Q6 已不在 B2 漏收表中；BJ-2025-FT-YIMO-Q18 已在 admission 层剔除；BJ-2024-CY-QIZHONG 已登记学年更正",
+  "确定性：重跑后 3 个产物与交付件逐字节一致"
+ ],
+ "rulings_check": {
+  "门头沟/房山": "方向正确：项目级计入，选择题照收，主观题待裁决，取代关系和 xuanbi-1 第401行都已登记。执行上有缺陷，见 major 第2条。",
+  "海淀期中学年": "后台建议把学年改为 2023-2024，和题库回传一致，符合原意。没有按 intake 第18行写出届别和学生版标签（2024 期中），也没有指出必修三的‘2023海淀期中’写法与规则不一致；属 minor，不列入 issues。",
+  "具名例外": "按原意执行：三卷整卷，另加石景山一模 Q19(1) 单独一小问；scope 已生效。",
+  "边界卡原文": "按原意执行：摘录全部逐字核对通过，推断已删除。卡1末尾把必修三清单推到其余各书的‘建议’略越出原文，属 minor。"
+ },
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_confirm/"
+}

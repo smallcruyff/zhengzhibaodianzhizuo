@@ -1,0 +1,13 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "status": "complete_for_available_sources",
+  "source_files_checked": [
+    "2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+    "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf"
+  ],
+  "students_found": false,
+  "student_samples": "N/A_with_basis",
+  "teacher_annotations": "N/A_with_basis",
+  "scores": "N/A_with_basis",
+  "basis": "输入本卷全目录仅含原卷PDF和评分细则PDF。"
+}

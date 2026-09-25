@@ -1,0 +1,225 @@
+{
+  "schema_version": "independent_source_support_verification.v1",
+  "exam_id": "BJ-2025-DC-ERMO",
+  "reviewed_at": "2026-09-22",
+  "reviewer": "/root/dc_ermo_source_support_review",
+  "conclusion": "PASS",
+  "scope": "独立只读复核 source_support_delta_20260922；不复核或晋升整卷题库验收结论。",
+  "target": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-DC-ERMO/source_support_delta_20260922/",
+  "input_fingerprints": {
+    "source_index_sha256": "adbab3d822e303af54249f13ad5ef1295d488747032040c5dd843577922a2651",
+    "production_validation_json_sha256": "1fd11aac93d9237116ecfe324e0637751f8802f27a74e1018e56d0bbc67ece61",
+    "production_validation_md_sha256": "837563008457f1e6eb6323c7c302c443033e2fdf7faa7a7c47d06a669bcaff98"
+  },
+  "checks": {
+    "source_pdfs": {
+      "status": "PASS",
+      "main_exam": {
+        "delta_path": "sources/original/main_exam_试卷.pdf",
+        "desktop_original": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+        "sha256": "9b287871f660f23de9593be4c16952103c1c6873d6bd52d25ddd57ddd1a8d268",
+        "bytes": 575180,
+        "pages": 8,
+        "delta_equals_desktop_original": true
+      },
+      "formal_scoring": {
+        "delta_path": "sources/original/formal_scoring_细则.pdf",
+        "desktop_original": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf",
+        "sha256": "606dbae1d5ce3e59c8daef227c8b797cfbda2b7f90b8c9e07f47654af13e1cc2",
+        "bytes": 327662,
+        "pages": 5,
+        "delta_equals_desktop_original": true
+      }
+    },
+    "page_assets_and_visual_open": {
+      "status": "PASS",
+      "main_exam_page_count": 8,
+      "formal_scoring_page_count": 5,
+      "all_pngs_valid_and_readable": true,
+      "all_13_byte_equal_to_verified_cache": true,
+      "verified_cache_root": "后勤管理/MD全库流水线_20260921/receipts/repair_2025_dc_ermo/rendered/",
+      "main_exam": [
+        {"page": "p001", "delta_sha256": "4d72ae41f37c89ca501391ac9fed5d5d64a40853351c59d9e958d9c90f724978", "cache": "paper/p-1.png", "cache_sha256": "4d72ae41f37c89ca501391ac9fed5d5d64a40853351c59d9e958d9c90f724978", "byte_equal": true},
+        {"page": "p002", "delta_sha256": "e558cb48333e3e3b677b33d2139f7e0f2a4e53c19c18b553ebdc07e66b024755", "cache": "paper/p-2.png", "cache_sha256": "e558cb48333e3e3b677b33d2139f7e0f2a4e53c19c18b553ebdc07e66b024755", "byte_equal": true},
+        {"page": "p003", "delta_sha256": "1bad360e4165dff70e462cc2697dd787b695dd42307da518633a868dbfb4b1a7", "cache": "paper/p-3.png", "cache_sha256": "1bad360e4165dff70e462cc2697dd787b695dd42307da518633a868dbfb4b1a7", "byte_equal": true},
+        {"page": "p004", "delta_sha256": "9eb8cb831c74b52ce1fc29080903234e95324f5b07acb67f00bf8bdde6a4158b", "cache": "paper/p-4.png", "cache_sha256": "9eb8cb831c74b52ce1fc29080903234e95324f5b07acb67f00bf8bdde6a4158b", "byte_equal": true},
+        {"page": "p005", "delta_sha256": "3fbdcb71702e05aa057bfe1ca4e98ec523014eefe96b70e851f98cf49dceaa1f", "cache": "paper/p-5.png", "cache_sha256": "3fbdcb71702e05aa057bfe1ca4e98ec523014eefe96b70e851f98cf49dceaa1f", "byte_equal": true},
+        {"page": "p006", "delta_sha256": "3b3192bc1bd642b6eb7865cb3357b0c144821c10ffd7bb152894004d4b755b6c", "cache": "paper/p-6.png", "cache_sha256": "3b3192bc1bd642b6eb7865cb3357b0c144821c10ffd7bb152894004d4b755b6c", "byte_equal": true},
+        {"page": "p007", "delta_sha256": "3e9781a28e3b4d34e5cc615e68bd9899a79fedfeb5a980b033d2ddaa6cd41e0e", "cache": "paper/p-7.png", "cache_sha256": "3e9781a28e3b4d34e5cc615e68bd9899a79fedfeb5a980b033d2ddaa6cd41e0e", "byte_equal": true},
+        {"page": "p008", "delta_sha256": "1ed07ad444c556689ef5be81a807cf33c80f8f5369f1179b1d542c711d12c390", "cache": "paper/p-8.png", "cache_sha256": "1ed07ad444c556689ef5be81a807cf33c80f8f5369f1179b1d542c711d12c390", "byte_equal": true}
+      ],
+      "formal_scoring": [
+        {"page": "p001", "delta_sha256": "c19cef991c99ec918518fc4ffeadcf2201149e78904dc004f9edc305bda3e468", "cache": "rubric/r-1.png", "cache_sha256": "c19cef991c99ec918518fc4ffeadcf2201149e78904dc004f9edc305bda3e468", "byte_equal": true},
+        {"page": "p002", "delta_sha256": "cc7478361bde55ae561dd1c540c2d52a1010b5d6bc9225344c778828f3638204", "cache": "rubric/r-2.png", "cache_sha256": "cc7478361bde55ae561dd1c540c2d52a1010b5d6bc9225344c778828f3638204", "byte_equal": true},
+        {"page": "p003", "delta_sha256": "403ab65e4b8da9739cb4d9ac735ed630debd973ab7f798c9221dca87d20e9e2c", "cache": "rubric/r-3.png", "cache_sha256": "403ab65e4b8da9739cb4d9ac735ed630debd973ab7f798c9221dca87d20e9e2c", "byte_equal": true},
+        {"page": "p004", "delta_sha256": "5980e2a901fd07971e08255d8a24bd78e2dd7c86ac7b309eeab30c7d3588ba48", "cache": "rubric/r-4.png", "cache_sha256": "5980e2a901fd07971e08255d8a24bd78e2dd7c86ac7b309eeab30c7d3588ba48", "byte_equal": true},
+        {"page": "p005", "delta_sha256": "ff77021a6f1723712a132d7d19fa757599dfdfc09409b83ff428b2670b0b023e", "cache": "rubric/r-5.png", "cache_sha256": "ff77021a6f1723712a132d7d19fa757599dfdfc09409b83ff428b2670b0b023e", "byte_equal": true}
+      ],
+      "visually_opened": [
+        "assets/main_exam_pages/p001.png",
+        "assets/figures/Q3_painting_caption.png",
+        "assets/main_exam_pages/p002.png",
+        "assets/main_exam_pages/p003.png",
+        "assets/main_exam_pages/p004.png",
+        "assets/main_exam_pages/p005.png",
+        "assets/main_exam_pages/p006.png",
+        "assets/main_exam_pages/p007.png",
+        "assets/main_exam_pages/p008.png",
+        "assets/formal_scoring_pages/p001.png",
+        "assets/formal_scoring_pages/p002.png",
+        "assets/formal_scoring_pages/p003.png",
+        "assets/formal_scoring_pages/p004.png",
+        "assets/formal_scoring_pages/p005.png"
+      ],
+      "required_anchor_pages_opened": [
+        "卷首：main_exam/p001",
+        "Q3图：figures/Q3_painting_caption.png",
+        "主卷：p004、p007、p008",
+        "评分：p001、p003、p005"
+      ]
+    },
+    "frontmatter_and_printed_instructions": {
+      "status": "PASS",
+      "file": "transcriptions/frontmatter_and_printed_instructions.md",
+      "file_sha256": "8a728e7dc97814a57eeae9ce73dfc78c020a7421d810c746ce5f6fe8d9da9e4d",
+      "visually_checked_against": ["assets/main_exam_pages/p001.png", "assets/main_exam_pages/p004.png"],
+      "anchors_confirmed": [
+        "2025 北京东城高三二模",
+        "政治／2025.5",
+        "本试卷共 8 页，共 100 分。考试时长 90 分钟。考生务必将答案答在答题卡上，在试卷上作答无效。考试结束后，将本试卷和答题卡一并交回。",
+        "第一部分 选择题；本部分共 15 题，每题 3 分，共 45 分",
+        "第二部分 非选择题；本部分共 6 题，共 55 分"
+      ],
+      "verbatim_anchor_check": true
+    },
+    "transcription_layers": {
+      "status": "PASS",
+      "visual_truth_boundary_explicit": true,
+      "visual_truth_statement": "cached_native、cached_cleaned、layout 均为转写/版面辅助层，不是视觉真值；最终视觉依据为原 PDF 与 13 张页图。",
+      "main_exam_page_markers": {"cached_native": 8, "cached_cleaned": 8, "layout": 8},
+      "formal_scoring_page_markers": {"cached_native": 5, "cached_cleaned": 5, "layout": 5},
+      "files": [
+        {"path": "transcriptions/cached_native/main_exam_raw.txt", "sha256": "1e9909acac1e852d4d0bbdb17a1dec8b15495545d184a9bf20a7aed0f2079ffd"},
+        {"path": "transcriptions/cached_cleaned/main_exam_full.md", "sha256": "c7db51d145978856715bd0d8e2c42fe0ec09cfc8db9dedc50f61954c3ea35afe"},
+        {"path": "transcriptions/layout/main_exam_layout.txt", "sha256": "8df642af7c4a584f4d663c7cdaa381e394b1dd7e5011bbc00abd2e2226be3ad2"},
+        {"path": "transcriptions/cached_native/formal_scoring_raw.txt", "sha256": "58a28ea033518113d48f661d6c9d71cfb37878631e9193d4745af97580745ae1"},
+        {"path": "transcriptions/cached_cleaned/formal_scoring_full.md", "sha256": "15d917025e1329cbeecf282391550d446bccc22627ba5b1e841e8645638afe61"},
+        {"path": "transcriptions/layout/formal_scoring_layout.txt", "sha256": "9fa35aeb08084a5f85cccded2c50af1edb7e89f9d98bea01e0e198a4e920a986"}
+      ]
+    },
+    "page_role_map_and_question_mapping": {
+      "status": "PASS",
+      "source": "source_index.json.page_role_map",
+      "main_exam": {
+        "p001": {"role": "E0_and_frontmatter", "questions": ["Q1", "Q2", "Q3", "Q4_start"]},
+        "p002": {"role": "E0", "questions": ["Q4_end", "Q5", "Q6", "Q7", "Q8", "Q9_start"]},
+        "p003": {"role": "E0", "questions": ["Q9_end", "Q10", "Q11", "Q12", "Q13", "Q14_start"]},
+        "p004": {"role": "E0_and_part2_heading", "questions": ["Q14_end", "Q15", "Q16", "Q17"]},
+        "p005": {"role": "E0", "questions": ["Q18", "Q19_start"]},
+        "p006": {"role": "E0", "questions": ["Q19_end", "Q20", "Q21"]},
+        "p007": {"role": "embedded_E3_not_independent", "questions": ["Q1-Q20"]},
+        "p008": {"role": "embedded_E3_and_level_descriptions_not_formal_E1", "questions": ["Q20", "Q21"]}
+      },
+      "formal_scoring": {
+        "p001": {"role": "formal_E1_and_aggregate_report", "questions": ["Q16"]},
+        "p002": {"role": "formal_E1_and_aggregate_report", "questions": ["Q16_tail", "Q17", "Q18_1_start"]},
+        "p003": {"role": "formal_E1_and_aggregate_report", "questions": ["Q18_1_tail", "Q18_2", "Q19_start"]},
+        "p004": {"role": "formal_E1_and_aggregate_report", "questions": ["Q19_tail", "Q20_start"]},
+        "p005": {"role": "formal_E1_and_aggregate_report", "questions": ["Q20_tail", "Q21"]}
+      },
+      "embedded_E3_not_formal_E1_boundary_confirmed": true,
+      "question_mapping_has_cross_page_boundaries": true
+    },
+    "Q3_caption": {
+      "status": "PASS",
+      "figure_path": "assets/figures/Q3_painting_caption.png",
+      "sha256": "062372bfc740b349808db71e222f939b7015d4c8c973155030f62a466dfa5008",
+      "parent_verified_asset": "后勤管理/MD全库流水线_20260921/receipts/repair_2025_dc_ermo/assets/Q3_img-000.png",
+      "caption_reading": "张京生 王元珍；《没有共产党就没有新中国》",
+      "caption_confirmed_visually": true,
+      "figure_is_locator_only": true
+    },
+    "Q17_native_visual_layers": {
+      "status": "PASS",
+      "visual_page": "assets/main_exam_pages/p004.png",
+      "native_anomalies_preserved_separately": true,
+      "variants": [
+        {"location": "资源下沉", "visual": "输送、偏远地区", "native": "輸送、仙远地区"},
+        {"location": "上海平台", "visual": "随申办", "native": "随中办"},
+        {"location": "服务内容", "visual": "诉讼指引", "native": "诉让指引"},
+        {"location": "网上业务", "visual": "网上立案", "native": "网上立電"},
+        {"location": "办公平台", "visual": "一体化办案办公平台", "native": "一体化办素办公平台"}
+      ],
+      "mode_name_left_as_printed": "线上十远程"
+    },
+    "current_shared_question_sha": {
+      "status": "PASS",
+      "question_count_expected": 21,
+      "question_count_checked": 21,
+      "sha_matches": 21,
+      "sha_mismatches": [],
+      "Q18_current_sha256": "9e1ef21c6736a43c20781080e82fc64fdb41b88349d21153f1ca4e96b16dd64b",
+      "Q18_controller_acceptance": {
+        "receipt": "../../../new_controller_20260922/BJ-2025-DC-ERMO_Q18_current_metadata_acceptance.json",
+        "receipt_sha256": "d7398862f50a5dffc99b7ffc65fd50439b6fef672d1a47cfd771b4caf4938cbc",
+        "accepted_current_sha_matches": true,
+        "decision": "preserve_current_shared_equivalent_metadata_wording",
+        "source_content_modified": false,
+        "shared_question_modified_this_action": false,
+        "old_materialization_rerun": false,
+        "whole_exam_accepted": false
+      }
+    },
+    "receipt_chain": {
+      "status": "PASS",
+      "checked": 5,
+      "passed": 5,
+      "entries": [
+        {"path": "../../../repair_2025_dc_ermo/checkpoint.json", "sha256": "00759fdba1ce86b4e8bc537d0ee860d3792cbfd6659b1d9e45e7f6a757c02829", "actual_sha256": "00759fdba1ce86b4e8bc537d0ee860d3792cbfd6659b1d9e45e7f6a757c02829", "exists": true, "role": "all_13_pages_opened_and_question_repair_mapping"},
+        {"path": "../../../complete_2025_dc_ermo_remaining/completion.json", "sha256": "0247e7c639eb99ee52f8bf6b3efe3f34b5ea99cfc6a51889bfcf466d0a6623d6", "actual_sha256": "0247e7c639eb99ee52f8bf6b3efe3f34b5ea99cfc6a51889bfcf466d0a6623d6", "exists": true, "role": "remaining_questions_visual_and_role_completion"},
+        {"path": "../../../materialize_2025_dc_ermo_merge_ready/verification.json", "sha256": "18a6b7eb409539fb70f24f2a2e9ccb67c38b90f4f207f24295004903f375e89a", "actual_sha256": "18a6b7eb409539fb70f24f2a2e9ccb67c38b90f4f207f24295004903f375e89a", "exists": true, "role": "legacy_materialization_integrity_read_only_do_not_rerun"},
+        {"path": "../resume_audit_20260922/consolidated_signoff/verification.json", "sha256": "7ecf45e00a697d3d4663a156e00114be6fc0325f9ba8e4b688c7828bb087a7ca", "actual_sha256": "7ecf45e00a697d3d4663a156e00114be6fc0325f9ba8e4b688c7828bb087a7ca", "exists": true, "role": "current_shared_consolidated_signoff"},
+        {"path": "../../../new_controller_20260922/BJ-2025-DC-ERMO_Q18_current_metadata_acceptance.json", "sha256": "d7398862f50a5dffc99b7ffc65fd50439b6fef672d1a47cfd771b4caf4938cbc", "actual_sha256": "d7398862f50a5dffc99b7ffc65fd50439b6fef672d1a47cfd771b4caf4938cbc", "exists": true, "role": "current_Q18_metadata_acceptance"}
+      ]
+    },
+    "student_layer": {
+      "status": "PASS_EXPECTED_SOURCE_NOT_PROVIDED",
+      "source_not_provided": true,
+      "independent_answer_file": "not_provided",
+      "student_original_answers_annotations_scores": "source_not_provided",
+      "aggregate_report_not_student_layer": true,
+      "no_student_source_files_in_delta": true
+    },
+    "write_and_materialization_guard": {
+      "status": "PASS",
+      "question_md_inside_delta": 0,
+      "question_md_paths": [],
+      "question_files_modified": false,
+      "shared_question_bank_modified": false,
+      "indexes_or_manifest_modified": false,
+      "old_materialization_rerun": false,
+      "production_materialization_not_triggered": true,
+      "payload_file_count": 27,
+      "payload_tree_sha256": "8ee3d280f380b2441a330d0c7428df552400d9ebf42964a17531568bb64afda7"
+    }
+  },
+  "errors": [],
+  "limitations_and_boundary": [
+    "本回执只证明 source-support delta 的来源、页图、转写层、映射、回执链和 SHA 守卫通过；不把独立答案源或学生层缺失改称通过。",
+    "p007-p008 是主卷内嵌 E3/等级材料；正式评分 PDF p001-p005 单独保留为 formal_E1/aggregate report 层。",
+    "既有 consolidated signoff 对整卷仍记为 UNCERTAIN_CONTROLLER_MANUAL_ADJUDICATION；本回执不改变该整卷边界，也不宣称整卷已验收。"
+  ],
+  "write_boundary": {
+    "written_only": [
+      "review/verification.json",
+      "review/verification.md"
+    ],
+    "not_written": [
+      "共享题库 questions/、indexes/、evidence/",
+      "conversion_manifest.json",
+      "原始试卷 PDF 与评分 PDF",
+      "source_support 生产文件、source_index.json、validation.json/md",
+      "repair/complete/materialize 既有回执"
+    ]
+  }
+}

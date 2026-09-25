@@ -1,0 +1,296 @@
+{
+ "batch_id": "s016",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "subjective",
+ "n_units": 9,
+ "units": [
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q18#2",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "18",
+   "subq": "2",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n18．(16分)科技创新、科学普及是实现创新发展的两翼。\n材料一 加快建设北京国际科技创新中心，是党中央赋予北京的重大战略任务，既需要\n有坚实有力的法制保障，更需要法制的严格实施。\n北京市第十六届人民代表大会第二次会议表决通过了《北京国际科技创新中心建设条\n例》。条例紧紧围绕“建设一个什么样的国际科技创新中心、怎么建设国际科技创新中心”\n作出规定，为高质量建设国际科技创新中心提供法制保障。\n《北京国际科技创新中心建设条例》 制度覆盖面广、涉及主体多，后续需要各方齐心协\n力，共同抓好贯彻落实。\n(1)《北京国际科技创新中心建设条例》于2024年3月1日起施行。结合材料一，运用\n《政治与法治》知识，为推动条例的贯彻落实提出合理建议。(8分)\n材料二 科技创新是经济社会发展的重要动\n力。科学普及是国家和社会普及科学技术知识、\n弘扬科学精神、传播科学思想、倡导科学方法的活\n动。目前，我国国家科普能力建设势头良好，科普\n生态持续优化。\n但与人们对科普产品和服务的需求相比，我\n国国家科普能力建设仍有提升空间。总体上看，\n我国科普事业以政府推动为主，全社会参与科普\n的主动性积极性有待提升；我国地域广袤，但优质科普资源主要集中在大中城市；“重科研、\n轻科普”，科普人才严重不足的现象仍一定程度上存在。\n《人民日报》刊发了题为《让科学普及与科技创新“两翼齐飞”》的时评，呼吁进一步加强\n国家科普能力建设，为高质量发展提供强劲动能。\n(2)结合材料二，运用《哲学与文化》 知识，谈谈对“ 让科学普及与科技创新‘ 两翼齐\n飞’”的认识。(8分)\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [PPTX 第 35 张（原生文本）]\n一是有关部门积极开展条例的宣传解读，增进理解，营造“知法尊法”良好氛围。\n二是政府依照条例积极履职，完善科技创新中心建设政策，提供优良的科技创新公共服务。\n三是企业、个人等创新主体，充分利用条例对科技创新的保障性规定，积极开展自主创新。\n四是市人大及常委会加强条例实施监督、反馈，市政协关注条例的实施，加强沟通、协商等。\n五是司法机关应加强对条例的司法适用，努力为建设国际科创中心营造公平正义的法治环境。\n\n六个角度，每个角度2分，任四点得8分\n主体+（知识）+做法+（预期效果）\n1.有关部门积极开展条例的宣传解读，增进理解，营造“知法尊法”良好氛围。\n2.政府：依照条例积极履职，完善科技创新中心建设政策，提供优良的科技创新公共服务。\n（替换：履行职能）\n3.市人大及常委会：加强条例实施监督、反馈，\n（替换：行使监督权）\n4.市政协关注条例的实施，加强沟通、协商等；\n（替换：民主监督）\n5.司法机关：应加强对条例的司法适用，努力为建设国际科创中心营造公平正义的法治环境。\n（替换：公正司法）\n6.企业、个人等创新主体，充分利用条例对科技创新的保障性规定，积极开展自主创新。\n（学生可能很难想到）\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q18`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：18；题型：非选择题；原卷分值：16分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q18.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`099822392ab40bfee7d552da478a3a629b24c4496af5ca5936cb2c7a4ca7a639`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 6 页整页图：`assets/original_pages/page-6.png`\n- 题级裁切资产：`assets/source_crops/Q18_two_wings_figure.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n配图为向上箭头“创新发展”，左翼标“科技创新”，右翼标“科学普及”；图形与题面“科技创新、科学普及是实现创新发展的两翼”相互对应。\n\n### [PPTX 第 35 张（原生文本）]\n一是有关部门积极开展条例的宣传解读，增进理解，营造“知法尊法”良好氛围。\n二是政府依照条例积极履职，完善科技创新中心建设政策，提供优良的科技创新公共服务。\n三是企业、个人等创新主体，充分利用条例对科技创新的保障性规定，积极开展自主创新。\n四是市人大及常委会加强条例实施监督、反馈，市政协关注条例的实施，加强沟通、协商等。\n五是司法机关应加强对条例的司法适用，努力为建设国际科创中心营造公平正义的法治环境。\n\n六个角度，每个角度2分，任四点得8分\n主体+（知识）+做法+（预期效果）\n1.有关部门积极开展条例的宣传解读，增进理解，营造“知法尊法”良好氛围。\n2.政府：依照条例积极履职，完善科技创新中心建设政策，提供优良的科技创新公共服务。\n（替换：履行职能）\n3.市人大及常委会：加强条例实施监督、反馈，\n（替换：行使监督权）\n4.市政协关注条例的实施，加强沟通、协商等；\n（替换：民主监督）\n5.司法机关：应加强对条例的司法适用，努力为建设国际科创中心营造公平正义的法治环境。\n（替换：公正司法）\n6.企业、个人等创新主体，充分利用条例对科技创新的保障性规定，积极开展自主创新。\n（学生可能很难想到）\n\n### [PPTX 第 38 张（原生文本）]\n参考答案：\n科学普及与科技创新同等重要。\n科学普及与科技创新虽各有侧重，但也具有同一性：一方面科学普及有利于提升公众科学素质、促进人的全面发展，是实现科技创新的基础性工作；另一方面，科学普及与科技创新都是文化事业的重要组成部分，都是建设文化强国的重要举措。\n要实现科学普及与科技创新“两翼齐飞”，应坚持以人民为中心的思想，具体问题具体分析，提升科普服务精准性；应树立全局观念、运用系统优化的方法，鼓励全社会共同参与，构建政府、社会、市场等协同推进的社会化科普发展格局；以问题为导向，引导科普资源向基层和欠发达地区倾斜，加强和优化基层科普公共服务；坚持“两点论”和“重点论”的统一，培养壮大科普人才队伍，改变“重科研、轻科普”的现状，营造热爱科学、崇尚创新的社会氛围。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q18`\n- `parent_sha256_current`: `099822392ab40bfee7d552da478a3a629b24c4496af5ca5936cb2c7a4ca7a639`\n- `new_question`: `False`\n- `canonical_slides`: `['S34', 'S35', 'S36', 'S37', 'S38']`；`formal_scoring_slides`: `['S35']`\n- 原卷页：`[6]`；题级唯一幻灯片绑定：`['S34', 'S35', 'S36', 'S37', 'S38']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-34.png', 'assets/renders/lecture/page-35.png', 'assets/renders/lecture/page-36.png', 'assets/renders/lecture/page-37.png', 'assets/renders/lecture/page-38.png']\n- 清晰评分页：['assets/renders/scoring/page-34.png', 'assets/renders/scoring/page-35.png', 'assets/renders/scoring/page-36.png', 'assets/renders/scoring/page-37.png', 'assets/renders/scoring/page-38.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q18.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S34/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n参考作答（E3，不是正式细则）：\n\n[DOCX P011] 18.（16分）\n[DOCX P012] （1）8分\n[DOCX P013] 一是有关部门积极开展条例的宣传解读，增进理解，营造“知法尊法”良好氛围。\n[DOCX P014] 二是政府依照条例积极履职，完善科技创新中心建设政策，提供优良的科技创新公共服务。\n[DOCX P015] 三是企业、个人等创新主体，充分利用条例对科技创新的保障性规定，积极开展自主创新。\n[DOCX P016] 四是市人大及常委会加强条例实施监督、反馈，市政协关注条例的实施，加强沟通、协商等。\n[DOCX P017] 五是司法机关应加强对条例的司法适用，努力为建设国际科创中心营造公平正义的法治环境。\n[DOCX P018] （2）（8分）\n[DOCX P019] 科学普及与科技创新同等重要。\n[DOCX P020] 科学普及与科技创新虽各有侧重，但也具有同一性：一方面科学普及有利于提升公众科学素质、促进人的全面发展，是实现科技创新的基础性工作；另一方面，科学普及与科技创新都是文化事业的重要组成部分，都是建设文化强国的重要举措。\n[DOCX P021] 要实现科学普及与科技创新“两翼齐飞”，应坚持以人民为中心的思想，具体问题具体分析，提升科普服务精准性；应树立全局观念、运用系统优化的方法，鼓励全社会共同参与，构建政府、社会、市场等协同推进的社会化科普发展格局；以问题为导向，引导科普资源向基层和欠发达地区倾斜，加强和优化基层科普公共服务；坚持“两点论”和“重点论”的统一，培养壮大科普人才队伍，改变“重科研、轻科普”的现状，营造热爱科学、崇尚创新的社会氛围。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`Q18(1)_verified_Q18(2)_not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n- Q18（1）正式评分：PPTX 第35张，逐点给出主体+知识+做法+预期效果，六个角度任四点得8分。\n- Q18（2）未定位到同题逐点评分细则；PPTX 第38张和 DOCX P018–P021 是参考答案/教研示例层，保留为 E3，不从中臆拆固定分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收第2问",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第2问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第2问单独给出结论/所需模块。"
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q19",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "19",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n19．(7分)\n诚信是法治精神的重要伦理基础。民法典第七条规\n定:“民事主体从事民事活动，应当遵循诚信原则，秉持诚\n实，恪守承诺”。\n镜头一\n2022年12月，A公司与B公司签订购销合同约定:A\n公司向B公司提供产品，货款于发货后的60日内付清。\n2023年1月，A公司依约向B公司提供货物，但截至2023年7月，B公司欠A公司货款590\n万元未支付。2023年8月，A公司起诉B公司，要求其支付货款及违约金。人民法院最终判\n决B公司尽快付清全部欠款并支付逾期违约金。\n镜头二\n某购物中心为200余家商户建立了“码上诚信”二维码，消费者扫描二维码，即可查询此\n商户相关的行政许可、行政处罚、主动承诺、自愿注册等信用信息。有市民说:“我经常来这\n个商场消费，一是因为‘码上诚信’让我感觉在这里购物很放心，二是因为这里的商品质量和\n售后服务态度都很好。”\n结合材料，运用《法律与生活》知识，分析诚信原则对促进社会主义市场经济健康发展的\n积极作用。\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [PPTX 第 43 张（原生文本）]\n评分细则：\n总述（1分）\n社会主义市场经济本质上是法治经济。民法典将诚信原则确立为基本原则之一，凸显了社会主义核心价值观对社会主义市场经济建设的引导和规范。（民法典将诚信原则确立为基本原则之一/凸显了社会主义核心价值观/坚持法治和德治相结合，均可给1分）\n分述（6分）\n角度一：诚信原则要求（1分）+有利于（2分）\n诚信原则要求合同当事人按照约定全面履行义务（替换：诚信履行1分）， \n有利于\n1、规范民事主体行为（替换：尊重和维护民事主体/当事人/A公司/双方/企业的合法权利，给1分）；\n2、司法机关可根据诚信原则定分止争,维护公平正义，维护诚信、健康的市场秩序\n（替换：公平竞争/规范市场秩序/建立统一开放竞争有序的市场体系/营造良好的营商环境/良好的市场环境，抄设问词语不给分）。（1分）\n角度二：诚信原则要求（1分）+有利于（2分）\n诚信原则要求经营者依法、诚信经营/企业诚信经营（1分）， \n有利于\n保护消费者的合法权益,（替换：知情权、安全消费的权利）\n平衡经营者与消费者之间的关系，（平衡、解决信息不对称问题） \n有助于守法诚信的经营者扩大市场，并最终增进社会整体福祉。（激发市场活力/社会和谐稳定）\n（写出以上任意1点给1分，总分不超过2分）\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q19`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：19；题型：非选择题；原卷分值：7分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q19.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`470596d24ce0ddb77faa5d0d17290c05a55b03e2e72bfe93e950c79b12df913e`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 7 页整页图：`assets/original_pages/page-7.png`\n- 题级裁切资产：`assets/source_crops/Q19_honesty_quote_box.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n引语框文字：“诚信者，天下之结也。”下标为“典出《管子·枢言》”；“释义 讲诚信，是天下行为准则的关键。”\n\n### [PPTX 第 41 张（原生文本）]\n参考答案：\n社会主义市场经济本质上是法治经济。民法典将诚信原则确立为基本原则之一，凸显了社会主义核心价值观对社会主义市场经济建设的引导和规范。\n\n诚信原则要求合同当事人按照约定全面履行义务，有利于规范民事主体行为，尊重和维护民事主体合法权利；司法机关可根据诚信原则定分止争,维护公平正义，维护诚信、健康的市场秩序。\n\n诚信原则要求经营者依法、诚信经营，保护消费者的合法权益。这不仅有利于平衡经营者与消费者之间的关系，而且有助于守法诚信的经营者扩大市场，并最终增进社会整体福祉。\n\n意义叙写原则：\n由小到大 由近及远 由直接到间接\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q19`\n- `parent_sha256_current`: `470596d24ce0ddb77faa5d0d17290c05a55b03e2e72bfe93e950c79b12df913e`\n- `new_question`: `False`\n- `canonical_slides`: `['S39', 'S40', 'S41', 'S42', 'S43']`；`formal_scoring_slides`: `['S43']`\n- 原卷页：`[7]`；题级唯一幻灯片绑定：`['S39', 'S40', 'S41', 'S42', 'S43']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-39.png', 'assets/renders/lecture/page-40.png', 'assets/renders/lecture/page-41.png', 'assets/renders/lecture/page-42.png', 'assets/renders/lecture/page-43.png']\n- 清晰评分页：['assets/renders/scoring/page-39.png', 'assets/renders/scoring/page-40.png', 'assets/renders/scoring/page-41.png', 'assets/renders/scoring/page-42.png', 'assets/renders/scoring/page-43.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q19.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S39/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n参考作答（E3，不是正式细则）：\n\n[DOCX P023] 19.（7分）\n[DOCX P024] 社会主义市场经济本质上是法治经济。民法典将诚信原则确立为基本原则之一，凸显了社会主义核心价值观对社会主义市场经济建设的引导和规范。\n[DOCX P025] 诚信原则要求合同当事人按照约定全面履行义务，有利于规范民事主体行为，尊重和维护民事主体合法权利；司法机关可根据诚信原则定分止争,维护公平正义，维护诚信、健康的市场秩序。\n[DOCX P026] 诚信原则要求经营者依法、诚信经营，保护消费者的合法权益。这不仅有利于平衡经营者与消费者之间的关系，而且有助于守法诚信的经营者扩大市场，并最终增进社会整体福祉。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`verified_from_Sd64506799887_scoring_pptx_native_text`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q20#1",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "20",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n20．(9分)学会正确地运用推理，对于科学研究具有重要意义。\n材料一 有科学家对我国古代气候及其变化进行了一系列考古研究和调查论证，其中\n之一是关于A区域古代气候较为温暖的论证。科学家的论证过程包含了两个推理。\n推理一:\n如果A区域古代没有广泛生长竹子，就不可能有大量的炭化竹节，\n考古发掘中已发掘出地底下有大量炭化竹节，\n所以，A区域古代广泛生长着竹子。\n(1)推理一属于哪种推理类型? 其成立的理由是什么? (5分)\n材料二 科学家进而又根据竹子适宜生长在温暖的地方以及A区域当时广泛生长着竹\n子，运用不同于推理一的另一种演绎推理形式，推断出A区域古代气候较为温暖。\n(2)根据材料二，补充完整推理二。(4分)\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [PPTX 第 45 张（原生文本）]\n20（1）参考答案：\n以上推理属于充分条件假言推理。\n充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n \n细则：\n推理类型： 充分条件假言推理（1分），没有替代，其他表述都不给分。\n理由：充分条件假言判断，前件真，后件一定真，后件假，前件一定假。（2分）\n替代：肯定前件，就能肯定后件/肯定前件式/前真后必真\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。（2分）\n结合材料分析，踩意。\n\n### [PPTX 第 46 张（原生文本）]\n20（2）示例：\n前提1:只有A区域古代气候温暖，A区域古代才有可能生长竹子。\n前提2:A区域古代广泛生长着竹子\n \n \n细则：\n1 每个前提2分，共计4分，前提中要表达出A区域古代气候温暖是A区域古代生长竹子的必要条件；\n2 前提中如果没有出现“古代”“当时”等严谨的时间表述扣1分。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q20`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：20；题型：非选择题；原卷分值：9分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q20.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`40f1e142743c62377ed0cfd494e680bf4b3e5eb999c7a6175b920871d11a36e2`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 7 页整页图：`assets/original_pages/page-7.png`\n- 题级裁切资产：`assets/source_crops/Q20_reasoning_box.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n推理一为虚线框中的三行充分条件假言推理；推理二为带折角的大框，含“前提：①____ ②____；结论：A区域古代气候较为温暖”的填空位置。\n\n### [PPTX 第 45 张（原生文本）]\n20（1）参考答案：\n以上推理属于充分条件假言推理。\n充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n \n细则：\n推理类型： 充分条件假言推理（1分），没有替代，其他表述都不给分。\n理由：充分条件假言判断，前件真，后件一定真，后件假，前件一定假。（2分）\n替代：肯定前件，就能肯定后件/肯定前件式/前真后必真\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。（2分）\n结合材料分析，踩意。\n\n### [PPTX 第 46 张（原生文本）]\n20（2）示例：\n前提1:只有A区域古代气候温暖，A区域古代才有可能生长竹子。\n前提2:A区域古代广泛生长着竹子\n \n \n细则：\n1 每个前提2分，共计4分，前提中要表达出A区域古代气候温暖是A区域古代生长竹子的必要条件；\n2 前提中如果没有出现“古代”“当时”等严谨的时间表述扣1分。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q20`\n- `parent_sha256_current`: `40f1e142743c62377ed0cfd494e680bf4b3e5eb999c7a6175b920871d11a36e2`\n- `new_question`: `False`\n- `canonical_slides`: `['S44', 'S45', 'S46']`；`formal_scoring_slides`: `['S45', 'S46']`\n- 原卷页：`[7]`；题级唯一幻灯片绑定：`['S44', 'S45', 'S46']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-44.png', 'assets/renders/lecture/page-45.png', 'assets/renders/lecture/page-46.png']\n- 清晰评分页：['assets/renders/scoring/page-44.png', 'assets/renders/scoring/page-45.png', 'assets/renders/scoring/page-46.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q20.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S44/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n参考作答（E3，不是正式细则）：\n\n[DOCX P028] 20.（9分）\n[DOCX P029] （1）（5分）\n[DOCX P030] 以上推理属于充分条件假言推理。\n[DOCX P031] 充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n[DOCX P032] 考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n[DOCX P033] （2）（4分）\n[DOCX P034] ①只有A区域古代气候较为温暖，A区域古代才能广泛生长着竹子，\n[DOCX P035] ②古代A区域广泛生长着竹子，\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`verified_from_Sd64506799887_scoring_pptx_native_text`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收第1问"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。"
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q20#2",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "20",
+   "subq": "2",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n20．(9分)学会正确地运用推理，对于科学研究具有重要意义。\n材料一 有科学家对我国古代气候及其变化进行了一系列考古研究和调查论证，其中\n之一是关于A区域古代气候较为温暖的论证。科学家的论证过程包含了两个推理。\n推理一:\n如果A区域古代没有广泛生长竹子，就不可能有大量的炭化竹节，\n考古发掘中已发掘出地底下有大量炭化竹节，\n所以，A区域古代广泛生长着竹子。\n(1)推理一属于哪种推理类型? 其成立的理由是什么? (5分)\n材料二 科学家进而又根据竹子适宜生长在温暖的地方以及A区域当时广泛生长着竹\n子，运用不同于推理一的另一种演绎推理形式，推断出A区域古代气候较为温暖。\n(2)根据材料二，补充完整推理二。(4分)\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [PPTX 第 45 张（原生文本）]\n20（1）参考答案：\n以上推理属于充分条件假言推理。\n充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n \n细则：\n推理类型： 充分条件假言推理（1分），没有替代，其他表述都不给分。\n理由：充分条件假言判断，前件真，后件一定真，后件假，前件一定假。（2分）\n替代：肯定前件，就能肯定后件/肯定前件式/前真后必真\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。（2分）\n结合材料分析，踩意。\n\n### [PPTX 第 46 张（原生文本）]\n20（2）示例：\n前提1:只有A区域古代气候温暖，A区域古代才有可能生长竹子。\n前提2:A区域古代广泛生长着竹子\n \n \n细则：\n1 每个前提2分，共计4分，前提中要表达出A区域古代气候温暖是A区域古代生长竹子的必要条件；\n2 前提中如果没有出现“古代”“当时”等严谨的时间表述扣1分。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q20`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：20；题型：非选择题；原卷分值：9分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q20.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`40f1e142743c62377ed0cfd494e680bf4b3e5eb999c7a6175b920871d11a36e2`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 7 页整页图：`assets/original_pages/page-7.png`\n- 题级裁切资产：`assets/source_crops/Q20_reasoning_box.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n推理一为虚线框中的三行充分条件假言推理；推理二为带折角的大框，含“前提：①____ ②____；结论：A区域古代气候较为温暖”的填空位置。\n\n### [PPTX 第 45 张（原生文本）]\n20（1）参考答案：\n以上推理属于充分条件假言推理。\n充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n \n细则：\n推理类型： 充分条件假言推理（1分），没有替代，其他表述都不给分。\n理由：充分条件假言判断，前件真，后件一定真，后件假，前件一定假。（2分）\n替代：肯定前件，就能肯定后件/肯定前件式/前真后必真\n考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。（2分）\n结合材料分析，踩意。\n\n### [PPTX 第 46 张（原生文本）]\n20（2）示例：\n前提1:只有A区域古代气候温暖，A区域古代才有可能生长竹子。\n前提2:A区域古代广泛生长着竹子\n \n \n细则：\n1 每个前提2分，共计4分，前提中要表达出A区域古代气候温暖是A区域古代生长竹子的必要条件；\n2 前提中如果没有出现“古代”“当时”等严谨的时间表述扣1分。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q20`\n- `parent_sha256_current`: `40f1e142743c62377ed0cfd494e680bf4b3e5eb999c7a6175b920871d11a36e2`\n- `new_question`: `False`\n- `canonical_slides`: `['S44', 'S45', 'S46']`；`formal_scoring_slides`: `['S45', 'S46']`\n- 原卷页：`[7]`；题级唯一幻灯片绑定：`['S44', 'S45', 'S46']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-44.png', 'assets/renders/lecture/page-45.png', 'assets/renders/lecture/page-46.png']\n- 清晰评分页：['assets/renders/scoring/page-44.png', 'assets/renders/scoring/page-45.png', 'assets/renders/scoring/page-46.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q20.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S44/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n参考作答（E3，不是正式细则）：\n\n[DOCX P028] 20.（9分）\n[DOCX P029] （1）（5分）\n[DOCX P030] 以上推理属于充分条件假言推理。\n[DOCX P031] 充分条件假言判断，前件真，后件一定真，后件假，前件一定假。\n[DOCX P032] 考古发掘中已发掘出地底下有大量炭化竹节，故后件假，则前件假，即该区域当时广泛生长着竹子，以上推理成立。\n[DOCX P033] （2）（4分）\n[DOCX P034] ①只有A区域古代气候较为温暖，A区域古代才能广泛生长着竹子，\n[DOCX P035] ②古代A区域广泛生长着竹子，\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`verified_from_Sd64506799887_scoring_pptx_native_text`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收第2问"
+   },
+   "parser_note": "本单元对应整题第2问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第2问单独给出结论/所需模块。"
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q21",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "21",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n21．(9分)科学认识经济形势，是做好经济工作的基本前提。\n结合上述资料，在分析我国当前经济形势的基础上，运用《当代国际政治与经济》知识，\n谈谈如何推动中国经济在变局中开新局。\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [PPTX 第 49 张（原生文本）]\n21题【评分细则】4+5=９分\n　　\n　　分析我国当前经济形势：4分\n　　思路：经济增速稳健（１分）——经济发展进入高质量发展阶段（１分）——我国发展面临风险挑战（１分）——对世界经济贡献稳步提升（１分）\n进入新时代，我国经济长期向好的基本面没有变：经济总量持续增长、经济增速保持稳健，（每句均可得１分，替代：经济积极向好／经济稳步向前／国内生产总值持续上升／增速较高）进入了以创新、协调、绿色、开放、共享的新发展理念引领的高质量发展阶段（１分）。我国发展的外部环境日趋严峻、风险挑战增多，（每句均可得１分）但依然保持强大韧性和良好势头，在世界经济中的地位和贡献稳步提升。（每句均可得１分，替代：保持良好势头／为世界经济贡献中国力量）\n \n如何推动中国经济在变局中开新局：5分\n思路：学生需要从政治多极化、经济全球化两个维度分析如何应对风险挑战、发挥优势，推动经济高质量发展。（5分）\n说明：\n学生从两个维度结合材料展开分析，准确运用４个要点５分，3个要点4分，2个要点3分；\n学生从两个维度结合材料展开分析，比较准确运用４个要点4分，3个要点3分，2个要点2分；\n学生从两个维度结合材料展开分析，运用４个要点但表述不够准确3分，3个要点2分，2个要点1分；\n学生只从一个维度结合材料展开分析，准确运用1个要点1分，２个要点２分，但最多给3分；\n无要点，但能结合材料指向“如何推动”1分；\n无要点，表述也未指向“如何推动”0分。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q21`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：21；题型：非选择题；原卷分值：9分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q21.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`8b0cd96e43d8aed95d0f7aa5be61b6dec4a11402d06a8f08e84699363d8419f3`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 8 页整页图：`assets/original_pages/page-8.png`\n- 题级裁切资产：`assets/source_crops/Q21_material_cards.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n资料卡一：2012至2022年，我国国内生产总值由54万亿元跃升到120.5万亿元，年均增速6%以上；2023年，我国国内生产总值超过126万亿元，增长5.2%，增速居世界主要经济体前列。\n资料卡二：2023年，我国的创新指数位居全球第12位，已进入创新型国家行列；中部、西部地区生产总值占全国的比重由2012年的21.3%、19.6%提高到了2022年的22.1%、21.4%；2012至2022年，我国以年均3%的能源消费增速支撑了超过6%的经济增长；我国已成为140多个国家和地区的主要贸易伙伴，进出口总额居世界第一；2012至2023年，我国城乡居民人均可支配收入从1.65万元增至3.92万元。\n资料卡三：地缘政治动荡，局部冲突频发，地区安全问题此起彼伏，全球性问题加剧；个别国家泛化国家安全，把经贸科技交流政治化，筑起“小院高墙”；发展鸿沟拉大，世界经济复苏艰难，经济增长动能不足，我国外部需求收缩；经济全球化遭遇逆流，保护主义上升，全球产业链供应链出现本地化发展趋势。\n资料卡四：自2012年以来，我国经济增长对世界经济增长的年均贡献率超过30%；我国在全球产业链供应链中的重要地位不断增强，2012—2023年，我国制造业增加值占全球比重从22.5%提高到近30%，制造业规模和多项工业品产量均居世界第一；我国是越来越多国家的主要投资来源国，是世界第一出口大国。\n\n### [PPTX 第 48 张（原生文本）]\n参考示例：\n    进入新时代，我国经济长期向好的基本面没有变：经济总量持续增长、经济增速保持稳健，进入了以创新、协调、绿色、开放、共享的新发展理念引领的高质量发展阶段。我国发展的外部环境日趋严峻、风险挑战增多，但依然保持强大韧性和良好势头，在世界经济中的地位和贡献稳步提升。\n    坚持总体国家安全观，统筹发展与安全，建设更高水平的平安中国，以新安全格局保障新发展格局。坚持和平共处五项原则，维护我国的主权、安全和发展利益；在谋求本国发展中促进各国共同发展，坚持合作共赢，推动建设新型国际关系，推动构建人类命运共同体，为我国发展营造良好的外部环境。\n    应依托我国超大规模市场优势，以国内大循环吸引全球资源要素，增强国内国际两个市场两种资源联动效应；深度参与全球产业分工和合作，推进高水平对外开放，构建以国内大循环为主体、国内国际双循环相互促进的新发展格局。坚持独立自主，增强自主创新能力，实现关键核心技术自主可控，把发展主动权牢牢掌握在自己手中。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q21`\n- `parent_sha256_current`: `8b0cd96e43d8aed95d0f7aa5be61b6dec4a11402d06a8f08e84699363d8419f3`\n- `new_question`: `False`\n- `canonical_slides`: `['S47', 'S48', 'S49']`；`formal_scoring_slides`: `['S49']`\n- 原卷页：`[8]`；题级唯一幻灯片绑定：`['S47', 'S48', 'S49']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-47.png', 'assets/renders/lecture/page-48.png', 'assets/renders/lecture/page-49.png']\n- 清晰评分页：['assets/renders/scoring/page-47.png', 'assets/renders/scoring/page-48.png', 'assets/renders/scoring/page-49.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q21.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S47/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。\n- 忠实性修复：资料卡四统一为“从22.5%提高到近30%”。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n参考作答（E3，不是正式细则）：\n\n[DOCX P037] 21.（9分）\n[DOCX P038] 在概括我国经济形势的基础上，可从总体国家安全观、推动构建新型国际关系、构建新发展格局、推进高水平对外开放等角度作答。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`verified_from_Sd64506799887_scoring_pptx_native_text`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q16",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "16",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P06\n- page_asset: [p06.png](assets/legacy_30_assets/pages/p06.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n第二部分非选择题\n本部分共6题，共55分。\n16.(7分)\n桑基鱼塘的历史可上溯到距今约2500年\n的春秋战国时期。其时，古太湖流域民众因地\n制宜，将地势低洼处深挖为鱼塘，塘泥堆在鱼塘\n四周形成塘基，时光推移，造就了种桑和养鱼相\n辅相成、桑地和池塘相连相倚的典型的桑基鱼\n塘生态农业景观，并形成了丰富多彩的蚕桑文化。\n近年来，某地对原生态桑基鱼塘进行修复性保护和利用，将农业生态、文化、景\n观保护以及生态产品开发、休闲农业发展等方面一并谋划；创造性开发了“果基鱼\n塘”“菜基鱼塘”等新模式，为乡村振兴赋能；普及鱼桑文化，开发鱼桑文化研学系列\n体验课程，孩子们捕鱼采桑、绘蚌壳画、烧鱼汤饭，感受鱼桑文化风情····\n一方方鱼塘、一片片桑林穿越千年而来，造福当下，也构成了天地之间一幅流\n光溢彩的画卷。\n结合材料，运用《哲学与文化》知识，分析为何二千多岁的桑基鱼塘仍未老。\n高三思想政治第6页(共11页)\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P06 图表/框线/表单结构已实际查看。\n- Q16 桑基鱼塘照片与设问“为何二千多岁的桑基鱼塘仍未老”保留。\n\n### [来源角色：按证据单元分层（Q16 q16_scoring.pptx）]\n\n- 原件：[q16_scoring.pptx](sources/legacy_30_sources/originals/q16_scoring.pptx)；SHA-256：896b0f378cbdeb1f970df2a3b24e3cd6fdcb261cfd3ad4cd94b167d6d0a98e08。\n- **角色边界：**按证据单元分层：幻灯片2“参考答案”保持 E3；幻灯片4页标题“阅卷细则”，属于《16题评分细则.pptx》这一正式评分载体中对应 Q16 的评分内容，登记为 E1；上方正式评分补充 PDF 及其视觉转写仍保留为另一项来源。幻灯片5“学生问题”是教师归纳，不是本题学生原答；学生原答仍在下方 STUDENT_LAYER。\n\n### [原生文字对象1]\n\n```text\n参考答案\n```\n\n### [原生文字对象2]\n\n```text\n文化角度：\n    文化是人类社会实践的产物，文化是经济政治的反映。桑基文化形成于中国人民的农业实践，是中华文化的组成部分，对当今的农业实践仍有指导意义。\n    中国优秀传统文化的创造性转化和创新性发展。桑基鱼塘与时代发展相统一，实现桑蚕文化与产业相融合，在推进乡村振兴上发挥作用。\n    优秀传统文化的当代价值。优秀文化具有引领风尚、教育人民、服务社会作用。鱼桑文化研学系列体验课程开发让孩子们感受鱼桑文化，促进人的全面发展（丰富人的精神世界，增强人的精神世界）\n    人民群众是文化创新的主体，人民群众在实践基础上创造的精神财富不断转化为物质力量，推动乡村振兴。\n```\n\n### [原生文字对象3]\n\n```text\n哲学角度：\n    事物发展有其规律。（坚持一切从实际出发/具体问题具体分析）桑基鱼塘穿越千年遵循了人与自然的发展规律，随时代发展并不断创新，实现了生态景观与产业融合，推动乡村振兴。\n    事物是普遍联系的。桑基鱼塘各要素构成了相互联系的系统，体现了人与自然和谐共生。\n    人民是历史的创造者，是社会的主体。桑基鱼塘千年未老，服务于人民，不断满足人民对美好生活的追求。\n    科学的价值观符合社会发展规律和最广大人民的根本利益。桑基鱼塘是群众生产实践的产物，促进了经济和生态的发展，提高人民生活水平，穿越千年而未老。\n```\n\n### [原生文字对象1]\n\n```text\n阅卷细则\n```\n\n### [原生文字对象2]\n\n```text\n1.用文化或哲学回答均可得7分，从哲学和文化两个方面回答，文化3分+哲学4分。\n2.文化层面：\n①从桑基鱼塘的产生：文化是人类社会实践的产物/文化是经济政治的反映。   \n②传统文化的发展：中国优秀传统文化的创造性转化和创新性发展。\n③优秀的文化功能，最后升华为群众文化创新的作用：优秀传统文化的当代价值、文化的作用。\n（每一点结合材料2分，三点可得7分）\n3.哲学层面：\n①基于规律和实际（实践）证明桑基鱼塘的科学价值：尊重规律、一切从实际出发。\n②基于辩证法说明桑基鱼塘的发展过程：坚持发展的观点、联系的观点、立足整体、系统优化、矛盾分析法。\n③基于群众观点及价值观内容，体现科学价值观的标准和作用：人民主体地位、群众观点。\n（每一点结合材料2分，三点可得7分）\n```\n\n### [原生文字对象1]\n\n```text\n学生问题\n```\n\n### [原生文字对象2]\n\n```text\n    1.知识方面：\n    ① 知识定位有误，错答逻辑相关内容；\n    ② 简单罗列知识，哲学的知识结构化不清晰。\n    2.思维方面：\n    本题考查“为何”设问逻辑，学生在哲学的论证思维能力上表现欠佳。\n    3.情境方面：\n    ① 简单罗列材料；\n    ② 情境结构化不清晰，缺少价值层。\n```\n\n### [幻灯片6｜教学建议原文]\n\n- 原图：[幻灯片6](assets/legacy_30_assets/q16/slide-06.png)\n\n### [原生文字对象1]\n\n```text\n教学建议\n```\n\n### [原生文字对象2]\n\n```text\n  1.试题训练继续注重注重设问结构化、知识结构化和情景结构化。\n  2.哲学内容注重思维层次，用哲学思维进行解题。\n  3.重视知识的精准表达，要回归教材的核心考点，以试题代教材进行复习。\n```\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- 本题学生图完整落位状态按 JSON 逐项保留。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [幻灯片2｜E3参考答案原生文字]\n\n- 原图：[幻灯片2](assets/legacy_30_assets/q16/slide-02.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 文化角度：文化是人类社会实践的产物，文化是经济政治的反映；中国优秀传统文化的创造性转化和创新性发展；优秀传统文化的当代价值；人民群众是文化创新的主体。\n- 哲学角度：事物发展有其规律；事物是普遍联系的；人民是历史的创造者；科学的价值观符合社会发展规律和最广大人民的根本利益。\n- PPTX native topology: 框1“桑基鱼塘立足实践、尊重规律、因地制宜” → 框2“保护利用、产业融合、乡村振兴、文化研学” → 框3“乡村振兴、塑造人、人民福祉”；两条横向有向箭头。\n\n### [幻灯片4｜E1正式阅卷细则原文（页标题：阅卷细则）]\n\n- 原图：[幻灯片4](assets/legacy_30_assets/q16/slide-04.png)",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q17#1",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "17",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P07\n- page_asset: [p07.png](assets/legacy_30_assets/pages/p07.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n17.（12分）盐碱地上播种新希望。\n\n近年来，在盐碱地治理中，某地探索出“盐碱荒滩”转化为“金山银山”的科学路径。\n\n➢ 坚持人与自然和谐共生理念，利用理论、技术、产业创新，宜粮则粮、宜林则林、宜湿则湿，采用“林、水、土”盐碱化综合治理措施，改良盐碱地土壤结构、提高盐碱地土壤肥力，改善植物生长环境，构筑“大良田”，打造“生态绿洲”。\n\n➢ 该地充分发挥盐碱地生态修复累积效益，以“土地”资源优化配置为核心，通过“科研院所＋基地＋公司”“龙头企业＋基地＋农户”等多种形式，流转农村土地3.2万亩，吸引企业参与规模化经营，打造盐碱地治理产业项目10余个，发展盐碱地特色农业、旅游业，真正实现政府、企业与农民的“共赢”。\n\n（1）运用《经济与社会》知识，分析该地探索“盐碱荒滩”转化为“金山银山”的路径。（7分）\n\n我国科学家以耐碱作物高粱为突破口，试图揭开其耐碱奥秘。他们收集全球各地352种不同品系的高粱，通过全基因组大数据关联分析耐碱差异大的高粱资源，发现了主效耐碱基因AT1。将该基因从高粱中提取出来再转到高粱中，高粱耐碱能力减弱；而将该基因进行“剪切”后，高粱的耐碱能力增强。\n\n如果高粱有这个基因，那么其他作物是否也会有类似的基因？团队利用AT1基因的同源体（指不同的基因序列与功能相似）——影响稻米粒长的粒形调控基因GS3，进行水稻GS3基因的耐碱性研究，结果发现，缺失了GS3基因的水稻也更耐碱。作物耐碱“密码”被找到了。\n\n（2）结合材料，从推理的角度，谈谈科学团队是如何找到作物耐碱“密码”的。（5分）\n\n高三思想政治第7页（共11页）\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P07 图表/框线/表单结构已实际查看。\n- Q17 总分12；(1)7分、(2)5分；AT1/GS3材料与两小问均保留。\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- 本题学生图完整落位状态按 JSON 逐项保留。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- Q17(1)原阅卷来源：理念1分；生态改造/环境1分；经营方式、土地效率、规模经营、产业融合、就业渠道选3项3分；农民富裕、集体经济、和美乡村、全面振兴选2项2分。\n- Q17(2)原阅卷来源：科学归纳推理、因果方法和材料分析；类比推理和材料分析，共5分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收第1问",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收第1问"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。 题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q17#2",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "17",
+   "subq": "2",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P07\n- page_asset: [p07.png](assets/legacy_30_assets/pages/p07.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n17.（12分）盐碱地上播种新希望。\n\n近年来，在盐碱地治理中，某地探索出“盐碱荒滩”转化为“金山银山”的科学路径。\n\n➢ 坚持人与自然和谐共生理念，利用理论、技术、产业创新，宜粮则粮、宜林则林、宜湿则湿，采用“林、水、土”盐碱化综合治理措施，改良盐碱地土壤结构、提高盐碱地土壤肥力，改善植物生长环境，构筑“大良田”，打造“生态绿洲”。\n\n➢ 该地充分发挥盐碱地生态修复累积效益，以“土地”资源优化配置为核心，通过“科研院所＋基地＋公司”“龙头企业＋基地＋农户”等多种形式，流转农村土地3.2万亩，吸引企业参与规模化经营，打造盐碱地治理产业项目10余个，发展盐碱地特色农业、旅游业，真正实现政府、企业与农民的“共赢”。\n\n（1）运用《经济与社会》知识，分析该地探索“盐碱荒滩”转化为“金山银山”的路径。（7分）\n\n我国科学家以耐碱作物高粱为突破口，试图揭开其耐碱奥秘。他们收集全球各地352种不同品系的高粱，通过全基因组大数据关联分析耐碱差异大的高粱资源，发现了主效耐碱基因AT1。将该基因从高粱中提取出来再转到高粱中，高粱耐碱能力减弱；而将该基因进行“剪切”后，高粱的耐碱能力增强。\n\n如果高粱有这个基因，那么其他作物是否也会有类似的基因？团队利用AT1基因的同源体（指不同的基因序列与功能相似）——影响稻米粒长的粒形调控基因GS3，进行水稻GS3基因的耐碱性研究，结果发现，缺失了GS3基因的水稻也更耐碱。作物耐碱“密码”被找到了。\n\n（2）结合材料，从推理的角度，谈谈科学团队是如何找到作物耐碱“密码”的。（5分）\n\n高三思想政治第7页（共11页）\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P07 图表/框线/表单结构已实际查看。\n- Q17 总分12；(1)7分、(2)5分；AT1/GS3材料与两小问均保留。\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- 本题学生图完整落位状态按 JSON 逐项保留。",
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": "缺答案键"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- Q17(1)原阅卷来源：理念1分；生态改造/环境1分；经营方式、土地效率、规模经营、产业融合、就业渠道选3项3分；农民富裕、集体经济、和美乡村、全面振兴选2项2分。\n- Q17(2)原阅卷来源：科学归纳推理、因果方法和材料分析；类比推理和材料分析，共5分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收第2问",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收第2问"
+   },
+   "parser_note": "本单元对应整题第2问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第2问单独给出结论/所需模块。 题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q18#1",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "18",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P08\n- page_asset: [p08.png](assets/legacy_30_assets/pages/p08.png)\n- 原卷机器转写（逐页 raw OCR，保留 OCR 原状）：\n```text\n18.（13分）\n\nH省省委、省政府着力推进法治、共治、自治、数治“四治联动”，不断推动和谐劳动关系建设迈上新台阶。\n\n该省在全国首批出台《H省工会劳动法律监督条例》，并组织开展专项执法行动；建立政府与工会联席会议制度和多元纠纷解决机制，强化共治联动；出台激励政策，培育典型示范，引导企业、园区、行业协会等形成高度的自觉，强化用人单位主体自治；推进“智慧人社”“人社超市”“人社码上通”一体网办，人力资源和社会保障、税务、医保部门成立联合运维中心，打通数据壁垒，强化“数治”赋能。\n\n（1）结合材料，运用《政治与法治》知识，说明“四治联动”如何推动新时代和谐劳动关系建设。（7分）\n\n（2）某校同学正在草拟共建和谐劳动关系建议书，请你运用相关知识，针对不同主体各提一条建议，并说明其理论依据。（6分）\n\n建议书（草稿）\n\n和谐劳动关系事关企业发展和职工利益，事关经济发展与社会和谐稳定，是经济高质量发展的重要保证。党的十八大以来，我国构建和谐劳动关系工作取得明显成效，但随着以平台用工为代表的新就业形态的发展，劳动关系领域出现了一些挑战。传统劳动关系的认定标准难以完全适用于新型用工模式；企业拖欠薪酬、非经协商延长劳动时间等问题变得更加隐蔽；就业结构性矛盾更为突出，劳动者自身技能和素质不适应岗位需求变化……为共建和谐劳动关系，我们提出以下建议：\n\n建议一：\n理论依据：\n建议二：\n理论依据：\n建议三：\n理论依据：\n\n高三思想政治第8页（共11页）\n```\n\n### [规范化题面/版面支持]\n- 规范化来源：[support.md](sources/support_32_subjective/support.md)；原卷题号/分值由 source_matrix 与 original_score_lock 锁定。\n- 原卷页视觉检查：[visual_check.md](sources/support_32_subjective/visual_check.md)；P08 图表/框线/表单结构已实际查看。\n- Q18 总分13；(1)7分、(2)6分；建议书表单和空行结构保留。\n\n### [来源角色：按证据单元分层（Q18(2) q18_2_review.docx）]\n\n- 原件：[q18_2_review.docx](sources/legacy_30_sources/originals/q18_2_review.docx)；SHA-256：6c445538df98876c8f6403311e9861f6eb6e197842299ee1eaa4b6e128e47774。\n- **角色边界：**该 DOCX 来自“阅卷总结”正式评分载体，按独立证据单元分层：“参考答案”栏保持 E3；具名“阅卷细则”栏中对应 Q18(2) 的评分内容登记为 E1。“试题分析”“学生问题”等教学单元保留各自身份，不随评分细则整体升级；[正式评分补充PDF](sources/legacy_30_sources/originals/scoring_supplement.pdf) 及其 [视觉转写](sources/transcriptions/official_scoring_supplement_visual_transcription.md) 仍作为另一项来源。\n- DOCX 中“学生问题”是教师诊断，不是学生原答。实际学生原图与转写仍在下方 STUDENT_LAYER；本源 DOCX 两张学生样例图保留为 [SL012原图](assets/student_layer/images/SL012__q18_2_review__image1.jpeg)、[SL013原图](assets/student_layer/images/SL013__q18_2_review__image2.jpeg)。\n\n### [教学材料（原栏：教学建议）]\n\n```text\n教学建议\n```\n\n```text\n1.把握建议类试题的共性：主体适格，建议明确切题、具体可行，结合学科知识作答（即有恰当的理论依据支撑）\n2.夯实基础知识，避免低级错误。例如：政府依法行政/公正司法；党发展和谐劳动关系/科学立法/完善认定标准……\n3.加强审题和对材料的理解\n  本题要求不同主体各1条建议，要注意审题，同一主体不重复得分，更不能没有主体。\n  认定标准不明≠没有建立劳动关系\n  对“就业结构性矛盾突出”正确理解。\n```\n\n### [bounded 边界]\n- 学生图中的涂改、批注、难辨字和得分原样保留；不可辨内容明确标记，不补写。\n- Q18(2) 有一项 complete_placement=false；Q19(1) 四项 complete_placement=false；这些是原图边界，不删、不补齐。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [E3参考答案（原栏：参考答案）]\n\n```text\n参考答案\n```\n\n```text\n建议一：人大在劳动法中增加专门章节对涉及新业态用工的劳动关系认定、劳动者权益保障、算法规制等进行规定。\n理论依据：法律要顺应时代发展要求，符合社会发展需求。人大有立法权。\n建议二：用人单位守法经营，自觉尊重和保护劳动者合法权益。\n理论依据：劳动法的首要原则就是保护劳动者的合法权益。拖欠薪酬侵害了劳动者取得劳动报酬的权利，非经协商延长劳动时间侵害了劳动者休息休假的权利。\n建议三：劳动者应当不断提高职业技能。\n理论依据：劳动者提高自身技能是劳动者的义务。权利与义务相辅相成、不可分割。\n```",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [来源角色：OFFICIAL_ANSWER_AND_SCORING]\n- 扫描参考答案/评分标准全文视觉转写：[official_scoring_supplement_visual_transcription.md](sources/transcriptions/official_scoring_supplement_visual_transcription.md)。\n- 题级阅卷/native PPTX支持：[support.md](sources/support_32_subjective/support.md)、[native_pptx_extract.md](sources/support_32_subjective/native_pptx_extract.md)。\n- 等级表、参考答案、阅卷总结和计分关系不混为一层；不从学生分数图反推固定评分槽。\n- 原卷锁定 Q18=13，Q18(1)=7，Q18(2)=6。Q18(1)四治层次：做法1分+作用1分，另有整体加分项且累计封顶7；Q18(2)三主体各建议1分+理论依据1分。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料 | downgrade=B1:rubric_unreadable_not_OUT;CU:rubric_unreadable_not_OUT;X1:rubric_unreadable_not_OUT;MI:rubric_unreadable_not_OUT;RE:rubric_unreadable_not_OUT",
+   "book_status": {
+    "B2": "已收第1问",
+    "B3": "已收第1问",
+    "PH": "已收第1问",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收第1问",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。 题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  }
+ ]
+}

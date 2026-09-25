@@ -1,0 +1,4 @@
+﻿unit_id,qid,canonical_qid,exam_id_canonical,num,type,subq,grain,归属_B3,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2024-XC-YIMO-Q18#3,BJ-2024-XC-YIMO-Q18,BJ-2024-XC-YIMO-Q18,BJ-2024-XC-YIMO,18,主观题,3,小问,COLLECTED,B3,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v3
+BJ-2025-FT-YIMO-Q17#1,BJ-2025-FT-YIMO-Q17,BJ-2025-FT-YIMO-Q17,BJ-2025-FT-YIMO,17,主观题,1,小问,COLLECTED,B3,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v3
+BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO,17,主观题,,整题,COLLECTED,B2;B3,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v3

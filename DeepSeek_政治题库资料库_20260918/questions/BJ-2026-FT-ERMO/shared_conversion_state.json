@@ -1,0 +1,120 @@
+{
+  "exam_id": "BJ-2026-FT-ERMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-FT-ERMO-Q1": "25c9794f669b0423a534e4759dffb514abcbcce8836f47db02cf2db4487edf3a",
+    "BJ-2026-FT-ERMO-Q2": "58a12483b2409dbe756df5b76801a02a7ca50d30b32947a4cf1444957cfefd86",
+    "BJ-2026-FT-ERMO-Q3": "bad84a779f132d0e951e469241c925fb0cdefc8244fc22fc321dcb11f0df49b4",
+    "BJ-2026-FT-ERMO-Q4": "07753bb687066f70b24ec64d7d342018d2d33f6a24633d91e46e19d8cd78110f",
+    "BJ-2026-FT-ERMO-Q5": "51182ca68999c24ece7d330c0ce9732acf1bc454cb446fdf202d3b38d8695b0f",
+    "BJ-2026-FT-ERMO-Q6": "c2437f6805312a82270c2e7e5c3d53cebbeb06612f963a57420ee2b429d3724e",
+    "BJ-2026-FT-ERMO-Q7": "23687c279a011def2ccc94ab6c6a4f85af6eaf85e99138a212cfb5cdb37d256a",
+    "BJ-2026-FT-ERMO-Q8": "5642acc7ee363dad9d535b01fc9e519bdd6b40aaddbad9f266b8e3ff180b9b45",
+    "BJ-2026-FT-ERMO-Q9": "32182cabec93cc7808edb44ebe15a91d5a3540c213b07783b3c55f9fe22be94e",
+    "BJ-2026-FT-ERMO-Q10": "79e7cd8a8dae6ab178d64ca3520faddbf7aa0dcdc8e5540cb6ddded0d669d1ac",
+    "BJ-2026-FT-ERMO-Q11": "63c395267cf5ce077c3f59d8d982b2afed4d7074c2059055754729b05dcfb235",
+    "BJ-2026-FT-ERMO-Q12": "92eb4ee9d93e6b57655432b71599831457029271c75cb6995862b1630f2525c8",
+    "BJ-2026-FT-ERMO-Q13": "0bfe357e91a2847e7b5e216ec07f92a05cea5282b75e0935a465d06ccb8e08cd",
+    "BJ-2026-FT-ERMO-Q14": "0fbe77a0afcc960c6d0808d1be1d6848c3908e42f818b2756bf030a2fee3149a",
+    "BJ-2026-FT-ERMO-Q15": "45863a125eee7eb08bc5a4f7883c5e698afe2005ea10c3015c0d42aaca046ca3",
+    "BJ-2026-FT-ERMO-Q16": "31490932511175453bf78ee67c485dc0c5015cbf195dd45567926f6102bf364d",
+    "BJ-2026-FT-ERMO-Q17": "8301fcb921be06d54cc153c2d8fb2108d5393e9288805830937975bd49c3d44f",
+    "BJ-2026-FT-ERMO-Q18": "f31aa334dc7f002a0625081a3eaaa488a56e3e03a98a0290f79a251dd86438a8",
+    "BJ-2026-FT-ERMO-Q19": "40d29187dd34518fe501d94d464e786f288cabfae87d44eb9607605006834d93",
+    "BJ-2026-FT-ERMO-Q20": "b4c399530b879ce0c86597a722b984f0d77e0ca7c50f089a3b614bb5e25d8e29",
+    "BJ-2026-FT-ERMO-Q21": "0d7bfd836eed11d59db660286fc2e8c66be3f96933e5165309e64df67cc0958a",
+    "BJ-2026-FT-ERMO-Q22": "d538f93869e10c7fe0e801ca15811327a10fb8ad8bb6470dab6c82f4029824d7"
+  },
+  "source_pages": {
+    "teacher": 13,
+    "rubric": 70
+  },
+  "source_page_total": 83,
+  "source_roles": {
+    "teacher": "Sf7b3a73c9296",
+    "rubric": "S10275a1dafa3"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "只有教师版PDF（题面+参考答案混合载体），未提供独立无答案原卷；身份/来源按教师版保留，不宣称为独立学生卷。",
+    "Q1-Q15无逐题E1正式评分材料或学生样卷；按N/A_with_basis处理，不将教师版答案表提升为E1。",
+    "Q20无专属E1或等级表；教师版p13内容仅作为E3参考答案。",
+    "学生样卷仅见于Q16/Q17/Q18/Q19/Q21所述PPT幻灯片；无Q20学生样卷。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2026-FT-ERMO-Q16",
+      "location": "学生样卷幻灯片5 (Q16-S5-A) 第1行上半部分",
+      "partial_reading": "…循客观规律是成因而拟未析岛絮。在守护湿地治理中线到（下半句可见，上半部分被标题栏遮挡）",
+      "why": "该行上半部分被PPT标题'三、典型示例'文本框完全遮挡，原图本身也无法还原被遮挡部分",
+      "image": "crops/s006_0_image6.png附近同源；实际见pptx原生media/image2.png",
+      "page": "rubric_slide_5",
+      "affects_answering": false
+    },
+    {
+      "qid": "BJ-2026-FT-ERMO-Q17",
+      "location": "学生样卷幻灯片19-23",
+      "partial_reading": "未逐字用内嵌原图重新核对，按旧候选转写保留",
+      "why": "时间/篇幅限制，仅对幻灯片18做了原图级复核并发现1处遗漏；19-23未同等深度复核，可能存在同类遗漏或改写",
+      "image": "crops/s019_0_image15.png ... s023_0_image19.png（已提取但未逐字复核）",
+      "page": "rubric_slides_19-23",
+      "affects_answering": false
+    },
+    {
+      "qid": "BJ-2026-FT-ERMO-Q18",
+      "location": "学生样卷幻灯片32",
+      "partial_reading": "未逐字用内嵌原图重新核对，按旧候选转写保留",
+      "why": "时间/篇幅限制，仅对幻灯片31做了原图级复核并发现2处实质错误；32未同等深度复核",
+      "image": "crops/s032_0_image23.png（已提取但未逐字复核）",
+      "page": "rubric_slide_32",
+      "affects_answering": false
+    },
+    {
+      "qid": "BJ-2026-FT-ERMO-Q19",
+      "location": "学生样卷幻灯片40-42",
+      "partial_reading": "未用内嵌原图重新核对，按旧候选转写保留",
+      "why": "时间/篇幅限制",
+      "image": "crops/s040_0_image27.png ... s042_0_image29.png（已提取但未逐字复核）",
+      "page": "rubric_slides_40-42",
+      "affects_answering": false
+    },
+    {
+      "qid": "BJ-2026-FT-ERMO-Q21",
+      "location": "学生样卷幻灯片50（五格拼图）",
+      "partial_reading": "未逐字用内嵌原图重新核对，按旧候选转写保留（候选本身已大量使用省略号标注不确定处）",
+      "why": "五份拼图字迹密集且互相遮挡，完整逐字核对耗时较长，本轮只完成幻灯片49的核对",
+      "image": "crops/s050_0_image34.png ... s050_4_image38.png（已提取但未逐字复核）；composite见pptx_render/hi-50.png思路",
+      "page": "rubric_slide_50",
+      "affects_answering": false
+    },
+    {
+      "qid": "BJ-2026-FT-ERMO-Q22",
+      "location": "学生样卷幻灯片66",
+      "partial_reading": "未用内嵌原图重新核对，按旧候选转写保留",
+      "why": "时间/篇幅限制；幻灯片65抽样核对结果良好（与原图高度一致），66未同等核对",
+      "image": "crops/s066_0_image51.png（已提取但未逐字复核）",
+      "page": "rubric_slide_66",
+      "affects_answering": false
+    }
+  ],
+  "review_receipts": {
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-FT-ERMO/primary_review_accept.json",
+    "independent": [
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-FT-ERMO/r1_verify/verification.json",
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-FT-ERMO/r2_verify/verification.json"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "codex-bj-2026-ft-ermo-accept-20260922",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T03:23:06.002277+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T03:24:39.192629+00:00"
+}

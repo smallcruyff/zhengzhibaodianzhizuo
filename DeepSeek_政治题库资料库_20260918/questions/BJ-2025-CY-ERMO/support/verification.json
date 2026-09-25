@@ -1,0 +1,836 @@
+{
+  "schema_version": "docx-readable-support-verification.v2",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "source_id": "S73c36c3077dc",
+  "generated_at_utc": "2026-09-22T12:36:48.826413+00:00",
+  "status": "support_generated_pending_independent_review",
+  "source_identity": {
+    "fresh_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "isolated_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "all_docx_copies_equal": true
+  },
+  "source_structure": {
+    "body_block_count_excluding_sectPr": 22,
+    "paragraph_elements": 15,
+    "paragraphs_with_non_whitespace_text": 0,
+    "whitespace_only_paragraphs": [
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14"
+    ],
+    "table_count": 7,
+    "table_dimensions": {
+      "T0": [
+        1,
+        2
+      ],
+      "T1": [
+        1,
+        2
+      ],
+      "T2": [
+        1,
+        2
+      ],
+      "T3": [
+        1,
+        2
+      ],
+      "T4": [
+        1,
+        2
+      ],
+      "T5": [
+        1,
+        2
+      ],
+      "T6": [
+        1,
+        2
+      ]
+    },
+    "paragraph_text_source": "isolated DOCX word/document.xml",
+    "table_text_source": "isolated DOCX word/document.xml"
+  },
+  "native_block_receipts": [
+    "native_blocks.json",
+    "native_blocks.md"
+  ],
+  "source_specific_delta": {
+    "status": "delta_found",
+    "count": 1,
+    "receipt": "source_specific_delta.json",
+    "questions": [
+      "BJ-2025-CY-ERMO-Q19"
+    ]
+  },
+  "readability": {
+    "schema_version": "docx-readable-render-check.v2",
+    "exam_id": "BJ-2025-CY-ERMO",
+    "source_id": "S73c36c3077dc",
+    "status": "local_visual_pass_pending_independent_review",
+    "render_environment": {
+      "render_driver": "/Users/wanglifei/.codex/plugins/cache/openai-primary-runtime/documents/26.904.11930/skills/documents/render_docx.py",
+      "libreoffice": "/Users/wanglifei/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/soffice",
+      "poppler_pdfinfo": "/Users/wanglifei/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfinfo",
+      "poppler_pdftotext": "/Users/wanglifei/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftotext",
+      "poppler_pdffonts": "/Users/wanglifei/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdffonts",
+      "dpi": 150,
+      "fontconfig_file": "isolated_fontconfig/fonts.conf",
+      "private_fontconfig_cache": "isolated_fontconfig/cache",
+      "input_handling": "isolated DOCX byte-copy; source OOXML not edited",
+      "no_pillow_text_redraw": true
+    },
+    "readable_render": {
+      "pdf": "renders/docx_readable.pdf",
+      "pdf_sha256": "64625d39104ccae68e19d9e428b478b2b66fbae610eadf8ec49d21dfaf6d3c3d",
+      "pdf_bytes": 499978,
+      "pdf_page_size": "841.89 x 595.304 pts (A4)",
+      "fresh_pdf_pages": 22,
+      "fresh_png_pages": 22,
+      "embedded_pdf_fonts": [
+        "BAAAAA+FrankRuhlHofshi-Bold",
+        "CAAAAA+ArialUnicodeMS",
+        "DAAAAA+LinuxLibertineG",
+        "EAAAAA+ArialUnicodeMS",
+        "FAAAAA+ArialUnicodeMS"
+      ],
+      "text_layer_metrics": {
+        "characters": 12894,
+        "replacement_character_count": 0,
+        "white_square_count": 0,
+        "black_square_count": 0,
+        "question_mark_count": 0,
+        "pages_with_nonempty_text": 21,
+        "border_only_pages": [
+          22
+        ]
+      },
+      "page_marker_checks": {
+        "1": {
+          "markers": [
+            "16.",
+            "评分细则、答案变通说明"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "4": {
+          "markers": [
+            "17.",
+            "变通后"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "6": {
+          "markers": [
+            "18.",
+            "社会保障"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "9": {
+          "markers": [
+            "19.",
+            "公共法律服务"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "12": {
+          "markers": [
+            "20.",
+            "隐私权"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "14": {
+          "markers": [
+            "21"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "15": {
+          "markers": [
+            "周边工作新局面"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "17": {
+          "markers": [
+            "22"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "18": {
+          "markers": [
+            "顶层设计"
+          ],
+          "all_found_after_whitespace_normalization": true
+        },
+        "22": {
+          "markers": [],
+          "all_found_after_whitespace_normalization": true
+        }
+      },
+      "page_images": [
+        {
+          "page": 1,
+          "path": "renders/pages/p001.png",
+          "sha256": "c49028d69bdf06e3df1abcc5189684cfd69a0ea00109bdb1f5b70910220898ad",
+          "bytes": 220730,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 2,
+          "path": "renders/pages/p002.png",
+          "sha256": "b488062e76d3c8a9bfdb96ac7b4eb4aa64a1050697fbbeed754d67eb6032f99d",
+          "bytes": 195850,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 3,
+          "path": "renders/pages/p003.png",
+          "sha256": "120dc29323289948a848584b948b20deb2adac5582b29ad0f1f0218f342471ce",
+          "bytes": 194316,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 4,
+          "path": "renders/pages/p004.png",
+          "sha256": "8e2e2540c87002e1e7d15250ae98b2ee8445e6ba4aad22e1d72a922a925d03d3",
+          "bytes": 147028,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 5,
+          "path": "renders/pages/p005.png",
+          "sha256": "80108ebf1de32d26baadf7c574656029341b34ed2baa8c80442d5fc561ff010f",
+          "bytes": 159475,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 6,
+          "path": "renders/pages/p006.png",
+          "sha256": "f894f3e11f30542b5a35a6788748e3ead5eb47921c5a0c11d175e8ff96f2dd11",
+          "bytes": 107746,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 7,
+          "path": "renders/pages/p007.png",
+          "sha256": "e70bdf50ffa41e32e51cba121cf6e14da1ec96106542833a1edd7ed64b7d074e",
+          "bytes": 266527,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 8,
+          "path": "renders/pages/p008.png",
+          "sha256": "f0571558f368fbe2af848ffe6ad6e80e1d60aa8d3b18d1802e46e19d0dcb0284",
+          "bytes": 91134,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 9,
+          "path": "renders/pages/p009.png",
+          "sha256": "a510a6d84c1f13322b9b01b2a5060eb24ae46bf6716b4faafce78c88add93a72",
+          "bytes": 134583,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 10,
+          "path": "renders/pages/p010.png",
+          "sha256": "a9763d82ce056cf80004e3bc603478f0b616ee79348bb1eb899f2ddfa1b8264d",
+          "bytes": 357875,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 11,
+          "path": "renders/pages/p011.png",
+          "sha256": "f7e9729d9dd70d5ba41d01f6d7e79ac1df1dfa7ba154ae9c3d09c107b9cf5870",
+          "bytes": 310714,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 12,
+          "path": "renders/pages/p012.png",
+          "sha256": "f28c7fbc51af5a4f4cd9bb13efb59ce6fc4ef63218faffa3fe9a55749572479f",
+          "bytes": 118771,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 13,
+          "path": "renders/pages/p013.png",
+          "sha256": "0dbb7e1c5cc561af5fee7adb9da443c85541a5f22c64af685adf39b15758f345",
+          "bytes": 316728,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 14,
+          "path": "renders/pages/p014.png",
+          "sha256": "aac68ab7f719edcb596e43d8a51c3cdf446a4eca4d1bc6082fe197f9c246366e",
+          "bytes": 126872,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 15,
+          "path": "renders/pages/p015.png",
+          "sha256": "279a16efbd50e53ca0de2518553ec4b90cb6c8178e585f6f311547fefcc6d739",
+          "bytes": 295220,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 16,
+          "path": "renders/pages/p016.png",
+          "sha256": "a81bc907f2330bfb06077c727f279c2d24a70037ad9e02cd78343a0a8be6c6b1",
+          "bytes": 204868,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 17,
+          "path": "renders/pages/p017.png",
+          "sha256": "ae9c1eecc1eca7d6a37d34c62788d86a51afeaffb8bbdbf358d47cc7c58d23bf",
+          "bytes": 113759,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 18,
+          "path": "renders/pages/p018.png",
+          "sha256": "1fd0e1f02764fd30e53f6d8aac141436277e0130bea3102164086c849c44ef29",
+          "bytes": 204103,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 19,
+          "path": "renders/pages/p019.png",
+          "sha256": "dd7625abebad0b136ece5f2177fc876cff9f063464a4934c5a1057018800c68b",
+          "bytes": 243590,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 20,
+          "path": "renders/pages/p020.png",
+          "sha256": "9c0e63774fe6183c5f7dddff057b2c4344d2c6fe43722c653b6e6c4e2aad995a",
+          "bytes": 270161,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 21,
+          "path": "renders/pages/p021.png",
+          "sha256": "09d3eeca90ad46bac628e45a5394ce612c5af167ffd4e8ee4a8ef7c314fe6dba",
+          "bytes": 184324,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "Chinese glyphs, highlights, table borders and page edges readable"
+        },
+        {
+          "page": 22,
+          "path": "renders/pages/p022.png",
+          "sha256": "961f08adf80e67ffc0490ff8ac380496395849afb82a8bdf6703e28287486caf",
+          "bytes": 9275,
+          "dimensions": "1754 x 1241",
+          "manual_visual_check": "PASS_opened_high_detail",
+          "glyph_check": "PASS",
+          "clipping_overlap_check": "PASS",
+          "note": "border-only residual continuation; no text surface"
+        }
+      ],
+      "visual_summary": "22/22 page PNGs opened at high detail; p1-p21 contain readable Chinese and p22 is a border-only residual continuation."
+    },
+    "default_bundled_baseline": {
+      "pages": 10,
+      "purpose": "known non-readable baseline; not used as the readable witness",
+      "probe_log": "logs/default_render_probe.log",
+      "known_issue": "bundled default rendering loses or corrupts large portions of Chinese glyphs, consistent with the existing independent record"
+    }
+  },
+  "pagination": {
+    "schema_version": "docx-pagination-map.v2",
+    "exam_id": "BJ-2025-CY-ERMO",
+    "source_id": "S73c36c3077dc",
+    "native_word": {
+      "document_page_count": 12,
+      "basis": "existing visual_word_review.json and two retained native Word screenshots",
+      "pages_checked_in_existing_review": [
+        10,
+        11
+      ],
+      "known_double_page_anchor": {
+        "native_word_pages": [
+          10,
+          11
+        ],
+        "logical_content": "Word p10 shows Q21 tail plus Q22 table 7 start; Word p11 continues Q22 table 7; existing screenshots show Chinese E3/E1 columns readable",
+        "derived_pages_union": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "anchor_images": [
+          {
+            "native_page": 10,
+            "path": "native_word_anchors/word_p10_q22_anchor.png",
+            "sha256": "51b9729278e8a8b09853a520e05eb7873b12777b9839a4a3045f53378038ce73"
+          },
+          {
+            "native_page": 11,
+            "path": "native_word_anchors/word_p11_q22_anchor.png",
+            "sha256": "faa1837350005407366ef9968557b71a75fc74bdf10a29031c6289af4b47737b"
+          }
+        ]
+      },
+      "unverified_native_page_12": {
+        "derived_anchor": [
+          22
+        ],
+        "note": "Word page 12 was not independently opened in the existing review; derived p22 is border-only and is not used to claim Word p12 visual equivalence."
+      },
+      "mapping_limit": "Exact Word page breaks for native p1-p9 are not encoded in OOXML and were not invented; table/question logical anchors are mapped exactly to derived pages."
+    },
+    "derived_render": {
+      "pdf": "renders/docx_readable.pdf",
+      "pages": 22,
+      "page_images": 22,
+      "page_size": "841.89 x 595.304 pts (A4)",
+      "table_page_map": {
+        "T0_Q16": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "T1_Q17": [
+          4,
+          5
+        ],
+        "T2_Q18": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "T3_Q19": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "T4_Q20": [
+          12,
+          13,
+          14
+        ],
+        "T5_Q21": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "T6_Q22": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      "new_pages": {
+        "1": "Q16 table 1 start; E3/E1 columns",
+        "2": "Q16 table 1 continuation",
+        "3": "Q16 table 1 continuation and end",
+        "4": "Q16 tail and Q17 table 2 start",
+        "5": "Q17 table 2 continuation/end",
+        "6": "Q18 table 3 start",
+        "7": "Q18 table 3 continuation",
+        "8": "Q18 table 3 continuation",
+        "9": "Q18 tail and Q19 table 4 start",
+        "10": "Q19 table 4 continuation",
+        "11": "Q19 table 4 continuation/end",
+        "12": "Q19 residual row/border and Q20 table 5 start",
+        "13": "Q20 table 5 continuation",
+        "14": "Q20 tail and Q21 table 6 start",
+        "15": "Q21 table 6 continuation",
+        "16": "Q21 table 6 continuation",
+        "17": "Q21 tail and Q22 table 7 start",
+        "18": "Q22 table 7 continuation",
+        "19": "Q22 table 7 continuation",
+        "20": "Q22 table 7 continuation",
+        "21": "Q22 table 7 end",
+        "22": "Q22 table 7 border-only residual continuation; no text"
+      }
+    },
+    "blocks": [
+      {
+        "body_index": 0,
+        "block_id": "T0",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q16",
+        "logical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 1,
+        "block_id": "P0",
+        "kind": "paragraph",
+        "paragraph_index": 0,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 2,
+        "block_id": "T1",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q17",
+        "logical_pages": [
+          4,
+          5
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 3,
+        "block_id": "P1",
+        "kind": "paragraph",
+        "paragraph_index": 1,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 4,
+        "block_id": "P2",
+        "kind": "paragraph",
+        "paragraph_index": 2,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 5,
+        "block_id": "T2",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q18",
+        "logical_pages": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 6,
+        "block_id": "P3",
+        "kind": "paragraph",
+        "paragraph_index": 3,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 7,
+        "block_id": "P4",
+        "kind": "paragraph",
+        "paragraph_index": 4,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 8,
+        "block_id": "T3",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q19",
+        "logical_pages": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 9,
+        "block_id": "P5",
+        "kind": "paragraph",
+        "paragraph_index": 5,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 10,
+        "block_id": "P6",
+        "kind": "paragraph",
+        "paragraph_index": 6,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 11,
+        "block_id": "T4",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q20",
+        "logical_pages": [
+          12,
+          13,
+          14
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 12,
+        "block_id": "P7",
+        "kind": "paragraph",
+        "paragraph_index": 7,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 13,
+        "block_id": "P8",
+        "kind": "paragraph",
+        "paragraph_index": 8,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 14,
+        "block_id": "P9",
+        "kind": "paragraph",
+        "paragraph_index": 9,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 15,
+        "block_id": "P10",
+        "kind": "paragraph",
+        "paragraph_index": 10,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 16,
+        "block_id": "P11",
+        "kind": "paragraph",
+        "paragraph_index": 11,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 17,
+        "block_id": "T5",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q21",
+        "logical_pages": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 18,
+        "block_id": "P12",
+        "kind": "paragraph",
+        "paragraph_index": 12,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 19,
+        "block_id": "P13",
+        "kind": "paragraph",
+        "paragraph_index": 13,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      },
+      {
+        "body_index": 20,
+        "block_id": "T6",
+        "kind": "table",
+        "question_id": "BJ-2025-CY-ERMO-Q22",
+        "logical_pages": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "dimensions": [
+          1,
+          2
+        ],
+        "split_across_pages": true
+      },
+      {
+        "body_index": 21,
+        "block_id": "P14",
+        "kind": "paragraph",
+        "paragraph_index": 14,
+        "logical_pages": [],
+        "visible_text": false,
+        "note": "empty source paragraph between table blocks; no independent rendered content"
+      }
+    ],
+    "pagination_summary": {
+      "native_word_pages": 12,
+      "default_bundled_pages": 10,
+      "private_font_readable_pages": 22,
+      "difference_vs_native_word": 10,
+      "difference_vs_default_bundled": 12,
+      "reason": "LibreOffice private-font reflow preserves glyphs and table text but produces a different, wider A4 landscape pagination; mapping is by question/table anchors, not page-number identity."
+    }
+  },
+  "scope_guard": {
+    "only_persistent_write_root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-CY-ERMO/docx_readable_support_v2_20260922",
+    "original_docx_modified": false,
+    "group_source_docx_modified": false,
+    "main_exam_pdf_reprocessed": false,
+    "supplement_scan_reprocessed": false,
+    "question_metadata_recomputed": false,
+    "shared_question_bank_modified": false,
+    "conversion_manifest_modified": false
+  },
+  "independent_review": {
+    "required": true,
+    "completed_by_this_worker": false,
+    "handoff_note": "父代理将独立复核；本工位不把自查报告写成独立验收。"
+  }
+}

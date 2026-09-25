@@ -1,0 +1,289 @@
+{
+  "schema": "q20-flow-delta/1",
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "question_id": "BJ-2020-BJ-GAOKAO-Q20",
+  "source_asset": {
+    "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/embedded/img-008.png",
+    "sha256": "6ecc6ceabb10b435e0f9c5745078dea136c0611cd15c3588f81ee8d2162d7733",
+    "width_px": 433,
+    "height_px": 284,
+    "source_page": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/source_pages/teacher/p007.png"
+  },
+  "transcription_policy": {
+    "basis": "直接查看原图 img-008 与原卷教师版 p007；节点文字只登记原图可辨内容。",
+    "blank_box_policy": "原题空框 R1/S2/T2 只登记圆圈编号，不填入参考答案。",
+    "answer_layer_separate": true,
+    "unresolved_small_text_filled": false
+  },
+  "nodes": [
+    {
+      "id": "ROOT",
+      "box_role": "root_control",
+      "text": "中央统一指挥 / 各方协调配合",
+      "layout_note": "原框两行排版"
+    },
+    {
+      "id": "G1",
+      "box_role": "group_label",
+      "text": "医疗救治",
+      "layout_note": "原框两行排版"
+    },
+    {
+      "id": "G2",
+      "box_role": "group_label",
+      "text": "疫情防控",
+      "layout_note": "原框两行排版"
+    },
+    {
+      "id": "G3",
+      "box_role": "group_label",
+      "text": "稳定经济保障民生",
+      "layout_note": "原框按稳定/经济/保障/民生换行排版"
+    },
+    {
+      "id": "M1",
+      "box_role": "measure",
+      "group": "G1",
+      "text": "调动全国医疗资源和力量，建设定点医院",
+      "visual_order": 1
+    },
+    {
+      "id": "R1",
+      "box_role": "effect_blank_original",
+      "group": "G1",
+      "text": null,
+      "printed_marker": "①",
+      "blank_status": "原题空框；不回填答案",
+      "visual_order": 1
+    },
+    {
+      "id": "M2",
+      "box_role": "measure",
+      "group": "G1",
+      "text": "免费救治，不放弃一个感染者",
+      "visual_order": 2
+    },
+    {
+      "id": "R2",
+      "box_role": "effect_filled_original",
+      "group": "G1",
+      "text": "避免因经济负担不能及时就医带来的疫情扩散，减轻抗疫资源压力，促进社会公平",
+      "visual_order": 2
+    },
+    {
+      "id": "D1",
+      "box_role": "measure",
+      "group": "G2",
+      "text": "及时发布疫情信息，联防联控、群防群控",
+      "visual_order": 3
+    },
+    {
+      "id": "S1",
+      "box_role": "effect_filled_original",
+      "group": "G2",
+      "text": "消除疫情信息的不对称，稳定社会防疫心理预期，凝聚社会力量，提高抗疫效率",
+      "visual_order": 3
+    },
+    {
+      "id": "D2",
+      "box_role": "measure",
+      "group": "G2",
+      "text": "加强市场监管：组织生产防疫物资，并统一调配",
+      "visual_order": 4
+    },
+    {
+      "id": "S2",
+      "box_role": "effect_blank_original",
+      "group": "G2",
+      "text": null,
+      "printed_marker": "②",
+      "blank_status": "原题空框；不回填答案",
+      "visual_order": 4
+    },
+    {
+      "id": "E1",
+      "box_role": "measure",
+      "group": "G3",
+      "text": "增加财政补贴，加大金融支持",
+      "visual_order": 5
+    },
+    {
+      "id": "T1",
+      "box_role": "effect_filled_original",
+      "group": "G3",
+      "text": "降低企业成本，推动复工复产，促进就业，稳定经济",
+      "visual_order": 5
+    },
+    {
+      "id": "E2",
+      "box_role": "measure",
+      "group": "G3",
+      "text": "加大外贸信贷投入，扩大大出口信用保障覆盖面，完善出口退税政策，支持出口产品转内销",
+      "visual_order": 6
+    },
+    {
+      "id": "T2",
+      "box_role": "effect_blank_original",
+      "group": "G3",
+      "text": null,
+      "printed_marker": "③",
+      "blank_status": "原题空框；不回填答案",
+      "visual_order": 6
+    },
+    {
+      "id": "E3",
+      "box_role": "measure",
+      "group": "G3",
+      "text": "加大粮油供应，投放冻肉储备，提升蔬菜大省产品供给能力",
+      "visual_order": 7
+    },
+    {
+      "id": "T3",
+      "box_role": "effect_filled_original",
+      "group": "G3",
+      "text": "保障生活必需品的生产、供应，稳定价格，保障民生",
+      "visual_order": 7
+    }
+  ],
+  "edges": [
+    {
+      "id": "A1",
+      "from": "M1",
+      "to": "R1",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A2",
+      "from": "M2",
+      "to": "R2",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A3",
+      "from": "D1",
+      "to": "S1",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A4",
+      "from": "D2",
+      "to": "S2",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A5",
+      "from": "E1",
+      "to": "T1",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A6",
+      "from": "E2",
+      "to": "T2",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    },
+    {
+      "id": "A7",
+      "from": "E3",
+      "to": "T3",
+      "direction": "right",
+      "start_anchor": "from right edge center",
+      "end_anchor": "to left edge center",
+      "arrowhead": "right-pointing",
+      "relation": "one_to_one",
+      "merge_split": "none"
+    }
+  ],
+  "brace_relations": [
+    {
+      "id": "B0",
+      "from": "ROOT",
+      "to": ["G1", "G2", "G3"],
+      "type": "scope_brace",
+      "is_arrow": false
+    },
+    {
+      "id": "B1",
+      "from": "G1",
+      "to": ["M1", "M2"],
+      "type": "group_brace",
+      "is_arrow": false
+    },
+    {
+      "id": "B2",
+      "from": "G2",
+      "to": ["D1", "D2"],
+      "type": "group_brace",
+      "is_arrow": false
+    },
+    {
+      "id": "B3",
+      "from": "G3",
+      "to": ["E1", "E2", "E3"],
+      "type": "group_brace",
+      "is_arrow": false
+    }
+  ],
+  "ellipsis_marks": [
+    {
+      "group": "G1",
+      "after_node": "M2",
+      "dot_count": 6,
+      "mark": "six solid dots",
+      "meaning": "additional omitted measures; no arrow"
+    },
+    {
+      "group": "G2",
+      "after_node": "D2",
+      "dot_count": 6,
+      "mark": "six solid dots",
+      "meaning": "additional omitted measures; no arrow"
+    },
+    {
+      "group": "G3",
+      "after_node": "E3",
+      "dot_count": 6,
+      "mark": "six solid dots",
+      "meaning": "additional omitted measures; no arrow"
+    }
+  ],
+  "topology_summary": {
+    "horizontal_arrow_count": 7,
+    "all_horizontal_arrows_rightward": true,
+    "all_horizontal_edges_one_to_one": true,
+    "horizontal_arrow_merges": 0,
+    "horizontal_arrow_splits": 0,
+    "blank_original_effect_boxes": ["R1", "S2", "T2"],
+    "answer_text_inserted_into_blank_boxes": false
+  }
+}

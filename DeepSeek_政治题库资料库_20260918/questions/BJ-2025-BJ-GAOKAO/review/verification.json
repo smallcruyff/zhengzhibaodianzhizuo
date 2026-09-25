@@ -1,0 +1,519 @@
+{
+  "schema_version": "independent_verification_bounded_v2",
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "verification_type": "fresh_bounded_source_visual_review",
+  "reviewed_at": "2026-09-22T05:47:43-07:00",
+  "reviewer": {
+    "agent": "/root/review_bj_gaokao_bounded",
+    "model": "GPT-5 Codex subagent",
+    "role": "独立有界复核工位；非生产者、非总控验收者",
+    "skill": "beijing-gaokao-politics 6.3.8-20260921 with AGENTS 6.3.5-20260921",
+    "mode": "read_only_bounded_source_visual_review",
+    "not_producer": true,
+    "not_acceptance": true,
+    "promotion_performed": false,
+    "write_scope": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-BJ-GAOKAO/independent_review_bounded_v2/"
+  },
+  "scope": {
+    "candidate_dir": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-BJ-GAOKAO/candidate_bounded_v2",
+    "parent_bank": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-BJ-GAOKAO",
+    "source_boundary_dir": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-BJ-GAOKAO/source_boundary_v2",
+    "required_checks": [
+      "E0全部标记teacher_version_bounded_E0且明确独立原卷缺失",
+      "Q1-Q15 E1=N/A_objective、教师答案仅作E3、3分仅来自教师版p1第一部分题头",
+      "Q16-Q21 printed_score=N/A/uncertain、S132仅作E1_candidate_pending",
+      "Q19父稿1分不原印化、图首柱10246.5保留",
+      "Q20候选8分不原印化",
+      "E0与S44 p9-p21答案/解析分栏",
+      "Q1/Q5/Q9/Q12/Q14/Q17/Q19/Q20/Q21图文、轴、图例、箭头、方向、分组和跨页关系",
+      "21题父SHA、候选SHA、来源/资产树SHA和本地链接"
+    ],
+    "page_views": {
+      "S44eade2b04f8_teacher_version": {
+        "role": "教师版；p1-p8题面E0，p9-p21参考答案/解析E3",
+        "pages_expected": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+        "pages_viewed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+        "visual_status": "PASS",
+        "method": "实际打开候选包内与S44副本SHA绑定的source_pages/p001-p021.png；不是只读OCR或Markdown"
+      },
+      "S132a504a16fe_scoring_candidate": {
+        "role": "评分材料候选；Q16-Q21 E1_candidate_pending",
+        "pages_expected": [1, 2, 3, 4, 5, 6],
+        "pages_viewed": [1, 2, 3, 4, 5, 6],
+        "visual_status": "PASS_WITH_PENDING_ROLE",
+        "method": "实际打开候选包内与S132副本SHA绑定的rubric_pages/p001-p006.png"
+      },
+      "candidate_Q21": {
+        "path": "candidates/BJ-2025-BJ-GAOKAO-Q21.md",
+        "viewed": true,
+        "visual_asset_checked": "assets/source_pages/p008.png",
+        "status": "PASS"
+      }
+    },
+    "student_materials": {
+      "provided": false,
+      "status": "N/A_with_basis_missing_source",
+      "blocking": false
+    }
+  },
+  "overall": {
+    "status": "PASS_WITH_BOUNDARIES",
+    "independent_review_status": "completed",
+    "bounded_package_allowed": true,
+    "conversion_completeness": "PASS_FOR_BOUNDED_ROLE_ONLY",
+    "source_evidence_status": "BLOCKED_ON_SOURCE",
+    "full_exam_acceptance": "blocked_on_source",
+    "controller_ready": false,
+    "controller_ready_qualification": "NOT_QUALIFIED_INDEPENDENT_ORIGINAL_EXAM_MISSING_E1_PENDING_PRINTED_SCORE_UNCERTAIN",
+    "promotion": false,
+    "shared_write_scope": "none",
+    "pass_questions": 21,
+    "fail_questions": 0,
+    "uncertain_questions": 0,
+    "source_blockers": [
+      "当前检索源缺少独立原卷角色；S44只能作teacher_version_bounded_E0/E3",
+      "S132中心状态仍为候选；Q16-Q21只能E1_candidate_pending，不得写正式E1或固定槽位",
+      "Q16-Q21原印分值未取得；不得用S132候选分值回填",
+      "Q19父稿（1分）排除；Q20候选8分排除"
+    ]
+  },
+  "source_identity": {
+    "paper_pdf": {
+      "source_id": "S44eade2b04f8",
+      "candidate_copy": "sources/original/BJ-2025-BJ-GAOKAO_teacher_version.pdf",
+      "canonical_path": "/Users/wanglifei/Desktop/历年高考题及细则/2025北京高考真题政治（教师版）.pdf",
+      "role": "教师版混合载体",
+      "sha256_expected": "44eade2b04f87c55a788e0865e5457d884abfda002caf78f19626939aa29579d",
+      "sha256_actual_candidate_copy": "44eade2b04f87c55a788e0865e5457d884abfda002caf78f19626939aa29579d",
+      "canonical_sha256": "44eade2b04f87c55a788e0865e5457d884abfda002caf78f19626939aa29579d",
+      "pages": 21,
+      "bounded_question_pages": "p1-p8",
+      "reference_answer_pages": "p9-p21",
+      "independent_original_exam": "missing"
+    },
+    "scoring_candidate_pdf": {
+      "source_id": "S132a504a16fe",
+      "candidate_copy": "sources/scoring_candidate/BJ-2025-BJ-GAOKAO_scoring_candidate.pdf",
+      "canonical_path": "/Users/wanglifei/Desktop/历年高考题及细则/2025北京细则.pdf",
+      "role": "评分材料候选",
+      "sha256_expected": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+      "sha256_actual_candidate_copy": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+      "canonical_sha256": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+      "pages": 6,
+      "formal_E1": false,
+      "allowed_role": "Q16-Q21 E1_candidate_pending only"
+    },
+    "source_boundary_files": {
+      "inventory.json": {
+        "expected": "67877bedb145c86d557740d617451d7bab434c706bc2244de0105b134b5831c8",
+        "actual": "67877bedb145c86d557740d617451d7bab434c706bc2244de0105b134b5831c8",
+        "matches_candidate_copy": true
+      },
+      "inventory.md": {
+        "expected": "838a040547522ba55d353dcbd2e8b9debe4451fd3dc97ab48c4dcffb679c5d31",
+        "actual": "838a040547522ba55d353dcbd2e8b9debe4451fd3dc97ab48c4dcffb679c5d31",
+        "matches_candidate_copy": true
+      },
+      "production_recommendation.json": {
+        "expected": "bc233e16538c0a1fab935bb647a9b410da77b3b2e1f2bd46126d87a1c91c0695",
+        "actual": "bc233e16538c0a1fab935bb647a9b410da77b3b2e1f2bd46126d87a1c91c0695",
+        "matches_candidate_copy": true
+      },
+      "source_matrix.json": {
+        "expected": "1286f2f911b4d980444dbbbc7e6ee9cf30c1a5d62546e69026c4f16a048d79e2",
+        "actual": "1286f2f911b4d980444dbbbc7e6ee9cf30c1a5d62546e69026c4f16a048d79e2",
+        "matches_candidate_copy": true
+      }
+    }
+  },
+  "package_integrity": {
+    "candidate_count": 21,
+    "question_layers_rows": 21,
+    "candidate_files_sha256": {
+      "tree_recorded": "b2574c1f7dae0dfb0588beff42bef42de813e7a544ca4e9059759511937d8127",
+      "tree_recomputed": "b2574c1f7dae0dfb0588beff42bef42de813e7a544ca4e9059759511937d8127",
+      "entries": 21,
+      "status": "PASS"
+    },
+    "assets_sha256": {
+      "tree_recorded": "f0e7055931a937f24a47b3c280d4f08e71530e05a13fd11569a9f44b06f809e6",
+      "tree_recomputed": "f0e7055931a937f24a47b3c280d4f08e71530e05a13fd11569a9f44b06f809e6",
+      "entries": 35,
+      "status": "PASS"
+    },
+    "sources_sha256": {
+      "tree_recorded": "212f0f8334b2289c5b4972874445a774161754ebbcf0fc08709267f95eca2c49",
+      "tree_recomputed": "212f0f8334b2289c5b4972874445a774161754ebbcf0fc08709267f95eca2c49",
+      "entries": 9,
+      "status": "PASS"
+    },
+    "coverage_sha256": {
+      "tree_recorded": "e1591bec08e5546761a1fcef4ac03f8f9e8514153d126db798fef7e639cd368b",
+      "tree_recomputed": "e1591bec08e5546761a1fcef4ac03f8f9e8514153d126db798fef7e639cd368b",
+      "entries": 4,
+      "status": "PASS"
+    },
+    "parent_bank": {
+      "direct_question_md_count": 21,
+      "per_file_parent_sha_matches_source_boundary": "21/21",
+      "per_file_parent_sha_mismatches": [],
+      "recorded_question_tree_sha256": "f36d77855ec4585588c895e2623d5b143c8b1469eeb79092aa5a5eb7addfd005",
+      "recomputed_current_rel_tree_sha256": "26f4e37f919c98a0741bfefd58e8f92418baa03d140c94d03e55d62dd344dfd1",
+      "tree_status": "PER_FILE_PASS_RECORDED_TREE_ALGORITHM_OR_BASELINE_NOT_REPRODUCIBLE",
+      "note": "21条父稿逐文件SHA全部与source_boundary_v2/inventory.json、source_matrix.json及question_layers.jsonl一致；当前复核不将无法用候选rel_tree_sha函数复现的历史树摘要误判为父稿内容漂移。"
+    },
+    "candidate_parent_pairing": {
+      "question_layers_parent_sha": "21/21 current match",
+      "question_layers_candidate_sha": "21/21 current match",
+      "status": "PASS"
+    },
+    "local_links": {
+      "markdown_links_checked": 37,
+      "broken_links": 0,
+      "directory_links": 0,
+      "external_links": 0,
+      "status": "PASS"
+    },
+    "e0_e3_separation": {
+      "question_files_checked": 21,
+      "teacher_version_bounded_markers": "21/21",
+      "e0_answer_or_analysis_leaks": 0,
+      "status": "PASS"
+    }
+  },
+  "shared_state_read_only_guard": {
+    "shared_write_performed": false,
+    "shared_write_scope": "none",
+    "questions_csv": {
+      "snapshot_sha256": "89196df493161226b69656e7a446d6108cfb2a0165cb73dab61a576bcf27d7a0",
+      "current_sha256": "81b4f13a0ceaf1721a532075bbb6a48b95b4187abb8db3c2d89bd5a0eaf582b2",
+      "classification": "snapshot_drift_or_concurrent_update_not_written_by_review_worker"
+    },
+    "rubric_links_csv": {
+      "snapshot_sha256": "fee8f6555945208118887c4e07b2ce234d8318eb602c5b309c0ffd99963f2bb7",
+      "current_sha256": "d96718b357e75058b35b8ea358a6fc64d82b5928735a0d4f8a3b5d67a0d4737b",
+      "classification": "snapshot_drift_or_concurrent_update_not_written_by_review_worker"
+    },
+    "source_manifest_csv": {
+      "snapshot_sha256": "c03d45354134018f8e49ac44f48eb5e47240ffa84005e78f5c18f477f0a50f1d",
+      "current_sha256": "c03d45354134018f8e49ac44f48eb5e47240ffa84005e78f5c18f477f0a50f1d",
+      "classification": "matches_snapshot"
+    },
+    "status": "PASS_READ_ONLY_GUARD"
+  },
+  "question_status": [
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q1",
+      "qnum": 1,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p1; E3 p9",
+      "finding": "五列表格逐列核对：表头、人民地点文字、照片、边框和列顺序一致；答案B留在E3，不回填E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q2",
+      "qnum": 2,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p1; E3 p9",
+      "finding": "题干、四判断和A-D完整；无独立图表，题面页图仍已链接；答案A仅在E3。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q3",
+      "qnum": 3,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p1-p2; E3 p9-p10",
+      "finding": "跨p1-p2题干、四判断及A-D完整；答案C未混入E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q4",
+      "qnum": 4,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p2; E3 p10",
+      "finding": "题干与四选项完整；答案D严格处于E3。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q5",
+      "qnum": 5,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p2; E3 p10",
+      "finding": "三性质图文字逐字核到：所有黑鳍鳈都是五彩鱼、有些黑鳍鳈栖息城区河段、有些水生生物不是五彩鱼；鱼图、虚线框和气泡保留，答案D不进入E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q6",
+      "qnum": 6,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p2; E3 p10-p11",
+      "finding": "题干、四选项与答案B分栏正确；未见p9-p21解析进入E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q7",
+      "qnum": 7,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p2-p3; E3 p11",
+      "finding": "跨页题干与四选项完整；答案D仅作教师版E3参考答案。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q8",
+      "qnum": 8,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p3; E3 p11",
+      "finding": "民族团结材料、四判断和A-D完整；答案B仍在E3区。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q9",
+      "qnum": 9,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p3; E3 p11-p12",
+      "finding": "结构图标题、正文/附件分组、正文五项、附件三项、框线/箭头关系均以p3图核对；答案A未混入E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q10",
+      "qnum": 10,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p3-p4; E3 p12",
+      "finding": "法治材料、四选项和答案D完整，跨页未串接答案解析。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q11",
+      "qnum": 11,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p4; E3 p12",
+      "finding": "遗嘱材料、四选项和答案C完整；答案页解释未进入E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q12",
+      "qnum": 12,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p4; E3 p12-p13",
+      "finding": "折线图轴0-14、年度2020-2023、五条系列图例/标记、方向和近似点位均与p4一致；未把无数字标签的读图近似冒称原印数值；答案C只在E3。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q13",
+      "qnum": 13,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p4; E3 p13",
+      "finding": "商业航天材料、四判断与A-D完整；答案A隔离在E3。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q14",
+      "qnum": 14,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p4-p5; E3 p13",
+      "finding": "传统/新型离岸贸易标题、转型方向、两框主体、货物流/资金流箭头、X国/中国境内外分界、数字化平台及离岸贸易商标签均按p5核对；答案C不回填E0。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q15",
+      "qnum": 15,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "N/A_objective",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "teacher_header_only_bounded_3",
+      "pages": "E0 p5; E3 p13-p14",
+      "finding": "智慧农业出海材料、四判断、A-D和题后第二部分分界完整；答案A仅作E3。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q16",
+      "qnum": 16,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p5-p6; S132 pending p1; E3 p14-p15",
+      "finding": "兔儿爷三段材料、设问和p6插图完整；装饰性图字未被虚构为设问；S132 p1仅保留候选评分线索，不正式化8分/E1。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q17",
+      "qnum": 17,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p6; S132 pending p2; E3 p15-p16",
+      "finding": "六年时间线1954→1987→2007→2019→2021→2024，箭头明确左向右；上下框分组和六框文字完整；S132每角4分仅作pending。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q18",
+      "qnum": 18,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p6-p7; S132 pending p2-p4; E3 p16-p18",
+      "finding": "材料一/二、两小问、跨页连续性完整；人格权和思维品质候选细则均未升级正式E1或固定分值。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q19",
+      "qnum": 19,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p7; S132 pending p4; E3 p18-p19",
+      "finding": "双轴图标题、左轴亿元刻度、右轴百分比刻度、四柱值（首柱10246.5）、四折线值、图例和两序列上升方向均核对；父稿1分明确排除，不能原印化。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q20",
+      "qnum": 20,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p7-p8; S132 pending p4-p5; E3 p19-p20",
+      "finding": "团结、发展、文明、和平、民心五行表格逐行核对，p7末设问接p8首完整；S132候选8分明确不作为原卷印刷分值。"
+    },
+    {
+      "question_id": "BJ-2025-BJ-GAOKAO-Q21",
+      "qnum": 21,
+      "status": "PASS",
+      "bounded_package_allowed": true,
+      "full_source_status": "UNCERTAIN",
+      "e0_status": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1_status": "E1_candidate_pending_only",
+      "e3_status": "teacher_version_reference_answer_E3",
+      "printed_score_status": "N/A_uncertain",
+      "pages": "E0 p8; S132 pending p5; E3 p20-p21",
+      "finding": "Q21候选已实际核读；教师/同学甲/同学乙三行、多列框线、人物标签、◇资料分组和设问均与p8一致；S132候选10分不原印化。"
+    }
+  ],
+  "boundary_decisions": {
+    "Q1_Q15": {
+      "e0": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1": "N/A_objective",
+      "e3": "teacher_version_reference_answer_E3",
+      "printed_score": "3 only from S44 p1 first-part header; not independent-original score",
+      "allowed": true
+    },
+    "Q16_Q21": {
+      "e0": "teacher_version_bounded_E0; independent_original_exam_missing",
+      "e1": "E1_candidate_pending only",
+      "e3": "teacher_version_reference_answer_E3",
+      "printed_score": "N/A/uncertain",
+      "allowed": true
+    },
+    "Q19": {
+      "parent_score_1": "excluded",
+      "chart_first_bar": "10246.5",
+      "original_print_score": "N/A/uncertain",
+      "allowed": true
+    },
+    "Q20": {
+      "candidate_score_8": "excluded_from_original_print_score",
+      "original_print_score": "N/A/uncertain",
+      "allowed": true
+    }
+  },
+  "written_files": [
+    "verification.json",
+    "verification.md"
+  ],
+  "write_audit": {
+    "only_review_directory_written": true,
+    "candidate_modified": false,
+    "parent_modified": false,
+    "shared_question_bank_modified": false,
+    "shared_indexes_modified": false,
+    "conversion_manifest_modified": false,
+    "raw_sources_modified": false
+  }
+}

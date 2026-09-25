@@ -1,0 +1,76 @@
+{
+  "exam_id": "BJ-2023-FT-YIMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": null,
+  "points_total": null,
+  "question_hashes": {
+    "BJ-2023-FT-YIMO-Q1": "5f1705b44015c1a84210d260d9b2cfe3ceca9344cae375cbcbd8b6caacef2d0d",
+    "BJ-2023-FT-YIMO-Q2": "ba79c8ee619b5eaf3aa5cc5ae9b53fba6bdaac5a0b95dbf1d16e95a14ed18c7e",
+    "BJ-2023-FT-YIMO-Q3": "04ca43a8cbb2a2ff9cc62e54885e5d7d90409126b67a5d05adcc05d9fa786c9d",
+    "BJ-2023-FT-YIMO-Q4": "51499b4147ffa6c493fb3b29582c8b75b8bd2786ca3eb53949736b4e0c6dfd96",
+    "BJ-2023-FT-YIMO-Q5": "e561bd8641971accc330dde256f9de237012b4f0b5cf08a216511603e23f153c",
+    "BJ-2023-FT-YIMO-Q6": "b176bf9e7ed3867a94b8a240d04673b66be0bf26c7e10aaa8ef7b27d2f42df22",
+    "BJ-2023-FT-YIMO-Q7": "2b407c06efecdc47a05c66ddf97ab50feeb7f95ba4287e608688bb5ca3e188ce",
+    "BJ-2023-FT-YIMO-Q8": "cf60162fae3bbd6b315cc3ed6dd9996e713e248bdadb898c1c5bdc450495d815",
+    "BJ-2023-FT-YIMO-Q9": "750ab81a00b504f2eb4a4c3e02c3e474eed8c1a90cc8add9d50d93c08727946a",
+    "BJ-2023-FT-YIMO-Q10": "5378297900249c2b1995277994c5fdc6a5dd82a3db192cd8a8711f9acad532fa",
+    "BJ-2023-FT-YIMO-Q11": "1ca6ba8876a5b702933ab48ff605a44d25bff63fbc21559b55de3e76eab2adff",
+    "BJ-2023-FT-YIMO-Q12": "fad89b4bf276710d0960e0da6b3aebfdf15d5f9a3c66c6bffdf1f2800361a1d7",
+    "BJ-2023-FT-YIMO-Q13": "09cd913274ecd4963ddde719af033c5161351574f76a094514e8ed6da813fb0e",
+    "BJ-2023-FT-YIMO-Q14": "dbebfa93d45d1f17f9c43e2a194bc39b98b920045744de07e33fe735c36c6ff6",
+    "BJ-2023-FT-YIMO-Q15": "3adae7d14aaba1dbe3cbed37cef8ae125080c8113a4c92852f084112b0bcb0bf",
+    "BJ-2023-FT-YIMO-Q16": "501add509263560f667011c6675544f59ea6f93eeafc6350742f73d3ab39f21a",
+    "BJ-2023-FT-YIMO-Q17": "c6ab3dd31a2d14c9131f515230599ea0a9a449af636df8ed1d56734cdc3b992b",
+    "BJ-2023-FT-YIMO-Q18": "db645422e9f977d90b033cd04e333d9673957c99946eb92a451caf35138aa64f",
+    "BJ-2023-FT-YIMO-Q19": "3c5344c925774cb49473508baf4e09fcc7e2d02ed16dbd930a4e9bf8b2c164b7",
+    "BJ-2023-FT-YIMO-Q20": "651c704f90453925e93d34797c461a4b3ad51e8a3621441796bd521f48badd38",
+    "BJ-2023-FT-YIMO-Q21": "0d3031690d7b153a69341dacadb742dd485c99399ab3a2502cc13bf504625fc9",
+    "BJ-2023-FT-YIMO-Q22": "470ad424480f51f67114a2a29a86373e132fcc1471fefa6c3723cdd34c114efa"
+  },
+  "source_pages": {
+    "active_readable_derivative": 35
+  },
+  "page_details": {
+    "source_docx_fixed": null,
+    "history_missing_glyph_derivative": 14
+  },
+  "source_page_total": 35,
+  "source_structure": {
+    "paragraphs": 302,
+    "tables": 6,
+    "media": 4,
+    "footer_parts": 2
+  },
+  "source_roles": {
+    "teacher_version_transcription": "Sd68e0801a751",
+    "E1_formal_rubric": 0,
+    "student_samples": "N/A_not_provided"
+  },
+  "visual_witness": {
+    "active_pages": 35,
+    "active_page_coverage_sha256": "f3000158b485499de692522f2fbb2adbc8beb7e7bf997eb1b40645a89e47a013",
+    "history_only_pages": 14,
+    "history_map": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-FT-YIMO/canonical_source_complete_v2_20260922/history/historical_14page_source_page_coverage.json"
+  },
+  "primary_review_receipt": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-FT-YIMO_v2_primary_review.json",
+    "status": "required_before_execute"
+  },
+  "independent_review_receipt": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-FT-YIMO/canonical_source_complete_v2_20260922/independent_review/review.json",
+    "sha256": "793d7203dd5c4adc9115bde870d59eb8625e0cf7d1362b5c1d6d56ece5f627ce"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "同卷独立原卷、独立答案、正式E1评分细则未提供；当前DOCX及其转写只登记为E3/source material。",
+    "学生原答、教师批注、评分标记和个人实得分未提供。",
+    "points_total=null；原授权来源没有可靠总分，不推算题分或总分。",
+    "Q17设问‘两议两公开’与材料/注释/流程图/内附答案‘四议两公开’的冲突原样保留。",
+    "Q20内附详解的‘福建省委、省政府推进生态文明建设’串题句原样保留，不作为权威解释。",
+    "默认14页派生物缺字，仅留history metadata；active locator使用35页可读派生见证，35页不等同原DOCX固定分页。"
+  ],
+  "accepted_at": "2026-09-22T18:28:18.139811+00:00"
+}

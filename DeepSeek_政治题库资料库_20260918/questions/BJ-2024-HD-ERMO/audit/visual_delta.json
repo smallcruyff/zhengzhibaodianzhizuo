@@ -1,0 +1,401 @@
+{
+  "schema_version": "controller-ready-visual-delta.v1",
+  "exam_id": "BJ-2024-HD-ERMO",
+  "created_at": "2026-09-22T01:15:06-07:00",
+  "scope": "独立复核 _accepted_doc_render_recheck 已完成的真实 DOCX 私有 FONTCONFIG 转换 PDF/PNG；不重渲染、不修改共享题库、不重审未变题文。",
+  "recheck_input_root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO",
+  "sources": [
+    {
+      "source_id": "S13d454fdd813",
+      "role": "原卷 DOCX",
+      "original_path": "/Users/wanglifei/Desktop/2024模拟题/海淀二模/试卷/补充材料/高三二模：政治试题（以PDF为准）(1).docx",
+      "isolated_recheck_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/isolated_source/试卷_S13d454fdd813_source.docx",
+      "isolated_output_copy": "source_copies/S13d454fdd813_source.docx",
+      "original_sha256": "13d454fdd813a0391d5dae21dbec99376ac2068d752173587130d5f266037572",
+      "isolated_recheck_sha256": "13d454fdd813a0391d5dae21dbec99376ac2068d752173587130d5f266037572",
+      "output_copy_sha256": "13d454fdd813a0391d5dae21dbec99376ac2068d752173587130d5f266037572",
+      "source_bytes": 253229,
+      "source_sha_equal": true,
+      "source_bytes_equal": true,
+      "format_preservation": {
+        "basis": "isolated output DOCX is a byte-for-byte copy of the recheck isolated source; OOXML inventory is read from that unchanged package",
+        "run_level_structure_preserved": true,
+        "color_run_count": 4,
+        "highlight_run_count": 0,
+        "font_run_count": 1156,
+        "shading_run_count": 41,
+        "comments": "preserved; N/A_with_basis",
+        "tracked_revisions": "preserved; N/A_with_basis",
+        "run_signature_sha256": "d165a89d7919c41a4addcfdbfd459924c41f1f69f9327660304000586f896e90",
+        "ooxml_inventory": "ooxml/S13d454fdd813.json"
+      },
+      "render_evidence": {
+        "existing_recheck_render_reused": true,
+        "rerendered_by_delta": false,
+        "fontconfig_file": "FONTCONFIG_FILE.xml",
+        "render_pdf": "rendered/S13d454fdd813/S13d454fdd813.pdf",
+        "pdf_sha256": "c40e1f37e3c10047c0de3f4e4a052ab4a33dd2814ba1595de8a92121139c9965",
+        "pdf_bytes": 681043,
+        "pdf_sha_equal_to_recheck": true,
+        "page_count": 9,
+        "page_pngs": [
+          {
+            "page": 1,
+            "path": "rendered/S13d454fdd813/pages/page-001.png",
+            "sha256": "f3471bd08ca107376ab41105f55dff701ce8b8d95192f47dcff6d10abc36ad7d",
+            "bytes": 640814,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-1.png",
+            "source_sha256": "f3471bd08ca107376ab41105f55dff701ce8b8d95192f47dcff6d10abc36ad7d",
+            "sha_equal": true
+          },
+          {
+            "page": 2,
+            "path": "rendered/S13d454fdd813/pages/page-002.png",
+            "sha256": "24b88af5fedb4cf64f766b33d42fce8e7d13b0a1ed96d8cc3b342bcf9650b0b5",
+            "bytes": 338073,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-2.png",
+            "source_sha256": "24b88af5fedb4cf64f766b33d42fce8e7d13b0a1ed96d8cc3b342bcf9650b0b5",
+            "sha_equal": true
+          },
+          {
+            "page": 3,
+            "path": "rendered/S13d454fdd813/pages/page-003.png",
+            "sha256": "b18d6e74131b246e0d338e2d966486b424928309af52550ac03e64b5ec7769c6",
+            "bytes": 320391,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-3.png",
+            "source_sha256": "b18d6e74131b246e0d338e2d966486b424928309af52550ac03e64b5ec7769c6",
+            "sha_equal": true
+          },
+          {
+            "page": 4,
+            "path": "rendered/S13d454fdd813/pages/page-004.png",
+            "sha256": "2d742a53b6c0e7bcab740842740d54b16fa7ef569c2e4e9e32f9d31d0678d95c",
+            "bytes": 579193,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-4.png",
+            "source_sha256": "2d742a53b6c0e7bcab740842740d54b16fa7ef569c2e4e9e32f9d31d0678d95c",
+            "sha_equal": true
+          },
+          {
+            "page": 5,
+            "path": "rendered/S13d454fdd813/pages/page-005.png",
+            "sha256": "72db6b3345214ddd0d105e546f966059097fd4e000bf591b0d29a6df1e27a783",
+            "bytes": 570908,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-5.png",
+            "source_sha256": "72db6b3345214ddd0d105e546f966059097fd4e000bf591b0d29a6df1e27a783",
+            "sha_equal": true
+          },
+          {
+            "page": 6,
+            "path": "rendered/S13d454fdd813/pages/page-006.png",
+            "sha256": "4d8e79803eb5b6b766639ec50586608bc44f91b4a37955fbed91bc6d4baa8f66",
+            "bytes": 452652,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-6.png",
+            "source_sha256": "4d8e79803eb5b6b766639ec50586608bc44f91b4a37955fbed91bc6d4baa8f66",
+            "sha_equal": true
+          },
+          {
+            "page": 7,
+            "path": "rendered/S13d454fdd813/pages/page-007.png",
+            "sha256": "a825f7d1517b0caf4e562ed397c6539febdd01916d2a2379c2277744e49dec90",
+            "bytes": 509922,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-7.png",
+            "source_sha256": "a825f7d1517b0caf4e562ed397c6539febdd01916d2a2379c2277744e49dec90",
+            "sha_equal": true
+          },
+          {
+            "page": 8,
+            "path": "rendered/S13d454fdd813/pages/page-008.png",
+            "sha256": "b1a7906ff7a641deaa1b9f23ba14334b51c1dd2e8e677f842ce2b942832114b5",
+            "bytes": 562832,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-8.png",
+            "source_sha256": "b1a7906ff7a641deaa1b9f23ba14334b51c1dd2e8e677f842ce2b942832114b5",
+            "sha_equal": true
+          },
+          {
+            "page": 9,
+            "path": "rendered/S13d454fdd813/pages/page-009.png",
+            "sha256": "ae10def8d49751fdd3564470ce65c32e0d0938861f44906bd4f14047c28a1de7",
+            "bytes": 216866,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/exam_docx/page-9.png",
+            "source_sha256": "ae10def8d49751fdd3564470ce65c32e0d0938861f44906bd4f14047c28a1de7",
+            "sha_equal": true
+          }
+        ],
+        "all_pages_independently_opened": true,
+        "page_visual_status": "PASS_readable",
+        "old_accepted_page_count": 7,
+        "pagination_change": {
+          "old_page_count": 7,
+          "new_page_count": 9,
+          "one_to_one": false,
+          "note": "中文字体恢复后分页改变；页号不得沿用旧缺字页图。"
+        },
+        "page_mapping": "mapping/S13d454fdd813.json",
+        "fontconfig_sha256": "7ac7343e1424e7adce118c4111db23dd2a572a98036a9b3cad82a96fdf8f3c5a",
+        "fontconfig_bytes": 564
+      },
+      "old_visual_conclusion": {
+        "status": "suspended",
+        "basis": "_accepted_doc_render_recheck verification; old missing-CJK visual conclusion is not silently reused"
+      }
+    },
+    {
+      "source_id": "S227192d22e10",
+      "role": "评分材料 DOCX",
+      "original_path": "/Users/wanglifei/Desktop/2024模拟题/海淀二模/细则/细则.docx",
+      "isolated_recheck_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/isolated_source/细则_S227192d22e10_source.docx",
+      "isolated_output_copy": "source_copies/S227192d22e10_source.docx",
+      "original_sha256": "227192d22e10241b73c445e7ab168c6f7317999c99d908aa84621a38b0b544e7",
+      "isolated_recheck_sha256": "227192d22e10241b73c445e7ab168c6f7317999c99d908aa84621a38b0b544e7",
+      "output_copy_sha256": "227192d22e10241b73c445e7ab168c6f7317999c99d908aa84621a38b0b544e7",
+      "source_bytes": 535443,
+      "source_sha_equal": true,
+      "source_bytes_equal": true,
+      "format_preservation": {
+        "basis": "isolated output DOCX is a byte-for-byte copy of the recheck isolated source; OOXML inventory is read from that unchanged package",
+        "run_level_structure_preserved": true,
+        "color_run_count": 0,
+        "highlight_run_count": 0,
+        "font_run_count": 378,
+        "shading_run_count": 19,
+        "comments": "preserved; N/A_with_basis",
+        "tracked_revisions": "preserved; N/A_with_basis",
+        "run_signature_sha256": "258d19777b11ba8afd8f25557a7ff22b74a6518d892850f0e6a4a4711f33ff3c",
+        "ooxml_inventory": "ooxml/S227192d22e10.json"
+      },
+      "render_evidence": {
+        "existing_recheck_render_reused": true,
+        "rerendered_by_delta": false,
+        "fontconfig_file": "FONTCONFIG_FILE.xml",
+        "render_pdf": "rendered/S227192d22e10/S227192d22e10.pdf",
+        "pdf_sha256": "1e42740576d63af62e9a0182254a9b0ff4179bdddfcee335fdffd8f88f22b3e8",
+        "pdf_bytes": 1055117,
+        "pdf_sha_equal_to_recheck": true,
+        "page_count": 5,
+        "page_pngs": [
+          {
+            "page": 1,
+            "path": "rendered/S227192d22e10/pages/page-001.png",
+            "sha256": "693a939d9720f3e42ce33f222634cfbad490698c6731dd6367469f6d4a14434a",
+            "bytes": 471561,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/rubric_docx/page-1.png",
+            "source_sha256": "693a939d9720f3e42ce33f222634cfbad490698c6731dd6367469f6d4a14434a",
+            "sha_equal": true
+          },
+          {
+            "page": 2,
+            "path": "rendered/S227192d22e10/pages/page-002.png",
+            "sha256": "5014cecda71cfd50c9eda7fd8c1966988280e16d145eea4696edfbefcb99264b",
+            "bytes": 597914,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/rubric_docx/page-2.png",
+            "source_sha256": "5014cecda71cfd50c9eda7fd8c1966988280e16d145eea4696edfbefcb99264b",
+            "sha_equal": true
+          },
+          {
+            "page": 3,
+            "path": "rendered/S227192d22e10/pages/page-003.png",
+            "sha256": "affebb1d565ae01b0a8ee72458672a9ede9a8a3f0adcb2317d9ba0dd1c0a3459",
+            "bytes": 814679,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/rubric_docx/page-3.png",
+            "source_sha256": "affebb1d565ae01b0a8ee72458672a9ede9a8a3f0adcb2317d9ba0dd1c0a3459",
+            "sha_equal": true
+          },
+          {
+            "page": 4,
+            "path": "rendered/S227192d22e10/pages/page-004.png",
+            "sha256": "477f1c42676ea84008a4f5660639baee31bd4467a29a714e4def0bee3303b687",
+            "bytes": 602636,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/rubric_docx/page-4.png",
+            "source_sha256": "477f1c42676ea84008a4f5660639baee31bd4467a29a714e4def0bee3303b687",
+            "sha_equal": true
+          },
+          {
+            "page": 5,
+            "path": "rendered/S227192d22e10/pages/page-005.png",
+            "sha256": "c4fc4db2e271f5bea7c088d12de7629565fe75e01b5c4e5d8397417c22a396b3",
+            "bytes": 214257,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/rubric_docx/page-5.png",
+            "source_sha256": "c4fc4db2e271f5bea7c088d12de7629565fe75e01b5c4e5d8397417c22a396b3",
+            "sha_equal": true
+          }
+        ],
+        "all_pages_independently_opened": true,
+        "page_visual_status": "PASS_readable",
+        "old_accepted_page_count": 4,
+        "pagination_change": {
+          "old_page_count": 4,
+          "new_page_count": 5,
+          "one_to_one": false,
+          "note": "中文字体恢复后分页改变；页号不得沿用旧缺字页图。"
+        },
+        "page_mapping": "mapping/S227192d22e10.json",
+        "fontconfig_sha256": "7ac7343e1424e7adce118c4111db23dd2a572a98036a9b3cad82a96fdf8f3c5a",
+        "fontconfig_bytes": 564
+      },
+      "old_visual_conclusion": {
+        "status": "suspended",
+        "basis": "_accepted_doc_render_recheck verification; old missing-CJK visual conclusion is not silently reused"
+      }
+    },
+    {
+      "source_id": "S8f109fb09efc",
+      "role": "评分材料答案 DOCX",
+      "original_path": "/Users/wanglifei/Desktop/2024模拟题/海淀二模/细则/补充材料/高三二模：政治答案(2).docx",
+      "isolated_recheck_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/isolated_source/答案_S8f109fb09efc_source.docx",
+      "isolated_output_copy": "source_copies/S8f109fb09efc_source.docx",
+      "original_sha256": "8f109fb09efc0c6ae1ffbad76a5ad99bf071a766b0e8c512247d468dc37fc6b3",
+      "isolated_recheck_sha256": "8f109fb09efc0c6ae1ffbad76a5ad99bf071a766b0e8c512247d468dc37fc6b3",
+      "output_copy_sha256": "8f109fb09efc0c6ae1ffbad76a5ad99bf071a766b0e8c512247d468dc37fc6b3",
+      "source_bytes": 22380,
+      "source_sha_equal": true,
+      "source_bytes_equal": true,
+      "format_preservation": {
+        "basis": "isolated output DOCX is a byte-for-byte copy of the recheck isolated source; OOXML inventory is read from that unchanged package",
+        "run_level_structure_preserved": true,
+        "color_run_count": 0,
+        "highlight_run_count": 0,
+        "font_run_count": 289,
+        "shading_run_count": 22,
+        "comments": "preserved; N/A_with_basis",
+        "tracked_revisions": "preserved; N/A_with_basis",
+        "run_signature_sha256": "307869f852aa353d48dee18ce3244750099deadb4c036068ae3bd447e649e936",
+        "ooxml_inventory": "ooxml/S8f109fb09efc.json"
+      },
+      "render_evidence": {
+        "existing_recheck_render_reused": true,
+        "rerendered_by_delta": false,
+        "fontconfig_file": "FONTCONFIG_FILE.xml",
+        "render_pdf": "rendered/S8f109fb09efc/S8f109fb09efc.pdf",
+        "pdf_sha256": "5c2116f6bb7e71ac0699c8b69352664babfd65b8a6262b36b2ae63826ced04d8",
+        "pdf_bytes": 291060,
+        "pdf_sha_equal_to_recheck": true,
+        "page_count": 2,
+        "page_pngs": [
+          {
+            "page": 1,
+            "path": "rendered/S8f109fb09efc/pages/page-001.png",
+            "sha256": "cd3f4c2cd8164408f12a2add8560baaea34330747d7a9d5a8e9380a69e64086a",
+            "bytes": 417829,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/answer_docx/page-1.png",
+            "source_sha256": "cd3f4c2cd8164408f12a2add8560baaea34330747d7a9d5a8e9380a69e64086a",
+            "sha_equal": true
+          },
+          {
+            "page": 2,
+            "path": "rendered/S8f109fb09efc/pages/page-002.png",
+            "sha256": "334750227b67d1792541a01f8a7d4c9b047287976b5f8b109f5770eb342aebdd",
+            "bytes": 452721,
+            "dimensions": [
+              1555,
+              2199
+            ],
+            "source_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/_accepted_doc_render_recheck/BJ-2024-HD-ERMO/rerender/answer_docx/page-2.png",
+            "source_sha256": "334750227b67d1792541a01f8a7d4c9b047287976b5f8b109f5770eb342aebdd",
+            "sha_equal": true
+          }
+        ],
+        "all_pages_independently_opened": true,
+        "page_visual_status": "PASS_readable",
+        "old_accepted_page_count": 2,
+        "pagination_change": {
+          "old_page_count": 2,
+          "new_page_count": 2,
+          "one_to_one": true,
+          "note": "页数一致，但仍以本 delta 的 OOXML锚点复核页边界。"
+        },
+        "page_mapping": "mapping/S8f109fb09efc.json",
+        "fontconfig_sha256": "7ac7343e1424e7adce118c4111db23dd2a572a98036a9b3cad82a96fdf8f3c5a",
+        "fontconfig_bytes": 564
+      },
+      "old_visual_conclusion": {
+        "status": "suspended",
+        "basis": "_accepted_doc_render_recheck verification; old missing-CJK visual conclusion is not silently reused"
+      }
+    }
+  ],
+  "shared_md_coverage_receipt": "shared_md_coverage.json",
+  "source_sha_receipt": "source_sha256.json",
+  "sha_receipt": "SHA256SUMS.json",
+  "ooxml_and_page_mapping": "ooxml/ 与 mapping/；每页给出 OOXML 段落/表格顺序锚点和分页变化。",
+  "decision": {
+    "controller_ready_visual_delta": true,
+    "merge_visual_delta": true,
+    "merge_shared_question_md": false,
+    "old_visual_conclusion": "suspended",
+    "readability_delta": "PASS independently opened all copied readable pages; explicit FT blank trailing page is not content evidence",
+    "source_sha_integrity": true,
+    "pdf_png_integrity": true,
+    "shared_md_changed": false,
+    "shared_md_coverage": {
+      "pass_rows": 45,
+      "difference_rows": 3,
+      "total_rows": 48
+    },
+    "unresolved": [
+      "本卷原卷权威 PDF 另有8页；本 delta 只独立复核其验收 DOCX 原卷副本的9页派生渲染，不能用 DOCX 视觉页替代权威 PDF 的原卷验收身份。",
+      "分页在字体恢复后发生变化的源必须使用本 delta 的新页号和 OOXML 段落/表格锚点；不得把旧缺字页图当作逐页证据。",
+      "本 delta 可合入为独立视觉证据包，但不晋升/覆盖共享题 MD、manifest、indexes 或任何原题/评分结论。",
+      "共享题 MD 存在 3 条源段落/表格覆盖差异；详见 shared_md_coverage.json 的 differences。"
+    ]
+  }
+}

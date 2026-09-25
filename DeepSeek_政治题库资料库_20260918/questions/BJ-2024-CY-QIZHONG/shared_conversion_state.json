@@ -1,0 +1,92 @@
+{
+  "schema_version": "shared-conversion-state.v28",
+  "exam_id": "BJ-2024-CY-QIZHONG",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "finally_accepted": false,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-CY-QIZHONG-Q1": "210a9a9ec3e3c89edb03587a9da486def7437d2ab052c177cad38ebbc4b1b9b4",
+    "BJ-2024-CY-QIZHONG-Q2": "83213d6b4533dd523d7fcc13ae7dabf54de5da31facb2acc8c4c3bf120796616",
+    "BJ-2024-CY-QIZHONG-Q3": "ef5baecd441dcd6fa6323ba4437f426bb4f9a81b68b08cb827f58d77fce4c2fe",
+    "BJ-2024-CY-QIZHONG-Q4": "a8fde30076137832ec3319d2b4d6e4e9271107e47c646a2f89596219d9f68a00",
+    "BJ-2024-CY-QIZHONG-Q5": "8b01b2df29128b584aef46e7142d388a03f99b3a7b420acc28d285b4f3f87c72",
+    "BJ-2024-CY-QIZHONG-Q6": "45fd28bbc3a0735c3a998ab5e6eb70cc53888709c5ed55ba3c109cf43ee5bf96",
+    "BJ-2024-CY-QIZHONG-Q7": "fb7e43dcfe18baf14faaee18530587bfba4b6235f6630f030bbce976df6c647e",
+    "BJ-2024-CY-QIZHONG-Q8": "cd0c712af4f3b10e77e77a4112c1dce9abb1c9e22d823e81e6b06ba1441292e0",
+    "BJ-2024-CY-QIZHONG-Q9": "4bc3fbf21d58eb16a631e7caf6dadd9053a0d980a7a14e570484e8f5c7d73e0e",
+    "BJ-2024-CY-QIZHONG-Q10": "de24cc82e40d2bcf284c0a4bdcd52a8cb7039797719fe9ec58662cc76f3e731f",
+    "BJ-2024-CY-QIZHONG-Q11": "b1f0678ff40a87f3028f4105ee3f2d275e3b18a04f48bf2b0c963946f70e2962",
+    "BJ-2024-CY-QIZHONG-Q12": "7c33836fec0fb60f09aaa0b0a81fe97f34057bd6018e24839b537635d9446dc8",
+    "BJ-2024-CY-QIZHONG-Q13": "4e2565506f31b34c8ac4a8ced475c0a6c02d3c5f6d749e9b985cb68b0f8288f9",
+    "BJ-2024-CY-QIZHONG-Q14": "fe9c5844cca54f9bc35890abe06f5cf9e8d75ce810d9bddd413dec27846db1bc",
+    "BJ-2024-CY-QIZHONG-Q15": "12b80d0346c6b066a2862ee09a196933f617e172b6f961da90f3580190d49ec7",
+    "BJ-2024-CY-QIZHONG-Q16": "856ab214e307cf99e36dfc04f64d8cc94a78bccb8240b6baad795f371cbb89ce",
+    "BJ-2024-CY-QIZHONG-Q17": "5ad2aeae642da548549ab80c837d8c7f0c6981a1a4dfa0ba69726a9392b5a7ef",
+    "BJ-2024-CY-QIZHONG-Q18": "37a5172c5b913cfc7aa53a1539dd447b75c03fcd430d486c2a6b0f40d084382b",
+    "BJ-2024-CY-QIZHONG-Q19": "056fee570ea360dff9f4b77325feab04d2292e6bf92d11d77ded890d0a3eb035",
+    "BJ-2024-CY-QIZHONG-Q20": "74b2ada871e0a5bf874d67a588abe79fae1b7ffe9b074b9fcec27d574cc4f21e"
+  },
+  "parent_question_hashes": {
+    "BJ-2024-CY-QIZHONG-Q1": "210a9a9ec3e3c89edb03587a9da486def7437d2ab052c177cad38ebbc4b1b9b4",
+    "BJ-2024-CY-QIZHONG-Q2": "83213d6b4533dd523d7fcc13ae7dabf54de5da31facb2acc8c4c3bf120796616",
+    "BJ-2024-CY-QIZHONG-Q3": "ef5baecd441dcd6fa6323ba4437f426bb4f9a81b68b08cb827f58d77fce4c2fe",
+    "BJ-2024-CY-QIZHONG-Q4": "a8fde30076137832ec3319d2b4d6e4e9271107e47c646a2f89596219d9f68a00",
+    "BJ-2024-CY-QIZHONG-Q5": "8b01b2df29128b584aef46e7142d388a03f99b3a7b420acc28d285b4f3f87c72",
+    "BJ-2024-CY-QIZHONG-Q6": "45fd28bbc3a0735c3a998ab5e6eb70cc53888709c5ed55ba3c109cf43ee5bf96",
+    "BJ-2024-CY-QIZHONG-Q7": "fb7e43dcfe18baf14faaee18530587bfba4b6235f6630f030bbce976df6c647e",
+    "BJ-2024-CY-QIZHONG-Q8": "cd0c712af4f3b10e77e77a4112c1dce9abb1c9e22d823e81e6b06ba1441292e0",
+    "BJ-2024-CY-QIZHONG-Q9": "4bc3fbf21d58eb16a631e7caf6dadd9053a0d980a7a14e570484e8f5c7d73e0e",
+    "BJ-2024-CY-QIZHONG-Q10": "de24cc82e40d2bcf284c0a4bdcd52a8cb7039797719fe9ec58662cc76f3e731f",
+    "BJ-2024-CY-QIZHONG-Q11": "b1f0678ff40a87f3028f4105ee3f2d275e3b18a04f48bf2b0c963946f70e2962",
+    "BJ-2024-CY-QIZHONG-Q12": "7c33836fec0fb60f09aaa0b0a81fe97f34057bd6018e24839b537635d9446dc8",
+    "BJ-2024-CY-QIZHONG-Q13": "4e2565506f31b34c8ac4a8ced475c0a6c02d3c5f6d749e9b985cb68b0f8288f9",
+    "BJ-2024-CY-QIZHONG-Q14": "fe9c5844cca54f9bc35890abe06f5cf9e8d75ce810d9bddd413dec27846db1bc",
+    "BJ-2024-CY-QIZHONG-Q15": "12b80d0346c6b066a2862ee09a196933f617e172b6f961da90f3580190d49ec7",
+    "BJ-2024-CY-QIZHONG-Q16": "1d2fb26d88d6b8c0845f22351c1aaeed73ebb255d7db22243d3a3a61c4ffc48a",
+    "BJ-2024-CY-QIZHONG-Q17": "5ad2aeae642da548549ab80c837d8c7f0c6981a1a4dfa0ba69726a9392b5a7ef",
+    "BJ-2024-CY-QIZHONG-Q18": "4fd08b63fc3442602743b34fd0bf7e0bfd0b16eac2bfa0a2a45c660973e46f28",
+    "BJ-2024-CY-QIZHONG-Q19": "2526ce528347e4bd2154ced878ab04d1d82afba0abfcdc8e5de932b075a30e93",
+    "BJ-2024-CY-QIZHONG-Q20": "4d6bf9cb5a7ba1bafd78132d7d75c7984b06f70705aff554362f3e5efbc2f4f7"
+  },
+  "source_pages": {
+    "original_paper": 8,
+    "formal_docx": 9,
+    "review_docx": 18,
+    "formal_rtf": 5
+  },
+  "source_page_total": 40,
+  "source_roles": "sources/source_roles.json",
+  "primary_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2024-CY-QIZHONG_v28_primary_review.json",
+    "sha256": "7ac89d5dc848873e639d97bdb2e2bfb69a3c34109b4298f8f44d40101955df29"
+  },
+  "independent_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-CY-QIZHONG/29_final_staging_review/verification.json",
+    "sha256": "b65bdbdae0f2808d6f50d7b80f0fea595698f2ea4d0144fe3d2a6d2380f6d2e2"
+  },
+  "q20_chart_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-CY-QIZHONG/27_q20_chart_review/verification.json",
+    "sha256": "b027b90836d3ad7c04de9b11632edd75f20b7b6e3c3750f2f0787471808b69fa"
+  },
+  "wrapper_erratum_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-CY-QIZHONG/33_wrapper_sha_erratum_review/verification.json",
+    "sha256": "4a9f8a2e308e85cf1b2459a72c6867b6754f4e95f94ca52375cc9a144f5787fc"
+  },
+  "limits": [
+    "Q1-Q15同题正式E1仍未定位；RTF末页内嵌答案表是E3，不升格为E1或独立答案。",
+    "Q16-Q20正式E1仅登记DOCX/RTF实际同题评分内容；S92评标DOCX保留为候选/讲评E3，不升格为E1。",
+    "当前没有独立参考答案文件；答案层登记N/A_with_basis，不能把嵌入答案表称为独立答案。",
+    "当前没有学生原答、教师批注、评分标记或个人实得分；学生层登记N/A_with_basis。",
+    "DOCX/RTF默认派生渲染有中文缺字；原载体字节与Fontconfig可读见证同时保留。",
+    "Q20图表数值为读图约值；原图灰柱是数字经济占GDP比重，不改写为规模（万亿元）。"
+  ],
+  "conversion_unresolved": [],
+  "answer_layer": "N/A_with_basis",
+  "student_layer": "N/A_with_basis",
+  "manifest_target_pending": true,
+  "manifest_before_sha256": "e434552f533050957c3564690c2c1f2056e92d802ba80d4df5544c8c1a0dcb84",
+  "accepted_at": "2026-09-22T18:12:43.591953+00:00"
+}

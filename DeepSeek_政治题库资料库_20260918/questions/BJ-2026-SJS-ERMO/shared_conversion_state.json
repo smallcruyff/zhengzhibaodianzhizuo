@@ -1,0 +1,83 @@
+{
+  "exam_id": "BJ-2026-SJS-ERMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-SJS-ERMO-Q1": "f96b29b7d44c2e506d97b2428f8add9d8a6c1cca7a438576f83eda1f2273d194",
+    "BJ-2026-SJS-ERMO-Q2": "da54122e3e6ed75757024ad309393fa07f49faa54efb034de033ee958fced1d6",
+    "BJ-2026-SJS-ERMO-Q3": "194bf7998843b4a252472b6e3ed6ce82b06dee16a07347ed8a015eb4ae202691",
+    "BJ-2026-SJS-ERMO-Q4": "4b140f381161222ab8aee3ae542718a73914d82b447628f90d396d413351d444",
+    "BJ-2026-SJS-ERMO-Q5": "e8bca24422cf1dafb9860c14e8933e4aa0ea475afc0da8c20470419c1c9b2c0d",
+    "BJ-2026-SJS-ERMO-Q6": "cc7f89890ca0f0e9243c2ee5856a0b18a25ca447d6560c706072ee8c85382f23",
+    "BJ-2026-SJS-ERMO-Q7": "a89b34b246e2f93e8197ec032c54d5b572594b7ffd18e0d6aa8ab217922ebab9",
+    "BJ-2026-SJS-ERMO-Q8": "86ee6fc5e911722c09a569770fe53c4bf9b79e8fc0ae346acba8a8a72284d2b8",
+    "BJ-2026-SJS-ERMO-Q9": "23cd2a35d6ad1e93ec29d48c44e327b890351cb712f703f7ce8d32880776cbc8",
+    "BJ-2026-SJS-ERMO-Q10": "52d7f90509fccd7bbaf485a99f6ca49c502fa47b65f51f37f50e66d83aa0fc13",
+    "BJ-2026-SJS-ERMO-Q11": "560eec37805fba36152460df1e604699f25f8181088cd4f6a75e02052ff678a0",
+    "BJ-2026-SJS-ERMO-Q12": "48592650c950701cd83960228dc209fb2793ea73bfe1df33d0e24394629a6773",
+    "BJ-2026-SJS-ERMO-Q13": "d8561c270b037b3e0dbed77612225712ada23cb7b1efb36d5e9467f952a1332d",
+    "BJ-2026-SJS-ERMO-Q14": "d2da55d56ad3471b0740b9aca6e9347550b856d8ed88103771c1b1e5461870a2",
+    "BJ-2026-SJS-ERMO-Q15": "e5ba6af70b3d4c78dbc5ef852b8c0d272cda65b4e2bbdf2ed81bf676982a5665",
+    "BJ-2026-SJS-ERMO-Q16": "1f2e0270396374ba9ebb7cae1361b68dd58680b21c6d5f260f1801aa679b94e8",
+    "BJ-2026-SJS-ERMO-Q17": "13b7b128b653419e5d94cc05f96cda4425460cbd84aa9caaa483f2f85ac677a4",
+    "BJ-2026-SJS-ERMO-Q18": "d8275622e1f0fbc3ea15836cd551035cfbc057b7be8b4b520b1d625e119cb06c",
+    "BJ-2026-SJS-ERMO-Q19": "3c0c86ab1416fef718a70f5f0ed490a2a7d060c080435f587dcd62ef5fdaa55c",
+    "BJ-2026-SJS-ERMO-Q20": "c485341206d9118811e03fb4c988de803d81a22187266019f4c60eb2195e61a9"
+  },
+  "source_pages": {
+    "teacher_docx": 0,
+    "rubric_doc": 0
+  },
+  "source_page_total": 0,
+  "source_roles": {
+    "teacher_docx": "S00b61bbb2c75",
+    "rubric_doc": "S404f493eede9"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "N/A_with_basis：没有单独原卷PDF；当前source inventory只提供教师版DOCX（source_id S00b61bbb2c75），它承载全部E0题面、图像和E3答案附页。原“缺原卷来源”例外保留作版本边界说明；不伪称存在单独原卷，所有现有E0材料均已转写。",
+    "N/A_with_basis：没有独立答案文件；参考答案附于教师版DOCX，已按E3逐题保留；不从别卷或网络补造。",
+    "正式评分材料为石景山区高三政治第二次模拟考试答案评分细则(1).doc（source_id S404f493eede9）；选择题Q1–Q15仅有答案键，题级E1记N/A_with_basis；Q16–Q20保留正式E1评分内容。原DOC渲染为2页，字体修复可读见证为6页，页锚层分开标识。",
+    "N/A_with_basis：没有学生原答、批注、评分标记或实得分来源，Q1–Q20学生层均缺源；不补造。",
+    "教师版DOCX和评分DOC为无固定源文件分页格式，source_pages数值0；可读见证页数及题级页锚见各题MD与独立回执。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2026-SJS-ERMO-Q2",
+      "location": "教师版DOCX题面readable p1底部及p2续文；word/media/image1.png（286×275像素）",
+      "partial_reading": "“80”、纪念性建筑/碑塔、沿山脊城墙/垛口及集体人物剪影可见；上方小题字、牌面、专名、细部与精确人数/身份未作猜读。",
+      "affects_answering": false,
+      "basis": "题干文字完整给出抗战胜利80周年、剪纸工艺与主题；选项判断依赖文字命题，未辨图内细字、专名和人数不是作答所需。原嵌入图完整保留且候选图SHA与DOCX ZIP中word/media/image1.png相同。"
+    }
+  ],
+  "review_receipts": {
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-SJS-ERMO/root_acceptance_prep_20260923/primary_review_acceptance_post_state_v3.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/group_2026_b/BJ-2026-SJS-ERMO/controller_ready_v2/candidates/sources/audit/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/group_2026_b/BJ-2026-SJS-ERMO/controller_ready_v3/candidates/sources/audit/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/group_2026_b/BJ-2026-SJS-ERMO/repair_v4_q2_visual_20260922/independent_verify/verification.json"
+    ],
+    "supplemental": {
+      "readme_only_review": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-SJS-ERMO/root_acceptance_prep_20260923/independent_readme_v2_review_luna_max_20260923/verification.json",
+      "technical_wrapper_review": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/group_B/BJ-2026-SJS-ERMO/B/verification.md",
+      "root_preacceptance_gate_audit": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/group_B/BJ-2026-SJS-ERMO/B/root_acceptance_preaudit_20260923/verification.json"
+    }
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-sjs-ermo-state2-codex-20260923",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T04:47:54.278317+00:00"
+    },
+    {
+      "spec_id": "bj-2026-sjs-ermo-state3-codex-20260923",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T05:18:04.753564+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T05:34:04.932461+00:00"
+}

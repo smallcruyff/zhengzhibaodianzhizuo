@@ -1,0 +1,89 @@
+{
+  "exam_id": "BJ-2023-CY-YIMO",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2023-CY-YIMO-Q1": "5f1852fd5ff414fb24b36e74d06f581db1c2942b0cf0474e93ba7035f9b3c3c1",
+    "BJ-2023-CY-YIMO-Q2": "f49843104a359440fef386e06b875caeece13e5fc864af2ca4db0234566ebfd2",
+    "BJ-2023-CY-YIMO-Q3": "dfd160d7f0b20482f3c39f52b51bc83f2a5dad106b429948815f31fcba8817e9",
+    "BJ-2023-CY-YIMO-Q4": "d2efcf742e07d36a68c4c0dc4150d3c4c0dd6a0f86e723fc95ca680a482f43fb",
+    "BJ-2023-CY-YIMO-Q5": "4bb806d882abb88ad33ebcfd845537b406c5eaff2d7f18d9ca65b7868d1c353b",
+    "BJ-2023-CY-YIMO-Q6": "5d107dfcb524fd2bb55b8c14a899ab89b9fc2b5d9f70fd6bd78234da272bcdfd",
+    "BJ-2023-CY-YIMO-Q7": "74ddf664a93beb5d3270c1dc8e0736f0a14f006467e621e1721e8b3d43a4ada9",
+    "BJ-2023-CY-YIMO-Q8": "1bfdec91e7d77cc5125bb8357d346c03fc9a12dd4730ea920f243c4413c96e08",
+    "BJ-2023-CY-YIMO-Q9": "70886a08a6f24a3778f9910d7053c0082d267c50c06f8f3d0a63322bc8cd9e84",
+    "BJ-2023-CY-YIMO-Q10": "3b3d2e1d2cc7a369953560c77da1a3ccf213e2ed9e5efb0e4f57fba67518f959",
+    "BJ-2023-CY-YIMO-Q11": "1883a93a6cb0f46971b36444c00813448ee6cbffb12c2c6b0bdbd016af246d5b",
+    "BJ-2023-CY-YIMO-Q12": "f03e044763699c38c7d5ae5f430f226ea686eb7f80628841ba437526578c5af2",
+    "BJ-2023-CY-YIMO-Q13": "1809186750bd774195307a2aa574d991b8c9a0206f6785eda4b6967e4ff47c56",
+    "BJ-2023-CY-YIMO-Q14": "b9f8508920d5228fc52cec0fb9dc4b844531710dc7e7fa64f8e87a15efe3d8df",
+    "BJ-2023-CY-YIMO-Q15": "a1ca42415a05b5d7e8c95d9da107671b9fbd92e3648ff4ffc8a491f3a2c02ea8",
+    "BJ-2023-CY-YIMO-Q16": "b2ac53a8ca3b587bc8625ee326e5f63f8fd3fe14f72c4bc64d01cde779eddb8c",
+    "BJ-2023-CY-YIMO-Q17": "aeab7c725b28cad8af4575871c6ea71afe394c0feac89b8e6ad42b99d901d4cf",
+    "BJ-2023-CY-YIMO-Q18": "a7575de2bcfc08d8d31f8c4761d27fc38bee6f44311b2bd8fb5b0df4c0e7aedc",
+    "BJ-2023-CY-YIMO-Q19": "65be9e2eac6a76a5f5515b6753214100b5fb8e0b70ac0d173ee631059a1068af",
+    "BJ-2023-CY-YIMO-Q20": "556fc468fe98e50e75a384e5ecf1f8b88ae3e6ef46dcabe7f5a8539f658c6e35",
+    "BJ-2023-CY-YIMO-Q21": "aa3cc5b63b2b6e12019f0956044b432fd0631c6d61c434a344d244d2c218f0e2"
+  },
+  "source_pages": {
+    "exam": 8,
+    "answer_e3": 2
+  },
+  "source_page_total": 10,
+  "source_roles": {
+    "S878f984441fc": {
+      "role": "原卷题面",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区一模/朝阳/2023-3-朝阳一模高三政治试题.pdf",
+      "pages": 8
+    },
+    "S037fd592575b": {
+      "role": "参考答案 / E3",
+      "rel_path": "2023模拟题/2023各区模拟题(1)/各区一模/朝阳/2023-3-朝阳一模高三政治答案.pdf",
+      "pages": 2
+    }
+  },
+  "primary_review_receipt": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-CY-YIMO_v3_primary_review.json",
+    "sha256": "98e91aabdc740d79850c0578d3fd4231f0dbfa4be0a396c6075fd543110b3128",
+    "status": "primary_v3_reviewed_conversion_unresolved_empty"
+  },
+  "independent_chain": [
+    {
+      "scope": "v3 independent Q11 visual/materialization review",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-CY-YIMO/acceleration_integrated_v3_20260922/independent_review/review.json",
+      "sha256": "f50906d85f44cd3548c9a04377e41db4e89d24aae109784dfcc2717b326787b7"
+    },
+    {
+      "scope": "v3 Q11 delta",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-CY-YIMO/acceleration_integrated_v3_20260922/q11_delta.json",
+      "sha256": "f57ccdcfb538fd2e8b0168bac9718d132924fd1b97fe003b7a8b61ae1d7c385b",
+      "new_question_sha256": "5616f78551bb5965ce2cc0f604e3de84d221cf678a9debf7de620315f66efb41"
+    },
+    {
+      "scope": "primary v3 source-specific review",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-CY-YIMO_v3_primary_review.json",
+      "sha256": "98e91aabdc740d79850c0578d3fd4231f0dbfa4be0a396c6075fd543110b3128"
+    }
+  ],
+  "conversion_unresolved": [],
+  "formal_rubric": "source_not_provided; E3-only",
+  "student_samples": "N/A_not_provided",
+  "source_limitations": [
+    "原卷题面8页；参考答案2页/E3；正式评分细则未提供，不升格E1",
+    "无学生原答、批注、评分标记或实得分",
+    "Q11曲线数值为图上约读，原图仍为权威"
+  ],
+  "package_receipts": {
+    "materialization": "201abe544651f0c5703c2ed0fecc34dcab2c3c5841b99016ec8c8b193b11a9c4",
+    "candidate_manifest": "8a63e67dc4ef6e0cb365f9e564d69d366ce1c1d7a0020b6025a14d1984acea95",
+    "review": "f50906d85f44cd3548c9a04377e41db4e89d24aae109784dfcc2717b326787b7",
+    "q11_delta": "f57ccdcfb538fd2e8b0168bac9718d132924fd1b97fe003b7a8b61ae1d7c385b",
+    "primary_review": "98e91aabdc740d79850c0578d3fd4231f0dbfa4be0a396c6075fd543110b3128",
+    "deploy_materialization": "4460a1d9c80fe23148fd121a6aa3be4ef6593d004ef8673984a67a519dceed6e"
+  },
+  "canonical_dry_run": "{\"exam_id\": \"BJ-2023-CY-YIMO\", \"dry_run\": true, \"questions\": 21, \"recursive_local_links\": 45, \"supporting_files_outside_assets_sources\": 1, \"verification_sha256\": \"f50906d85f44cd3548c9a04377e41db4e89d24aae109784dfcc2717b326787b7\", \"note\": \"Identity and package checks only; not a content or full acceptance decision.\"}",
+  "accepted_at": "2026-09-22T18:10:11.553833+00:00",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e"
+}

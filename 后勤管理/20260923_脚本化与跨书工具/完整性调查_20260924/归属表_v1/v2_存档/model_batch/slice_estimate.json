@@ -1,0 +1,99 @@
+{
+ "rule_version": "2026-09-24-attribution-v2",
+ "method": "队列①=归属列里至少一模块为MAYBE的题，并入conflict_script_out非空的疑似错收题（去重）。队列②(新增,major④)=全部COLLECTED模块单元，逐一复判\"书稿收的对不对\"，不再局限于脚本已发现冲突的80对。字符数直接取 classifier/units.jsonl 的 stem_len/rubric_len 真实值，不做截断假设。批大小、每次调用开销、字符/token比例、每题输出token都是可调假设，不是实测值。",
+ "queue1_maybe_or_conflict": {
+  "unique_qids": 1751,
+  "maybe_only": 1750,
+  "conflict_only_extra": 1,
+  "missing_from_units_jsonl": [
+   "BJ-2024-FS-YIMO-Q12",
+   "BJ-2024-FS-YIMO-Q13",
+   "BJ-2024-FS-YIMO-Q17",
+   "BJ-2024-FS-YIMO-Q19",
+   "BJ-2024-FS-YIMO-Q2",
+   "BJ-2024-MTG-YIMO-Q12",
+   "BJ-2024-MTG-YIMO-Q4",
+   "BJ-2024-MTG-YIMO-Q6",
+   "BJ-2024-MTG-YIMO-Q7"
+  ]
+ },
+ "queue2_collected_recheck": {
+  "unique_qids": 1569,
+  "module_unit_pairs": 2681,
+  "missing_from_units_jsonl": [],
+  "note": "major④修复：COLLECTED模块单元不能只标签\"已收待复核\"就不再实际复核，本队列排进模型批次，逐单元逐模块输出\"维持收录/改判错收/证据不足暂缓\"三态结论，错收候选=书稿收录-模型或人工判定的相关集合，不是build_diffs.py里那80对script conflict能单独算出来的。"
+ },
+ "by_type": {
+  "选择题(队列1)": {
+   "n_units": 1251,
+   "chars_total": 427449,
+   "chars_avg": 342
+  },
+  "主观题(队列1)": {
+   "n_units": 491,
+   "chars_stem_total": 289635,
+   "chars_rubric_total": 500648,
+   "chars_avg_stem": 590,
+   "chars_avg_rubric": 1020
+  },
+  "COLLECTED复判(队列2)": {
+   "n_units": 1569,
+   "chars_total": 1276513,
+   "chars_avg": 814
+  }
+ },
+ "assumptions": {
+  "batch_size_choice_units_per_call": 25,
+  "batch_size_subj_units_per_call": 10,
+  "batch_size_collected_recheck_units_per_call": 20,
+  "overhead_tokens_per_call": 3000,
+  "chars_per_token": 1.5,
+  "output_tokens_per_unit": 120,
+  "output_tokens_per_recheck_unit": 40
+ },
+ "estimate": {
+  "calls_choice_batches": 51,
+  "calls_subj_batches": 50,
+  "calls_collected_recheck_batches": 79,
+  "calls_total": 180,
+  "input_tokens_content_only": 1662830,
+  "input_tokens_overhead_only": 540000,
+  "input_tokens_low": 2202830,
+  "input_tokens_high": 2863679,
+  "output_tokens_estimate": 271800,
+  "total_tokens_low": 2474630,
+  "total_tokens_high": 3135479
+ },
+ "caching_and_multiturn_caveat": "本估算只算\"一次性把内容发一遍\"的输入/输出token，不含：①同一批次多轮往返时被重复计费的缓存重读；②边界卡/说明书随每次调用重复携带的固定开销在长会话里可能不止overhead_tokens_per_call这一份；③人工复核后二次修订触发的重跑。审查意见指出实际用量可能比本估算放大一个数量级，正式执行前必须先用10—20题的小样本实测校准，而不是直接按本估算的量级申请预算。",
+ "length_not_truncated_spotcheck": {
+  "sampled_units": 2000,
+  "mismatches_found": 4,
+  "sample": [
+   {
+    "qid": "BJ-2024-DC-YIMO-Q18",
+    "field": "rubric",
+    "declared_len": 6883,
+    "actual_len": 6000
+   },
+   {
+    "qid": "BJ-2024-XC-YIMO-Q19",
+    "field": "stem",
+    "declared_len": 4159,
+    "actual_len": 4000
+   },
+   {
+    "qid": "BJ-2025-FT-ERMO-Q16",
+    "field": "rubric",
+    "declared_len": 6784,
+    "actual_len": 6000
+   },
+   {
+    "qid": "BJ-2025-FT-ERMO-Q18",
+    "field": "rubric",
+    "declared_len": 9262,
+    "actual_len": 6000
+   }
+  ],
+  "note": "若mismatches_found>0，说明units.jsonl本身的stem/rubric字段已经是截断后的文本，真正切片必须回题库原文取全文，不能直接复用units.jsonl的stem/rubric字段。"
+ }
+}

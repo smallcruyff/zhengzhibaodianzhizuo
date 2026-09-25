@@ -1,0 +1,272 @@
+{
+  "exam_id": "BJ-2024-SY-ERMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "source_conversion_accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-SY-ERMO-Q1": "6818eade725f03d804071eeced43156d0994ae23162466e6e6a9eb7cf8d979d6",
+    "BJ-2024-SY-ERMO-Q2": "8f8b4f0bc47f6d5105861cc94dbab56d36c6a272a16df2238715aa30f3c7cd5e",
+    "BJ-2024-SY-ERMO-Q3": "fe6432a9657a1b4fadfb4b2953a4c29aab352634b60b629e3d2502759f52e384",
+    "BJ-2024-SY-ERMO-Q4": "c066f41e8447f4cb0bda83d7ae6b9595bfc0d7bc55f2720aa04bd4850db9b8d3",
+    "BJ-2024-SY-ERMO-Q5": "9acc8c8d685b2703fe56fe37c8e2ace40e5ee6684d41a8dca194c7418c09e9b6",
+    "BJ-2024-SY-ERMO-Q6": "51e84366ce4e224a79664951dc100df12ad01aed0af42904a83d00034435cd2d",
+    "BJ-2024-SY-ERMO-Q7": "bc2ce2a2205bc27d3150659cfbab4565b5e66cb0a40c3774f095ba9fc259af3d",
+    "BJ-2024-SY-ERMO-Q8": "095ebfd22945bfc60b33bb319c4f906e447f69f079e9da5f429f94b66733dc70",
+    "BJ-2024-SY-ERMO-Q9": "dff0f66029d7c15e28baaad0e316bde3b34a5831d964fec9dbccb114c5d9d1de",
+    "BJ-2024-SY-ERMO-Q10": "b6fdb2e7004af5e34d9cdfd93e0bdbbe5e823c7e195259bf1ddbb4c8295ac373",
+    "BJ-2024-SY-ERMO-Q11": "e957a654d5f06dc166e12d864daf6d4e6ab1f1bc03ee3d8184f426a8b2bb33dc",
+    "BJ-2024-SY-ERMO-Q12": "acd502c1fd296f26c3652ef681f981f0dbb9fb389d374067a879ff8f1ef26822",
+    "BJ-2024-SY-ERMO-Q13": "7d1aa817d096cb4ee9eb13ae94d2286433cd2e24aeb36705ee05f4f27f239a7a",
+    "BJ-2024-SY-ERMO-Q14": "98cd20237949f54527d6abd73c8e33fdcafdcdb5af32adcebee3de3410f589ea",
+    "BJ-2024-SY-ERMO-Q15": "4cafbde1df453e92f2d57f4293b887468086a3b80a9e979cfc1ba7b26829e357",
+    "BJ-2024-SY-ERMO-Q16": "b582340a984d1cb9dfedf8399f8e0d64eb10ec36b284d42a36f0426eb0873831",
+    "BJ-2024-SY-ERMO-Q17": "6bf37ea72cf603f7dce895d3eb1d52096092cbf4f17966677dbd9cd101f287b5",
+    "BJ-2024-SY-ERMO-Q18": "9678f26f8c51b1d7ef7feb2d46f0442804bc8cba1daa7b4a04bc109e41ee949c",
+    "BJ-2024-SY-ERMO-Q19": "1637957ded52e083524526b971a81c5ca44a900a5f8434b01b8b155b43a3de2d",
+    "BJ-2024-SY-ERMO-Q20": "6ae791923bfe13a1c81d9483f0d42c0171355d9b9fdccda38f431b48c2a7c5a9"
+  },
+  "source_roles": {
+    "paper": "E0_original_paper",
+    "answer": "E3_independent_reference_answer",
+    "formal_E1": "confirmed_absent"
+  },
+  "source_pages": {
+    "paper_font_repaired_render": 9,
+    "reference_answer_font_repaired_render": 2
+  },
+  "source_page_total": 11,
+  "source_page_map": {
+    "BJ-2024-SY-ERMO-Q1": {
+      "paper": [
+        1
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q2": {
+      "paper": [
+        1
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q3": {
+      "paper": [
+        1
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q4": {
+      "paper": [
+        1
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q5": {
+      "paper": [
+        2
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q6": {
+      "paper": [
+        2
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q7": {
+      "paper": [
+        2
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q8": {
+      "paper": [
+        2
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q9": {
+      "paper": [
+        2,
+        3
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q10": {
+      "paper": [
+        3
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q11": {
+      "paper": [
+        3
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q12": {
+      "paper": [
+        3
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q13": {
+      "paper": [
+        3,
+        4
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q14": {
+      "paper": [
+        4
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q15": {
+      "paper": [
+        4,
+        5
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q16": {
+      "paper": [
+        5,
+        6
+      ],
+      "reference_answer": [
+        1
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q17": {
+      "paper": [
+        6
+      ],
+      "reference_answer": [
+        1,
+        2
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q18": {
+      "paper": [
+        7
+      ],
+      "reference_answer": [
+        2
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q19": {
+      "paper": [
+        8
+      ],
+      "reference_answer": [
+        2
+      ]
+    },
+    "BJ-2024-SY-ERMO-Q20": {
+      "paper": [
+        9
+      ],
+      "reference_answer": [
+        2
+      ]
+    }
+  },
+  "student_layer": "N/A_with_basis",
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "全卷无E1正式细则；独立E3参考答案不可升级为采分点",
+    "学生层N/A_with_basis：两源DOCX均无学生答卷批注或实得分",
+    "Q10左斜边和底边另一短语受原始小像素限制，保留源图而不猜写",
+    "原卷第二部分印6题而顶层为5题；参考答案Q16/Q17/Q18印分7/7/17与原卷13/9/8不一致，照录",
+    "E1正式细则: 继承r1/共享库既有记录：两份源DOCX（原卷、细则.docx）均无正式评分细则，全卷此前已确认为2024年唯一无E1整卷例外，本轮未涉及该层，未发现矛盾证据。",
+    "学生层(学生样卷/批注/实得分): 继承r1/共享库既有记录：全卷无学生作答载体，记N/A_with_basis，本轮未涉及该层。",
+    "E1正式细则: manifest task/exceptions与finalize_report.json均记录『全卷无E1正式细则；独立E3参考答案不可升级为采分点』；sources目录内仅原卷试卷.docx与细则.docx(标题为『思想政治参考答案』)两份源文件，无第三份E1文件。",
+    "学生样卷/批注/实得分: 两份源DOCX（original.docx、reference_answer.docx）经zipfile/XML全文抽取均无学生姓名、笔迹、批注、评分标记或实得分内容；conversion_manifest.json exceptions栏与finalize_report.json exceptions栏均记录『学生层N/A_with_basis：两源DOCX均无学生答卷批注或实得分』。",
+    "评分PPT/讲评页（试题分析/讲解示例/学生问题等）: conversion_manifest.json中BJ-2024-SY-ERMO任务的sources仅列试卷.docx与细则.docx两个rel_path，未见任何PPT源文件；未发现此卷存在需要按『讲评，非评分依据』小节转写的讲评PPT页。"
+  ],
+  "source_internal_conflicts": {
+    "exam_count": "paper says second part 6 questions but visible top-level numbering is Q16-Q20 (5 questions); E3 answer says 5 questions",
+    "Q16": "paper 13 vs E3 printed 7",
+    "Q17": "paper 9 vs E3 printed 7",
+    "Q18": "paper 8 vs E3 printed 17"
+  },
+  "package_materialization_sha256": "093b2607b460f9b82bb1923736a0ce34b2f31db75320d63818bb3259512b5c12",
+  "merge_receipt": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/merge_sy2024_ermo_v18_receipt.json",
+  "controller_delta_history": [
+    {
+      "delta_id": "bj-2024-sy-ermo-r2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "applied_at": "2026-09-22T20:59:18.323209+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-SY-ERMO/bj-2024-sy-ermo-r2_merge.json",
+      "question_hashes_updated": {
+        "BJ-2024-SY-ERMO-Q10": "b6fdb2e7004af5e34d9cdfd93e0bdbbe5e823c7e195259bf1ddbb4c8295ac373",
+        "BJ-2024-SY-ERMO-Q19": "1679b9f773cd6377fa5a112ee618145e07c0b5869fc777fd3d817d36e7fd5678"
+      }
+    },
+    {
+      "delta_id": "bj-2024-sy-ermo-c1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "applied_at": "2026-09-22T22:00:46.246158+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-SY-ERMO/bj-2024-sy-ermo-c1_merge.json",
+      "question_hashes_updated": {
+        "BJ-2024-SY-ERMO-Q17": "6bf37ea72cf603f7dce895d3eb1d52096092cbf4f17966677dbd9cd101f287b5",
+        "BJ-2024-SY-ERMO-Q19": "1637957ded52e083524526b971a81c5ca44a900a5f8434b01b8b155b43a3de2d"
+      }
+    }
+  ],
+  "bounded_residual": [],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "c1"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-sy-ermo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:05:08.829335+00:00"
+    },
+    {
+      "spec_id": "bj-2024-sy-ermo-state2",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-22T22:06:36.919382+00:00"
+    }
+  ],
+  "accepted_at": "2026-09-22T22:06:44.901653+00:00"
+}

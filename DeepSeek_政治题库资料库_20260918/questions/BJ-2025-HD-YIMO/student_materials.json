@@ -1,0 +1,1068 @@
+{
+  "schema_version": "bj-2025-hd-yimo.q22.student-materials.materialized-copy.v1",
+  "artifact_id": "BJ-2025-HD-YIMO-Q22-student-materials-v3-materialized-copy",
+  "exam_id": "BJ-2025-HD-YIMO",
+  "question_id": "BJ-2025-HD-YIMO-Q22",
+  "generated_at": "2026-09-22T17:55:36.578136+00:00",
+  "status": "reviewed_bounded_candidate_conversion_unresolved",
+  "independent_review_v2": {
+    "path": "../source_payload_repair_v2_q22_student_independent_review/verification.json",
+    "sha256": "953a4ab11e603dad3102fc974f4e73ad9eea069783b4a4556afaf976f195ea1c",
+    "decision": "UNCERTAIN",
+    "source_and_role_boundary": "PASS_BOUNDED",
+    "complete_student_conversion": false
+  },
+  "scope": "Q22 student/answer-like handwriting, image28 registration, line-positioned manual transcription, annotation and score boundaries, and four-group source relation only",
+  "canonicality": {
+    "kind": "isolated_candidate_visual_transcript",
+    "not_native_text": true,
+    "manual_visual_read": true,
+    "safe_fragments_only": true,
+    "unresolved_locales_are_preserved": true,
+    "student_errors_and_markings_preserved": true,
+    "ocr_used_as_reliable正文": false,
+    "independent_review": "v2_bounded_review_complete; v3_materialized_active_candidate_pending_integration_review"
+  },
+  "write_scope": {
+    "only_output_directory": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v3_q22_student",
+    "shared_question_bank_modified": false,
+    "existing_receipt_modified": false,
+    "candidate_modified": false,
+    "source_modified": false,
+    "index_modified": false,
+    "conversion_manifest_modified": false,
+    "v1_repair_modified": false,
+    "v1_independent_review_modified": false
+  },
+  "reused_prior_acceptance": {
+    "v1_manifest": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v1_q22_student/source_payload_repair_v1_q22_student_manifest.json",
+      "exists": true,
+      "bytes": 8348,
+      "sha256": "fa16a1c49a49d942cbccdd88453bab17997cc16afe5e12340c883d32956454eb"
+    },
+    "v1_canonical_json": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v1_q22_student/canonical_visual_transcript.json",
+      "exists": true,
+      "bytes": 43020,
+      "sha256": "1eddc2580a6ba26ad409268cba7a3dbc5d8c1a632ac8f53facbc03ddfadf1aa8"
+    },
+    "v1_canonical_md": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v1_q22_student/canonical_visual_transcript.md",
+      "exists": true,
+      "bytes": 12296,
+      "sha256": "f4001a63e77a691c0f7ad587c58556e0bfbea4ba303b10c4ffcd08247da692ba"
+    },
+    "v1_independent_review": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v1_q22_student_independent_review/verification.json",
+      "exists": true,
+      "bytes": 29187,
+      "sha256": "769faca9b96f683013ed134f0337a2abf23082706f262586c26ab2859fd4b605"
+    },
+    "v1_bounded_review_status": "PASS_BOUNDED_Q22_STUDENT_SOURCE_PAYLOAD_REVIEW",
+    "reuse_boundary": "Reused source/media/page/SHA closure and formal-E1 separation; v2 performs a new producer-only manual read and does not treat v1 PASS as full student-text acceptance."
+  },
+  "source_binding": {
+    "scoring_pdf": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/Sbe30611f2f07_补充材料_评分标准.pdf",
+      "exists": true,
+      "bytes": 1672781,
+      "sha256": "be30611f2f07a1374caa94169907a379ab23b6d6ef390647ca58b64e577b833a"
+    },
+    "rubric_docx": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/S506347bd4a70_正式评分细则.docx",
+      "exists": true,
+      "bytes": 9649034,
+      "sha256": "506347bd4a7061dd62d9c39a7d0a86036d7beb2e3bd6bdabfb69482595771036"
+    },
+    "native_render_pdf": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/evidence/visual_open/native_docx_render/pdf/S506347bd4a70_正式评分细则.pdf",
+      "exists": true,
+      "bytes": 1515689,
+      "sha256": "5972544471cfc5a8f9e7badcd1a6ad3386459c303034ff102d921257ea1b7c80"
+    },
+    "formal_e1": {
+      "status": "PASS_unchanged",
+      "source": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/Sbe30611f2f07_补充材料_评分标准.pdf",
+      "source_sha256": "be30611f2f07a1374caa94169907a379ab23b6d6ef390647ca58b64e577b833a",
+      "pages_checked": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "student_visual_pages_excluded_from_e1": [
+        8,
+        10
+      ],
+      "no_e1_rewrite": true
+    }
+  },
+  "embedded_media_scope": {
+    "docx_media_17_to_29_count": 13,
+    "docx_media_17_to_27_role": "formal scoring/teaching visual media, not transcribed as student text here",
+    "student_visual_entries": [
+      "Q22-STUDENT-PDF-P008-IMG2",
+      "Q22-STUDENT-PDF-P010-IMG1",
+      "Q22-STUDENT-DOCX-P075-IMAGE28",
+      "Q22-STUDENT-DOCX-P076-IMAGE29"
+    ]
+  },
+  "student_visual_entries": [
+    {
+      "question_id": "BJ-2025-HD-YIMO-Q22",
+      "visual_transcription_identity": {
+        "role": "canonical_visual_transcription_candidate",
+        "native": false,
+        "manual_visual_read": true,
+        "ocr_used_as_reliable正文": false,
+        "page_image_promoted_to_text": false,
+        "preserve_student_errors": true,
+        "normalization_or_correction": false,
+        "independent_review": "pending"
+      },
+      "entry_id": "Q22-STUDENT-PDF-P008-IMG2",
+      "source_id": "Sbe30611f2f07",
+      "source_role": "embedded_handwriting_visual_candidate",
+      "role_certainty": "Q22_answer_like_student_sample; printed_Q22_header_visible; source_has_no_student_identity_label",
+      "student_text_identity": {
+        "source_labeled_student": false,
+        "name_or_candidate_number_visible": false,
+        "attribution": "not_source_labeled",
+        "bounded_role": "answer_like_handwritten_sample_under_Q22_scoring_table",
+        "identity_confidence": "question_context_only"
+      },
+      "source_binding": {
+        "source_pdf": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/Sbe30611f2f07_补充材料_评分标准.pdf",
+          "exists": true,
+          "bytes": 1672781,
+          "sha256": "be30611f2f07a1374caa94169907a379ab23b6d6ef390647ca58b64e577b833a",
+          "pdf_page": 8,
+          "printed_page_number": "8"
+        },
+        "embedded_asset": {
+          "path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-p008-pdf-img2.jpeg",
+          "exists": true,
+          "bytes": 93764,
+          "sha256": "19e05b9982532908894c6ce564270cf058c1898316c45552499a0f828716add6",
+          "dimensions_px": [
+            730,
+            627
+          ],
+          "mode": "RGB",
+          "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/embedded/p008_img2_student_q22.jpeg",
+          "materialized_copy_byte_identical": true
+        },
+        "containing_page_image": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/pages/p008.png",
+          "exists": true,
+          "bytes": 522450,
+          "sha256": "071365469f794f8eb2b8d01a5a740a28a9e1ac2a9df569d6fa15951499524622",
+          "dimensions_px": [
+            1075,
+            1521
+          ],
+          "mode": "RGB"
+        },
+        "asset_is_crop_or_embedded_payload": true
+      },
+      "page_position": {
+        "source_pdf_page": 8,
+        "printed_page_number": "8",
+        "page_image_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/pages/p008.png",
+        "relative_position": "lower portion below the Q22 scoring table; embedded crop starts with printed 22.（10分） header",
+        "embedded_index_label": "p008_img2_student_q22.jpeg"
+      },
+      "visual_layers": {
+        "printed_layer": "22.（10分）",
+        "student_ink": "black/gray handwritten answer-like text",
+        "annotation_ink": "red check marks with visible +1 labels",
+        "score_mark_layer": "local check-plus-one marks only"
+      },
+      "canonical_visual_transcript": {
+        "confidence": "manual_bounded_line_read",
+        "line_transcript": [
+          {
+            "line": 1,
+            "text": "系统观念是……用联系观点看问题……掌握系统化方法。",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "‘看问题’前后的连接语被红色标记遮挡",
+              "行末红色+1覆盖部分字迹"
+            ]
+          },
+          {
+            "line": 2,
+            "text": "……系统观念也作为中国特色社会主义……部分，体现……传统美德。",
+            "certainty": "bounded_partial",
+            "unresolved_locales": [
+              "行首与‘中国特色社会主义’后的若干字难辨"
+            ]
+          },
+          {
+            "line": 3,
+            "text": "例如在“全面依法治国是一个系统工程”论断中，运用系统观念，全面依法治……",
+            "certainty": "safe_opening_bounded_ending",
+            "unresolved_locales": [
+              "行末超出安全辨读范围"
+            ]
+          },
+          {
+            "line": 4,
+            "text": "……建设中国特色社会主义法治体系、建设社会主义法治国家为总目标……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "行首和‘为总目标’前的连接语难辨"
+            ]
+          },
+          {
+            "line": 5,
+            "text": "……法治国家、法治政府、法治社会……科学立法、严格执法……",
+            "certainty": "safe_fragments_with_red_overlay",
+            "unresolved_locales": [
+              "红色√+1覆盖句中词组"
+            ]
+          },
+          {
+            "line": 6,
+            "text": "……公正司法、全民守法……将各方面……综合考虑……",
+            "certainty": "bounded_partial",
+            "unresolved_locales": [
+              "大部分连接语及行末难辨"
+            ]
+          },
+          {
+            "line": 7,
+            "text": "系统的观点，提出方法……系统观念是具有基础性的思想和工作方法。",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "‘提出方法’前后文字被红色标记压住"
+            ]
+          },
+          {
+            "line": "下半部另起段",
+            "text": "系统观念……中国式现代化推进发展时……实现中华民族伟大复兴……",
+            "certainty": "topic_fragments_only",
+            "unresolved_locales": [
+              "统筹兼顾、重点/全局等连接句未闭合"
+            ]
+          }
+        ],
+        "safe_visual_fragments": [
+          "系统观念",
+          "联系观点看问题",
+          "掌握系统化方法",
+          "全面依法治国是一个系统工程",
+          "中国特色社会主义法治体系",
+          "法治国家、法治政府、法治社会",
+          "科学立法、严格执法、公正司法、全民守法",
+          "系统观念是具有基础性的思想和工作方法",
+          "中国式现代化",
+          "实现中华民族伟大复兴"
+        ],
+        "bounded_summary": "图中是带红色阅卷样式标记的Q22答题样手写载荷，内容跨越系统观念、全面依法治国及中国式现代化等领域；只保留能在图上定位的片段，不把上下段拼成标准答案。",
+        "not_a_standard_answer": true
+      },
+      "annotation_transcript": {
+        "visible": true,
+        "annotator_identity": "not_source_labeled",
+        "marks": [
+          "√",
+          "+1"
+        ],
+        "approximate_visible_clusters": 8,
+        "cluster_locations": [
+          "上段第1行两处（右侧一处部分出框）",
+          "上段中部第4—7行多处",
+          "下段中国式现代化片段两处以上"
+        ],
+        "mapping_to_text_spans": "not_one_to_one_established",
+        "mapping_to_formal_score_slots": "not_established",
+        "question_maximum_score_visible": 10,
+        "actual_score_visible": false,
+        "cumulative_score_visible": false,
+        "score_inference_forbidden": true
+      },
+      "relation_to_other_assets": {
+        "same_source_container_as": [
+          "Q22-STUDENT-PDF-P010-IMG1"
+        ],
+        "source_relation": "same supplement PDF, different source pages",
+        "content_relation_observed": "both show Q22/system-concept answer-like handwriting and red √+1 marks",
+        "continuation_assertion": "not established",
+        "same_student_assertion": "not established",
+        "same_answer_sheet_assertion": "not established",
+        "cross_source_merge": "forbidden pending source-labeled evidence"
+      },
+      "status": "partial_visual_evidence_conversion_unresolved"
+    },
+    {
+      "question_id": "BJ-2025-HD-YIMO-Q22",
+      "visual_transcription_identity": {
+        "role": "canonical_visual_transcription_candidate",
+        "native": false,
+        "manual_visual_read": true,
+        "ocr_used_as_reliable正文": false,
+        "page_image_promoted_to_text": false,
+        "preserve_student_errors": true,
+        "normalization_or_correction": false,
+        "independent_review": "pending"
+      },
+      "entry_id": "Q22-STUDENT-PDF-P010-IMG1",
+      "source_id": "Sbe30611f2f07",
+      "source_role": "embedded_handwriting_visual_candidate",
+      "role_certainty": "Q22_related_answer_like_handwriting; no printed_Q22_header_in_crop; source_has_no_student_identity_label",
+      "student_text_identity": {
+        "source_labeled_student": false,
+        "name_or_candidate_number_visible": false,
+        "attribution": "not_source_labeled",
+        "bounded_role": "answer_like_handwritten_or_scored_sample",
+        "identity_confidence": "topic_and_annotation_context_only"
+      },
+      "source_binding": {
+        "source_pdf": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/Sbe30611f2f07_补充材料_评分标准.pdf",
+          "exists": true,
+          "bytes": 1672781,
+          "sha256": "be30611f2f07a1374caa94169907a379ab23b6d6ef390647ca58b64e577b833a",
+          "pdf_page": 10,
+          "printed_page_number": "10"
+        },
+        "embedded_asset": {
+          "path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-p010-pdf-img1.jpeg",
+          "exists": true,
+          "bytes": 107291,
+          "sha256": "c1126d41200fa8a2d1df6974b72c59829e46b4581b3d8a66af0f968e85b19181",
+          "dimensions_px": [
+            884,
+            627
+          ],
+          "mode": "RGB",
+          "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/embedded/p010_img1_student_q22.jpeg",
+          "materialized_copy_byte_identical": true
+        },
+        "containing_page_image": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/pages/p010.png",
+          "exists": true,
+          "bytes": 385868,
+          "sha256": "659541d76f91783b066d8775291dfc8a91596c52944b3eb759c6446833bc27de",
+          "dimensions_px": [
+            1075,
+            1521
+          ],
+          "mode": "RGB"
+        },
+        "asset_is_crop_or_embedded_payload": true
+      },
+      "page_position": {
+        "source_pdf_page": 10,
+        "printed_page_number": "10",
+        "page_image_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/pages/p010.png",
+        "relative_position": "upper/middle page image; crop contains no printed Q22 header",
+        "embedded_index_label": "p010_img1_student_q22.jpeg"
+      },
+      "visual_layers": {
+        "printed_layer": "no student-answer header visible in embedded crop",
+        "student_ink": "black/gray handwritten answer-like text with strike/overwriting",
+        "annotation_ink": "red check marks with visible +1 labels",
+        "score_mark_layer": "local check-plus-one marks only"
+      },
+      "canonical_visual_transcript": {
+        "confidence": "manual_bounded_line_read",
+        "line_transcript": [
+          {
+            "line": 1,
+            "text": "[起首有涂改] ……主题/系统观点……",
+            "certainty": "topic_fragment_only",
+            "unresolved_locales": [
+              "起首涂改区及整句主体难辨"
+            ]
+          },
+          {
+            "line": 2,
+            "text": "系统观念即正确处理好整体与部分的关系，整体与部分相互区别……",
+            "certainty": "safe_opening_bounded_ending",
+            "unresolved_locales": [
+              "‘相互区别’之后被红色标记覆盖"
+            ]
+          },
+          {
+            "line": 3,
+            "text": "……与部分相互联系，部分影响……；坚持系统观念即立足整体，统筹推进部分发展，运用系统化……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "行首、红色√+1覆盖处和行末难辨"
+            ]
+          },
+          {
+            "line": 4,
+            "text": "化的方法，使整体与部分相互协作，相得益彰。",
+            "certainty": "bounded_manual_read",
+            "unresolved_locales": [
+              "个别字形不稳"
+            ]
+          },
+          {
+            "line": 5,
+            "text": "新发展理念作为一个整体作用于国家高质量发展……创新、协调、绿色、开放……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "‘其又/也是’等连接语难辨"
+            ]
+          },
+          {
+            "line": 6,
+            "text": "共享的理念……贯彻新发展理念……落实……原则……",
+            "certainty": "topic_fragments_only",
+            "unresolved_locales": [
+              "句中多个词被红色标记压住"
+            ]
+          },
+          {
+            "line": 7,
+            "text": "推动区域间协调发展，推动人与自然和谐共生，坚持‘绿水青山就是金山银山’。",
+            "certainty": "bounded_manual_read",
+            "unresolved_locales": [
+              "句首连接语不稳"
+            ]
+          },
+          {
+            "line": 8,
+            "text": "推动高水平对外开放，建设相互尊重、……合作共赢……；推动……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "中后段被红色√+1覆盖"
+            ]
+          },
+          {
+            "line": 9,
+            "text": "辩证思维要求我们用联系、发展、全面的观点认识事物……",
+            "certainty": "bounded_manual_read",
+            "unresolved_locales": [
+              "行末难辨"
+            ]
+          },
+          {
+            "line": 10,
+            "text": "用辩证思维方法认识事物，将各种事物联系起来，以……全局……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "‘以’后的策略/结果表述难辨"
+            ]
+          },
+          {
+            "line": 11,
+            "text": "新时代新征程，……在党的领导下，……贯彻新发展理念，从而推动国家高质量发展。",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "主语和中间动词组难辨"
+            ]
+          }
+        ],
+        "safe_visual_fragments": [
+          "系统观念",
+          "正确处理好整体与部分的关系",
+          "整体与部分相互区别、相互联系（局部）",
+          "使整体与部分相互协作，相得益彰",
+          "新发展理念",
+          "创新、协调、绿色、开放、共享",
+          "推动人与自然和谐共生",
+          "绿水青山就是金山银山",
+          "推动高水平对外开放",
+          "辩证思维要求我们用联系、发展、全面的观点认识事物",
+          "党的领导",
+          "国家高质量发展"
+        ],
+        "bounded_summary": "这是同一评分PDF内另一幅带红色局部计分样式的手写载荷，主题覆盖系统观念、新发展理念、辩证思维和高质量发展；原图没有作者或续页标签，不能把它接到p8或判定为另一名学生。",
+        "not_a_standard_answer": true
+      },
+      "annotation_transcript": {
+        "visible": true,
+        "annotator_identity": "not_source_labeled",
+        "marks": [
+          "√",
+          "+1"
+        ],
+        "approximate_visible_clusters": 8,
+        "cluster_locations": [
+          "上部整体/部分段两处以上",
+          "新发展理念段中部三处以上",
+          "辩证思维及末行附近多处"
+        ],
+        "mapping_to_text_spans": "not_one_to_one_established",
+        "mapping_to_formal_score_slots": "not_established",
+        "question_maximum_score_visible": null,
+        "actual_score_visible": false,
+        "cumulative_score_visible": false,
+        "score_inference_forbidden": true
+      },
+      "relation_to_other_assets": {
+        "same_source_container_as": [
+          "Q22-STUDENT-PDF-P008-IMG2"
+        ],
+        "source_relation": "same supplement PDF, different source pages",
+        "content_relation_observed": "shared system-concept topic and red √+1 notation",
+        "continuation_assertion": "not established",
+        "same_student_assertion": "not established",
+        "same_answer_sheet_assertion": "not established",
+        "cross_source_merge": "forbidden pending source-labeled evidence"
+      },
+      "status": "partial_visual_evidence_conversion_unresolved"
+    },
+    {
+      "question_id": "BJ-2025-HD-YIMO-Q22",
+      "visual_transcription_identity": {
+        "role": "canonical_visual_transcription_candidate",
+        "native": false,
+        "manual_visual_read": true,
+        "ocr_used_as_reliable正文": false,
+        "page_image_promoted_to_text": false,
+        "preserve_student_errors": true,
+        "normalization_or_correction": false,
+        "independent_review": "pending"
+      },
+      "entry_id": "Q22-STUDENT-DOCX-P075-IMAGE28",
+      "source_id": "S506347bd4a70",
+      "source_role": "embedded_handwritten_Q22_related_visual_candidate",
+      "role_certainty": "Q22_related_explanatory_or_answer_planning_handwriting; student_status_not_source_labeled",
+      "student_text_identity": {
+        "source_labeled_student": false,
+        "name_or_candidate_number_visible": false,
+        "attribution": "not_source_labeled",
+        "bounded_role": "handwritten_explanatory_or_answer-planning_note_after_Q22_guidance; not_safe_to_promote_as_student_answer",
+        "identity_confidence": "source_order_and_topic_only"
+      },
+      "registration_delta": "image28.png was present in the DOCX media inventory but absent from the protected student_materials mapping; v2 records it only in this receipt",
+      "source_binding": {
+        "source_docx": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/S506347bd4a70_正式评分细则.docx",
+          "exists": true,
+          "bytes": 9649034,
+          "sha256": "506347bd4a7061dd62d9c39a7d0a86036d7beb2e3bd6bdabfb69482595771036",
+          "paragraph_anchor": "P075",
+          "relationship_target": "word/media/image28.png"
+        },
+        "embedded_asset": {
+          "path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-docx-P075-image28.png",
+          "exists": true,
+          "bytes": 222815,
+          "sha256": "1064f4ae06b543f3b75c1450b6c95580cf6c3a93276fd82b0c9d841d004246a3",
+          "dimensions_px": [
+            563,
+            502
+          ],
+          "mode": "RGBA",
+          "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/S506347bd4a70/embedded/image28.png",
+          "materialized_copy_byte_identical": true
+        },
+        "native_render_witness": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/evidence/visual_open/native_docx_render/pages/page-11.png",
+          "exists": true,
+          "bytes": 682506,
+          "sha256": "1932c5b1a2840f0b1e53582dcf6eb7d23c0e9ed6e9aec1ddb559dbe11d4ef711",
+          "dimensions_px": [
+            1654,
+            2339
+          ],
+          "mode": "RGB",
+          "render_page": 11,
+          "render_pdf_sha256": "5972544471cfc5a8f9e7badcd1a6ad3386459c303034ff102d921257ea1b7c80"
+        }
+      },
+      "page_position": {
+        "source_docx_paragraph": "P075",
+        "native_render_page": 11,
+        "native_render_page_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/evidence/visual_open/native_docx_render/pages/page-11.png",
+        "relative_position": "full handwritten image after P074 Q22 guidance",
+        "source_order": "P075 precedes P076"
+      },
+      "visual_layers": {
+        "printed_layer": "no printed Q22 header inside embedded image",
+        "student_ink": "dense black/gray handwriting",
+        "annotation_ink": "dark marginal insertions, arrows, underlining, and local overwriting",
+        "score_mark_layer": "no reliable red score mark or explicit total visible"
+      },
+      "canonical_visual_transcript": {
+        "confidence": "manual_bounded_fragment_read",
+        "line_transcript": [
+          {
+            "line": 1,
+            "text": "“全面依法治国是一个系统工程”的概念说明。",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 2,
+            "text": "系统观念……整体……整体与部分……",
+            "certainty": "safe_topic_fragments_only",
+            "unresolved_locales": [
+              "系统观念定义的中段连续文字难辨"
+            ]
+          },
+          {
+            "line": 3,
+            "text": "……相互联系、相互……，……内部……变化趋势……",
+            "certainty": "topic_fragments_only",
+            "unresolved_locales": [
+              "行首、连接语和行末不闭合"
+            ]
+          },
+          {
+            "line": 4,
+            "text": "……统筹……联系……实现整体……",
+            "certainty": "bounded_partial",
+            "unresolved_locales": [
+              "大部分句子被压缩/重叠笔迹覆盖"
+            ]
+          },
+          {
+            "line": 5,
+            "text": "……中华文化……重要观点……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "价值/作用判断句难辨"
+            ]
+          },
+          {
+            "line": 6,
+            "text": "在全面依法治国时，从目标层面有法治国家、法治政府、法治社会三个方面……",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "行末及后续说明难辨"
+            ]
+          },
+          {
+            "line": 7,
+            "text": "……科学立法、严格执法、公正司法、全民守法……",
+            "certainty": "safe_keyword_read",
+            "unresolved_locales": [
+              "四项之前后的论证关系未闭合"
+            ]
+          },
+          {
+            "line": 8,
+            "text": "……相互促进……全面依法治国……",
+            "certainty": "topic_fragments_only",
+            "unresolved_locales": [
+              "行内多处黑色批注/箭头遮挡"
+            ]
+          },
+          {
+            "line": 9,
+            "text": "……法治建设……整体……",
+            "certainty": "topic_fragments_only",
+            "unresolved_locales": [
+              "连续原句不可安全闭合"
+            ]
+          },
+          {
+            "line": 10,
+            "text": "……思想方法……全面依法治国……",
+            "certainty": "safe_fragments_only",
+            "unresolved_locales": [
+              "下部多行的主体和动词组难辨"
+            ]
+          }
+        ],
+        "safe_visual_fragments": [
+          "“全面依法治国是一个系统工程”的概念说明",
+          "系统观念",
+          "整体与部分",
+          "相互联系",
+          "中华文化",
+          "全面依法治国",
+          "法治国家、法治政府、法治社会",
+          "科学立法、严格执法、公正司法、全民守法"
+        ],
+        "bounded_summary": "image28是一幅位于P074审题提示之后的密集手写说明/答题规划图。其标题与Q22主题明确，能辨关键词和少量整句；图内没有学生姓名、考号、Q22打印页眉或可靠计分符号，因此不把它直接标为学生答卷。",
+        "not_a_standard_answer": true
+      },
+      "annotation_transcript": {
+        "visible": true,
+        "annotator_identity": "not_source_labeled",
+        "marks": [
+          "黑色边注",
+          "箭头",
+          "下划线",
+          "局部覆盖/改写"
+        ],
+        "annotation_function": "unresolved",
+        "mapping_to_text_spans": "local locations visible but semantics not established",
+        "mapping_to_formal_score_slots": "not_applicable_not_visible",
+        "question_maximum_score_visible": null,
+        "actual_score_visible": false,
+        "cumulative_score_visible": false,
+        "score_inference_forbidden": true
+      },
+      "relation_to_other_assets": {
+        "same_source_container_as": [
+          "Q22-STUDENT-DOCX-P076-IMAGE29"
+        ],
+        "source_relation": "adjacent DOCX image-bearing paragraphs P075→P076",
+        "content_relation_observed": "image28标题含‘全面依法治国是一个系统工程’，image29正文以同一短语开头；这只能证明主题/文字重合，不能证明同一学生、同一答卷或续写",
+        "continuation_assertion": "not established",
+        "same_student_assertion": "not established",
+        "same_answer_sheet_assertion": "not established",
+        "cross_source_merge": "forbidden pending source-labeled evidence"
+      },
+      "status": "role_registered_but_student_text_conversion_unresolved"
+    },
+    {
+      "question_id": "BJ-2025-HD-YIMO-Q22",
+      "visual_transcription_identity": {
+        "role": "canonical_visual_transcription_candidate",
+        "native": false,
+        "manual_visual_read": true,
+        "ocr_used_as_reliable正文": false,
+        "page_image_promoted_to_text": false,
+        "preserve_student_errors": true,
+        "normalization_or_correction": false,
+        "independent_review": "pending"
+      },
+      "entry_id": "Q22-STUDENT-DOCX-P076-IMAGE29",
+      "source_id": "S506347bd4a70",
+      "source_role": "embedded_Q22_answer_like_visual_candidate",
+      "role_certainty": "Q22_answer_like_handwriting; printed_Q22_header_visible; source_has_no_student_identity_label",
+      "student_text_identity": {
+        "source_labeled_student": false,
+        "name_or_candidate_number_visible": false,
+        "attribution": "not_source_labeled",
+        "bounded_role": "Q22 answer-like handwritten sample",
+        "identity_confidence": "question_header_and_text_only"
+      },
+      "source_binding": {
+        "source_docx": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/sources/S506347bd4a70_正式评分细则.docx",
+          "exists": true,
+          "bytes": 9649034,
+          "sha256": "506347bd4a7061dd62d9c39a7d0a86036d7beb2e3bd6bdabfb69482595771036",
+          "paragraph_anchor": "P076",
+          "relationship_target": "word/media/image29.jpeg"
+        },
+        "embedded_asset": {
+          "path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-docx-P076-image29.jpeg",
+          "exists": true,
+          "bytes": 148794,
+          "sha256": "ecc5cd687b6744acfb8c7013d37822580b3b65375ebf6438d1ca07740540b1c7",
+          "dimensions_px": [
+            1124,
+            1266
+          ],
+          "mode": "L",
+          "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/S506347bd4a70/embedded/image29.jpeg",
+          "materialized_copy_byte_identical": true
+        },
+        "native_render_witness": {
+          "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/evidence/visual_open/native_docx_render/pages/page-12.png",
+          "exists": true,
+          "bytes": 1189376,
+          "sha256": "aa85cf980eec7d003ab8d443088a1f7ddb3d4206ed35b51761cb03e4a940f052",
+          "dimensions_px": [
+            1654,
+            2339
+          ],
+          "mode": "RGB",
+          "render_page": 12,
+          "render_pdf_sha256": "5972544471cfc5a8f9e7badcd1a6ad3386459c303034ff102d921257ea1b7c80"
+        }
+      },
+      "page_position": {
+        "source_docx_paragraph": "P076",
+        "native_render_page": 12,
+        "native_render_page_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/evidence/visual_open/native_docx_render/pages/page-12.png",
+        "relative_position": "full Q22 answer-like image; lower edge contains a cropped next visual area",
+        "source_order": "P076 follows P075"
+      },
+      "visual_layers": {
+        "printed_layer": "22.（10分） header",
+        "student_ink": "black/gray handwritten answer-like text",
+        "annotation_ink": "black overwriting/strike-through in lower traditional-culture paragraph",
+        "score_mark_layer": "no explicit red score or total visible"
+      },
+      "canonical_visual_transcript": {
+        "confidence": "manual_bounded_line_read",
+        "line_transcript": [
+          {
+            "line": 1,
+            "text": "全面依法治国是一个系统工程，系统观念是具有基础性的思想和工作方法。①系统具有",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 2,
+            "text": "整体性、有序性和内部的优化趋向。坚持系统观念需要立足整体，从全局出发思考和处理",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": [
+              "‘内部’后是否缺写‘结构’不替学生补正"
+            ]
+          },
+          {
+            "line": 3,
+            "text": "问题。推进全面依法治国，从整体上看需要坚持党的领导，坚持人民的主体地位，坚持法",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 4,
+            "text": "律面前人人平等，坚持从中国实际出发，坚持法治与德治相结合。只有坚持了以上基本原则，",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 5,
+            "text": "才能在实践中明确方向。②坚持系统观念还要抓好部分，以各部门的发展推进整体的",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 6,
+            "text": "发展，使整体效果大于[‘部分分效果’字样，按图保留，不校正]相加之和。",
+            "certainty": "bounded_manual_read",
+            "unresolved_locales": [
+              "‘部分分效果’中间重复字样的原意不判定"
+            ]
+          },
+          {
+            "line": 7,
+            "text": "在全面推进依法治国中，应当坚持科学立法、",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 8,
+            "text": "严格执法、公正司法、全民守法；科学……立法，方能以良法实现善治；严格……规范",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "‘科学’后的修饰语及‘严格’后的修饰语有字形交叠"
+            ]
+          },
+          {
+            "line": 9,
+            "text": "执法，方能促进法律执行；……司法，方能维护法律权威，促进社会公平正义；",
+            "certainty": "safe_fragments_with_local_gaps",
+            "unresolved_locales": [
+              "中段司法修饰语和个别字不强行补全"
+            ]
+          },
+          {
+            "line": 10,
+            "text": "全民增强法治观念和意识，尊法学法守法用法，方能营造法治社会氛围，以各个部门的法",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 11,
+            "text": "律实践，多元主体的共同依法办事，才能建成法治政府、法治社会、法治国家，实现全",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 12,
+            "text": "面依法治国的整体系统工程目标。③中华优秀传统文化博大精深、源远流长，系统观念",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 13,
+            "text": "既是中华优秀传统文化的价值精华，又是中国社会主义革命文化和先进文化的重要组成",
+            "certainty": "safe_fragments_with_strike_through",
+            "unresolved_locales": [
+              "‘传统文化’附近有黑色划改，不据此改写学生文字"
+            ]
+          },
+          {
+            "line": 14,
+            "text": "成部分，符合客观发展规律，是党治国理政实践中运用的重要思想和工作方法。",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": 15,
+            "text": "应继续运用该基础性的思想方法，推动全面依法治国的系统工程。",
+            "certainty": "safe_manual_read",
+            "unresolved_locales": []
+          },
+          {
+            "line": "图像下沿",
+            "text": "[下沿截入的下一视觉区域不归入本答卷正文]",
+            "certainty": "source_boundary",
+            "unresolved_locales": [
+              "image29自身下部灰色截入区域"
+            ]
+          }
+        ],
+        "safe_visual_fragments": [
+          "全面依法治国是一个系统工程",
+          "系统观念是具有基础性的思想和工作方法",
+          "整体性、有序性和内部的优化趋向",
+          "党的领导、人民的主体地位、法律面前人人平等",
+          "从中国实际出发、法治与德治相结合",
+          "科学立法、严格执法、公正司法、全民守法",
+          "尊法学法守法用法",
+          "法治政府、法治社会、法治国家",
+          "中华优秀传统文化博大精深、源远流长",
+          "中国社会主义革命文化和先进文化",
+          "党治国理政实践中运用的重要思想和工作方法"
+        ],
+        "bounded_summary": "image29是带打印‘22.（10分）’页眉的Q22手写答题样视觉载荷，上半至主体下部可逐行转写大部分内容；局部修订字样和图像下沿截入区域保留为位置化不确定项，不把其改成标准答案。",
+        "student_errors_preserved": true,
+        "not_a_standard_answer": true
+      },
+      "annotation_transcript": {
+        "visible": true,
+        "annotator_identity": "not_source_labeled",
+        "marks": [
+          "黑色划改/覆盖（局部）"
+        ],
+        "red_score_marks_visible": false,
+        "mapping_to_text_spans": "local strike-through visible near traditional-culture wording; function unresolved",
+        "mapping_to_formal_score_slots": "not_established",
+        "question_maximum_score_visible": 10,
+        "actual_score_visible": false,
+        "cumulative_score_visible": false,
+        "score_inference_forbidden": true
+      },
+      "relation_to_other_assets": {
+        "same_source_container_as": [
+          "Q22-STUDENT-DOCX-P075-IMAGE28"
+        ],
+        "source_relation": "adjacent DOCX image-bearing paragraphs P075→P076",
+        "content_relation_observed": "image29以‘全面依法治国是一个系统工程’开头，与image28标题同句；仅记录文字/主题重合，不把两图合并为同一答卷",
+        "continuation_assertion": "not established",
+        "same_student_assertion": "not established",
+        "same_answer_sheet_assertion": "not established",
+        "cross_source_merge": "forbidden pending source-labeled evidence"
+      },
+      "status": "partial_visual_evidence_conversion_unresolved"
+    }
+  ],
+  "relationship_matrix": {
+    "group_identity_boundary": [
+      {
+        "entry_id": "Q22-STUDENT-PDF-P008-IMG2",
+        "identity": "Q22 answer-like sample by printed header; author/student not labeled",
+        "annotation": "red √+1 clusters; scorer identity and slot mapping unknown",
+        "score": "max 10 printed; actual/cumulative score not visible"
+      },
+      {
+        "entry_id": "Q22-STUDENT-PDF-P010-IMG1",
+        "identity": "Q22-related answer-like/scored sample; author/student not labeled",
+        "annotation": "red √+1 clusters; scorer identity and slot mapping unknown",
+        "score": "no max-score header in crop; actual/cumulative score not visible"
+      },
+      {
+        "entry_id": "Q22-STUDENT-DOCX-P075-IMAGE28",
+        "identity": "Q22-related handwritten explanation/answer-planning image; student status not labeled",
+        "annotation": "dark marginal arrows/underlining/overwriting; function unknown",
+        "score": "no reliable score mark or total visible"
+      },
+      {
+        "entry_id": "Q22-STUDENT-DOCX-P076-IMAGE29",
+        "identity": "Q22 answer-like sample by printed header; author/student not labeled",
+        "annotation": "black local strike-through; no reliable red score mark",
+        "score": "max 10 printed; actual/cumulative score not visible"
+      }
+    ],
+    "asserted_relations": [
+      {
+        "from": "Q22-STUDENT-PDF-P008-IMG2",
+        "to": "Q22-STUDENT-PDF-P010-IMG1",
+        "relation": "same supplement PDF source container, different pages",
+        "strength": "source_container_only",
+        "observed_overlap": "Q22/system-concept themes and red √+1 notation"
+      },
+      {
+        "from": "Q22-STUDENT-DOCX-P075-IMAGE28",
+        "to": "Q22-STUDENT-DOCX-P076-IMAGE29",
+        "relation": "adjacent DOCX image-bearing paragraphs P075→P076",
+        "strength": "source_order_only",
+        "observed_overlap": "image28 title and image29 opening share ‘全面依法治国是一个系统工程’"
+      }
+    ],
+    "not_inferred": [
+      "same student identity",
+      "same answer sheet",
+      "p008→p010 continuation",
+      "image28→image29 continuation",
+      "PDF images and DOCX images are duplicates of one another",
+      "teacher annotation versus student self-marking where source does not label it",
+      "red √+1 marks mapped one-to-one to formal E1 scoring slots",
+      "actual, cumulative, or total score"
+    ],
+    "merge_rule": "Keep all four visual entries separate. A shared container, source order, topic, or repeated phrase is not enough to concatenate handwriting or assign an identity."
+  },
+  "student_layer_conclusion": {
+    "status": "conversion_unresolved",
+    "legacy_status": "partial_visual_evidence",
+    "resolved_or_improved_in_v2": [
+      "all four groups have explicit per-line bounded manual reads and positioned unresolved spans",
+      "image28 retains P075→image28→native p11 registration",
+      "each group now records source-labeled identity absence, annotation type, and score visibility",
+      "topic/phrase overlap is recorded without converting it into same-student or continuation identity",
+      "formal E1 remains PASS_unchanged and separate"
+    ],
+    "still_unresolved": [
+      "complete line-by-line transcription of p8/p10/image28 and image29 lower cropped area",
+      "source-labeled student name/number/author identity for every group",
+      "p8↔p10 and image28↔image29 continuation or duplicate relation",
+      "annotator identity and annotation-to-score-slot mapping",
+      "actual, cumulative, or total score"
+    ]
+  },
+  "materialization_copy": {
+    "materialized_copy": true,
+    "status": "candidate_pending_independent_integration_review",
+    "source_artifact_id": "BJ-2025-HD-YIMO-Q22-student-materials-v3",
+    "source_schema_version": "bj-2025-hd-yimo.q22.student-materials-active-candidate.v3",
+    "source_json_receipt_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v3_q22_student/student_materials.json",
+    "source_json_sha256": "8a1edf8527e3355294c9eedcdbd245c1cc18bde6c5e2ab9bbacf33d38aac02cc",
+    "source_markdown_receipt_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v3_q22_student/student_materials.md",
+    "source_markdown_sha256": "aeebddb5a09d65b4ab0e569c1f8575145fc7eeee2861202cd49198e4cf5c2b5a",
+    "source_manifest_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v3_q22_student/manifest.json",
+    "source_manifest_sha256": "75e22a5bf8bd34097d1f30e3f997c53a02c2b6e83d182793f17af8a8827ec34e",
+    "source_self_check_path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/source_payload_repair_v3_q22_student/self_check.json",
+    "source_self_check_sha256": "1f1ff539d99b89e2c58789bc103c3a55ae1d58ceae27c67cb9e2f7e165289f04",
+    "q22_parent_target": "BJ-2025-HD-YIMO-Q22.md",
+    "q22_parent_sha256": "25d036c2b17a4c234da218f5fbe032c8bfd0420be71dba8e69b27134c63956c6",
+    "volume_relative_asset_paths": true,
+    "source_asset_paths_and_hashes_retained": true,
+    "source_page_and_native_render_paths_retained_as_provenance": true,
+    "changed_fields": "Only top-level copy identity/materialization metadata and each embedded_asset.path were changed; each original embedded asset path is retained as v3_original_path, its v3 source SHA-256 is unchanged, and source page positions/transcripts/annotations/residuals remain as recorded.",
+    "asset_path_map": [
+      {
+        "entry_id": "Q22-STUDENT-PDF-P008-IMG2",
+        "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/embedded/p008_img2_student_q22.jpeg",
+        "candidate_relative_path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-p008-pdf-img2.jpeg",
+        "source_sha256": "19e05b9982532908894c6ce564270cf058c1898316c45552499a0f828716add6",
+        "candidate_sha256": "19e05b9982532908894c6ce564270cf058c1898316c45552499a0f828716add6",
+        "byte_identical": true
+      },
+      {
+        "entry_id": "Q22-STUDENT-PDF-P010-IMG1",
+        "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/Sbe30611f2f07/embedded/p010_img1_student_q22.jpeg",
+        "candidate_relative_path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-p010-pdf-img1.jpeg",
+        "source_sha256": "c1126d41200fa8a2d1df6974b72c59829e46b4581b3d8a66af0f968e85b19181",
+        "candidate_sha256": "c1126d41200fa8a2d1df6974b72c59829e46b4581b3d8a66af0f968e85b19181",
+        "byte_identical": true
+      },
+      {
+        "entry_id": "Q22-STUDENT-DOCX-P075-IMAGE28",
+        "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/S506347bd4a70/embedded/image28.png",
+        "candidate_relative_path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-docx-P075-image28.png",
+        "source_sha256": "1064f4ae06b543f3b75c1450b6c95580cf6c3a93276fd82b0c9d841d004246a3",
+        "candidate_sha256": "1064f4ae06b543f3b75c1450b6c95580cf6c3a93276fd82b0c9d841d004246a3",
+        "byte_identical": true
+      },
+      {
+        "entry_id": "Q22-STUDENT-DOCX-P076-IMAGE29",
+        "v3_original_path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_west/BJ-2025-HD-YIMO/assets/S506347bd4a70/embedded/image29.jpeg",
+        "candidate_relative_path": "assets/student_q22/BJ-2025-HD-YIMO-Q22-docx-P076-image29.jpeg",
+        "source_sha256": "ecc5cd687b6744acfb8c7013d37822580b3b65375ebf6438d1ca07740540b1c7",
+        "candidate_sha256": "ecc5cd687b6744acfb8c7013d37822580b3b65375ebf6438d1ca07740540b1c7",
+        "byte_identical": true
+      }
+    ]
+  }
+}

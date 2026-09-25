@@ -1,0 +1,276 @@
+{
+  "exam_id": "BJ-2022-BJ-GAOKAO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "source_pages": {
+    "teacher": 22,
+    "formal_rubric": 7
+  },
+  "question_hashes": {
+    "BJ-2022-BJ-GAOKAO-Q1": "f2678f66c353a6705731fcbddeb7af227f47f3713dcca433f69f2303743a8e59",
+    "BJ-2022-BJ-GAOKAO-Q10": "30b17d7e2db69d84c4940a9d333ddec9f974c0f232cbe432b48042050352dac5",
+    "BJ-2022-BJ-GAOKAO-Q11": "6e11486d66ac5da19caab169d931bbb5b5d41f9016f59f76d554006f09441162",
+    "BJ-2022-BJ-GAOKAO-Q12": "ab2df5133a8d22b10b4e6d46aea1ad21f7ebc450922f6f20f1a86cd78348fad9",
+    "BJ-2022-BJ-GAOKAO-Q13": "bf78a34d9cdb99fbd9a75a91215ff8b268684ae786596f0e40c44406f94c5ab2",
+    "BJ-2022-BJ-GAOKAO-Q14": "5d11edb419b62bae41024d4a8322caf60243ba122d0ee1a5e16fb49fccf7980c",
+    "BJ-2022-BJ-GAOKAO-Q15": "2f4b7c6996393f997630a0a487ffb35b85634fb9f267deec8b96590522da7c97",
+    "BJ-2022-BJ-GAOKAO-Q16": "d3b5b304f917ee39dddc52bffe39a2021bd6e90f69a0b0b32e54bf688ce9a6f1",
+    "BJ-2022-BJ-GAOKAO-Q17": "705baae6077d3302e0a7f0eabfc55774360edb56bbc1e3477cc8611388801ff4",
+    "BJ-2022-BJ-GAOKAO-Q18": "ef71c65dddd2c536cd53a100e1075fcfd494adcbc84a701239fd0f3859f2f0fc",
+    "BJ-2022-BJ-GAOKAO-Q19": "4a403268f5ce625548cfeb79b649d2fceadaa63f65bf9183fa08bc4b1bcd4444",
+    "BJ-2022-BJ-GAOKAO-Q2": "8d1eb964f45670a859003c9888b30b052f72b1b765d9e4c2b05115ddf3ef93a8",
+    "BJ-2022-BJ-GAOKAO-Q20": "f4ae02b847d262a6cc21695621b5797260d606bf96e60cfec92ad7241ffbaaa2",
+    "BJ-2022-BJ-GAOKAO-Q21": "554ed4238d83b93e19afdf92415aa24068d2623c307d9713859378ca9344d3c3",
+    "BJ-2022-BJ-GAOKAO-Q3": "d346590f46cc8b77cad4fe072675b54550df5bb078c97abc8fd592cd9a81cc5f",
+    "BJ-2022-BJ-GAOKAO-Q4": "708ef9bfe9ea28391f9e9aae5006376dba4d111921f92392159e954c44a6a522",
+    "BJ-2022-BJ-GAOKAO-Q5": "93e4a6a22d1b73735b508eef3a8a5264601fa055434b828a59d2d140e139e500",
+    "BJ-2022-BJ-GAOKAO-Q6": "c3b85c1baf5264914a79ee9f8658f76afbf9a84df83de223193cf6354879c052",
+    "BJ-2022-BJ-GAOKAO-Q7": "4c99a33995fb5e0ead3236b0582519ee215d49830f5b6f222c1b7f60165cd372",
+    "BJ-2022-BJ-GAOKAO-Q8": "3c8deca5ad5ebdb39d085a7c10afb12ae089c420a6b7f55d87c3090783cef7b9",
+    "BJ-2022-BJ-GAOKAO-Q9": "cee484481c9e5c3135e3cea89e6bfc1ee405471bf9ce3717f19cca99185d7424"
+  },
+  "source_page_map": {
+    "BJ-2022-BJ-GAOKAO-Q1": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q2": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q3": {
+      "paper": [
+        1,
+        2
+      ],
+      "answer": [
+        8,
+        9
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q4": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        9
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q5": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        10
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q6": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        10
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q7": {
+      "paper": [
+        2,
+        3
+      ],
+      "answer": [
+        11
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q8": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        11,
+        12
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q9": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        12
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q10": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        12,
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q11": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        12,
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q12": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        13
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q13": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        13,
+        14
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q14": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        14,
+        15
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q15": {
+      "paper": [
+        4,
+        5
+      ],
+      "answer": [
+        15
+      ],
+      "rubric": []
+    },
+    "BJ-2022-BJ-GAOKAO-Q16": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        15,
+        16
+      ],
+      "rubric": [
+        1
+      ]
+    },
+    "BJ-2022-BJ-GAOKAO-Q17": {
+      "paper": [
+        5,
+        6
+      ],
+      "answer": [
+        16,
+        17
+      ],
+      "rubric": [
+        2,
+        3
+      ]
+    },
+    "BJ-2022-BJ-GAOKAO-Q18": {
+      "paper": [
+        6
+      ],
+      "answer": [
+        17,
+        18,
+        19
+      ],
+      "rubric": [
+        3,
+        4
+      ]
+    },
+    "BJ-2022-BJ-GAOKAO-Q19": {
+      "paper": [
+        6,
+        7
+      ],
+      "answer": [
+        19,
+        20
+      ],
+      "rubric": [
+        4,
+        5
+      ]
+    },
+    "BJ-2022-BJ-GAOKAO-Q20": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        20,
+        21
+      ],
+      "rubric": [
+        6
+      ]
+    },
+    "BJ-2022-BJ-GAOKAO-Q21": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        21,
+        22
+      ],
+      "rubric": [
+        7
+      ]
+    }
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "教师版p1-p7为题面，p8-p22为E3答案/解析，不能替代独立7页E1",
+    "源层不同字形、分值和题面差异分别保留，不静默改正",
+    "没有个人学生原答/批注/实得分；正式材料内学生表现是汇总反馈"
+  ],
+  "primary_visual": [
+    "Q15 graph",
+    "teacherQ18 wish and empty cells",
+    "rubricp2-p6 plus p5 original typo crop",
+    "rubricp3 exact missing Q18 prompt now restored"
+  ],
+  "independent_chain": {
+    "v3_four_E1_independent": "9d59489c04d11806a182065a1d7f09b50fb2e6df7612e61fa50f9b5ada64561f",
+    "v4_Q18_one_line": "9917439e314d6a892a805576ef3f04bcf66a8834e3cb4f7d56cdeefa55c1cac2"
+  },
+  "accepted_at": "2026-09-22T13:08:53.866984+00:00"
+}

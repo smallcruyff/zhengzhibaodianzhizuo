@@ -1,0 +1,592 @@
+﻿qid,type,books,kind,subq,same_subq,whole_in
+BJ-2023-FT-YIMO-Q4,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-CY-QIZHONG-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-CY-QIZHONG-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2024-CY-QIZHONG-Q6,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-CY-QIZHONG-Q10,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2024-CY-QIZHONG-Q17,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-CY-QIZHONG-Q20,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:3 | bixiu2:1/2/3,3,
+BJ-2025-CY-ERMO-Q1,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2025-CY-ERMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-ERMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-ERMO-Q7,选择题,philosophy;mind;reasoning,choice_in_multiple_books,philosophy:整题 | mind:整题 | reasoning:整题,,philosophy;mind;reasoning
+BJ-2025-CY-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CY-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-ERMO-Q22,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2020-BJ-GAOKAO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2020-BJ-GAOKAO-Q6,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2020-BJ-GAOKAO-Q8,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2020-BJ-GAOKAO-Q19,非选择题,philosophy;bixiu2;bixiu3,same_subq_in_multiple_books,philosophy:2 | bixiu2:1 | bixiu3:1,1,
+BJ-2024-CY-YIMO-Q9,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-CY-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-CY-YIMO-Q16,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-CY-YIMO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2023-BJ-GAOKAO-Q3,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2023-BJ-GAOKAO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2023-BJ-GAOKAO-Q18,非选择题,xuanbi2;reasoning;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | reasoning:3 | bixiu3:1/2,,xuanbi2
+BJ-2023-BJ-GAOKAO-Q20,非选择题,culture;bixiu2;bixiu3,whole_question_ref_overlaps,culture:整题 | bixiu2:整题 | bixiu3:整题,,culture;bixiu2;bixiu3
+BJ-2024-CY-ERMO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-CY-ERMO-Q2,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2024-CY-ERMO-Q6,选择题,philosophy;reasoning;bixiu2,choice_in_multiple_books,philosophy:整题 | reasoning:整题 | bixiu2:整题,,philosophy;reasoning;bixiu2
+BJ-2024-CY-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-CY-ERMO-Q16,非选择题,philosophy;bixiu2,different_subq_split,philosophy:2 | bixiu2:1,,
+BJ-2024-CY-ERMO-Q17,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-CY-ERMO-Q19,非选择题,culture;mind;reasoning,same_subq_in_multiple_books,culture:3 | mind:1 | reasoning:1/2,1,
+BJ-2024-CY-ERMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2022-BJ-GAOKAO-Q2,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2022-BJ-GAOKAO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2022-BJ-GAOKAO-Q5,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2022-BJ-GAOKAO-Q7,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2022-BJ-GAOKAO-Q10,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2022-BJ-GAOKAO-Q11,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2022-BJ-GAOKAO-Q12,选择题,culture;xuanbi1;bixiu3,choice_in_multiple_books,culture:整题 | xuanbi1:整题 | bixiu3:整题,,culture;xuanbi1;bixiu3
+BJ-2022-BJ-GAOKAO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2022-BJ-GAOKAO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2022-BJ-GAOKAO-Q18,非选择题,bixiu2;bixiu3,same_subq_in_multiple_books,bixiu2:2 | bixiu3:1/2,2,
+BJ-2022-BJ-GAOKAO-Q19,非选择题,xuanbi1;bixiu2,different_subq_split,xuanbi1:2 | bixiu2:1,,
+BJ-2022-BJ-GAOKAO-Q20,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-DC-ERMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-ERMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-ERMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-ERMO-Q8,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-DC-ERMO-Q9,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-DC-ERMO-Q13,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-DC-ERMO-Q18,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2025-DC-ERMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2021-BJ-GAOKAO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2021-BJ-GAOKAO-Q9,选择题,culture;bixiu2;bixiu3,choice_in_multiple_books,culture:整题 | bixiu2:整题 | bixiu3:整题,,culture;bixiu2;bixiu3
+BJ-2021-BJ-GAOKAO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2021-BJ-GAOKAO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2021-BJ-GAOKAO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2021-BJ-GAOKAO-Q19,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2021-BJ-GAOKAO-Q21,非选择题,philosophy;bixiu3,same_subq_in_multiple_books,philosophy:2 | bixiu3:1/2,2,
+BJ-2024-HD-QIZHONG-Q9,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2024-HD-QIZHONG-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-HD-QIZHONG-Q11,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-HD-QIZHONG-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:指纹 | bixiu2:整题,,bixiu2
+BJ-2024-HD-QIZHONG-Q21,非选择题,xuanbi1;xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi1:2 | xuanbi2:整题 | bixiu3:1,,xuanbi2
+BJ-2026-CY-QIMO-Q2,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-CY-QIMO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-CY-QIMO-Q7,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-CY-QIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-QIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-QIMO-Q18,非选择题,xuanbi2;reasoning,whole_question_ref_overlaps,xuanbi2:整题 | reasoning:2,,xuanbi2
+BJ-2026-CY-QIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2023-HD-ERMO-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-ERMO-Q15,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-ERMO-Q20,非选择题,bixiu2;bixiu3,different_subq_split,bixiu2:1/2 | bixiu3:3,,
+BJ-2023-DC-YIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-DC-YIMO-Q20,非选择题,bixiu2;bixiu3,same_subq_in_multiple_books,bixiu2:2 | bixiu3:2,2,
+BJ-2023-DC-YIMO-Q11,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-YIMO-Q16,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-YIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-XC-YIMO-Q18,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-XC-ERMO-Q20,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-XC-ERMO-Q19,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-XC-ERMO-Q9,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-XC-ERMO-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-QIZHONG-Q20,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-QIZHONG-Q21,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2023-HD-QIZHONG-Q22,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-DC-YIMO-Q1,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-DC-YIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-DC-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-DC-YIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-DC-YIMO-Q18,非选择题,mind;bixiu2;bixiu3,same_subq_in_multiple_books,mind:3 | bixiu2:1/3 | bixiu3:2,3,
+BJ-2024-DC-YIMO-Q21,非选择题,philosophy;bixiu2,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2024-DC-YIMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2024-DC-YIMO-Q15,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-DC-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-HD-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-HD-YIMO-Q18,非选择题,xuanbi1;reasoning;bixiu2,same_subq_in_multiple_books,xuanbi1:1 | reasoning:2 | bixiu2:1,1,
+BJ-2024-HD-YIMO-Q17,非选择题,mind;bixiu2;bixiu3,different_subq_split,mind:2 | bixiu2:1 | bixiu3:3,,
+BJ-2024-HD-YIMO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-DC-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-DC-ERMO-Q17,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2024-DC-ERMO-Q18,非选择题,philosophy;xuanbi2;bixiu2;bixiu3,same_subq_in_multiple_books,philosophy:2 | xuanbi2:整题 | bixiu2:2 | bixiu3:1/2,2,xuanbi2
+BJ-2024-DC-ERMO-Q21,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2024-DC-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-DC-ERMO-Q15,选择题,xuanbi1;mind;bixiu2,choice_in_multiple_books,xuanbi1:整题 | mind:整题 | bixiu2:整题,,xuanbi1;mind;bixiu2
+BJ-2024-FT-YIMO-Q19,非选择题,mind;reasoning,same_subq_in_multiple_books,mind:2 | reasoning:1/2,2,
+BJ-2024-FT-YIMO-Q5,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2024-FT-YIMO-Q6,选择题,culture;xuanbi2,choice_in_multiple_books,culture:整题 | xuanbi2:整题,,culture;xuanbi2
+BJ-2024-FT-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-FT-YIMO-Q18,非选择题,philosophy;bixiu2,different_subq_split,philosophy:1 | bixiu2:2,,
+BJ-2024-FT-ERMO-Q17,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-FT-ERMO-Q1,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2024-FT-ERMO-Q2,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2024-FT-ERMO-Q5,选择题,xuanbi2;bixiu2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2024-FT-ERMO-Q6,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2024-FT-ERMO-Q12,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2024-FT-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-FT-ERMO-Q18,非选择题,mind;reasoning;bixiu2,same_subq_in_multiple_books,mind:2 | reasoning:1/2 | bixiu2:3,2,
+BJ-2024-HD-ERMO-Q17,非选择题,philosophy;mind,same_subq_in_multiple_books,philosophy:2 | mind:1/2,2,
+BJ-2024-HD-ERMO-Q18,非选择题,xuanbi1;bixiu3,different_subq_split,xuanbi1:1 | bixiu3:2,,
+BJ-2024-HD-ERMO-Q21,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-HD-ERMO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-HD-ERMO-Q8,选择题,philosophy;culture;bixiu3,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu3:整题,,philosophy;culture;bixiu3
+BJ-2024-HD-ERMO-Q15,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-SJS-YIMO-Q4,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-SJS-YIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-SJS-YIMO-Q6,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2024-SJS-YIMO-Q7,选择题,xuanbi1;reasoning,choice_in_multiple_books,xuanbi1:整题 | reasoning:整题,,xuanbi1;reasoning
+BJ-2024-SJS-YIMO-Q8,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-SJS-YIMO-Q13,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2024-SJS-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-SJS-YIMO-Q15,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-SJS-YIMO-Q19,非选择题,mind;bixiu2,different_subq_split,mind:3 | bixiu2:1,,
+BJ-2024-SJS-YIMO-Q20,非选择题,culture;bixiu3,whole_question_ref_overlaps,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2024-XC-YIMO-Q18,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:3,,xuanbi2
+BJ-2024-XC-YIMO-Q19,非选择题,xuanbi1;mind;reasoning;bixiu2;bixiu3,same_subq_in_multiple_books,xuanbi1:4/6 | mind:5 | reasoning:2/3 | bixiu2:1/4/6 | bixiu3:4,4/6,
+BJ-2024-XC-YIMO-Q2,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2024-XC-YIMO-Q3,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-XC-YIMO-Q4,选择题,culture;bixiu2;bixiu3,choice_in_multiple_books,culture:整题 | bixiu2:整题 | bixiu3:整题,,culture;bixiu2;bixiu3
+BJ-2024-XC-YIMO-Q7,选择题,xuanbi2;bixiu2,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-XC-YIMO-Q10,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-XC-YIMO-Q15,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-XC-ERMO-Q16,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-XC-ERMO-Q17,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-XC-ERMO-Q18,非选择题,philosophy;culture;reasoning;bixiu2;bixiu3,same_subq_in_multiple_books,philosophy:4 | culture:4 | reasoning:1 | bixiu2:3/4 | bixiu3:2/4,4,
+BJ-2024-XC-ERMO-Q2,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2024-XC-ERMO-Q6,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-XC-ERMO-Q10,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-XC-ERMO-Q13,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-DC-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-YIMO-Q4,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2025-DC-YIMO-Q17,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-DC-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-DC-YIMO-Q21,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2025-DC-YIMO-Q2,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2025-DC-YIMO-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-DC-YIMO-Q14,选择题,culture;mind,choice_in_multiple_books,culture:整题 | mind:整题,,culture;mind
+BJ-2025-DC-YIMO-Q18,非选择题,mind;bixiu2,different_subq_split,mind:1 | bixiu2:2,,
+BJ-2025-FT-YIMO-Q1,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2025-FT-YIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FT-YIMO-Q5,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-FT-YIMO-Q6,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-FT-YIMO-Q9,选择题,xuanbi1;bixiu3,choice_in_multiple_books,xuanbi1:整题 | bixiu3:整题,,xuanbi1;bixiu3
+BJ-2025-FT-YIMO-Q10,选择题,xuanbi2;bixiu2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-FT-YIMO-Q18,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:3 | bixiu2:2,,
+BJ-2025-FT-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FT-YIMO-Q17,非选择题,mind;bixiu3,whole_question_ref_overlaps,mind:1 | bixiu3:整题,,bixiu3
+BJ-2025-FT-YIMO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-FT-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-FT-YIMO-Q21,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-YQ-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-YQ-YIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-YQ-YIMO-Q20,非选择题,xuanbi1;bixiu2,different_subq_split,xuanbi1:2 | bixiu2:1,,
+BJ-2025-YQ-YIMO-Q1,选择题,philosophy;bixiu2;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2025-YQ-YIMO-Q4,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-YQ-YIMO-Q6,选择题,culture;reasoning,choice_in_multiple_books,culture:整题 | reasoning:整题,,culture;reasoning
+BJ-2025-YQ-YIMO-Q9,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-YQ-YIMO-Q10,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-YQ-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-YQ-YIMO-Q21,非选择题,philosophy;culture;xuanbi1,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | xuanbi1:整题,,philosophy;culture;xuanbi1
+BJ-2025-FS-YIMO-Q16,非选择题,philosophy;culture;mind;reasoning,same_subq_in_multiple_books,philosophy:1 | culture:1 | mind:3 | reasoning:2,1,
+BJ-2025-FS-YIMO-Q18,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:2 | bixiu2:1/2,2,
+BJ-2025-FS-YIMO-Q19,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-FS-YIMO-Q5,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FS-YIMO-Q7,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FS-YIMO-Q12,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-FS-YIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CY-YIMO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-CY-YIMO-Q2,选择题,culture;reasoning;bixiu3,choice_in_multiple_books,culture:整题 | reasoning:整题 | bixiu3:整题,,culture;reasoning;bixiu3
+BJ-2025-CY-YIMO-Q3,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-CY-YIMO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-CY-YIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-CY-YIMO-Q9,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-CY-YIMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-CY-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CY-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-YIMO-Q17,非选择题,reasoning;bixiu2,different_subq_split,reasoning:1 | bixiu2:2,,
+BJ-2025-CY-YIMO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-CY-YIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2025-HD-YIMO-Q1,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2025-HD-YIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-HD-YIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-HD-YIMO-Q20,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-HD-YIMO-Q21,非选择题,xuanbi1;reasoning,different_subq_split,xuanbi1:2 | reasoning:1,,
+BJ-2025-HD-YIMO-Q22,非选择题,philosophy;bixiu2,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-HD-YIMO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-HD-YIMO-Q10,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-HD-YIMO-Q13,选择题,xuanbi1;bixiu2;bixiu3,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi1;bixiu2;bixiu3
+BJ-2025-SJS-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-SJS-YIMO-Q20,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-SJS-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-SJS-YIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-SJS-YIMO-Q4,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-SJS-YIMO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-SJS-YIMO-Q8,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2025-SJS-YIMO-Q10,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-SJS-YIMO-Q12,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-SJS-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-SJS-YIMO-Q17,非选择题,xuanbi1;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi1:2 | bixiu2:整题 | bixiu3:1,,bixiu2
+BJ-2025-SJS-YIMO-Q19,非选择题,mind;reasoning,whole_question_ref_overlaps,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2025-XC-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-XC-YIMO-Q19,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-XC-YIMO-Q20,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-XC-YIMO-Q21,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:1/2 | bixiu2:1,1,
+BJ-2025-XC-YIMO-Q22,非选择题,philosophy;culture;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu3:整题,,philosophy;culture;bixiu3
+BJ-2025-XC-YIMO-Q1,选择题,philosophy;bixiu2;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2025-XC-YIMO-Q4,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-XC-YIMO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-XC-YIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-MTG-YIMO-Q2,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-MTG-YIMO-Q3,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-MTG-YIMO-Q4,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-MTG-YIMO-Q5,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-MTG-YIMO-Q9,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-MTG-YIMO-Q11,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-MTG-YIMO-Q15,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-MTG-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-MTG-YIMO-Q19,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-MTG-YIMO-Q21,非选择题,philosophy;culture;mind;bixiu2,same_subq_in_multiple_books,philosophy:2 | culture:2 | mind:1 | bixiu2:2,2,
+BJ-2025-SY-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-SY-YIMO-Q3,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2025-SY-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-SY-YIMO-Q2,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-SY-YIMO-Q11,选择题,culture;xuanbi2;bixiu3,choice_in_multiple_books,culture:整题 | xuanbi2:整题 | bixiu3:整题,,culture;xuanbi2;bixiu3
+BJ-2025-SY-YIMO-Q17,非选择题,reasoning;bixiu2;bixiu3,same_subq_in_multiple_books,reasoning:1 | bixiu2:2 | bixiu3:2,2,
+BJ-2025-SY-YIMO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:2,,xuanbi2
+BJ-2025-FT-ERMO-Q4,选择题,philosophy;mind;bixiu2,choice_in_multiple_books,philosophy:整题 | mind:整题 | bixiu2:整题,,philosophy;mind;bixiu2
+BJ-2025-FT-ERMO-Q5,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FT-ERMO-Q8,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-FT-ERMO-Q9,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-FT-ERMO-Q10,选择题,xuanbi2;bixiu2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-FT-ERMO-Q12,选择题,mind;reasoning;bixiu2,choice_in_multiple_books,mind:整题 | reasoning:整题 | bixiu2:整题,,mind;reasoning;bixiu2
+BJ-2025-FT-ERMO-Q13,选择题,xuanbi1;reasoning,choice_in_multiple_books,xuanbi1:整题 | reasoning:整题,,xuanbi1;reasoning
+BJ-2025-FT-ERMO-Q14,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-FT-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-FT-ERMO-Q16,非选择题,philosophy;culture;reasoning,same_subq_in_multiple_books,philosophy:1 | culture:1 | reasoning:2,1,
+BJ-2025-FT-ERMO-Q19,非选择题,xuanbi2;mind;reasoning,same_subq_in_multiple_books,xuanbi2:整题 | mind:1 | reasoning:1,1,xuanbi2
+BJ-2025-CP-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CP-ERMO-Q18,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-CP-ERMO-Q20,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-CP-ERMO-Q21,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CP-ERMO-Q22,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2025-CP-ERMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CP-ERMO-Q3,选择题,philosophy;culture;reasoning,choice_in_multiple_books,philosophy:整题 | culture:整题 | reasoning:整题,,philosophy;culture;reasoning
+BJ-2025-CP-ERMO-Q7,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-CP-ERMO-Q8,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CP-ERMO-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-HD-ERMO-Q9,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2025-HD-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-HD-ERMO-Q1,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-HD-ERMO-Q21,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-HD-ERMO-Q22,非选择题,philosophy;culture;bixiu2,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2025-HD-ERMO-Q11,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-HD-ERMO-Q12,选择题,mind;bixiu2,choice_in_multiple_books,mind:整题 | bixiu2:整题,,mind;bixiu2
+BJ-2025-HD-ERMO-Q18,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-XC-ERMO-Q16,非选择题,philosophy;reasoning;bixiu2,same_subq_in_multiple_books,philosophy:1/3 | reasoning:2 | bixiu2:3,3,
+BJ-2025-XC-ERMO-Q17,非选择题,bixiu2;bixiu3,different_subq_split,bixiu2:1 | bixiu3:2,,
+BJ-2025-XC-ERMO-Q18,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-XC-ERMO-Q19,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:1/2 | bixiu2:1/2,1/2,
+BJ-2025-XC-ERMO-Q20,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2025-XC-ERMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-XC-ERMO-Q3,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-XC-ERMO-Q5,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-XC-ERMO-Q9,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2025-XC-ERMO-Q12,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2025-DC-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-QIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-DC-QIMO-Q18,非选择题,mind;bixiu2,different_subq_split,mind:2 | bixiu2:1,,
+BJ-2025-DC-QIMO-Q21,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2025-DC-QIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-QIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-DC-QIMO-Q5,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-DC-QIMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-DC-QIMO-Q19,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:2/3,,xuanbi2
+BJ-2025-FT-QIMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FT-QIMO-Q3,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-FT-QIMO-Q17,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2025-FT-QIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-FT-QIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-FT-QIMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-FT-QIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-FT-QIMO-Q18,非选择题,reasoning;bixiu2;bixiu3,different_subq_split,reasoning:1 | bixiu2:2 | bixiu3:3,,
+BJ-2025-FT-QIMO-Q21,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-CY-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-QIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-CY-QIMO-Q3,选择题,philosophy;culture;xuanbi2;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | xuanbi2:整题 | bixiu2:整题,,philosophy;culture;xuanbi2;bixiu2
+BJ-2025-CY-QIMO-Q4,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2025-CY-QIMO-Q7,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2025-CY-QIMO-Q9,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-CY-QIMO-Q13,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-CY-QIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-CY-QIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-HD-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-HD-QIMO-Q2,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-HD-QIMO-Q5,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-HD-QIMO-Q22,非选择题,philosophy;culture;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu3:整题,,philosophy;culture;bixiu3
+BJ-2025-HD-QIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-HD-QIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-HD-QIMO-Q13,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-HD-QIMO-Q15,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2025-HD-QIMO-Q17,非选择题,philosophy;mind,different_subq_split,philosophy:2 | mind:1,,
+BJ-2025-HD-QIMO-Q21,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2025-XC-QIMO-Q16,非选择题,bixiu2;bixiu3,same_subq_in_multiple_books,bixiu2:1/2 | bixiu3:2,2,
+BJ-2025-XC-QIMO-Q17,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2025-XC-QIMO-Q19,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2025-XC-QIMO-Q20,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:2 | bixiu2:1/2,2,
+BJ-2025-XC-QIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-XC-QIMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-XC-QIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-XC-QIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-XC-QIMO-Q4,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2025-XC-QIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-XC-QIMO-Q10,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-XC-QIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-DC-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-YIMO-Q2,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-DC-YIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-YIMO-Q1,选择题,philosophy;bixiu2;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-DC-YIMO-Q19,非选择题,philosophy;xuanbi1;mind;bixiu2,same_subq_in_multiple_books,philosophy:1/4 | xuanbi1:3 | mind:4 | bixiu2:2/3,3/4,
+BJ-2026-DC-YIMO-Q20,非选择题,philosophy;culture;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2026-DC-YIMO-Q18,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-DC-YIMO-Q5,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-DC-YIMO-Q6,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-DC-YIMO-Q8,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-DC-YIMO-Q10,选择题,xuanbi2;bixiu2,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2026-FT-YIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-YIMO-Q6,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-YIMO-Q18,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2026-FT-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-YQ-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-YQ-YIMO-Q20,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-YQ-YIMO-Q2,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-YQ-YIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-YQ-YIMO-Q5,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-YQ-YIMO-Q6,选择题,xuanbi1;reasoning,choice_in_multiple_books,xuanbi1:整题 | reasoning:整题,,xuanbi1;reasoning
+BJ-2026-YQ-YIMO-Q11,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-YQ-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FS-YIMO-Q17,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:2,,xuanbi2
+BJ-2026-FS-YIMO-Q18,非选择题,mind;bixiu3,different_subq_split,mind:1 | bixiu3:2,,
+BJ-2026-FS-YIMO-Q19,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FS-YIMO-Q20,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-FS-YIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FS-YIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FS-YIMO-Q6,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-FS-YIMO-Q7,选择题,philosophy;reasoning;bixiu3,choice_in_multiple_books,philosophy:整题 | reasoning:整题 | bixiu3:整题,,philosophy;reasoning;bixiu3
+BJ-2026-FS-YIMO-Q9,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-FS-YIMO-Q12,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-FS-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FS-YIMO-Q16,非选择题,philosophy;bixiu2,different_subq_split,philosophy:2 | bixiu2:1,,
+BJ-2026-CY-YIMO-Q17,非选择题,mind;reasoning;bixiu3,same_subq_in_multiple_books,mind:1 | reasoning:1 | bixiu3:2,1,
+BJ-2026-CY-YIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-YIMO-Q4,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2026-CY-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-YIMO-Q6,选择题,philosophy;mind;reasoning,choice_in_multiple_books,philosophy:整题 | mind:整题 | reasoning:整题,,philosophy;mind;reasoning
+BJ-2026-CY-YIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-CY-YIMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-CY-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-YIMO-Q17,非选择题,mind;reasoning,whole_question_ref_overlaps,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-HD-YIMO-Q18,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:1/2,,xuanbi2
+BJ-2026-HD-YIMO-Q19,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-HD-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-HD-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-YIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-YIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-YIMO-Q7,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-YIMO-Q8,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SJS-YIMO-Q17,非选择题,philosophy;culture;mind,same_subq_in_multiple_books,philosophy:1 | culture:1 | mind:2,1,
+BJ-2026-SJS-YIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-SJS-YIMO-Q2,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-SJS-YIMO-Q6,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-SJS-YIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-XC-YIMO-Q16,选择题,philosophy;culture;bixiu2;bixiu3,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;bixiu2;bixiu3
+BJ-2026-XC-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-XC-YIMO-Q2,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-XC-YIMO-Q5,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-XC-YIMO-Q12,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-XC-YIMO-Q13,选择题,xuanbi2;reasoning,choice_in_multiple_books,xuanbi2:整题 | reasoning:整题,,xuanbi2;reasoning
+BJ-2026-XC-YIMO-Q19,非选择题,reasoning;bixiu3,different_subq_split,reasoning:3 | bixiu3:2,,
+BJ-2026-XC-YIMO-Q20,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:2 | bixiu2:1/2,2,
+BJ-2026-TZ-YIMO-Q3,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-TZ-YIMO-Q17,非选择题,mind;bixiu2,different_subq_split,mind:2 | bixiu2:1,,
+BJ-2026-TZ-YIMO-Q4,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-TZ-YIMO-Q18,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-TZ-YIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-MTG-YIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-MTG-YIMO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-MTG-YIMO-Q21,非选择题,philosophy;xuanbi1;bixiu2,whole_question_ref_overlaps,philosophy:整题 | xuanbi1:整题 | bixiu2:整题,,philosophy;xuanbi1;bixiu2
+BJ-2026-MTG-YIMO-Q4,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-MTG-YIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-MTG-YIMO-Q12,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2026-MTG-YIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SY-YIMO-Q21,非选择题,philosophy;culture;xuanbi1;mind;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | xuanbi1:整题 | mind:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;xuanbi1;mind;bixiu2;bixiu3
+BJ-2026-SY-YIMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-SY-YIMO-Q2,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-SY-YIMO-Q3,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-SY-YIMO-Q4,选择题,culture;reasoning,choice_in_multiple_books,culture:整题 | reasoning:整题,,culture;reasoning
+BJ-2026-SY-YIMO-Q5,选择题,philosophy;mind;reasoning,choice_in_multiple_books,philosophy:整题 | mind:整题 | reasoning:整题,,philosophy;mind;reasoning
+BJ-2026-SY-YIMO-Q6,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-SY-YIMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-SY-YIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SY-YIMO-Q19,非选择题,mind;reasoning;bixiu2,different_subq_split,mind:2 | reasoning:1 | bixiu2:3,,
+BJ-2026-DC-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-ERMO-Q18,非选择题,mind;reasoning,whole_question_ref_overlaps,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-DC-ERMO-Q20,非选择题,xuanbi1;bixiu2,same_subq_in_multiple_books,xuanbi1:3 | bixiu2:1/2/3,3,
+BJ-2026-DC-ERMO-Q2,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2026-DC-ERMO-Q21,非选择题,philosophy;culture;mind;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | mind:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;culture;mind;bixiu2;bixiu3
+BJ-2026-DC-ERMO-Q3,选择题,philosophy;mind;bixiu2,choice_in_multiple_books,philosophy:整题 | mind:整题 | bixiu2:整题,,philosophy;mind;bixiu2
+BJ-2026-DC-ERMO-Q4,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-DC-ERMO-Q5,选择题,philosophy;mind;reasoning,choice_in_multiple_books,philosophy:整题 | mind:整题 | reasoning:整题,,philosophy;mind;reasoning
+BJ-2026-DC-ERMO-Q6,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-DC-ERMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-DC-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FT-ERMO-Q5,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-ERMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-FT-ERMO-Q18,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-FT-ERMO-Q22,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-FT-ERMO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-FT-ERMO-Q7,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-FT-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FT-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FS-ERMO-Q17,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-FS-ERMO-Q18,非选择题,xuanbi2;mind,whole_question_ref_overlaps,xuanbi2:整题 | mind:2,,xuanbi2
+BJ-2026-FS-ERMO-Q21,非选择题,culture;bixiu2;bixiu3,whole_question_ref_overlaps,culture:整题 | bixiu2:整题 | bixiu3:整题,,culture;bixiu2;bixiu3
+BJ-2026-FS-ERMO-Q14,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-ERMO-Q19,非选择题,reasoning;bixiu2,different_subq_split,reasoning:1 | bixiu2:2,,
+BJ-2026-CY-ERMO-Q3,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-CY-ERMO-Q5,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-CY-ERMO-Q7,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2026-CY-ERMO-Q9,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-CY-ERMO-Q11,选择题,xuanbi2;bixiu2,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2026-CY-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-ERMO-Q20,非选择题,philosophy;xuanbi1,same_subq_in_multiple_books,philosophy:1 | xuanbi1:1,1,
+BJ-2026-CY-ERMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-ERMO-Q3,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-HD-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-HD-ERMO-Q20,非选择题,xuanbi1;reasoning,different_subq_split,xuanbi1:2 | reasoning:1,,
+BJ-2026-HD-ERMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-ERMO-Q2,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-HD-ERMO-Q4,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-HD-ERMO-Q11,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-HD-ERMO-Q18,非选择题,xuanbi2;mind,whole_question_ref_overlaps,xuanbi2:整题 | mind:1,,xuanbi2
+BJ-2026-SJS-ERMO-Q17,非选择题,philosophy;mind;bixiu3,different_subq_split,philosophy:3 | mind:2 | bixiu3:1,,
+BJ-2026-SJS-ERMO-Q20,非选择题,philosophy;culture;bixiu2,whole_question_ref_overlaps,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-SJS-ERMO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-SJS-ERMO-Q2,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2026-SJS-ERMO-Q4,选择题,culture;bixiu2,choice_in_multiple_books,culture:整题 | bixiu2:整题,,culture;bixiu2
+BJ-2026-SJS-ERMO-Q5,选择题,culture;mind,choice_in_multiple_books,culture:整题 | mind:整题,,culture;mind
+BJ-2026-SJS-ERMO-Q9,选择题,philosophy;culture;bixiu3,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu3:整题,,philosophy;culture;bixiu3
+BJ-2026-SJS-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-XC-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-XC-ERMO-Q20,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-XC-ERMO-Q1,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-XC-ERMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-XC-ERMO-Q9,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-XC-ERMO-Q13,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-XC-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-XC-ERMO-Q18,非选择题,xuanbi2;mind;bixiu2;bixiu3,same_subq_in_multiple_books,xuanbi2:整题 | mind:4 | bixiu2:2 | bixiu3:2/3,2,xuanbi2
+BJ-2026-SY-ERMO-Q18,非选择题,xuanbi2;mind;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | mind:1 | bixiu3:2,,xuanbi2
+BJ-2026-SY-ERMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-SY-ERMO-Q1,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SY-ERMO-Q6,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-SY-ERMO-Q8,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-SY-ERMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SY-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SY-ERMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-QIMO-Q2,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-DC-QIMO-Q17,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2026-DC-QIMO-Q5,选择题,philosophy;bixiu2,choice_in_multiple_books,philosophy:整题 | bixiu2:整题,,philosophy;bixiu2
+BJ-2026-DC-QIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-DC-QIMO-Q8,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-DC-QIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-FT-QIMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-QIMO-Q2,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-FT-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-FT-QIMO-Q17,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-FT-QIMO-Q18,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2026-FT-QIMO-Q22,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-FT-QIMO-Q8,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-FT-QIMO-Q11,选择题,culture;xuanbi2;bixiu2,choice_in_multiple_books,culture:整题 | xuanbi2:整题 | bixiu2:整题,,culture;xuanbi2;bixiu2
+BJ-2026-CY-QIZHONG-Q17,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-QIZHONG-Q19,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-QIZHONG-Q21,非选择题,culture;mind;bixiu2,same_subq_in_multiple_books,culture:1 | mind:2 | bixiu2:1,1,
+BJ-2026-CY-QIZHONG-Q4,选择题,philosophy;xuanbi1,choice_in_multiple_books,philosophy:整题 | xuanbi1:整题,,philosophy;xuanbi1
+BJ-2026-CY-QIZHONG-Q3,选择题,philosophy;xuanbi1,choice_in_multiple_books,philosophy:整题 | xuanbi1:整题,,philosophy;xuanbi1
+BJ-2026-CY-QIZHONG-Q6,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-CY-QIZHONG-Q7,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-CY-QIZHONG-Q8,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-QIZHONG-Q9,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-CY-QIZHONG-Q13,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-CY-QIZHONG-Q14,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-HD-QIZHONG-Q2,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2026-HD-QIZHONG-Q22,非选择题,philosophy;xuanbi1,different_subq_split,philosophy:2 | xuanbi1:1,,
+BJ-2026-HD-QIZHONG-Q5,选择题,culture;xuanbi1;bixiu2,choice_in_multiple_books,culture:整题 | xuanbi1:整题 | bixiu2:整题,,culture;xuanbi1;bixiu2
+BJ-2026-HD-QIZHONG-Q7,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-QIZHONG-Q9,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-HD-QIZHONG-Q13,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2026-HD-QIZHONG-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-HD-QIMO-Q17,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-QIMO-Q18,非选择题,xuanbi2;bixiu2;bixiu3,same_subq_in_multiple_books,xuanbi2:整题 | bixiu2:2 | bixiu3:2,2,xuanbi2
+BJ-2026-HD-QIMO-Q19,非选择题,xuanbi2;bixiu2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题 | bixiu3:整题,,xuanbi2;bixiu2;bixiu3
+BJ-2026-HD-QIMO-Q20,非选择题,mind;reasoning,different_subq_split,mind:2 | reasoning:1,,
+BJ-2026-HD-QIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-HD-QIMO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-QIMO-Q4,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-HD-QIMO-Q8,选择题,culture;xuanbi2,choice_in_multiple_books,culture:整题 | xuanbi2:整题,,culture;xuanbi2
+BJ-2026-HD-QIMO-Q10,选择题,xuanbi2;bixiu2,choice_in_multiple_books,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2026-XC-QIMO-Q16,非选择题,philosophy;culture,different_subq_split,philosophy:2 | culture:1,,
+BJ-2026-XC-QIMO-Q17,非选择题,xuanbi2;bixiu3,whole_question_ref_overlaps,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2026-XC-QIMO-Q19,非选择题,reasoning;bixiu2,different_subq_split,reasoning:2 | bixiu2:1,,
+BJ-2026-XC-QIMO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2026-XC-QIMO-Q1,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-XC-QIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-TZ-QIMO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-TZ-QIMO-Q3,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-TZ-QIMO-Q19,非选择题,xuanbi2;reasoning,whole_question_ref_overlaps,xuanbi2:整题 | reasoning:2,,xuanbi2
+BJ-2026-TZ-QIMO-Q21,非选择题,philosophy;bixiu2;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu2:整题 | bixiu3:整题,,philosophy;bixiu2;bixiu3
+BJ-2026-TZ-QIMO-Q5,选择题,philosophy;mind;bixiu3,choice_in_multiple_books,philosophy:整题 | mind:整题 | bixiu3:整题,,philosophy;mind;bixiu3
+BJ-2026-TZ-QIMO-Q8,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2026-TZ-QIMO-Q9,选择题,philosophy;mind;bixiu2,choice_in_multiple_books,philosophy:整题 | mind:整题 | bixiu2:整题,,philosophy;mind;bixiu2
+BJ-2026-TZ-QIMO-Q11,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2026-TZ-QIMO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-TZ-QIMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-SJS-QIMO-Q5,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-BJ-GAOKAO-Q1,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-BJ-GAOKAO-Q2,选择题,philosophy;bixiu3,choice_in_multiple_books,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2024-BJ-GAOKAO-Q3,选择题,philosophy;culture,choice_in_multiple_books,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-BJ-GAOKAO-Q4,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2024-BJ-GAOKAO-Q5,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2024-BJ-GAOKAO-Q15,选择题,culture;xuanbi1,choice_in_multiple_books,culture:整题 | xuanbi1:整题,,culture;xuanbi1
+BJ-2024-BJ-GAOKAO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2024-BJ-GAOKAO-Q18,非选择题,reasoning;bixiu2,different_subq_split,reasoning:1 | bixiu2:2,,
+BJ-2024-BJ-GAOKAO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2024-BJ-GAOKAO-Q20,非选择题,xuanbi1;bixiu2,whole_question_ref_overlaps,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2024-BJ-GAOKAO-Q21,非选择题,philosophy;bixiu3,whole_question_ref_overlaps,philosophy:整题 | bixiu3:整题,,philosophy;bixiu3
+BJ-2025-BJ-GAOKAO-Q16,非选择题,philosophy;culture,whole_question_ref_overlaps,philosophy:整题 | culture:整题,,philosophy;culture
+BJ-2025-BJ-GAOKAO-Q18,非选择题,xuanbi2;mind,whole_question_ref_overlaps,xuanbi2:整题 | mind:2,,xuanbi2
+BJ-2025-BJ-GAOKAO-Q21,非选择题,bixiu2;bixiu3,whole_question_ref_overlaps,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-BJ-GAOKAO-Q2,选择题,philosophy;mind,choice_in_multiple_books,philosophy:整题 | mind:整题,,philosophy;mind
+BJ-2025-BJ-GAOKAO-Q3,选择题,culture;reasoning,choice_in_multiple_books,culture:整题 | reasoning:整题,,culture;reasoning
+BJ-2025-BJ-GAOKAO-Q6,选择题,philosophy;reasoning,choice_in_multiple_books,philosophy:整题 | reasoning:整题,,philosophy;reasoning
+BJ-2025-BJ-GAOKAO-Q9,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2025-BJ-GAOKAO-Q14,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2025-BJ-GAOKAO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2026-BJ-GAOKAO-Q7,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2026-BJ-GAOKAO-Q18,非选择题,reasoning;bixiu2;bixiu3,same_subq_in_multiple_books,reasoning:1 | bixiu2:2 | bixiu3:2,2,
+BJ-2026-BJ-GAOKAO-Q19,非选择题,xuanbi2;bixiu2,whole_question_ref_overlaps,xuanbi2:整题 | bixiu2:整题,,xuanbi2;bixiu2
+BJ-2026-BJ-GAOKAO-Q6,选择题,mind;reasoning,choice_in_multiple_books,mind:整题 | reasoning:整题,,mind;reasoning
+BJ-2024-XC-ERMO-Q4,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3
+BJ-2024-XC-ERMO-Q15,选择题,culture;mind,choice_in_multiple_books,culture:整题 | mind:整题,,culture;mind
+BJ-2024-XC-YIMO-Q5,选择题,xuanbi2;bixiu3,choice_in_multiple_books,xuanbi2:整题 | bixiu3:整题,,xuanbi2;bixiu3
+BJ-2024-SY-ERMO-Q20,非选择题,philosophy;bixiu3,same_subq_in_multiple_books,philosophy:2 | bixiu3:2,2,
+BJ-2024-SY-ERMO-Q2,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2024-SY-ERMO-Q3,选择题,philosophy;culture;mind;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题 | bixiu2:整题,,philosophy;culture;mind;bixiu2
+BJ-2024-SY-ERMO-Q5,选择题,philosophy;culture;mind,choice_in_multiple_books,philosophy:整题 | culture:整题 | mind:整题,,philosophy;culture;mind
+BJ-2024-SY-ERMO-Q9,选择题,xuanbi1;bixiu3,choice_in_multiple_books,xuanbi1:整题 | bixiu3:整题,,xuanbi1;bixiu3
+BJ-2026-FS-ERMO-Q4,选择题,philosophy;culture;bixiu2,choice_in_multiple_books,philosophy:整题 | culture:整题 | bixiu2:整题,,philosophy;culture;bixiu2
+BJ-2026-FS-ERMO-Q9,选择题,culture;bixiu3,choice_in_multiple_books,culture:整题 | bixiu3:整题,,culture;bixiu3
+BJ-2026-FS-ERMO-Q15,选择题,xuanbi1;bixiu2,choice_in_multiple_books,xuanbi1:整题 | bixiu2:整题,,xuanbi1;bixiu2
+BJ-2023-HD-YIMO-Q12,选择题,bixiu2;bixiu3,choice_in_multiple_books,bixiu2:整题 | bixiu3:整题,,bixiu2;bixiu3

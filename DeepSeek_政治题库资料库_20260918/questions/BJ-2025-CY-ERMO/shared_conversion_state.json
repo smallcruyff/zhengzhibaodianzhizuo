@@ -1,0 +1,92 @@
+{
+  "schema_version": "shared-conversion-state.v2",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": 100,
+  "source_pages": {
+    "paper": 10,
+    "supplement_scan": 6,
+    "docx_readable_witness": 22
+  },
+  "page_details": {
+    "word_native_pages": 12,
+    "derived_readable_pages": 22,
+    "derived_p022": "border_only_residual_not_native_word_page_22"
+  },
+  "question_hashes": {
+    "BJ-2025-CY-ERMO-Q1": "924484b2169c8593c841a6029de9b3d556f822a6c23485688b2967e777978939",
+    "BJ-2025-CY-ERMO-Q2": "834dd295fcae672d5a9dbef3f92406d0d87be242a79188b10401da7f7b56621d",
+    "BJ-2025-CY-ERMO-Q3": "adc8ad62375249d8a545de56bb739a9c8de5a808fcd368cdeb621f6006161341",
+    "BJ-2025-CY-ERMO-Q4": "97554bca260298efdb23d6f94342ed38ed23c929af05515d8dc8cf17ef456e23",
+    "BJ-2025-CY-ERMO-Q5": "f8f2a823f7be8ef4ecde95006254328fc22298a29c37ff1d751b5bca822ebb1f",
+    "BJ-2025-CY-ERMO-Q6": "4882ddaf97e5b63c20e3abb5f57091a0f72a724f12c34fb1138215602ea04933",
+    "BJ-2025-CY-ERMO-Q7": "0c56230931242e56ef4d6d6bb4e45b31295354f68c6c4d2862d96fc75c2e8914",
+    "BJ-2025-CY-ERMO-Q8": "200e2498b4374e54c1031d8bb96ad9f6e7719369ed21aa3f1875724344a5ca8c",
+    "BJ-2025-CY-ERMO-Q9": "9fb31f36bd8b438eb81228d7e8068da054d971d34a9608eaf88d257b1c768853",
+    "BJ-2025-CY-ERMO-Q10": "5db6be02522c47ed469aefe62abcd15742671de380c14a3238aecbd45e93c80f",
+    "BJ-2025-CY-ERMO-Q11": "db78670538d7101520b41f830a81f05a94aef60bc1a84bcd2e687b4f829bf805",
+    "BJ-2025-CY-ERMO-Q12": "ab2665efb500c453b08186901064137d9bbb0e1291e0410fc5944e7566e61902",
+    "BJ-2025-CY-ERMO-Q13": "fee6774a30012bd66743c7d616b127c15d92d08325023319244be7363d3352a1",
+    "BJ-2025-CY-ERMO-Q14": "a19943f6d81b363e8caa6fee15828cabb9f388fb95805fd8fde5f5b3d2a73665",
+    "BJ-2025-CY-ERMO-Q15": "5b4d3c534aacdaf0672afd35a43d24613e0c27da18cb3d706d2a2ad907384d9e",
+    "BJ-2025-CY-ERMO-Q16": "aa29000ca0bb26dc06e4152cd1c396e5eb11cd0f85496738b723e0a50c7ba0fc",
+    "BJ-2025-CY-ERMO-Q17": "1cc489d8bfea16f669d2933d225d597dfd2bc2a3c1a81b16d257c32c174356ac",
+    "BJ-2025-CY-ERMO-Q18": "719c1c390cc80a357eb313503ef76c5dc1639d2cb5e77f4bcbb8cf80d581b0df",
+    "BJ-2025-CY-ERMO-Q19": "05f11bab92963bbf1028c99570e73a933999eea0b8dc9a119ce563f62b3aedef",
+    "BJ-2025-CY-ERMO-Q20": "0b00b551eef12588551a1a98c10328e9c9121a1a57842c4c83861cb8f0771534",
+    "BJ-2025-CY-ERMO-Q21": "a0733f7a546c59c25dc8b286fc750a1bb4da9f4b712982de83feba23a42cb27b",
+    "BJ-2025-CY-ERMO-Q22": "9649bdebaf4c98872cfc752c29d2ec0ce18a45b8a7bb295803fd98770f8993c3"
+  },
+  "parent_question_hashes": {
+    "BJ-2025-CY-ERMO-Q1": "581b2d644fe8991bafd343f2a98b0245a7d130ad0301d743d9db1b92c8a1f3f9",
+    "BJ-2025-CY-ERMO-Q2": "4a1f378bd5714ba40ecd4bf22a08f63adfa3586286e912bfdc28272c6e26f0ae",
+    "BJ-2025-CY-ERMO-Q3": "d37e6761030892ff0e58e484ad35a3e61b84fa6666d306838755c392c0f6234a",
+    "BJ-2025-CY-ERMO-Q4": "c158700ae32e7c93572adfc7719d21e02b1337849078f726b86521bae0590fba",
+    "BJ-2025-CY-ERMO-Q5": "3eed8d0893819ee4cbd22aefe5fd50b11f0c426f2f5f7b0c9abf8e73b6273efb",
+    "BJ-2025-CY-ERMO-Q6": "65b45f7fd2b985bb195ef9e0b3fbc41e5dc793d01139bdfb8ff02868febc7db3",
+    "BJ-2025-CY-ERMO-Q7": "49f75b647431d38e0c0bc454df703cda57377a1a2740d11902f134062f2a62a0",
+    "BJ-2025-CY-ERMO-Q8": "39c570bb575119981eff61be864a663474b852cbe5abe266dca481dbe1337577",
+    "BJ-2025-CY-ERMO-Q9": "f460be3ce9adc5e4e73a9cef53e5803cc3af6dd4bde8a26af9bd20c90b6a36c5",
+    "BJ-2025-CY-ERMO-Q10": "e81dba6d0a5d4da23efd7a97a622b4c8db9a1eeb068c27378bcb93cd0f83a026",
+    "BJ-2025-CY-ERMO-Q11": "d1ee70f3e6d5c005b42bb92f3bd3b7d378adb52785a298276d653f3961862845",
+    "BJ-2025-CY-ERMO-Q12": "d389df9a0d132d14b200755e9d634c1b6f3fd073e7021d8fddf4a23a78975c61",
+    "BJ-2025-CY-ERMO-Q13": "9c45d5426e052369ab881d9975a20f1059847e3d9c43151092b7a75084673931",
+    "BJ-2025-CY-ERMO-Q14": "06b7ec4ec4aa7685debaf5a2163a4e34dee3e947c4b6164e2a87c073c82f708c",
+    "BJ-2025-CY-ERMO-Q15": "f0c213e830dce2f3e21e02bb7accc0f787a3c8ad7ea524053b09d6428278c957",
+    "BJ-2025-CY-ERMO-Q16": "e6f072182faca9617e750a6cfb17eb76edf53d0c40a0e90ddd1c6ffc183db5c3",
+    "BJ-2025-CY-ERMO-Q17": "6d56d1304f71f7aa7db41d86dc1acdf5ba7485eba43c710196e1fa7c53086914",
+    "BJ-2025-CY-ERMO-Q18": "451197020c76511f3fbc6522f1d4ca17ff0f264bedc683a722d303bf1c91f050",
+    "BJ-2025-CY-ERMO-Q19": "4c505a8b932eab32c56baf0135f4fea39398e0e94d47a45eeab4475dae5bb9eb",
+    "BJ-2025-CY-ERMO-Q20": "b4a83aba73568115eb7123c41d56b1c1bcfaaeddb127a8210366fdeddb8b3ad8",
+    "BJ-2025-CY-ERMO-Q21": "35cbe2a66ed39db7c123540669cf00bdfcfb60f60858de12a5368fa375057b48",
+    "BJ-2025-CY-ERMO-Q22": "806c85fcc8ab828be7eec099a2bb4e95086c106e7a45ddb004eabac69bc2ad14"
+  },
+  "source_ids": {
+    "paper": "S6009b3f19a33",
+    "supplement_scan": "S613f35ecb7c4",
+    "docx": "S73c36c3077dc"
+  },
+  "source_roles": {
+    "E0": "paper p1-p7",
+    "E3": "paper p8-p10 + DOCX left columns",
+    "E1": "DOCX right columns + supplement scan"
+  },
+  "primary_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2025-CY-ERMO_v2_primary_review.json",
+    "sha256": "9a0d937b805dacfd349501148452d5445fdf57e984d1a5f8727a0dbe6d270603"
+  },
+  "independent_review": {
+    "path": "后勤管理/MD全库流水线_20260921/receipts/group_2025_east/BJ-2025-CY-ERMO/canonical_post_overlay_v2_20260922/review/verification.json",
+    "sha256": "d2aa658f248240edfea2d370f8a89a9d0e8c99f3db3a5a48cb13600a919e83fc"
+  },
+  "source_limitations": [
+    "Q1-Q15无题级E1；Q16-Q22 DOCX右栏E1与补充扫描混合载体保留",
+    "Word原生12页与可读派生22页分开记录；source_pages不混算",
+    "无学生原答、批注、评分标记或实得分；学生层N/A"
+  ],
+  "conversion_unresolved": [],
+  "accepted_at": "2026-09-22T18:23:21.344285+00:00"
+}

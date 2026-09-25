@@ -1,0 +1,121 @@
+{
+ "note": "返修轮 TOP 差异的原页核对。证据等级 subagent_viewed_original（子代理渲染原件页或读 DOCX XML 看过），不是主代理核验，不得登记为 verified。名次指返修后 retro/summary.json 的 rank_dedup（首轮 TOP 里后来被修掉的误报也列出）。",
+ "retro_run": "fix/retro/summary.json（51 卷快照，转换主清单 updated_at 2026-09-24T00:15:36Z）",
+ "checks": [
+  {
+   "qid": "BJ-2024-HD-YIMO-Q3",
+   "diff": "题库漏“政”（stem）",
+   "rank_first_fix_run": 1,
+   "verdict": "误报",
+   "finding": "原件第1页左缘 x=6.6–18.6 的黑底白字页边侧标“政”，不是题面；doc2md 按渲染像素判为可见字保留，又被并进正文行。已改：页宽两侧 6% 内的短字剔除为 margin_tab 并列 residual，重跑后该条消失。",
+   "evidence": [
+    "fix/verify_hdyimo_tab.png"
+   ]
+  },
+  {
+   "qid": "BJ-2025-BJ-GAOKAO-Q18",
+   "diff": "题库“接”→原件“换”（E0 教师版题面）",
+   "rank": 3,
+   "verdict": "属实：原件笔误被题库改字",
+   "finding": "2025 高考教师版 p6 材料一第三行印“机换口为神经系统疾病患者”（脑机换口）；题库题面写“脑机接口”，该处无疑点标注。",
+   "evidence": [
+    "fix/retro/crops/BJ-2025-BJ-GAOKAO-Q18_p006_44c259.png"
+   ]
+  },
+  {
+   "qid": "BJ-2025-DC-ERMO-Q18",
+   "diff": "题库“地”→原件“的”（E1）",
+   "rank": 9,
+   "verdict": "属实：题库改了原件用字",
+   "finding": "东城二模细则 p3 印“引导学生有意识的全面辨析”；题库 E1 写“有意识地”，无标注。",
+   "evidence": [
+    "fix/retro/crops/BJ-2025-DC-ERMO-Q18_p003_d54032.png"
+   ]
+  },
+  {
+   "qid": "BJ-2023-BJ-GAOKAO-Q7",
+   "diff": "题库漏“不”（stem）",
+   "rank_first_fix_run": 23,
+   "verdict": "误报",
+   "finding": "原件是两栏推理表，文字层按栏读、题库按行读，对齐错位造成的假漏字。重跑后已不在 TOP40。",
+   "evidence": [
+    "fix/retro/crops/BJ-2023-BJ-GAOKAO-Q7_p003_9fffab.png（首轮裁图）"
+   ]
+  },
+  {
+   "qid": "BJ-2024-BJ-GAOKAO-Q10/Q11",
+   "diff": "题库“组/仲/载”→原件“维/种/裁”（E3 教师版参考解析）",
+   "rank": "22、24、28",
+   "verdict": "属实，且题库附了与原页不符的说明",
+   "finding": "该 PDF 第10页是纯文字页（无位图，嵌入 SimSun），渲染出的字形就是“任何维织或个人”“调解、种裁”“合同裁明”；题库自己的页图 questions/BJ-2024-BJ-GAOKAO/assets/Sbe05e583ba6a/pages/p010.png 同样如此。题库 Q10 第71行、Q11 第96行却写“p010原页图核读为‘组织’‘仲裁’/‘合同载明’，PDF原生文字层误识别”，与原页不符；Q10 第84—86行的 r2 小节又照录“维织”“种裁”并注原文如此，同一文件前后矛盾。",
+   "evidence": [
+    "fix/verify/gk24_p10_维织.png",
+    "fix/verify/gk24_p10_种裁.png",
+    "fix/verify/bankpage_p010_weizhi.png",
+    "fix/verify/bankpage_p010_zhongcai.png",
+    "fix/verify/bankpage_p010_caiming.png"
+   ]
+  },
+  {
+   "qid": "BJ-2024-HD-QIZHONG-Q16",
+   "diff": "题库漏“的/者/就”（答案层）",
+   "rank": "33—35",
+   "verdict": "属实：题库非逐字",
+   "finding": "细则 p8 印“（3）形式表现：给整体的表达或逻辑分（书写上，形式上标序号或者分段，文字递进，没有就扣1分）”；题库“答案层（与评分细则分层）”写成“形式表现给整体表达或逻辑分，书写上标序号或分段、文字递进，没有扣1”，漏三字并改了标点。",
+   "evidence": [
+    "fix/retro/crops/BJ-2024-HD-QIZHONG-Q16_p008_b595fc.png",
+    "fix/verify/hdqz24_q16_jiu.png"
+   ]
+  },
+  {
+   "qid": "BJ-2026-YQ-YIMO-Q20",
+   "diff": "题库漏“色”（E3 评分DOCX附载作答方向）",
+   "rank": 21,
+   "verdict": "属实：题库转写错，且附了错误说明",
+   "finding": "细则.docx 的 document.xml 中该段为“20.（9分）可从习近平新时代中国特色社会主义思想、中国式现代化……”；“中国特社会主义”只出现在评分表单元格里。题库第87行写“中国特社会主义”，第89行称“原件该处为‘中国特社会主义’，按源文保留”，与原件不符。",
+   "evidence": [
+    "DOCX XML 直读（见本轮会话命令输出）：word/document.xml 两处命中位置"
+   ]
+  },
+  {
+   "qid": "BJ-2025-FT-ERMO-Q16",
+   "diff": "题库“锔”→原件“铜”（stem）",
+   "rank": 4,
+   "verdict": "属实：原件笔误被题库改字",
+   "finding": "丰台二模 p5 印“令铜瓷点金”；题库题面写“锔瓷”。与构建者核对一致。",
+   "evidence": [
+    "fix/retro/crops/BJ-2025-FT-ERMO-Q16_p005_06b8d4.png"
+   ]
+  },
+  {
+   "qid": "BJ-2024-HD-ERMO-Q16/Q19",
+   "diff": "题库“细则”→原件“答案”（E1）",
+   "rank": "29—30",
+   "verdict": "误报（题库自拟标题）",
+   "finding": "细则.docx 原文为“16.（6分）【答案】联系是普遍的…【细则】…”；题库第63行“16.（6分）【细则】”是题库重排时拼出的小标题，不是转写错字。",
+   "evidence": [
+    "DOCX XML 直读（见本轮会话命令输出）"
+   ]
+  },
+  {
+   "qid": "BJ-2022-BJ-GAOKAO-Q15",
+   "diff": "题库漏“的”（E3）",
+   "rank_first_fix_run": 22,
+   "verdict": "误报（同一原件两处本就不同）",
+   "finding": "教师版 p5 题干印“最重要的基本要素”，p15 答案区重抄题干印“最重要基本要素”，题库照录 p15。暴露两处脚本问题并已修：doc2md 把 p15 同一行 y0 相差 0.7pt 的两段排反（改为先聚行再按 x 排）；体检只在“另一份原件”里找题库原文，现在同一原件别页原样出现也降权。重跑后已不在 TOP40。",
+   "evidence": [
+    "fix 会话命令输出：p5/p15 两处文字层"
+   ]
+  }
+ ],
+ "tally": {
+  "checked": 10,
+  "true": 6,
+  "false_positive": 4,
+  "true_breakdown": {
+   "题库转写错或非逐字（其中延庆一模 Q20 另附错误说明）": 2,
+   "原件用字被题库改动且无标注": 3,
+   "改字并附与原页不符的说明（2024 高考 Q10/Q11）": 1
+  }
+ }
+}

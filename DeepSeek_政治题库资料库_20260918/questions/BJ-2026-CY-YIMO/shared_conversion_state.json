@@ -1,0 +1,157 @@
+{
+ "exam_id": "BJ-2026-CY-YIMO",
+ "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+ "status": "accepted_for_all_available_sources",
+ "accepted": true,
+ "question_count": 21,
+ "score_total": 100,
+ "question_hashes": {
+  "BJ-2026-CY-YIMO-Q1": "5f463ab43c622e9b0b2cf040bf521ab932c8a2f9c277894b38d95d2dae0b30c2",
+  "BJ-2026-CY-YIMO-Q2": "01c979fb27255386e94824665b46111c9b655c4bf47e89e7ef437252ff458711",
+  "BJ-2026-CY-YIMO-Q3": "497d2300bdc5ea6f5166fc9ef0759a30b9bea65c10ea0de817fd6a75158c740e",
+  "BJ-2026-CY-YIMO-Q4": "908c15ae6fb422944aa986134cf37d9de00a23b0fa674a1c35f6d2a51e9cfd3e",
+  "BJ-2026-CY-YIMO-Q5": "560f10324e4912e69aa1f43b693e752576700b8e4a837e5fb776bd61c55f021c",
+  "BJ-2026-CY-YIMO-Q6": "ef1d49987295f4b145a1c38bf5cf1d3915e158acf5da4251720ad91d773cdced",
+  "BJ-2026-CY-YIMO-Q7": "2914921985556389cf1176bec1432069a15fada56a23d82ad08fc4d0b75d5121",
+  "BJ-2026-CY-YIMO-Q8": "0b878076ffca0e6eeb37478f66e2152a95936a83b1766b54c0e0f1cdd8d9622a",
+  "BJ-2026-CY-YIMO-Q9": "03b43b805d8be44bcd3effa54694f985de471d54db1cc223ed9c96c727a06e3d",
+  "BJ-2026-CY-YIMO-Q10": "e4108d5d1bd6eb398ea7d426f62f37f6c7b8f77eede2418ad5ca6da7ae9865f8",
+  "BJ-2026-CY-YIMO-Q11": "2a0965797efc36b7f7adaa40ae89930bc8e0b46960be1114bac4191f676476a1",
+  "BJ-2026-CY-YIMO-Q12": "798bddbb897306cd74652195e61e01fde5663ba72e2ac432eea2cbef33395d6c",
+  "BJ-2026-CY-YIMO-Q13": "83da05eacf1759702f377e008fc4a4384a6f3e578b4d4c2e643cbfc05c3d7ca1",
+  "BJ-2026-CY-YIMO-Q14": "ff30f88281e627793cb173277b765e7cc1958c8fd97fa2fcfa8f5f9cb92e0b43",
+  "BJ-2026-CY-YIMO-Q15": "c79aa0a306219b7a1066b505f07543043ab182c5779589ebb64c9b3a03fbe51e",
+  "BJ-2026-CY-YIMO-Q16": "2d90882e96a9012bf4f93a5c462bf0ae310111dcd4c316ba5a0ead341f7dcfa4",
+  "BJ-2026-CY-YIMO-Q17": "be71a3a8465bf2f358b9140c692eceff17e1b46ca6e685cf93f2a4e6bb2e3bec",
+  "BJ-2026-CY-YIMO-Q18": "40303ad765ee39303f86c778708ef54addb3126b6ef5ee306e82096c0408a4ce",
+  "BJ-2026-CY-YIMO-Q19": "3af2c1510688e5fbb030712f52df8b89b88caef0df7ab66f5adb19ccad5aecca",
+  "BJ-2026-CY-YIMO-Q20": "e1e3cbd81b1e7dcfa4996d99fccfcbb4358e7f11e3dd524baa2bf20589c581ff",
+  "BJ-2026-CY-YIMO-Q21": "92412186893a0a4a7baa6cb4a60404d269331d531a8f4827c8b9ca0d33dae93b"
+ },
+ "source_pages": {
+  "paper": 13,
+  "rubric_docx_or_pptx_unpaged": 0
+ },
+ "source_page_total": 13,
+ "source_roles": {
+  "paper": "S585b15124610",
+  "rubric": "S3a11db4bade2"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "无独立参考答案文件"
+ ],
+ "bounded_residual": [],
+ "review_receipts": {
+  "rounds": [
+   "r1",
+   "r2"
+  ]
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "bj-2026-cy-yimo-state1",
+   "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+   "at": "2026-09-23T01:28:42.163655+00:00"
+  },
+  {
+   "spec_id": "speed_round_20260924_r2_g7_readable_render_resolution",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "at": "2026-09-24T23:01:16.499902+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/speed_round_20260924_r2/review/controller_support_metadata_receipt.json",
+   "note": "Cleared stale active LO-render residual for Q16–Q21 after Word-native 7-page renders were merged; old render/source files retained."
+  }
+ ],
+ "source_conversion_accepted": true,
+ "accepted_at": "2026-09-23T01:30:06.122838+00:00",
+ "controller_delta_history": [
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q16",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.555969+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q16_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q16": "2d90882e96a9012bf4f93a5c462bf0ae310111dcd4c316ba5a0ead341f7dcfa4"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q17",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.616325+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q17_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q17": "be71a3a8465bf2f358b9140c692eceff17e1b46ca6e685cf93f2a4e6bb2e3bec"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q18",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.671727+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q18_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q18": "40303ad765ee39303f86c778708ef54addb3126b6ef5ee306e82096c0408a4ce"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q19",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.727315+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q19_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q19": "3af2c1510688e5fbb030712f52df8b89b88caef0df7ab66f5adb19ccad5aecca"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q20",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.782972+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q20_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q20": "e1e3cbd81b1e7dcfa4996d99fccfcbb4358e7f11e3dd524baa2bf20589c581ff"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2026_cy_yimo_q21",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.837256+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-CY-YIMO/g7_r2_bj_2026_cy_yimo_q21_merge.json",
+   "question_hashes_updated": {
+    "BJ-2026-CY-YIMO-Q21": "92412186893a0a4a7baa6cb4a60404d269331d531a8f4827c8b9ca0d33dae93b"
+   }
+  }
+ ],
+ "resolved_bounded_residual_history": [
+  {
+   "qid": "BJ-2026-CY-YIMO-Q16..Q21",
+   "location": "assets/rubric_pages/rubric-01.png 至 rubric-07.png（全部7页）",
+   "partial_reading": "沿用r1认定：页面仅可清楚辨认阿拉伯数字、标点、圈码①②③④与高亮色块位置；绝大多数中文字符因LibreOffice字体替换渲染为空白。",
+   "affects_answering": false,
+   "round": "r2",
+   "resolved_at": "2026-09-24T23:01:16.500248+00:00",
+   "resolution": "Replaced as current evidence by the 7-page Microsoft Word native PDF and readable page renders; original DOCX and old LO PNGs preserved.",
+   "resolution_evidence": {
+    "pdf": "sources/readable_word_native_20260924/细则.pdf",
+    "page_images": "assets/rubric_pages/word_native_20260924/rubric-01.png..rubric-07.png",
+    "independent_review_sha256": "ecb05a7cd70fa6c1383c3d7b4640e75c8833bc404f9fcf262804c22af1c366ba"
+   }
+  }
+ ],
+ "resolved_source_limitations_history": [
+  {
+   "note": "Q1-Q21题目MD文件的整改: r1_verify对Q1–Q21共21个target逐条verdict=pass，未提出failed items或new_defects，按任务范围（只处理failed items和new_defects）不做改动，原样继承。",
+   "superseded_by": "G7 r2 readable Word-native renders merged for Q16–Q21 on 2026-09-24."
+  }
+ ],
+ "last_controller_question_delta_round": {
+  "round_id": "speed_round_20260924_r2",
+  "gate": "G7",
+  "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "question_count": 25,
+  "affected_volumes": 7,
+  "independent_review_sha256": "ecb05a7cd70fa6c1383c3d7b4640e75c8833bc404f9fcf262804c22af1c366ba",
+  "resolved_render_residuals": [
+   "BJ-2026-CY-YIMO-Q16..Q21"
+  ],
+  "scope_note": "Question-level G7 updates merged; whole-volume content acceptance not implied."
+ }
+}

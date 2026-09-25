@@ -1,0 +1,101 @@
+{
+  "exam_id": "BJ-2026-CP-ERMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 22,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-CP-ERMO-Q1": "d35e2bb0b706735515d81666e140ffc89df91ae0c8f281433ef6917f857908a8",
+    "BJ-2026-CP-ERMO-Q2": "c3b558deba26c88c5b52dbc6c7860d0ce8b63d13fcd7b81665cf001fabf7fd8d",
+    "BJ-2026-CP-ERMO-Q3": "df20341f44316451e178a30c9b2c571833384c968b1e88db6a8003d243faaf3d",
+    "BJ-2026-CP-ERMO-Q4": "ec9f4730abe6566b92a09d6625f3304cc33847e7d48f0443badeafdcae85068f",
+    "BJ-2026-CP-ERMO-Q5": "40a33f2b21e1a61f2e3cc84c4cb4c79af3eda7b348f7c0aacebfb66b2d993da0",
+    "BJ-2026-CP-ERMO-Q6": "52dde01edb57c5b18eaa48217e61485db643295dd4cefd1087a1ea3ee6d71fd1",
+    "BJ-2026-CP-ERMO-Q7": "893443edf82fe46a28e63003ce9144cb49801468e71449a951e648a1aad2aea4",
+    "BJ-2026-CP-ERMO-Q8": "afded11c476053e21574d6f207cb1827946f1e63fd1a599ac1e2b9a7b5927d60",
+    "BJ-2026-CP-ERMO-Q9": "98f96a8cb51c0d3d001c3c1951300374328261df95544011735b09b2578eb426",
+    "BJ-2026-CP-ERMO-Q10": "1a1351efc6d35c07cce34a579474f620c4bea86c55cc7ed37a5a1c39f91719c8",
+    "BJ-2026-CP-ERMO-Q11": "07aaaf51266d0ae2d620b6b3b805d90b10b42c3029309cbded29fe47af77682b",
+    "BJ-2026-CP-ERMO-Q12": "98b25a921363185a547cf5aa5e1a40385a9f7b4e415a113c485bd3a2d12b0a22",
+    "BJ-2026-CP-ERMO-Q13": "a4994565b5d71bac04884beda870a3d398e478facf1b51e4c93be8576b5e9231",
+    "BJ-2026-CP-ERMO-Q14": "779a795e20fd581fad4f878d17faee0e10cf26c1b8dc63b88e7fa037027e9c95",
+    "BJ-2026-CP-ERMO-Q15": "361b7a2e6c0e24b1c19eeef4fe678313174bec4fb9ab8036d06c3212d33eff52",
+    "BJ-2026-CP-ERMO-Q16": "cb9eddf1bbc6252858c35a92e6e28fa31d9f728184ebabc192708019e5994a1f",
+    "BJ-2026-CP-ERMO-Q17": "df1fed9e17cab007c39718aefae3ee9fe590601621a150217e1ddad6d92d2ace",
+    "BJ-2026-CP-ERMO-Q18": "7814df4eab2081524f82a166d233d87f3565bd35b415fa3e93d1b2324c7d7c38",
+    "BJ-2026-CP-ERMO-Q19": "13221fb71fff402219e3cf7e04aec766f13d3568385b6c1171fbf41ab4911cdc",
+    "BJ-2026-CP-ERMO-Q20": "1dd3db3deacb1e5d6f8f312ba6a59a4a26a00605c92c72ea84c5299384c9ca2c",
+    "BJ-2026-CP-ERMO-Q21": "63d06ee8b7c8c2e7df9280bc5b12209205cc9a234fa84b6a17dbf1ef8534bbe1",
+    "BJ-2026-CP-ERMO-Q22": "c664d42fe3d091cae496808b3fc580198b8d81ede1ec9a4778cbc633e7ec55f1"
+  },
+  "source_pages": {
+    "teacher_docx_or_pptx_unpaged": 0,
+    "rubric": 4
+  },
+  "source_page_total": 4,
+  "source_roles": {
+    "teacher": "Sa2a7be6c86bb",
+    "rubric": "S0f4a908828b8"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "缺原卷来源",
+    "无独立参考答案文件",
+    "E0(独立原卷): conversion_manifest.json exceptions登记'缺原卷来源'；本卷仅提供教师版DOCX与评分标准PDF两种来源，未见独立原卷扫描件或PDF",
+    "学生层(原答/批注/实得分): 教师版DOCX 10/10页、评分标准PDF 4/4页全部经本工位独立打开查看，未发现学生答卷、阅卷批注或PPT讲评页",
+    "E1(Q1-Q15选择题正式细则): 评分标准PDF仅含Q16-Q22非选择题的评分细则，选择题以教师版内嵌答案表(E3)为准，正式评分材料对选择题无逐题细则",
+    "教师版DOCX为16页（私有字体可读渲染）；题级“来源定位”中的教师版页码沿用早期10页框架，仅供粗略定位"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q1",
+      "location": "image2(西藏自治区成立六十周年邮票)蓝色标题条第二行整行藏文",
+      "partial_reading": "确认为藏文字符且非空白，无法逐字符可靠转写",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "Q1",
+      "location": "image4(北京中轴线邮票)左上红色文字下方及左侧的棕色多列竖排小字",
+      "partial_reading": "确有多行汉字但字形严重缩小模糊，本工位放大14倍后可辨认部分独立文字如'天安门''世界文化遗产'等已转写部分，其余说明性文字仍不可逐字确认",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "Q1",
+      "location": "image1/image2/image3左下发行标记连字符'2025-'后的字符",
+      "partial_reading": "'2025-'确认可见，连字符后字符本工位与旧组独立复核均无法在现有像素下可靠确认",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "Q16",
+      "location": "image10右上体块图右侧色标/图例区域文字",
+      "partial_reading": "色块本身(浅黄-浅绿渐变+红色短划线符号)清晰可辨，旁注文字未见任何可辨字符——本工位独立裁图6倍放大后确认该区域实际近乎空白，非'字迹模糊'而是原图该处literal无印刷文字或文字对比度趋近于零",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "Q16",
+      "location": "image10右下实景照片右侧红色门面细部",
+      "partial_reading": "确认为红色悬挂织物/类似灯笼的图形，本工位10倍放大后仍未见可辨汉字或字母",
+      "affects_answering": false,
+      "round": "r1"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-cp-ermo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:28:42.219036+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:30:06.122838+00:00"
+}

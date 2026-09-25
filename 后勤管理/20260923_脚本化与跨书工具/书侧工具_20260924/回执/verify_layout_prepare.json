@@ -1,0 +1,97 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "repair --toc 不核对 PDF 是否同版：丢掉了 bh.check_toc_pdf 里的“链接行数=目录条目数”和“落页上能找到标题(on_page)”两道闸，还保留了按下标兜底配对。传入旧版或别册 PDF 时照样回填，退出 0，报告里 blocked=0。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t5（B3_04 + 第51批 PDF / B2_230 PDF）→ B3_51_stale：exit 0，changes toc=30，blocked=0，其中 14 条与真实 B3_52 页码不同；bh.check_toc_pdf 对同一对输入判 FAIL：页码不同 30、落页找不到标题 3。B2_wrong_book：exit 0，changes toc=30，30 条全错；bh 判 FAIL：链接行数≠条目数 1、落页找不到标题 32。输出：/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/out/t5_*.json",
+   "fix": "toc_pdf_dests 同时返回 on_page 与 links/ents 数；下列任一情况出现就整批 Abort(2)，不写输出：条数不等、任一条未配对或靠下标兜底、任一条 on_page 为假。写后用同一 PDF 对输出重跑 bh.check_toc_docx/check_toc_pdf，“目录页码与 PDF 链接落页不同”应为 0。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "冻结册可以绕过：repair 只看 --profile 指到的配置是否 frozen，没有用 detect_profile(docx) 反查输入属于哪本书。给必修二送印稿传 --profile bixiu3，工具照常写出，退出 0，还按必修三规则把 63 个考法标题改成“（0题）”，另改了 42 处编号。守卫也允许把这份输出写进必修三的 协作/候选/<谁>/<批次>/构建/。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t7 → detect_profile(B2_230)=bixiu2；repair --docx B2_230 --profile bixiu3 --numbering --method-counts --keepnext --out $V/out/t7_b2_as_b3.docx：exit 0，changes numbering 42、method_counts 63（例：para 72『考法1　制度、政策与公共条件支撑创新（14题）』claimed 14→actual 0）；dl.guard_write(必修三…/第52批_意见修改_20260923/构建/__verify_never_written__.docx, bixiu3, inputs=[B2_230]) 返回 ALLOWED（只调用守卫，未写）。对照：不带 --profile、或用真实 bixiu2.json 路径时，均为 exit 3。",
+   "fix": "repair 时始终执行 detect_profile(docx)：命中已登记的冻结册就 exit 3，与 --profile 无关。只有两个条件同时满足才放行：--profile 是未登记的配置文件路径；--out 落在系统临时目录（即规格允许的测试副本）。detect 出的书与 --profile 不一致时 exit 2。另外，考法实际题数算出 0、或编号改动占标题总数比例异常高时，列入 blocked 并判失败。"
+  },
+  {
+   "severity": "major",
+   "desc": "目录缓存页码节点的定位没有交叉核对：toc_page_nodes 取的是段内唯一一个“落在 hyperlink/fldSimple 内、整段是数字”的 w:t，不核对它的值是否等于 toc_entries 读出的 cached，写后也不重读核对。若页码在超链接之外，而标签里恰有一个独立的数字 run，工具会改掉标签数字，页码原样不动，退出 0。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t6（B3_04 第 7 段合成：标签前加独立 run『2』、页码域移到超链接外并改为 9）→ exit 0；changes toc 为 {para 7, old '2', new '4'}；输出文字为『4一、三统一：…\\t9』，标签被改，页码仍是错的 9。真实两册的目录结构不触发：toc_peek.py 显示 B3_04 32 条、B2_230 36 条的节点值都等于 cached。",
+   "fix": "只接受 len(nodes)==1 且 int(node.text)==e['cached'] 的节点，否则记 blocked 并判失败。写后重读输出，逐条核对 toc_entries 的 cached 是否等于 dest。按 toc.mode 分别定位：pageref_in_hyperlink 取 PAGEREF 域 separate 与 end 之间的结果；hyperlink_static 取 fldSimple 内或末尾的数字。"
+  },
+  {
+   "severity": "major",
+   "desc": "“未点名段落未动”的核对形同虚设：do_repair 第 446 行调用 dl.unchanged_paragraphs(d.paras, d.paras, touched, touched)，拿同一份改后元素表自己比自己，永远不会报差异，规格第 3 条要求的证明没有真正执行。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t2：用猴子补丁让 set_keep_next_true 同时改掉下一段文字，然后在进程内跑 lp.main(repair --keepnext)，结果 exit 0；输出里 5 个未点名段落的文字被改，守卫没有中止。对照：/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t9 用原稿与输出各自解析做的真比对，未点名段落改动 0 处，说明现有代码目前没有越界改动，只是这道守卫起不到作用。",
+   "fix": "打开时保留原始 document.xml 的独立副本，例如 etree.fromstring(d.doc_xml_orig)，从中取 before_paras；写前用 unchanged_paragraphs(before_paras, d.paras, touched, touched) 比对；再对写出的文件重新解析，做同样的比对。"
+  },
+  {
+   "severity": "major",
+   "desc": "失败时会留下半成品：DOCX 先由 write_docx 写出，之后才检查 --report 路径和跑 --health。报告路径被拒（exit 3）或体检出现新 FAIL（exit 1）时，输出 DOCX 仍留在磁盘上，违反规格第 4 条“任何一条校验失败→整批中止、不留输出文件”。用同一个 --report 路径重跑时，因为目标“不是 batch_health 报告”而被拒，也会触发这个问题。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t3 → --report x.txt：exit 3，t3_half.docx 已存在；--report 指向已存在的非体检 json：exit 3，t3_half2.docx 已存在。/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t4 → --health 且编号门仍 FAIL：exit 1，t4_out_health.docx 已存在。",
+   "fix": "所有输出路径（--out、--report）在写任何文件之前统一过守卫。DOCX 先写到临时文件，体检和后置条件全部通过后再 os.replace 到目标；任一失败就删除临时文件，目标不出现。"
+  },
+  {
+   "severity": "major",
+   "desc": "定位被跳过（blocked）不算失败，写后后置条件也只在可选的 --health 下才核：某个标题因 w:t 坐标与判定文字不一致（例如段尾有空格 run 或零宽字符）而跳过时，repair 退出 0，输出的编号门仍是 FAIL。blocked 的原因也写错了，一律写成“段内含 w:tab/w:sym”。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t4（B3_52 第 231 段『例题 11』号 +7，段尾加一个只含空格的 run）→ 不带 --health：exit 0，changes numbering=0，blocked=[{para 231, reason '段内含 w:tab/w:sym…'}]，对输出跑 bh.check_numbering 得 FAIL 1；带 --health：exit 1，但输出已写出。",
+   "fix": "blocked 非空时视为校验失败：exit 1 或 2，不留输出（或加显式 --allow-blocked 才放行）。写后始终对输出重跑被点名的门（numbering、method_counts、keepnext、toc），不要依赖可选的 --health。w:t 坐标系应与 read_docx 同样做 strip 和去零宽字符，或按实际原因写 reason。"
+  },
+  {
+   "severity": "major",
+   "desc": "check 与 repair 口径不一致，check 少报会误导主代理：①check 不检查 pagination.keep_next_labels（【思维链条】【答案落点】），repair --keepnext 却会补；②check 的编号门沿用 bh 的棘轮口径，一段连续错号只报第一处，repair 按纯序数会改全部。结果是 check 说 0 或 1 处待改，repair 实际改动成百上千处。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t1 → B3_03 check 的 gate_counts：numbering FAIL 251、keepnext 无；repair 实际改 numbering 344、keepnext 284。B3_52 去掉 5 个标签行 keepNext 后，check 的 keepnext 门为 0，只剩既有的 toc 1 条；repair --keepnext 改了 5 处。/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t10（一节 11 个编号整体 +1）→ check 的 numbering 只有 FAIL 1，repair 改 11 处，输出 SHA 与 B3_52 相同。",
+   "fix": "check 用 repair 同一套计划函数（true_numbering 差异、标签行 keepNext、目录 dest 差异）列出“本工具可改的待办”，逐条给出段号、旧值、新值；bh 的门结果另列一节作参考。pending 以可改待办计数。"
+  },
+  {
+   "severity": "minor",
+   "desc": "规格③要求 B3_52+PDF check 为 0 待改，实际是 exit 1，pending=1，来自既有的 toc『PAGEREF 目标与超链接锚点不一致』（c50_h000/r45_h001）。这条不在本工具修复范围内，但 check 没有区分“可修”与“不可修”。repair --toc 碰到这类条目时，也不提示更新域后页码会跟着 PAGEREF 回退。",
+   "evidence": "builder_rerun/check_b352.json：gate_counts {toc:{FAIL:1}}，findings[0].rule='PAGEREF 目标与超链接锚点不一致' para 6；与 bh.run_health 的 toc 门一致（复跑编写者测试 10/10 PASS）。",
+   "fix": "报告分 repairable 和 other 两类，退出码只看 repairable（或另设标志）。repair --toc 对 pageref≠anchor 的条目给出 WARN。"
+  },
+  {
+   "severity": "minor",
+   "desc": "数字跨 run 时，新数字整体写进第一个 run，后面各 run 的 w:t 清空，只有第一位的格式留下来（例：『1』普通、『2』下划线，改成 13 后下划线丢失）。规格要求“数字跨 run 时保持 run 格式”，这里只保留了首段格式。",
+   "evidence": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/extra.py：replace_span(<例题 |1|2(u)|　某某>, 3,5,'13') → [('例题 13', no rPr), ('', u), ('　某某', no rPr)]",
+   "fix": "新旧位数相同时按位分配回原节点；位数不同时把多出或缺少的位并入最后一个数字节点，并在报告中注明。"
+  },
+  {
+   "severity": "minor",
+   "desc": "keepNext 链长防护偏弱：判断条件是“新链长 > 上限 且 > 改前全书最长链”，只要全书已有一条更长的链，任何局部新链都能超过 20。pagination.max_keep_next_chain(20) 和 keep_next_labels 是代码内默认值，没有登记进配置；keep_next_labels 的默认值会作用到所有书（包括哲学、选必等），不只必修三。",
+   "evidence": "layout_prepare.py 第 410 行：`max(after_lens) > max_chain and max(after_lens) > (max(before_lens) …)`；第 395 行 labels 默认值不区分书册。",
+   "fix": "改为比较受影响的那条链改前、改后的长度；新字段登记进 profiles 后，未配置时不启用标签规则（或只对 bixiu3 生效）。"
+  },
+  {
+   "severity": "minor",
+   "desc": "页码位数变化只在报告的 digits_changed 里标记，终端没有提示，退出码也不体现，规格要求的是“警告需重渲”。toc.mode 与 footer.page_offset 两个配置项工具都不读（现有两册 offset 都是 0；t13 已证实 B2 的 hyperlink_static 目录用同一个定位函数就能正确往返）。",
+   "evidence": "layout_prepare.py 第 443–444 行只写进 changes；grep 'page_offset\\|toc.mode' 在工具中只出现在注释里。/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py t13：B2 临时 frozen=false 副本，打乱 5 条目录页码，repair 后 document.xml C14N 与 B2_230 一致，SHA 相同。",
+   "fix": "digits_changed 为真时在 stderr 打出 WARN 并写入报告顶层 needs_rerender。读取 footer.page_offset 换算页码（为 0 时行为不变）。"
+  },
+  {
+   "severity": "minor",
+   "desc": "报告守卫沿用 bh._unsafe_out，会覆盖已有的 batch_health 体检报告；自己的 layout_prepare 报告却不能覆盖，同一路径重跑直接 exit 3（repair 时还会叠加上面的半成品问题）。--expect-sha 可以不给，不给时不核父稿 SHA。",
+   "evidence": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/extra.py：先写一个含 \"name\": \"batch_health\" 的假报告，再 check --report 指向它 → exit 1，原内容被覆盖；对同一路径重跑 check 报告 → exit 3『目标已存在且不是 batch_health 报告』。",
+   "fix": "报告守卫只允许覆盖本工具自己的报告（tool.name=='layout_prepare'），不覆盖 batch_health 报告。repair 默认要求 --expect-sha，或在报告里写 parent_sha_checked=false 并在终端提示。"
+  }
+ ],
+ "checked": [
+  "复跑编写者测试（复制到 layout_prepare_verify/builder_rerun/ 运行）：10/10 PASS，与回执一致。①B3_03 repair 输出 SHA 与 B3_04 相同（编号 344、keepNext 284）；②B3_04 --toc 输出 SHA 与 B3_52 相同（30 处）；④B2_230 check 0 待改，与 book_incremental inspect 的 71 个分类一致，repair 拒绝 exit 3；⑤合成打乱可恢复；⑥负例均按预期。",
+  "金标准差异：①②都是逐字节一致，没有需要逐处解释的差异。③实际有 1 个 FAIL（既有锚点问题，见 minor）。",
+  "T1 check/repair 口径（B3_03；B3_52 去 5 个标签行 keepNext）",
+  "T2 unchanged_paragraphs 自比自（猴子补丁越界改动）",
+  "T3 报告被拒/已存在时留下半成品",
+  "T4 blocked 静默与 --health 失败后留下输出",
+  "T5 旧版/别册 PDF 做目录回填（B3_51 PDF、B2_230 PDF）",
+  "T6 目录标签独立数字 run + 页码在超链接外",
+  "T7 冻结册绕过：--profile bixiu3 处理 B2_230（输出写临时目录）；guard_write 对必修三构建目录的放行只调用守卫、未写；临时 frozen=false 副本写必修二工作区/必修二审阅入口/必修三审阅入口/中央状态目录，均被拒",
+  "T8 符号链接逃逸：目录链接指向审阅入口、悬空链接指向工作区、文件链接指向真实 B3_52、输入经链接等于输出、报告链接指向审阅入口，均 exit 3，未写出",
+  "T9 编号跨 run、表格内形似例题的段落（B3_52 中 0 个）；按原稿独立解析做真比对，未点名段落改动 0",
+  "T10 整节编号平移 11 处：repair 全部恢复，SHA 与 B3_52 相同；check 只报 1 处",
+  "T11 畸形输入：非 zip、缺 document.xml、文件缺失、配置名错误、临时副本无配置、后缀错误、目录不存在、toc-pdf 缺失，均 exit 2 或 3，不留输出",
+  "T12 幂等：B3_52 四项全开，0 改动，输出 SHA 与输入相同；B2 靠 detect_profile 判定、或用真实 bixiu2.json 路径时，均 exit 3",
+  "T13 必修二 hyperlink_static 真实目录回填往返（规格允许的临时 frozen=false 副本，输出写临时目录，测后删除）：5 处恢复，C14N 与 SHA 均和 B2_230 相同，补上了回执 known_limits 里没做的这一项",
+  "真实输入（B3_52/.pdf、B3_03、B3_04/.pdf、B2_230/.pdf、layout_prepare.py、batch_health.py、docx_lib.py）测试前后 SHA 与 mtime 未变；构建目录、rendered、目录定位、00_必修三最新审查稿、必修二修订230目录的文件列表未变；scripts/__pycache__ 未新增文件；Skill scripts/ 下没有新增或修改文件",
+  "攻击脚本：/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_verify/attack.py（参数 t1…t13）、extra.py、toc_peek.py、snap.py；结果 attack_results_*.json"
+ ],
+ "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/verify_layout_prepare.json"
+}

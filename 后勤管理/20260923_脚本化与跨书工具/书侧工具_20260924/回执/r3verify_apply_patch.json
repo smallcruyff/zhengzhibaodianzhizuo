@@ -1,0 +1,76 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "restore 的词表豁免只看了锚点区位，没有看 insert 新段真实落在哪里。锚点在 title 区时，给 source_zone='restore' 算合法。这时 insert_before 插入的新段实际落在上一例题块的教学区，工程词可以借此写进学生正文。写后区位复核遇到给了 source_zone 的 op 一律跳过（`if sz: continue`），所以这条路完全没人拦。它和上一轮 N2（restore 绕过词表）属于同一类，这次修复只堵了锚点本身就在教学区的那一半。",
+   "evidence": "r3attack.py R2：`apply --docx B3_52 --patch cases/r2_restore_insert_before_title.json --out cases/r2_out.docx`。锚点是段 1514'选择例题 2　2024顺义二模第9题'（zone=title，前一段 zone=teaching），op 为 insert_before，source_zone=restore，reason='还原原题'，新段是'本题讲解待核，暂按旧版。'。结果 rc=0。对输出重新跑 bh.walk，新段 zone=teaching，文字是'本题讲解待核，暂按旧版。'。对照：同一句用 insert_after 插到教学段 1513 后面，check rc=2，报'新文字命中禁用词表 工程标签:待核（段号 1513）'。结果见 r3attack_results_all.json。",
+   "fix": "restore 豁免改为同时满足三个条件：锚点在 source/title 区；op 不是 insert，或者 insert 的新段写后重新 walk 仍在 source/title 区；source_zone=='restore'。写后复核时，凡是 restore 的 insert 新段落在 source/title 以外的，都补过一遍词表，命中就删除输出并中止。另外补一条回归用例：title 锚点 + insert_before + restore + 工程词，预期中止。"
+  },
+  {
+   "severity": "major",
+   "desc": "diff 对新插入段落的格式损失完全不报。fix3 只给插入段带上了样式名，但 _build_paragraph 对 paragraphs 里的每一段都以锚点段为模板复制 pPr（含 keepNext），rPr 取锚点第一个直接子 w:r；新稿里这段自己的 keepNext 和多 run 颜色/加粗都会被丢掉。format_changes 里查不到这些差异，format_changes_count 会让主代理以为插入段回放是保真的。03→04、04→52 两个金标准里没有插入，所以不受影响；51→52 压力测试有 1412 个插入段。",
+   "evidence": "r9_insert_fmt.py（合成）：在 B3_52 段 229 后插入一段带 keepNext 的段落，由两个 run 组成：'纠正：' 用 FF0000 加粗，后接黑色正文。diff 只生成 1 条 insert_after，paragraphs 为 [{text:'纠正：这是一段新增的教学说明。', style:'答案落点'}]，format_changes=[]。apply rc=0，回放出来的新段 keepNext=false（目标为 true），只有 1 个 run，color=000000，bold=false（目标是 FF0000 加粗 + 黑色两个 run）。r9_count.py（51→52 真实数据）：插入段共 1412 个，其中 295 个的 keepNext 与模板锚点不同，148 个含混合 run 格式，含彩色 run 91 个。diff 报告里 format_changes=188，全部是 replace_paragraph_format，插入段 0 条。",
+   "fix": "_new_para_specs 带上目标段的 keepNext；目标段有多种 run 格式时，按 runs:[{text,color,bold}] 输出。_build_paragraph 在 spec 给出 keep_next 时覆盖模板值。做不到的，逐段写进 format_changes（kind='insert_format'），并在报告里注明覆盖范围。"
+  },
+  {
+   "severity": "minor",
+   "desc": "diff 先写 --out 补丁，后校验 --report 路径。报告被守卫拒绝时退出 3（拒绝写出），补丁却已经留在盘上，与'拒绝即不留输出'不一致。如果 --out 和 --report 只差大小写（APFS 大小写不敏感，实际是同一个文件），resolve() 比较发现不了，也会出现同样情况。",
+   "evidence": "R3：`diff --old B3_52 --new r3_small_new.docx --out cases/r3_patch.json --report cases/r3_existing_check_report.json`，后者是一份已有的 check 报告。rc=3，报'目标已存在，不覆盖'，但 patch_left_on_disk=true。大小写变体 `--out r3_case.json --report R3_CASE.JSON`：rc=3，报'输出与输入是同一个文件'，r3_case.json 已经写成补丁。",
+   "fix": "cmd_diff 在写补丁前先调用 _guard_report_path 预检 --report，与 cmd_apply 的做法一致。同路径判断改用 guard_write 的 _cf 口径或 samefile。"
+  },
+  {
+   "severity": "minor",
+   "desc": "主代理给 diff 产物补授权时，如果只加了 source_zone/allow_complex，没改 approved_by（run_tests t12 正是这样授权的），approved_by 仍以 'diff:' 开头。下一次 diff --out 写到同一路径，会把授权静默覆盖掉。",
+   "evidence": "R4：先 diff 得到 r4_patch.json，再给每条 op 补 source_zone=approved_edit、reason、allow_complex，并把 approval_ref 改成'主代理审定'。之后再次 diff --out 写同一路径，rc=0，authorization_lost=true，approval_ref 被改回'…审阅稿.docx -> r3_small_new.docx'。",
+   "fix": "_own_json 覆盖 diff 产物的条件再加两条：所有 op 都没有 source_zone/allow_complex，且 approval_ref 仍是 diff 自动生成的值。或者在文件头写明'授权时必须改 approved_by'，并让 apply 拒绝带授权字段但 approved_by 以 diff: 开头的补丁。"
+  },
+  {
+   "severity": "minor",
+   "desc": "写后自证只核对 op 的目标属性。set_keepnext 的目标段、insert 的锚点段都算作点名段，被排除在'未点名段落不变'之外，但对它们没有文字或其余 XML 不变的后置条件。实现里如果顺手改了这些段，发现不了。与 N6 同一类，范围更小。",
+   "evidence": "R6（进程内调用 ap.main，注入模拟缺陷）：apply_set_keepnext 额外在本段末尾追加'【误改本段】'，rc=0，输出段 229 结尾是'…治理格局。【误改本段】'。apply_insert 额外在锚点段首加'【锚点被误改】'，rc=0，输出锚点段为'【锚点被误改】（总体概括）…'。",
+   "fix": "set_keepnext 和 set_format 的后置条件加上'段落文字不变'；insert 的锚点段不放进 touched，让它参与 unchanged_paragraphs 的 C14N 核对。set_keepnext 可以进一步核对'只有 pPr/keepNext 变化'。"
+  },
+  {
+   "severity": "minor",
+   "desc": "insert 新段的 runs 写 bold:false 不生效。_build_paragraph 只在 bold 为真且缺 w:b 时添加，模板 rPr 里继承来的 w:b 不会移除。",
+   "evidence": "R5：锚点段 73 的首个 run 是加粗的，insert_after 的 runs 为 [{text:'不加粗的补充说明。', bold:false}]，rc=0，输出新段 run bold=[true]。",
+   "fix": "bold 为假时移除 rPr 里的 w:b（以及 w:bCs），做法与 _clone_run_with_format 相同。"
+  },
+  {
+   "severity": "minor",
+   "desc": "check 与 apply 的结论不一致。insert 的 style 名不存在、clone_from 不唯一，这些都要到 do_apply 才会报错；check 却报 status=ok（待应用），主代理会被误导。",
+   "evidence": "R7：insert_after 使用 style='根本不存在的样式XYZ'。check rc=1，summary 为 pending=1，status=['ok']；apply rc=2，报'样式名…找不到'。",
+   "fix": "check_ops 对 insert 预先解析每段的 style（_resolve_style_id）和 clone_from 的命中数。"
+  },
+  {
+   "severity": "minor",
+   "desc": "新文字首尾带空白（例如用全角空格缩进）时，para_text 会 strip() 掉，写后后置条件判为失败，只报'插入段落文字与 paragraphs 规格不符'，看不出真正原因。diff 生成的补丁用的也是去掉首尾空白的文字，所以 B3_52 里 33 个首尾带空白的段落回放后空白会丢失，报告里也不提。",
+   "evidence": "R8：insert 的 text 为 '\\u3000\\u3000首行缩进的补充段。'，apply rc=2，postcondition_failed=[{id:R8, reason:'插入段落文字与 paragraphs 规格不符'}]。probe.py：B3_52 里原始 w:t 首尾带空白的段落有 33 个（段 8652 起，如'建议一：'后面的空白）。",
+   "fix": "check_ops 直接拒绝首尾带空白的 new/text，并写明原因；或者后置条件改为比对 strip 后的文字，并在报告里注明空白被规范化。"
+  },
+  {
+   "severity": "minor",
+   "desc": "结构损失目前只在 ops_extra 里逐条给出，apply 报告顶层没有汇总，上一轮修复建议里'并给出汇总'没有落实。另外文件有 1506 行，超出规格 900 行的目标，fix3 已经自认。",
+   "evidence": "replay.py 04→52：apply 报告顶层键只有 tool/version/mode/inputs/profile/ops/ops_extra/output，没有 lost/structure 汇总字段。从 30 条 ops_extra 自行合计：彩色 run 210→30，hyperlink 30→0，field 90→0，w:tab 30→30。用 `wc -l apply_patch.py` 数得 1506 行。",
+   "fix": "报告顶层加 lost_structure_summary（各类复杂结构数、彩色 run 改前/改后）。下一轮做瘦身。"
+  },
+  {
+   "severity": "minor",
+   "desc": "交付面卫生，不属于 apply_patch.py：Skill 母版 scripts/ 下还有另一条线的审查辅助脚本 drill_tool_verify.py（03:22），主代理 sync 时会随母版一起发布。上一轮报告的 apply_patch_verify.py 和 publish_review_verify.py 已经移走。",
+   "evidence": "ls -la ~/.codex/skills/beijing-gaokao-politics/scripts/drill_tool_verify.py 的输出：-rw-r--r-- 22649 Sep 24 03:22。",
+   "fix": "主代理 sync 前把它移到 后勤管理/…/测试/审查者辅助脚本/（本复审没有移动它）。"
+  }
+ ],
+ "checked": [
+  "上一轮 6 条 major 都用原始证据命令复现过，全部修好，而且改的是代码，不只是测试。(1) 题面区插入复核：old_verify.py C12b 现在 rc=2，报'题面零改写复核不通过，已删除输出'。old_attack.py N1 rc=2，不留输出。N1b 的非法 source_zone 在 check 阶段就被拒。N8 的双插入不再误拦（rc=0，zone_leak=null）。(2) 覆盖守卫：N3 用 --report 指向补丁本身，check 和 apply 都 rc=3，补丁未变；N4 diff --out 指向已批准补丁 rc=3，approved_by 仍是 claude:主代理会话；--out 与 --report 同路径 rc=2。(3) restore 绕过：N2 教学区给 restore 后 rc=2，报'命中禁用词表 工程标签:待核'。(4) 基线：N6 注入'顺手改下一段'后 rc=2，不留输出，基线确实来自 d.doc_xml_orig 的独立解析。(5) diff 格式：N5 中 pStyle 变化进入 format_changes（kind=pStyle），replace 段的 keepNext 变化记为 replace_paragraph_format，空段 keepNext 进入 unanchorable，不再挡住整份补丁（apply rc=0）。(6) 结构损失：04→52 重放后首个文字 run 取自 hyperlink 内，颜色保留（彩色 run 损失从 210 降到 180，且 180 与 ops_extra 改前/改后之差一致）；tab 写成 w:tab，字面 tab 为 0。",
+  "上一轮 3 条 minor 也已修好：C13 中拆成两个 run 的'待核'在 check 阶段就 rc=2；C21 报'缺少字段 \"new\"（replace_text 必填）'；t8 在 --health 异常时删除输出。old_verify.py 其余旧用例（C01/C03/C04–C07/C08/C09/C10/C11/C14/C15/C16/C17/C19/C19b/C22）结论全部为 ok。C02 只调用了 guard_write 库本身，工具层由 _own_json 收紧。",
+  "金标准重跑（replay.py，输出在 replay/）：03→04 共 628 条 op（344 条 replace_paragraph、284 条 set_keepnext），apply 10.7 秒，rc=0，文字流逐段一致，keepNext 与 pStyle 不一致均为 0，C14N 有 40 段不同（与上一轮相同，都是 lastRenderedPageBreak 缓存）。04→52 共 30 条 op，apply 5.2 秒，rc=0，文字流逐段一致，keepNext/pStyle 不一致为 0，hyperlink 32→2、彩色 run 15279→15099，这些都在 ops_extra 里逐条可见。51→52 压力测试共 1652 条 op，仍在 D0859（表格单元格唯一段）中止，与上一轮一致；format_changes 共 188 条，全部是 replace_paragraph_format。",
+  "新攻击用例共 10 个（r3attack.py 的 R1–R8、r1c.py、r9_insert_fmt.py/r9_count.py）。其中 R1 和 R1c 把紧跟题面的【答案】/【思维链条】标签段 replace 成无标签文字，本册依靠 zone_switch（分析过程→teaching）仍判为 teaching，没有问题。R2–R9 的发现见 issues。",
+  "重跑 run_tests_apply_patch.py（复制到 $SCRATCH/booktools/apply_patch_r3verify/rerun/ 后运行，输出在 rerun/out/）：24/24 通过，03→04 回放 9.8 秒。",
+  "真实输入 B3_52、B3_03、B3_04、同版身份.json、B3_51、B2_230、04_编号与考法计数.json 以及 apply_patch.py 本身，测试前后 SHA 与 mtime 一致（snap_before.json 与 snap_after.json 用 cmp 比对相同）。scripts/__pycache__ 里的文件列表没有变化，仍是 3 个 cpython-312 旧文件。构建/ 目录的文件列表没有变化。审阅入口 00_必修三最新审查稿/ 的文件列表和各文件 mtime 没有变化，上一轮的 __verify_never_written__.json 也已不在。本轮测试期间 scripts/ 下 drill_tool.py（04:35）和 publish_review.py（04:31）被其他返修线改过，不是本复审所为。",
+  "本复审没有修改任何工具或脚本，没有运行 collab.py，没有启动子代理，也没有向其他会话发消息。辅助脚本和产物全部在 $SCRATCH/booktools/apply_patch_r3verify/。"
+ ],
+ "note": "上一轮 6 条 major、3 条 minor 都已真正修好，金标准 03→04、04→52 重跑通过，run_tests 24/24 通过。本轮没有 blocker。判 FAIL，是因为又发现 2 条 major：一是 restore 词表豁免可以经由 title 锚点的 insert_before 把工程词写进教学区；二是 diff 不报插入段的 keepNext 和 run 格式损失（51→52 中插入段 keepNext 与模板锚点不同的有 295 段、含混合 run 格式的有 148 段）。两条修起来都很小。",
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch_r3verify"
+}

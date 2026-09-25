@@ -1,0 +1,116 @@
+{
+  "exam_id": "BJ-2026-HD-QIMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-HD-QIMO-Q1": "324e0003f7df8849d2cd016009075fa9cf9bcb1483bb3cd63c5dc381c9a3e9ba",
+    "BJ-2026-HD-QIMO-Q2": "80cbe28bd8793354a2b6b8ad59f3224578b3116fe76aa29639fb4917b14b37a4",
+    "BJ-2026-HD-QIMO-Q3": "0e07c13667d4ed64522a24649bf6d3e86a315e46e6f5a7a8de83a7564ee9a467",
+    "BJ-2026-HD-QIMO-Q4": "33d0a7b765dbc57414d4380d70b0d077b8aceeaf5b429ac7aa56a961e08dd602",
+    "BJ-2026-HD-QIMO-Q5": "b28eab808d8edc8bc95d9dabc12ad2c5f7bd894adf0cd61aced423ee19015ead",
+    "BJ-2026-HD-QIMO-Q6": "7b09d88a7b50137e13c32e778f00ae90d8f285af007d1ada7b4963dadeda6a81",
+    "BJ-2026-HD-QIMO-Q7": "7e9cd95d3bc13e9f4c1db175c25ac4b1c7cac7650e99663644485f9167d33358",
+    "BJ-2026-HD-QIMO-Q8": "dc261f6cca13a1c9c261847afd5131d584a1592cf6d4f32dd9ea066bdfc70222",
+    "BJ-2026-HD-QIMO-Q9": "afb14930bd6da849015838645621784b595965a749bc5b32a56e6d21fcf9f462",
+    "BJ-2026-HD-QIMO-Q10": "82a476ffee6e220f5e8688b3add542933e7d0f61b551e931e971d2242443e138",
+    "BJ-2026-HD-QIMO-Q11": "95909ff5a857fcdd24113f4a8cf1c3f36832b735bb94a629d21ad0d14c329a50",
+    "BJ-2026-HD-QIMO-Q12": "72181cfae23242fb7eefa5e575b5a1e1282f69af912de40a08e14b103e6c2464",
+    "BJ-2026-HD-QIMO-Q13": "9e6989fef64c3c6fc9a57db13ca3e7e2deb0579846910b51b14654bcd940fe40",
+    "BJ-2026-HD-QIMO-Q14": "6f2caaa9fe9d0206018dca5226ee401acdb9d0444ac7fb79580484424279a379",
+    "BJ-2026-HD-QIMO-Q15": "55e5c822c0a3ae55719aebfdfc683c9e1a369fd6f00e9011a2ff93a40b8277f2",
+    "BJ-2026-HD-QIMO-Q16": "5919c98f1b0b19750905906be5414f826b9caaeb966140730b0f87dea18e4708",
+    "BJ-2026-HD-QIMO-Q17": "9bcdb6dff12861132a93bc9fc5b049a2cabd96dbb67a15158e91acb34ac852dc",
+    "BJ-2026-HD-QIMO-Q18": "1a69dd672eec3ce5da1d7c5e4ed1e0bab64a1fbc1b28d77a07d1c550d8633467",
+    "BJ-2026-HD-QIMO-Q19": "2a0eb15c537f040f21f7417af40d97aac022a5799917010e7e88a909c5be3440",
+    "BJ-2026-HD-QIMO-Q20": "85d499b7011de9c84c278a055358d40b039a1439b63047f9912107490dc51946",
+    "BJ-2026-HD-QIMO-Q21": "562f747a47f2a5c8b8b0ab37e5a917f6a6fe5ef0874f562e398b5abeff592917"
+  },
+  "source_pages": {
+    "paper_pdf": 10,
+    "scoring_pdf": 6
+  },
+  "source_page_total": 16,
+  "source_roles": {
+    "paper_pdf": "Sac3124113aec",
+    "scoring_pdf": "S7832041a93d3"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件：E3参考答案附在原卷PDF第9–10页；E1正式评分材料为独立评分PDF第1–6页，按E1/E3层次分别记录。",
+    "未提供独立学生答卷或教师实得分记录；评分PDF中的学生样例仅作样例保留。Q19、Q20(2)实际得分为N/A_with_basis，不由手写样例或标准答案推断。",
+    "E1学生样例Q16、Q18、Q19及Q20(2)有少数字迹不能安全辨认；相应页图、页位和可辨片段保留，不猜补。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2026-HD-QIMO-Q16",
+      "location": "E1 p1 学生原答第1/2/4–5/6–7/8–9行",
+      "partial_reading": "矛盾就是[…]；数字原住民不仅要利用网络的便捷性，信息的[…]等多处短语级空缺",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "basis": "原页图及局部读法保留；独立整卷B确认超出安全辨认阈值且未臆补，已记录样例得分8/8。"
+    },
+    {
+      "qid": "BJ-2026-HD-QIMO-Q18",
+      "location": "E1 p3 学生原答“受损/受提”末字",
+      "partial_reading": "遭到欺骗或权益受【损/提？】",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "basis": "原页图及局部读法保留；独立整卷B确认两读均不能排除，不臆补。"
+    },
+    {
+      "qid": "BJ-2026-HD-QIMO-Q19",
+      "location": "E1 p4 学生原答第3–8行大段",
+      "partial_reading": "可辨“【依/以？】反不正当竞争法规定，经营者在生产经营活动中”；“先到先得”规则/构成不正当竞争/甲公司利益/消费者合法权益等词组可辨，其余连写段落未辨清。",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "basis": "用户于2026-09-23明确裁定学生作答看不清可保留；图像及局部读法保留，不猜补、不以E3补齐、不推断实得分，N/A_with_basis。"
+    },
+    {
+      "qid": "BJ-2026-HD-QIMO-Q20",
+      "location": "E1 p6 学生原答Q20-P06-S01",
+      "partial_reading": "应用矛盾分析方法[…]；应用调查研究的方法，对当地人口构成进行调查与分析，明确居民[…]需求",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "basis": "用户于2026-09-23明确裁定学生作答看不清可保留；原图及局部读法保留，不猜补、不以E3补齐、不推断Q20(2)实得分，N/A_with_basis。"
+    }
+  ],
+  "review_receipts": {
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/controller_student_sample_ruling_r1_20260923/primary_review_accept_r2.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/r1_verify/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/codex_bank_20260923/BJ-2026-HD-QIMO/Q20_page_roles_scoped_B_20260923_01/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/controller_student_sample_ruling_r1_20260923/B_r1/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/controller_student_sample_ruling_r1_20260923/B_r1/verification.md"
+    ],
+    "user_ruling": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/user_ruling_student_samples_nonblocking_20260923/spec.json",
+      "sha256": "b3d1f609fc65572d05fe57fbe8fc935dd34998d523593996b38d51960e6016a6"
+    },
+    "merge": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/bj-2026-hd-qimo-user-student-residual-ruling-r1_merge.json",
+      "sha256": "97e6902837d33e6521aa156e28c2cc67b8b74e365fd864731d16c6d344f0089a"
+    },
+    "original_r1_findings": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/r1/findings.json",
+      "sha256": "4fd90cca241992fe1ed128bda11d6855edb00b26d6b16f1057428a7e6e70b43c"
+    },
+    "independent_review_sha256": {
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/r1_verify/verification.json": "fa359a2b53b23503e4f7998c749a48a38eab886b440ee2ad879f1719a6ff3693",
+      "后勤管理/MD全库流水线_20260921/receipts/codex_bank_20260923/BJ-2026-HD-QIMO/Q20_page_roles_scoped_B_20260923_01/verification.json": "a5eef12f016ed916b4f489dba0a3a824e74e7ac25e7785b4483ea3a84efc6a98",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/controller_student_sample_ruling_r1_20260923/B_r1/verification.json": "95c3347dcc7cb74af66ea2a09c3fcf5af692d19eff248929f6cf561e5b9cc04d",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-HD-QIMO/controller_student_sample_ruling_r1_20260923/B_r1/verification.md": "bcf0a6da4a4dbaea35efb06b3d68b92e96e995836924d23ee9e5aa99c9901cc2"
+    }
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-hd-qimo-state1-root-20260923",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T01:19:40.173024+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T01:21:04.008189+00:00"
+}

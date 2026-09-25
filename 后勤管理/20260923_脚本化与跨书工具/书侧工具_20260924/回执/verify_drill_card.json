@@ -1,0 +1,40 @@
+{
+  "verdict": "PASS_WITH_ISSUES",
+  "issues": [
+    {"severity": "major", "desc": "A1 最后一张卡会吞进 A2 部分的标题和导语：_collect_cards 只在离开 drill.part 时收卡，A1→A2 部分切换不收卡，所以 A2 部分标题和导语都算进最后一张 A1 卡。结果一：两本真实书的 extract 里最后一张卡的 stem 被污染。结果二：只要导语里出现【答案】【解析】等字样，最后一张 A1 卡就会被误报“混入答案”。换一本导语写法不同的书就可能中招。",
+     "evidence": "extract 选必二 r22：records[-1].stem 结尾是'…应由平台经济法调整附录二A2错肢订正（答案版）红色看错因，绿色看正确结论…'；推理 v7.50：records[-1].stem 结尾是'…该三段论推理结构正确A2题肢单练（答案与逐项解析）'。攻击 E（副本把导语改成'先看【答案】，再看【解析】；红色看错因。'）check 多出 FAIL：'A1 题卡混入答案/解析等不该出现的标签' no=146 labels=['【答案】','【解析】']",
+     "fix": "卡片归属改看 it['part']。部分切换时收卡，或者按 drill.part 的顺序映射 A1/A2，遇到非本卡所属部分的段落就截断。"},
+    {"severity": "major", "desc": "“答案字母合法”只要求答案栏里至少有一个合法字符，非法字母混在合法字母中间也能通过。规格要求核“答案字母合法”，这里只核了一半。",
+     "evidence": "攻击 C（选必二副本 A2-004 答案改成'【答案】 AE。'）check 对 004 零报告；攻击 R5（推理副本 A2-07 答案改成'【答案】E错误；A正确'）check 退出 0，零 FAIL。只有全非法（'E。'、'见上。'）时才会被抓。",
+     "fix": "在解析标签之前的答案段里，把合法字母之外的字母、选项记号都视为非法，例如先剥掉“错误/正确/原题答案/（）；。”等允许的连接词，再要求剩下的全部属于 answer_alphabet。"},
+    {"severity": "major", "desc": "A1 卡正文可以整张为空，题干也可以被篡改，check 都不报。选必二的 A2 从不复述题干，所以这本书上“逐张题干一致”实际完全没核；也没有“A1 卡有题干/有选项”的底线检查。",
+     "evidence": "攻击 A（选必二副本 A1-001 正文段全部清空）：check 只报真实的 087，001 零报告。攻击 H（A1-009 首段题干改成'篡改后的题干'）：零报告。推理的同类篡改（R1：A2-02 选项把'外延'改成'内涵'）能抓到，因为推理的 A2 会复述题干。",
+     "fix": "至少补“A1 卡正文非空，且含题干/选项段（如含 A．/①或 answer_alphabet 起头的段）”的 FAIL。回执 known_limits 里要写明选必二这类 A2 不复述题干的书，题干一致性无法核对。"},
+    {"severity": "major", "desc": "card 单练的结论跟体检不一致：batch_health 体检对题卡式单练完全不核，草案配置下只报一条 WARN“配置了单练，文中没有找到单练部分”。drill_tool check 却报出 A2-087 缺【解析】这样的真实 FAIL。主代理如果只看体检，会以为单练没问题。",
+     "evidence": "crossbook_dogfood/xuanbi2.health.json 与 reasoning.health.json 里 check=='drill' 的只有 1 条 WARN（上面那条），没有 087；drill_tool check 选必二 r22 退出 1，FAIL：'A2 题卡缺解析' no=087。",
+     "fix": "回执和 Skill 流程里写明：card 版式的单练必须单独跑 drill_tool check，体检不覆盖。或者在登记 profile 时给题卡所在部分标上 drill，并说明体检那条 WARN 可以忽略。"},
+    {"severity": "minor", "desc": "extract 输出的 answer 字段把答案标签后面整段原样收进去，包括【解析】全文，并不是答案本身，下游容易误用。",
+     "evidence": "xb2_items.json records[0].answer = 'A（①③）。【解析】 ②把合同约定的监督权扩大为用益物权；④把仲裁写成…'",
+     "fix": "answer 只取解析标签之前的部分（复用 _card_answer_tokens 的切法），另存 answer_raw。"},
+    {"severity": "minor", "desc": "A1 卡混入答案只按带方括号的标签查，'答案：D''正确答案为A'这类写法查不到。",
+     "evidence": "攻击 D（选必二副本 A1-005 末段追加'  答案：D（①④）'）check 对 005 零报告。",
+     "fix": "a1_forbidden 默认加入“答案：”“答案为”等无括号写法，或者加一条正则。"},
+    {"severity": "minor", "desc": "report/out 守卫允许把 JSON 写进其他书的工作稿目录（紧挨真实书稿）。docx_lib.guard_write 只保护小窝和 Skill 目录，规格一·7 要求报告只落在候选/构建或系统临时目录。这是底层守卫的老问题，不是本次引入的，但推广到其他书时会暴露。",
+     "evidence": "guard_json('/Users/wanglifei/Desktop/2026模拟题/选必二_v15.0续作_20260908/工作稿/x_items.json', ...) 返回 ALLOWED（只调了守卫函数，事后 ls 确认没生成文件）；Skill 目录与小窝目录则拒绝，退出码 3。",
+     "fix": "由主代理决定是否在 docx_lib 的保护列表里加入 books.tsv 各册目录，或改成白名单（只允许候选/构建与系统临时目录）。"},
+    {"severity": "minor", "desc": "drill_tool.py 共 1623 行，超过规格 ≤1200 行的目标；测试产物写在 tempfile.gettempdir()（/var/folders/...），不在任务要求的 scratchpad/booktools3 下。",
+     "evidence": "wc -l drill_tool.py → 1623；run_tests_drill_card.py 第 27 行 HERE = Path(tempfile.gettempdir()) / 'drill_card_test_out'",
+     "fix": "精简注释；测试 HERE 改成可配置，指向 scratchpad。"}
+  ],
+  "checked": [
+    "重跑 run_tests_drill_card.py：全部 PASS（选必二 146/146，check 退出 1，唯一 FAIL 是 A2-087 缺解析；推理 144/144，check 退出 0；三条负例都抓到）",
+    "重跑 run_tests_drill_tool.py：EXIT=0，全部 PASS（B3_52 676/676 往返 diff=0，未点名段 bad=[]；B2_230 820/820，冻结 build 退出 3，frozen:false 副本往返 diff=0；哲学 R10 646/646；card build 拒绝退出 2 并列出字段），耗时 330s",
+    "亲自在两本非必修三的书上走通 extract+check：选必二 r22 与推理 v7.50（草案 profile），extract 两本都退出 0，146/144 张，a1_a2_count_mismatch=false",
+    "读真实题卡结构：选必二标题样式 Index Line，A2 由【错肢分析】与【答案】…【解析】组成，不复述题干；推理标题样式 ExampleTitle，A2 复述【题目】并有【逐项解析】/纠正/提示。两本书匹配标题正则的段都在 drill.part 内，全是标题样式，没有表格内误命中（292/288）",
+    "攻击用例（选必二副本）：A 空 A1 卡（漏报）、B 答案 E（抓到）、C 答案 AE（漏报）、D A1 无括号答案（漏报）、E 导语含标签（误报在 146）、F 标题跨 run（正常识别，无新增 FAIL）、G 答案无字母（抓到）、H A1 题干篡改（漏报）、I 把 A2-010 标题改成 A1-010（抓到重复、张数、缺失）",
+    "攻击用例（推理副本）：R1 A2 选项篡改（抓到）、R2 A1 标签跨 run（抓到）、R3 去掉【逐项解析】（抓到）、R4 同段两个标签（两个都报）、R5 答案'E错误；A正确'（漏报，退出 0）",
+    "配置缺失：去掉 drill.part → 退出 2 并列出字段；part 写错 → 退出 2 并提示 title_regex/part；只给一个 part → FAIL 2 条，退出 1；layout='Card'（大小写不同）→ 回落 paragraph，提示认不出；去掉 drill 段 → 按未配置单练处理，退出 0",
+    "路径守卫：--out/--report 指向 .docx 副本 → 拒绝，副本 SHA 不变；--out 指向已存在的外来 JSON → 拒绝，内容不变；--report 指向草案配置 → 拒绝；Skill 目录与小窝目录只调守卫函数 → 退出码 3；其他书工作稿目录 → 允许（见 minor）；冻结 profile 下 build card → 退出 2（card 未实现拒绝先于冻结检查），没有产出文件",
+    "测试前后五本真实书稿（选必二 r22、推理 v7.50、必修三第52批、必修二230、哲学 R10）SHA 与 mtime 逐一相同；Skill scripts/__pycache__ 无新增；drill_tool.py SHA 4a3e2fa4… 与编写回执一致；审查辅助文件都在 scratchpad/booktools3/drill_card_verify/"
+  ]
+}

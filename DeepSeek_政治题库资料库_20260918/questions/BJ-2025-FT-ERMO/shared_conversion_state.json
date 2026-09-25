@@ -1,0 +1,150 @@
+{
+ "exam_id": "BJ-2025-FT-ERMO",
+ "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+ "status": "accepted_for_all_available_sources",
+ "accepted": true,
+ "question_count": 21,
+ "score_total": 100,
+ "question_hashes": {
+  "BJ-2025-FT-ERMO-Q1": "76c20d7c6d46dca9b7051c2ba7e50201c2939d912454f232cbe61bf441a49373",
+  "BJ-2025-FT-ERMO-Q2": "7088e44ff3f2466b17318f9892a6dc8af1c7a59c8bf2147a788e62b52de84f32",
+  "BJ-2025-FT-ERMO-Q3": "a317ae6315dc08367e467568ba1ab247400fa6e8dcf1b88aa0a08337239c022e",
+  "BJ-2025-FT-ERMO-Q4": "dde43b2ddbab7148aa8d1bd36a6ad8df5b8179904f1d352044090244e4fb8603",
+  "BJ-2025-FT-ERMO-Q5": "7c9fee2ff21113278f590ab2fc3b0391137163e475e786020d0026c4504b7db2",
+  "BJ-2025-FT-ERMO-Q6": "7c9e1c7519e1b60a2413a0546f8fe19afb032ecadc8772221bf037eb918d7683",
+  "BJ-2025-FT-ERMO-Q7": "b71a5b5ebf07f3ea671a96e0b7262319b84af4d4f6597c1186ef168facd05533",
+  "BJ-2025-FT-ERMO-Q8": "cddd6d8d90230e62d8025323b1d682c840410c636d40b5ac90694e9f833d84e2",
+  "BJ-2025-FT-ERMO-Q9": "2e37afdf06cab120ed6a9313de8435ddb0bdbceae115d021be059555de5a0c41",
+  "BJ-2025-FT-ERMO-Q10": "636e9d06fe7dbc94ad6f25fdb5e87043e8fe68eb89b4da0a2cdf79418f6f0d31",
+  "BJ-2025-FT-ERMO-Q11": "7ab419ab78af237414f2af644c06058f9c6290d46cb6166eb9e8864377a2caba",
+  "BJ-2025-FT-ERMO-Q12": "2905827417a978d1110230a9b4df5126a1f712b8fbcc66a4179a00c1ca77bb7e",
+  "BJ-2025-FT-ERMO-Q13": "1345fcfd2f7e31bd2d0922fac3b6e9f75a10f689d896f5d219ee7072a8924e78",
+  "BJ-2025-FT-ERMO-Q14": "752bacf6888eea1ec6bf384c93fcc9e88c844582dcc48c80f8232c2012764ef5",
+  "BJ-2025-FT-ERMO-Q15": "587ad7019acf775840cc62edfa1a1e646251e63adc7c690733f53aef2b487b09",
+  "BJ-2025-FT-ERMO-Q16": "485ab84c9ec5a39f8b8ffab23ea074bd35c4dbaa89b68b220a8cd6f4e8275215",
+  "BJ-2025-FT-ERMO-Q17": "c191cc12f48c3c71647a2f87f18e05b3c2eaed7419ef9890907269f470b0c833",
+  "BJ-2025-FT-ERMO-Q18": "45b09b030b75ddd46d299679ae0deb1a5377eb738c5fad8553e2775e9a75f599",
+  "BJ-2025-FT-ERMO-Q19": "dbcd069536f604bb3a66dcaa50373fd8420ff23ff3c52abec85b3c9af8fe2d71",
+  "BJ-2025-FT-ERMO-Q20": "78402e8582997305efef1001fe7f0207b5287e48a2d4751814b7146550794840",
+  "BJ-2025-FT-ERMO-Q21": "efa8b4cdd2a0684600724be706b2369a9daa44e2eb51d9e1db24a9c2d4e56056"
+ },
+ "source_pages": {
+  "paper": 10,
+  "rubric_slices_1_docx_or_pptx_unpaged": 0,
+  "rubric_slices_2_docx_or_pptx_unpaged": 0,
+  "rubric_slices_3_docx_or_pptx_unpaged": 0,
+  "rubric_slices_4_docx_or_pptx_unpaged": 0,
+  "rubric_slices_5_docx_or_pptx_unpaged": 0,
+  "rubric_slices_6_docx_or_pptx_unpaged": 0,
+  "rubric_slices_7_docx_or_pptx_unpaged": 0,
+  "rubric_slices_8_docx_or_pptx_unpaged": 0
+ },
+ "source_page_total": 10,
+ "source_roles": {
+  "paper": "S9f3b48608884",
+  "rubric_slices_1_docx_or_pptx_unpaged": "S2f596046ed6d",
+  "rubric_slices_2_docx_or_pptx_unpaged": "Se3e9942211ec",
+  "rubric_slices_3_docx_or_pptx_unpaged": "S71d970ada83c",
+  "rubric_slices_4_docx_or_pptx_unpaged": "S56b5533477c2",
+  "rubric_slices_5_docx_or_pptx_unpaged": "S0e0ec077bf92",
+  "rubric_slices_6_docx_or_pptx_unpaged": "Sa85076fc73d8",
+  "rubric_slices_7_docx_or_pptx_unpaged": "S17616554d573",
+  "rubric_slices_8_docx_or_pptx_unpaged": "S11303432404c"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "无独立参考答案文件",
+  "同卷源清单无独立参考答案文件；卷内答案附页按E3保留。"
+ ],
+ "bounded_residual": [
+  {
+   "qid": "Q17",
+   "location": "p003 满分样卷（√17:9）正文'使其'之后一字（仅可辨'阝'旁，右半部分无法确认）、其后'度'字之后一字（疑似'法'）",
+   "partial_reading": "已标注左侧部首/疑似读法，具体写法未能100%确认",
+   "affects_answering": false,
+   "round": "r3"
+  },
+  {
+   "qid": "Q17",
+   "location": "p003 满分样卷正文其余此前已标注的残留（'法规'后插入文字受边缘裁切、'细则'二字潦草、'把权力关进制度的笼子'字迹细小潦草、③句末贴近页边、'优化政务服务'前一处潦草）",
+   "partial_reading": "原样继承 r2 记录，本轮重新逐行核对未发现需要更正之处",
+   "affects_answering": false,
+   "round": "r3"
+  },
+  {
+   "qid": "Q16,Q18,Q19,Q20,Q21",
+   "location": "r1/r2 遗留的其余残留项（16_1 p004/p006虚词、18/p003教师小字批注、18/更正后页码范围内部分样卷末尾勾选标记、19_1/19_2多份样卷个别虚词、20/p002-p004个别专有名词、21/p003-p004个别虚词）",
+   "partial_reading": "原样继承 r2 记录，未改动",
+   "affects_answering": false,
+   "round": "r3"
+  },
+  {
+   "qid": "BJ-2025-FT-ERMO-Q21",
+   "location": "等级描述表的来源页码定位",
+   "partial_reading": "实际评分切片p001；既有候选标注p002。表格内容完整，原页图与页位保留。",
+   "affects_answering": false,
+   "basis": "B复核确认内容正确、仅页码定位误差；不改变题目作答或评分内容。",
+   "round": "k1_r2_rebased_B"
+  },
+  {
+   "qid": "答案附页",
+   "location": "assets/answer_appendix_p009_p010.md 的普通文本证据路径提示",
+   "partial_reading": "正文仍写 ../media/rubric_pages/ 与 ../media/rubric_embedded/；现有资源实际位于 assets/。该文本不是Markdown链接。",
+   "affects_answering": false,
+   "basis": "B复核确认0断链；图片页和内容均存在，路径文字不影响答案读取。",
+   "round": "k1_r2_rebased_B"
+  },
+  {
+   "qid": "答案附页",
+   "location": "原卷答案页p009第一部分答案表",
+   "partial_reading": "原页为连续4×10格；Markdown分为两张连续表，答案顺序与空格位置仍保留，原页图保留。",
+   "affects_answering": false,
+   "basis": "B复核判为minor；答案与空白均可读取，版式差异不改变答案。",
+   "round": "k1_r2_rebased_B"
+  },
+  {
+   "qid": "BJ-2025-FT-ERMO-Q18",
+   "location": "评分切片p008政策附件页图导航",
+   "partial_reading": "导航将p009–p012写成首尾链接范围，p010、p011无独立可点击链接；原页文件存在，题MD转写保留政策正文。",
+   "affects_answering": false,
+   "basis": "独立复核判为minor；只有页图的直接导航便利性受影响，材料文字与来源页位均保留。",
+   "round": "k1_r2_rebased_B_followup"
+  }
+ ],
+ "review_receipts": {
+  "rounds": [
+   "r1",
+   "r2",
+   "r3",
+   "k1",
+   "k1_r2",
+   "k1_r2_rebased"
+  ],
+  "primary": "BJ-2025-FT-ERMO/primary_review_k1_r2_rebased_20260923.json",
+  "independent": [
+   "BJ-2025-FT-ERMO/k1_verify/verification.json",
+   "BJ-2025-FT-ERMO/k1_r2_verify/verification.json",
+   "BJ-2025-FT-ERMO/k1_r2_rebased_verify_codex_01a0cce8-e9a9-76c3-967b-7e946f526297/verification.json"
+  ]
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "bj-2025-ft-ermo-state1",
+   "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+   "at": "2026-09-23T07:21:42.650337+00:00"
+  }
+ ],
+ "source_conversion_accepted": true,
+ "accepted_at": "2026-09-23T07:23:36.265866+00:00",
+ "controller_delta_history": [
+  {
+   "delta_id": "g7_r2_bj_2025_ft_ermo_q18",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.498410+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-FT-ERMO/g7_r2_bj_2025_ft_ermo_q18_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-FT-ERMO-Q18": "45b09b030b75ddd46d299679ae0deb1a5377eb738c5fad8553e2775e9a75f599"
+   }
+  }
+ ]
+}

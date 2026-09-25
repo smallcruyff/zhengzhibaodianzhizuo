@@ -1,0 +1,4 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_B3,conflict_script_out,admission,evidence,script_tier,rule_version
+BJ-2024-XC-YIMO-Q18#3,BJ-2024-XC-YIMO-Q18,BJ-2024-XC-YIMO,18,主观题,3,小问,COLLECTED,B3,完整题-有E1,E1,倾向,2026-09-24-attribution-v1
+BJ-2025-FT-YIMO-Q17#1,BJ-2025-FT-YIMO-Q17,BJ-2025-FT-YIMO,17,主观题,1,小问,COLLECTED,B3,不收-无E1,缺细则,倾向,2026-09-24-attribution-v1
+BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO,17,主观题,,整题,COLLECTED,B2;B3,完整题-有E1,E1,确定,2026-09-24-attribution-v1

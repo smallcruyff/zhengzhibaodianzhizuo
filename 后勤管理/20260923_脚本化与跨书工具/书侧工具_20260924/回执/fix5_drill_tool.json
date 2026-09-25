@@ -1,0 +1,59 @@
+{
+  "summary": "第五轮返修（对应 回执/final_drill_tool.json 的 3 条 major + 1 条 minor）：①写后单练门比较\"父稿是否已有这条 FAIL\"的基线键改为——excerpt 存在就仍按老办法（去序号、norm）；不存在（如\"A2 表内正误不齐\"这类表级 FAIL）就把 finding 里除 check/level/rule/src/where/excerpt 外的全部判定字段（table、answers、a1、a2、dup/missing/extra、limit……）排序序列化并入键；同时新增 _new_fails()，按 rule 分组计数，任一规则计数比父稿多就把候选稿该规则下全部 FAIL 都算新增，键比较与计数比较任一命中即判新增，不再被别的表/别的对象的同规则旧 FAIL 掩盖。②_renumber_row 改为只在题干段落\"开头连续 run 拼接串\"（w:t 计入拼接、w:tab 占位不打断、遇到其他子元素立即停止收集）上用本册 item_regex 匹配旧序号前缀，只信 group(1) 圈出的字符区间是序号数字，序号跨 run（如\"1\"+\"0、\"）也能正确定位并只改那几个字符；匹配不到、或圈出数字与 old_no 不符，一律 Abort(2)，绝不去改题干正文里的数字（包括题干本身以数字或年份开头的情况）；写后再核对整个 tc 全文须恰好等于\"新序号＋原全文去掉旧序号\"。旧错误提示\"改用模板重建\"与实际行为（中止）不符，已改成\"中止\"。③build 的写后门原来只重跑 bh.check_drill，现在抽出 _extra_drill_checks()（题源为空、序号连续、A1/A2 题干逐字一致、分组标签）供 cmd_check 与 build 写后自查共用，父稿基线（F0）与候选稿（F2）都跑这一整套，不再漏过 drill_tool 自己补的检查项。④minor 顺手：--admission-mode execution 的稳定 id 从只哈希 stem 改为哈希 stem+source（_stem_stable_id 新增 source 参数），保留条目的题源被单独篡改也能发现，口径与 decision 模式、cda.verify 一致；_rebuild_stem_cell 的\"题干与纠正同段\"分支改为先用 _template_has_br() 核对模板是否确有 <w:br/> 分隔符，有就照抄（新增 {'t':'br'} 支持写进 _fill_paragraph_runs），认不出分隔方式就 Abort 并说明，不再无条件拼接丢失换行；同时新增 _template_num_sep_is_tab()，序号与题干正文之间是否加 tab 改按模板实际排版判断（不再无条件加 tab），A1/A2 生成都适用。只改了 drill_tool.py 一个文件（1200→1331 行，超出规格 ≤1200 行的目标约 131 行，已如实写入 known_limits），未改 batch_health.py/docx_lib.py/profile_lib.py/profiles/、未运行 collab.py、未启子代理、未开新会话。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/drill_tool.py",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_drill_tool.py"
+  ],
+  "tests": [
+    {
+      "input": "开发期回归（先在 scratchpad booktools/drill_tool/work/ 的未落地副本上跑，symlink 复用 batch_health.py/docx_lib.py/profile_lib.py/check_drill_admission.py/profiles/，读 dev_cases/ 下的 B3_52、B2_230、items.json 缓存副本——已核对 SHA 与真实文件一致）：N1（表级 FAIL 基线掩盖）、N9（序号拆 run+题干同数字开头）、N8（build 写后门覆盖 drill_tool 自查项）、N5（同段纠正模板保留 br/不多加 tab）、N6b（execution 模式核题源）、N4 严格 C14N（B3 插 3 条/B2 插 1 条，其后全部行仅序号不同）",
+      "result": "DONE 0 bugs of 7（N4 两项分别核对 1352 行、1640 行，rows_c14n_diff=0）",
+      "seconds": "~140"
+    },
+    {
+      "input": "开发期回归：B3_52、B2_230 恒等往返（items 未改，build 后与父稿逐字节 SHA 比对）",
+      "result": "两者输出 SHA 均与父稿 SHA 完全一致（B3_52=c007d719…，B2_230=d33a3f93…）",
+      "seconds": "~25"
+    },
+    {
+      "input": "落地到 Skill 母版后，重跑完整 测试/run_tests_drill_tool.py（含本轮新增 fix5-1~fix5-4b 五个回归用例，以及此前 r1~r3 全部旧回归、B3_52/B2_230 金标准往返、guard 守卫、--admission 两种模式、paragraph/card 拒绝等），/usr/bin/python3 -B",
+      "result": "RESULTS.json 52/52 通过，脚本最终打印\"全部用例： PASS\"，退出码 0；4 个真实输入（B3_52/B2_230/哲学R10/选必二r22）测试前后 SHA/mtime 逐一相同",
+      "seconds": "~330"
+    }
+  ],
+  "known_limits": [
+    "drill_tool.py 由 1200 行增至 1331 行，超出规格\"二·9\"里 drill_tool ≤1200 行的目标约 131 行；4 处修复（尤其 _renumber_row 的跨 run 定位与写后核对、_fail_content_key 的判定字段展开）本身需要这些行数，已尽量压缩注释，若仍需卡在 1200 行以内需要主代理裁定砍哪部分说明或精简哪段逻辑。",
+    "_fail_content_key 现在把 finding 里除位置字段外的全部判定字段（含 dup/missing/extra 等列表）序列化进键，理论上如果同一规则、同一组判定字段的 FAIL 在父稿和候选稿里都各出现不止一次且完全相同，_new_fails 的按 rule 计数兜底会把候选稿超出父稿数量的那些都算新增（宁可多算不放过），属设计如此，不是漏洞。",
+    "_template_num_sep_is_tab/_template_has_br 只识别\"序号后紧跟 w:tab\"和\"题干与纠正之间用 w:br\"这两种已在 B2_230/B3_52 实际出现的分隔方式；遇到用字面 \\t 字符或其他分隔手法的模板，_rebuild_stem_cell 的同段分支会 Abort 并说明，不会静默生成错的结构（按终审要求\"做不到就 Abort\"实现，未覆盖的分隔方式留给之后遇到时再扩展）。",
+    "paragraph（哲学）与 card（选必二）版式的 build 往返仍未实现，此次不在终审 4 条返修范围内，维持上一轮 needs_user_decision 的结论不变。"
+  ],
+  "profile_fields_needed": [],
+  "issues_resolved": [
+    {
+      "desc": "major①：写后单练门\"新增 FAIL\"基线键 (rule, excerpt) 对没有 excerpt 的表级 FAIL（如\"A2 表内正误不齐\"）退化成 (rule, '')，父稿在某张表已有的 FAIL 会掩盖候选稿在另一张表新造的同规则 FAIL，build 误判无新增、退出码 0 照样写出。",
+      "how": "_fail_content_key 改为：excerpt 存在按老办法（去序号+norm）；不存在就把 finding 除位置/序号字段外的全部判定字段（table、answers 等）排序序列化并入键。新增 _new_fails()：按 rule 分组计数，候选稿某规则 FAIL 数比父稿多，该规则下候选稿全部 FAIL 都算新增；键比较负责抓\"同规则换对象\"的新增。build 里父稿基线（F0）与候选稿（F2）都改跑 _extra_drill_checks 后再送进 _new_fails 比较。",
+      "test": "开发期 N1（scratchpad dev_test.py test_N1）：B2_230 副本 G1 已有\"A2 表内正误不齐\"FAIL，G2 新造同规则 FAIL，build exit=1、不留输出。落地后官方测试 fix5-1（run_tests_drill_tool.py）复现同一场景，exit=1、fix5_1_out.docx 不存在，且父稿实际 FAIL 里含 table=G1、候选稿新增 FAIL 含 table=G2，用真实 B2_230 数据核对一致。"
+    },
+    {
+      "desc": "major②：_renumber_row 遍历题干段落全部 run，只要哪个 w:t 恰好以旧序号数字开头就当序号替换，题干正文以相同数字或年份开头（如\"10个……\"、\"2025年……\"）、或序号本身被拆成两个 run（如\"1\"+\"0、\"），都会被错误命中，题干正文被改错；旧提示\"改用模板重建\"与实际行为（中止）不符。",
+      "how": "新增 _leading_run_pieces()：只拼接段落开头的连续 w:t/w:tab（遇到别的子元素立即停止），交给本册 item_regex 在这段拼接串上匹配，只信 group(1) 圈出的字符区间是序号数字，且要求与 old_no 相等、m.start(1)==0；找不到/对不上一律 Abort(2)（错误文字改成\"中止\"，不再说\"改用模板重建\"）。定位到区间后按 run 逐个分配新序号字符（跨 run 时整段新号写进第一个覆盖到的 run，其余覆盖到的 run 只删自己那部分数字），写后用 _tc_full_text() 核对整个 tc 全文恰好等于\"新序号＋原全文去掉旧序号\"。调用处改为传入 item_rx。",
+      "test": "开发期 N9：B3_52 副本把第 10 条序号拆成\"1\"/\"0、\"两个 run、题干首字前加\"10个\"，插入 1 条使其走重编号路径，build exit=0，输出 A1/A2 均为\"11、\\t10个……\"（序号正确改、题干未动），check 无新增\"编号\"FAIL。落地后官方测试 fix5-2 复现同一场景并逐字核对（assert startswith('11、') and '10个' in text）。另跑 N4 严格 C14N（B3 插3条/B2 插1条，1352/1640 行）确认正常重编号路径（无跨 run 拆分场景）rows_c14n_diff=0，无回归。"
+    },
+    {
+      "desc": "major③：build 写后门只重跑 bh.check_drill，不跑 drill_tool 自己补的 check 项（题源为空、序号连续、A1/A2 题干逐字一致、分组标签），新增一条题源为空的条目 build 仍退出 0，写后门形同虚设。",
+      "how": "把 cmd_check 里补充检查的逻辑抽成 _extra_drill_checks(items, P, c, F)，cmd_check 和 cmd_build 写后自查共用；build 里对候选稿（d2.items→F2）和父稿基线（d.items→F0）都调用它，再送 _new_fails 比较，任一新增即 Abort(1) 整批中止不留输出。",
+      "test": "开发期 N8：B3_52 副本第 1 组开头插入 1 条 source='' 的正确项，build exit≠0（未再是旧版的 exit=0）、不留输出。落地后官方测试 fix5-3 复现，exit=1 且 fix5_3_out.docx 不存在。"
+    },
+    {
+      "desc": "minor 顺手 a：--admission-mode execution 只按题干哈希核对，不核题源，执行时把某条保留条目的题源改掉仍判 pass，与 decision 模式和 cda.verify 本身\"statement+source 一起核\"的口径不一致。",
+      "how": "_stem_stable_id 新增可选 source 参数，传了就把 norm(stem)+分隔符+norm(source) 一起哈希；_admission_check_execution 两处调用（决策记录、候选稿现有条目）都改传 source。",
+      "test": "开发期 N6b：B3_52 按决策删掉 2 条 exclude 后另把 1 条保留条目的题源改掉，check --admission-mode execution 返回 status=fail（此前是 pass）。落地后官方测试 fix5-4b 复现，_adm54['status']=='fail'。"
+    },
+    {
+      "desc": "minor 顺手 b：新增错误项如果落在\"题干与纠正同段\"（只 1 个 w:p）的模板组，_rebuild_stem_cell 无条件把纠正直接拼接在题干后面、且题干里的分隔符固定加 tab，结果既丢了模板原有的 <w:br/> 换行，序号后又多出模板没有的制表符，与同组原行排版不一致。",
+      "how": "新增 _template_has_br() 在同段分支先核对模板是否确有 <w:br/>：有就在 _fill_paragraph_runs 里用新支持的 {'t':'br'} 生成对应换行；认不出分隔方式就 Abort 并说明，不再默默拼接。新增 _template_num_sep_is_tab()：序号后是否加 tab 改按模板实际排版（第一个有文字的 run 后面是不是紧跟 w:tab）判断，_stem_specs 与 A1 生成 specs 都据此决定是否插入 tab spec，不再无条件加。",
+      "test": "开发期 N5：B2_230 587 号所在的同段纠正模板组插入 1 条新错误项，输出 run 结构为 [[t],[t],[t],[t],[br],[t]]（含 <w:br/>，序号后无 tab），与同组原错误行结构一致。落地后官方测试 fix5-4a 复用 r3-4b 已生成的 b2_230_combo_build.docx，断言新行确有 <w:br/>、且序号后是否带 tab 与模板行一致（两者都是\"无 tab\"）。"
+    }
+  ],
+  "issues_deferred": []
+}

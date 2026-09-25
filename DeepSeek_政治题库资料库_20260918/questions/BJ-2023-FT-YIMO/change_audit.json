@@ -1,0 +1,230 @@
+{
+  "schema": "canonical-source-completion-change-audit/2026-09-22",
+  "exam_id": "BJ-2023-FT-YIMO",
+  "baseline": {
+    "controller_ready_candidate_manifest_sha256": "f5ed17824b4a0b7e224cf79a7a5db60aa09283d33bee63bf072dadfadabb0d47",
+    "old_flat_transcript_path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready/BJ-2023-FT-YIMO/candidates/sources/transcripts/Sd68e0801a751.txt",
+    "old_flat_transcript_sha256": "cc2973f9f1656f1243dce99313913e1f52a7e1b84010381fd535cb88d975d2fd",
+    "old_flat_transcript_lines": 301,
+    "old_flat_transcript_bytes": 43499,
+    "old_page_coverage_path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready/BJ-2023-FT-YIMO/candidates/sources/page_coverage.json",
+    "old_page_coverage_sha256": "07a74177f3fcec2a5428856163bdca0dafcd7d0a55a015f4384bf32d90adcc1e",
+    "old_visual_pages": 14
+  },
+  "candidate_questions": {
+    "count": 22,
+    "unchanged_count": 22,
+    "rows": [
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q1",
+        "old_controller_ready_sha256": "da145e483cdb676226ce1a3cb71325a8ccb93206de480bebd020098679444e00",
+        "new_canonical_sha256": "da145e483cdb676226ce1a3cb71325a8ccb93206de480bebd020098679444e00",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q2",
+        "old_controller_ready_sha256": "cba3d068dfc2eee221a6ae57888167c654408e50f89f4172e195467a7b7d485d",
+        "new_canonical_sha256": "cba3d068dfc2eee221a6ae57888167c654408e50f89f4172e195467a7b7d485d",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q3",
+        "old_controller_ready_sha256": "82f97775f66665a224865e8b7b161517fb8489c6827cb4822012eca3a043e181",
+        "new_canonical_sha256": "82f97775f66665a224865e8b7b161517fb8489c6827cb4822012eca3a043e181",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q4",
+        "old_controller_ready_sha256": "2db89d55d154f234143a0f1ce31ffc338add9325d4158f9784070da9084d7db3",
+        "new_canonical_sha256": "2db89d55d154f234143a0f1ce31ffc338add9325d4158f9784070da9084d7db3",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q5",
+        "old_controller_ready_sha256": "67af23ea1eb44068ed22eca333568cea19efca16eaaaa07817371d3749af0b9d",
+        "new_canonical_sha256": "67af23ea1eb44068ed22eca333568cea19efca16eaaaa07817371d3749af0b9d",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q6",
+        "old_controller_ready_sha256": "b621c6cf4cda334d221ef27a86a604392924ee40f4b8509def8341ce020c54ab",
+        "new_canonical_sha256": "b621c6cf4cda334d221ef27a86a604392924ee40f4b8509def8341ce020c54ab",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q7",
+        "old_controller_ready_sha256": "7726c739803518ddfcc63fd7d45f43af92501339c4c50b43641965b63ff2fbee",
+        "new_canonical_sha256": "7726c739803518ddfcc63fd7d45f43af92501339c4c50b43641965b63ff2fbee",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q8",
+        "old_controller_ready_sha256": "edaa43e9c0e3d2c1021c03934c3fe84e40651810c2251cf53f80fe59f51d02ec",
+        "new_canonical_sha256": "edaa43e9c0e3d2c1021c03934c3fe84e40651810c2251cf53f80fe59f51d02ec",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q9",
+        "old_controller_ready_sha256": "91922fd7c1415fa5f5a5a0de105d5b3164dbf7e11289f0f50ffc7e478e891d23",
+        "new_canonical_sha256": "91922fd7c1415fa5f5a5a0de105d5b3164dbf7e11289f0f50ffc7e478e891d23",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q10",
+        "old_controller_ready_sha256": "cb5d9090aa9b670372d01e2b8850e4e1a5a12e8beb2ed15100dc6c3633af0fd8",
+        "new_canonical_sha256": "cb5d9090aa9b670372d01e2b8850e4e1a5a12e8beb2ed15100dc6c3633af0fd8",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q11",
+        "old_controller_ready_sha256": "2c0327394a40c0e06ef1df6b88a00b2dd245f8ef66533c293d9a67a36596aec4",
+        "new_canonical_sha256": "2c0327394a40c0e06ef1df6b88a00b2dd245f8ef66533c293d9a67a36596aec4",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q12",
+        "old_controller_ready_sha256": "eccca064729da51bb7904286c05459ddc59146e4be1ad63a8389f118ece55d32",
+        "new_canonical_sha256": "eccca064729da51bb7904286c05459ddc59146e4be1ad63a8389f118ece55d32",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q13",
+        "old_controller_ready_sha256": "4af11cd6f1a408187331f7937c52bf1623f1cab00dcb50adc0333168321bd4bb",
+        "new_canonical_sha256": "4af11cd6f1a408187331f7937c52bf1623f1cab00dcb50adc0333168321bd4bb",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q14",
+        "old_controller_ready_sha256": "e1e3aa57ff4dab2f074099b650683e99d4e42d5a20b30e45bc3096c8725143c6",
+        "new_canonical_sha256": "e1e3aa57ff4dab2f074099b650683e99d4e42d5a20b30e45bc3096c8725143c6",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q15",
+        "old_controller_ready_sha256": "7c593cb28808d3f002fd47a6cd6d23ee6e3ea2c25b27a7c6781554ee73a4174b",
+        "new_canonical_sha256": "7c593cb28808d3f002fd47a6cd6d23ee6e3ea2c25b27a7c6781554ee73a4174b",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q16",
+        "old_controller_ready_sha256": "9a2b19b96a0846ad1ffcf84e59cc00d576588792800d6ebdfb2b2a732ffc321f",
+        "new_canonical_sha256": "9a2b19b96a0846ad1ffcf84e59cc00d576588792800d6ebdfb2b2a732ffc321f",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q17",
+        "old_controller_ready_sha256": "69f4dc407ca779408a056fdf9fbca9f310ef8fe1deb36080a8244fdee1175de9",
+        "new_canonical_sha256": "69f4dc407ca779408a056fdf9fbca9f310ef8fe1deb36080a8244fdee1175de9",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q18",
+        "old_controller_ready_sha256": "0e4bb9bfdda60ae9e516f9f4ea198a6c1d8ad5b6d27d0dc05a7964797c68ea0a",
+        "new_canonical_sha256": "0e4bb9bfdda60ae9e516f9f4ea198a6c1d8ad5b6d27d0dc05a7964797c68ea0a",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q19",
+        "old_controller_ready_sha256": "793b15e8ef3d419e3a139bd61c360bd55aefd826499de76da8f39a49afc13ef7",
+        "new_canonical_sha256": "793b15e8ef3d419e3a139bd61c360bd55aefd826499de76da8f39a49afc13ef7",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q20",
+        "old_controller_ready_sha256": "aa0611408c9ac053e92731afef09e0cbf99bf7ee8734f1f80c1a10d4ca3a6f11",
+        "new_canonical_sha256": "aa0611408c9ac053e92731afef09e0cbf99bf7ee8734f1f80c1a10d4ca3a6f11",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q21",
+        "old_controller_ready_sha256": "36851f7be19d48e01b49fc05fa8c9ad4d7b131b43cda2687da799283678cc7b0",
+        "new_canonical_sha256": "36851f7be19d48e01b49fc05fa8c9ad4d7b131b43cda2687da799283678cc7b0",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "question_id": "BJ-2023-FT-YIMO-Q22",
+        "old_controller_ready_sha256": "9fa5f5a9d2ec60f38e8d5e6054f6e5e39eae9d9b4faeb173af176249ee203810",
+        "new_canonical_sha256": "9fa5f5a9d2ec60f38e8d5e6054f6e5e39eae9d9b4faeb173af176249ee203810",
+        "unchanged": true,
+        "content_change": "none"
+      }
+    ]
+  },
+  "candidate_assets": {
+    "count": 4,
+    "unchanged_count": 4,
+    "rows": [
+      {
+        "path": "candidates/assets/BJ-2023-FT-YIMO-Q09-image2.png",
+        "old_sha256": "83493b08a2dcb512c243c6725c654c7ba0a7738112efd89771aa6c7b14dc9d17",
+        "new_sha256": "83493b08a2dcb512c243c6725c654c7ba0a7738112efd89771aa6c7b14dc9d17",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "path": "candidates/assets/BJ-2023-FT-YIMO-Q17-image3.png",
+        "old_sha256": "5e2c16dbdba88e185a8340a6679978f3545bb8e54466e1ee28e3fa9d93c2f788",
+        "new_sha256": "5e2c16dbdba88e185a8340a6679978f3545bb8e54466e1ee28e3fa9d93c2f788",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "path": "candidates/assets/BJ-2023-FT-YIMO-Q20-image4.png",
+        "old_sha256": "5c64a827e2f070b9ccd5a560eb8f8ca7ddf4669b5cf306f302a980f703916a02",
+        "new_sha256": "5c64a827e2f070b9ccd5a560eb8f8ca7ddf4669b5cf306f302a980f703916a02",
+        "unchanged": true,
+        "content_change": "none"
+      },
+      {
+        "path": "candidates/assets/source-image1-seq001.png",
+        "old_sha256": "b33b5050e18d75e8459e05fe9a909915f622375f353ad88aae47b8adffb10206",
+        "new_sha256": "b33b5050e18d75e8459e05fe9a909915f622375f353ad88aae47b8adffb10206",
+        "unchanged": true,
+        "content_change": "none"
+      }
+    ]
+  },
+  "support_delta": {
+    "changed_question_files": [],
+    "changed_candidate_assets": [],
+    "navigation_or_index_changes": [
+      "new candidates/candidate_manifest.json localizes the copied candidate bundle and records baseline SHA",
+      "new sources/source_manifest.json points to the complete active transcript and 35-page witness",
+      "old 14-page map and old incomplete flat transcript moved under history/"
+    ],
+    "new_active_support": [
+      "complete Markdown and compatible TXT flat transcripts from native parts.jsonl",
+      "302/302 paragraph records, 6/6 table records/cells, 4/4 media links at seq 1/100/199/255",
+      "35-page PDF, 35 PNGs and active page_coverage map",
+      "raw footer1/footer2 XML with SHA and dynamic PAGE/SECTIONPAGES registry",
+      "strict five-field materialization items and fail-closed wrapper artifact"
+    ],
+    "preserved_limits": [
+      "E3/source material only; no independent original/answer/E1/student layer",
+      "points_total=null",
+      "Q17 and Q20 source anomalies preserved verbatim",
+      "shared_modified=[]"
+    ]
+  }
+}

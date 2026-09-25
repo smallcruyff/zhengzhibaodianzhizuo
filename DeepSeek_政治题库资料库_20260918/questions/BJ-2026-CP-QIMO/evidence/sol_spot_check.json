@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CP-QIMO",
+  "status": "conversion_complete_merge_ready_pending_controller_bundle_dry_run",
+  "checks": [
+    {"kind": "ordinary", "question_id": "BJ-2026-CP-QIMO-Q10", "status": "pass", "sha256": "85369d3054eacc271987227d9cc13d032e6146b5e6dcc8fd454846153b6bc1bb"},
+    {"kind": "cross_page", "question_id": "BJ-2026-CP-QIMO-Q2", "status": "pass", "sha256": "1a90a7c5de73bf54f6b0f85fe9f0d85a3dce6a42300e657c8b4b3582daad49ef"},
+    {"kind": "complex_figure", "question_id": "BJ-2026-CP-QIMO-Q16", "status": "pass", "sha256": "3eae218a503a1e8365dad4b55749a2e06bed203ef83b2ae16b2cb586a30c4b7d", "image2_sha256": "e2ee356dcb817c7fb2f10243686a198dda7c3ce1a136c3cd6099a2e08a1e5f57", "image3_sha256": "6e49362e3814ea8f4ab84f580131234f3da66a51e50de862109812c11ad393bb", "actual_viewed": true}
+  ],
+  "source_limits_nonblocking": ["independent paper not provided", "independent answer not provided", "student layer not provided"],
+  "shared_modified": false
+}

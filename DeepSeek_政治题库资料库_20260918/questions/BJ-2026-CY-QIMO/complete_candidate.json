@@ -1,0 +1,481 @@
+{
+  "schema_version": "md-pipeline-exam-complete-candidate-1.0",
+  "generated_at": "2026-09-22T08:35:09.092972+00:00",
+  "exam_id": "BJ-2026-CY-QIMO",
+  "candidate_status": "accepted_for_all_available_sources",
+  "identity": {
+    "title": "北京市朝阳区2025～2026学年度第一学期期末质量检测 高三思想政治试卷",
+    "date_label": "2026.1",
+    "score_total": 100,
+    "question_total": 21,
+    "choice_questions": 15,
+    "subjective_questions": 6,
+    "choice_score": 45,
+    "subjective_score": 55
+  },
+  "sources": {
+    "paper": {
+      "source_id": "Se1a49527cb4c",
+      "path": "2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+      "sha256": "e1a49527cb4c175f3de69c5cb429216b35938f336f1417fd9df9d955c3e98399",
+      "pages": 8
+    },
+    "rubric": {
+      "source_id": "S487b2d15b3a3",
+      "path": "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf",
+      "sha256": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a",
+      "pages": 4
+    }
+  },
+  "visual_inspection": {
+    "exam_id": "BJ-2026-CY-QIMO",
+    "render_method": "Poppler pdftoppm PNG at 180 dpi",
+    "all_paper_pages_individually_opened": true,
+    "opened_paper_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "all_rubric_pages_individually_opened": true,
+    "opened_rubric_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "complex_layouts_opened": [
+      "Q4 p2 painting",
+      "Q6 p2 boxed conditions",
+      "Q16 p4 stage image; full question ends on p4",
+      "Q19 p6 policy table and p7 continuation",
+      "Q21 p8 one teacher box plus one shared lower box for students A-D",
+      "Q2 p1 one common rectangle for two scenes",
+      "Q18 p6 law upper round box and two separate lower reasoning boxes; no arrows"
+    ],
+    "page_images": [
+      "evidence/paper_pages/p001.png",
+      "evidence/paper_pages/p002.png",
+      "evidence/paper_pages/p003.png",
+      "evidence/paper_pages/p004.png",
+      "evidence/paper_pages/p005.png",
+      "evidence/paper_pages/p006.png",
+      "evidence/paper_pages/p007.png",
+      "evidence/paper_pages/p008.png",
+      "evidence/rubric_pages/p001.png",
+      "evidence/rubric_pages/p002.png",
+      "evidence/rubric_pages/p003.png",
+      "evidence/rubric_pages/p004.png"
+    ],
+    "independent_review": "R2/R3/R4完整及差分复核、R6路径与评分归属复核、R7框线复核均完成；主控已亲核关键原页。"
+  },
+  "question_count": 21,
+  "question_index": [
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q1",
+      "question_number": 1,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q1.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q2",
+      "question_number": 2,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q2.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q3",
+      "question_number": 3,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q3.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q4",
+      "question_number": 4,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q4.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q5",
+      "question_number": 5,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q5.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q6",
+      "question_number": 6,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q6.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q7",
+      "question_number": 7,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q7.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q8",
+      "question_number": 8,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q8.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q9",
+      "question_number": 9,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q9.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q10",
+      "question_number": 10,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q10.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q11",
+      "question_number": 11,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q11.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q12",
+      "question_number": 12,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q12.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q13",
+      "question_number": 13,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q13.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q14",
+      "question_number": 14,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        4
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q14.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q15",
+      "question_number": 15,
+      "question_type": "选择题",
+      "score": 3,
+      "pages": [
+        4
+      ],
+      "rubric_pages": [],
+      "candidate_file": "BJ-2026-CY-QIMO-Q15.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "不适用（选择题）"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q16",
+      "question_number": 16,
+      "question_type": "非选择题",
+      "score": 8,
+      "pages": [
+        4
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q16.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q17",
+      "question_number": 17,
+      "question_type": "非选择题",
+      "score": 8,
+      "pages": [
+        5
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q17.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q18",
+      "question_number": 18,
+      "question_type": "非选择题",
+      "score": 15,
+      "pages": [
+        5,
+        6
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q18.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q19",
+      "question_number": 19,
+      "question_type": "非选择题",
+      "score": 8,
+      "pages": [
+        6,
+        7
+      ],
+      "rubric_pages": [
+        3
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q19.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q20",
+      "question_number": 20,
+      "question_type": "非选择题",
+      "score": 8,
+      "pages": [
+        7
+      ],
+      "rubric_pages": [
+        3
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q20.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    },
+    {
+      "question_id": "BJ-2026-CY-QIMO-Q21",
+      "question_number": 21,
+      "question_type": "非选择题",
+      "score": 8,
+      "pages": [
+        8
+      ],
+      "rubric_pages": [
+        4
+      ],
+      "candidate_file": "BJ-2026-CY-QIMO-Q21.md",
+      "question_status": "visual_transcription_candidate",
+      "answer_status": "N/A_with_basis_no_answer_source",
+      "student_status": "N/A_with_basis_no_student_source",
+      "rubric_status": "E1_candidate"
+    }
+  ],
+  "answer_role": {
+    "exam_id": "BJ-2026-CY-QIMO",
+    "status": "complete_for_available_sources",
+    "answer_sources": [],
+    "embedded_answer_in_paper": false,
+    "notes": "原卷8页均为题面，没有答案键、解析或参考作答；细则PDF仅为Q16-Q21主观题评分材料，不能承担答案键角色。",
+    "evidence_level": "无E3答案源；不猜填选择题答案"
+  },
+  "e1_rubric": {
+    "exam_id": "BJ-2026-CY-QIMO",
+    "status": "complete_for_Q16_Q21; Q1_Q15_not_applicable_choice",
+    "carrier": {
+      "source_id": "S487b2d15b3a3",
+      "path": "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf",
+      "sha256": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a",
+      "pages_opened": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "ranges": {
+      "Q16": "PDF p1",
+      "Q17": "PDF p1",
+      "Q18(1)": "PDF p2",
+      "Q18(2)": "PDF p2",
+      "Q19": "PDF p3",
+      "Q20": "PDF p3",
+      "Q21": "PDF p4"
+    },
+    "not_applicable": {
+      "Q1": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q2": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q3": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q4": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q5": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q6": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q7": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q8": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q9": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q10": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q11": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q12": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q13": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q14": "不适用（选择题）；不外推 Q16—Q21 主观题 E1",
+      "Q15": "不适用（选择题）；不外推 Q16—Q21 主观题 E1"
+    },
+    "boundary": "E1仅适用于同题同小问；不得把Q16-Q21评分内容外推到Q1-Q15。"
+  },
+  "student_samples": {
+    "exam_id": "BJ-2026-CY-QIMO",
+    "status": "complete_for_available_sources",
+    "source_files_checked": [
+      "2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+      "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf"
+    ],
+    "students_found": false,
+    "student_samples": "N/A_with_basis",
+    "teacher_annotations": "N/A_with_basis",
+    "scores": "N/A_with_basis",
+    "basis": "输入本卷全目录仅含原卷PDF和评分细则PDF。"
+  },
+  "unresolved": [
+    "全卷无答案键/参考作答源：客观答案与E3均N/A（来源限制）",
+    "全卷无学生样卷、批注、评分标记、实得分：N/A（来源限制）"
+  ],
+  "prohibited_writes": [
+    "共享题库",
+    "conversion_manifest.json",
+    "原卷/细则原件"
+  ],
+  "current_shared_metadata_note": "20260922仅同步确定性路径/状态及已独立复核的Q2/Q18框线；R6原字节见sources/history_r6；其他原件和内容不改。"
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "repair_checkpoint.v1",
+  "repair_id": "BJ-2025-DC-ERMO-repair-20260921",
+  "status": "candidate_repairs_saved_not_merged",
+  "updated_at": "2026-09-21T16:55:06-07:00",
+  "scope": "independent_candidate_only",
+  "shared_write_guard": {
+    "shared_question_md_modified": false,
+    "shared_manifest_modified": false,
+    "source_pdfs_modified": false,
+    "writes_confined_to": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/repair_2025_dc_ermo/"
+  },
+  "parent": {
+    "review_receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/review_2025_dc_ermo.json",
+    "review_receipt_sha256": "f5cfce5b01d1988fd52efb719a6371616c4f4300653dd450dd922f37fc451e40",
+    "review_candidate_reference": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/BJ-2025-DC-ERMO_修复候选完整题面.md",
+    "review_candidate_reference_sha256_at_start": "5bf149fcc57b6c0bbfe31b465bae4688928cf634b279fe5c5af73d8af27c25b6",
+    "review_candidate_reference_sha256_current": "e4c9f68d37a7a5b0ebe0757fc6ca5e9dae2f4681d13feba6b55464e30f257f7e",
+    "input_question_root": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO"
+  },
+  "source_pdfs": {
+    "paper": {
+      "path": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+      "sha256": "9b287871f660f23de9593be4c16952103c1c6873d6bd52d25ddd57ddd1a8d268",
+      "pages": 8,
+      "opened_pages": [1, 2, 3, 4, 5, 6, 7, 8],
+      "rendered_under_candidate": "rendered/paper/p-1.png ... p-8.png; p4_q17_crop.png"
+    },
+    "rubric": {
+      "path": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf",
+      "sha256": "606dbae1d5ce3e59c8daef227c8b797cfbda2b7f90b8c9e07f47654af13e1cc2",
+      "pages": 5,
+      "opened_pages": [1, 2, 3, 4, 5],
+      "rendered_under_candidate": "rendered/rubric/r-1.png ... r-5.png"
+    }
+  },
+  "page_sha256": {
+    "paper:p001": "fa3bb8e79b837fbde428c113c667899af9799c2d47f2500166dc48d08d826247",
+    "paper:p002": "d62a04bdd7892bd058b27f58d8b37ec0d00ec9e86c20127e604b06144f414892",
+    "paper:p003": "672ad373f6066b7564898b2c032c4c83c09d5de93331fb43886078a3384efc64",
+    "paper:p004": "c88741cccb2d3f1ae3a1bf1dce36dcd4700009b2a22424cb37980e78c60f28f5",
+    "paper:p005": "be5b16fe40b0ae492eccab2fa5b1773584abc9857a44d118a8f235d23c4c0a2f",
+    "paper:p006": "a9f12e0cd2fa027712689260142490734bcf6d5d3a330c0d6fb4e5ea8b4b3be8",
+    "paper:p007": "55e2aa8b9bc9f5242197caa173fd50af6989b39f33dc9223bfd3d8219ce41cbf",
+    "paper:p008": "d525b16e5e1b40cb6809efcaea86f80c29cd5cd548d54f528323662a1eb9cfe8",
+    "rubric:p001": "5a3fd06add64d09ecec93e4e3508f9c62bb8ac4aad06df542034db473da9c7d1",
+    "rubric:p002": "696135809eb5d574ec8675526c7fbf0c5266e6d0bccd1862a15219697591956f",
+    "rubric:p003": "5f181b720fad0078fa9f4c702bb33e29a0d8ef29b1187a6eda056be23a0dff59",
+    "rubric:p004": "973d9893233af701478b7d2ec12cba033d982a4298cc3505aba0c541980f63d3",
+    "rubric:p005": "8d228d6e602462d45501332e0d4cf850a5702beab6c7992c55dd6303a9c60358"
+  },
+  "completed_candidate_repairs": {
+    "BJ-2025-DC-ERMO-Q1": {
+      "parent_md_sha256": "17a42c70be87568e61fd6a30b464dc002a1a02556cc79d0b066951b271531eee",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q1.md",
+      "candidate_sha256": "feebdbe38f620f1c8497712ee027767817f18cf0389669e28371049009096dfa",
+      "repair": "remove Q16 angle 1 false-positive rubric mapping; preserve Q1 body and embedded answer 1.A"
+    },
+    "BJ-2025-DC-ERMO-Q2": {
+      "parent_md_sha256": "eed1864c8c178fbc49c8f8106330c4153bf60193a64dfc13fa28ca270c690a53",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q2.md",
+      "candidate_sha256": "d95b57251685209d01c3b4198bc4447f6deedecc505049186385c2beb6f4c5db",
+      "repair": "remove Q16 angle 2 false-positive rubric mapping; preserve Q2 body and embedded answer 2.D"
+    },
+    "BJ-2025-DC-ERMO-Q3": {
+      "parent_md_sha256": "12acfc2e07ea95ee9b94804464a21771e65deb4cff5be29c46bf0f64391d5421",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q3.md",
+      "candidate_sha256": "42f004e04657ae8bc84cd419f03c289371498a02c04f65ef8f67dc0675444d4a",
+      "repair": "remove Q16 angle 3 false-positive rubric mapping; preserve Q3 body, answer 3.C, and verified image asset"
+    },
+    "BJ-2025-DC-ERMO-Q5": {
+      "parent_md_sha256": "4b59b4c17998c7202024c385f3ceb7d148400077ce57561aa64dc45830eaf97c",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q5.md",
+      "candidate_sha256": "61230c1c4b6aa95de77d158f316518b16f10b72df65baca8e890fc93727ffafb",
+      "repair": "remove Q16 angle 5 false-positive rubric mapping; preserve Q5 body and embedded answer 5.C"
+    },
+    "BJ-2025-DC-ERMO-Q4": {
+      "parent_md_sha256": "7ec1dc1a3e5e017f9b2a9b1f84b2ed3361600e4d075b81f3e3c66e6178c9b3ae",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q4.md",
+      "candidate_sha256": "29f2c5c4183f794dba591c63def9072f723f9bf9536e82b8f9762dbcc32042ac",
+      "repair": "complete p001-p002 cross-page body; preserve embedded answer 4.C; no Q4-specific formal rubric"
+    },
+    "BJ-2025-DC-ERMO-Q6": {
+      "parent_md_sha256": "b9269e7f2b6b0e4d9797846f698de7527d7671b266143df801dc777cfe180fd7",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q6.md",
+      "candidate_sha256": "c7c470da35b0e265a1a3302c96d2fc8b84e31cd4bdd984975cd45da5d494f4e6",
+      "repair": "complete p002 body; quarantine Q16 angle 6 false-positive rubric mapping; preserve embedded answer 6.B"
+    },
+    "BJ-2025-DC-ERMO-Q9": {
+      "parent_md_sha256": "257f735f9f3ff55c1943b495d404a8babba2b231dfe27c6e692712ad3f98df77",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q9.md",
+      "candidate_sha256": "030a8d89f466efb9fa662dd6871fc8dcf0797f1c4a767d8340bb8df773e23fb6",
+      "repair": "complete p002-p003 cross-page body; preserve embedded answer 9.D; no Q9-specific formal rubric"
+    },
+    "BJ-2025-DC-ERMO-Q14": {
+      "parent_md_sha256": "4c5f88a7c14038a3622e8f3c94e265beedcb0a5b16705d468b015451960f21a5",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q14.md",
+      "candidate_sha256": "edb29dd4e1ade9ac8258efbdd148c6e4f9eca8b4679b84dd06599dfa7af43067",
+      "repair": "complete p003-p004 boxed prediction block; preserve embedded answer 14.B; no Q14-specific formal rubric"
+    },
+    "BJ-2025-DC-ERMO-Q17": {
+      "parent_md_sha256": "209cbceb0985028040c219996ad7ce76109c8be14c795705ea80e99be4846999",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q17.md",
+      "candidate_sha256": "0e2760a21a284bffdd7d972130a4521ef3ce2fe181d421100291000545c910c4",
+      "repair": "add p004 visual/native body; split Q17 rubric before Q18(1); preserve Q17 answer and visual/native glyph variants"
+    },
+    "BJ-2025-DC-ERMO-Q18": {
+      "parent_md_sha256": "45635090c55966913a7934f88deeb989eb122805db97f105a683ff842bcb0799",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q18.md",
+      "candidate_sha256": "3461acf9a0756300a755ccec6826e133406aab161c0589842182f8c5824f0faf",
+      "repair": "preserve p005 body/OCR; relink and restore formal rubric:p002-p003 for Q18(1)/(2); preserve embedded answer"
+    },
+    "BJ-2025-DC-ERMO-Q19": {
+      "parent_md_sha256": "bf6d4487905df0a2ddc64c2e765ffdcbbdca79fab5609afa39c289c2dad8177c",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q19.md",
+      "candidate_sha256": "a8db8e11609794aefa7b2ac94da382878deb51b42824a4b5c8bc273f1ce3bf65",
+      "repair": "add p005-p006 cases/table; correct whole-question score to 8; restore formal rubric:p003-p004 and embedded answer"
+    },
+    "BJ-2025-DC-ERMO-Q20": {
+      "parent_md_sha256": "e4b34ab507fd4a5b1a8a8317a6f84df29ce6cc597dbbdf1188fc1b9b0ce99310",
+      "candidate_path": "questions/BJ-2025-DC-ERMO-Q20.md",
+      "candidate_sha256": "477e530b20520cef954683c8f58d1bcab9a80703f2080e563192455e230ddd71",
+      "repair": "add p006 body; restore formal rubric:p004-p005 background/spirit/action and p008 Q20 level table; preserve embedded answer"
+    }
+  },
+  "copied_but_not_repaired": [],
+  "unresolved": [
+    "No independent answer PDF exists; p007-p008 are embedded answer/level material and remain explicitly non-independent.",
+    "Q1-Q6, Q9 and Q14 have no Q-specific formal rubric in the opened 5-page rubric; Q6's Q16 angle 6 remains only as quarantined false-positive evidence.",
+    "The source report contains aggregate student-performance/teaching text but no individual student original-answer image, teacher annotation, scoring mark, or per-student actual score for the candidate questions; each candidate records source_not_provided.",
+    "Q17 source PDF contains visually anomalous/native-layer glyphs; candidate preserves visual form and native variants and requires parent review before any merge.",
+    "All 12 repaired files remain candidate-only and require parent-side re-read/merge decision; this checkpoint is not full-exam acceptance and does not update conversion_manifest.json."
+  ],
+  "next_step_after_restart": "Parent agent should inspect all candidate files, re-read the exact source anchors and SHA guards, then independently decide whether/how to merge. Do not edit questions/, indexes, evidence, conversion_manifest, or source PDFs outside this repair directory."
+}

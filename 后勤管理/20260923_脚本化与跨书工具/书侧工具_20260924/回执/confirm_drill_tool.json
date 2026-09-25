@@ -1,0 +1,22 @@
+{
+ "verdict": "PASS_WITH_ISSUES",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "major①的修复还剩一个漏洞，触发概率低。_new_fails 用两层判断：候选稿的内容键在不在父稿的键集合（set）里，以及每条规则的 FAIL 条数有没有增加。同一次 build 如果修好一条父稿原有 FAIL（如补上第 36 条的题源），又新加一条与父稿另一条 FAIL 内容键完全相同的条目（如把缺题源的第 38 条再复制一份），同规则的 FAIL 条数不变，新条目的键也在父稿集合里。结果 build 退出码 0 并写出候选稿，stderr 还说“与父稿原有 FAIL 相同，不算新增”。fix5 的 known_limits 称“按 rule 计数兜底，宁可多算不放过”，这种“一修一增”的情况不成立。只有新增条目与父稿已有的 FAIL 条目内容完全相同时才会触发，所以概率低。但它属于 major① 同一类问题：新增 FAIL 被父稿基线掩盖。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_confirm && TMPDIR=$PWD/tmp /usr/bin/python3 -B vattack.py V2 → [BUG] V2 exit=0 out_exists=true。直接复现：drill_tool.py build --docx cases/b3.docx --items cases/V2_items.json（第 36 条 source 改为“补填题源”，第 38 条后插入一份它的深拷贝，source 仍为空）--out cases/V2_out.docx --profile bixiu3 → exit 0。stderr 开头为“提示：写后单练门仍有 18 条 FAIL，但与父稿原有 FAIL 相同，不算新增，不阻塞”。对输出跑 check，“题源为空”仍是 16 条，其中新出现 39、“党对人民军队的绝对领导是人民军队的建军之本”（空题源），这是新增的缺口。代码位置 drill_tool.py 934-948 行。",
+   "fix": "把 base_keys 改成 Counter(_fail_content_key(f) for f in base_fails)，按键做多重集比较：候选稿中某个键的出现次数超过父稿，超出的那些条目算新增。rule 级计数兜底可以保留。补一条“修一条、复制一条”的回归用例，退出码必须为 1。"
+  }
+ ],
+ "checked": [
+  "major①（表级 FAIL 基线键）：复跑 final_attack.py N1，exit 1、不留输出，stderr 新增 FAIL 列出 table 864 和 865（因为按规则计数兜底，864 也一并列出）。对照组 exit 1、只列 865。N1b（前 45 字相同的缺纠正条目）exit 1。变体 V2（修一条加一条、条数不变）没拦住，见 issue。",
+  "major②（_renumber_row）：复跑 N9，exit 0。第 10 条序号拆成“1”“0、”两个 run、题干以“10个”开头，输出 A1、A2 都是“11、\\t10个不能割断历史…”，check 没有新增编号类 FAIL。变体 V1：第 20 条序号拆成“2”“0”“、…”三个 run、题干以“2025年”开头，第 99 条拆成“9”“9、”并且进位成三位数，题干以“99个”开头。插入 1 条后 exit 0，输出为“21、\\t2025年…”和“100、\\t99个…”，A1、A2 一致，没有新增 FAIL。变体 V3：段首先放一个只有 rPr 的空 run，exit 2，报错“…中止，不猜测位置：段首拼接文字=''”，不留输出，错误文字已改为“中止”。",
+  "major③（build 写后门跑 drill_tool 补充检查）：复跑 N8（新增条目 source=''），exit 1，不留输出，新增 FAIL 里有 check=drill_tool、rule=题源为空。官方用例 fix5-3 也通过。代码中 cmd_check 和 cmd_build 共用 _extra_drill_checks（drill_tool.py 556 行，build 1209 行调 _new_fails），父稿 F0 和候选稿 F2 都跑。",
+  "minor（execution 模式核题源）：复跑 N6/N6b。decision 模式父稿 pass、execution 模式父稿 fail（still_excluded=2）、按决策 build 后 pass、只删一条 fail；保留条目题源被改后 execution 模式 status=fail（missing_retained=1、unexpected_extra=1）。",
+  "minor（同段纠正模板 br／序号后 tab）：复跑 N5，B2_230 第 587 号所在组插入新错误项，exit 0。新行的 run 结构为 [[t],[t],[t],[t],[br],[t]]，保留 <w:br/>，序号后没有 tab，与模板行一致。1640 行 C14N 0 差异，reused=586、renumbered=234、rebuilt=1。",
+  "无回归：N2 的 5 例 error_runs（重叠拦截和相邻片段上色）全部 OK；N4a B3_52 插 3 条，1352 行 C14N 仅序号不同；N4b B2_230 插 1 条，1640 行 0 差异。N3 被 harness 判为 BUG，是因为它把父稿原有的“题源为空”“分组标签”两类 FAIL 也算进了 ins_check_fails；8 行 A1 的 stem、blank、source、colored 全部正确，两条路径 exit 0，是测试脚本误报，不是工具问题。",
+  "官方测试 run_tests_drill_tool.py：TMPDIR=/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_confirm/suite_tmp，/usr/bin/python3 -B，exit 0，“全部用例： PASS”，用时 4:08，fix5-1 至 fix5-4b 都是 OK。4 个真实输入 SHA/mtime 测试前后相同（B3_52 c007d719…，B2_230 d33a3f93…）。日志在 drill_tool_confirm/suite.log。",
+  "测试前后快照（snap.py）：5 份真实 docx、drill_tool/batch_health/docx_lib/profile_lib/check_drill_admission、profiles/* 的 SHA 和 mtime，以及受保护目录的文件列表，前后 diff 为空。scripts/__pycache__ 仍只有 3 个旧的 cpython-312 pyc，Skill scripts/ 下没有 verify/attack/test 类文件。",
+  "旁注（不在本轮 blocker/major 范围内）：drill_tool.py 现在有 1331 行，超过规格中 ≤1200 行的目标，fix5 的 known_limits 已如实说明，由主代理裁定。未改工具代码或其他脚本，未运行 collab.py，未启动子代理。所有产物都在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_confirm/ 下：final_attack.py、vattack.py、snap.py、cases/、attack1.log、attack2.log、suite.log。"
+ ]
+}

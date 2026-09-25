@@ -1,0 +1,78 @@
+{
+ "summary": "返修 verify_sweep_rule.json 全部 blocker/major、及能顺手修的 minor：只改 scripts/sweep_rule.py（646→1058 行）。①blocker：_widen_unique 改成格式边界感知——widen 时每一步都核对新增的上下文字符是否与命中片段相邻端同 rPr（新增 _para_fmt_map/_ctx_ok，基于 apply_patch._run_spans/_run_fmt 对齐到本工具的段落全文下标）；越界就试另一侧，两侧都不行就整批中止，不再允许把命中片段外的字带进跨 run 替换。另加独立后置条件 _verify_no_stray_format_change：在段落深拷贝上真的跑一遍 apply_patch.apply_replace_text，逐字比对命中片段以外的格式是否零变化，不通过就中止——不依赖体检抽查。用 B3_52 真实事故（【细则说明】→【评分说明】385处）与哲学 R10 真实事故（【答案落点】→【答题落点】554处）复现并确认修复后 fmtdiff 逐字格式误伤=0（原为 385/34）；另用 craft.py 手法自造跨-run命中复现并确认修复后未点名的红色字符保持红色不被吞成命中格式。②replace_regex 的 accept 改成在整段文字上重新 finditer 定位命中 span 对应的 match 对象、用 match.expand(repl) 算替换片段（不再对孤立子串 text[s:e] 做 re.sub），前瞻/后顾/^$ 等依赖上下文的正则因此能正确生效；套用结果与命中片段原文相同时中止（拒绝生成 old==new 的空操作），并在 match.regex 与 action.pattern 命中位置对不上时给出明确错误。③新增 _known_dims/_check_dim_values：find/verify 开始前对规则 match/exclude 的 zones（对照 bh.walk 固定枚举）/styles（对照文档实际出现的样式名）/labels（对照 profile 的 P.block_labels）/parts/kinds（对照 profile 声明）做校验，出现未登记的取值直接退出 2 并列出已知取值，不再静默得到 0 候选。④profile 含 _needs_confirm（草案配置）时 to-patch 默认拒绝生成补丁（退出 2），须显式 --allow-draft-profile 才放行，补丁记 draft_profile_allowed:true；另加与 zone 判断无关的题面标签兜底 _looks_like_source_label（按 profile.source_labels 与硬编码常见题面标签，段首命中即视为题面），不论 bh.walk 判的 zone 是什么，决定都必须显式给 source_zone，否则整批中止——用文化 v6.30 真实文档 + culture.draft.json（_needs_confirm 明确记着 APPX3 漏题块）复现“无废城市→零废城市”找到 3 段、2 段题面被误判 outside 的真实场景，确认未加开关时 to-patch 拒绝、加了开关但未给 source_zone 时题面兜底仍拦下、给了 source_zone 后能正常落地并带上 index_hint/draft_profile_allowed。⑤pack 改成先 _guard_location(out_dir) 校验目录本身的位置合法性（复用 dl/bh 的 _frozen_hits/_within/_temp_roots/_cf 等私有判据，跳过它们要求路径已存在的部分），通过后才 mkdir；再对全部目标文件（每个 batch 与 index.json）先跑一遍 dl.guard_write 验证写权，全部通过才进入第二遍真正写入，任何一步失败都在 except 里把刚建的空目录删掉——整批要么全落地、要么一个字节都不留。⑥新增 match/exclude 的 colors/bold 匹配维度（按命中片段所在 run 的显式 (color,bold) 过滤 hit_spans，用同一份 _para_fmt_map 对齐格式与文字下标）与 action.type=set_format 动作（命中片段必须在段内唯一，不支持靠扩上下文消歧，产出 apply_patch 认得的 set_format op），覆盖用户背景里“答案落点蓝字过多”那类格式类推广，不再只能表达文字替换。顺手修的 minor：to-patch 不再直接采信候选文件的 text/hit_spans/zone/para，改为在原稿上重新跑一遍规则核对（不一致则中止），段落定位一律用重新核算出的段号（cand['_para_idx']），杜绝候选文件被篡改后静默采信；决定文件里出现候选没有的 cand_id 也会中止；不给 zones 时默认也排除 source/title（新增 allow_source_zone 顶层开关，需要碰题面必须显式打开或在 zones 里写明）；anchor 里补 index_hint=重新核算的段号，供 apply_patch 消歧重复段落；修正文件头 usage 里 verify 命令不存在的 [--cands] 参数；run_tests_sweep_rule.py 的输出目录从脚本自身所在的 …/测试/ 目录改成固定 scratchpad 路径（可用 SWEEP_TEST_OUT 覆盖），不会再把书稿副本和候选 JSON 写进项目目录。",
+ "issues_resolved": [
+  {"id": "blocker-1", "desc": "_widen_unique 跨 run 把命中片段外一个字吞进命中格式（答案落点蓝字过多同类事故）",
+   "how": "widen 加格式边界感知（_ctx_ok/_para_fmt_map）+ 独立后置条件逐字格式对比（_verify_no_stray_format_change），任一处不安全就整批中止",
+   "verified": "B3_52 385处/哲学554处两个真实事故复现，修复后 fmtdiff 误伤字符=0（原385/34）；craft.py手法自造跨run攻击复现，修复后未点名红字保留红色"},
+  {"id": "major-2", "desc": "replace_regex accept 只对孤立命中片段 re.sub，前瞻/后顾/^$ 失效产出 old==new 空操作",
+   "how": "改成整段 finditer 定位对应 match 对象、match.expand(repl) 取替换片段；old==new 时中止",
+   "verified": "(?<=坚持)实践→社会实践：原逻辑复现空操作，修复后4条op全部正确替换；pattern==repl 负例正确中止"},
+  {"id": "major-3", "desc": "zones/labels/parts/kinds 拼错静默得到0候选",
+   "how": "新增 _known_dims/_check_dim_values，find/verify 前校验并在未知取值时退出2列出已知取值",
+   "verified": "zones/labels/parts/kinds 四种拼错均退出2且报未知值；不限维度的对照组仍能正常找到候选"},
+  {"id": "major-4", "desc": "跨书用草案配置(_needs_confirm)时不理会漏题块风险，题面被当outside改掉",
+   "how": "to-patch 默认拒绝_needs_confirm非空的草案（须--allow-draft-profile）；另加与zone无关的题面标签兜底_looks_like_source_label强制要求source_zone",
+   "verified": "文化v6.30真实文档+culture.draft.json复现“无废城市”3候选2段题面误判outside；未加开关拒绝、加开关未给source_zone仍拦下、给了能正常落地"},
+  {"id": "major-5", "desc": "pack 先mkdir后过守卫，中途失败留半批输出",
+   "how": "先_guard_location校验目录位置（不要求已存在），再两遍处理全部目标文件（先guard_write校验全部、再写全部），失败时清理刚建的空目录",
+   "verified": "预置batch_0002.json制造中途冲突，rc=3且目录内只剩预置文件、无batch_0001.json；Skill目录守卫函数测试blocked且未真建目录"},
+  {"id": "major-6", "desc": "不支持格式类推广（不能按颜色/加粗匹配，不能产出set_format）",
+   "how": "match/exclude新增colors/bold维度过滤hit_spans；action.type新增set_format，产出apply_patch的set_format op",
+   "verified": "对人工染红片段按colors:[FF0000]命中、colors:[00FF00]不命中(0候选)；accept后真的从FF0000变成404040且其余文字/格式不变"},
+  {"id": "minor-a", "desc": "to-patch直接采信候选文件text/hit_spans，不重跑规则核对；决定里多余cand_id被忽略",
+   "how": "to-patch在原稿上重新跑_iter_candidates逐条核对text/hit_spans/zone，不一致中止；段落定位一律用重新核算的段号；决定文件多余cand_id中止",
+   "verified": "篡改t1_cands.json第一条的hit_spans并把para指向别的段号，to-patch中止不留输出"},
+  {"id": "minor-b", "desc": "不给zones默认包含source/title，题面授权变成模型顺手填字段",
+   "how": "新增SOURCE_ZONES默认排除+allow_source_zone顶层开关",
+   "verified": "不限区位的规则默认候选里不含source/title；allow_source_zone:true时才出现"},
+  {"id": "minor-c", "desc": "anchor不带index_hint，重复段落时无消歧退路",
+   "how": "anchor()补index_hint=重新核算的段号", "verified": "生成的补丁op.anchor里可见index_hint字段"},
+  {"id": "minor-d", "desc": "文件头usage写verify [--cands]，解析器没有这个参数；测试脚本产物写进脚本自身所在的项目目录",
+   "how": "docstring删掉[--cands]；run_tests_sweep_rule.py的HERE改成固定scratchpad路径(OUT_DIR，可用SWEEP_TEST_OUT覆盖)",
+   "verified": "在.../测试/目录下直接运行该脚本，产物全部落在scratchpad/booktools3/sweep_rule/，测试目录本身无新文件"}
+ ],
+ "issues_deferred": [
+  {"id": "minor-e", "desc": "全书存在完全相同重复段落时锚点不唯一、整批中止无退路（建议给index_hint消歧）",
+   "why": "本轮已给index_hint（重新核算的段号），由apply_patch.resolve_anchor按既有语义消歧；未额外验证“刻意构造3份相同段落”这种边界（原回执atk8/dup场景），行为应与之前一致（工具仍会如实中止），未追加新的定向回归"}
+ ],
+ "files": {
+  "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/sweep_rule.py",
+  "lines_before": 646, "lines_after": 1058,
+  "changed_only_this_file": true,
+  "other_scripts_touched": false,
+  "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools3/sweep_rule/run_tests_sweep_rule.py",
+  "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_sweep_rule.py",
+  "test_outputs_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools3/sweep_rule/",
+  "pycache_check": "改前改后 skills/scripts/__pycache__ 目录内容一致（仍是 book_incremental/check_drill_admission/source_intake 三个旧 .pyc，未新增 sweep_rule/apply_patch/docx_lib/batch_health 的 .pyc）"
+ },
+ "usage": "CLI 用法与退出码含义整体不变，新增：to-patch 新增 --allow-draft-profile（草案配置默认拒绝时需要）；规则 JSON 新增顶层 allow_source_zone、match/exclude 的 colors/bold、action.type=set_format（配 action.format）；候选 JSON 新增 looks_like_source 字段；决定 JSON 新增 format 字段（覆盖 set_format 规则默认格式）；补丁 JSON 在用了草案配置时新增 draft_profile_allowed:true。旧规则/决定文件不受影响，仍按原语义工作，只是 find/verify 会先做维度校验、to-patch 会先做候选核对与草案门禁。",
+ "tests": {
+  "run": "/usr/bin/python3 run_tests_sweep_rule.py（在 .../测试/ 目录直接运行，输出经 OUT_DIR 落到 scratchpad）",
+  "total": 14, "passed": 14, "failed": 0,
+  "list": ["①find→pack→to-patch→apply→verify：哲学R10“本节点”20处FAIL归零",
+   "②find→pack→to-patch→apply→verify：B3_52“来源腔”2处FAIL归零",
+   "③find→to-patch→apply→verify：思维v6.20“原细则”17处FAIL归零",
+   "④负例：决定缺条/题面区未授权/候选段已变/规则非法/冻结册写",
+   "①回归-blocker：格式边界安全（B3_52 385处+哲学554处真实事故复现+自造跨run攻击）",
+   "②回归：replace_regex整段重新匹配(前瞻/后顾)+old==new空操作必中止",
+   "③回归：zones/labels/parts/kinds拼错退出2并列出已知取值",
+   "④回归：草案配置(_needs_confirm)默认拒绝+题面标签兜底（文化v6.30真实事故复现）",
+   "⑤回归：pack先守卫再落盘，中途失败不留半批输出",
+   "⑥回归：colors/bold匹配+set_format落地",
+   "minor回归：候选篡改后to-patch核对并中止",
+   "minor回归：默认排除source/title，allow_source_zone才放行",
+   "真实输入文件SHA/mtime/大小未变（4本真实书稿）",
+   "Skill scripts/__pycache__无新增.pyc"],
+  "repro_commands_rerun": [
+   "sweep_rule.py find --docx B3_52副本 --rule 【细则说明】→【评分说明】 --profile bixiu3 → 385候选 → to-patch accept全部 rc0 → apply rc0 → fmtdiff 误伤=0（原385）",
+   "sweep_rule.py find --docx philosophy_copy.docx --rule 【答案落点】→【答题落点】 --profile philosophy.draft.json → 554候选 → to-patch rc0 → apply rc0 → fmtdiff 误伤=0（原34）",
+   "sweep_rule.py find --docx culture_copy.docx --rule 无废城市→零废城市 --profile culture.draft.json → 3候选(2段题面) → to-patch 无--allow-draft-profile rc2 → 加开关未给source_zone仍rc2(题面兜底) → 给了source_zone rc0"]
+ },
+ "known_limits": [
+  "set_format 不支持靠扩上下文消歧：命中片段必须在段内已经唯一，否则中止（widen 会连带扩大改格式的范围，与 replace_text 语义不同，故意不做）",
+  "colors/bold 匹配是本工具唯一的格式类推广入口；仍不支持“按格式匹配、按文字替换”的组合（即 set_format 之外，replace_text 类动作暂不支持用 colors/bold 收窄，只能用来筛 accept/reject 候选范围）",
+  "match.regex 与 action.pattern 不一致时，replace_regex 的 accept 会在两者命中位置对不上时中止（不会强行套用），需要不一致时请改用 model_rewrite",
+  "题面标签兜底（FALLBACK_SOURCE_LABELS）是硬编码的常见标签名单，不是详尽枚举；跨书遇到本工具没列出的题面类标签仍可能漏判，_needs_confirm 门禁与人工审阅决定仍是主要防线",
+  "本轮未新增“完全重复段落”的定向回归（issues_deferred minor-e），沿用 apply_patch.resolve_anchor 既有的 index_hint 消歧语义"
+ ]
+}

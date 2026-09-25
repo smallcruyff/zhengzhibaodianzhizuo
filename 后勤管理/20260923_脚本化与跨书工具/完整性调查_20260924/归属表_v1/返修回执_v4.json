@@ -1,0 +1,88 @@
+{
+ "responder": "Claude（工作流子代理，只读书稿/题库/Skill，未运行collab.py，未启动子代理/新会话，未给其它会话发消息）",
+ "target": "归属表_v1 → v4（attribution/exam_identity/skill_overrides三件套）+ 各书清单_v4（新产物）",
+ "rule_version_before": "2026-09-24-attribution-v3",
+ "rule_version_after": "2026-09-24-attribution-v4（清单合并戳 2026-09-24-attribution-v4-final）",
+ "against": ["确认意见_v3.json（1 blocker已在v3自身解决，4 major本轮修）", "确认意见_v4.json（指出v3之后从未真正返修）", "各书清单_v4/终审意见.json（指出小问级展开导致错收假阳性、准入未过滤、admission过时等问题）"],
+ "inputs_used": {
+  "principle": "题库可能被Codex/Luna题库主控并发合并，本轮全程读当前线上文件；classified_prod.jsonl/units.jsonl/matrix.csv/bank_duplicate_exams.csv沿用inputs_snapshot（verify_live_inputs_v3.py核对结果：全部OK，线上与快照一致，可信任离线重放）",
+  "questions.csv_sha256": "13116c9d0409bcb7a9ea025978b9d58f1c03b5635a8e1dc3a2ba314ecfad871d",
+  "rubric_links.csv_sha256": "ae08701ee20397da7089f57011bc89b407ffe46953b63257f371f5db99b46b31",
+  "exams.csv_sha256": "8c3452f07ddaa91f3cbb48623737e66b9644415cc3a44706eda43bd10cf2552f",
+  "assembly_blocks.csv_sha256": "acf0537e80cdb7b108f734f9f72010d06e09d9354ad85dae727f87856057341b",
+  "verify_live_inputs_v3.py_result": "OK rubric_links.csv / OK exams.csv / OK assembly_blocks.csv / OK matrix.csv / OK bank_duplicate_exams.csv（线上与快照一致）"
+ },
+ "judgments_used": {
+  "first_pass_batches": "model_batch/judgments/c001-c060.json + s001-s060.json（120批，judge=claude-opus-5-5，共1827个unit_id）",
+  "escalation_batches": "model_batch/escalation/esc*.json 对应 model_batch/judgments/esc*.json（12批，judge=claude-opus-5-5，共463个unit_id）",
+  "gold": "model_batch/gold/gold_final.json（120个unit_id，两名独立Opus裁判gold_judge_A/B一致率97%，不一致处由第三次Opus裁定合并）",
+  "excluded": "model_batch/gold/gc01-04.json、gs01-05.json 及 model_batch/judgments/gc*.json、gs*.json（Sonnet校准批，未计入最终判定，仅用于calibration_report.md，按任务要求不采用）",
+  "merge_priority": "金标(gold_final) > 升级复判(esc*) > 首判(c*/s*)；escalation∩gold=40个单元，全部按金标结论为准",
+  "final_merged_units": 1947
+ },
+ "items": [
+  {
+   "issue_ref": "确认意见_v3.json issue1（孪生题配对沿用matrix.csv错误dup_of：2024-Q16被错配给2025-Q25，真正的2025-Q16/Q18未配对）",
+   "status": "fixed",
+   "fix_applied": "exam_identity.json的dup_alias_qid_pairs：删除{2024-Q16→2025-Q25}错误配对，改为{2024-Q16→2025-Q16}；新增{2024-Q18→2025-Q18}；BJ-2025-HD-QIZHONG-Q25新增qid_redirects条目，标记kind=split_error_duplicate_q25、exclude_from_admission=true，admission落身份错误-不计入分母，排除出全部模块分母。",
+   "verification": "重跑build_attribution_v4.py后核对：BJ-2024-HD-QIZHONG-Q16#2与BJ-2025-HD-QIZHONG-Q16#2在X1列均为COLLECTED（原来2025-Q16两个小问X1都是MAYBE，配对后正确联动）；BJ-2024/2025-HD-QIZHONG-Q18在B3列均为COLLECTED；BJ-2025-HD-QIZHONG-Q25#1/#2 admission=身份错误-不计入分母。已写入回传题库线要求题库核实删除/合并该虚假qid。"
+  },
+  {
+   "issue_ref": "确认意见_v3.json issue2（BJ-2024-CY-YIMO-Q18(2)仍判E1，exams.csv notes明确写'Q18(2)不升E1'）",
+   "status": "fixed",
+   "fix_applied": "skill_overrides.json新增OVR-2024CYYIMO-Q18-2-NEG（scope=Q18(2)，admission=不收-无E1，引用exams.csv该行notes原话）。同时按任务要求对exams.csv全表notes做了正则扫描（模式：不升E1|非E1|不算E1|不是E1|仅Q|限Q|E1仅|E1只），命中5行（BJ-2020-BJ-GAOKAO/BJ-2023-DC-ERMO/BJ-2024-CY-ERMO/BJ-2024-CY-YIMO/BJ-2024-SY-ERMO），逐行核对后只有CY-YIMO这一行是需要新增覆盖的小问级限定（其余4行要么是题级范围已被rubric_links.csv正确处理，要么未点名具体小问，不构成可执行覆盖）。另对.claude/skills/beijing-gaokao-politics/references下全部book-*.md做了同样关键词扫描，未发现新的小问级E1限定。",
+   "verification": "attribution.csv中BJ-2024-CY-YIMO-Q18#1=完整题-有E1，Q18#2=不收-无E1（此前两个小问都是完整题-有E1）。",
+   "known_limitation": "book-*.md的扫描只用关键词命中，不是对每处'E1'语境的穷尽人工阅读，不排除仍有未被命中的隐藏限定（沿用v3 README已知限制1）。"
+  },
+  {
+   "issue_ref": "确认意见_v3.json issue3（必修三汇编中门头沟/房山共6个待复核区块，因'1模'/'一模'写法不一致漏检索；书稿已引用的4题未标COLLECTED）",
+   "status": "fixed",
+   "fix_applied": "exam_identity.json的assembly_pending_review.resolved新增5条（门头沟一模1/3/21、房山一模9/10；门头沟一模7此前已存在于attribution.csv，未重复添加），年份按assembly_blocks.csv所属ASM-2024届各区一模试题分类汇编必修3锁定为2024届。skill_overrides.json新增4条module_collected=[B3]的覆盖（门头沟Q1、Q3，房山Q9、Q10），引用必修三第52批docx题肢出处次数（scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt：门头沟1×6、3×6、房山9×4、10×8）。门头沟第21题（10分主观题）已纳入候选行计入分母，但未在书稿题肢出处中找到引用，不代为标COLLECTED，落待裁决-证据未核实。",
+   "verification": "attribution.csv行数从1950增至1955（新增BJ-2024-MTG-YIMO-Q1/Q3/Q21、BJ-2024-FS-YIMO-Q9/Q10共5行；门头沟Q7此前已存在）；门头沟Q1/Q3、房山Q9/Q10的归属_B3均为COLLECTED。",
+   "known_limitation": "门头沟第7题(选择题,已存在)、第21题(主观题,新增)未在必修三第52批docx中找到引用，仅作候选，不标COLLECTED；确认意见提到的'必修三收门头沟Q1、Q3、Q8和房山Q9、Q10'中Q8此前v3已通过book_confirmed_extra_qid机制标记COLLECTED，本轮未重复处理，沿用v3结论。"
+  },
+  {
+   "issue_ref": "终审意见.json blocker（小问级已收由题级matrix.csv整题展开而来：matrix的S[1/2]、M[1]方括号标注被忽略，导致大量假\"已收\"和假\"错收\"）",
+   "status": "fixed",
+   "fix_applied": "build_attribution_v4.py新增cell_collects_subq()函数：解析matrix.csv模块列值，有方括号(如S[1/2]、M[1])时只把方括号内列出的小问视为已收，没有方括号(纯S/M)时才视为整题(含全部小问)已收。替换原collected_direct/collected_partner的bool(book and mrow.get(book))逻辑（该逻辑对所有小问一律按qid整体判断，与subq无关）。",
+   "verification": "验证用例BJ-2024-CY-QIZHONG-Q20（matrix xuanbi1列=S[3]）：修复前#1/#2/#3三个小问的归属_X1全部是COLLECTED；修复后只有#3是COLLECTED，#1/#2变为MAYBE，与matrix实际标注一致。全表扫描：修复前'归属_M=COLLECTED 且 该单元最终chk[M]=错收'的组合有326处（跨全部模块），修复后降为0处——说明此前几乎全部chk=错收信号都是小问展开造成的假阳性（与终审意见.json抽样发现的227/241占比一致）；本轮最终错收候选清单改为在这一修复后的基础上再叠加chk=错收信号，各书错收候选降到个位数到十几条的合理量级（B3=3、PH=6、CU=8、X1=2、X2=16、MI=4、RE=0，B2冻结仅记录=71）。"
+  }
+ ],
+ "final_admission_refresh": {
+  "instruction": "步骤2要求'用当前题库重算证据与准入（终审发现的待裁决-证据未核实里已有正式细则的）'",
+  "finding": "verify_live_inputs_v3.py确认inputs_snapshot与线上题库文件（含rubric_links.csv）逐字节一致，故本表原先使用的rubric_links.csv本身并未过期；终审意见.json提到的4个'已配对E1、attribution仍标待裁决'的单元，根源是rubric_links.csv对这几行的pair_status=存在候选/overlap=0.0（自动文本重叠打分对不逐句复述题号的独立细则文档系统性失效），不是文件本身过时。",
+  "action": "逐一用 DeepSeek_政治题库资料库_20260918/scripts/bank.py get <qid> --with-rubric 核实终审意见.json列出的4个单元（BJ-2023-HD-YIMO-Q21、BJ-2024-FT-ERMO-Q21、BJ-2025-HD-ERMO-Q20、BJ-2025-FT-QIMO-Q19），确认均有可读的正式评分细则内容（页码/评分档次/知识点均可见），在skill_overrides.json新增4条E1覆盖（OVR-2023HDYIMO-Q21-E1FIX等），并各自登记action_for_luna要求题库线更正rubric_links.csv对应行的pair_status。",
+  "not_done": "未对全部227条'待裁决-证据未核实'逐条用bank.py核实（工作量超出本轮范围），只处理了终审意见.json已明确点名、已有具体核实证据的4条；其余仍如实保留'待裁决'/单列'待核证据'，不冒充已核实。"
+ },
+ "rulings_and_ruled_csv": {
+  "action": "把escalation批次(esc*)中未被gold覆盖的423个单元（463-40）的最终rel/chk按merge_judgments.py同款规则转成rulings.jsonl记录追加写入（ruler=model:claude-opus-5-5:escXX，rule_version=2026-09-24-attribution-v4-final），gold覆盖的40个单元此前已在rulings.jsonl中(15:51批次)且优先级最高，本轮不重复追加以免打乱\"追加即最新\"的应用顺序。",
+  "rulings.jsonl": "3432条(已存在,首判+金标) + 987条(本轮新增,升级复判) = 4419条",
+  "attribution_ruled.csv": "重新用attribution.csv(v4,未叠加裁定)+全部4419条rulings按last-match-wins叠加生成，changelog记录1219处字段变更",
+  "caveat": "各书清单_v4的漏收/错收候选判定使用的是attribution.csv(v4,未叠加裁定)的归属_<模块>列作为\"书稿是否已收\"的地面真值，不是attribution_ruled.csv——后者已经把chk=错收的裁定写回归属列变成OUT，若拿ruled版本做\"已收\"判据会与错收判据自我循环、必然得出0条错收（本轮开发过程中先犯了这个错误，验证发现后已改正，见scripts/build_book_lists_v4.py注释）。attribution_ruled.csv仍按任务要求生成、供追溯模型判定candidate value的用途，但各书清单的\"已收\"口径以原始attribution.csv为准。"
+ },
+ "book_lists_summary": "见 各书清单_v4/00_汇总.md（各书漏收/错收/待核证据/题肢候选数量、建议优先级、自检结果、已知限制）",
+ "self_check": {
+  "method": "从B3/PH/CU/X1/X2/MI六本书的错收候选（RE为0，B2冻结不抽）中用固定随机种子抽10条，用书稿docx原文(通过book_<代号>.txt文本+正则按'区域+年份+题号(+小问)'定位)核对候选题号/小问是否真的出现在书稿中",
+  "result": "10条中3条确认书稿完全未引用该题号（矩阵标注错误，支持错收成立）；1条确认书稿只引用了其它小问、未引用候选小问（支持错收成立）；5条属于选必二同一模式——设问点名《逻辑与思维》但矩阵标进了选必二栏目，书稿引用的确实是候选小问但内容学科归属存疑（发现一个可能的系统性矩阵错配模式，已写入00_汇总.md建议单独复查）；3条确认书稿引用了候选题号(整题级)但模型认为内容学科不符（书在，学科归属需人工判断，不属于本表能自动核实的范围）。",
+  "raw_output": "scratchpad/attribution_salvage/ 下的 merge_and_lists.py / build_book_lists.py 运行记录（sample seed=20260924）"
+ },
+ "discipline_compliance": {
+  "no_bank_edit": true,
+  "no_book_edit": true,
+  "no_skill_edit": true,
+  "no_collab_edit": true,
+  "no_collab_py_run": true,
+  "no_subagent_or_new_session": true,
+  "no_cross_session_message": true,
+  "scratch_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_salvage/",
+  "archived_v3": "归属表_v1/v3_存档/（README.md、attribution*.csv、exam_identity.json、skill_overrides.json、rulings.jsonl快照、diffs/、model_batch/{boundary_cards.md,slice_estimate.json}、scripts/*_v3.py、历次确认意见/审查意见/返修回执_v3.json 均已原样归档，不覆盖删除）",
+  "note_on_rulings_jsonl_archive": "rulings.jsonl本质是持续追加的日志文件而非按版本重新生成的产物，归档进v3_存档/的快照已包含本轮追加的987条新记录（因为归档发生在追加之后），不是纯粹的v3切片；真实历史顺序仍完整保留在线上唯一的rulings.jsonl中，未被覆盖或删除。"
+ },
+ "known_limitations_carried_forward_or_new": [
+  "diffs/目录(build_diffs_v3.py产物)本轮未重新生成——各书清单_v4已用新方法(matrix小问精确+最终rel/chk)替代diffs/的职责，diffs/*.csv保留在主目录作为v3方法论的历史参照，未删除",
+  "题肢候选(选择题题肢级)无法机械核对是否已被单练题目单独收录，如实列出，需人工比对",
+  "待核证据(各书8-18条)需等题库线补齐正式细则才能转正",
+  "B2(必修二)错收候选71条明显偏高，怀疑是必修二早期分类/矩阵阶段的历史遗留问题；已冻结送印，本表只记录不建议改动",
+  "选必二(X2)错收候选中'设问点名逻辑与思维但矩阵标进选必二'的模式只抽查确认5条，未做穷尽复查，建议后续单独立项"
+ ]
+}

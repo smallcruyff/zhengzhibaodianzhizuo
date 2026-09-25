@@ -1,0 +1,60 @@
+{
+  "summary": "新增 scripts/sweep_rule.py（全书推广工具，find/pack/to-patch/verify 四个子命令，646 行）。规则 JSON 用 bh.walk 的 zone/style/label/例题kind/part 加正则圈定候选，find 只读列全书候选并按部分/节点计数；pack 切小批给模型逐条 accept/reject/edit；to-patch 把决定拼成 apply_patch.py 认得的 baodian_patch_v1 补丁——真正的锚点唯一性、题面区授权、禁用词表校验全部复用 apply_patch.check_ops，本工具不重复实现也不绕过；verify 对改后稿重跑 find 核对残留。命中一段里出现多处时默认按每处生成独立 replace_text（保留段内其余原文与格式），只有决定明确给整段 new_text 才走 replace_paragraph——这是为了不重演用户说的“答案落点蓝字过多全书返修 2.2 亿 token”那种坍缩事故；开发中用真实哲学稿复现过一次同类坍缩（见 known_limits 第1条），已在工具内修正并重新验证。四个必测场景（哲学“本节点”20处、B3_52“来源腔”2处、思维v6.20“原细则”17处、五种负例）全部用真实书稿跑通，find→pack→to-patch→apply_patch.py apply→batch_health 体检对照→sweep_rule verify 全链路自动化，测试脚本可重跑。",
+  "files": {
+    "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/sweep_rule.py",
+    "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools3/sweep_rule/run_tests_sweep_rule.py",
+    "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_sweep_rule.py",
+    "test_report_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools3/sweep_rule/test_report.json",
+    "modified_existing_scripts": []
+  },
+  "usage": [
+    "sweep_rule.py find --docx X.docx --rule r.json [--profile P] [--out cands.json]",
+    "sweep_rule.py pack --cands c.json --per-batch N --out DIR",
+    "sweep_rule.py to-patch --docx X.docx --cands c.json --decisions d.json --rule r.json [--profile P] --out patch.json",
+    "sweep_rule.py verify --docx Y.docx --rule r.json [--profile P] [--decisions d.json] [--out report.json]",
+    "落地仍是另起一步：apply_patch.py check/apply --docx X --patch patch.json --out 候选.docx —— sweep_rule.py 本身不改任何 .docx"
+  ],
+  "tests": [
+    {
+      "input": "philosophy R10（本节点 rule，真实书稿，只读；改动只落在副本）",
+      "result": "PASS：find 找到 20 处，与体检 FAIL 一致；用确定性脚本模拟“模型逐条确认”生成决定（全部 edit，去掉“本节点”）；to-patch 生成 26 条 replace_text（其中 6 个候选段命中 2 处，按 per-hit 拆成独立 op，未坍缩成 replace_paragraph）；apply_patch.py apply 成功（其自身的写后 postcondition 与未点名段落 C14N 核对均通过，否则会自己删输出并中止）；改后 batch_health 体检唯一变化是“工程词:本节点”FAIL 20→0，其余 FAIL/CANDIDATE/WARN 计数逐条比对不变；sweep_rule verify 重跑 find 剩余 0 处、与决定里 reject 数吻合",
+      "seconds": 5.262
+    },
+    {
+      "input": "必修三第52批阶段审查稿 B3_52（真实书稿，只读；改动只落在副本）",
+      "result": "PASS：规则“来源腔命中：阅卷细则/细则原话”，find 找到 2 处（段号 15048/15064），与该稿体检 FAIL 完全一致；额外测了 pack（per-batch=1 切成 2 批，index.json 与 batch_0002.json 结构核对通过）；to-patch 用 model_rewrite 决定（edit + new_snippet）生成 2 条 replace_text；apply_patch.py apply 成功；改后体检两条“来源腔”FAIL 各 1→0，其余 FAIL 不变；verify 剩余 0 处",
+      "seconds": 7.659
+    },
+    {
+      "input": "选必三思维 v6.20（真实书稿，只读；改动只落在副本，配置用 profile_probe 生成的临时草案 --profile 传入）",
+      "result": "PASS：规则“来源腔命中：原细则”，find 找到 17 处，与该稿体检 FAIL 完全一致；to-patch 用统一替换词“本细则”生成 17 条 replace_text（本用例全部命中 1 处/段，不涉及 per-hit 拆分）；apply_patch.py apply 成功；改后体检“来源腔:原细则”FAIL 17→0，其余 FAIL 不变；verify 剩余 0 处",
+      "seconds": 1.919
+    },
+    {
+      "input": "负例 5 种：(a)决定缺条 (b)决定把题面/标题区候选段当普通段改、不给 source_zone (c)候选段所在书稿在 find 之后已变化 (d)规则 regex 非法 (e)向冻结册（必修二修订230真件）生成补丁；(a)(b)(c)(d) 用哲学 R10 副本/候选，(e) 直接对 B2_230 真件跑（find 只读允许，to-patch 拒绝）",
+      "result": "PASS：五种全部整批中止、不留任何输出文件——(a)(b)(c)(d) 退出码 2，(e) 的 find 只读退出码 1（列出真实候选，不算错误）、to-patch 退出码 3 且未写 patch.json；(b) 复用的是 apply_patch.check_ops 的题面区强制校验，不是本工具另写的判断",
+      "seconds": 2.65
+    },
+    {
+      "input": "全部四本真实书稿（philosophy R10、B3_52、thinking v6.20、B2_230）",
+      "result": "PASS：测试前后 SHA256/mtime/文件大小逐一核对完全一致，测试全程只读这四份真件，从未打开写模式；唯一被写的是各自在 scratchpad 里的副本",
+      "seconds": 0
+    },
+    {
+      "input": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__",
+      "result": "PASS：测试前后目录内 .pyc 文件集合完全一致（仍是运行前就有的 3 个旧文件，sweep_rule.py 自身开头 sys.dont_write_bytecode = True，未产生新 .pyc）",
+      "seconds": 0
+    }
+  ],
+  "replaces": "必修三 Codex 全书推广那两轮各花 3.8 亿、2.2 亿 token 靠模型逐题手改的工作方式——认可一处改法后，脚本负责在全书列候选、切小批，模型只需逐条 accept/reject/edit，机械落地转交 apply_patch.py，不再需要模型自己扫全书找“还有哪里也这样”。",
+  "known_limits": [
+    "开发过程中发现并修正过一个真实的坍缩风险：命中同一段落多处时，若简单地用规则整段 re.sub 生成 replace_paragraph，apply_patch.apply_replace_paragraph 会把全段坍缩成段内第一个 run 的格式——在哲学 R10 稿上第一版实现真的把“教学正文误蓝”FAIL 从 1 条推高到 7 条（把黑字段落误染蓝/或反过来）。现已改成默认对每处命中单独生成 replace_text（只改那一小片、保留其余原文与格式），仅当决定明确给出整段 new_text 时才允许 replace_paragraph，并在候选里标 mixed_format 提示。已用三个真实场景重新验证不再复现该问题，但这不代表模型在真实使用中一定会规避 new_text——pack 的说明文字里提醒了，最终仍要看主代理/模型是否遵守。",
+    "同一段落多处命中且需要各自独立替换时，本工具靠“扩上下文直到子串在段内唯一”来定位每一处（_widen_unique）；如果两处命中之间的间隔文字本身在段内还会重复（例如整段是高度重复的模板句），可能扩到相邻命中的边界仍不唯一，这时会整批中止并提示需要人工给整段 new_text（会坍缩格式，风险自负）——三个真实测试场景都没有触发这种情况，但没有专门构造这种病态样本去验证退出路径本身。",
+    "开发中还发现 apply_patch.py 自带的 _already_applied_replace 启发式有一个通用误判：当 new 恰好是 old 在同一起点的严格前缀、且 new 在段内又唯一出现时，会被误判成“这条 op 已经做过”（哲学稿真实复现 6 次，均为“删除某词、只留前面 1 个字”的场景）。规格要求不改 apply_patch.py，所以在 sweep_rule.py 里用两道防线绕开：widen 时优先带右侧上下文、且构造完 old/new 后主动调用 apply_patch._already_applied_replace 自检，仍误判就继续扩右侧上下文，扩到段尾还避不开就整批中止（不会静默生成一条会被拒绝或误判的 op）。这不是修了 apply_patch 的这个小缺口，只是让 sweep_rule 自己产的补丁绕开它；如果以后有人直接手写补丁 JSON 撞上同样的 new-是-old-前缀构造，apply_patch 本身仍会误判，需要另外找主代理决定要不要在 apply_patch.py 里补这个洞。",
+    "verify 子命令按段号（cand_id 里编的段号）比对“剩余候选是否正好等于当初 reject 的数量”，前提是本工具产的 op 只做 replace_text/replace_paragraph、不增删段落——这一点成立（本工具确实不产生 insert/delete 类 op），但如果同一份补丁里混了别人手写的 insert/delete 类 op 一起应用，段号会漂移，verify 的数量对照就不可信了，需要人工核对 remaining_paras 而不是只看 matches_expected。",
+    "mixed_format 候选字段按段内出现的颜色种类数判断，颜色取自 batch_health 的样式链默认色/显式色；对“默认色”和“看起来一样但记录方式不同”的边界情况可能偏保守（思维稿 17 处全被标了 mixed_format，但这些候选本身命中数都是 1，未触发 replace_paragraph 坍缩风险，只是提示可能过度警觉），没有专门验证过它的精确率。",
+    "本工具不做任何教学判断：候选是不是真的该改、model_rewrite 的新文本是否准确，全部留给主代理/模型逐条看 pack 产物再决定；工具只保证“决定落地时锚点唯一、题面区有人签字授权、不引入禁用词、不悄悄坍缩格式”这几条机械底线。"
+  ],
+  "profile_fields_needed": [],
+  "needs_user_decision": []
+}

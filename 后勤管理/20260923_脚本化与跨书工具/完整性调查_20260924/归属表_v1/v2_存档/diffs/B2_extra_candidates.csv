@@ -1,0 +1,24 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_B2,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2024-CY-ERMO-Q20,BJ-2024-CY-ERMO-Q20,BJ-2024-CY-ERMO,20,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2024-HD-QIZHONG-Q18,BJ-2024-HD-QIZHONG-Q18,BJ-2024-HD-QIZHONG,18,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2024-HD-QIZHONG-Q19,BJ-2024-HD-QIZHONG-Q19,BJ-2024-HD-QIZHONG,19,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2026-CY-QIMO-Q7,BJ-2026-CY-QIMO-Q7,BJ-2026-CY-QIMO,7,选择题,,整题,COLLECTED,B2,完整题-选择题照收,缺答案键-已核实,"题库rubric_links.csv对该题有明确负例记录(已检查,本题不适用)",不明,2026-09-24-attribution-v2
+BJ-2023-HD-ERMO-Q20#2,BJ-2023-HD-ERMO-Q20,BJ-2023-HD-ERMO,20,主观题,2,小问,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,不明,2026-09-24-attribution-v2
+BJ-2023-HD-YIMO-Q16,BJ-2023-HD-YIMO-Q16,BJ-2023-HD-YIMO,16,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2023-XC-YIMO-Q18,BJ-2023-XC-YIMO-Q18,BJ-2023-XC-YIMO,18,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,不明,2026-09-24-attribution-v2
+BJ-2023-XC-ERMO-Q19,BJ-2023-XC-ERMO-Q19,BJ-2023-XC-ERMO,19,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2024-HD-YIMO-Q19,BJ-2024-HD-YIMO-Q19,BJ-2024-HD-YIMO,19,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO,18,选择题,,整题,COLLECTED,MI;B2;PH,身份错误-不计入分母,身份层标记:split_error_fake_choice_question,题库把该题登记为选择题（4个选项），但 units.jsonl 的 stem 实际是 “18.54~24 正常/24~28 超重/≥28 肥胖”——这是Q12题干里BMI分级表的尾部行随页面换行被误切成“Q18”，选项A-D的文字与Q13“下列选项中犯了与示例相同逻辑错误的是”一题的语境高度吻合，而题库里Q13的stem恰好缺选项（只到“第4页/共11页”截断）。可确认这是抽取阶段的切分错误，不是一道真实独立的第18题。该卷原卷“第二部分共6题”，但题库只登记了Q16/17/19/20/21五道主观题，真实的主观题“第18题”未被登记为任何 qid，书稿如引用“2025丰台一模Q18(1)”，指的是这道缺失的真实主观题，不是题库里的这个伪选择题。本表不猜测真实Q18内容，只标记该qid不计入选择题“照收”分母，并将“回补真实Q18、修正Q13选项归属”列入回传题库线清单，不直接改题库文件。,确定,2026-09-24-attribution-v2
+BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO-Q17,BJ-2025-SJS-YIMO,17,主观题,,整题,COLLECTED,B2;B3,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2025-SY-YIMO-Q20,BJ-2025-SY-YIMO-Q20,BJ-2025-SY-YIMO,20,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2025-HD-ERMO-Q21,BJ-2025-HD-ERMO-Q21,BJ-2025-HD-ERMO,21,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2025-CY-QIMO-Q17,BJ-2025-CY-QIMO-Q17,BJ-2025-CY-QIMO,17,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2025-HD-QIMO-Q21,BJ-2025-HD-QIMO-Q21,BJ-2025-HD-QIMO,21,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2025-XC-QIMO-Q8,BJ-2025-XC-QIMO-Q8,BJ-2025-XC-QIMO,8,选择题,,整题,COLLECTED,B2,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2026-FS-YIMO-Q19,BJ-2026-FS-YIMO-Q19,BJ-2026-FS-YIMO,19,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2026-XC-YIMO-Q20#2,BJ-2026-XC-YIMO-Q20,BJ-2026-XC-YIMO,20,主观题,2,小问,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2026-FT-ERMO-Q17,BJ-2026-FT-ERMO-Q17,BJ-2026-FT-ERMO,17,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,不明,2026-09-24-attribution-v2
+BJ-2026-FT-QIMO-Q19,BJ-2026-FT-QIMO-Q19,BJ-2026-FT-QIMO,19,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2026-FT-QIMO-Q17,BJ-2026-FT-QIMO-Q17,BJ-2026-FT-QIMO,17,主观题,,整题,COLLECTED,B2,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2026-HD-QIMO-Q19,BJ-2026-HD-QIMO-Q19,BJ-2026-HD-QIMO,19,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v2
+BJ-2024-BJ-GAOKAO-Q20,BJ-2024-BJ-GAOKAO-Q20,BJ-2024-BJ-GAOKAO,20,主观题,,整题,COLLECTED,B2,完整题-有E1,E1,具名核实-题库线缺口(rubric_links未收录，用户已核实为E1) | source-inventory.md:102 用户2026-09-22确认《2024年北京市高考政治试题分析(1)》【细则】为2024高考正式细则，按E1使用，不得因标题是'试题分析'降为教研候选；题库旧索引把2024北京高考记作无细则，属题库线待修（由题库负责人处理）。,倾向,2026-09-24-attribution-v2

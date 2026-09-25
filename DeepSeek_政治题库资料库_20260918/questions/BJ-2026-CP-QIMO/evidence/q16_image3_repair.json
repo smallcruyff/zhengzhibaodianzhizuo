@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CP-QIMO",
+  "defect_id": "FIG-Q16-IMG3-LABEL-DUP",
+  "status": "fixed_pending_independent_delta_review",
+  "repair": {
+    "file": "image3.png",
+    "transcription": "image3 为红底彩色刺绣纹样照片，图下标注“京绣”；原题表格文字另在题面转写中完整保留。",
+    "builder_persistence_fixed": true
+  },
+  "sha256": {
+    "candidate_q16": "3eae218a503a1e8365dad4b55749a2e06bed203ef83b2ae16b2cb586a30c4b7d",
+    "figures_md": "22d08befcceaa13761807d8b6d2f24fbae5a0ed7e50372d9815fab5e04f35737",
+    "figures_json": "07c30ed895dfa963b55c6800b6370fbcdfb8bd3daa190ec88e40f281e30cd16c",
+    "complete_candidate_json": "2c1441e3438b3db860171945693ac9713c879ee8e3bc9841eefeebd0043f48b0",
+    "self_check_json": "50feccf2fd163e103d8f9b7a2747f9700bd8b612c03199e8dc2c5ab56f788245"
+  },
+  "shared_modified": false
+}

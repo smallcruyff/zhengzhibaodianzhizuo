@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "package_id": "controller_ready_r6_BJ-2026-CY-QIMO_20260922",
+  "source_complete": {
+    "paper": {
+      "status": "complete_source_present",
+      "pages": 8,
+      "sha256": "e1a49527cb4c175f3de69c5cb429216b35938f336f1417fd9df9d955c3e98399"
+    },
+    "rubric": {
+      "status": "complete_source_present",
+      "pages": 4,
+      "sha256": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a"
+    }
+  },
+  "source_missing": {
+    "independent_answer": {
+      "status": "missing_independent_answer_source",
+      "recorded_as": "N/A_with_basis"
+    },
+    "student_carrier": {
+      "status": "missing_student_carrier",
+      "recorded_as": "N/A_with_basis"
+    }
+  },
+  "basis": "原卷全目录仅含原卷PDF和评分细则PDF。",
+  "prohibitions": [
+    "不得猜填选择题答案",
+    "不得把E1评分细则改写成E3答案",
+    "不得补造学生作答、批注或实得分"
+  ]
+}

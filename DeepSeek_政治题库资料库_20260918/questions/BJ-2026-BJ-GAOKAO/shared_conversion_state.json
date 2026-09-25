@@ -1,0 +1,109 @@
+{
+  "exam_id": "BJ-2026-BJ-GAOKAO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-BJ-GAOKAO-Q1": "b13b78dc0275cca8a5d21a08bbccd55687aa6cc969b18d6c1eb6324f3bfa5932",
+    "BJ-2026-BJ-GAOKAO-Q2": "a640140116eadb5c6bc30d273c7cd636f4ac999ecc114c23fb0cd3573f2ddd95",
+    "BJ-2026-BJ-GAOKAO-Q3": "584b7bae82b67fda38d071f67ab67099365fa4d9c2dbed370e15c78c9b332de0",
+    "BJ-2026-BJ-GAOKAO-Q4": "a6377d6525768bd4e573b2625c5dddc5b7dab90bf9307a099bd1d1f1f9de4c46",
+    "BJ-2026-BJ-GAOKAO-Q5": "eebf0a6ca74770c812e61c4da309f49f1ec5c5b4e8bdc23349c7b450246613b7",
+    "BJ-2026-BJ-GAOKAO-Q6": "5e5a576e3ae5229de70bbf30da0a6550ee8e81d6708559fdc17c675b7abaa3c6",
+    "BJ-2026-BJ-GAOKAO-Q7": "a079d0cba98994586cd75b9ba0c0671382491e03f6fcd1b457f27fa6f8718d29",
+    "BJ-2026-BJ-GAOKAO-Q8": "58b2b39e2c6d56016c1fc31fc1433e3870956d1d3465148000d6661cbc512f5a",
+    "BJ-2026-BJ-GAOKAO-Q9": "77e928fd1a3dcf0df8666ab08e7039489e4e138353ff61e9bd3124bb076eb081",
+    "BJ-2026-BJ-GAOKAO-Q10": "6e7b97e6ae34aebb7b5455bb5e12bb9363da702e8e083927286c789026788ba9",
+    "BJ-2026-BJ-GAOKAO-Q11": "61ad9e78ec51b0bd3ed33df22c6480709dd25d7b655a3f952af1cc9bb47b5dbc",
+    "BJ-2026-BJ-GAOKAO-Q12": "2b00784db7e1733d297d59b5136386695c8008f481db1868739d52db32179127",
+    "BJ-2026-BJ-GAOKAO-Q13": "5c33edb7731ff6805665b632f7cc6db72d74ec355f2e2e37fcc4d99c723b56e7",
+    "BJ-2026-BJ-GAOKAO-Q14": "bb3ade46c0c200cdc7c2aa659df1d555f92673cbd55b44c57e040bae66160e25",
+    "BJ-2026-BJ-GAOKAO-Q15": "5de1392da0f9aaed06dca44abb8da1c8250ba5a217afb5caa289ba3e562f8bc4",
+    "BJ-2026-BJ-GAOKAO-Q16": "2ed5c3d3d982c1405c9e9b18b16bd7fcec2868ed2afe4f5d5ef2f2a832c3f9bd",
+    "BJ-2026-BJ-GAOKAO-Q17": "bd47a9e4e0a6d0023c9d531e7bd9bf94977281479c4fd90c79b90e3dfa79703e",
+    "BJ-2026-BJ-GAOKAO-Q18": "4b5250253f67d315541ff8aeeab2dd3e6eed9f74050e0abec64039c61929aff1",
+    "BJ-2026-BJ-GAOKAO-Q19": "e73fc23106c4a75f8d28ec77d85b1fc808ecd03bab29159122c8cff5e816d302",
+    "BJ-2026-BJ-GAOKAO-Q20": "7ff983b22ac7309b528ac5de1a7f26d926594f58d114c02be837f8e0996d1610",
+    "BJ-2026-BJ-GAOKAO-Q21": "96cc8a8a1be32c11049e8b3ebcb0ee0a22485fca7b0055f5bb72833594c3d5e0"
+  },
+  "source_pages": {
+    "paper": 9,
+    "answer": 2,
+    "rubric_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 11,
+  "source_roles": {
+    "paper": "S150b8360ec5c",
+    "answer": "Sc125322a6844",
+    "rubric": "S125fcac83354"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "学生样卷/教师批注/实得分（E-student）: 继承r1判断：本卷登记的三个实物来源（原卷、参考答案、评分材料）均不含学生答卷、示例、批注或实得分",
+    "Q1-Q15正式评分细则（E1）: 继承r1判断：选择题，DOCX无对应逐题评分结构，整卷特批仅用官方答案键作为E3",
+    "学生样卷/教师批注/实得分（E-student）: 本卷登记的三个实物来源（原卷、参考答案、评分材料）均不含学生答卷、示例、批注或实得分",
+    "Q1-Q15正式评分细则（E1）: 选择题，DOCX无对应逐题评分结构，2026北京高考整卷特批仅用官方答案键作为E3"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2026-BJ-GAOKAO-Q19",
+      "location": "济南刘家功夫针铺铜版拓片图，右侧竖排下方约2字、左侧竖排下方约3行、图面中下部多列刻字",
+      "partial_reading": "笔画可见但磨损较重，不足以逐字确认（本轮用原始296x300像素图与3x/既有裁图复核，未发现比r1更多可读内容；r1_verify曾额外做14x放大测试同样确认无新增可读笔画，本轮认可该复核结论）",
+      "affects_answering": false,
+      "round": "r2"
+    },
+    {
+      "qid": "BJ-2026-BJ-GAOKAO-Q19",
+      "location": "济南刘家功夫针铺铜版拓片图，右侧竖排下方约2字、左侧竖排下方约3行、图面中下部多列刻字",
+      "partial_reading": "笔画可见但磨损较重，不足以逐字确认；本轮独立重新查看既有裁图（3x整图、top_banner/left_col/right_col/bottom四张分区裁图）与原始296x300像素内嵌图信息，未发现比此前r1/r1_verify/r2/r2_verify四轮独立核验更多可读内容",
+      "affects_answering": false,
+      "round": "c1"
+    }
+  ],
+  "review_receipts": {
+    "previous_acceptance": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/batch_acceptance_receipts/claude-accept3b-20260922__BJ-2026-BJ-GAOKAO.json"
+    ],
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/primary_review/BJ-2026-BJ-GAOKAO.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/independent_verification/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/dispute_review2/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-BJ-GAOKAO/retro-batch1-bj-2026-bj-gaokao-20260924_merge.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/reopen_for_resign/BJ-2026-BJ-GAOKAO.json",
+    "rounds": []
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-bj-gaokao-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:28:42.566018+00:00"
+    },
+    {
+      "event": "reopen_accepted_exam_for_resign",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T05:06:47.202933-07:00",
+      "reason": "后续回溯题面修订已经合入；保留并暂挂旧验收签名，重新走标准全卷验收。"
+    },
+    {
+      "spec_id": "bj-2026-bj-gaokao-state1-retro-batch1-resign-20260924-v1",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T12:09:30.648918+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch1-bj-2026-bj-gaokao-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T11:59:25.478033+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-BJ-GAOKAO/retro-batch1-bj-2026-bj-gaokao-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2026-BJ-GAOKAO-Q10": "6e7b97e6ae34aebb7b5455bb5e12bb9363da702e8e083927286c789026788ba9"
+      }
+    }
+  ],
+  "accepted_at": "2026-09-24T12:11:41.393803+00:00"
+}

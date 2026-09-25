@@ -1,0 +1,1084 @@
+{
+ "task": "完整性调查_20260924/归属表_v1/各书清单_v4 第三轮返修（按终审意见_v2.json）",
+ "date": "2026-09-24",
+ "actor": "claude-sonnet-5（子代理，只读书稿/题库/Skill，只改 各书清单_v4 下的候选CSV与00_汇总.md）",
+ "precondition_read": "终审意见_v2.json（PASS_WITH_ISSUES，3 major + 4 minor）",
+ "bank_files_used_sha256": {
+  "questions.csv": "13116c9d0409bcb7a9ea025978b9d58f1c03b5635a8e1dc3a2ba314ecfad871d",
+  "exams.csv": "8c3452f07ddaa91f3cbb48623737e66b9644415cc3a44706eda43bd10cf2552f",
+  "rubric_links.csv": "ae08701ee20397da7089f57011bc89b407ffe46953b63257f371f5db99b46b31",
+  "note": "与终审意见_v2.json记录的SHA一致，题库在本轮返修期间未变化；用 shasum -a 256 复核于本次返修当天"
+ },
+ "manuscript_docx_used": {
+  "B3": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx",
+  "PH": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修四哲学续作_20260908/交付/哲学宝典_修订稿_R10_漏节点与附录补全及触发词修正版_20260908.docx",
+  "CU": "/Users/wanglifei/Desktop/2026模拟题/文化_v6.9续作_20260908/工作稿/2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx",
+  "RE": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/推理_v7.31续作_20260908/输出/选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx",
+  "X1": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/选必一_v11.13续作_20260908/work/选必一_当代国际政治与经济_主客观题宝典_v11.14_修订工作稿_20260908.docx",
+  "X2": "/Users/wanglifei/Desktop/2026模拟题/选必二_v15.0续作_20260908/工作稿/选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx",
+  "MI": "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/选必三思维_v6.4续作_20260908/选必三思维宝典_v6.20_丰台补题分页修订工作稿_20260908.docx",
+  "note": "均取自 book-*.md 的'当前工作头'记录（2026-09-24 用户确认版本）；除必修三外6本书目前未登记 block_index.py 的 profile，本轮改用书稿docx原文抽取(zipfile+lxml)+年份地区考次字面检索+窗口小问标记扫描，未使用 block_index.py 结构化解析"
+ },
+ "method_summary": {
+  "书稿口径": "用 exams.csv 的 exam_id→(year, region, stage) 建立'年份+地区+考次'字面检索基串（含'一模/1模'等写法变体），在书稿全文段落列表中定位题号，再在命中段落起到下一个不同题源命中之前的窗口内扫描'第（k）问/（k）'类小问标记，取并集作为该题在该书实际收录的小问集合",
+  "待核证据判定": "对65处'待裁决-证据未核实'候选行（去重后56道题）逐题跑 bank.py get KEY --with-rubric，解析 rubric_status/评分关系状态 字段与标题+正文内容，分三类：已匹配/已定位→转正；仅有参考答案/暂未找到/无相关小节→转负；存在候选/存在冲突→保留待核",
+  "OCR误切判定": "先用 questions.csv 的 variant/subq_hint 找出'只有ocr_candidate变体带小问切分'的疑似清单，再逐题读书稿+bank.py题面原文，用'（k）……（N分）'正则确认题面是否真的有多问结构，避免questions.csv缺失hint信息造成的假阳性（发现并纠正了此前一版脚本会把丰台二模18、房山二模18、东城二模20、西城二模18、西城一模18等真实多问题误判为疑似的问题）"
+ },
+ "pending_evidence_refresh": {
+  "总待核题号": 56,
+  "转正_有E1": [
+   "BJ-2023-HD-QIZHONG-Q16",
+   "BJ-2023-HD-QIZHONG-Q18",
+   "BJ-2023-HD-QIZHONG-Q23",
+   "BJ-2023-HD-YIMO-Q17",
+   "BJ-2023-HD-YIMO-Q18",
+   "BJ-2023-HD-YIMO-Q19",
+   "BJ-2023-HD-YIMO-Q20",
+   "BJ-2024-FT-ERMO-Q18",
+   "BJ-2024-FT-ERMO-Q20",
+   "BJ-2024-FT-YIMO-Q17",
+   "BJ-2024-FT-YIMO-Q18",
+   "BJ-2024-HD-ERMO-Q19",
+   "BJ-2024-HD-ERMO-Q21",
+   "BJ-2024-HD-YIMO-Q20",
+   "BJ-2025-BJ-GAOKAO-Q18",
+   "BJ-2025-DC-QIMO-Q20",
+   "BJ-2025-DC-YIMO-Q18",
+   "BJ-2025-HD-ERMO-Q18",
+   "BJ-2025-HD-ERMO-Q22",
+   "BJ-2025-SY-YIMO-Q17",
+   "BJ-2025-SY-YIMO-Q19",
+   "BJ-2025-SY-YIMO-Q20",
+   "BJ-2025-SY-YIMO-Q21",
+   "BJ-2026-CP-QIMO-Q19",
+   "BJ-2026-CY-ERMO-Q20",
+   "BJ-2026-FS-ERMO-Q16",
+   "BJ-2026-HD-QIMO-Q21",
+   "BJ-2026-SJS-ERMO-Q20"
+  ],
+  "转正_题号": [
+   "BJ-2023-HD-QIZHONG-Q16",
+   "BJ-2023-HD-QIZHONG-Q18",
+   "BJ-2023-HD-QIZHONG-Q23",
+   "BJ-2023-HD-YIMO-Q17",
+   "BJ-2023-HD-YIMO-Q18",
+   "BJ-2023-HD-YIMO-Q19",
+   "BJ-2023-HD-YIMO-Q20",
+   "BJ-2024-FT-ERMO-Q18",
+   "BJ-2024-FT-ERMO-Q20",
+   "BJ-2024-FT-YIMO-Q17",
+   "BJ-2024-FT-YIMO-Q18",
+   "BJ-2024-HD-ERMO-Q19",
+   "BJ-2024-HD-ERMO-Q21",
+   "BJ-2024-HD-YIMO-Q20",
+   "BJ-2025-BJ-GAOKAO-Q18",
+   "BJ-2025-DC-QIMO-Q20",
+   "BJ-2025-DC-YIMO-Q18",
+   "BJ-2025-HD-ERMO-Q18",
+   "BJ-2025-HD-ERMO-Q22",
+   "BJ-2025-SY-YIMO-Q17",
+   "BJ-2025-SY-YIMO-Q19",
+   "BJ-2025-SY-YIMO-Q20",
+   "BJ-2025-SY-YIMO-Q21",
+   "BJ-2026-CP-QIMO-Q19",
+   "BJ-2026-CY-ERMO-Q20",
+   "BJ-2026-FS-ERMO-Q16",
+   "BJ-2026-HD-QIMO-Q21",
+   "BJ-2026-SJS-ERMO-Q20"
+  ],
+  "转负_不收无E1": [
+   "BJ-2024-DC-YIMO-Q16",
+   "BJ-2024-DC-YIMO-Q17",
+   "BJ-2024-SJS-YIMO-Q16",
+   "BJ-2024-SJS-YIMO-Q18",
+   "BJ-2024-SJS-YIMO-Q19",
+   "BJ-2026-FS-ERMO-Q13",
+   "BJ-2026-HD-QIZHONG-Q22",
+   "BJ-2026-XC-ERMO-Q18",
+   "BJ-2026-XC-ERMO-Q19"
+  ],
+  "转负_题号": [
+   "BJ-2024-DC-YIMO-Q16",
+   "BJ-2024-DC-YIMO-Q17",
+   "BJ-2024-SJS-YIMO-Q16",
+   "BJ-2024-SJS-YIMO-Q18",
+   "BJ-2024-SJS-YIMO-Q19",
+   "BJ-2026-FS-ERMO-Q13",
+   "BJ-2026-HD-QIZHONG-Q22",
+   "BJ-2026-XC-ERMO-Q18",
+   "BJ-2026-XC-ERMO-Q19"
+  ],
+  "保留待核": [
+   "BJ-2025-CY-QIMO-Q22",
+   "BJ-2025-CY-YIMO-Q17",
+   "BJ-2025-FT-YIMO-Q16",
+   "BJ-2025-FT-YIMO-Q17",
+   "BJ-2025-FT-YIMO-Q21",
+   "BJ-2025-HD-YIMO-Q20",
+   "BJ-2025-HD-YIMO-Q21",
+   "BJ-2025-HD-YIMO-Q22",
+   "BJ-2025-MTG-YIMO-Q21",
+   "BJ-2025-SJS-YIMO-Q17",
+   "BJ-2026-FT-QIMO-Q21",
+   "BJ-2026-SJS-YIMO-Q20",
+   "BJ-2026-SJS-YIMO-Q21",
+   "BJ-2026-SY-ERMO-Q21",
+   "BJ-2026-TZ-YIMO-Q19",
+   "BJ-2026-TZ-YIMO-Q21",
+   "BJ-2026-XC-YIMO-Q17",
+   "BJ-2026-XC-YIMO-Q19",
+   "BJ-2026-XC-YIMO-Q20"
+  ],
+  "保留待核_题号": [
+   "BJ-2025-CY-QIMO-Q22",
+   "BJ-2025-CY-YIMO-Q17",
+   "BJ-2025-FT-YIMO-Q16",
+   "BJ-2025-FT-YIMO-Q17",
+   "BJ-2025-FT-YIMO-Q21",
+   "BJ-2025-HD-YIMO-Q20",
+   "BJ-2025-HD-YIMO-Q21",
+   "BJ-2025-HD-YIMO-Q22",
+   "BJ-2025-MTG-YIMO-Q21",
+   "BJ-2025-SJS-YIMO-Q17",
+   "BJ-2026-FT-QIMO-Q21",
+   "BJ-2026-SJS-YIMO-Q20",
+   "BJ-2026-SJS-YIMO-Q21",
+   "BJ-2026-SY-ERMO-Q21",
+   "BJ-2026-TZ-YIMO-Q19",
+   "BJ-2026-TZ-YIMO-Q21",
+   "BJ-2026-XC-YIMO-Q17",
+   "BJ-2026-XC-YIMO-Q19",
+   "BJ-2026-XC-YIMO-Q20"
+  ]
+ },
+ "x2_major_fix": {
+  "错收候选原16条_重新核对结果": [
+   {
+    "卷": "BJ-2023-BJ-GAOKAO",
+    "题号_小问": "18(3)",
+    "unit_id": "BJ-2023-BJ-GAOKAO-Q18#3",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     913
+    ],
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2024-HD-QIZHONG",
+    "题号_小问": "21(2)",
+    "unit_id": "BJ-2024-HD-QIZHONG-Q21#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     64,
+     315,
+     1156,
+     4221
+    ],
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "卷": "BJ-2024-HD-QIZHONG",
+    "题号_小问": "21(2)",
+    "unit_id": "BJ-2025-HD-QIZHONG-Q21#2",
+    "disposition": "matrix_error_not_in_book",
+    "manuscript_found": false,
+    "occurrences": [],
+    "subq_union": []
+   },
+   {
+    "卷": "BJ-2024-SJS-YIMO",
+    "题号_小问": "18(1)",
+    "unit_id": "BJ-2024-SJS-YIMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     542,
+     2426,
+     4613
+    ],
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2025-BJ-GAOKAO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2025-BJ-GAOKAO-Q18#2",
+    "disposition": "confirmed_wrongly_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1669,
+     5191
+    ],
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2025-FT-ERMO",
+    "题号_小问": "19(1)",
+    "unit_id": "BJ-2025-FT-ERMO-Q19#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     759,
+     1044,
+     5042,
+     5277
+    ],
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2026-CY-QIMO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2026-CY-QIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     747,
+     1348,
+     1596,
+     2349,
+     3984
+    ],
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "卷": "BJ-2026-FS-ERMO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2026-FS-ERMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1731,
+     3176,
+     3504,
+     5298
+    ],
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "卷": "BJ-2026-HD-ERMO",
+    "题号_小问": "18(1)",
+    "unit_id": "BJ-2026-HD-ERMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     3064
+    ],
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2026-HD-YIMO",
+    "题号_小问": "18(1)",
+    "unit_id": "BJ-2026-HD-YIMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1681,
+     2682,
+     3930
+    ],
+    "subq_union": [
+     3
+    ]
+   },
+   {
+    "卷": "BJ-2026-HD-YIMO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2026-HD-YIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1681,
+     2682,
+     3930
+    ],
+    "subq_union": [
+     3
+    ]
+   },
+   {
+    "卷": "BJ-2026-MTG-YIMO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2026-MTG-YIMO-Q18#2",
+    "disposition": "confirmed_wrongly_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1088,
+     4586,
+     5086
+    ],
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2026-SY-ERMO",
+    "题号_小问": "18(1)",
+    "unit_id": "BJ-2026-SY-ERMO-Q18#1",
+    "disposition": "confirmed_wrongly_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     1750,
+     4627,
+     5334
+    ],
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2026-XC-ERMO",
+    "题号_小问": "18(4)",
+    "unit_id": "BJ-2026-XC-ERMO-Q18#4",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     948,
+     959,
+     1316,
+     1552,
+     2276,
+     2736,
+     4433,
+     4989,
+     5214,
+     5225
+    ],
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "卷": "BJ-2026-XC-YIMO",
+    "题号_小问": "13",
+    "unit_id": "BJ-2026-XC-YIMO-Q13",
+    "disposition": "confirmed_wrongly_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     3277,
+     5780,
+     6705
+    ],
+    "subq_union": []
+   },
+   {
+    "卷": "BJ-2026-YQ-YIMO",
+    "题号_小问": "18(2)",
+    "unit_id": "BJ-2026-YQ-YIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "manuscript_found": true,
+    "occurrences": [
+     567,
+     1765,
+     3558,
+     4017,
+     4665,
+     5349
+    ],
+    "subq_union": [
+     1
+    ]
+   }
+  ],
+  "结论": "11条为matrix未按小问展开造成的假错收（已移出，见X2_非错收_matrix未按小问展开.csv）；1条矩阵纠错（书稿从未收录，见X2_矩阵纠错.csv）；1条选择题确认真错收；3条主观题因题面栏共用两问原文、答案细则覆盖范围机械检索无法100%确认，标记存疑待人工复核，未删除",
+  "新增漏收小问": [
+   {
+    "unit_id": "BJ-2024-DC-ERMO-Q18#1",
+    "证据": "有E1",
+    "理由": "书稿只收(2)"
+   },
+   {
+    "unit_id": "BJ-2026-TZ-QIMO-Q19#2",
+    "证据": "有E1",
+    "理由": "书稿只收(1)"
+   },
+   {
+    "unit_id": "BJ-2026-XC-ERMO-Q18#3",
+    "证据": "待核（仅有参考答案，无E1）",
+    "理由": "书稿只收(1)(2)，暂列待核证据不计入漏收"
+   }
+  ]
+ },
+ "other_books_wrongly_collected_fullscan": {
+  "B3": [
+   {
+    "unit_id": "BJ-2026-FS-YIMO-Q7",
+    "disposition": "matrix_error_not_in_book",
+    "occ": 0,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-HD-QIMO-Q19",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-HD-QIZHONG-Q2",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 9,
+    "subq_union": []
+   }
+  ],
+  "PH": [
+   {
+    "unit_id": "BJ-2025-CY-ERMO-Q1",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 5,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2025-DC-ERMO-Q13",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2025-FT-YIMO-Q16",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2025-SJS-YIMO-Q5",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-CY-ERMO-Q20#1",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-CY-YIMO-Q6",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   }
+  ],
+  "CU": [
+   {
+    "unit_id": "BJ-2024-FT-YIMO-Q6",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2025-SJS-YIMO-Q8",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-FT-QIMO-Q8",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-HD-YIMO-Q7",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-SJS-ERMO-Q9",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-SY-YIMO-Q1",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-TZ-YIMO-Q1",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-YQ-YIMO-Q11",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": []
+   }
+  ],
+  "RE": [],
+  "X1": [
+   {
+    "unit_id": "BJ-2024-XC-YIMO-Q19#4",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 4,
+    "subq_union": [
+     4,
+     6
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-YQ-YIMO-Q6",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   }
+  ],
+  "X2": [
+   {
+    "unit_id": "BJ-2023-BJ-GAOKAO-Q18#3",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 1,
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2024-HD-QIZHONG-Q21#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 4,
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "unit_id": "BJ-2025-HD-QIZHONG-Q21#2",
+    "disposition": "matrix_error_not_in_book",
+    "occ": 0,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2024-SJS-YIMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 3,
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2025-BJ-GAOKAO-Q18#2",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 2,
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2025-FT-ERMO-Q19#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 4,
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-CY-QIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 5,
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-FS-ERMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 4,
+    "subq_union": [
+     1
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-HD-ERMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 1,
+    "subq_union": [
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-HD-YIMO-Q18#1",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 3,
+    "subq_union": [
+     3
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-HD-YIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 3,
+    "subq_union": [
+     3
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-MTG-YIMO-Q18#2",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 3,
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-SY-ERMO-Q18#1",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 3,
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-XC-ERMO-Q18#4",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 10,
+    "subq_union": [
+     1,
+     2
+    ]
+   },
+   {
+    "unit_id": "BJ-2026-XC-YIMO-Q13",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 3,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-YQ-YIMO-Q18#2",
+    "disposition": "false_alarm_only_other_subq_collected",
+    "occ": 6,
+    "subq_union": [
+     1
+    ]
+   }
+  ],
+  "MI": [
+   {
+    "unit_id": "BJ-2024-DC-ERMO-Q15",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-DC-ERMO-Q2",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 3,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-FT-QIMO-Q20",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 7,
+    "subq_union": []
+   },
+   {
+    "unit_id": "BJ-2026-SJS-YIMO-Q6",
+    "disposition": "confirmed_wrongly_collected",
+    "occ": 1,
+    "subq_union": []
+   }
+  ]
+ },
+ "ocr_phantom_subq_merge": {
+  "确认为假小问并合并": [
+   "BJ-2025-FS-YIMO-Q20（CU，2条→1条）",
+   "BJ-2025-FT-QIMO-Q19（CU，去掉#1后缀）",
+   "BJ-2024-BJ-GAOKAO-Q21（MI，2条→1条）",
+   "BJ-2026-FS-ERMO-Q21（MI/PH/X1各2条→1条）"
+  ],
+  "曾疑似但核实为真实多问题_未合并": [
+   "BJ-2025-HD-QIMO-Q17（未在候选表出现，无需处理）",
+   "BJ-2026-XC-YIMO-Q18（未在候选表出现，无需处理）",
+   "BJ-2026-TZ-YIMO-Q17（MI候选表#1保留不变）",
+   "BJ-2026-XC-ERMO-Q19（X1候选表#2保留不变）",
+   "BJ-2026-XC-ERMO-Q18（RE/X2候选表#4保留不变，涉及X2主要bug另案处理）",
+   "BJ-2026-HD-ERMO-Q18/Q20、BJ-2026-DC-ERMO-Q20、BJ-2026-FS-YIMO-Q17/Q18（核实均为真实多问题）"
+  ],
+  "净减少候选行数": 5
+ },
+ "matrix_error_separated": {
+  "B3": [
+   "BJ-2026-FS-YIMO-Q7（2026房山一模第7题，书稿全文检索不到）"
+  ],
+  "X2": [
+   "BJ-2025-HD-QIZHONG-Q21#2（2025海淀期中第21题，书稿全文检索不到）"
+  ]
+ },
+ "partial_subq_fix": {
+  "B3": [
+   "BJ-2025-XC-QIMO-Q16：matrix为S[2]，书稿3处确认只收(2)，原整题记漏收已改为仅记(1)漏收"
+  ]
+ },
+ "final_counts_per_book": {
+  "B3": {
+   "漏收_总候选行数": 116,
+   "漏收_确认": 108,
+   "漏收_待核证据": 6,
+   "漏收_不收无E1": 2,
+   "漏收_确认_选择题": 80,
+   "漏收_确认_主观题": 28,
+   "漏收_确认_主考": 20,
+   "漏收_确认_跨模块": 88,
+   "错收_确认": 2,
+   "错收_存疑待复核": 0
+  },
+  "PH": {
+   "漏收_总候选行数": 133,
+   "漏收_确认": 130,
+   "漏收_待核证据": 1,
+   "漏收_不收无E1": 2,
+   "漏收_确认_选择题": 85,
+   "漏收_确认_主观题": 45,
+   "漏收_确认_主考": 44,
+   "漏收_确认_跨模块": 86,
+   "错收_确认": 6,
+   "错收_存疑待复核": 0
+  },
+  "CU": {
+   "漏收_总候选行数": 70,
+   "漏收_确认": 68,
+   "漏收_待核证据": 2,
+   "漏收_不收无E1": 0,
+   "漏收_确认_选择题": 37,
+   "漏收_确认_主观题": 31,
+   "漏收_确认_主考": 25,
+   "漏收_确认_跨模块": 43,
+   "错收_确认": 8,
+   "错收_存疑待复核": 0
+  },
+  "X1": {
+   "漏收_总候选行数": 94,
+   "漏收_确认": 85,
+   "漏收_待核证据": 5,
+   "漏收_不收无E1": 4,
+   "漏收_确认_选择题": 50,
+   "漏收_确认_主观题": 35,
+   "漏收_确认_主考": 49,
+   "漏收_确认_跨模块": 36,
+   "错收_确认": 2,
+   "错收_存疑待复核": 0
+  },
+  "X2": {
+   "漏收_总候选行数": 75,
+   "漏收_确认": 72,
+   "漏收_待核证据": 2,
+   "漏收_不收无E1": 1,
+   "漏收_确认_选择题": 52,
+   "漏收_确认_主观题": 20,
+   "漏收_确认_主考": 35,
+   "漏收_确认_跨模块": 37,
+   "错收_确认": 1,
+   "错收_存疑待复核": 3
+  },
+  "MI": {
+   "漏收_总候选行数": 106,
+   "漏收_确认": 99,
+   "漏收_待核证据": 7,
+   "漏收_不收无E1": 0,
+   "漏收_确认_选择题": 71,
+   "漏收_确认_主观题": 28,
+   "漏收_确认_主考": 31,
+   "漏收_确认_跨模块": 68,
+   "错收_确认": 4,
+   "错收_存疑待复核": 0
+  },
+  "RE": {
+   "漏收_总候选行数": 46,
+   "漏收_确认": 43,
+   "漏收_待核证据": 2,
+   "漏收_不收无E1": 1,
+   "漏收_确认_选择题": 34,
+   "漏收_确认_主观题": 9,
+   "漏收_确认_主考": 30,
+   "漏收_确认_跨模块": 13,
+   "错收_确认": 0,
+   "错收_存疑待复核": 0
+  }
+ },
+ "selfcheck_sample_per_book": {
+  "B3": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2024-SY-ERMO-Q11",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-DC-YIMO-Q8",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-HD-QIZHONG-Q18#1",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2026-HD-QIMO-Q19",
+     "书稿检索结果": "occ=1 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-HD-QIZHONG-Q2",
+     "书稿检索结果": "occ=9 subq_union=[]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "PH": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2024-DC-ERMO-Q11",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2024-FT-ERMO-Q20",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-CP-QIMO-Q3",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2025-CY-ERMO-Q1",
+     "书稿检索结果": "occ=5 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-CY-ERMO-Q20#1",
+     "书稿检索结果": "occ=1 subq_union=[1]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2025-FT-YIMO-Q16",
+     "书稿检索结果": "occ=2 subq_union=[]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "CU": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2023-CY-ERMO-Q11",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2024-XC-YIMO-Q18#3",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-BJ-GAOKAO-Q19",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2026-HD-YIMO-Q7",
+     "书稿检索结果": "occ=2 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-SJS-ERMO-Q9",
+     "书稿检索结果": "occ=2 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-TZ-YIMO-Q1",
+     "书稿检索结果": "occ=2 subq_union=[]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "X1": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2023-XC-ERMO-Q15",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-CP-QIMO-Q20#1",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-SY-ERMO-Q20",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2024-XC-YIMO-Q19#4",
+     "书稿检索结果": "occ=4 subq_union=[4, 6]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-YQ-YIMO-Q6",
+     "书稿检索结果": "occ=1 subq_union=[]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "X2": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2023-HD-QIZHONG-Q11",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-HD-YIMO-Q18#1",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-XC-YIMO-Q19#1",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2026-XC-YIMO-Q13",
+     "书稿检索结果": "occ=3 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-MTG-YIMO-Q18#2",
+     "书稿检索结果": "occ=3 subq_union=[1, 2]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2025-BJ-GAOKAO-Q18#2",
+     "书稿检索结果": "occ=2 subq_union=[1, 2]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "MI": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2024-FT-ERMO-Q13",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-TZ-YIMO-Q12",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-BJ-GAOKAO-Q21",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": [
+    {
+     "unit_id": "BJ-2026-SJS-YIMO-Q6",
+     "书稿检索结果": "occ=1 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2026-DC-ERMO-Q2",
+     "书稿检索结果": "occ=3 subq_union=[]",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2024-DC-ERMO-Q15",
+     "书稿检索结果": "occ=1 subq_union=[]",
+     "自检结论": "一致"
+    }
+   ]
+  },
+  "RE": {
+   "漏收_抽检": [
+    {
+     "unit_id": "BJ-2023-DC-ERMO-Q14",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-DC-ERMO-Q15",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    },
+    {
+     "unit_id": "BJ-2023-XC-YIMO-Q21#1",
+     "书稿检索结果": "未见",
+     "自检结论": "一致"
+    }
+   ],
+   "错收_抽检": []
+  }
+ },
+ "selfcheck_conclusion": "7本书各随机抽3条漏收+3条错收（RE错收候选为0，只抽3条漏收），共18条，逐条用书稿原文关键词检索复核，全部与列表结论一致",
+ "files_changed": [
+  "各书清单_v4/00_汇总.md（重写）",
+  "各书清单_v4/B3_漏收候选.csv（BJ-2025-XC-QIMO-Q16#1 部分小问修正）",
+  "各书清单_v4/B3_错收候选.csv（移出1条矩阵纠错）",
+  "各书清单_v4/B3_矩阵纠错.csv（新增）",
+  "各书清单_v4/X2_错收候选.csv（重建：16条→4条，其中3条存疑）",
+  "各书清单_v4/X2_矩阵纠错.csv（新增）",
+  "各书清单_v4/X2_非错收_matrix未按小问展开.csv（新增，留档11条假错收）",
+  "各书清单_v4/X2_漏收候选.csv（新增3条隐藏漏收小问）",
+  "各书清单_v4/CU_漏收候选.csv（OCR误切合并，71→70条）",
+  "各书清单_v4/MI_漏收候选.csv（OCR误切合并，108→106条）",
+  "各书清单_v4/PH_漏收候选.csv（OCR误切合并，134→133条）",
+  "各书清单_v4/X1_漏收候选.csv（OCR误切合并，95→94条）",
+  "各书清单_v4/{B3,PH,CU,RE,X1,X2,MI}_{漏收候选,错收候选}.csv（待核证据转正/转负的证据状态与类别字段更新，均加'备注'列写明理由，未改变B2冻结记录）"
+ ],
+ "backup_location": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_final/backup_v4_before_v5/（返修前各CSV原样备份）",
+ "not_done_or_limitations": [
+  "56道待核题号中19道题库自身状态为'存在候选/存在冲突'，说不清，未强行判定，仍留待核",
+  "X2的3条存疑错收候选（题面栏共用两问原文）未经人工/独立模型复核，机械检索无法100%排除或确认，已如实标注存疑",
+  "书稿口径检索脚本是本会话新写的字面匹配+窗口扫描方法，不是block_index.py结构化解析（除B3外6本书未登记profile），可能有本轮未发现的遗漏",
+  "未重跑任何题目的语义归属判定（首判/升级复判/金标），完全沿用此前Opus全量判定结果",
+  "MI书稿'例题7'疑似标错题源（详见00_汇总.md第7条），未代为修改书稿，只记录"
+ ],
+ "discipline_confirmed": [
+  "只读书稿、题库、Skill；未修改书稿、题库、协作文件、Skill原件",
+  "未运行 collab.py",
+  "未启动子代理、未开新会话、未向其他会话发消息",
+  "中间产物均写在 scratchpad/attribution_final/，交付写在 归属表_v1/各书清单_v4/",
+  "使用 /usr/bin/python3（3.9.6），脚本均 sys.dont_write_bytecode = True"
+ ],
+ "done": true
+}

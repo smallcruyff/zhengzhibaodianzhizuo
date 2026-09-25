@@ -1,0 +1,379 @@
+{
+  "schema_version": "chart_reading_approx.v1",
+  "exam_id": "BJ-2024-SJS-YIMO",
+  "question_id": "BJ-2024-SJS-YIMO-Q14",
+  "status": "PASS_BOUNDED_APPROXIMATE_BAR_TABLE_WITH_2015_CORRECTION",
+  "source_asset": {
+    "path": "../assets/original_media/image3.png",
+    "source_member": "word/media/image3.png",
+    "bytes": 166204,
+    "sha256": "c6cfe4530bcb62fe3e0536946a7ac041ff42031e12b1af593d7a10d4ad2c2623",
+    "dimensions_px": [
+      787,
+      580
+    ]
+  },
+  "chart": {
+    "title": "2012—2022年全球可数字化服务出口规模及增速图",
+    "x_axis": {
+      "label": "年份",
+      "categories": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "unit": "年"
+    },
+    "y_axes": {
+      "left": {
+        "label": "规模",
+        "unit": "亿美元",
+        "min": 0,
+        "max": 50000,
+        "tick_values": [
+          0,
+          10000,
+          20000,
+          30000,
+          40000,
+          50000
+        ],
+        "series": [
+          "全球可数字化服务出口规模"
+        ]
+      },
+      "right": {
+        "label": "增速",
+        "unit": "%",
+        "min": -5,
+        "max": 20,
+        "tick_values": [
+          -5,
+          0,
+          5,
+          10,
+          15,
+          20
+        ],
+        "series": [
+          "全球可数字化服务出口增速"
+        ]
+      }
+    },
+    "groups": [
+      {
+        "group_id": "bars",
+        "mark": "柱状",
+        "series": "全球可数字化服务出口规模",
+        "axis": "left",
+        "unit": "亿美元"
+      },
+      {
+        "group_id": "line",
+        "mark": "折线",
+        "series": "全球可数字化服务出口增速",
+        "axis": "right",
+        "unit": "%"
+      }
+    ]
+  },
+  "pixel_reading_method": {
+    "baseline_y_px": 451.5,
+    "tick_rows_y_px": [
+      451.5,
+      373,
+      295,
+      217,
+      140,
+      62
+    ],
+    "tick_values_left_axis": [
+      0,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000
+    ],
+    "approx_left_axis_units_per_pixel": 128.46,
+    "bar_top_detection": "blue bar top in source raster; rounded to nearest 500 亿美元",
+    "precision_status": "visual approximation only; no exact printed column values"
+  },
+  "unlabelled_bar_values": [
+    {
+      "year": 2012,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 278,
+      "approx_value": 22000,
+      "approx_range": [
+        21500,
+        23000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2013,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 264,
+      "approx_value": 24000,
+      "approx_range": [
+        23500,
+        24500
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2014,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 245,
+      "approx_value": 26500,
+      "approx_range": [
+        26000,
+        27000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2015,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 253,
+      "approx_value": 25500,
+      "approx_range": [
+        25000,
+        26000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable",
+      "correction_note": "2026-09-22 主控像素复核撤销错误更正：2015 柱蓝色像素 y≈253–449 连续，柱顶 y≈253，约 25,500；此前 4,500 系将压在柱身中部的-3%折线点(y≈404–420)误作柱顶。"
+    },
+    {
+      "year": 2016,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 246,
+      "approx_value": 26500,
+      "approx_range": [
+        26000,
+        27000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2017,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 228,
+      "approx_value": 28500,
+      "approx_range": [
+        28000,
+        29500
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2018,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 204,
+      "approx_value": 31500,
+      "approx_range": [
+        31000,
+        32500
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2019,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 192,
+      "approx_value": 33500,
+      "approx_range": [
+        33000,
+        34000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2020,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 188,
+      "approx_value": 34000,
+      "approx_range": [
+        33500,
+        34500
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2021,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 144,
+      "approx_value": 39500,
+      "approx_range": [
+        39000,
+        40000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    },
+    {
+      "year": 2022,
+      "group": "bars",
+      "series": "全球可数字化服务出口规模",
+      "axis": "left",
+      "unit": "亿美元",
+      "bar_top_y_px": 136,
+      "approx_value": 40500,
+      "approx_range": [
+        40000,
+        41000
+      ],
+      "value_status": "约值，非印刷精确数",
+      "readability": "readable"
+    }
+  ],
+  "printed_line_values": [
+    {
+      "year": 2012,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 3
+    },
+    {
+      "year": 2013,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 7
+    },
+    {
+      "year": 2014,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 10
+    },
+    {
+      "year": 2015,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": -3
+    },
+    {
+      "year": 2016,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 3
+    },
+    {
+      "year": 2017,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 8
+    },
+    {
+      "year": 2018,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 11
+    },
+    {
+      "year": 2019,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 5
+    },
+    {
+      "year": 2020,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 2
+    },
+    {
+      "year": 2021,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 16
+    },
+    {
+      "year": 2022,
+      "series": "全球可数字化服务出口增速",
+      "axis": "right",
+      "unit": "%",
+      "printed_value": 3
+    }
+  ],
+  "readability_boundary": {
+    "all_columns_readable": true,
+    "not_readable_columns": [],
+    "unlabelled_columns_are_approximated": true,
+    "exact_values_printed_on_bars": false,
+    "do_not_infer_exact_statistics": true,
+    "do_not_mix_axes": true,
+    "bounded_note": "表中柱值只用于闭合图像载荷；若下游需要精确统计，应回到图表原始数据来源，不能把本表约值当作印刷精确数。"
+  },
+  "evidence_links": {
+    "q14_candidate": "../BJ-2024-SJS-YIMO-Q14.md",
+    "image3": "../assets/original_media/image3.png",
+    "source_docx": "../sources/试卷.docx"
+  },
+  "guards": {
+    "original_docx_modified": false,
+    "shared_question_bank_modified": false,
+    "manifest_modified": false,
+    "01_through_12_modified": false,
+    "merge_performed": false,
+    "whole_exam_acceptance": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CY-QIMO",
+  "status": "controller_ready_merge_candidate_with_declared_source_limits",
+  "checks": [
+    {"kind": "ordinary", "question_id": "BJ-2026-CY-QIMO-Q11", "status": "pass", "candidate_sha256": "15c98fe0b10544fbf07ab70ae472c542768dd3a501b27a9e9c07a4390584b763", "actual_source_page_viewed": true},
+    {"kind": "cross_page", "question_id": "BJ-2026-CY-QIMO-Q19", "status": "pass", "candidate_sha256": "e6b2db9082b95de2df156968c6d695b5733f69a4bd958c0bf0835d934722dca8", "actual_source_pages_viewed": [6, 7]},
+    {"kind": "complex_box_layout", "question_id": "BJ-2026-CY-QIMO-Q21", "status": "pass", "candidate_sha256": "54f78cfe3b1a25a2cf177176c916eb807bf7a50735707f809d8ac3c7bb13128d", "crop_sha256": "a53a083cad8708132c6559b7b52170fc18b41ac163a9834eaaa12e66793de4f3", "actual_source_page_viewed": true}
+  ],
+  "source_limits_nonblocking": ["answer source not provided", "student layer not provided"],
+  "shared_modified": false
+}

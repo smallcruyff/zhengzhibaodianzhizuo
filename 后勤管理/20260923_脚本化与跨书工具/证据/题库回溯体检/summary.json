@@ -1,0 +1,2537 @@
+{
+ "generated_by": "bank_retro_audit.py",
+ "doc2md": "doc2md-2026.09.23b",
+ "manifest_updated_at": "2026-09-24T00:15:36.601202+00:00",
+ "exams": 51,
+ "seconds_total": 32.85,
+ "diffs_total": 1334,
+ "diff_by_category": {
+  "标点": 467,
+  "错字": 205,
+  "漏字": 274,
+  "增字": 384,
+  "题号": 4
+ },
+ "chars_total": 951680,
+ "located_chars": 546994,
+ "located_share": 0.5748,
+ "stem_reading_basis": {
+  "heuristic_no_default_stem": 429,
+  "bank_default": 582,
+  "bank_default_passthrough": 55,
+  "无题面": 2
+ },
+ "questions_total": 1068,
+ "stem_questions_audited_total": 729,
+ "not_auditable_exams": [
+  {
+   "exam": "BJ-2020-BJ-GAOKAO",
+   "reasons": [
+    "默认读法只有 40.8% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-BJ-GAOKAO",
+   "reasons": [
+    "原件约86%页无可靠文字层（页型 {'ocr_layer_over_scan': 44, 'scan_no_text': 10, 'text_plus_figure': 3, 'text_reliable': 6}）；这些页上的题面未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-DC-ERMO",
+   "reasons": [
+    "原件文字层不可用（页型 {'vector_outlined_text': 12, 'empty': 1}）；本卷只能看图或 OCR 校对，脚本未审",
+    "2 题没取到题面小节（无题面），这些题的题面未审：Q6、Q7",
+    "默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-DC-YIMO",
+   "reasons": [
+    "默认读法只有 32.4% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-FT-ERMO",
+   "reasons": [
+    "原件约84%页无可靠文字层（页型 {'symbol_garbled': 10, 'text_reliable': 2}）；这些页上的题面未审",
+    "默认读法只有 43.2% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-FT-YIMO",
+   "reasons": [
+    "默认读法只有 46.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-HD-ERMO",
+   "reasons": [
+    "默认读法只有 43.5% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-HD-QIZHONG",
+   "reasons": [
+    "默认读法只有 46.2% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2023-HD-YIMO",
+   "reasons": [
+    "原件约82%页无可靠文字层（页型 {'text_reliable': 11, 'scan_no_text': 49}）；这些页上的题面未审",
+    "默认读法只有 29.1% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "reasons": [
+    "原件约81%页无可靠文字层（页型 {'text_reliable': 13, 'scan_no_text': 21, 'ocr_layer_over_scan': 31, 'garbled_text_layer': 1}）；这些页上的题面未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-CY-ERMO",
+   "reasons": [
+    "默认读法只有 44.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-DC-ERMO",
+   "reasons": [
+    "原件文字层不可用（页型 {'vector_outlined_text': 14, 'empty': 9, 'text_reliable': 2, 'scan_no_text': 7, 'pptx_text': 16, 'pptx_mixed': 5, 'docx': 9, 'docx_with_image': 13, 'pptx_picture': 3}）；本卷只能看图或 OCR 校对，脚本未审",
+    "默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-DC-YIMO",
+   "reasons": [
+    "默认读法只有 9.6% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-FT-ERMO",
+   "reasons": [
+    "原件文字层不可用（页型 {'vector_outlined_text': 8, 'docx_with_image': 1, 'docx': 3}）；本卷只能看图或 OCR 校对，脚本未审",
+    "默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-FT-YIMO",
+   "reasons": [
+    "默认读法只有 38.5% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "reasons": [
+    "默认读法只有 12.6% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2024-XC-YIMO",
+   "reasons": [
+    "默认读法只有 42.8% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2025-FT-QIMO",
+   "reasons": [
+    "默认读法只有 48.4% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2025-HD-ERMO",
+   "reasons": [
+    "默认读法只有 16.0% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-CY-QIMO",
+   "reasons": [
+    "原件文字层不可用（页型 {'scan_no_text': 12}）；本卷只能看图或 OCR 校对，脚本未审",
+    "默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-FS-ERMO",
+   "reasons": [
+    "原件约58%页无可靠文字层（页型 {'scan_no_text': 8, 'text_reliable': 4, 'docx': 2}）；这些页上的题面未审",
+    "默认读法只有 34.3% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-FT-ERMO",
+   "reasons": [
+    "默认读法只有 40.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "reasons": [
+    "默认读法只有 16.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-SJS-QIMO",
+   "reasons": [
+    "原件约80%页无可靠文字层（页型 {'scan_no_text': 8, 'text_reliable': 2}）；这些页上的题面未审",
+    "默认读法只有 14.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  },
+  {
+   "exam": "BJ-2026-XC-QIMO",
+   "reasons": [
+    "原件约71%页无可靠文字层（页型 {'scan_no_text': 23, 'text_reliable': 6, 'pptx_picture': 6, 'pptx_text': 2, 'pptx_mixed': 4}）；这些页上的题面未审",
+    "默认读法只有 18.7% 的字在原件文字层里定位到（<50%），未定位部分未审"
+   ]
+  }
+ ],
+ "evidence_level": "machine_diff：脚本比对差异，不是已核实错误；门全过也只说明机械层没有发现回退。",
+ "rank_basis": "top 按优先级降序、同卷同题同一对差异去重；每条带 rank_dedup（去重后名次）与 rank_raw（去重前名次）",
+ "per_exam": [
+  {
+   "exam": "BJ-2020-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.54,
+   "located_share": 0.4081,
+   "match_in_located": 0.9736,
+   "diff_by_category": {
+    "标点": 114,
+    "错字": 51,
+    "漏字": 90,
+    "增字": 26
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": "默认读法只有 40.8% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2021-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.54,
+   "located_share": 0.7989,
+   "match_in_located": 0.9958,
+   "diff_by_category": {
+    "增字": 12,
+    "标点": 14,
+    "漏字": 8,
+    "错字": 7
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2022-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.73,
+   "located_share": 0.8717,
+   "match_in_located": 0.9991,
+   "diff_by_category": {
+    "漏字": 6,
+    "增字": 4,
+    "标点": 5,
+    "错字": 1
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-BJ-GAOKAO",
+   "questions": 20,
+   "stem_questions_audited": 20,
+   "seconds": 1.35,
+   "located_share": 0.8116,
+   "match_in_located": 0.9961,
+   "diff_by_category": {
+    "增字": 16,
+    "错字": 6,
+    "漏字": 5
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 20
+   },
+   "not_auditable": "原件约86%页无可靠文字层（页型 {'ocr_layer_over_scan': 44, 'scan_no_text': 10, 'text_plus_figure': 3, 'text_reliable': 6}）；这些页上的题面未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-CY-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.31,
+   "located_share": 0.8876,
+   "match_in_located": 0.9999,
+   "diff_by_category": {
+    "标点": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-CY-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.51,
+   "located_share": 0.7403,
+   "match_in_located": 1.0,
+   "diff_by_category": {
+    "标点": 3
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-DC-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 1.66,
+   "located_share": 0.0,
+   "match_in_located": 0.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "bank_default_passthrough": 13,
+    "bank_default": 5,
+    "无题面": 2,
+    "heuristic_no_default_stem": 1
+   },
+   "not_auditable": "原件文字层不可用（页型 {'vector_outlined_text': 12, 'empty': 1}）；本卷只能看图或 OCR 校对，脚本未审；2 题没取到题面小节（无题面），这些题的题面未审：Q6、Q7；默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-DC-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 1.67,
+   "located_share": 0.3243,
+   "match_in_located": 0.9759,
+   "diff_by_category": {
+    "增字": 10,
+    "标点": 14,
+    "错字": 20,
+    "漏字": 6
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 32.4% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-FT-ERMO",
+   "questions": 22,
+   "stem_questions_audited": 19,
+   "seconds": 0.86,
+   "located_share": 0.432,
+   "match_in_located": 0.8895,
+   "diff_by_category": {
+    "增字": 44,
+    "错字": 1,
+    "漏字": 4
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 22
+   },
+   "not_auditable": "原件约84%页无可靠文字层（页型 {'symbol_garbled': 10, 'text_reliable': 2}）；这些页上的题面未审；默认读法只有 43.2% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-FT-YIMO",
+   "questions": 22,
+   "stem_questions_audited": 20,
+   "seconds": 0.71,
+   "located_share": 0.4669,
+   "match_in_located": 0.9992,
+   "diff_by_category": {
+    "增字": 2,
+    "漏字": 1,
+    "错字": 1,
+    "标点": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 22
+   },
+   "not_auditable": "默认读法只有 46.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-HD-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.52,
+   "located_share": 0.4348,
+   "match_in_located": 0.9851,
+   "diff_by_category": {
+    "标点": 50,
+    "漏字": 18,
+    "增字": 12,
+    "错字": 4
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 43.5% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-HD-QIZHONG",
+   "questions": 23,
+   "stem_questions_audited": 22,
+   "seconds": 0.02,
+   "located_share": 0.462,
+   "match_in_located": 0.9957,
+   "diff_by_category": {
+    "增字": 1
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 23
+   },
+   "not_auditable": "默认读法只有 46.2% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-HD-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 19,
+   "seconds": 0.59,
+   "located_share": 0.2914,
+   "match_in_located": 0.9978,
+   "diff_by_category": {
+    "漏字": 4,
+    "增字": 5,
+    "错字": 2
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": "原件约82%页无可靠文字层（页型 {'text_reliable': 11, 'scan_no_text': 49}）；这些页上的题面未审；默认读法只有 29.1% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-XC-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 18,
+   "seconds": 0.05,
+   "located_share": 0.8491,
+   "match_in_located": 0.9967,
+   "diff_by_category": {
+    "增字": 1,
+    "错字": 2,
+    "漏字": 3,
+    "标点": 28
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2023-XC-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 17,
+   "seconds": 0.53,
+   "located_share": 0.7677,
+   "match_in_located": 0.996,
+   "diff_by_category": {
+    "增字": 4,
+    "题号": 1,
+    "漏字": 4
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 1.17,
+   "located_share": 0.8527,
+   "match_in_located": 0.9993,
+   "diff_by_category": {
+    "标点": 7,
+    "错字": 8,
+    "漏字": 2,
+    "增字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default_passthrough": 21
+   },
+   "not_auditable": "原件约81%页无可靠文字层（页型 {'text_reliable': 13, 'scan_no_text': 21, 'ocr_layer_over_scan': 31, 'garbled_text_layer': 1}）；这些页上的题面未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-CY-ERMO",
+   "questions": 20,
+   "stem_questions_audited": 18,
+   "seconds": 0.73,
+   "located_share": 0.4469,
+   "match_in_located": 0.9918,
+   "diff_by_category": {
+    "标点": 14,
+    "增字": 4,
+    "漏字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default": 20
+   },
+   "not_auditable": "默认读法只有 44.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-CY-QIZHONG",
+   "questions": 20,
+   "stem_questions_audited": 20,
+   "seconds": 0.36,
+   "located_share": 0.9408,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "标点": 7
+   },
+   "stem_reading_basis": {
+    "bank_default": 20
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-CY-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.46,
+   "located_share": 0.7458,
+   "match_in_located": 0.99,
+   "diff_by_category": {
+    "标点": 1,
+    "增字": 16,
+    "错字": 6
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-DC-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 1.79,
+   "located_share": 0.0,
+   "match_in_located": 0.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": "原件文字层不可用（页型 {'vector_outlined_text': 14, 'empty': 9, 'text_reliable': 2, 'scan_no_text': 7, 'pptx_text': 16, 'pptx_mixed': 5, 'docx': 9, 'docx_with_image': 13, 'pptx_picture': 3}）；本卷只能看图或 OCR 校对，脚本未审；默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-DC-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 1.23,
+   "located_share": 0.0962,
+   "match_in_located": 0.9363,
+   "diff_by_category": {
+    "增字": 4,
+    "漏字": 13,
+    "错字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 9.6% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-FT-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 1.11,
+   "located_share": 0.0,
+   "match_in_located": 0.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "原件文字层不可用（页型 {'vector_outlined_text': 8, 'docx_with_image': 1, 'docx': 3}）；本卷只能看图或 OCR 校对，脚本未审；默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-FT-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 3,
+   "seconds": 1.47,
+   "located_share": 0.3852,
+   "match_in_located": 0.9271,
+   "diff_by_category": {
+    "错字": 17,
+    "增字": 69,
+    "标点": 6,
+    "漏字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 38.5% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-HD-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.25,
+   "located_share": 0.7761,
+   "match_in_located": 0.9986,
+   "diff_by_category": {
+    "错字": 3,
+    "标点": 1,
+    "漏字": 2,
+    "增字": 6
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 2.71,
+   "located_share": 0.126,
+   "match_in_located": 0.9037,
+   "diff_by_category": {
+    "标点": 38,
+    "增字": 10,
+    "错字": 27,
+    "漏字": 9
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 12.6% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-HD-YIMO",
+   "questions": 20,
+   "stem_questions_audited": 20,
+   "seconds": 0.26,
+   "located_share": 0.8342,
+   "match_in_located": 0.9897,
+   "diff_by_category": {
+    "增字": 8,
+    "漏字": 12,
+    "标点": 57
+   },
+   "stem_reading_basis": {
+    "bank_default": 20
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-SY-ERMO",
+   "questions": 20,
+   "stem_questions_audited": 18,
+   "seconds": 0.03,
+   "located_share": 0.6396,
+   "match_in_located": 0.9998,
+   "diff_by_category": {
+    "标点": 2
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 20
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-XC-ERMO",
+   "questions": 19,
+   "stem_questions_audited": 14,
+   "seconds": 0.04,
+   "located_share": 0.505,
+   "match_in_located": 0.999,
+   "diff_by_category": {
+    "标点": 2,
+    "漏字": 1,
+    "错字": 1,
+    "增字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 19
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2024-XC-YIMO",
+   "questions": 19,
+   "stem_questions_audited": 14,
+   "seconds": 0.09,
+   "located_share": 0.4285,
+   "match_in_located": 0.9963,
+   "diff_by_category": {
+    "标点": 6,
+    "题号": 1,
+    "增字": 15,
+    "错字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 19
+   },
+   "not_auditable": "默认读法只有 42.8% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 16,
+   "seconds": 1.12,
+   "located_share": 0.6779,
+   "match_in_located": 0.9999,
+   "diff_by_category": {
+    "错字": 3,
+    "漏字": 1
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-CY-ERMO",
+   "questions": 22,
+   "stem_questions_audited": 22,
+   "seconds": 0.45,
+   "located_share": 0.7523,
+   "match_in_located": 1.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 22
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.4,
+   "located_share": 0.7864,
+   "match_in_located": 0.9988,
+   "diff_by_category": {
+    "漏字": 3,
+    "错字": 6,
+    "标点": 5,
+    "增字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-DC-QIMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.8,
+   "located_share": 0.8374,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "错字": 4,
+    "标点": 2,
+    "漏字": 1
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-DC-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 16,
+   "seconds": 1.28,
+   "located_share": 0.6084,
+   "match_in_located": 0.9977,
+   "diff_by_category": {
+    "增字": 2,
+    "漏字": 3
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-FT-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 18,
+   "seconds": 0.6,
+   "located_share": 0.5988,
+   "match_in_located": 0.9987,
+   "diff_by_category": {
+    "错字": 3,
+    "标点": 9,
+    "漏字": 26,
+    "增字": 5
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-FT-QIMO",
+   "questions": 21,
+   "stem_questions_audited": 21,
+   "seconds": 0.55,
+   "located_share": 0.4839,
+   "match_in_located": 0.9981,
+   "diff_by_category": {
+    "错字": 10,
+    "题号": 1,
+    "漏字": 3,
+    "标点": 4
+   },
+   "stem_reading_basis": {
+    "bank_default": 18,
+    "heuristic_no_default_stem": 3
+   },
+   "not_auditable": "默认读法只有 48.4% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2025-HD-ERMO",
+   "questions": 22,
+   "stem_questions_audited": 0,
+   "seconds": 0.69,
+   "located_share": 0.1601,
+   "match_in_located": 1.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 22
+   },
+   "not_auditable": "默认读法只有 16.0% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-BJ-GAOKAO",
+   "questions": 21,
+   "stem_questions_audited": 16,
+   "seconds": 0.4,
+   "located_share": 0.6807,
+   "match_in_located": 0.9969,
+   "diff_by_category": {
+    "增字": 9,
+    "漏字": 7,
+    "错字": 2,
+    "标点": 8
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CP-ERMO",
+   "questions": 22,
+   "stem_questions_audited": 15,
+   "seconds": 0.15,
+   "located_share": 0.6559,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "标点": 10,
+    "漏字": 3,
+    "错字": 3
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 22
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CP-QIMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.11,
+   "located_share": 0.8113,
+   "match_in_located": 1.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CY-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.05,
+   "located_share": 0.8642,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "增字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default_passthrough": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CY-QIMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 0.02,
+   "located_share": 0.0,
+   "match_in_located": 0.0,
+   "diff_by_category": {},
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "原件文字层不可用（页型 {'scan_no_text': 12}）；本卷只能看图或 OCR 校对，脚本未审；默认读法只有 0.0% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CY-QIZHONG",
+   "questions": 21,
+   "stem_questions_audited": 19,
+   "seconds": 0.41,
+   "located_share": 0.7171,
+   "match_in_located": 0.9994,
+   "diff_by_category": {
+    "增字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-CY-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 20,
+   "seconds": 0.45,
+   "located_share": 0.9091,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "增字": 1,
+    "标点": 4
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-FS-ERMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 0.18,
+   "located_share": 0.3433,
+   "match_in_located": 0.9954,
+   "diff_by_category": {
+    "错字": 2,
+    "增字": 10,
+    "标点": 2,
+    "漏字": 3
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 21
+   },
+   "not_auditable": "原件约58%页无可靠文字层（页型 {'scan_no_text': 8, 'text_reliable': 4, 'docx': 2}）；这些页上的题面未审；默认读法只有 34.3% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-FT-ERMO",
+   "questions": 22,
+   "stem_questions_audited": 19,
+   "seconds": 0.81,
+   "located_share": 0.4065,
+   "match_in_located": 0.9435,
+   "diff_by_category": {
+    "增字": 68,
+    "漏字": 16,
+    "错字": 3,
+    "标点": 4,
+    "题号": 1
+   },
+   "stem_reading_basis": {
+    "heuristic_no_default_stem": 22
+   },
+   "not_auditable": "默认读法只有 40.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 0.07,
+   "located_share": 0.1666,
+   "match_in_located": 0.9866,
+   "diff_by_category": {
+    "漏字": 5,
+    "标点": 31,
+    "错字": 6
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "默认读法只有 16.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-MTG-YIMO",
+   "questions": 21,
+   "stem_questions_audited": 17,
+   "seconds": 0.62,
+   "located_share": 0.7326,
+   "match_in_located": 0.9989,
+   "diff_by_category": {
+    "标点": 5,
+    "增字": 9,
+    "漏字": 1,
+    "错字": 2
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-SJS-QIMO",
+   "questions": 20,
+   "stem_questions_audited": 0,
+   "seconds": 0.08,
+   "located_share": 0.1469,
+   "match_in_located": 1.0,
+   "diff_by_category": {
+    "漏字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 20
+   },
+   "not_auditable": "原件约80%页无可靠文字层（页型 {'scan_no_text': 8, 'text_reliable': 2}）；这些页上的题面未审；默认读法只有 14.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-XC-QIMO",
+   "questions": 21,
+   "stem_questions_audited": 0,
+   "seconds": 0.25,
+   "located_share": 0.1869,
+   "match_in_located": 0.9965,
+   "diff_by_category": {
+    "增字": 2,
+    "错字": 1,
+    "漏字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 21
+   },
+   "not_auditable": "原件约71%页无可靠文字层（页型 {'scan_no_text': 23, 'text_reliable': 6, 'pptx_picture': 6, 'pptx_text': 2, 'pptx_mixed': 4}）；这些页上的题面未审；默认读法只有 18.7% 的字在原件文字层里定位到（<50%），未定位部分未审",
+   "error": null,
+   "manifest_status": "已验收"
+  },
+  {
+   "exam": "BJ-2026-YQ-YIMO",
+   "questions": 20,
+   "stem_questions_audited": 20,
+   "seconds": 0.72,
+   "located_share": 0.7675,
+   "match_in_located": 0.9997,
+   "diff_by_category": {
+    "标点": 12,
+    "漏字": 9,
+    "增字": 1
+   },
+   "stem_reading_basis": {
+    "bank_default": 20
+   },
+   "not_auditable": null,
+   "error": null,
+   "manifest_status": "已验收"
+  }
+ ],
+ "top": [
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "qid": "BJ-2026-FT-YIMO-Q16",
+   "role": "e1",
+   "section": "正式评分细则层（E1；PPT slides 3–5）",
+   "basis": "heuristic_title",
+   "md_line": 76,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "者",
+   "bank_context": "或进一步阐述：坚持两点论与〔后略，全文见 questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q16.md:76〕",
+   "source_context": "〔前略〕又要正视其带来的挑战。或者进一步阐述：坚持两点论与〔后略，全文见 2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx 第3页〕",
+   "context_truncated": true,
+   "source_id": "S26649804f1de",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx",
+   "page": 3,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 1.0,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.25,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 1,
+   "rank_dedup": 1
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "qid": "BJ-2026-FT-YIMO-Q21",
+   "role": "e1",
+   "section": "正式评分细则层（E1；PPT slides 61–64）",
+   "basis": "heuristic_title",
+   "md_line": 109,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "试",
+   "bank_context": "〔前略〕分：应答与试题无关，重复题内容，摘抄材料，空白卷〔后略，全文见 questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q21.md:109〕",
+   "source_context": "〔前略〕分:应答与试题无关，重复试题内容，摘抄材料，空白卷〔后略，全文见 2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx 第63页〕",
+   "context_truncated": true,
+   "source_id": "S26649804f1de",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx",
+   "page": 63,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 1.0,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.25,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 2,
+   "rank_dedup": 2
+  },
+  {
+   "exam": "BJ-2025-BJ-GAOKAO",
+   "qid": "BJ-2025-BJ-GAOKAO-Q18",
+   "role": "stem",
+   "section": "E0教师版有界题面（不含答案/解析）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 26,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "接",
+   "source_text": "换",
+   "bank_context": "〔前略〕前，在医疗健康领域，脑机接口为神经系统疾病患者带来〔后略，全文见 questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q18.md:26〕",
+   "source_context": "〔前略〕前，在医疗健康领域，脑机换口为神经系统疾病患者带来〔后略，全文见 历年高考题及细则/2025北京高考真题政治（教师版）.pdf 第6页〕",
+   "context_truncated": true,
+   "source_id": "S44eade2b04f8",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2025北京高考真题政治（教师版）.pdf",
+   "page": 6,
+   "page_class": "text_plus_figure",
+   "tier": "native",
+   "bbox": [
+    74.9,
+    482.4,
+    541.5,
+    677.2
+   ],
+   "line_ratio": 0.993,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.171,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 3,
+   "rank_dedup": 3,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-BJ-GAOKAO-Q18_p006_44c259.png"
+  },
+  {
+   "exam": "BJ-2025-FT-ERMO",
+   "qid": "BJ-2025-FT-ERMO-Q16",
+   "role": "stem",
+   "section": "题目原文（原卷·native，修复候选）",
+   "basis": "bank_default",
+   "md_line": 18,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "锔",
+   "source_text": "铜",
+   "bank_context": "〔前略〕丝路驼铃。设专项资金，令锔瓷点金、面花塑彩等古艺重〔后略，全文见 questions/BJ-2025-FT-ERMO/BJ-2025-FT-ERMO-Q16.md:18〕",
+   "source_context": "〔前略〕丝路驼铃。设专项资金，令铜瓷点金、面花塑彩等古艺重〔后略，全文见 2025模拟题/2025各区二模/2025丰台二模/试卷/试卷.pdf 第5页〕",
+   "context_truncated": true,
+   "source_id": "S9f3b48608884",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025丰台二模/试卷/试卷.pdf",
+   "page": 5,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    209.1,
+    539.9,
+    464.7
+   ],
+   "line_ratio": 0.992,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.159,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 4,
+   "rank_dedup": 4,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-FT-ERMO-Q16_p005_06b8d4.png"
+  },
+  {
+   "exam": "BJ-2020-BJ-GAOKAO",
+   "qid": "BJ-2020-BJ-GAOKAO-Q16",
+   "role": "stem",
+   "section": "题面（教师版混合载体 p1-p7 的原卷区，已逐页视觉核对）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 14,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "千",
+   "source_text": "干",
+   "bank_context": "〔前略〕青黑色，松柏“黛色参天二千尺”，远山“遥看黛色知何",
+   "source_context": "〔前略〕青黑色，松柏“黛色参天二干尺”，远山“遥看黛色知何〔后略，全文见 历年高考题及细则/2020北京高考真题政治（教师版）.pdf 第5页〕",
+   "context_truncated": true,
+   "source_id": "Sd09df25048f5",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2020北京高考真题政治（教师版）.pdf",
+   "page": 5,
+   "page_class": "text_plus_figure",
+   "tier": "native",
+   "bbox": [
+    36.0,
+    62.6,
+    558.4,
+    176.4
+   ],
+   "line_ratio": 0.98,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.029,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 5,
+   "rank_dedup": 5,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2020-BJ-GAOKAO-Q16_p005_1fd115.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q17",
+   "role": "stem",
+   "section": "题目原文（原卷 p004；视觉复核，不静默规范化）",
+   "basis": "bank_default",
+   "md_line": 18,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "输",
+   "source_text": "輸",
+   "bank_context": "〔前略〕个，将城区优质法治资源“输送”到偏远地区。",
+   "source_context": "〔前略〕个，将城区优质法治资源“輸送”到仙远地区。点开上海〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    77.9,
+    599.4,
+    538.3,
+    725.6
+   ],
+   "line_ratio": 0.98,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.027,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 6,
+   "rank_dedup": 6,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q17_p004_dee169.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q17",
+   "role": "stem",
+   "section": "题目原文（原卷 p004；视觉复核，不静默规范化）",
+   "basis": "bank_default",
+   "md_line": 18,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "偏",
+   "source_text": "仙",
+   "bank_context": "〔前略〕区优质法治资源“输送”到偏远地区。",
+   "source_context": "〔前略〕区优质法治资源“輸送”到仙远地区。点开上海\"随中办〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    77.9,
+    599.4,
+    538.3,
+    725.6
+   ],
+   "line_ratio": 0.98,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.027,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 7,
+   "rank_dedup": 7,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q17_p004_0d7717.png"
+  },
+  {
+   "exam": "BJ-2025-DC-QIMO",
+   "qid": "BJ-2025-DC-QIMO-Q4",
+   "role": "stem",
+   "section": "题目原文（原卷·逐页对照）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 27,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "摹",
+   "source_text": "蔡",
+   "bank_context": "〔前略〕云，亦可繁复多画，耐心描摹，笔画的主次、长短、布局〔后略，全文见 questions/BJ-2025-DC-QIMO/BJ-2025-DC-QIMO-Q4.md:27〕",
+   "source_context": "〔前略〕云，亦可繁复多画，耐心描蔡，笔画的主次、长短、布局〔后略，全文见 2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf 第1页〕",
+   "context_truncated": true,
+   "source_id": "S8eda36bd87db",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf",
+   "page": 1,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    586.4,
+    541.4,
+    659.3
+   ],
+   "line_ratio": 0.978,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 11.0,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 8,
+   "rank_dedup": 8,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-QIMO-Q4_p001_c2b9ac.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q18",
+   "role": "e1",
+   "section": "正式评分材料原文（rubric:p002–p003；完整重配）",
+   "basis": "heuristic_title",
+   "md_line": 127,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "地",
+   "source_text": "的",
+   "bank_context": "1.引导学生有意识地全面辨析、评价某一观点，〔后略，全文见 questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q18.md:127〕",
+   "source_context": "〔前略〕学启示1.引导学生有意识的全面辨析、评价某一观点，〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf 第3页〕",
+   "context_truncated": true,
+   "source_id": "S606dbae1d5ce",
+   "source_role": "评分材料",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf",
+   "page": 3,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    90.0,
+    545.4,
+    505.6,
+    573.8
+   ],
+   "line_ratio": 0.977,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.988,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 9,
+   "rank_dedup": 9,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q18_p003_d54032.png"
+  },
+  {
+   "exam": "BJ-2025-DC-QIMO",
+   "qid": "BJ-2025-DC-QIMO-Q18",
+   "role": "stem",
+   "section": "题目原文（原卷·逐页对照）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 37,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "载",
+   "source_text": "裁",
+   "bank_context": "〔前略〕十足的细节，将为我国首次载人登月任务的顺利实施保驾〔后略，全文见 questions/BJ-2025-DC-QIMO/BJ-2025-DC-QIMO-Q18.md:37〕",
+   "source_context": "〔前略〕十足的细节，将为我国首次裁人登月任务的顺利实施保驾〔后略，全文见 2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf 第5页〕",
+   "context_truncated": true,
+   "source_id": "S8eda36bd87db",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf",
+   "page": 5,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    67.5,
+    557.6,
+    541.4,
+    630.1
+   ],
+   "line_ratio": 0.976,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.982,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 10,
+   "rank_dedup": 10,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-QIMO-Q18_p005_830d46.png"
+  },
+  {
+   "exam": "BJ-2026-BJ-GAOKAO",
+   "qid": "BJ-2026-BJ-GAOKAO-Q10",
+   "role": "stem",
+   "section": "题面（Luna/max独立复核通过，verified）",
+   "basis": "bank_default",
+   "md_line": 37,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "获",
+   "source_text": "取",
+   "bank_context": "〔前略〕的未成年人，应保障劳动者获得劳动报酬和休息休假权利",
+   "source_context": "〔前略〕的未成年人，应保障劳动者取得劳动报酬和休息休假权利〔后略，全文见 历年高考题及细则/2026年普通高中学业水平等级性考试（思想政治）试题.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S150b8360ec5c",
+   "source_role": "原卷",
+   "source_rel": "历年高考题及细则/2026年普通高中学业水平等级性考试（思想政治）试题.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    106.1,
+    436.6,
+    512.9,
+    448.3
+   ],
+   "line_ratio": 0.974,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.962,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 11,
+   "rank_dedup": 11,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2026-BJ-GAOKAO-Q10_p004_71403d.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q17",
+   "role": "stem",
+   "section": "题目原文（原卷 p004；视觉复核，不静默规范化）",
+   "basis": "bank_default",
+   "md_line": 20,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "申",
+   "source_text": "中",
+   "bank_context": "点开上海“随申办”平台，当事人就可以获〔后略，全文见 questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md:20〕",
+   "source_context": "〔前略〕到仙远地区。点开上海\"随中办”平台，当事人就可以获〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    77.9,
+    599.4,
+    538.3,
+    725.6
+   ],
+   "line_ratio": 0.966,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.862,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 12,
+   "rank_dedup": 12,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q17_p004_04de7d.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q17",
+   "role": "stem",
+   "section": "题目原文（原卷 p004；视觉复核，不静默规范化）",
+   "basis": "bank_default",
+   "md_line": 20,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "讼",
+   "source_text": "让",
+   "bank_context": "〔前略〕平台，当事人就可以获得诉讼指引、案例参考、风险评估〔后略，全文见 questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md:20〕",
+   "source_context": "〔前略〕平台，当事人就可以获得诉让指引、案例参考、风险评估〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    77.9,
+    599.4,
+    538.3,
+    725.6
+   ],
+   "line_ratio": 0.966,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.862,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 13,
+   "rank_dedup": 13,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q17_p004_b900e1.png"
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q17",
+   "role": "stem",
+   "section": "题目原文（原卷 p004；视觉复核，不静默规范化）",
+   "basis": "bank_default",
+   "md_line": 20,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "案",
+   "source_text": "電",
+   "bank_context": "〔前略〕院在2024年开展网上立案41.94万件，网上开庭〔后略，全文见 questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md:20〕",
+   "source_context": "〔前略〕院在2024年开展网上立電41.94万件，网上开庭〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第4页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 4,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    77.9,
+    599.4,
+    538.3,
+    725.6
+   ],
+   "line_ratio": 0.966,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.862,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": true,
+   "rank_raw": 14,
+   "rank_dedup": 14,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q17_p004_1588bf.png"
+  },
+  {
+   "exam": "BJ-2025-DC-QIMO",
+   "qid": "BJ-2025-DC-QIMO-Q19",
+   "role": "stem",
+   "section": "题目原文（原卷·逐页对照）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 33,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "棚",
+   "source_text": "栩",
+   "bank_context": "〔前略〕：我没有电动自行车，建车棚会占用绿地，影响我遛弯了〔后略，全文见 questions/BJ-2025-DC-QIMO/BJ-2025-DC-QIMO-Q19.md:33〕",
+   "source_context": "〔前略〕：我没有电动自行车，建车栩会占用绿地，影响我遛弯了〔后略，全文见 2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf 第6页〕",
+   "context_truncated": true,
+   "source_id": "S8eda36bd87db",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf",
+   "page": 6,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    67.5,
+    46.6,
+    541.5,
+    221.6
+   ],
+   "line_ratio": 0.963,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.833,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 15,
+   "rank_dedup": 15,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-QIMO-Q19_p006_b79721.png"
+  },
+  {
+   "exam": "BJ-2025-FT-QIMO",
+   "qid": "BJ-2025-FT-QIMO-Q3",
+   "role": "stem",
+   "section": "题目原文（原卷·native，补足缺失的原卷角色）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 17,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "治",
+   "source_text": "洽",
+   "bank_context": "③“一平台”以基层自治为主导，保障老年群体的基〔后略，全文见 questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q3.md:17〕",
+   "source_context": "〔前略〕需求③“一平台”以基层自洽为主导，保障老年群体的基〔后略，全文见 2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf 第2页〕",
+   "context_truncated": true,
+   "source_id": "S89765092a6f2",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf",
+   "page": 2,
+   "page_class": "text_plus_figure",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    320.7,
+    329.5,
+    332.3
+   ],
+   "line_ratio": 0.962,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.817,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 16,
+   "rank_dedup": 16,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-FT-QIMO-Q3_p002_944aa8.png"
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "qid": "BJ-2026-FT-YIMO-Q21",
+   "role": "e1",
+   "section": "正式评分细则层（E1；PPT slides 61–64）",
+   "basis": "heuristic_title",
+   "md_line": 115,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "的",
+   "bank_context": "〔前略〕分为论述逻辑清晰，有明显结构，能从识变、应变、求〔后略，全文见 questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q21.md:115〕",
+   "source_context": "〔前略〕分:论述逻辑清晰，有明显的结构。能从识变、应变、求〔后略，全文见 2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx 第63页〕",
+   "context_truncated": true,
+   "source_id": "S26649804f1de",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx",
+   "page": 63,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.929,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.454,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 17,
+   "rank_dedup": 17
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "qid": "BJ-2026-FT-YIMO-Q21",
+   "role": "e1",
+   "section": "正式评分细则层（E1；PPT slides 61–64）",
+   "basis": "heuristic_title",
+   "md_line": 115,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "论述",
+   "bank_context": "〔前略〕什么、怎么做”等角度展开；8–9分为观点明确，运〔后略，全文见 questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q21.md:115〕",
+   "source_context": "〔前略〕为什么、怎么做等角度展开论述；8-9分:观点明确，运〔后略，全文见 2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx 第63页〕",
+   "context_truncated": true,
+   "source_id": "S26649804f1de",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx",
+   "page": 63,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.929,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.454,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 18,
+   "rank_dedup": 18
+  },
+  {
+   "exam": "BJ-2023-XC-ERMO",
+   "qid": "BJ-2023-XC-ERMO-Q19",
+   "role": "e1",
+   "section": "正式评分材料原文（E1）",
+   "basis": "bank_role_alias",
+   "md_line": 46,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "亦可",
+   "bank_context": "其他合理回答酌情给分。",
+   "source_context": "〔前略〕挑战，2分（其他合理回答亦可酌情给分）19.（9分）〔后略，全文见 2023模拟题/2023各区模拟题(1)/各区二模/√西城/细则-高三政治二模5-10(2).docx 第2页〕",
+   "context_truncated": true,
+   "source_id": "Sb42be5c9eb5e",
+   "source_role": "评分材料",
+   "source_rel": "2023模拟题/2023各区模拟题(1)/各区二模/√西城/细则-高三政治二模5-10(2).docx",
+   "page": 2,
+   "page_class": "docx",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.909,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 10.227,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 19,
+   "rank_dedup": 19
+  },
+  {
+   "exam": "BJ-2025-DC-ERMO",
+   "qid": "BJ-2025-DC-ERMO-Q16",
+   "role": "e3",
+   "section": "原卷嵌入式参考答案（非独立答案源）",
+   "basis": "heuristic_title",
+   "md_line": 97,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "仍",
+   "bank_context": "〔前略〕不可阻挡。虽有挑战，我们要积极拥抱人工智能的到来〔后略，全文见 questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q16.md:97〕",
+   "source_context": "〔前略〕不可阻挡。虽有挑战，我们仍要积极拥抱人工智能的到来〔后略，全文见 2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf 第7页〕",
+   "context_truncated": true,
+   "source_id": "S9b287871f660",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+   "page": 7,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    222.6,
+    536.9,
+    274.7
+   ],
+   "line_ratio": 1.0,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.375,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 20,
+   "rank_dedup": 20,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-ERMO-Q16_p007_3583f4.png"
+  },
+  {
+   "exam": "BJ-2026-YQ-YIMO",
+   "qid": "BJ-2026-YQ-YIMO-Q20",
+   "role": "e3",
+   "section": "参考答案原文",
+   "basis": "bank_role_alias",
+   "md_line": 87,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "色",
+   "bank_context": "可从习近平新时代中国特社会主义思想、中国式现代〔后略，全文见 questions/BJ-2026-YQ-YIMO/BJ-2026-YQ-YIMO-Q20.md:87〕",
+   "source_context": "〔前略〕）可从习近平新时代中国特色社会主义思想、中国式现代〔后略，全文见 2026模拟题/2026各区一模/2026延庆一模/细则/细则.docx 第1页〕",
+   "context_truncated": true,
+   "source_id": "S2e0f67df1ab7",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026延庆一模/细则/细则.docx",
+   "page": 1,
+   "page_class": "docx",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 1.0,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.375,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 21,
+   "rank_dedup": 21
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q11",
+   "role": "e3",
+   "section": "教师版参考解析（E3）",
+   "basis": "heuristic_title",
+   "md_line": 98,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "载",
+   "source_text": "裁",
+   "bank_context": "11．C合同、侵权合同载明“游客需自担风险和责任〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q11.md:98〕",
+   "source_context": "〔前略〕。11．C合同、侵权合同裁明“游客需自担风险和责任〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第10页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 10,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    720.7,
+    541.5,
+    752.7
+   ],
+   "line_ratio": 0.995,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.33,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 22,
+   "rank_dedup": 22,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q11_p010_830d46.png"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q18",
+   "role": "e3",
+   "section": "教师版参考答案与讲解（E3，教师版页 12，第 18 题）",
+   "basis": "heuristic_title",
+   "md_line": 142,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "延",
+   "source_text": "廷",
+   "bank_context": "〔前略〕进生产力作为中项，都不周延，违反了第②条规则，所以〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q18.md:142〕",
+   "source_context": "〔前略〕进生产力作为中项，都不周廷，违反了第②条规则，所以〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第12页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 12,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    434.7,
+    551.9,
+    630.1
+   ],
+   "line_ratio": 0.995,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.329,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 23,
+   "rank_dedup": 23,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q18_p012_c1e5aa.png"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q10",
+   "role": "e3",
+   "section": "教师版参考解析（E3）",
+   "basis": "heuristic_title",
+   "md_line": 73,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "仲",
+   "source_text": "种",
+   "bank_context": "〔前略〕方式可以采用和解、调解、仲裁或诉讼等，④正确：行政〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q10.md:73〕",
+   "source_context": "〔前略〕方式可以采用和解、调解、种裁或诉讼等，④正确：行政〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第10页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 10,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    557.3,
+    541.4,
+    711.9
+   ],
+   "line_ratio": 0.995,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.327,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 24,
+   "rank_dedup": 24,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q10_p010_581785.png"
+  },
+  {
+   "exam": "BJ-2025-BJ-GAOKAO",
+   "qid": "BJ-2025-BJ-GAOKAO-Q17",
+   "role": "e3",
+   "section": "E3教师版参考答案（独立答案缺失）",
+   "basis": "heuristic_title",
+   "md_line": 51,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "求",
+   "source_text": "讼",
+   "bank_context": "〔前略〕享和业务协同，方便群众诉求的表达，提高了政府部门处〔后略，全文见 questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q17.md:51〕",
+   "source_context": "〔前略〕享和业务协同，方便群众诉讼的表达，提高了政府部门处〔后略，全文见 历年高考题及细则/2025北京高考真题政治（教师版）.pdf 第15页〕",
+   "context_truncated": true,
+   "source_id": "S44eade2b04f8",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2025北京高考真题政治（教师版）.pdf",
+   "page": 15,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    128.1,
+    541.6,
+    466.5
+   ],
+   "line_ratio": 0.995,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.326,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 25,
+   "rank_dedup": 25,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-BJ-GAOKAO-Q17_p015_401468.png"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q16",
+   "role": "e3",
+   "section": "教师版参考答案与讲解（E3，教师版页 11，第 16 题）",
+   "basis": "heuristic_title",
+   "md_line": 185,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "因",
+   "source_text": "国",
+   "bank_context": "〔前略〕，联系教材知识可从\"文明因交流而多彩，因互鉴而丰富〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q16.md:185〕",
+   "source_context": "〔前略〕，联系教材知识可从“文明国交流而多彩，因互鉴而丰富〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第11页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 11,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    618.9,
+    551.9,
+    691.4
+   ],
+   "line_ratio": 0.994,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.319,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 27,
+   "rank_dedup": 26,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q16_p011_a9edc0.png"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q16",
+   "role": "e3",
+   "section": "教师版参考答案与讲解（E3，教师版页 11，第 16 题）",
+   "basis": "heuristic_title",
+   "md_line": 183,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "翻",
+   "source_text": "题",
+   "bank_context": "〔前略〕长补短，共同发展。③通过翻译，有利于推动中华文明走〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q16.md:183〕",
+   "source_context": "〔前略〕长补短，共同发展。③通过题译，有利于推动中华文明走〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第11页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 11,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    557.3,
+    541.6,
+    609.7
+   ],
+   "line_ratio": 0.992,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.299,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 28,
+   "rank_dedup": 27,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q16_p011_531af7.png"
+  },
+  {
+   "exam": "BJ-2024-BJ-GAOKAO",
+   "qid": "BJ-2024-BJ-GAOKAO-Q10",
+   "role": "e3",
+   "section": "教师版参考解析（E3）",
+   "basis": "heuristic_title",
+   "md_line": 73,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "组",
+   "source_text": "维",
+   "bank_context": "〔前略〕象等方面的客观评判。任何组织或个人不得以侮辱、诽谤〔后略，全文见 questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q10.md:73〕",
+   "source_context": "〔前略〕象等方面的客观评判。任何维织或个人不得以侮辱、诽谤〔后略，全文见 历年高考题及细则/2024北京高考真题政治（教师版）.pdf 第10页〕",
+   "context_truncated": true,
+   "source_id": "Sbe05e583ba6a",
+   "source_role": "教师版",
+   "source_rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+   "page": 10,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    557.3,
+    541.4,
+    711.9
+   ],
+   "line_ratio": 0.991,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.289,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 29,
+   "rank_dedup": 28,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-BJ-GAOKAO-Q10_p010_93ddb8.png"
+  },
+  {
+   "exam": "BJ-2024-HD-ERMO",
+   "qid": "BJ-2024-HD-ERMO-Q16",
+   "role": "e1",
+   "section": "正式评分材料原文",
+   "basis": "bank_role_alias",
+   "md_line": 63,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "细则",
+   "source_text": "答案",
+   "bank_context": "16.（6分）【细则】",
+   "source_context": "〔前略〕55分。16.（6分）【答案】联系是普遍的，在人际关〔后略，全文见 2024模拟题/海淀二模/细则/细则.docx 第1页〕",
+   "context_truncated": true,
+   "source_id": "S227192d22e10",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/海淀二模/细则/细则.docx",
+   "page": 1,
+   "page_class": "docx_with_image",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.818,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.205,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 30,
+   "rank_dedup": 29
+  },
+  {
+   "exam": "BJ-2024-HD-ERMO",
+   "qid": "BJ-2024-HD-ERMO-Q19",
+   "role": "e1",
+   "section": "正式评分材料原文",
+   "basis": "bank_role_alias",
+   "md_line": 69,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "细则",
+   "source_text": "答案",
+   "bank_context": "19.（6分）【细则】",
+   "source_context": "〔前略〕给1分；19.（6分）【答案】在本案判决中，人民法院〔后略，全文见 2024模拟题/海淀二模/细则/细则.docx 第3页〕",
+   "context_truncated": true,
+   "source_id": "S227192d22e10",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/海淀二模/细则/细则.docx",
+   "page": 3,
+   "page_class": "docx_with_image",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.818,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.205,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 31,
+   "rank_dedup": 30
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "qid": "BJ-2024-HD-QIZHONG-Q16",
+   "role": "e1",
+   "section": "答案层（与评分细则分层）",
+   "basis": "heuristic_title",
+   "md_line": 70,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "的",
+   "bank_context": "〔前略〕各1分）；形式表现给整体表达或逻辑分，书写上标序〔后略，全文见 questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q16.md:70〕",
+   "source_context": "〔前略〕）（3）形式表现：给整体的表达或逻辑分（书写上，形〔后略，全文见 2024模拟题/2024海淀期中/细则/细则.pdf 第8页〕",
+   "context_truncated": true,
+   "source_id": "Sfee5258a9b73",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/2024海淀期中/细则/细则.pdf",
+   "page": 8,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    59.4,
+    371.0,
+    863.4,
+    395.0
+   ],
+   "line_ratio": 0.81,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.112,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 32,
+   "rank_dedup": 31,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-HD-QIZHONG-Q16_p008_a46641.png"
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "qid": "BJ-2024-HD-QIZHONG-Q16",
+   "role": "e1",
+   "section": "答案层（与评分细则分层）",
+   "basis": "heuristic_title",
+   "md_line": 70,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "者",
+   "bank_context": "〔前略〕或逻辑分，书写上标序号或分段、文字递进，没有扣1〔后略，全文见 questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q16.md:70〕",
+   "source_context": "〔前略〕（书写上，形式上标序号或者分段，文字递进，没有就扣〔后略，全文见 2024模拟题/2024海淀期中/细则/细则.pdf 第8页〕",
+   "context_truncated": true,
+   "source_id": "Sfee5258a9b73",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/2024海淀期中/细则/细则.pdf",
+   "page": 8,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    59.4,
+    371.0,
+    863.4,
+    395.0
+   ],
+   "line_ratio": 0.81,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.112,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 33,
+   "rank_dedup": 32,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-HD-QIZHONG-Q16_p008_b595fc.png"
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "qid": "BJ-2024-HD-QIZHONG-Q16",
+   "role": "e1",
+   "section": "答案层（与评分细则分层）",
+   "basis": "heuristic_title",
+   "md_line": 70,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "就",
+   "bank_context": "〔前略〕号或分段、文字递进，没有扣1分。",
+   "source_context": "〔前略〕或者分段，文字递进，没有就扣1分）参考答案：①需求〔后略，全文见 2024模拟题/2024海淀期中/细则/细则.pdf 第8页〕",
+   "context_truncated": true,
+   "source_id": "Sfee5258a9b73",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/2024海淀期中/细则/细则.pdf",
+   "page": 8,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    59.4,
+    428.6,
+    335.4,
+    452.6
+   ],
+   "line_ratio": 0.81,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 9.112,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 34,
+   "rank_dedup": 33,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-HD-QIZHONG-Q16_p008_17ab7e.png"
+  },
+  {
+   "exam": "BJ-2023-DC-YIMO",
+   "qid": "BJ-2023-DC-YIMO-Q18",
+   "role": "e1",
+   "section": "参考答案及正式评分材料",
+   "basis": "heuristic_title",
+   "md_line": 55,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "地位：",
+   "bank_context": "（1）实体经济是一国经济的立身〔后略，全文见 questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q18.md:55〕",
+   "source_context": "〔前略〕放在实体经济上。（5分）地位：实体经济是一国经济的立身〔后略，全文见 2023模拟题/2023各区模拟题(1)/各区一模/东城/2023.3高三政治一模统阅-题组长（细则讨论）.pptx 第5页〕",
+   "context_truncated": true,
+   "source_id": "S55473ddd97c8",
+   "source_role": "评分材料",
+   "source_rel": "2023模拟题/2023各区模拟题(1)/各区一模/东城/2023.3高三政治一模统阅-题组长（细则讨论）.pptx",
+   "page": 5,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.975,
+   "flags": [],
+   "priority": 8.775,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 35,
+   "rank_dedup": 34
+  },
+  {
+   "exam": "BJ-2026-FT-YIMO",
+   "qid": "BJ-2026-FT-YIMO-Q21",
+   "role": "e1",
+   "section": "正式评分细则层（E1；PPT slides 61–64）",
+   "basis": "heuristic_title",
+   "md_line": 113,
+   "category": "错字",
+   "subtype": "cjk",
+   "bank_text": "为",
+   "source_text": ":",
+   "bank_context": "水平三4–6分：4分为有少量论述，能回应问题，〔后略，全文见 questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q21.md:113〕",
+   "source_context": "〔前略〕分。水平三4-6分:4分:有少量论述，能回应问题，〔后略，全文见 2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx 第63页〕",
+   "context_truncated": true,
+   "source_id": "S26649804f1de",
+   "source_role": "评分材料",
+   "source_rel": "2026模拟题/2026各区一模/2026丰台一模/细则/细则.pptx",
+   "page": 63,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.964,
+   "flags": [],
+   "priority": 8.679,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 36,
+   "rank_dedup": 35
+  },
+  {
+   "exam": "BJ-2024-HD-QIZHONG",
+   "qid": "BJ-2024-HD-QIZHONG-Q21",
+   "role": "e1",
+   "section": "答案层（与评分细则分层）",
+   "basis": "heuristic_title",
+   "md_line": 72,
+   "category": "错字",
+   "subtype": "digit",
+   "bank_text": "：",
+   "source_text": "(2）",
+   "bank_context": "〔前略〕评分课件第64页参考答案：新中国外交的时代背景不断〔后略，全文见 questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q21.md:72〕",
+   "source_context": "〔前略〕不变\"。(9分）参考答案(2）新中国外交的时代背景不断〔后略，全文见 2024模拟题/2024海淀期中/细则/细则.pdf 第64页〕",
+   "context_truncated": true,
+   "source_id": "Sfee5258a9b73",
+   "source_role": "评分材料",
+   "source_rel": "2024模拟题/2024海淀期中/细则/细则.pdf",
+   "page": 64,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    68.2,
+    106.7,
+    894.2,
+    403.5
+   ],
+   "line_ratio": 0.96,
+   "flags": [],
+   "priority": 8.637,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 38,
+   "rank_dedup": 36,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2024-HD-QIZHONG-Q21_p064_b78223.png"
+  },
+  {
+   "exam": "BJ-2023-FT-YIMO",
+   "qid": "BJ-2023-FT-YIMO-Q9",
+   "role": "stem",
+   "section": "题面（不含内附答案、分析、详解）",
+   "basis": "bank_default",
+   "md_line": 23,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "从",
+   "bank_context": "标题：2016—2022年全国〔后略，全文见 questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q9.md:23〕",
+   "source_context": "〔前略〕【答案】B【详解】①④：从2016-2022年（R〔后略，全文见 2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx 第1页〕",
+   "context_truncated": true,
+   "source_id": "Sd68e0801a751",
+   "source_role": "教师版/转录题源",
+   "source_rel": "2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+   "page": 1,
+   "page_class": "docx_with_image",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.75,
+   "flags": [
+    "cjk_short"
+   ],
+   "priority": 8.438,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 41,
+   "rank_dedup": 37
+  },
+  {
+   "exam": "BJ-2023-DC-YIMO",
+   "qid": "BJ-2023-DC-YIMO-Q18",
+   "role": "e1",
+   "section": "参考答案及正式评分材料",
+   "basis": "heuristic_title",
+   "md_line": 58,
+   "category": "错字",
+   "subtype": "digit",
+   "bank_text": "7",
+   "source_text": "2",
+   "bank_context": "〔前略〕育实体经济增长新动能。（7分）（言之有理，可得分）",
+   "source_context": "〔前略〕育实体经济增长新动能。（2分）（注意和技术创新的差〔后略，全文见 2023模拟题/2023各区模拟题(1)/各区一模/东城/2023.3高三政治一模统阅-题组长（细则讨论）.pptx 第6页〕",
+   "context_truncated": true,
+   "source_id": "S55473ddd97c8",
+   "source_role": "评分材料",
+   "source_rel": "2023模拟题/2023各区模拟题(1)/各区一模/东城/2023.3高三政治一模统阅-题组长（细则讨论）.pptx",
+   "page": 6,
+   "page_class": "pptx_text",
+   "tier": "native",
+   "bbox": null,
+   "line_ratio": 0.937,
+   "flags": [],
+   "priority": 8.431,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 42,
+   "rank_dedup": 38
+  },
+  {
+   "exam": "BJ-2025-DC-QIMO",
+   "qid": "BJ-2025-DC-QIMO-Q21",
+   "role": "stem",
+   "section": "题目原文（原卷·逐页对照）",
+   "basis": "heuristic_no_default_stem",
+   "md_line": 37,
+   "category": "漏字",
+   "subtype": "cjk",
+   "bank_text": "",
+   "source_text": "居世界第一。",
+   "bank_context": "〔前略〕，公共图书馆、博物馆等向社会免费开放。……",
+   "source_context": "〔前略〕，公共图书馆、博物馆等向居世界第一。社会免费开放。截至202〔后略，全文见 2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf 第7页〕",
+   "context_truncated": true,
+   "source_id": "S8eda36bd87db",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf",
+   "page": 7,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    69.4,
+    318.4,
+    539.7,
+    350.5
+   ],
+   "line_ratio": 0.935,
+   "flags": [],
+   "priority": 8.419,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 43,
+   "rank_dedup": 39,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-DC-QIMO-Q21_p007_5c1022.png"
+  },
+  {
+   "exam": "BJ-2025-FT-QIMO",
+   "qid": "BJ-2025-FT-QIMO-Q13",
+   "role": "stem",
+   "section": "题目原文（原卷·native，读取优先）",
+   "basis": "bank_default",
+   "md_line": 36,
+   "category": "错字",
+   "subtype": "other",
+   "bank_text": "→",
+   "source_text": "，",
+   "bank_context": "③实施更加积极的财政政策→合理安排政府投资规模→发〔后略，全文见 questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q13.md:36〕",
+   "source_context": "〔前略〕：实施更加积极的财政政策，合理安排政府投资规模，发〔后略，全文见 2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf 第12页〕",
+   "context_truncated": true,
+   "source_id": "S89765092a6f2",
+   "source_role": "原卷",
+   "source_rel": "2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf",
+   "page": 12,
+   "page_class": "text_reliable",
+   "tier": "native",
+   "bbox": [
+    53.9,
+    414.7,
+    526.4,
+    446.1
+   ],
+   "line_ratio": 0.93,
+   "flags": [],
+   "priority": 8.372,
+   "evidence_level": "machine_diff",
+   "bank_section_claims_verified": false,
+   "rank_raw": 44,
+   "rank_dedup": 40,
+   "crop_path": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/build/doc2md/fix/retro/crops/BJ-2025-FT-QIMO-Q13_p012_226c4c.png"
+  }
+ ]
+}

@@ -1,0 +1,205 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "status": "visual_candidate_complete",
+  "questions": {
+    "Q1": {
+      "pages": [
+        1
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q2": {
+      "pages": [
+        1
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": true,
+      "structure_description": "镜头一、镜头二位于同一共同矩形框。"
+    },
+    "Q3": {
+      "pages": [
+        1
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q4": {
+      "pages": [
+        2
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": true
+    },
+    "Q5": {
+      "pages": [
+        2
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q6": {
+      "pages": [
+        2
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": true
+    },
+    "Q7": {
+      "pages": [
+        2
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q8": {
+      "pages": [
+        2
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q9": {
+      "pages": [
+        3
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q10": {
+      "pages": [
+        3
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q11": {
+      "pages": [
+        3
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q12": {
+      "pages": [
+        3
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q13": {
+      "pages": [
+        3
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q14": {
+      "pages": [
+        4
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q15": {
+      "pages": [
+        4
+      ],
+      "score": 3,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q16": {
+      "pages": [
+        4
+      ],
+      "score": 8,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": true
+    },
+    "Q17": {
+      "pages": [
+        5
+      ],
+      "score": 8,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q18": {
+      "pages": [
+        5,
+        6
+      ],
+      "score": 15,
+      "visual_opened": true,
+      "cross_page": true,
+      "complex_layout": true,
+      "structure_description": "第一千零二十五条在上方独立圆角横框；甲、乙在下方左右两个独立矩形框；三框无箭头。"
+    },
+    "Q19": {
+      "pages": [
+        6,
+        7
+      ],
+      "score": 8,
+      "visual_opened": true,
+      "cross_page": true,
+      "complex_layout": true
+    },
+    "Q20": {
+      "pages": [
+        7
+      ],
+      "score": 8,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": false
+    },
+    "Q21": {
+      "pages": [
+        8
+      ],
+      "score": 8,
+      "visual_opened": true,
+      "cross_page": false,
+      "complex_layout": true
+    }
+  },
+  "corrections_highlights": [
+    "补正全卷选择题统一每题3分；非选择题Q16-Q21分别8、8、15、8、8、8分。",
+    "修正OCR：蒋廷锡、温润、鹌鹑、著作权法、准入、因地制宜、英武、特殊区域、约束力、贬损、关税霸道霸凌、完整产业体系作为‘躯体’等。",
+    "核正Q16只位于p4（p5从Q17开始），并保留Q18→p6、Q19→p7的跨页关系及Q19政策表。"
+  ],
+  "current_shared_metadata_note": "20260922仅同步确定性路径/状态及已独立复核的Q2/Q18框线；R6原字节见sources/history_r6；其他原件和内容不改。"
+}

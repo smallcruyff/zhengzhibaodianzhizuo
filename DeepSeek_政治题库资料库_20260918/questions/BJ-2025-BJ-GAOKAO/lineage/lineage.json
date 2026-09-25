@@ -1,0 +1,69 @@
+{
+  "schema_version": "bounded_lineage_v2",
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "generated_at": "2026-09-22T12:23:08.580164+00:00",
+  "candidate_status": "bounded/blocked_on_source",
+  "shared_write_scope": "none",
+  "parent_bank": {
+    "path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-BJ-GAOKAO",
+    "question_tree_sha256_at_read": "f36d77855ec4585588c895e2623d5b143c8b1469eeb79092aa5a5eb7addfd005",
+    "parent_files_modified": false
+  },
+  "sources": {
+    "paper_source_id": "S44eade2b04f8",
+    "paper_sha256": "44eade2b04f87c55a788e0865e5457d884abfda002caf78f19626939aa29579d",
+    "rubric_source_id": "S132a504a16fe",
+    "rubric_sha256": "132a504a16fee0fa8febdbd4681c7e1c99e8d2c0260f7ac8b91cf41939e1ce7c",
+    "source_boundary_sha256": {
+      "inventory.json": "67877bedb145c86d557740d617451d7bab434c706bc2244de0105b134b5831c8",
+      "inventory.md": "838a040547522ba55d353dcbd2e8b9debe4451fd3dc97ab48c4dcffb679c5d31",
+      "production_recommendation.json": "bc233e16538c0a1fab935bb647a9b410da77b3b2e1f2bd46126d87a1c91c0695",
+      "source_matrix.json": "1286f2f911b4d980444dbbbc7e6ee9cf30c1a5d62546e69026c4f16a048d79e2"
+    },
+    "questions_snapshot_sha256": "f76f02ec4ac1ee29b302132c286568c7d074c2d71fd7c737358fad07749bda3f",
+    "rubric_links_snapshot_sha256": "d9b1416465389e18a2fdd608f2462576b9cdd14d54e7ae0a9a041b621da14c57",
+    "source_manifest_snapshot_sha256": "c03d45354134018f8e49ac44f48eb5e47240ffa84005e78f5c18f477f0a50f1d"
+  },
+  "question_registry": {
+    "path": "coverage/question_layers.jsonl",
+    "sha256": "68216b2632a33dba00b9b5ff9ce56926447153d9911fa34c2a94c22597413cd1",
+    "rows": 21,
+    "parent_sha_and_candidate_sha_per_question": true
+  },
+  "candidate_files_sha256": {
+    "Q1": "d794fe62331b12fc3280cceebb148d1a86d56d10ebb553ba434e6227a09fd2ef",
+    "Q2": "3bf1ba28685a30e3b239d9525c1b483bb87b956412093fcc7c2c63ac8c56c2b2",
+    "Q3": "0d3669bba287bd94164f4b5fc216e836316ba85c2d820c61c8a796ea68d51759",
+    "Q4": "f36bfa4c3eaaa2cbde65043e25ee20f367dbb2da20cc798b14a2be1febf64b60",
+    "Q5": "81ff6835ea632f3e9af5c37bcd712332fc8042f2d5ab1758cd3a6daf545dc460",
+    "Q6": "4a5612287f8114e9d39da2a79cbb995e2e056fca9cec7e90192e6d19e3745b9d",
+    "Q7": "56747caf465d8dd041c352ed124b52c7251fc8182a1536a15bc6e6e72ed32aec",
+    "Q8": "5900de4445ad42c91361c08df64d4bf0b696bee977c9d733d35daf2e6a404404",
+    "Q9": "d8ebdc464fb527d61a5ae714c5b34dd02de1ff02704890e8f5da712a2d100404",
+    "Q10": "d64a39b201e400fa9bf3c0c1585937872efde37df3957efb261619d527c83e34",
+    "Q11": "ce2f52bf47d53821ae2c19a7d18069fa09cef0596832a02c3af77ad66bd27d32",
+    "Q12": "2d69bfe7d58cb7c9f0e0f256494b110cca1a913574a3d4701f3a3379e22447cd",
+    "Q13": "4331e22f9dd4c8a5019cabd92dcb08b82f24586c8c6084e5d1bea501217bc980",
+    "Q14": "cb32163ac7d9aaa1e9c3268b116d94897bca342e88d34cd465ce54d8bac257b5",
+    "Q15": "6e31418ec4512fabbf9d38d175dd8ca6fa8255b255201d14386216aa6d62f974",
+    "Q16": "ed8afaa9a979252b3148e5cc7641d2ac8db69b3ab1fcc3e3a9d8346e67bb9f25",
+    "Q17": "3223f13564299fa52c0eaeaac0cd892a7197ad894dabd1e58844e957b77e85ab",
+    "Q18": "7d95b47f9fc676f867c8f16ec0617b4c99358b6f73f3d0df4a117c81f8708624",
+    "Q19": "18d04c4b00219a05a361f39cbbb93a672e3883b88e57372092fb87c6b01173fa",
+    "Q20": "51ce59417d719d5fce6d639aaf98c4c18fb7f55b3f737fb103c05f33064bf3a0",
+    "Q21": "bdc724f593ab3ae02f94cd244cedf164a22c6c0609dacd6b8948893bf42d1e65"
+  },
+  "visual_transcription": "coverage/visual_transcription.md",
+  "blocked_claims": [
+    "independent_original_exam",
+    "formal_E1_Q16_Q21",
+    "original_printed_score_Q16_Q21",
+    "controller_ready"
+  ],
+  "review": {
+    "status": "not_started_in_this_worker",
+    "required": true,
+    "must_be_different_worker": true,
+    "handoff_scope": "Q1-Q21 E0/E3 separation, visuals, parent/candidate SHA, link closure, score/E1 boundaries"
+  }
+}

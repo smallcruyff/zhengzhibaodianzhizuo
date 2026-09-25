@@ -1,0 +1,173 @@
+{
+  "exam_id": "BJ-2023-CY-ERMO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "source_pages": {
+    "paper": 7,
+    "E3_answer": 2
+  },
+  "question_hashes": {
+    "BJ-2023-CY-ERMO-Q1": "ecc27411f94f840f893341aa11c65a4e9bf1396588a88f46bbc62f9211da7bc1",
+    "BJ-2023-CY-ERMO-Q10": "ecca937ef188e18bbf33377af34801f8ea54d9361ab05212b12ac548e2481ce4",
+    "BJ-2023-CY-ERMO-Q11": "694852c4c373db18d134241c791654cc9f767a7bd7541f5e49d7ea72c57ecec4",
+    "BJ-2023-CY-ERMO-Q12": "77bbdb4d620301c25ddd40674d2ec2182e4a8b2259293cc20a46710ddfea5afa",
+    "BJ-2023-CY-ERMO-Q13": "e9d61a7fb756700ad12446a49ef3678fdd28b64a921f6d55749d273f54a9d65d",
+    "BJ-2023-CY-ERMO-Q14": "8d2f899243a703c13d171bfba43b069e7dce66bec7cd56b90b5042d07cfb28d0",
+    "BJ-2023-CY-ERMO-Q15": "a67109f32cd376ccce88796f0f716d5dd3e2c0a5bb6c502b18a459f4ac1fc241",
+    "BJ-2023-CY-ERMO-Q16": "6701d7bff8c25bb19e6bbe3232bab9798a1d60f86ac6afcbd762594867e693a0",
+    "BJ-2023-CY-ERMO-Q17": "4bdcea2c36dd72da53ea6b933f1391cad5371feda40c5dbd607bb4dca2b56bd4",
+    "BJ-2023-CY-ERMO-Q18": "cf37d62904199a253f48b3ec0d500e1e5464ab5fc84007aba689cec619081483",
+    "BJ-2023-CY-ERMO-Q19": "da60a9045db6ed47dfa7470e8c27003beb59c4a5d6470251d4dccf5d746c6b17",
+    "BJ-2023-CY-ERMO-Q2": "ba37a34ee35812c6ad8725b812d97e408bc860cfb973359a6656ddbbf207aab2",
+    "BJ-2023-CY-ERMO-Q20": "c7e4f7b0891eccdd239db0567ac2c9a63f7d25b6a37ff7bb5e5da677702b37c5",
+    "BJ-2023-CY-ERMO-Q21": "66c4e33886c0ef99b485fd2b43ebbc9d68082e5e70dea0ebfddd18de04b7eb06",
+    "BJ-2023-CY-ERMO-Q3": "d00a38db1638ad79639921cefd023e61efacb0868574a272ed89bdb3d56e311a",
+    "BJ-2023-CY-ERMO-Q4": "2f8306dd6d0538ce5bbb086fe79060631a60c5d3b28fb62d1abbe5e56928f0a5",
+    "BJ-2023-CY-ERMO-Q5": "d321421cd7623e47dbd4b576bfb0bc52b47a830d6a81ba8b45e9714e7fd93ab5",
+    "BJ-2023-CY-ERMO-Q6": "483627a5c0ce1e1b765316c10997e5afc7e2774c51c7945c55dade847c4a8332",
+    "BJ-2023-CY-ERMO-Q7": "cfe2176c1ee0a2312416eb4430ab7339833e98cb63cb9f5b57b09ad4fea1cc01",
+    "BJ-2023-CY-ERMO-Q8": "be61832c92c17cc9f9d94a3de5addfa7aea60155a66bf488ca51394d5936fb91",
+    "BJ-2023-CY-ERMO-Q9": "def3861cf407cfc1a39c2d07f21f213921196145050f10f918e833ca96dec9ae"
+  },
+  "source_page_map": {
+    "BJ-2023-CY-ERMO-Q1": {
+      "paper": 1,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-01.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q2": {
+      "paper": 1,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-01.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q3": {
+      "paper": 1,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-01.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q4": {
+      "paper": 2,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-02.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q5": {
+      "paper": 2,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-02.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q6": {
+      "paper": 2,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-02.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q7": {
+      "paper": 2,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-02.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q8": {
+      "paper": 3,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-03.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q9": {
+      "paper": 3,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-03.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q10": {
+      "paper": 3,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-03.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q11": {
+      "paper": 4,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-04.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q12": {
+      "paper": 4,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-04.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q13": {
+      "paper": 4,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-04.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q14": {
+      "paper": 4,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-04.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q15": {
+      "paper": 4,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-04.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q16": {
+      "paper": 5,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-05.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q17": {
+      "paper": 5,
+      "answer": 1,
+      "paper_image": "assets/source_pages/exam/p-05.png",
+      "answer_image": "assets/source_pages/answer/p-01.png"
+    },
+    "BJ-2023-CY-ERMO-Q18": {
+      "paper": 6,
+      "answer": 2,
+      "paper_image": "assets/source_pages/exam/p-06.png",
+      "answer_image": "assets/source_pages/answer/p-02.png"
+    },
+    "BJ-2023-CY-ERMO-Q19": {
+      "paper": 6,
+      "answer": 2,
+      "paper_image": "assets/source_pages/exam/p-06.png",
+      "answer_image": "assets/source_pages/answer/p-02.png"
+    },
+    "BJ-2023-CY-ERMO-Q20": {
+      "paper": 7,
+      "answer": 2,
+      "paper_image": "assets/source_pages/exam/p-07.png",
+      "answer_image": "assets/source_pages/answer/p-02.png"
+    },
+    "BJ-2023-CY-ERMO-Q21": {
+      "paper": 7,
+      "answer": 2,
+      "paper_image": "assets/source_pages/exam/p-07.png",
+      "answer_image": "assets/source_pages/answer/p-02.png"
+    }
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "现有材料只有原卷与E3答案，没有正式逐题E1；不凭答案生成细则",
+    "没有个人学生样卷、原答、批注或实得分，保持N/A_with_basis"
+  ],
+  "primary_visual": [
+    "paperp1,p6;embeddedQ8/Q10/Q19"
+  ],
+  "independent_chain": "v3 full9pages/21questions plus root Q19 joining-connector delta independently reviewed",
+  "accepted_at": "2026-09-22T12:04:58.125239+00:00"
+}

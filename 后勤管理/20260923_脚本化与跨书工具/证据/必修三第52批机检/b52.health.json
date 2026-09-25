@@ -1,0 +1,4077 @@
+{
+ "tool": {
+  "name": "batch_health",
+  "version": "2.1.0",
+  "python": "3.9.6"
+ },
+ "notice": "门全过只说明机械层没有回退，不等于内容已审。全部明细均为机器提取（evidence=machine_extracted），未经主代理核原页；CANDIDATE 须主代理逐条判断，脚本不裁定。",
+ "evidence_level": "machine_extracted",
+ "profile": {
+  "book_id": "bixiu3",
+  "title": "必修三《政治与法治》",
+  "path": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/profiles/bixiu3.json",
+  "frozen": false,
+  "selected_by": "dict"
+ },
+ "inputs": {
+  "docx": {
+   "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx",
+   "sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+   "paragraphs": 19861,
+   "tables": 347,
+   "example_blocks": 746,
+   "zero_width_chars_removed": 0
+  },
+  "pdf": {
+   "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.pdf",
+   "sha256": "535ca09d53d40ad9de527634074b0c1f940b68f02bac0ae29e1fc770e4b78933",
+   "pages": 811,
+   "metadata": {
+    "producer": "LibreOfficeDev 26.8.0.0.alpha0 (AARCH64)",
+    "creator": "Writer",
+    "creationDate": "D:20260923150512-07'00'"
+   }
+  },
+  "baseline": {
+   "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/构建/必修三政治与法治宝典_第51批_主体专题审阅稿.docx",
+   "sha256": "83ba371131eee41adc9c161ed778e08618f79699efe52bcb2019d2df314680c6",
+   "paragraphs": 19021,
+   "example_blocks": 746
+  }
+ },
+ "gates": [
+  {
+   "check": "structure",
+   "name": "0 结构识别",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "columns",
+   "name": "1 栏目模式",
+   "status": "FAIL",
+   "counts": {
+    "FAIL": 2,
+    "CANDIDATE": 2
+   }
+  },
+  {
+   "check": "numbering",
+   "name": "2 例题编号",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "method_counts",
+   "name": "3 考法标称题数",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "student_text",
+   "name": "4 学生正文工程词与末尾括注",
+   "status": "FAIL",
+   "counts": {
+    "FAIL": 2,
+    "CANDIDATE": 14,
+    "WARN": 33
+   }
+  },
+  {
+   "check": "drill",
+   "name": "5 单练A1/A2",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "toc",
+   "name": "6 目录",
+   "status": "FAIL",
+   "counts": {
+    "FAIL": 1
+   }
+  },
+  {
+   "check": "footer",
+   "name": "7 页脚",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "pdf_fonts",
+   "name": "8 PDF字体回退",
+   "status": "FAIL",
+   "counts": {
+    "FAIL": 13
+   }
+  },
+  {
+   "check": "same_version",
+   "name": "8b PDF与DOCX同版",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "source_fidelity",
+   "name": "9 题面零改写、替换误伤与同批副本",
+   "status": "FAIL",
+   "counts": {
+    "FAIL": 1,
+    "CANDIDATE": 15
+   }
+  },
+  {
+   "check": "blue",
+   "name": "10 教学正文误蓝",
+   "status": "CANDIDATE",
+   "counts": {
+    "CANDIDATE": 2
+   }
+  },
+  {
+   "check": "answer_score",
+   "name": "11 答案落点不标分",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "choice",
+   "name": "12 选择题答案与逐肢判定",
+   "status": "WARN",
+   "counts": {
+    "WARN": 1
+   }
+  },
+  {
+   "check": "ratchet",
+   "name": "13 回退棘轮",
+   "status": "PASS",
+   "counts": {
+    "INFO": 2
+   }
+  },
+  {
+   "check": "baseline_blocks",
+   "name": "14 例题块差异",
+   "status": "PASS",
+   "counts": {}
+  },
+  {
+   "check": "four_rights",
+   "name": "四权一串写（提示）",
+   "status": "WARN",
+   "counts": {
+    "WARN": 54
+   }
+  },
+  {
+   "check": "keepnext",
+   "name": "keepNext（提示，棘轮）",
+   "status": "PASS",
+   "counts": {}
+  }
+ ],
+ "summary": {
+  "FAIL": 19,
+  "CANDIDATE": 33,
+  "WARN": 88,
+  "INFO": 2,
+  "pass": false,
+  "pdf_same_version": true,
+  "meaning": "有FAIL"
+ },
+ "stats": {
+  "structure": {
+   "h1": 9,
+   "h1_unmatched": 0,
+   "blocks_by_kind": {
+    "subjective": 385,
+    "choice": 207,
+    "topic": 142,
+    "topic_case": 12
+   },
+   "kind_changed_by_labels": 0,
+   "title_style_non_example_headings": 16,
+   "parts_seen": [
+    "APPX1",
+    "DRILL",
+    "FRONT",
+    "P1",
+    "TOPIC"
+   ]
+  },
+  "columns": {
+   "by_part_kind": {
+    "P1|subjective": {
+     "titles": 375,
+     "schema": "subj4",
+     "blocks_bad": 0
+    },
+    "P1|choice": {
+     "titles": 207,
+     "schema": "choice",
+     "blocks_bad": 0
+    },
+    "TOPIC|topic": {
+     "titles": 142,
+     "schema": "topic5",
+     "blocks_bad": 2
+    },
+    "TOPIC|subjective": {
+     "titles": 10,
+     "schema": "subj4",
+     "blocks_bad": 0
+    },
+    "TOPIC|topic_case": {
+     "titles": 12,
+     "schema": null,
+     "blocks_bad": 0
+    }
+   },
+   "exempted": []
+  },
+  "numbering": {
+   "titles_checked": 734
+  },
+  "method_counts": {
+   "bearers": 94,
+   "bearers_without_count": 8
+  },
+  "student_text": {
+   "segments_full_wordlist": 9175,
+   "segments_tags_only": 10416,
+   "engineering_tags": [
+    "［图",
+    "待主代理插入",
+    "TODO",
+    "需核",
+    "待核",
+    "uncertain",
+    "？？",
+    "【编者校注】",
+    "校注："
+   ]
+  },
+  "drill": {
+   "layout": "table3",
+   "a1": 676,
+   "a2": 676,
+   "rows_seen": 1352,
+   "non_item_rows": 0,
+   "a1_a2_mismatch": 0,
+   "a2_groups": 20,
+   "a2_max_same_run": 12,
+   "a2_answers": {
+    "正确": 387,
+    "错误": 289
+   },
+   "a2_answers_derived": 0
+  },
+  "toc": {
+   "entries": 32,
+   "pdf_link_lines": 32,
+   "mapped": 32
+  },
+  "copy_consistency": {
+   "copies_compared": 158,
+   "copies_identical": 149,
+   "copies_text_differs": 9,
+   "copies_fewer_images": 1
+  },
+  "blue": {
+   "题面正文蓝色": 2
+  },
+  "answer_score": {
+   "answer_paragraphs": 1278
+  },
+  "choice": {
+   "blocks": 207,
+   "consistent": 206,
+   "reverse_questions": 1,
+   "no_verdict": 1
+  },
+  "keepnext": {},
+  "same_version": {
+   "identity_files_seen": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/.review-manifest.json"
+   ],
+   "identity": "match",
+   "identity_file": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/00_必修三最新审查稿/.review-manifest.json",
+   "titles_probed": 871,
+   "titles_missing": 0,
+   "titles_found_ratio": 1.0,
+   "threshold": 0.98
+  },
+  "footer": {
+   "pages": 811,
+   "with_footer": 811
+  },
+  "pdf_fonts": {
+   "cjk_by_font": {
+    "STSongti-SC-Regular": 508478,
+    "STKaitiSC-Regular": 188743,
+    "STSongti-SC-Bold": 21315,
+    "HiraMaruPro-W4": 2066,
+    "ArialUnicodeMS": 1149
+   },
+   "fallback_pages": [
+    21,
+    47,
+    66,
+    108,
+    110,
+    147,
+    148,
+    187,
+    261,
+    366,
+    503,
+    558,
+    646
+   ]
+  },
+  "source_fidelity": {
+   "blocks_compared": 746,
+   "blocks_identical": 743,
+   "blocks_compared_cross_part": 140,
+   "split_edit": 2,
+   "new": 2,
+   "label": 1,
+   "keys_compared": 371,
+   "findings_merged_as_repeats": 2
+  },
+  "ratchet": {
+   "rows": [
+    {
+     "check": "blue",
+     "rule": "题面正文蓝色",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 3,
+     "cur": 2,
+     "delta": -1
+    },
+    {
+     "check": "choice",
+     "rule": "未解析出逐肢判定",
+     "level": "WARN",
+     "part": "P1",
+     "base": 1,
+     "cur": 1,
+     "delta": 0
+    },
+    {
+     "check": "columns",
+     "rule": "使用了本栏目模式禁止的标签",
+     "level": "FAIL",
+     "part": "TOPIC",
+     "base": 142,
+     "cur": 0,
+     "delta": -142
+    },
+    {
+     "check": "columns",
+     "rule": "栏目缺失或重复",
+     "level": "FAIL",
+     "part": "TOPIC",
+     "base": 2,
+     "cur": 2,
+     "delta": 0
+    },
+    {
+     "check": "four_rights",
+     "rule": "四权未一串写",
+     "level": "WARN",
+     "part": "P1",
+     "base": 38,
+     "cur": 36,
+     "delta": -2
+    },
+    {
+     "check": "four_rights",
+     "rule": "四权未一串写",
+     "level": "WARN",
+     "part": "TOPIC",
+     "base": 18,
+     "cur": 18,
+     "delta": 0
+    },
+    {
+     "check": "source_fidelity",
+     "rule": "同批副本：题面图片比原题少",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 17,
+     "cur": 1,
+     "delta": -16
+    },
+    {
+     "check": "source_fidelity",
+     "rule": "同批副本：题面文字与原题不同",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 149,
+     "cur": 9,
+     "delta": -140
+    },
+    {
+     "check": "source_fidelity",
+     "rule": "疑似全局替换误伤",
+     "level": "CANDIDATE",
+     "part": "P1",
+     "base": 3,
+     "cur": 3,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "工程词:模板",
+     "level": "FAIL",
+     "part": "TOPIC",
+     "base": 6,
+     "cur": 0,
+     "delta": -6
+    },
+    {
+     "check": "student_text",
+     "rule": "待裁定词:万能",
+     "level": "WARN",
+     "part": "TOPIC",
+     "base": 1,
+     "cur": 0,
+     "delta": -1
+    },
+    {
+     "check": "student_text",
+     "rule": "待裁定词:本册",
+     "level": "WARN",
+     "part": "TOPIC",
+     "base": 3,
+     "cur": 3,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "待裁定词:评分标准",
+     "level": "WARN",
+     "part": "P1",
+     "base": 2,
+     "cur": 2,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "待裁定词:评分标准",
+     "level": "WARN",
+     "part": "TOPIC",
+     "base": 21,
+     "cur": 10,
+     "delta": -11
+    },
+    {
+     "check": "student_text",
+     "rule": "待裁定词:（跨模块）",
+     "level": "WARN",
+     "part": "TOPIC",
+     "base": 15,
+     "cur": 15,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "条目末尾带分值",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 2,
+     "cur": 2,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "条目末尾带试卷/题号",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 12,
+     "cur": 12,
+     "delta": 0
+    },
+    {
+     "check": "student_text",
+     "rule": "来源腔:细则原话",
+     "level": "FAIL",
+     "part": "TOPIC",
+     "base": 0,
+     "cur": 1,
+     "delta": 1,
+     "verdict": "回退（原门已判 FAIL，不重复计）"
+    },
+    {
+     "check": "student_text",
+     "rule": "来源腔:阅卷细则",
+     "level": "FAIL",
+     "part": "TOPIC",
+     "base": 0,
+     "cur": 1,
+     "delta": 1,
+     "verdict": "回退（原门已判 FAIL，不重复计）"
+    },
+    {
+     "check": "student_text",
+     "rule": "等级套话:不逐点计分",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 1,
+     "cur": 0,
+     "delta": -1
+    },
+    {
+     "check": "student_text",
+     "rule": "等级套话:整体挂钩",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 1,
+     "cur": 0,
+     "delta": -1
+    },
+    {
+     "check": "student_text",
+     "rule": "等级套话:等级量表题",
+     "level": "CANDIDATE",
+     "part": "TOPIC",
+     "base": 2,
+     "cur": 0,
+     "delta": -2
+    },
+    {
+     "check": "toc",
+     "rule": "PAGEREF 目标与超链接锚点不一致",
+     "level": "FAIL",
+     "part": "FRONT",
+     "base": 1,
+     "cur": 1,
+     "delta": 0
+    }
+   ],
+   "relative_items": [
+    {
+     "check": "source_fidelity",
+     "rule": "题面一段被拆成几段且文字有改动",
+     "events": 2,
+     "note": "相对上批的比较项（按段计的事件数；门9按块汇总、同题重复合并后列出）：出现即回退，不在棘轮重复计"
+    }
+   ],
+   "regressions": {
+    "回退（原门已判 FAIL，不重复计）": 2
+   }
+  },
+  "baseline_blocks": {
+   "by_kind": {
+    "drill_A1": {
+     "unchanged": 676
+    },
+    "drill_A2": {
+     "unchanged": 676
+    },
+    "topic": {
+     "body_changed": 142
+    },
+    "subjective": {
+     "unchanged": 354,
+     "moved_only": 31
+    },
+    "topic_case": {
+     "moved_only": 11,
+     "body_changed": 1
+    },
+    "choice": {
+     "unchanged": 207
+    }
+   },
+   "samples": {
+    "body_changed": [
+     {
+      "kind": "topic",
+      "key": "2025朝阳期末第17题",
+      "title": "例19　2025朝阳期末第17题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2023北京高考第18题第(2)问",
+      "title": "例9　2023年北京高考第18题第（2）问（4分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026朝阳期末第17题",
+      "title": "例16　2026朝阳期末第17题（8分）",
+      "n": 4
+     },
+     {
+      "kind": "topic",
+      "key": "2025海淀一模第20题",
+      "title": "例9　2025海淀一模第20题（8分，委员乙一栏）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2025东城期末第17题",
+      "title": "例1　2025东城期末第17题（9分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026海淀期中第18题",
+      "title": "例2　2026海淀期中第18题（8分，北京一栏）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2021北京高考第17题",
+      "title": "例11　2021年北京高考第17题（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026丰台期末第18题",
+      "title": "例18　2026丰台期末第18题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026海淀期末第18题第(2)问",
+      "title": "例8　2026海淀期末第18题第（2）问（6分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025门头沟一模第17题",
+      "title": "例20　2025门头沟一模第17题（6分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2024西城二模第18题第(2)问",
+      "title": "例4　2024西城二模第18题第（2）问（10分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026海淀期中第19题",
+      "title": "例8　2026海淀期中第19题（6分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2021北京高考第21题第(1)问",
+      "title": "例1　2021年北京高考第21题第（1）问（7分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024丰台二模第16题",
+      "title": "例14　2024丰台二模第16题（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2023北京高考第18题第(1)问",
+      "title": "例7　2023年北京高考第18题第（1）问（6分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2025西城期末第16题第(2)问",
+      "title": "例21　2025西城期末第16题第（2）问（6分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025东城二模第17题",
+      "title": "例2　2025东城二模第17题（9分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2023海淀二模第20题第(3)问",
+      "title": "例8　2023海淀二模第20题第（3）问（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2023北京高考第20题",
+      "title": "例11　2023年北京高考第20题（9分，跨模块）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026海淀二模第17题",
+      "title": "例2　2026海淀二模第17题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2025延庆一模第17题",
+      "title": "例6　2025延庆一模第17题（8分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2020北京高考第18题",
+      "title": "例21　2020年北京高考第18题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024朝阳二模第18题",
+      "title": "例7　2024朝阳二模第18题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2025丰台期末第18题第(3)问",
+      "title": "例6　2025丰台期末第18题第（3）问（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026丰台二模第17题",
+      "title": "例8　2026丰台二模第17题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2026昌平期末第17题",
+      "title": "例9　2026昌平期末第17题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2025海淀一模第19题",
+      "title": "例16　2025海淀一模第19题（7分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026顺义一模第17题",
+      "title": "例25　2026顺义一模第17题（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2024北京高考第17题",
+      "title": "例13　2024年北京高考第17题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026丰台期末第17题",
+      "title": "例8　2026丰台期末第17题（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026西城二模第18题第(2)问",
+      "title": "例9　2026西城二模第18题第（2）问（6分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025丰台一模第17题",
+      "title": "例17　2025丰台一模第17题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2025朝阳二模第22题",
+      "title": "例14　2025朝阳二模第22题（10分，跨模块）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026房山二模第17题",
+      "title": "例17　2026房山二模第17题（8分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025东城期末第19题第(2)问",
+      "title": "例5　2025东城期末第19题第（2）问（2分，跨模块）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026西城一模第19题第(2)问",
+      "title": "例10　2026西城一模第19题第（2）问（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026朝阳二模第17题",
+      "title": "例15　2026朝阳二模第17题（8分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2023海淀期中(下)第16题",
+      "title": "例9　2023海淀期中（下）第16题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024东城二模第18题第(1)问",
+      "title": "例2　2024东城二模第18题第（1）问（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2026石景山一模第19题",
+      "title": "例3　2026石景山一模第19题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024海淀二模第18题第(2)问",
+      "title": "例4　2024海淀二模第18题第（2）问（8分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2024西城一模第16题",
+      "title": "例3　2024西城一模第16题（7分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024海淀期中第19题",
+      "title": "例2　2024海淀期中第19题（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2024海淀一模第17题第(3)问",
+      "title": "例24　2024海淀一模第17题第（3）问（7分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2022北京高考第18题第(1)问",
+      "title": "例9　2022年北京高考第18题第（1）问（8分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2024朝阳一模第18题第(1)问",
+      "title": "例4　2024朝阳一模第18题第（1）问（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2025海淀二模第17题",
+      "title": "例10　2025海淀二模第17题（6分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026房山一模第18题第(2)问",
+      "title": "例6　2026房山一模第18题第（2）问（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2026海淀一模第19题",
+      "title": "例8　2026海淀一模第19题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2024东城一模第17题",
+      "title": "例10　2024东城一模第17题（7分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2026朝阳一模第17题第(2)问",
+      "title": "例13　2026朝阳一模第17题第（2）问（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026西城期末第18题",
+      "title": "例18　2026西城期末第18题（7分）",
+      "n": 4
+     },
+     {
+      "kind": "topic",
+      "key": "2024东城二模第18题第(2)问",
+      "title": "例15　2024东城二模第18题第（2）问（6分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026延庆一模第17题",
+      "title": "例1　2026延庆一模第17题（8分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2023海淀期中(上)第22题",
+      "title": "例4　2023海淀期中（上）第22题（6分）",
+      "n": 2
+     },
+     {
+      "kind": "topic",
+      "key": "2026西城二模第18题第(3)问",
+      "title": "例20　2026西城二模第18题第（3）问（6分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2025北京高考第21题",
+      "title": "例4　2025年北京高考第21题（10分，跨模块）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025北京高考第17题",
+      "title": "例7　2025年北京高考第17题（8分）",
+      "n": 3
+     },
+     {
+      "kind": "topic",
+      "key": "2026东城二模第17题",
+      "title": "例1　2026东城二模第17题（9分）",
+      "n": 1
+     },
+     {
+      "kind": "topic",
+      "key": "2025朝阳一模第18题",
+      "title": "例13　2025朝阳一模第18题（8分）",
+      "n": 4
+     }
+    ],
+    "moved_only": [
+     {
+      "kind": "topic_case",
+      "key": "2026西城一模第16题",
+      "title": "【变式二】 2026年西城一模第16题",
+      "n": 1
+     },
+     {
+      "kind": "subjective",
+      "key": "2023北京高考第20题",
+      "title": "例题 64　2023年北京高考第20题（跨模块）",
+      "n": 5
+     },
+     {
+      "kind": "subjective",
+      "key": "2026朝阳期末第21题",
+      "title": "例题 11　2026朝阳期末第21题（跨模块）",
+      "n": 3
+     },
+     {
+      "kind": "subjective",
+      "key": "2026海淀期末第21题",
+      "title": "例题 68　2026海淀期末第21题（跨模块）",
+      "n": 3
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025西城一模第19题——新闻发言人",
+      "title": "【变式】 2025年西城一模第19题——新闻发言人",
+      "n": 1
+     },
+     {
+      "kind": "subjective",
+      "key": "2021北京高考第21题第(2)问",
+      "title": "例题 2　2021年北京高考第21题第（2）问（跨模块）",
+      "n": 4
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025海淀一模第17题",
+      "title": "【变式】 2025年海淀一模第17题",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2024东城二模第18题第(2)问——多主体建议书",
+      "title": "【变式】 2024年东城二模第18(2)题——多主体建议书",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2022北京高考第18题第(2)问与2026年北京高考第18题第(2)问",
+      "title": "【主例】 2022年北京高考第18题第（2）问 与 2026年北京高考第18题第（2）问",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2026东城二模第17题",
+      "title": "【变式】 2026年东城二模第17题",
+      "n": 1
+     },
+     {
+      "kind": "subjective",
+      "key": "2024西城一模第19题第(4)问",
+      "title": "例题 15　2024西城一模第19(4)题（跨模块）",
+      "n": 2
+     },
+     {
+      "kind": "subjective",
+      "key": "2025东城期末第21题",
+      "title": "例题 32　2025东城期末第21题（跨模块）",
+      "n": 4
+     },
+     {
+      "kind": "subjective",
+      "key": "2026东城二模第21题",
+      "title": "例题 47　2026东城二模第21题（跨模块）",
+      "n": 3
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025丰台二模第17题",
+      "title": "【主例】 2025年丰台二模第17题",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025西城二模第17题第(2)问",
+      "title": "【变式一】 2025年西城二模第17(2)题",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025海淀一模第20题",
+      "title": "【主例】 2025年海淀一模第20题",
+      "n": 1
+     },
+     {
+      "kind": "subjective",
+      "key": "2026房山一模第20题",
+      "title": "例题 61　2026房山一模第20题（跨模块）",
+      "n": 4
+     },
+     {
+      "kind": "subjective",
+      "key": "2025东城一模第21题",
+      "title": "例题 7　2025东城一模第21题",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2024海淀期中第21题第(1)问",
+      "title": "【主例】 2024年海淀期中第21(1)题",
+      "n": 1
+     },
+     {
+      "kind": "topic_case",
+      "key": "2025丰台一模第21题",
+      "title": "【主例】 2025年丰台一模第21题",
+      "n": 1
+     },
+     {
+      "kind": "subjective",
+      "key": "2024西城二模第18题第(4)问",
+      "title": "例题 9　2024西城二模第18题第（4）问（跨模块）",
+      "n": 2
+     }
+    ]
+   },
+   "totals": {
+    "unchanged": 1913,
+    "body_changed": 143,
+    "moved_only": 42
+   },
+   "note": "仅换位＝正文逐字相同且图片相同、所在部分/节点/考法/编号变化；仅图片改动＝正文相同、图片（按媒体字节哈希）不同；单练行按判断栏＋题源＋题肢前40字配对"
+  }
+ },
+ "findings": [
+  {
+   "check": "columns",
+   "level": "FAIL",
+   "rule": "栏目缺失或重复",
+   "src": "docx",
+   "where": {
+    "para": 12263,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例2　2026海淀期中第18题（8分，北京一栏）"
+   },
+   "label": "【细则】",
+   "count": 0,
+   "label_seq": [
+    "【题目】",
+    "【思维链条】",
+    "【答案落点】"
+   ],
+   "pdf_page_guess": 558
+  },
+  {
+   "check": "columns",
+   "level": "FAIL",
+   "rule": "栏目缺失或重复",
+   "src": "docx",
+   "where": {
+    "para": 12659,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例22　2024东城一模第18题第（2）问（6分）"
+   },
+   "label": "【细则】",
+   "count": 0,
+   "label_seq": [
+    "【题目】",
+    "【思维链条】",
+    "【答案落点】",
+    "【答案】"
+   ],
+   "pdf_page_guess": 578
+  },
+  {
+   "check": "student_text",
+   "level": "FAIL",
+   "rule": "来源腔:阅卷细则",
+   "src": "docx",
+   "where": {
+    "para": 15048,
+    "part": "TOPIC",
+    "node": "专题二　综合运用所学里面的必修三",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "给分：等级赋分，“阅卷细则：路径+知识+分析”，路径是“战略性有利条件→重…〔截断〕",
+   "scope": "全部词表",
+   "pdf_page_guess": 702
+  },
+  {
+   "check": "student_text",
+   "level": "FAIL",
+   "rule": "来源腔:细则原话",
+   "src": "docx",
+   "where": {
+    "para": 15064,
+    "part": "TOPIC",
+    "node": "专题二　综合运用所学里面的必修三",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "下面几句取自细则原话，按起句方式分三组，配上材料就能用。",
+   "scope": "全部词表",
+   "pdf_page_guess": 702
+  },
+  {
+   "check": "toc",
+   "level": "FAIL",
+   "rule": "PAGEREF 目标与超链接锚点不一致",
+   "src": "docx",
+   "where": {
+    "para": 6,
+    "part": "FRONT",
+    "node": "目录",
+    "example": null,
+    "style": "目录一级",
+    "zone": "toc"
+   },
+   "excerpt": "总括答题点\t4",
+   "hyperlink": "c50_h000",
+   "pageref": "r45_h001",
+   "pageref_heading": "一、三统一：党的领导、人民当家作主、依法治国的有机统一",
+   "anchor_heading": "总括答题点",
+   "pdf_page_guess": null
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 21,
+   "fonts": {
+    "ArialUnicodeMS": 323
+   },
+   "sample": {
+    "ArialUnicodeMS": "把握数字化、网络化、智能化发展大势，充"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 47,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 66,
+   "fonts": {
+    "ArialUnicodeMS": 55
+   },
+   "sample": {
+    "ArialUnicodeMS": "统筹中华民族伟大复兴战略全局和世界百年未…〔截断〕"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 108,
+   "fonts": {
+    "HiraMaruPro-W4": 163,
+    "ArialUnicodeMS": 79
+   },
+   "sample": {
+    "HiraMaruPro-W4": "解",
+    "ArialUnicodeMS": "题"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 110,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 147,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 148,
+   "fonts": {
+    "HiraMaruPro-W4": 163,
+    "ArialUnicodeMS": 79
+   },
+   "sample": {
+    "HiraMaruPro-W4": "解",
+    "ArialUnicodeMS": "题"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 187,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 261,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 366,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 503,
+   "fonts": {
+    "HiraMaruPro-W4": 163,
+    "ArialUnicodeMS": 79
+   },
+   "sample": {
+    "HiraMaruPro-W4": "解",
+    "ArialUnicodeMS": "题"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 558,
+   "fonts": {
+    "HiraMaruPro-W4": 202,
+    "ArialUnicodeMS": 65
+   },
+   "sample": {
+    "HiraMaruPro-W4": "上海",
+    "ArialUnicodeMS": "庆"
+   }
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "src": "pdf",
+   "page": 646,
+   "fonts": {
+    "HiraMaruPro-W4": 163,
+    "ArialUnicodeMS": 79
+   },
+   "sample": {
+    "HiraMaruPro-W4": "解",
+    "ArialUnicodeMS": "题"
+   }
+  },
+  {
+   "check": "source_fidelity",
+   "level": "FAIL",
+   "rule": "题面一段被拆成几段且文字有改动",
+   "src": "baseline",
+   "where": {
+    "para": 12661,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例22　2024东城一模第18题第（2）问（6分）",
+    "style": "题目材料",
+    "zone": "source"
+   },
+   "excerpt": "如何发展新质生产力？政协破题。",
+   "key": "2024东城一模第18题第(2)问",
+   "ratio": 0.858,
+   "cur_paragraphs": 4,
+   "base_excerpt": "“如何发展新质生产力？政协破题。甲地：将‘前瞻布局未来产业，积极培育发展新质生产力’作为政协重点调研课题，实地调研，学习…〔截断〕",
+   "ref_part": "TOPIC",
+   "ref_title": "例11　2024东城一模第18题第（2）问（6分）",
+   "ref_relation": "同题另一处",
+   "edits": [
+    {
+     "op": "delete",
+     "base": "“",
+     "cur": "",
+     "context": "如何发展新质生产力？政协…〔截断〕"
+    },
+    {
+     "op": "replace",
+     "base": "‘",
+     "cur": "“",
+     "context": "〔截断〕…产力？政协破题。甲地：将“前瞻布局未来产业，积极培…〔截断〕"
+    },
+    {
+     "op": "replace",
+     "base": "’",
+     "cur": "”",
+     "context": "〔截断〕…，积极培育发展新质生产力”作为政协重点调研课题，实…〔截断〕"
+    },
+    {
+     "op": "insert",
+     "base": "",
+     "cur": "；推动高等院校、科研院所与企业开展生物医药领域人才培养战略合…〔截断〕",
+     "context": "〔截断〕…：推进智能高铁2.0发展；推动高等院校、科研院所与企业开展生物医药领域人才培养战略合作；利用数字技术为畜牧业节粮提效，注入新质生产力……科学技术界、医药卫生…〔截断〕"
+    },
+    {
+     "op": "replace",
+     "base": "‘",
+     "cur": "“",
+     "context": "〔截断〕…言谋良策。丙地：政协召开“关于以科技创新推动企业协…〔截断〕"
+    },
+    {
+     "op": "replace",
+     "base": "’",
+     "cur": "”",
+     "context": "〔截断〕…科技创新推动企业协同发展”的重点提案督办会，提案主…〔截断〕"
+    }
+   ],
+   "text_basis": "上批一段原文 对 本批几段原文直接相接",
+   "occurrences": 2,
+   "also_in": [
+    {
+     "para": 13045,
+     "part": "TOPIC",
+     "example": "例11　2024东城一模第18题第（2）问（6分）"
+    }
+   ],
+   "pdf_page_guess": 578
+  },
+  {
+   "check": "columns",
+   "level": "CANDIDATE",
+   "rule": "例题块内非本栏目标签",
+   "src": "docx",
+   "where": {
+    "para": 12277,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例2　2026海淀期中第18题（8分，北京一栏）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【评分标准（北京一栏，3分）】材料1分，“北京市政府优化革新政府治理流程和方式，提高公共服务和社会治理水平，不断提高政府…〔截断〕",
+   "label": "【评分标准（北京一栏，3分）】",
+   "pdf_page_guess": 558
+  },
+  {
+   "check": "columns",
+   "level": "CANDIDATE",
+   "rule": "例题块内出现其他题型的栏目",
+   "src": "docx",
+   "where": {
+    "para": 12659,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例22　2024东城一模第18题第（2）问（6分）"
+   },
+   "label": "【答案】",
+   "pdf_page_guess": 578
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 10885,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…持群众路线、密切联系群众的重要抓手”。“党的十八大以来”多半只标时间，不表示党在材料里做事（2026东城二模第21题）。",
+   "pdf_page_guess": 488
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 11442,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…26东城二模第21题）；“需要遵循‘应该做什么+做得怎么样’的作答思路，只写做什么不给分”（2026朝阳期末第17题）。",
+   "pdf_page_guess": 518
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 11447,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…料分析1分（总括），只党的领导1分”（2025延庆一模第17题）；“三统一同‘党的领导’”（2026东城期末第21题）。",
+   "pdf_page_guess": 519
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 11453,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…主义的最本质特征和制度的最大优势（不加‘领导’）”，并指出学生“混淆中国共产党与党的领导”（2026丰台期末第22题）。",
+   "pdf_page_guess": 519
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 11454,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…言”属表述不精准（例8）；“三个统一表述不准（人民当家作主写成人民为主体），不给分”（2023海淀二模第20(3)题）。",
+   "pdf_page_guess": 519
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 11455,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…领导（本质特征、最大优势等）”等知识，“基本不回应这些知识与‘习思想守正创新’有何关联”（2022年北京高考第21题）。",
+   "pdf_page_guess": 519
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 13111,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…治协商制度有利于发展社会主义民主”（例5）；“确立和坚持中共领导的多党合作和政治协商制度”（2025朝阳期末第17题）。",
+   "pdf_page_guess": 601
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 14519,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "3. 落到三统一：“坚持党的领导、人民当家作主、依法治国有机统一”（2024朝阳二模第18题）。",
+   "pdf_page_guess": 674
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 14520,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…格局”“提升了基层治理效能”（2024丰台二模第16题）；“提升基层治理的民主性和科学性”（2026丰台期末第17题）。",
+   "pdf_page_guess": 674
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 14526,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…靠）”（例16）；“只是单摆浮搁将这一词语放在答案中，缺少对于其为人民、靠人民的深入分析”（2025丰台期末第17题）。",
+   "pdf_page_guess": 674
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 14527,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…或只是党的地位角度”，阅卷列为失分原因（例17）；“围绕公民权利重复作答……多属无效作答”（2026丰台期末第17题）。",
+   "pdf_page_guess": 674
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "src": "docx",
+   "where": {
+    "para": 14529,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "8. 人民立场不算党的知识： “中国共产党的相关知识（人民立场等除外）给1分”（2024海淀二模第18(2)题）。",
+   "pdf_page_guess": 675
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带分值",
+   "src": "docx",
+   "where": {
+    "para": 11196,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例9　2026昌平期末第17题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…源，细则记为“发挥基层党组织战斗堡垒作用”（2分），材料效果写“搭建各方参与治理的平台，统筹各方资源参与治理”（1分）。",
+   "pdf_page_guess": 503
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带分值",
+   "src": "docx",
+   "where": {
+    "para": 11806,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例8　2026海淀一模第19题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…民代表大会表决通过，设问为贯彻落实提建议，细则“市人大及常委会：加强条例实施监督、反馈，（替换：行使监督权）”（2分）。",
+   "pdf_page_guess": 535
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "疑似全局替换误伤",
+   "src": "docx",
+   "where": {
+    "para": 7755,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "选择例题 4　2026丰台期末第7题",
+    "style": "题目材料",
+    "zone": "source"
+   },
+   "excerpt": "④构建与国家法律配套的地方实施评分标准，有力推进生态文明建设",
+   "match": "实施评分标准",
+   "pdf_page_guess": 354
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "疑似全局替换误伤",
+   "src": "docx",
+   "where": {
+    "para": 7766,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "选择例题 4　2026丰台期末第7题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "④构建与国家法律配套的地方实施评分标准，有力推进生态文明建设　（正确）",
+   "match": "实施评分标准",
+   "pdf_page_guess": 354
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "疑似全局替换误伤",
+   "src": "docx",
+   "where": {
+    "para": 7767,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "选择例题 4　2026丰台期末第7题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "《实施办法》正是配套上位法森林法的地方实施评分标准，有利于保护森林资源、推进生态文明建设",
+   "match": "实施评分标准",
+   "pdf_page_guess": 354
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15335,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2022年北京高考第18题第（1）问"
+   },
+   "key": "2022北京高考第18题第(1)问",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 30,
+    "同题键题面出现原题没有的段落": 2
+   },
+   "ref_missing_excerpts": [
+    "18. “六海映日月，八水绕京城”，水连接起北京城的昨天和今天。2022年3月，…〔截断〕",
+    "◇构建完整连续的亲水廊道",
+    "◇营造活力丰富的滨水空间",
+    "◇提供便捷完善的滨水设施"
+   ],
+   "copy_new_excerpts": [
+    "【调研发现】 周边居民关心滨水空间的可达性和游憩设施：老年人希望遛弯钓鱼，中青年…〔截断〕",
+    "【原题填空】参加主体：社区党组织、社区居民以及其他相关利益方；确定参加主体的规则…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "delete",
+      "base": "（1）",
+      "cur": "",
+      "context": "滨水空间的提升改造千头万…〔截断〕"
+     },
+     {
+      "op": "insert",
+      "base": "",
+      "cur": "（8分）",
+      "context": "〔截断〕…与法治》知识，完成上表。（8分）"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 10　2022年北京高考第18题第（1）问",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 716
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15343,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2026年东城二模第17题"
+   },
+   "key": "2026东城二模第17题",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 6,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "17．（9分）“儿童友好”是一颗种子，孕育着国家美好的明天。",
+    "某小区公共空间紧张，不少孩子只能在车道、便道上玩耍。居委会经过前期调研，计划将小…〔截断〕",
+    "✧家长代表：支持改造，但活动安全需要考虑。",
+    "✧退休居民：希望也有适老化设施，建成全龄友好空间。"
+   ],
+   "copy_new_excerpts": [
+    "某小区一处闲置边角地拟改造为“儿童共享花园”，配套安装照明路灯。家长代表支持改造…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "insert",
+      "base": "",
+      "cur": "（9分）",
+      "context": "〔截断〕…条合理建议，并说明理由。（9分）"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 20　2026东城二模第17题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 717
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15369,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台二模第17题"
+   },
+   "key": "2025丰台二模第17题",
+   "events": {
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [],
+   "copy_new_excerpts": [
+    "【原题表格】 “主要举措与成效”栏第一行已给示例：学习宣传贯彻习近平法治思想，各…〔截断〕"
+   ],
+   "edits": [],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 4　2025丰台二模第17题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 719
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15376,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2025年海淀一模第17题"
+   },
+   "key": "2025海淀一模第17题",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 12,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "17．（7分）",
+    "中华法系源远流长，中华优秀传统法律文化蕴含丰富法治思想和深邃政治智慧，是中华文化…〔截断〕",
+    "经验",
+    "启示"
+   ],
+   "copy_new_excerpts": [
+    "【原题表格】 “经验”栏第一行已给：我国古代崇尚德法结合、礼法合治，以《唐律疏议…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "insert",
+      "base": "",
+      "cur": "（7分）",
+      "context": "运用法治知识，完成下表。（7分）"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 17　2025海淀一模第17题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 720
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15383,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年海淀一模第20题"
+   },
+   "key": "2025海淀一模第20题",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 4,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "20．（8分）",
+    "每年“两会”都会举办“委员通道”采访活动，邀请部分全国政协委员接受记者采访，回应…〔截断〕",
+    "思想政治课上，某班同学开展模拟“委员通道”活动，关注国家发展，感受时代脉动。",
+    "记者：近来，汽车行业价格战仍在持续。多家国内品牌以限时直降、现金红包等多种形式开…〔截断〕"
+   ],
+   "copy_new_excerpts": [
+    "记者提问汽车行业“内卷式”竞争如何从价格竞争转向价值竞争。委员甲（某民营汽车企业…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "insert",
+      "base": "",
+      "cur": "（8分）",
+      "context": "〔截断〕…两位委员的发言补充完整。（8分）"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 10　2025海淀一模第20题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 720
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15397,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台一模第21题"
+   },
+   "key": "2025丰台一模第21题",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 2,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "21．古语云：“变化者，乃天地之自然。”从“一五计划”到“十四五规划”，中国通过…〔截断〕",
+    "当不确定性成为全球共同挑战，中国始终以自身的稳定性和确定性为世界注入信心与力量。"
+   ],
+   "copy_new_excerpts": [
+    "结合材料，运用《经济与社会》知识，为同学甲撰写发言稿，字数控制在200以内。（6…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "delete",
+      "base": "________",
+      "cur": "",
+      "context": "〔截断〕…短文。题目：中国以确定的_______应对不确定…〔截断〕"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 13　2025丰台一模第21题（跨模块）",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 721
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15409,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2024年海淀期中第21(1)题"
+   },
+   "key": "2024海淀期中第21题第(1)问",
+   "events": {
+    "题面几段被合并成一段且文字有改动": 1,
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 2
+   },
+   "ref_missing_excerpts": [
+    "21．（15分）75年，大国自信而坚定的脚步。",
+    "1950年5月1日，《中华人民共和国婚姻法》开始施行。这是新中国成立后颁布的第一…〔截断〕"
+   ],
+   "copy_new_excerpts": [],
+   "edits": [
+    [
+     {
+      "op": "delete",
+      "base": "（1）",
+      "cur": "",
+      "context": "运用法治知识，对小海的观…〔截断〕"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 31　2024海淀期中第21(1)题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 722
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15416,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式一】 2025年西城二模第17(2)题"
+   },
+   "key": "2025西城二模第17题第(2)问",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 1,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "17．有学者在研究地方发展过程中政府作用时，提出了“伞形社会”的概念。这位学者解…〔截断〕"
+   ],
+   "copy_new_excerpts": [
+    "有学者提出“伞形社会”概念，用“伞”来形容政府在经济和社会发展中的庇护作用，说明…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "delete",
+      "base": "（2）",
+      "cur": "",
+      "context": "仅用“伞形社会”概念，是…〔截断〕"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 50　2025西城二模第17(2)题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 722
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "src": "docx",
+   "where": {
+    "para": 15422,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式二】 2026年西城一模第16题"
+   },
+   "key": "2026西城一模第16题",
+   "events": {
+    "同题键题面相对原题被改字": 1,
+    "原题题面段在本批缺失": 3,
+    "同题键题面出现原题没有的段落": 1
+   },
+   "ref_missing_excerpts": [
+    "16．（7分）",
+    "阅读，涵养文明、传承文脉。对于国家发展而言，国民的创新能力和文化素养，是一项为未…〔截断〕",
+    "我国首部针对全民阅读的行政法规《全民阅读促进条例》2026年2月1日起施行，政府…〔截断〕"
+   ],
+   "copy_new_excerpts": [
+    "我国首部针对全民阅读的行政法规《全民阅读促进条例》2026年2月1日起施行，要求…〔截断〕"
+   ],
+   "edits": [
+    [
+     {
+      "op": "insert",
+      "base": "",
+      "cur": "（7分）",
+      "context": "〔截断〕…谈谈你对这一问题的认识。（7分）"
+     }
+    ]
+   ],
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 12　2026西城一模第16题（跨模块）",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 723
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面图片比原题少",
+   "src": "docx",
+   "where": {
+    "para": 15369,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台二模第17题"
+   },
+   "key": "2025丰台二模第17题",
+   "ref_images": 2,
+   "copy_images": 0,
+   "basis": "style-spec 必修三“专题例题的题面和原题几乎一模一样”：沿用第一部分同题原排版整块复制，不得压成一段、删图或改成黑色【材料】标签（用户2026-09-23）",
+   "ref_part": "P1",
+   "ref_title": "例题 4　2025丰台二模第17题",
+   "ref_relation": "同题另一处",
+   "pdf_page_guess": 719
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同题键题面出现上批没有的段落",
+   "src": "baseline",
+   "where": {
+    "para": 12660,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例22　2024东城一模第18题第（2）问（6分）",
+    "style": "题目材料",
+    "zone": "source"
+   },
+   "excerpt": "18．（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新…〔截断〕",
+   "key": "2024东城一模第18题第(2)问",
+   "paragraphs": 1,
+   "excerpts": [
+    "18．（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新…〔截断〕"
+   ],
+   "ref_part": "TOPIC",
+   "ref_title": "例11　2024东城一模第18题第（2）问（6分）",
+   "ref_relation": "同题另一处",
+   "occurrences": 2,
+   "also_in": [
+    {
+     "para": 13045,
+     "part": "TOPIC",
+     "example": "例11　2024东城一模第18题第（2）问（6分）"
+    }
+   ],
+   "pdf_page_guess": 578
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "题面区仅段首【标签】与上批不同",
+   "src": "baseline",
+   "where": {
+    "para": 15338,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2022年北京高考第18题第（1）问",
+    "style": "题目选项",
+    "zone": "source"
+   },
+   "excerpt": "【原题填空】参加主体：社区党组织、社区居民以及其他相关利益方；确定参加主体的规则：①____、②____等；议事协商的规…〔截断〕",
+   "key": "2022北京高考第18题第(1)问",
+   "base_excerpt": "【原题填空模板】参加主体：社区党组织、社区居民以及其他相关利益方；确定参加主体的规则：①____、②____等；议事协商…〔截断〕",
+   "ref_part": "TOPIC",
+   "ref_title": "【主例】 2022年北京高考第18题第（1）问",
+   "ref_relation": "同题另一处",
+   "occurrences": 1,
+   "also_in": [],
+   "pdf_page_guess": 716
+  },
+  {
+   "check": "blue",
+   "level": "CANDIDATE",
+   "rule": "题面正文蓝色",
+   "src": "docx",
+   "where": {
+    "para": 15370,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台二模第17题",
+    "style": "题目材料",
+    "zone": "source"
+   },
+   "excerpt": "【原题表格】 ",
+   "runs": 1,
+   "excerpt_kind": "蓝色 run 的文字拼接（已剔除【标签】，非连续原文）",
+   "para_excerpt": "【原题表格】 “主要举措与成效”栏第一行已给示例：学习宣传贯彻习近平法治思想，各级党委和政府组织专题学习，转化为法治政府…〔截断〕",
+   "pdf_page_guess": 719
+  },
+  {
+   "check": "blue",
+   "level": "CANDIDATE",
+   "rule": "题面正文蓝色",
+   "src": "docx",
+   "where": {
+    "para": 15377,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2025年海淀一模第17题",
+    "style": "题目材料",
+    "zone": "source"
+   },
+   "excerpt": "【原题表格】 ",
+   "runs": 1,
+   "excerpt_kind": "蓝色 run 的文字拼接（已剔除【标签】，非连续原文）",
+   "para_excerpt": "【原题表格】 “经验”栏第一行已给：我国古代崇尚德法结合、礼法合治，以《唐律疏议》“十恶”为例，“恶逆”“不孝”“不睦”…〔截断〕",
+   "pdf_page_guess": 720
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "句式提示:不是……而是",
+   "src": "docx",
+   "where": {
+    "para": 939,
+    "part": "P1",
+    "node": "01　党总体：党的全面领导",
+    "example": "例题 40　2026通州一模第21题（跨模块）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "〔截断〕…说明】 中国式现代化不是空想蓝图，而是在党的领导下通过实践…〔截断〕",
+   "pdf_page_guess": 53
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "句式提示:不是……而是",
+   "src": "docx",
+   "where": {
+    "para": 9895,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": "选择例题 15　2025顺义一模第11题（跨模块）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：本案不是侵权“赔偿”，而是法院依法确定受益人应…〔截断〕",
+   "pdf_page_guess": 445
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "句式提示:不是……而是",
+   "src": "docx",
+   "where": {
+    "para": 15393,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2025年西城一模第19题——新闻发言人",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…“新闻发言人”，任务不是自己去做事，而是替全国人大总结“别人…〔截断〕",
+   "pdf_page_guess": 721
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 7766,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "选择例题 4　2026丰台期末第7题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "④构建与国家法律配套的地方实施评分标准，有力推进生态文明建设　（正确）",
+   "pdf_page_guess": 354
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 7767,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "选择例题 4　2026丰台期末第7题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "《实施办法》正是配套上位法森林法的地方实施评分标准，有利于保护森林资源、推进生态文明建设",
+   "pdf_page_guess": 354
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 12277,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例2　2026海淀期中第18题（8分，北京一栏）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【评分标准（北京一栏，3分）】材料1分，“北京市政府优化革…〔截断〕",
+   "pdf_page_guess": 558
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15330,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": null,
+    "style": "细则说明",
+    "zone": "outside"
+   },
+   "excerpt": "2026年北京高考第18题第（2）问建议书，评分标准按四档定分，是这样写的：“水平4（6‑8分）：主…〔截断〕",
+   "pdf_page_guess": 716
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15331,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": null,
+    "style": "细则说明",
+    "zone": "outside"
+   },
+   "excerpt": "同一份评分标准还写明结构要求：“必须包含建议理由+具体建议举措…〔截断〕",
+   "pdf_page_guess": 716
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15365,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2024年东城二模第18(2)题——多主体建议书",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "【评分标准可选表述】 人大：对新型劳动关系认定进行立法，依…〔截断〕",
+   "pdf_page_guess": 719
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15366,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式】 2024年东城二模第18(2)题——多主体建议书",
+    "style": "细则说明",
+    "zone": "teaching"
+   },
+   "excerpt": "评分标准是这样给分的：“答题思路：主体+做什么（1分）+…〔截断〕",
+   "pdf_page_guess": 719
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15399,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台一模第21题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "评分标准是这样给分的：“先定档，再定分。其中题目1分，逻…〔截断〕",
+   "pdf_page_guess": 721
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15400,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台一模第21题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "评分标准还说明了这类题的写法要求：“时评短文属性：以观点…〔截断〕",
+   "pdf_page_guess": 721
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15402,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【主例】 2025年丰台一模第21题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…东西是什么。②选一个能覆盖这些事实的词补全标题，评分标准列出的常见角度里“道路、自信、党、制度、发展”容…〔截断〕",
+   "pdf_page_guess": 721
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15421,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": "【变式一】 2025年西城二模第17(2)题",
+    "style": "细则说明",
+    "zone": "teaching"
+   },
+   "excerpt": "评分标准是这样给分的——表态1分＋合理性2分：政府是国家…〔截断〕",
+   "pdf_page_guess": 723
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "src": "docx",
+   "where": {
+    "para": 15434,
+    "part": "TOPIC",
+    "node": "专题三　灵活的政治实践：任务型新花样",
+    "example": null,
+    "style": "分析过程",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕…援助”，主体和建议没有对应上。建议三的问题是踩了评分标准明确禁止的表述：材料里劳动者不适应岗位需求变化，…〔截断〕",
+   "pdf_page_guess": 723
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 11698,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例2　2023海淀期中（上）第21题（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "同类：2023东城一模第17题（跨模块），细则“北京市人大常委会科学立法，为城市更新提供…〔截断〕",
+   "pdf_page_guess": 528
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 11736,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例4　2025朝阳期末第17题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "同类：2025东城二模第21题（跨模块），细则“拓宽民主渠道/听取反映群众意见——科学民…〔截断〕",
+   "pdf_page_guess": 530
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 11764,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例6　2026房山一模第18题第（2）问（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "同类：2026石景山一模第21题（跨模块），材料写编纂生态环境法典是党中央部署的重大政治任…〔截断〕",
+   "pdf_page_guess": 533
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 11920,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例14　2026丰台二模第17题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…）”。设问问制度优势的：2026海淀一模第21题（跨模块），细则“制度优势”维度示例“人民代表大会制度是我…〔截断〕",
+   "pdf_page_guess": 542
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 12636,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "2026朝阳一模第21题（跨模块）讲三部新法怎样落地，细则：“政府坚持依法行政，司…〔截断〕",
+   "pdf_page_guess": 577
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 13275,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例2　2025东城二模第17题（9分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…扬社会主义核心价值观”；2025东城期末第21题（跨模块），材料写“最高检围绕就业、食品药品安全等社会热点…〔截断〕",
+   "pdf_page_guess": 607
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 13309,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例4　2024西城二模第18题第（2）问（10分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…众法治素养。（2分）”；2024顺义二模第18题（跨模块），最高人民法院和最高人民检察院、公安部联合出台《…〔截断〕",
+   "pdf_page_guess": 610
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 13370,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例8　2023海淀二模第20题第（3）问（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…加强对条例的司法适用”；2026朝阳一模第21题（跨模块），细则“政府坚持依法行政，司法机关公正司法，确保…〔截断〕",
+   "pdf_page_guess": 614
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 13460,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "2026朝阳一模第21题（跨模块）讲三部新法怎样落地，细则：“政府坚持依法行政，司…〔截断〕",
+   "pdf_page_guess": 619
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 13868,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "〔截断〕… 综合题中作一个角度：2023年北京高考第20题（跨模块）把“基层群众自治制度”列入“中国特色社会主义制度…〔截断〕",
+   "pdf_page_guess": 639
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 14120,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例4　2025年北京高考第17题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…024朝阳二模第18题、2025东城二模第21题（跨模块）、2025石景山一模第17题第（1）问、2025…〔截断〕",
+   "pdf_page_guess": 650
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 14178,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例8　2026石景山一模第19题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…模第18题第（2）问、2024年北京高考第21题（跨模块）、2025朝阳一模第21题（跨模块）、2025东…〔截断〕",
+   "pdf_page_guess": 654
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 14211,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例10　2023海淀期中（上）第22题（6分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "同类：2025东城期末第19题第（3）问（跨模块）、2026东城二模第17题、2026年北京高考第…〔截断〕",
+   "pdf_page_guess": 656
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 14311,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例16　2026东城期末第21题（跨模块，8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…通州一模第16题、2023海淀期中（下）第17题（跨模块）、2025延庆一模第21题（跨模块）、2026朝…〔截断〕",
+   "pdf_page_guess": 662
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "src": "docx",
+   "where": {
+    "para": 14355,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例17　2021年北京高考第21题第（1）问（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "同类：2025朝阳一模第21题（跨模块），细则“坚持以人民为中心的发展思想”，主语是中国…〔截断〕",
+   "pdf_page_guess": 665
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:本册",
+   "src": "docx",
+   "where": {
+    "para": 11805,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例8　2026海淀一模第19题（8分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…督权”也各记1分；再补法律层级和案例分析。意义在本册取法治角度：“维护社会主义法制的统一”“推进法治…〔截断〕",
+   "pdf_page_guess": 535
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:本册",
+   "src": "docx",
+   "where": {
+    "para": 12400,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例10　2024东城一模第17题（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "〔截断〕…、影响、措施三步评析。是何、影响两层偏经济角度，本册取措施里的“政府应运用法治思维和法治方式履行职责…〔截断〕",
+   "pdf_page_guess": 566
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:本册",
+   "src": "docx",
+   "where": {
+    "para": 15018,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "1. 治理与经营： 企业在本册写参与治理、依法经营，不写经济。阅卷把“有效市场…〔截断〕",
+   "pdf_page_guess": 700
+  },
+  {
+   "check": "choice",
+   "level": "WARN",
+   "rule": "未解析出逐肢判定",
+   "src": "docx",
+   "where": {
+    "para": 6305,
+    "part": "P1",
+    "node": "08　二基：民族区域自治制度",
+    "example": "选择例题 5　2026门头沟一模第8题"
+   },
+   "answer": "C",
+   "pdf_page_guess": 292
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3238,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "例题 21　2025朝阳一模第18题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】 居民增强主人翁意识、在民主协商中建言献策（1分）；“坚持人民当家作主”“坚持全过程人民民主”以及参与民主协…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 158
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3262,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "例题 22　2025东城期末第19(3)题（跨模块）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】通过民主协商、共同商讨，汇集民意、集中民智，围绕充电柜方案形成共识（2分）。结合居民参与提案、公开方案、监督…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 159
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3403,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "选择例题 2　2026顺义二模第9题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：网络建言体现的是人民群众的参与权、表达权，不是监督权，权利种类说错了",
+   "present": [
+    "参与权",
+    "表达权",
+    "监督权"
+   ],
+   "pdf_page_guess": 166
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3423,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "选择例题 3　2026海淀期中第9题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：建言征集体现的是公民的参与权、表达权，不是决策权，权利种类说错了",
+   "present": [
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 167
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3524,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "选择例题 8　2024丰台一模第3题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：网友提建议行使的是参与权、表达权，不是决策权，普通公民个人并不享有决策权",
+   "present": [
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 170
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3565,
+    "part": "P1",
+    "node": "01　全过程人民民主",
+    "example": "选择例题 10　2023东城一模第6题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：市民留言表达诉求是行使参与权、表达权，不是“行使国家权力”，国家权力由人民通过人民代表大会统一行使，说法夸大了个人…〔截断〕",
+   "present": [
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 171
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3661,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 1　2026西城一模第19(2)题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从材料选知识：“线上议事群实时发布议题”对应知情权；“收集意见、组织视频连线让外出村民全程参与讨论”对应参与权和表达权，…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 175
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3662,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 1　2026西城一模第19(2)题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从设问定层次：“如何破解”要求写清议事机制怎样保障这些权利。答题时先概括保障知情权、参与权和表达权，再分别联系发布议题、…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 175
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3664,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 1　2026西城一模第19(2)题",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "①保障村民的知情权、参与权和表达权。线上议事群发布议题，并视频连线外出村民参与讨论、表达诉求。",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 175
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3665,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 1　2026西城一模第19(2)题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】 线上发布议题、视频连线外出村民参与讨论，体现保障村民的知情权、参与权和表达权（1分）。三项权利合为一个1分…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 176
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3709,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 4　2026顺义一模第17题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从材料选知识：三地政府、专家和社会代表多轮研讨、实地调研，800多条意见带来1200余处修改，触发公民知情权、参与权和表…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 178
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3710,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 4　2026顺义一模第17题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从设问定层次：自选角度短文先提出保障公民知情、参与和表达权，再结合多轮研讨、意见征集和规划修改说明公众怎样了解规划、表达…〔截断〕",
+   "present": [
+    "表达权"
+   ],
+   "pdf_page_guess": 178
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3712,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 4　2026顺义一模第17题",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "①首都都市圈建设要保障公民知情权、参与权和表达权。在规划编制中通过多轮研讨、实地调研和意见征集，吸纳各方意见并修改完善规…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 178
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3713,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 4　2026顺义一模第17题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】保障公民知情权、参与权和表达权，通过多轮研讨、实地调研、意见征集和规划修改，使公众了解规划、表达意见并参与规…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 178
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3803,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 9　2025朝阳一模第18题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从材料选知识：“居民意见不统一”“改造方案制定和实施面临挑战”说明居民需要了解改造事项、参与社区事务并充分表达意见，触发…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 182
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3804,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 9　2025朝阳一模第18题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "从设问定层次：“如何”要求按“保障权利—参与行动—治理效果”组织。先写居民的知情权、参与权和表达权，再写协商建言、配合实…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 182
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3806,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 9　2025朝阳一模第18题",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "①保障居民知情权、参与权、表达权。让居民充分了解公共空间改造方案、在民主协商中建言献策，主动参与社区事务、配合方案实施，…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 182
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3807,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 9　2025朝阳一模第18题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】 充分行使知情权、参与权、表达权（1分）；居民主人翁意识、人民当家作主、全过程人民民主以及参与民主协商、民主…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 182
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3831,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 10　2025东城期末第19(3)题（跨模块）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】保障居民知情权、参与权、表达权等民主权利，围绕充电柜方案共同商讨、表达诉求并监督执行（2分）。结合甲、乙、丙…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 183
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3847,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "例题 11　2026东城二模第17题",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "②协商前在公告栏、微信群公开图纸、预算、路灯方案并征求意见。保障居民知情权、参与权和表达权，使上班族等居民了解方案、表达…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 184
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 3864,
+    "part": "P1",
+    "node": "02　公民的政治权利：三大权与四小权",
+    "example": "选择例题 1　2020北京高考选择第6题（跨模块）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "③鼓励儿童参与城市规划，尊重儿童的知情权，保障其政治义务的履行　（不选）",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 184
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 5150,
+    "part": "P1",
+    "node": "05　一根：人民代表大会制度",
+    "example": "选择例题 7　2026西城二模第8题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "②发展人民民主，充分保障公民的参与权、表达权和决策权　（错误）",
+   "present": [
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 247
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 5151,
+    "part": "P1",
+    "node": "05　一根：人民代表大会制度",
+    "example": "选择例题 7　2026西城二模第8题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：规划由全国人大审查批准，材料没有体现公民直接“决策”这一环节；纠正：应为保障公民的知情权、参与权、表达权。",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 247
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 5203,
+    "part": "P1",
+    "node": "05　一根：人民代表大会制度",
+    "example": "选择例题 10　2026朝阳期末第8题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "纠正：材料讲的是“社会公众踊跃建言献策”，属于参与权范畴，不是“基层民主协商”，更不是“民主监督”。",
+   "present": [
+    "参与权"
+   ],
+   "pdf_page_guess": 249
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 6884,
+    "part": "P1",
+    "node": "09　三基：基层群众自治制度",
+    "example": "选择例题 3　2026海淀二模第9题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "【分析过程】 ②④正确，登记公示、申诉安排体现知情权监督权，增设候选人见面会是合理建议；①把居委会与街道办事处的“指导关…〔截断〕",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 314
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 6887,
+    "part": "P1",
+    "node": "09　三基：基层群众自治制度",
+    "example": "选择例题 3　2026海淀二模第9题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "②选民登记的相关举措保障了居民的知情权与监督权　（正确）",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 314
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 6888,
+    "part": "P1",
+    "node": "09　三基：基层群众自治制度",
+    "example": "选择例题 3　2026海淀二模第9题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "登记名单提前公布、居民可提出申诉，正是保障居民知情权、监督权的体现",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 314
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 7281,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "例题 4　2024西城一模第16题",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "①坚持依法立法，遵循法定程序，在与未成年人保护法保持一致的基础上结合北京实际补充细化，维护国家法制统一和尊严。②坚持科学…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 330
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 7282,
+    "part": "P1",
+    "node": "01　立法：科学立法、民主立法、依法立法",
+    "example": "例题 4　2024西城一模第16题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】维护社会主义法制统一或体现地方立法特色（1分）；以问题为导向回应社会关切，坚持科学立法或民主立法（2分），立…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 330
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 8032,
+    "part": "P1",
+    "node": "02　执法：法治政府",
+    "example": "例题 1　2025西城期末第16(2)题",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则说明】公开或政务公开（2分）。结合项目流程、中标公示等材料，说明政务公开接受社会公众监督、保障人民群众知情权，规范…〔截断〕",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 364
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 9195,
+    "part": "P1",
+    "node": "02　执法：法治政府",
+    "example": "选择例题 29　2023西城一模第7题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "②应主动公开信息，保障公民的知情权、决策权和监督权　（错误）",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 414
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 9221,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "14. 增强公众对法律的信任和遵守意识，规范市场主体行为，保护消费者知情权，维护市场秩序与公平竞争。",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 415
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 9771,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": "选择例题 8　2026昌平期末第11题（跨模块）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "【分析过程】 俱乐部单方换老师侵犯消费者知情权、选择权；法院联合调解提升解纷效率、降低司法成本；①误用“搭便车”概念，②…〔截断〕",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 441
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 9776,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": "选择例题 8　2026昌平期末第11题（跨模块）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "③俱乐部单方面更换培训老师，违反了诚信原则，侵犯了消费者的知情权与选择权　（正确）",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 441
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 9777,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": "选择例题 8　2026昌平期末第11题（跨模块）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "俱乐部未经滕某同意擅自更换培训老师，损害了消费者对服务内容的知情权和自主选择权，也违背了经营者应遵循的诚信原则。",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 441
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 10000,
+    "part": "P1",
+    "node": "03　司法：公正司法",
+    "example": "选择例题 21　2025海淀期末第15题",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "提示：虚假宣传首先误导消费者对商品真实情况的判断，更直接侵犯的是消费者的知情权，表述为“自主选择权”不够精准。",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 449
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 11719,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】“市人大坚持社会主义法制统一和地方立法特色”1分（二选一），可变通为“法律体系、法治体系、法律层级、依法立法”；…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 529
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 11720,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "学什么：修法时听取各方意见，细则给民主立法、全过程人民民主，以及“广泛听取各方意见建议，保障公民的知情权、参与权和表达权…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 529
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 11964,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目材料",
+    "zone": "outside"
+   },
+   "excerpt": "“人大代表由人民选举产生，代表人民行使国家权力”“密切联系群众，听取群众意见和建议”“广泛听取各方意见建议，保障公民的知…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 545
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 12009,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "细则：例3“广泛听取各方意见建议，保障公民的知情权、参与权和表达权。（1分，多选一）”；例4“立法机关深入社区，征集各群…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 547
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 12415,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例11　2021年北京高考第17题（7分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】共四点。“政府明确自身权责（2分）”，可写依法行政、法定职责必须为、严格执法、政府主导下的多元共治，“只写多元共…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权"
+   ],
+   "pdf_page_guess": 566
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 13623,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例1　2026东城二模第17题（9分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】共9分。邀请人员“写出一个1分，两个2分”，可写“党员代表、社区工作者、法律顾问、儿童代表（居民代表）、物业管理…〔截断〕",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 626
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 13853,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "细则：例4“社区可通过各种途径广泛收集篮球爱好者、居民代表的意见，召开居民协商议事会……”（2分，替代：居委会组织民主决…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 638
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14036,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目材料",
+    "zone": "outside"
+   },
+   "excerpt": "征求意见、热线、座谈、报告会提问、立法联系点、政务公开；细则常以收集意见的一方为主语写“保障公民的知情权……”",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 644
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14104,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "分析过程",
+    "zone": "teaching"
+   },
+   "excerpt": "设问问市人大是如何推进《条例》修订的，属于“是如何”类，按主体、做法、效果分析。高中生、未成年人家长属于人民，市人大代表…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 648
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14106,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "答案落点",
+    "zone": "teaching"
+   },
+   "excerpt": "①市人大常委会践行全过程人民民主，广泛听取未成年人及其家长、人大代表、专家学者、学校教师等方面的意见和建议，高中生建议把…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 648
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14108,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】共7分。法制统一和地方立法特色1分，以问题为导向、回应社会关切、坚持科学立法或民主立法2分，立良善之法、立管用之…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 649
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14109,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例3　2024西城一模第16题（7分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "学什么：本题人大修法听取意见，人民一侧写“践行全过程人民民主”和“广泛听取各方意见建议，保障公民的知情权、参与权和表达权…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 649
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14257,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例13　2025朝阳一模第18题（8分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】“5个角度、5点，每个角度2分；任意4个角度、4点，得8分”，每个角度“知识1分+结合材料做法1分”，思维逻辑为…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 659
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14322,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目材料",
+    "zone": "outside"
+   },
+   "excerpt": "“政府要全心全意为人民服务，建设人民满意政府”“政府的宗旨是全心全意为人民服务”“政务公开，接受社会公众的监督，保障人民…〔截断〕",
+   "present": [
+    "知情权"
+   ],
+   "pdf_page_guess": 662
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14427,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例21　2025西城期末第16题第（2）问（6分）",
+    "style": "细则说明",
+    "zone": "rubric"
+   },
+   "excerpt": "【细则】（2）共6分，三空各2分。①栏是第一行竞争方式的理由，写平等竞争、优化资源配置，不涉及人民。②栏“公开（2分）”…〔截断〕",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 669
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14428,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": "例21　2025西城期末第16题第（2）问（6分）",
+    "style": "宝典正文",
+    "zone": "teaching"
+   },
+   "excerpt": "学什么：本题公开一栏的理由，细则写作“政务公开，接受社会公众的监督，保障人民群众的知情权”；解析给出对政府、对公众两个方…〔截断〕",
+   "present": [
+    "知情权",
+    "监督权"
+   ],
+   "pdf_page_guess": 669
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14439,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "宝典正文",
+    "zone": "outside"
+   },
+   "excerpt": "细则：例3“践行全过程人民民主（1分）”，“广泛听取各方意见建议，保障公民的知情权、参与权和表达权。（1分，多选一）”；…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权",
+    "表达权"
+   ],
+   "pdf_page_guess": 670
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "src": "docx",
+   "where": {
+    "para": 14531,
+    "part": "TOPIC",
+    "node": "专题一　主体专题：主体能做什么",
+    "example": null,
+    "style": "题目选项",
+    "zone": "outside"
+   },
+   "excerpt": "10. 设问限定政府时不写公民权利： “只写保障公民知情权或参与权不给分”（2021年北京高考第17题），政府一方写“政…〔截断〕",
+   "present": [
+    "知情权",
+    "参与权"
+   ],
+   "pdf_page_guess": 675
+  },
+  {
+   "check": "ratchet",
+   "level": "INFO",
+   "rule": "计数比上批增加（原门已判 FAIL，不重复计）",
+   "src": "docx",
+   "counter": "student_text|来源腔:细则原话|FAIL|TOPIC",
+   "base": 0,
+   "cur": 1
+  },
+  {
+   "check": "ratchet",
+   "level": "INFO",
+   "rule": "计数比上批增加（原门已判 FAIL，不重复计）",
+   "src": "docx",
+   "counter": "student_text|来源腔:阅卷细则|FAIL|TOPIC",
+   "base": 0,
+   "cur": 1
+  }
+ ],
+ "findings_by_rule": [
+  {
+   "check": "columns",
+   "level": "FAIL",
+   "rule": "栏目缺失或重复",
+   "count": 2,
+   "shown": 2
+  },
+  {
+   "check": "student_text",
+   "level": "FAIL",
+   "rule": "来源腔:阅卷细则",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "student_text",
+   "level": "FAIL",
+   "rule": "来源腔:细则原话",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "toc",
+   "level": "FAIL",
+   "rule": "PAGEREF 目标与超链接锚点不一致",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "pdf_fonts",
+   "level": "FAIL",
+   "rule": "汉字落在非预期字体（回退）",
+   "count": 13,
+   "shown": 13
+  },
+  {
+   "check": "source_fidelity",
+   "level": "FAIL",
+   "rule": "题面一段被拆成几段且文字有改动",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "columns",
+   "level": "CANDIDATE",
+   "rule": "例题块内非本栏目标签",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "columns",
+   "level": "CANDIDATE",
+   "rule": "例题块内出现其他题型的栏目",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带试卷/题号",
+   "count": 12,
+   "shown": 12
+  },
+  {
+   "check": "student_text",
+   "level": "CANDIDATE",
+   "rule": "条目末尾带分值",
+   "count": 2,
+   "shown": 2
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "疑似全局替换误伤",
+   "count": 3,
+   "shown": 3
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面文字与原题不同",
+   "count": 9,
+   "shown": 9
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同批副本：题面图片比原题少",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "同题键题面出现上批没有的段落",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "source_fidelity",
+   "level": "CANDIDATE",
+   "rule": "题面区仅段首【标签】与上批不同",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "blue",
+   "level": "CANDIDATE",
+   "rule": "题面正文蓝色",
+   "count": 2,
+   "shown": 2
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "句式提示:不是……而是",
+   "count": 3,
+   "shown": 3
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:评分标准",
+   "count": 12,
+   "shown": 12
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:（跨模块）",
+   "count": 15,
+   "shown": 15
+  },
+  {
+   "check": "student_text",
+   "level": "WARN",
+   "rule": "待裁定词:本册",
+   "count": 3,
+   "shown": 3
+  },
+  {
+   "check": "choice",
+   "level": "WARN",
+   "rule": "未解析出逐肢判定",
+   "count": 1,
+   "shown": 1
+  },
+  {
+   "check": "four_rights",
+   "level": "WARN",
+   "rule": "四权未一串写",
+   "count": 54,
+   "shown": 54
+  },
+  {
+   "check": "ratchet",
+   "level": "INFO",
+   "rule": "计数比上批增加（原门已判 FAIL，不重复计）",
+   "count": 2,
+   "shown": 2
+  }
+ ],
+ "config_used": {
+  "pixel_policy": "same_page_full_pixels",
+  "pixel_note": "本工具不做已看页复用判定；复用仍按“同页、完整像素完全一致”，放宽须用户裁定",
+  "pdf_expected_cjk_regex": "^(STSongti|STKaiti)",
+  "answer_score_level": "FAIL",
+  "trailing_tag_levels": {
+   "default": "FAIL",
+   "parts": {
+    "TOPIC": "CANDIDATE"
+   },
+   "_note": "第二部分专题里“同类：某卷某题”“细则…（2分）”属专题写法，是否违规由主代理判断"
+  },
+  "drill_layout": "table3",
+  "drill_a2_allowed": [
+   "正确",
+   "错误"
+  ],
+  "example_kind_by_labels": null,
+  "notsel_rule": "“不选”只在单练 A2 判断栏拦截；选择题解析里的（不选）不检查",
+  "chain_line_rule": "不检查“【思维链条】后必须有‘链：’行”（用户已撤销）",
+  "ratchet_rule": "FAIL 级计数增加只记 INFO（原门已判）；CANDIDATE 级增加记 WARN；只有 keepNext 缺失这类明文计数增加才判 FAIL"
+ },
+ "timing_s": {
+  "docx": 0.62,
+  "pdf": 3.5,
+  "baseline": 0.98,
+  "total": 5.17
+ },
+ "output": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/accept/b52.health.json"
+}

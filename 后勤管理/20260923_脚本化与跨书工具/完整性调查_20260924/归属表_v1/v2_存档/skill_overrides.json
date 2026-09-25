@@ -1,0 +1,81 @@
+{
+ "rule_version": "2026-09-24-attribution-v2",
+ "purpose": "逐题/逐小问级覆盖表：只收录本轮能用 Skill/exams.csv 原文逐条核实的事实，供 build_attribution_v2.py 在通用per-question规则之前优先应用。不是脚本先验，每条都带原文出处；找不到原文出处的一律不写入本表，改在 README 已知限制/model_batch 里注明需模型或主代理核实。",
+ "overrides": [
+  {
+   "id": "OVR-2024BJGAOKAO-E1GAP",
+   "exam_id": "BJ-2024-BJ-GAOKAO",
+   "scope": "all_subjective",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-题库线缺口(rubric_links未收录，用户已核实为E1)",
+   "admission": "完整题-有E1",
+   "cite": [
+    "source-inventory.md:102 用户2026-09-22确认《2024年北京市高考政治试题分析(1)》【细则】为2024高考正式细则，按E1使用，不得因标题是'试题分析'降为教研候选；题库旧索引把2024北京高考记作无细则，属题库线待修（由题库负责人处理）。"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "把《2024年北京市高考政治试题分析(1)》登记进 indexes/rubric_links.csv 作为 BJ-2024-BJ-GAOKAO 各主观题的正式评分材料匹配行（material_kind=正式评分材料，pair_status=已匹配正式材料）"
+  },
+  {
+   "id": "OVR-2026BJGAOKAO-NAMEDEXC",
+   "exam_id": "BJ-2026-BJ-GAOKAO",
+   "scope": "all_subjective",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_no_rubric",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:13 special_override：2026-08-22 用户明确宣布 2026 北京高考为第三套整卷无正式细则例外",
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和用户于2026-08-22明确特批的2026北京高考三份具名试卷属于整卷无正式评分细则例外"
+   ]
+  },
+  {
+   "id": "OVR-2024SJSYIMO-Q19-1-NAMEDEXC",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "scope": "Q19(1)",
+   "num": 19,
+   "subq": "1",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:item_level_no_rubric，只覆盖Q19(1)，不扩张到同卷其他题目",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:13 special_override：2026-08-27 用户明确特批 2024 石景山一模第19题第（1）问为题级无正式细则例外",
+    "project-constitution.md:50 用户于2026-08-27又明确特批必修二2024石景山一模第19题第（1）问为题级例外；该特批只覆盖这一小问，不扩张到同卷其他题目"
+   ],
+   "note_other_subq": "Q19(2)、Q19(3)等同卷其他小问不在例外范围内，仍按通用逐题证据规则判断，不得因Q19(1)例外被卷级带成具名例外（v1的卷级回退bug会把整卷正式评分材料错标E1并连带把该例外错扩到全卷，本版已改逐小问判断修正）。"
+  },
+  {
+   "id": "OVR-2024SYERMO-NAMEDEXC",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "scope": "all_subjective",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_e3only",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和2026北京高考三份具名试卷属于整卷无正式评分细则例外",
+    "exams.csv BJ-2024-SY-ERMO 行 notes 原话：独立E3参考答案，非E1",
+    "book-philosophy.md:30 书末例外严格限于2024顺义二模两题与2026石景山期末两题（该书目前只实际使用两题，不代表证据资格只有两题——证据资格按project-constitution:50为整卷）",
+    "book-culture.md 书末E3例外段：书末E3例外仍只允许2024顺义二模和2026石景山期末（同上，书用法与证据资格是两层）"
+   ],
+   "note": "project-constitution:50 给的是整卷证据资格；各书book-*.md记的'两题'是该书目前实际动用例外的用法范围，不是证据资格的上限。本表evidence列按证据资格（整卷）填，各册是否只用其中两题仍由各册自行决定，不由本表代为扩大实际收录。"
+  },
+  {
+   "id": "OVR-2026SJSQIMO-NAMEDEXC",
+   "exam_id": "BJ-2026-SJS-QIMO",
+   "scope": "Q1-Q20",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_e3only",
+   "admission": "收-具名例外",
+   "cite": [
+    "exams.csv BJ-2026-SJS-QIMO 行 notes 原话：Q1-Q20按2026石景山期末具名无正式细则例外使用E3（题库自身登记）",
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和2026北京高考三份具名试卷属于整卷无正式评分细则例外",
+    "book-philosophy.md:30、book-culture.md 书末E3例外段均列2026石景山期末"
+   ]
+  }
+ ],
+ "not_included_pending_more_evidence": [
+  {
+   "candidate": "BJ-2025-BJ-GAOKAO-Q18(2) 仍未闭合E1",
+   "reason_not_hardcoded": "source-inventory.md:167 只说'只有2025北京高考18（2）仍为RED_UNCLOSED'，未在Skill正文找到同页明确写出'Q18(1)已闭合E1'的原话；rubric_links.csv对该qid只有'存在候选'/'已匹配参考答案'两类行，没有已匹配正式材料的行。按本版规则该题（不分小问，因为题库粒度到题级）落在'待裁决-证据未核实'，比v1的粗暴按卷/整题判断更保守，但仍未做到小问级拆分。",
+   "action": "model_batch/known_gaps.md 已登记，建议下一步：主代理或模型直接读该题细则原文确认(1)(2)两问哪问已閉合，再补一条本表覆盖项。"
+  }
+ ]
+}

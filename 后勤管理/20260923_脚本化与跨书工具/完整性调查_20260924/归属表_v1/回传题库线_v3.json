@@ -1,0 +1,67 @@
+{
+ "rule_version": "2026-09-24-identity-v3",
+ "purpose": "题库侧待修正条目清单，只读记录，不由本工具直接修改题库文件；由题库负责人(Luna线)核实后处理。",
+ "items": [
+  {
+   "exam_id": "BJ-2023-HD-QIZHONG",
+   "field": "school_year",
+   "current_value": "2022-2023学年",
+   "proposed_value": "2023-2024学年",
+   "evidence": "原件文件名《2023北京海淀高三（上）期中政治（教师版）.docx》\"高三（上）\"=2023秋季学期",
+   "action": "更正 indexes/exams.csv 的 school_year 字段",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-CY-QIZHONG",
+   "field": "school_year",
+   "current_value": "2023-2024学年",
+   "proposed_value": "2024-2025学年",
+   "evidence": "原件文件名《202411朝阳高三政治 期中1试题(1).pdf》\"202411\"=2024年11月=2024秋季学期",
+   "action": "更正 indexes/exams.csv 的 school_year 字段",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2025-FT-YIMO",
+   "field": "question_split(Q13/Q18)",
+   "current_value": "Q18登记为选择题(实为Q12 BMI表尾部误切)，Q13缺选项，真实主观题\"第18题\"未登记",
+   "proposed_value": "重新切分：Q13补回真实选项；新增真实主观题Q18(1)(2)；删除/合并现有伪Q18选择题条目",
+   "evidence": "units.jsonl中BJ-2025-FT-YIMO-Q18的stem为BMI表残片；原卷\"第二部分共6题\"但题库只登记5道主观题(16/17/19/20/21)",
+   "action": "回原卷PDF重新OCR/切分第12-19题区间",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-BJ-GAOKAO",
+   "field": "rubric_links覆盖缺口",
+   "current_value": "indexes/rubric_links.csv对该卷全部主观题只有已匹配参考答案(E3)行，没有正式评分材料(E1)行",
+   "proposed_value": "补登《2024年北京市高考政治试题分析(1)》为该卷主观题的正式评分材料匹配行",
+   "evidence": "source-inventory.md第102行：用户2026-09-22确认该文件【细则】为2024高考正式细则，按E1使用",
+   "action": "把该PDF逐题跑一遍rubric_links匹配流程，登记material_kind=正式评分材料/pair_status=已匹配正式材料",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-MTG-YIMO/BJ-2024-FS-YIMO",
+   "field": "question_registration(汇编候选未登记为正式questions/qid)",
+   "current_value": "门头沟一模Q10/Q18与房山一模Q14/Q18(2)已被book-xuanbi-1.md确认收录进选必一正文（官方答案键或E1均已核实），但questions.csv/assembly_blocks.csv均未登记这些题的独立qid，matrix.csv无对应行，归属表只能用skill_overrides.json的具名核实行代替，无法给出content_fingerprint或经coverage.py确认的S/F/M收录层级证据。",
+   "proposed_value": "把这4题按正式questions.csv流程登记qid并回填matrix.csv/coverage.py",
+   "evidence": "book-xuanbi-1.md:307,308,401",
+   "action": "题库负责人(Luna线)补登questions.csv与matrix.csv对应行",
+   "status": "pending_luna"
+  },
+  {
+   "exam_id": "BJ-2024-MTG-YIMO(pending_review_block:门头沟一模14/20)",
+   "field": "assembly_blocks.csv年份归属",
+   "current_value": "assembly_blocks.csv标\"待复核\"，候选年份BJ-2025-MTG-YIMO/BJ-2026-MTG-YIMO未达匹配门槛，本表核实book-xuanbi-1.md也找不到Q14/Q20的具体可引用结论，年份仍未定",
+   "proposed_value": "题库负责人对照原卷页图核实这两题的真实年份区",
+   "evidence": "assembly_blocks.csv 门头沟一模14(选必1汇编block3)、门头沟一模20(选必3汇编block5)",
+   "action": "核实年份后回填matched_exam_id",
+   "status": "pending_luna"
+  }
+ ],
+ "unresolved_notes": [
+  {
+   "topic": "书稿标签重定向（确认意见_v2.json blocker①第⑤条示例\"2025朝阳期中\"→BJ-2026-CY-QIZHONG）",
+   "status": "deferred",
+   "reason": "已用 grep 遍历 .claude/skills/beijing-gaokao-politics/references/ 下全部 book-*.md、source-inventory.md、user-requirements-ledger.md，未找到\"2025朝阳期中\"或其他书稿字面标签与真实exam_id不一致的可引用原文；BJ-2026-CY-QIZHONG 的 exams.csv 记录本身也未发现类似 BJ-2024-CY-QIZHONG/BJ-2023-HD-QIZHONG 的\"文件名月份 vs 登记学年\"错位证据。找不到可引用原文时按规则不代为猜测重定向，留待主代理或下一轮核实后补登。"
+  }
+ ]
+}

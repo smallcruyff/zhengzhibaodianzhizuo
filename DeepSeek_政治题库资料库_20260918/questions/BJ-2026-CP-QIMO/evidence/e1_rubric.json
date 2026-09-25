@@ -1,0 +1,30 @@
+{
+  "status": "complete_for_subjective_scope",
+  "carrier": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026昌平期末/2026昌平政治期末细则(1).pdf",
+  "carrier_sha256": "ff41058b55ac2a7b2673ec2319619786bff87335a6c1d763faea128db0694191",
+  "source_id": "Sff41058b55ac",
+  "question_scope": "Q16-Q21",
+  "pages": {
+    "16": [
+      1
+    ],
+    "17": [
+      1
+    ],
+    "18": [
+      1
+    ],
+    "19": [
+      2
+    ],
+    "20": [
+      2
+    ],
+    "21": [
+      2,
+      3
+    ]
+  },
+  "choice_scope": "not_applicable; choice answers remain E3",
+  "q21_note": "Formal page contains level descriptors and two-layer requirement; no fixed question total inferred."
+}

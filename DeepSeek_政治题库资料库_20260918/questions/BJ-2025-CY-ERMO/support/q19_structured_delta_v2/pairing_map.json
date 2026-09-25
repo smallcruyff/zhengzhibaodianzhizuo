@@ -1,0 +1,488 @@
+{
+  "schema_version": "q19-e1-structured-pairing-map.v2",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "question_id": "BJ-2025-CY-ERMO-Q19",
+  "status": "proposal_not_applied",
+  "source": {
+    "docx_path": "../isolated_sources/细则_same_sha.docx",
+    "docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "source_cell_sha256": "c514b32cf33567c4590e3e3fb13b8b7432614b8d56e5ffdeb0c5408cb3c1a284",
+    "outer_table_index_zero_based": 3,
+    "outer_cell": "right column E1",
+    "nested_table_dimensions": [9, 3],
+    "nested_rows": {
+      "public_legal_service": {
+        "header": 0,
+        "data": 1,
+        "note": 2
+      },
+      "普法工作方面": {
+        "header": 3,
+        "data": 4,
+        "note": 5
+      },
+      "依法治网方面": {
+        "header": 6,
+        "data": 7,
+        "note": 8
+      }
+    }
+  },
+  "coordinate_system": {
+    "source": "readable derivative PDF text layer rendered from the same-SHA DOCX",
+    "pdf": "../renders/docx_readable.pdf",
+    "unit": "PDF points",
+    "page_size_points": [841.89, 595.304],
+    "logical_pages": [9, 10, 11],
+    "page_images": [
+      "../renders/pages/p009.png",
+      "../renders/pages/p010.png",
+      "../renders/pages/p011.png"
+    ],
+    "coordinate_origin": "top-left",
+    "page_numbering_note": "These are derived readable PDF pages p9–p11, not the original Word pagination."
+  },
+  "pairing_rule": {
+    "rule": "Within each nested data row, pair suggestion paragraph i with reason paragraph i for i=1..3; retain the source top-to-bottom order.",
+    "why": "The DOCX nested table stores three non-empty paragraphs in each of the two content cells. Their paragraph indices are the explicit left/right correspondence; visual y-starts can differ when a paragraph wraps, so nearest-baseline matching is not used.",
+    "markdown_shape": "Each category becomes one Markdown table with exactly two content columns and three data rows; the source note remains outside that table."
+  },
+  "categories": [
+    {
+      "label": "①公共法律服务",
+      "source_nested_rows": [0, 1, 2],
+      "page_span": [9, 10],
+      "columns": ["建议  2分", "理由 1分"],
+      "pairs": [
+        {
+          "pair_index": 1,
+          "source_paragraph_indices": {
+            "suggestion": 1,
+            "reason": 1
+          },
+          "suggestion": "建设完备的法律服务体系，推动公共法律服务体系在区域和人群覆盖方面的均衡化发展。",
+          "reason": "我国是人民民主专政的社会主义国家，人民是国家的主人。要坚持以人民为中心的发展思想。",
+          "suggestion_anchors": [
+            {
+              "page": 9,
+              "bbox_points": [353.7, 459.6, 532.7, 475.6],
+              "text_fragment": "建设完备的法律服务体系，推动"
+            },
+            {
+              "page": 9,
+              "bbox_points": [332.7, 480.0, 532.9, 496.0],
+              "text_fragment": "公共法律服务体系在区域和人群覆盖"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 94.5, 440.7, 110.5],
+              "text_fragment": "方面的均衡化发展。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 9,
+              "bbox_points": [564.8, 459.6, 750.4, 475.6],
+              "text_fragment": "我国是人民民主专政的社会主义国"
+            },
+            {
+              "page": 9,
+              "bbox_points": [543.8, 480.0, 750.2, 496.0],
+              "text_fragment": "家，人民是国家的主人。要坚持以人民"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 94.5, 651.8, 110.5],
+              "text_fragment": "为中心的发展思想。"
+            }
+          ]
+        },
+        {
+          "pair_index": 2,
+          "source_paragraph_indices": {
+            "suggestion": 2,
+            "reason": 2
+          },
+          "suggestion": "加强对欠发达地区和农村地区公共法律服务的投入，设立专项资金支持其公共法律服务体系建设。",
+          "reason": "保障人民平等享有公共法律服务，有助于维护社会公平正义，体现社会主义民主真实性，形成良好法治环境。",
+          "suggestion_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [353.7, 135.3, 532.7, 151.3],
+              "text_fragment": "加强对欠发达地区和农村地区公"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 155.7, 532.9, 171.7],
+              "text_fragment": "共法律服务的投入，设立专项资金支"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 176.1, 488.7, 192.1],
+              "text_fragment": "持其公共法律服务体系建设。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [564.8, 135.3, 750.4, 151.3],
+              "text_fragment": "保障人民平等享有公共法律服务，"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 155.7, 750.2, 171.7],
+              "text_fragment": "有助于维护社会公平正义，体现社会主"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 176.1, 735.8, 192.1],
+              "text_fragment": "义民主真实性，形成良好法治环境。"
+            }
+          ]
+        },
+        {
+          "pair_index": 3,
+          "source_paragraph_indices": {
+            "suggestion": 3,
+            "reason": 3
+          },
+          "suggestion": "针对弱势群体，建立专门的法律援助绿色通道，简化申请程序，降低他们获取法律服务的成本。",
+          "reason": "政府有社会建设职能，有责任完善公共法律服务体系，促进区域和人群间公共法律服务均衡发展是政府的责任。",
+          "suggestion_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [353.7, 216.9, 532.8, 232.9],
+              "text_fragment": "针对弱势群体，建立专门的法律"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 237.3, 532.9, 253.3],
+              "text_fragment": "援助绿色通道，简化申请程序，降低"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 257.7, 476.7, 273.7],
+              "text_fragment": "他们获取法律服务的成本。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [564.8, 216.9, 750.4, 232.9],
+              "text_fragment": "政府有社会建设职能，有责任完善"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 237.3, 750.2, 253.3],
+              "text_fragment": "公共法律服务体系，促进区域和人群间"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 257.7, 747.8, 273.7],
+              "text_fragment": "公共法律服务均衡发展是政府的责任。"
+            }
+          ]
+        }
+      ],
+      "note_anchor": {
+        "page": 10,
+        "bbox_points": [353.7, 278.6, 703.3, 295.4],
+        "text_fragment": "以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分"
+      }
+    },
+    {
+      "label": "②普法工作方面",
+      "source_nested_rows": [3, 4, 5],
+      "page_span": [10, 11],
+      "columns": ["建议  2分", "理由 1分"],
+      "pairs": [
+        {
+          "pair_index": 1,
+          "source_paragraph_indices": {
+            "suggestion": 1,
+            "reason": 1
+          },
+          "suggestion": "深入开展法治宣传教育，增强普法内容的人群针对性和方式多样性、实效性。",
+          "reason": "公民的法律意识和法治观念是法治社会建设的重要基础。",
+          "suggestion_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [353.7, 320.4, 532.7, 336.4],
+              "text_fragment": "深入开展法治宣传教育，增强普"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 340.8, 532.9, 356.8],
+              "text_fragment": "法内容的人群针对性和方式多样性、"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 361.2, 380.7, 377.2],
+              "text_fragment": "实效性。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [564.8, 320.4, 750.4, 336.4],
+              "text_fragment": "公民的法律意识和法治观念是法治"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 340.8, 663.8, 356.8],
+              "text_fragment": "社会建设的重要基础。"
+            }
+          ]
+        },
+        {
+          "pair_index": 2,
+          "source_paragraph_indices": {
+            "suggestion": 2,
+            "reason": 2
+          },
+          "suggestion": "多种形式调研，广泛收集不同群体需求，根据需求确定普法内容。",
+          "reason": "使法律知识深入人心，提高群众法律素养，促进尊法学法守法用法，营造良好法治社会氛围。",
+          "suggestion_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [353.7, 402.0, 532.7, 418.0],
+              "text_fragment": "多种形式调研，广泛收集不同群"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 422.4, 512.7, 438.4],
+              "text_fragment": "体需求，根据需求确定普法内容。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [564.8, 381.6, 750.4, 397.6],
+              "text_fragment": "使法律知识深入人心，提高群众法"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 402.0, 750.2, 418.0],
+              "text_fragment": "律素养，促进尊法学法守法用法，营造"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 422.4, 651.8, 438.4],
+              "text_fragment": "良好法治社会氛围。"
+            }
+          ]
+        },
+        {
+          "pair_index": 3,
+          "source_paragraph_indices": {
+            "suggestion": 3,
+            "reason": 3
+          },
+          "suggestion": "充分利用新媒体平台，创新普法形式，开展生动有趣、通俗易懂的普法活动。",
+          "reason": "新媒体在信息传播方面具有广泛、快速、便捷等优势，利用新媒体普法能更好地适应时代发展和群众需求。",
+          "suggestion_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [353.7, 463.2, 532.8, 479.2],
+              "text_fragment": "充分利用新媒体平台，创新普法"
+            },
+            {
+              "page": 10,
+              "bbox_points": [332.7, 483.6, 533.0, 499.6],
+              "text_fragment": "形式，开展生动有趣、通俗易懂的普"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 94.5, 380.7, 110.5],
+              "text_fragment": "法活动。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 10,
+              "bbox_points": [564.8, 463.2, 750.4, 479.2],
+              "text_fragment": "新媒体在信息传播方面具有广泛、"
+            },
+            {
+              "page": 10,
+              "bbox_points": [543.8, 483.6, 750.2, 499.6],
+              "text_fragment": "快速、便捷等优势，利用新媒体普法能"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 94.5, 723.8, 110.5],
+              "text_fragment": "更好地适应时代发展和群众需求。"
+            }
+          ]
+        }
+      ],
+      "note_anchor": {
+        "page": 11,
+        "bbox_points": [353.7, 115.4, 703.3, 132.2],
+        "text_fragment": "以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分"
+      }
+    },
+    {
+      "label": "③依法治网方面",
+      "source_nested_rows": [6, 7, 8],
+      "page_span": [11],
+      "columns": ["建议  2分", "理由 1分"],
+      "pairs": [
+        {
+          "pair_index": 1,
+          "source_paragraph_indices": {
+            "suggestion": 1,
+            "reason": 1
+          },
+          "suggestion": "提高社会治理法治化水平，完善网络立法，立法机关科学民主立法，执法机关严格执法、公正司法。",
+          "reason": "法律是治国之重器，全面依法治国是中国特色社会主义的本质要求和重要保障。",
+          "suggestion_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [353.7, 157.2, 532.8, 173.2],
+              "text_fragment": "提高社会治理法治化水平，完善"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 177.6, 532.9, 193.6],
+              "text_fragment": "网络立法，立法机关科学民主立法，"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 198.0, 500.7, 214.0],
+              "text_fragment": "执法机关严格执法、公正司法。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [564.8, 157.2, 750.4, 173.2],
+              "text_fragment": "法律是治国之重器，全面依法治国"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 177.6, 750.2, 193.6],
+              "text_fragment": "是中国特色社会主义的本质要求和重要"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 198.0, 579.8, 214.0],
+              "text_fragment": "保障。"
+            }
+          ]
+        },
+        {
+          "pair_index": 2,
+          "source_paragraph_indices": {
+            "suggestion": 2,
+            "reason": 2
+          },
+          "suggestion": "加强网络立法工作，关注技术发展趋势和新的网络问题，加快制定修订相关法律法规，填补法律空白。",
+          "reason": "加强立法前瞻性协调性，可为网络空间的健康发展提供坚实的法律依据。",
+          "suggestion_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [353.7, 238.8, 532.8, 254.8],
+              "text_fragment": "加强网络立法工作，关注技术发"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 259.2, 533.0, 275.2],
+              "text_fragment": "展趋势和新的网络问题，加快制定修"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 279.6, 512.7, 295.6],
+              "text_fragment": "订相关法律法规，填补法律空白。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [564.8, 238.8, 750.4, 254.8],
+              "text_fragment": "加强立法前瞻性协调性，可为网络"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 259.2, 747.8, 275.2],
+              "text_fragment": "空间的健康发展提供坚实的法律依据。"
+            }
+          ]
+        },
+        {
+          "pair_index": 3,
+          "source_paragraph_indices": {
+            "suggestion": 3,
+            "reason": 3
+          },
+          "suggestion": "加强网络执法队伍建设，建立跨部门、跨地域网络执法联动机制，利用利用现代信息技术提高执法能力。",
+          "reason": "克服网络违法隐蔽性强、跨地域执法复杂等困难；维护网络空间法治秩序，保障公民组织在网络空间合法权益。",
+          "suggestion_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [353.7, 320.4, 532.8, 336.4],
+              "text_fragment": "加强网络执法队伍建设，建立跨"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 340.8, 532.9, 356.8],
+              "text_fragment": "部门、跨地域网络执法联动机制，利"
+            },
+            {
+              "page": 11,
+              "bbox_points": [332.7, 361.2, 524.7, 377.6],
+              "text_fragment": "用利用现代信息技术提高执法能力。"
+            }
+          ],
+          "reason_anchors": [
+            {
+              "page": 11,
+              "bbox_points": [564.8, 320.4, 750.4, 336.4],
+              "text_fragment": "克服网络违法隐蔽性强、跨地域执"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 340.8, 750.0, 356.8],
+              "text_fragment": "法复杂等困难；维护网络空间法治秩"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 361.2, 750.0, 377.6],
+              "text_fragment": "序，保障公民组织在网络空间合法权"
+            },
+            {
+              "page": 11,
+              "bbox_points": [543.8, 381.6, 567.8, 397.6],
+              "text_fragment": "益。"
+            }
+          ]
+        }
+      ],
+      "note_anchor": {
+        "page": 11,
+        "bbox_points": [353.7, 402.5, 703.3, 419.3],
+        "text_fragment": "以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分"
+      },
+      "final_prompt_anchor": {
+        "page": 11,
+        "bbox_points": [325.2, 423.4, 756.5, 440.2],
+        "text_fragment": "提示：如上面建议和理由不能一一对应，则建议答出任意2个给2分，理由答出任"
+      },
+      "final_prompt_continuation_anchor": {
+        "page": 11,
+        "bbox_points": [304.2, 443.8, 385.6, 460.6],
+        "text_fragment": "意1个给1分。"
+      }
+    }
+  ],
+  "evidence_conclusion": {
+    "three_categories_present": true,
+    "each_category_has_three_suggestion_paragraphs": true,
+    "each_category_has_three_reason_paragraphs": true,
+    "pair_count": 9,
+    "pairing_is_same_index_top_to_bottom": true,
+    "all_relevant_pages": [9, 10, 11],
+    "source_duplicate_word_preserved": true,
+    "source_note_outside_tables_preserved": true
+  }
+}

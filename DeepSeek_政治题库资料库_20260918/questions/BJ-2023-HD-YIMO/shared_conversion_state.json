@@ -1,0 +1,63 @@
+{
+  "exam_id": "BJ-2023-HD-YIMO",
+  "controller_thread_id": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2023-HD-YIMO-Q1": "18d2f3559c16d4eb658620c0b93c353858d3626fd7e4e937d1c2a83f1fbb89a0",
+    "BJ-2023-HD-YIMO-Q2": "517579b632e08c1b16b49c71b69965033fc80b521016de513293ddc51d3129ff",
+    "BJ-2023-HD-YIMO-Q3": "f6784c34e8a6a7237e546ade361978037b76673c54b960bb64bc43d88a9a3fc7",
+    "BJ-2023-HD-YIMO-Q4": "522368a23e26cb0e81a6cb33dd4e316f630ca16e89db870ad4bbb182e2dc6386",
+    "BJ-2023-HD-YIMO-Q5": "e8246f0bfd5724a5a16a70871a1eb9d1b79d5b6815c2577c11e2ab3378c98a8f",
+    "BJ-2023-HD-YIMO-Q6": "809955544e73b9d03dc6e6447856c957614ab945a6a62525486e589b3dcc6fc1",
+    "BJ-2023-HD-YIMO-Q7": "f1497b0ba155e1d23659d58080b56c16d5abaf9944aa3b462020eb35f3d635b8",
+    "BJ-2023-HD-YIMO-Q8": "82197bbc1dbd58458e4af3c4a07908bf63b492fc9948083618720c06d688f98c",
+    "BJ-2023-HD-YIMO-Q9": "f111c9d148a032f7fc7dab2a9ea707c2f587b638dfcee3fb7fdca706156bc2cb",
+    "BJ-2023-HD-YIMO-Q10": "88b0606d7dfd3fbb2481c169b6abb3f442837ffdd4595f3595fdafc5fc2989a2",
+    "BJ-2023-HD-YIMO-Q11": "ef707052a026adde3fa71fce84bc2b285bd4c2e98cb897c33474ed42ed67364c",
+    "BJ-2023-HD-YIMO-Q12": "4385af1891dbd53185758bbdecc6d469599a5c2ccc1097e0ca59ea09e9e0d8d1",
+    "BJ-2023-HD-YIMO-Q13": "b93017698abea647e1e5375f3657658b041edcd5f7b89445c6b234bc3d8c498e",
+    "BJ-2023-HD-YIMO-Q14": "f39630ab9fd23cda8ecf34f52613867e8096db1b753cefec1271da2ed6a39726",
+    "BJ-2023-HD-YIMO-Q15": "f55e72ec23910544748e3477b8d5aa3e14939ea94abfe72a672b7dfe5867edbc",
+    "BJ-2023-HD-YIMO-Q16": "a50232f968fdf3a577964e789f7745b0f9dd4347c1f37c2bffbf9d619a9f7ad0",
+    "BJ-2023-HD-YIMO-Q17": "f4862c2a8851e71816a91f5bcfd10672da5be6c49feda76b79260b6fd08c45ae",
+    "BJ-2023-HD-YIMO-Q18": "8e36be7f7fd74d2b7cae4ffea91524e35c4cb8709d851c9adafdc3ff4a23f904",
+    "BJ-2023-HD-YIMO-Q19": "2211b194e70c33c87b470b2acc07f65e51f86324d3384137f6048f9c70a566d1",
+    "BJ-2023-HD-YIMO-Q20": "cc570d01119774ccba92290c610cb2a51aa660351fbb6446afb5b11e035482b7",
+    "BJ-2023-HD-YIMO-Q21": "e379e3f7b70fde732a272d224d14a70219e120dd989f0f2bb86db830447c1ea5"
+  },
+  "source_pages": {
+    "answer": 3,
+    "rubric": 49,
+    "paper": 8
+  },
+  "source_page_total": 60,
+  "source_roles": {
+    "answer": "S1e63c7437c16",
+    "rubric": "S74dee7282b3f",
+    "paper": "Sb740cc856b44"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "身份裁定依据：receipts/claude_bank_20260922/HD2023_identity/identity_report.json；索引重组回执见同目录 restructure_receipt_*.json"
+  ],
+  "bounded_residual": [],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "r3"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2023-hd-yimo-state1",
+      "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+      "at": "2026-09-23T01:32:34.522783+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T01:32:36.474400+00:00"
+}

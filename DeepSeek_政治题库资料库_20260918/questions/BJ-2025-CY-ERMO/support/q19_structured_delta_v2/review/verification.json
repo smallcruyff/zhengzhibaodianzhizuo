@@ -1,0 +1,187 @@
+{
+  "schema_version": "q19-structured-delta-independent-review.v1",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "question_id": "BJ-2025-CY-ERMO-Q19",
+  "reviewer_role": "independent_structured_delta_review_worker_non_producer",
+  "review_date": "2026-09-22",
+  "verdict": "PASS",
+  "scope": "独立复核 q19_structured_delta_v2；实际查看同 SHA DOCX 的派生可读 PDF p9-p11，直接解析 DOCX 嵌套表和候选文件，复算配对、源文字规范化、SHA 与保护守卫；不应用替换，不修改生产文件或共享资料。",
+  "source_identity": {
+    "original_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "group_source_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "isolated_docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "same_sha_all_three": true,
+    "source_docx_path": "../isolated_sources/细则_same_sha.docx",
+    "source_outer_table_index_zero_based": 3,
+    "source_cell": "right column E1",
+    "source_cell_sha256": "c514b32cf33567c4590e3e3fb13b8b7432614b8d56e5ffdeb0c5408cb3c1a284",
+    "source_cell_characters": 927,
+    "source_cell_reconstructed_exactly": true,
+    "source_text_normalized_sha256": "3d9e0ce8ae1106e3e1f87dd3dd91f3bf97e87dc3b0f14525a832283f5a167195",
+    "source_text_normalized_characters": 912
+  },
+  "visual_review": {
+    "derived_pdf": "../renders/docx_readable.pdf",
+    "derived_pdf_sha256": "64625d39104ccae68e19d9e428b478b2b66fbae610eadf8ec49d21dfaf6d3c3d",
+    "derived_page_numbering": "可读派生 PDF 页码；不是原生 Word 12 页分页编号",
+    "pages_actually_opened": [9, 10, 11],
+    "page_image_sha256": {
+      "p009.png": "a510a6d84c1f13322b9b01b2a5060eb24ae46bf6716b4faafce78c88add93a72",
+      "p010.png": "a9763d82ce056cf80004e3bc603478f0b616ee79348bb1eb899f2ddfa1b8264d",
+      "p011.png": "f7e9729d9dd70d5ba41d01f6d7e79ac1df1dfa7ba154ae9c3d09c107b9cf5870"
+    },
+    "result": "PASS",
+    "observations": [
+      "p9 显示 Q19 表头与①公共法律服务表的起始行，第一组左右栏同页起始并在 p10 续行。",
+      "p10 显示①续行、表外对应关系说明及②普法工作方面表的三行起始内容，跨页续行可读。",
+      "p11 显示②表外说明、③依法治网方面三行、第三个表外说明和末尾降分提示；未见裁切、替换符或方框。"
+    ],
+    "pair_anchor_fragments_checked": 52,
+    "pair_anchor_fragments_found_on_mapped_pages": 52,
+    "note_anchor_fragments_checked": 3,
+    "note_anchor_fragments_found_on_mapped_pages": 3,
+    "pairing_map_sha256": "227e4a65fcd8aa19f60387c5d7080b9e9cba126bcf872e16ace50502d61d85c6"
+  },
+  "source_structure_and_pairing": {
+    "source_nested_table_dimensions": [9, 3],
+    "source_category_rows": {
+      "①公共法律服务": [0, 1, 2],
+      "②普法工作方面": [3, 4, 5],
+      "③依法治网方面": [6, 7, 8]
+    },
+    "replacement_shape": {
+      "markdown_tables": 3,
+      "columns_each": 2,
+      "data_rows_each": 3,
+      "total_suggestion_reason_pairs": 9,
+      "replacement_characters": 1097,
+      "replacement_sha256": "7fcf8198b80d5bd86b8f8fba25bc57b99315e77e3eeeadca4400c172dbdd26f4"
+    },
+    "categories": [
+      {
+        "label": "①公共法律服务",
+        "source_nested_rows": [0, 1, 2],
+        "suggestion_nonempty_paragraphs": 3,
+        "reason_nonempty_paragraphs": 3,
+        "same_index_top_to_bottom_pairs": 3,
+        "replacement_rows_exact": true,
+        "outside_table_note_exact": true,
+        "page_span": [9, 10]
+      },
+      {
+        "label": "②普法工作方面",
+        "source_nested_rows": [3, 4, 5],
+        "suggestion_nonempty_paragraphs": 3,
+        "reason_nonempty_paragraphs": 3,
+        "same_index_top_to_bottom_pairs": 3,
+        "replacement_rows_exact": true,
+        "outside_table_note_exact": true,
+        "page_span": [10, 11]
+      },
+      {
+        "label": "③依法治网方面",
+        "source_nested_rows": [6, 7, 8],
+        "suggestion_nonempty_paragraphs": 3,
+        "reason_nonempty_paragraphs": 3,
+        "same_index_top_to_bottom_pairs": 3,
+        "replacement_rows_exact": true,
+        "outside_table_note_exact": true,
+        "page_span": [11]
+      }
+    ],
+    "pairing_rule_verified": "每类两列各自按非空段落自上而下同索引配对；建议1-理由1、建议2-理由2、建议3-理由3；未按视觉最近基线重配。",
+    "outside_table_notes": {
+      "count": 3,
+      "exact_phrase": "以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分",
+      "all_three_retained_outside_tables": true
+    },
+    "final_demotion_prompt": {
+      "exact": "提示：如上面建议和理由不能一一对应，则建议答出任意2个给2分，理由答出任意1个给1分。",
+      "retained": true
+    },
+    "normalization_guard": {
+      "method": "NFKC；去空白；去 replacement 的 Markdown heading/table structural markers；再按 DOCX 原有每类左列三段、右列三段的源顺序重建后比较。",
+      "source_and_v2_canonical_normalized_equal": true,
+      "normalized_characters": 912,
+      "normalized_sha256": "3d9e0ce8ae1106e3e1f87dd3dd91f3bf97e87dc3b0f14525a832283f5a167195",
+      "note": "v2 为保持左右对应而逐行交错展示；直接把 Markdown 行串与 DOCX 左列全段/右列全段串比较会受结构顺序影响，故按 pairing_map 的源顺序重建后核对，未改写任何源字。"
+    },
+    "source_literal_guard": {
+      "duplicate_word": "利用利用",
+      "source_count": 1,
+      "replacement_count": 1,
+      "preserved": true,
+      "phrase": "以上三个左右对应关系",
+      "source_count_phrase": 3,
+      "replacement_count_phrase": 3,
+      "preserved_phrase": true,
+      "e3_used_to_fill_e1": false
+    }
+  },
+  "candidate_and_delta_guard": {
+    "status": "proposal_not_applied",
+    "candidate_path": "../controller_ready/candidates/BJ-2025-CY-ERMO-Q19.md",
+    "live_candidate_base_sha256": "04b54100407cd40b5d47f5d0fb5bfd75266a6a293c2bb1321fd9e4053d2df819",
+    "candidate_base_matches_required_sha": true,
+    "parent_sha256": "4c505a8b932eab32c56baf0135f4fea39398e0e94d47a45eeab4475dae5bb9eb",
+    "old_exact_sha256": "8562d8c7833663fb7578181ecb7088b72853a4588befeb002e81da4a8e2a932f",
+    "old_exact_occurrence_count": 1,
+    "old_exact_unique_once_verified": true,
+    "v2_replacement_sha256": "7fcf8198b80d5bd86b8f8fba25bc57b99315e77e3eeeadca4400c172dbdd26f4",
+    "provisional_in_memory_post_sha256": "05f11bab92963bbf1028c99570e73a933999eea0b8dc9a119ce563f62b3aedef",
+    "provisional_post_old_exact_occurrence_count": 0,
+    "candidate_modified": false,
+    "old_flat_delta": {
+      "path": "../q19_exact_delta.json",
+      "file_sha256": "98fca9b84c5b0ed296140e3f0998f295ddf0a0da84125ca5e55dd2379d525278",
+      "replacement_sha256": "10f5772a9ab0afda42810d935ff7371596646259dba5f9256805dbb70c8884d6",
+      "status_in_this_review": "SUPERSEDED_BY_V2",
+      "old_file_modified": false,
+      "superseded_by": "q19_structured_delta_v2/structured_delta.json"
+    }
+  },
+  "preservation_guard": {
+    "e0_question_section_unchanged": true,
+    "e0_pre_sha256": "0c7347220fde938c4ad50f713a28887de5c95175d0c1b5d3c660ae38289c0791",
+    "e0_post_sha256": "0c7347220fde938c4ad50f713a28887de5c95175d0c1b5d3c660ae38289c0791",
+    "e3_reference_answer_section_unchanged": true,
+    "e3_pre_sha256": "ed330b0386399b5ba907f1ec9a7a637a2918032cd826f3a0803aa72819c03984",
+    "e3_post_sha256": "ed330b0386399b5ba907f1ec9a7a637a2918032cd826f3a0803aa72819c03984",
+    "question_number": 19,
+    "score_points": 9,
+    "question_number_and_score_unchanged": true,
+    "student_layer": "N/A",
+    "student_layer_unchanged": true,
+    "student_layer_sha256": "d0fac3a2bee4702b009b8139d23539174993cc49e7242dda15c10b58af39bc3a",
+    "neighbor_q18_sha256": "719c1c390cc80a357eb313503ef76c5dc1639d2cb5e77f4bcbb8cf80d581b0df",
+    "neighbor_q20_sha256": "0b00b551eef12588551a1a98c10328e9c9121a1a57842c4c83861cb8f0771534",
+    "neighbor_question_files_rechecked_unchanged": true
+  },
+  "write_boundary": {
+    "writes_confined_to": "q19_structured_delta_v2/review/",
+    "source_docx_modified": false,
+    "candidate_modified": false,
+    "old_flat_delta_modified": false,
+    "shared_parent_modified": false,
+    "shared_question_bank_modified": false,
+    "shared_index_modified": false,
+    "manifest_modified": false,
+    "controller_ready_modified": false
+  },
+  "checks": {
+    "same_sha_docx_identity": "PASS",
+    "derived_p9_p11_visual_open": "PASS",
+    "pairing_map_fragments_and_pages": "PASS",
+    "three_two_column_three_row_tables": "PASS",
+    "nine_same_index_pairs": "PASS",
+    "outside_table_notes_and_final_demotion_prompt": "PASS",
+    "source_927_char_normalized_stability": "PASS",
+    "literal 利用利用_and_note_phrase": "PASS",
+    "base_sha_and_old_unique_once": "PASS",
+    "v2_replacement_sha_and_post_sha": "PASS",
+    "e0_e3_question_score_student_q18_q20_guards": "PASS",
+    "old_98fca9_flat_delta_superseded": "PASS",
+    "write_isolation": "PASS"
+  },
+  "conclusion": "PASS：同 SHA DOCX 的 Q19 p9-p11 视觉与 pairing_map 一致；三类均恢复为两列三行，9 个建议—理由按源内非空段落同序配对；三条表外对应说明、末尾降分提示及“利用利用”等源字面均保留。base/old/replacement/post SHA 与 E0/E3/9分/学生层/Q18/Q20 守卫全部通过。旧 98fca9 flat delta 在本复核中明确标为 SUPERSEDED_BY_V2；任何替换仍未应用。"
+}

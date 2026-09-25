@@ -1,0 +1,123 @@
+{
+  "schema_version": "canonical_integrated_asset_manifest.v1",
+  "exam_id": "BJ-2023-FT-ERMO",
+  "visual_asset_count": 21,
+  "source_carrier_count": 2,
+  "assets": [
+    {
+      "path": "assets/answer_pages/page-1.png",
+      "sha256": "c6593c546ee2e1743b263c4be64779cd54be55f94b3492f6d6bcc9fb117a704c",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/answer_pages/page-2.png",
+      "sha256": "f18c84040d5004cbf0d7cbfdb661665a6b8ec2af17652a2ac6c136218b1e28ff",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q12_civil_code_card.png",
+      "sha256": "5827e432ee55b4a3197bd5ee89bd83a74eab92e3a3476dbb8cc32c5aaa8b6083",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q13_dispute_table.png",
+      "sha256": "edda8446c0cfb1a78cbafa218a678d220c2882ac8cf83a391f51abd49311abd4",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q17_water_governance_form.png",
+      "sha256": "23a5d07d33a3052db64a53b0cde9148f8a9a48074d24a8285f09125a2112a6e1",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q18_opening_context.png",
+      "sha256": "d10df8f0b4903c54097548d57bab58d2a4d45295ff2f74b37707e894aaf046f5",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q18_reform_timeline.png",
+      "sha256": "3dc6c008b47124e4288ba1859356802f4a57477c4172dddcdb7d02d8a7bb8e8d",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q19_copyright_flow_and_card.png",
+      "sha256": "73b4ba2945c3c16e3642f7b44648c5a4c41d95f51ddecbb8bcecb81ce9f413b2",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q20_social_security_data.png",
+      "sha256": "9830208d6ae07870ede129db3bacad0d08046e8e3e254ee0a89cde48a157c1af",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q6_carbon_incentive_flow.png",
+      "sha256": "9f23b0a356ab7b9aa83ea122fbdc9a8a85bf65dbae7cf5f225112610b140fc6b",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/figures/BJ-2023-FT-ERMO-Q9_tu-te-chan_table.png",
+      "sha256": "1621e9e21465d3b52d03b0b6b35c6184341c3a1f20757a4ad590f42b76f696a8",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source/丰台高三政治练习二试卷.pdf",
+      "sha256": "d9272860928903ecbea4e56d5c3779e3fdfbaff8764b37f66dcf3732dc4bdf26",
+      "category": "source_carrier"
+    },
+    {
+      "path": "assets/source/丰台高三政治练习二（答案）.pdf",
+      "sha256": "accdd9d42a770f7051e40186931a172089f04e8ba38198f321aeeade9fb3c032",
+      "category": "source_carrier"
+    },
+    {
+      "path": "assets/source_pages/page-01.png",
+      "sha256": "bf5a424cdb7d7d0d91bc214f136b95e367c206a8a6dce8dc8015913f0058258c",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-02.png",
+      "sha256": "674ce8fe6890bb853d5e5ed214feec95da828bf2c8c9561583647373b733fa65",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-03.png",
+      "sha256": "7bb428bbc008d51d6484fa2b813e904585abe767884cbad175d9bcc2031519bd",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-04.png",
+      "sha256": "7fee6728be54080ba06c61a59e2da4439804742a975552a2b5d67ae25c894232",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-05.png",
+      "sha256": "7229ab6f6a8a65441228f9cb7a59612ffd0266da42bca09143154e8513eee206",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-06.png",
+      "sha256": "600a9a1846888205dc38ef252e11d3e3f1d3f7ef6b2664782dc76b1f1e2bb4f4",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-07.png",
+      "sha256": "71218bb38a27d7dddabd91efe51b8d050059f704692cc34d8fe29dec3e30a88a",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-08.png",
+      "sha256": "f8de7e8cc6d2246e5fcac30b7eaedf4580a91ddb0cf43487abb21c1e8e6d9a3a",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-09.png",
+      "sha256": "fcbde43732619e803bdcbd58fb542089e50a135a14dbc634bc7a85097efb4d99",
+      "category": "visual_asset"
+    },
+    {
+      "path": "assets/source_pages/page-10.png",
+      "sha256": "8e20da3618d1a0786bc21b864b995a9b45b21f7137973ebd0a0d3fd5688ff9df",
+      "category": "visual_asset"
+    }
+  ]
+}

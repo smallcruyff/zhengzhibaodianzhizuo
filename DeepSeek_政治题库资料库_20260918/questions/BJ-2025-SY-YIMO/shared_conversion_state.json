@@ -1,0 +1,128 @@
+{
+  "exam_id": "BJ-2025-SY-YIMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": null,
+  "question_hashes": {
+    "BJ-2025-SY-YIMO-Q1": "285fa6a34d5860c34cca97fee288703bf8376cfdbacf3d08cf90d3d17e0f6eef",
+    "BJ-2025-SY-YIMO-Q2": "67782e85ebf435964a3167a948ff73ac8435528269313a081783d49c323be8bb",
+    "BJ-2025-SY-YIMO-Q3": "87afc0ca598e59fcd6fec19a0c4dd136456377ec395bb7aead7e4984755ca515",
+    "BJ-2025-SY-YIMO-Q4": "02957601d2cb28e526872000fa5f82493ab48a265504ab463dd0b235e98bdef7",
+    "BJ-2025-SY-YIMO-Q5": "1cc3dc614dcd02affc1b1cb87280eabce029d6d4a0389bac8616bf97f71eee19",
+    "BJ-2025-SY-YIMO-Q6": "24abba6b9f46bb6d7dc37432b6027bfd03356ec4db0dc2d9d9392ffb70d35758",
+    "BJ-2025-SY-YIMO-Q7": "50bdaa88146528cbcc25f9a96ff494ec7f79a05937885dadc245df866d9061e5",
+    "BJ-2025-SY-YIMO-Q8": "a5e173d129023815bc97e8598cdcd19b15e0ebd4806d69ddce85b9727631a96c",
+    "BJ-2025-SY-YIMO-Q9": "ae7456f5530b51843c38c4d3469f61327115998c6b1165ae23ce66012f723abf",
+    "BJ-2025-SY-YIMO-Q10": "776afda90c8f2b500ca7b3efb292eb2cd22de2753ce46178ddefcc3e723babd4",
+    "BJ-2025-SY-YIMO-Q11": "7e09c1c4cd4ed925f306c73db687d289127fcedadda63d038d6ffe73751230b5",
+    "BJ-2025-SY-YIMO-Q12": "99d6a9975c89805012e25ca708cdf15ca2a75bdeb36b18b6a36301b59ea39cd1",
+    "BJ-2025-SY-YIMO-Q13": "af0519702d37dfa112dfde6e5a5a5db70b761a6b2a33bd76e318446162a72d79",
+    "BJ-2025-SY-YIMO-Q14": "794d43699ebc1b89d17c04750778751135b7d8ba3dff32b5a62f18a366d4f046",
+    "BJ-2025-SY-YIMO-Q15": "1c62df5bb43e040dc30a3c9331a60091c79db1602880fee16e5ab590206d96e2",
+    "BJ-2025-SY-YIMO-Q16": "5cfb639c6b458ea3510ed33f087065dc287f99dce195a3da9ec54aedb98cd280",
+    "BJ-2025-SY-YIMO-Q17": "5073ef9f9b6d08330af4246128ebe397216a78cfefbd7f0d96a03bdd33e85c93",
+    "BJ-2025-SY-YIMO-Q18": "8100fd2d621b0065ee008d4aef51b6a483c87a0457ef5d5cdae39edb634ea7e7",
+    "BJ-2025-SY-YIMO-Q19": "44d8c1404830a5ae806db247d652ebd21ef52d695a057d4f801edb9fd45edaa8",
+    "BJ-2025-SY-YIMO-Q20": "6441447e440359070dd35fd7e7f1a2b33e7a41ba60ddb6c77390a63ddfd99551",
+    "BJ-2025-SY-YIMO-Q21": "d737f7a292675bbafc9c9d5fec42ed9b05d485ad89d8278cedd18020b0288202"
+  },
+  "source_pages": {
+    "paper": 18,
+    "rubric": 0
+  },
+  "source_page_total": 18,
+  "source_roles": {
+    "paper": "S9dd43cae443f",
+    "rubric": "Sbef8332e23ce"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "N/A_with_basis：本卷来源清单只有原卷PDF和评分DOCX，没有独立参考答案文件；README与conversion_manifest均有记录。",
+    "N/A_with_basis：来源未给出可无争议确认的整卷总分；第一部分明示45分，其余分值按题/小问照录，Q18细则自身存在总分与点数冲突，未推算整卷总分。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2025-SY-YIMO-Q6",
+      "location": "Q6.md:51-58；原卷PDF p9；评分DOCX原生段落6/同源可读页p-01",
+      "partial_reading": "原卷PDF内E3答案表为A；评分DOCX答案表为C。候选保留两处来源，未择一。",
+      "basis": "主控亲看两处原页；独立B_r2确认两处来源并列保留。公开同名答案文件摘要也列A，但未证实与本地DOCX同源，故不用于消解冲突。",
+      "affects_answering": true,
+      "status": "source_conflict_preserved"
+    },
+    {
+      "qid": "BJ-2025-SY-YIMO-Q18",
+      "location": "Q18.md:9,72-78；评分DOCX段落46-49",
+      "partial_reading": "原文称“总3分”，后列传统产业2分、新兴产业2分、未来产业1分。候选两处均保留，不重分、不求和。",
+      "basis": "原评分DOCX P46-P49与候选E1逐项可见；主控确认属于源内分值矛盾。",
+      "affects_answering": true,
+      "status": "source_scoring_ambiguity_preserved"
+    },
+    {
+      "qid": "BJ-2025-SY-YIMO-Q21",
+      "location": "Q21.md:85,89；评分DOCX word/media/image13.png；同源可读页p-10",
+      "partial_reading": "“为什么（4分）”标题与表内多个1分标记的表面加总不吻合；原表和每个标记均已保留，未重分。",
+      "basis": "主控亲看原嵌图及Markdown结构化表；独立B_r2列为保留残留。",
+      "affects_answering": true,
+      "status": "source_scoring_ambiguity_preserved"
+    },
+    {
+      "qid": "BJ-2025-SY-YIMO-Q16/Q17/Q19/Q20/Q21",
+      "location": "学生样卷原图及Q16.md、Q17.md、Q19.md、Q20.md、Q21.md相应转写段",
+      "partial_reading": "少量手写连续字迹仍不可可靠辨认；已标局部不确定/部分读法，原图保留，不推断学生实得分。",
+      "basis": "独立B_r2按学生层残留记录；DOCX嵌入图与原始媒体SHA绑定。",
+      "affects_answering": false,
+      "status": "bounded_student_sample_legibility_residual"
+    }
+  ],
+  "review_receipts": {
+    "inherited_primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/group_C_01a0d008c4dd7e81a186b6/BJ-2025-SY-YIMO/root_primary_review_20260924/primary_review.json",
+    "inherited_independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/group_C_01a0d008c4dd7e81a186b6/BJ-2025-SY-YIMO/B_r2/verification.json",
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/matrix_20260923/group_C_01a0d008c4dd7e81a186b6/BJ-2025-SY-YIMO/D_r2/verification.json"
+    ],
+    "retro_q20_primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/accepted_volume_corrections/BJ-2025-SY-YIMO/q20_stem_r1/root_primary_approval_after_B.json",
+    "retro_q20_independent": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/accepted_volume_corrections/BJ-2025-SY-YIMO/q20_stem_r1/independent_review_B/verification.json",
+    "post_merge_primary_adjudication": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/accepted_volume_corrections/BJ-2025-SY-YIMO/q20_stem_r1/root_post_merge_adjudication.json",
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-SY-YIMO/bj-2025-sy-yimo-retro-q20-source-20260924_merge.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/accepted_volume_corrections/BJ-2025-SY-YIMO/q20_stem_r1/reopen_for_resign_receipt.json"
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-sy-yimo-state1",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T15:01:42.015124+00:00"
+    },
+    {
+      "spec_id": "bj-2025-sy-yimo-state2-source-pages-and-score-basis",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T15:08:58.958306+00:00"
+    },
+    {
+      "spec_id": "bj-2025-sy-yimo-retro-q20-resign-20260924-v1",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T17:41:07.366102+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-24T17:46:55.420280+00:00",
+  "reacceptance_history": [
+    {
+      "at": "2026-09-24T10:27:31.324612-07:00",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "reason": "Q20 E0原卷图示句尾将以独立复核和主控原页回执修正；旧验收SHA不再覆盖新字节，保留旧回执并重新签验。"
+    }
+  ],
+  "controller_delta_history": [
+    {
+      "delta_id": "bj-2025-sy-yimo-retro-q20-source-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T17:27:54.351879+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-SY-YIMO/bj-2025-sy-yimo-retro-q20-source-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2025-SY-YIMO-Q20": "6441447e440359070dd35fd7e7f1a2b33e7a41ba60ddb6c77390a63ddfd99551"
+      }
+    }
+  ]
+}

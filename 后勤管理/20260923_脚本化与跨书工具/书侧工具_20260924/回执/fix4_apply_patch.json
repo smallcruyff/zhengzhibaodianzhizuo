@@ -1,0 +1,84 @@
+{
+  "summary": "按 r3verify_apply_patch.json 修复 2 个 major（restore 词表豁免的写后区位复核只堵了一半；diff 生成插入段不保留目标自己的格式，报告也不汇总结构损失）+ 4 个 minor（diff 的 --report/--out 校验顺序与大小写折叠同路径判断；insert 的 style/clone_from 提前到 check 阶段校验；set_keepnext 目标段与 insert 锚点段补'文字不变'后置条件；插入新文字首尾空白导致后置条件失败时给出明确原因）。只改了 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py 本身，未碰 batch_health.py/docx_lib.py/profile_lib.py/profiles/，未运行 collab.py，未启动子代理/新会话。全部测试重跑，且实际重跑了 04→52、51→52 两个回放（上一轮只跑了 03→04）。",
+  "files": {
+    "changed": [
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py"
+    ],
+    "test_added_to": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_apply_patch.py",
+    "scratch_work_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/",
+    "reproduced_r3verify_artifacts": "复跑审查者原始 r3attack.py（R1-R8）与 r9_insert_fmt.py/r9_count.py，输出在 scratchpad/booktools/apply_patch/fix4/attack/ 与 fix4/replay/，未改攻击脚本本身（仅给 r3attack.py 的 R7 断言加了对 check 阶段直接 abort、report 无 ops 字段的兼容读取，逻辑判断不变）"
+  },
+  "tests": {
+    "writer_tests": "36/36 [PASS]，exit 0（既有 24 条全部保留且仍通过；新增 t14-t22 共 12 条断言，对应本次 2 条 major + 4 条 minor）。真实输入 SHA/mtime 测试前后一致；scripts/__pycache__ 测试前后均只有 book_incremental/check_drill_admission/source_intake 三个 cpython-312 旧文件，无新增。",
+    "how_run": "cp 测试/run_tests_apply_patch.py 到 $SCRATCH/booktools/apply_patch/ 后 /usr/bin/python3 -B run_tests_apply_patch.py（脚本按自身所在目录写 out/ 与 test_results.json，不写进项目 后勤管理/）",
+    "reviewer_repro_commands_rerun": {
+      "R2_restore_insert_before_title_leak": "rc=2，err='中止：题面零改写复核不通过，已删除输出'，报告 wordlist_leak 非空——不再放行；对照组（同边界插入不含禁用词的干净文字）rc=0，证明修复堵的是词表命中，不是把这类 insert 一律拒绝",
+      "R5_bold_false": "new_run_bold=[false]（此前为 [true]）",
+      "R6_set_keepnext_stray_edit": "rc=2，写出前中止，report.postcondition_failed=[{'id':'R6','reason':'set_keepnext 目标段文字发生变化（应只改 keepNext）'}]（此前 rc=0，误改文字被写出）",
+      "R6b_insert_anchor_stray_edit": "rc=2，写出前中止，report.reason='未点名段落发生变化（对重新打开的输出文件核对）'，unchanged_check=[{'kind':'xml','ordinal':229}]（此前 rc=0，锚点被误改的文字被写出）",
+      "R7_check_vs_apply_style_mismatch": "check 与 apply 现在结论一致，均 rc=2，err 均为'中止：insert：样式名 \"根本不存在的样式XYZ\" 在 word/styles.xml 里找不到（须是 w:name，不是 styleId）'（此前 check 报 pending=ok，只有 apply 才中止）",
+      "R8_insert_whitespace": "apply rc=0（此前 rc=2，postcondition_failed 误报），写出的 XML 仍保留首尾全角空格（原样验证），report.ops_extra.P1.new_whitespace_normalized=[0] 如实标注空白被读取口径规范化",
+      "R3_diff_out_report_case_variant": "--out x.json --report X.JSON：rc=2，err='中止：--report 与 --out 不能是同一路径（补丁与报告必须是两个文件）'，out 文件未写出（此前该变体会先把补丁写到磁盘、随后才报错）；R3 原有的'--report 指向已存在的别人报告'场景也确认仍在写 --out 之前就被拒绝、补丁不落盘",
+      "R9_insert_format_synthetic": "diff 生成的 paragraphs 规格带 keep_next:true 与 runs:[{text:'纠正：',bold:true,color:'FF0000'},{text:'这是一段新增的教学说明。',bold:false}]；apply 回放后 keepNext=true（此前为 false）、run1 颜色加粗与目标一致（此前单 run 黑色不加粗，格式全丢）"
+    },
+    "replay_04_to_52": "rc=0，30 条 op（全部 replace_paragraph，无 insert），5.75s（diff 2.02s + apply 4.75s），文字流逐段一致，keepNext/pStyle 不一致均为 0；diff 报告 lost_structure_summary 与 apply 报告 ops_extra 汇总完全对应：hyperlink_lost=30、field_lost=90、colored_runs_before=210→after=30，与 apply 实测 hyperlink 32→2（另 2 处来自锚点外）、彩色 run 15279→15099 的差值（180）一致方向；whitespace_lost_paragraphs=0。",
+    "replay_51_to_52": "diff 2.64s 生成 1652 条 op（replace_paragraph 921、delete_paragraph 572、insert_after 159，含 1412 个插入段落），仍在 op D0859（表格单元格唯一段落，段号 10976）中止——与上一轮一致，known_limits 内的既有限制（v1 不支持表格结构），不是本轮引入的回归。diff 报告 lost_structure_summary：hyperlink_lost=15、field_lost=45、bookmark_lost=32、image_lost=14、colored_runs_before=429/after=260、insert_complex_paragraphs=24、insert_extra_format_paragraphs=249、whitespace_lost_paragraphs=20。取 D0859 之前的 858 条 op 单独应用到 B3_51（9.15s，rc=0）后核对全部 136 个实际插入段落：keepNext 与 run 颜色/加粗 0 处不符，逐段与 diff 生成的 spec 完全一致。插入段落里 keep_next=true 的规格数为 295——与上一轮 r9_count.py 独立测得的'295 个 keepNext 与模板锚点不同'完全对应；含 runs 字段的规格数 615；插入段落总数 1412，与 r9_count.py 的独立测量完全一致。"
+  },
+  "known_limits": [
+    "表格结构（增删行列）仍不在 v1 范围内，51→52 压力测试仍在第一处表格单元格唯一段落处中止——这是既有已知限制（见文件头 docstring），本轮未改，也不是本轮引入的问题。",
+    "diff 生成的 insert run 规格里，若目标 run 本身没有显式颜色（继承黑色）而模板 rPr 恰好显式写了颜色，回放后该 run 会带上显式 '000000' 而不是完全不设颜色——视觉效果等价（都是黑色），不是格式丢失，但 XML 层面不是逐字节一致；未列入 format_changes（因为不影响可见格式），如实记在此处。",
+    "diff 产物的 approved_by 覆盖风险（主代理只补 source_zone/allow_complex、不改 approved_by 时，再跑一次 diff --out 同路径会静默覆盖授权）本轮未修——不在本次'必须修复'清单内，仍是 r3verify 里的一条独立 minor（R4），留给后续批次专门处理。",
+    "run 级格式仅支持 text/bold/color；字号、字体、斜体、下划线、下标上标等差异，本轮已改为在 diff 报告里逐段列入 format_changes（kind=insert_run_extra_format）并计入 insert_extra_format_paragraphs 汇总，但 apply 端仍无法把这些格式写进插入段（v1 范围内的已知限制，如实报告而非静默丢失）。",
+    "文件行数从上一轮的 1506 行增长到本轮的 1714 行（规格目标 ≤900 行）——本轮修的都是正确性问题（漏拦/漏报），没有为了控行数牺牲修复的完整性；瘦身仍是欠账，留给专门的重构批次。"
+  ],
+  "issues_resolved": [
+    {
+      "desc": "[major] restore 的词表豁免只看锚点自身区位：锚点落在 title/source 区就整条豁免词表，但 insert_before/insert_after 的新段真实落点可能在别的区位（比如锚点是选择例题标题、insert_before 把新段插到了上一题的教学区），旧版写后复核对带 source_zone 的 op 一律 `continue` 跳过，这条路完全没人拦，工程词能借道写进学生正文。",
+      "how": "check_ops 里的初筛豁免逻辑不变（仍按锚点区位放行到写入阶段，因为写之前拿不到真实落点）；关键修复在 cmd_apply 的写后复核：对 source_zone=='restore' 的 insert 类 op，用输出重新打开后的 bh.walk 区位（zone_after）逐个新段判断——落在 source/title 区，豁免继续有效；不在 source/title 区，就对该新段的实际文字重新跑一遍词表（tag_list/wlist/allow 与 check_ops 同一套），命中就和已有的 zone_leak 一起删除输出、整批中止（rep 新增 wordlist_leak 字段）。source_zone=='approved_edit' 的 insert 不受影响（check_ops 里这类 op 从不豁免词表，已经按锚点区位全量查过一遍）。",
+      "test": "t16（复现 r3verify R2：title 锚点+insert_before+restore+工程词，rc=2 且 report.wordlist_leak 非空）+ t16b（同边界换成不含禁用词的干净文字，rc=0，证明不是把这类 insert 一律拒绝）；并复跑审查者原始 r3attack.py R2，确认 rc 从 0 变为 2。"
+    },
+    {
+      "desc": "[major] diff 生成 insert_after/insert_before 的 paragraphs 时只带纯文字和样式名，keepNext 与 run 级颜色/加粗一律不带——apply 端 _build_paragraph 套用锚点/clone_from 段的 pPr 与首个 run 格式，插入位置一变，新段格式就跟着变，跟目标稿实际格式无关；报告里也看不到这类损失的汇总，只能从 ops_extra 逐条心算。51→52 真实数据里 1412 个插入段中 295 个 keepNext 与模板锚点不同、148 个含混合 run 格式、91 个含彩色 run，回放后全部静默丢失。",
+      "how": "三处改动：(1) _new_para_specs 现在带上目标稿（新稿）自己的 keep_next（bool，显式写，覆盖模板继承值）与 runs（每个 run 的 text/bold/color，bold 恒显式写 True/False；简单单 run 且无颜色无加粗时仍退化为纯 text，减少补丁噪音）；段内含超链接/域/图片/书签等复杂结构时不生成 runs（v1 无法表达），改记 format_changes（kind=insert_format）并计入 insert_complex_paragraphs；run 含字号/字体/斜体/下划线等 runs 规格表达不了的格式时记 format_changes（kind=insert_run_extra_format）并计入 insert_extra_format_paragraphs。(2) _build_paragraph 新增对 spec['keep_next'] 的处理（新增/移除 pPr/keepNext，不看模板原状态）；bold:false 现在会真正移除模板继承来的 w:b/w:bCs（之前只在 bold 为真时补 w:b，从不移除，见 R5）。(3) cmd_diff 新增 lost_structure_summary 顶层汇总字段（hyperlink/field/bookmark/image/comment/note/other 复杂结构丢失计数、彩色 run 改前改后、insert 复杂/超格式段落数、首尾空白丢失段落数），对 replace_paragraph/delete_paragraph 生成时把旧段的复杂结构与彩色 run 计入丢失（这两类 op 的实现本就会清空除首个文字 run 外的一切），对 insert/replace 的新文字检测首尾空白丢失。",
+      "test": "t22（合成用例：插入一段 keepNext=true、'纠正：'红色加粗+黑色正文两个 run 的段落，diff 生成的 spec 带 keep_next:true 与两个 run 的正确 bold/color，apply 回放后 keepNext 与 run1 完全匹配目标）+ t22b（diff 报告含 lost_structure_summary 字段）；并对真实 51→52 全量数据核对：diff 报告给出 keep_next=true 的插入规格数为 295，与上一轮 r9_count.py 独立测得的'295 个 keepNext 与模板锚点不同'完全一致；取 D0859（表格中止点）之前的 858 条 op 实际应用到 B3_51，逐一核对全部 136 个真实插入段落的 keepNext/run 格式，0 处不符。"
+    },
+    {
+      "desc": "[minor] diff 先写 --out 补丁、后校验 --report 路径：报告被守卫拒绝时补丁已经留在磁盘上，与'拒绝即不留输出'的约定不一致；--out 与 --report 只差大小写时（APFS 大小写不敏感，实为同一文件），原有的精确 resolve() 相等判断漏判，同样会把补丁写出后才报错。",
+      "how": "cmd_diff 顶部的同路径判断改用 dl._cf()（guard_write 内部同一套大小写折叠口径）；在打开 docx、算出 diff_prof 之后、生成 ops 和写 --out 之前，先调用 _guard_report_path() 对 --report 做一次纯校验（不写文件），命中已存在不可覆盖/受保护目录等问题时直接抛出，此时 --out 还未落盘；最终写报告时仍复用同一函数，逻辑不重复但顺序对了。",
+      "test": "t14（--out/--report 大小写变体，rc=2 且 --out 未写出）+ t15（--report 指向一份不是本工具产物的已存在报告，rc=3，--out 未写出且该报告文件原样未变）；既有 t5c（report 与 out 精确同路径）继续通过，退出码保持 2（与既有回归口径一致，未改动其语义）。"
+    },
+    {
+      "desc": "[minor] insert 的 style 不存在、clone_from 命中数不唯一，check 阶段一律放行报 status=ok（pending），只有到 apply 阶段真正构造段落时才会中止——check 与 apply 结论不一致，容易误导只跑 check 的调用方。",
+      "how": "check_ops 处理 insert_after/insert_before 时，在原有'必须有 paragraphs'校验之后，对每个 paragraphs 条目：有 style 就调用 _resolve_style_id（与 apply_insert 完全同一函数，找不到或命中多个 styleId 都直接 Abort）；有 clone_from 就按 apply_insert 同样的口径（dl.para_text 子串匹配）核对恰好命中 1 段，否则 Abort。",
+      "test": "t20（insert 的 style 是本册不存在的样式名，check 与 apply 现在同为 rc=2，错误信息一致）+ t20b（clone_from 命中本册里重复出现的段落文字，check 直接 rc=2）；并复跑审查者原始 r3attack.py R7，确认 check 阶段现在与 apply 结论一致（此前 check 报 pending=ok）。"
+    },
+    {
+      "desc": "[minor] 写后自证只核对 op 点名的目标属性：set_keepnext 的目标段、insert 的锚点段都被列入 touched（不受 unchanged_paragraphs 的整段 C14N 核对约束），但没有任何后置条件核对它们自己的文字/XML 没有被顺手改动——如果实现顺手多改了这两类段落，旧版发现不了。",
+      "how": "两处修：(1) cmd_apply 现在按 op 种类过滤 touched_elems——insert 的锚点段本来就不会被 apply_insert 修改，直接不算'点名改动'，不放进 touched，让它照常参与下面 unchanged_paragraphs 的 C14N 核对（比只核对文字更严格，任何 XML 差异都能抓到）。(2) set_keepnext 的目标段仍然合法地改 pPr（继续留在 touched 里，不受整段 C14N 约束），但新增写前文字快照，写后单独核对'目标段自己的文字没变'，不一致时在 postcondition_failed 里给出'set_keepnext 目标段文字发生变化（应只改 keepNext）'这条明确原因。",
+      "test": "t18（monkeypatch apply_set_keepnext 在生效后额外追加文字，rc=2，postcondition_failed 命中该原因）+ t19（monkeypatch apply_insert 在锚点段首额外插入文字，rc=2，report.unchanged_check 命中该段）；并复跑审查者原始 r3attack.py R6/R6b，确认两种误改都从'rc=0、误改内容被写出'变为'rc=2、写出前中止、不留输出'。"
+    },
+    {
+      "desc": "[minor] 新文字（insert 的 paragraphs、replace_paragraph 的 new）首尾带空白（如全角空格缩进）时，段落读取口径（dl.para_text）固定会 strip 掉两端空白，写后自证拿归一前的原文直接比对归一后的读回文字，永远不相等，只报一句笼统的'文字与规格不符'，看不出真正原因，也无法区分这是不是真的写坏了。",
+      "how": "新增 _ws_norm/_ws_check 两个小工具函数，写后 postcondition 比较前先把补丁里的新文字按 dl.para_text 同一口径（translate(bh.ZW).strip()）归一，再和读回来的文字比对；确实存在首尾空白被削掉的情况时不算失败，改为在 ops_extra 里记 new_whitespace_normalized（insert 记每条 paragraphs 里第几条，replace_paragraph 记布尔），如实告知'这段格式差异是读取口径决定的，不是丢字'。replace_paragraph 与 insert 两处都改了。",
+      "test": "t21（插入段首尾带全角空格，rc=0，report.ops_extra.P1.new_whitespace_normalized=[0]）；并复跑审查者原始 r3attack.py R8，确认 apply 从 rc=2（postcondition_failed 误报）变为 rc=0 且报告如实标注空白规范化，写出的 XML 本身仍保留原始首尾空白（未被本工具二次破坏，只是自证比较口径改了）。"
+    }
+  ],
+  "issues_deferred": [
+    {"desc": "[minor] diff 产物 approved_by 覆盖风险：主代理只补 source_zone/allow_complex、不改 approved_by 时，再跑一次 diff --out 同路径会静默覆盖授权字段", "why": "不在本轮任务下达的'必须修复'清单（4 条 minor）之内；涉及 _own_json 判定条件或在文件头/apply 端加新的拒绝语义，改动面会牵动既有 t5b（diff 产物可覆盖）的假设，留给后续专门批次处理，本轮未动。"},
+    {"desc": "[minor] Skill scripts/ 下遗留审查者辅助脚本（如 drill_tool_verify.py 一类）的清理", "why": "不属于 apply_patch.py 本身，也超出本工具改动范围；本轮结束前确认 scripts/ 目录下没有出现任何新的 *_verify.py/*_attack.py 或本会话遗留文件（find 按 mtime 核对，只有 apply_patch.py 是本轮修改的），无需清理。"}
+  ],
+  "discipline_check": {
+    "only_edited": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py",
+    "no_files_added_to_skill_scripts_dir": true,
+    "no_subagents_no_new_sessions_no_session_tools": true,
+    "scratch_dir_used": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/",
+    "protected_dir_test_cases": "本轮新增用例（t14-t22）全部在 B3_52/B3_03/B3_04 真实只读输入上跑 check/apply/diff 命令，输出只写 scratchpad；t18/t19 用 monkeypatch 篡改内存里的函数验证写后自证，未涉及真实审阅入口/工作区/协作/中央状态目录；51→52 回放与其子集应用同样只写 scratchpad，未触碰审阅入口 00_必修三最新审查稿/、必修二任何目录、协作/接管.json 或题库。",
+    "python": "/usr/bin/python3（3.9.6）",
+    "pycache_check": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/__pycache__ 测试前后均只有 book_incremental/check_drill_admission/source_intake 三个 cpython-312 旧文件，无 apply_patch 相关新增",
+    "real_input_sha_mtime": "B3_52/B3_03/B3_04/同版身份.json/B3_51/B2_230/04_编号与考法计数.json 七个真实输入测试前后 SHA256 与 mtime 完全一致（snap_before.json / snap_after.json 逐项比对，仅 apply_patch.py 本身的 SHA/mtime/size 因本轮修改而变化）；审阅入口 00_必修三最新审查稿/ 目录下文件列表未变化（仍是 .DS_Store 与 .review-manifest.json 两个文件）；scripts/ 目录下除 apply_patch.py 外，drill_tool.py/publish_review.py/layout_prepare.py/bank_compile.py/bank_retro_audit.py/doc2md.py/docx_lib.py/page_delta.py 的 mtime 新于测试起点，均为已知的其他并行返修线所改（非本次操作），未新增任何 *_verify.py/*_attack.py 一类文件到 scripts/。"
+  },
+  "final_test_run": {
+    "command": "cp 测试/run_tests_apply_patch.py 到 $SCRATCH/booktools/apply_patch/ 后 /usr/bin/python3 -B run_tests_apply_patch.py",
+    "result": "exit 0，36 个 [PASS]，0 个 FAIL"
+  }
+}

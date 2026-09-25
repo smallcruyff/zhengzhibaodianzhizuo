@@ -1,0 +1,182 @@
+{
+  "schema": "baodian-house-defaults/0.1",
+  "_note": "各书册共享的默认值；profile_lib.load_profile 按键深合并，本册配置同名键覆盖这里（列表整体替换，不追加）。字段说明见 schema.md。",
+  "student_text": {
+    "forbidden_words_common": [
+      "uncertain",
+      "需核",
+      "待核",
+      "原提取",
+      "（供参考）",
+      "评分位置",
+      "直接命中",
+      "稳妥覆盖",
+      "覆盖当前标题",
+      "其他评分位置",
+      "本节点",
+      "当前标题",
+      "后台",
+      "我们的归纳",
+      "合并记录",
+      "答题公式",
+      "套路",
+      "口诀",
+      "来源：",
+      "出处",
+      "E1",
+      "E3",
+      "TODO",
+      "？？",
+      "【编者校注】",
+      "校注："
+    ],
+    "engineering_tags": [
+      "［图",
+      "待主代理插入",
+      "TODO",
+      "需核",
+      "待核",
+      "uncertain",
+      "？？",
+      "【编者校注】",
+      "校注："
+    ],
+    "_engineering_tags_note": "纯工程标签：全区扫描（含题面、例题标题、各级标题、单练题肢与题源格），FAIL；forbidden_words_common 里“来源：”“出处”等原卷也可能出现的词仍只扫教学/细则/节内正文/标题",
+    "forbidden_word_groups": {
+      "来源腔": [
+        "细则原话",
+        "参考答案原句",
+        "教师版",
+        "讲评课件",
+        "阅卷细则",
+        "原细则"
+      ],
+      "浮夸幼稚": [
+        "秒杀",
+        "长什么样",
+        "别算到"
+      ]
+    },
+    "_groups_note": "全书册通用的调性词（来源腔、浮夸幼稚）；判 FAIL。工程标签已移到 engineering_tags（全区扫描）。“待定”已删去（会误中“对待定性”）。编校口吻、等级套话来自必修三规则，放在 bixiu3.json",
+    "warn_words": [
+      "（跨模块）",
+      "本册",
+      "其他标题",
+      "万能",
+      "评分标准"
+    ],
+    "_warn_words_note": "含义有歧义、须用户裁定的词只提示：评分标准、（跨模块）等",
+    "line_start_forbidden": [
+      "^说明[：:]"
+    ],
+    "collateral_patterns": [
+      "实施评分标准",
+      "评分标准》",
+      "《[^》]{0,12}评分标准[^》]{0,6}》",
+      "评分标准办法"
+    ],
+    "_collateral_note": "“细则→评分标准”一类全局替换误伤；只列 CANDIDATE，由主代理对原卷裁定",
+    "source_suspect_words": [
+      "评分标准",
+      "细则说明",
+      "答案落点"
+    ],
+    "warn_patterns": {
+      "不是……而是": "不是[^。；！？\\n]{1,40}而是"
+    },
+    "trailing_tag_regex": "[（(][^（()）]*((20\\d{2}|\\d{2})\\s*[一-龥]{0,4}(一模|二模|期中|期末|高考|适应性)|第\\d+(\\(\\d\\))?题|\\d+\\s*分)[^（()）]*[)）][。；]?$",
+    "trailing_tag_zones": [
+      "teaching",
+      "outside"
+    ],
+    "forbidden_word_zones": [
+      "teaching",
+      "rubric",
+      "outside",
+      "heading"
+    ],
+    "trailing_tag_levels": {
+      "default": "FAIL",
+      "parts": {}
+    }
+  },
+  "labels_rules": {
+    "answer_labels": [
+      "【答案落点】"
+    ],
+    "answer_score_regex": "[（(]\\s*\\d+(?:\\.\\d+)?\\s*分\\s*[)）]",
+    "answer_score_level": "WARN",
+    "forbid_line_level": "FAIL"
+  },
+  "colors": {
+    "blue": [
+      "1F4E79",
+      "1F3864",
+      "17365D",
+      "0070C0",
+      "2F5496",
+      "002060",
+      "0000FF",
+      "23395D",
+      "36596B",
+      "005B7F"
+    ],
+    "blue_exempt_prefix": [
+      "▪",
+      "◆"
+    ],
+    "blue_exempt_styles": [],
+    "_note": "标签/标题用的蓝色系；教学正文 run 的有效颜色（直接→字符样式→段落样式→docDefaults）落在其中即误蓝"
+  },
+  "choice_check": {
+    "kinds": [
+      "choice"
+    ],
+    "reverse_regex": "(不正确|错误|不符合|不能|不属于|不恰当|不准确|有误|不合理|不宜|不应当?)[^，。；]{0,8}(的是|的一项|的有|的选项)",
+    "verdict_regex": "^([①-⑨]|[A-D](?=[．.、\\s])).{0,200}?[（(](正确|错误|不选)[)）]",
+    "option_combo_regex": "([A-D])[．.、]\\s*([①-⑨]{2,5})",
+    "_note": "反向设问（选错误的一项等）按“错误”肢反推；（不选）只表示材料未体现，不算入正确组合",
+    "reverse_hint_regex": "逆向选择|选不正确|选错误|选出错误"
+  },
+  "pdf_fonts": {
+    "expected_cjk_regex": "^(STSongti|STKaiti)",
+    "fail_min_chars_page": 20,
+    "_note": "统计每页汉字实际落在哪个嵌入字体；不匹配 expected 的即回退（如 ArialUnicodeMS、HiraMaruPro）。符号不计"
+  },
+  "baseline": {
+    "near_edit_ratio": 0.85
+  },
+  "pagination": {
+    "keep_next_title_required": true,
+    "max_keep_next_chain": 20,
+    "_max_keep_next_chain_note": "layout_prepare 读取：补 keepNext 后所在连续链超过此长度且比改前更长就不补、列 blocked（防必修三第31版那种 786 段长链）；20 为工具提示值，非用户原话"
+  },
+  "footer": {
+    "bottom_band": 0.12
+  },
+  "same_version": {
+    "title_found_min": 0.98,
+    "_note": "PDF 与 DOCX 同版：先核同版身份记录（render.identity_file / 审阅清单）的 SHA，再看 DOCX 的一二级标题、考法与例题标题在 PDF 文字里按序找到的比例，低于此值判 FAIL"
+  },
+  "output_guard": {
+    "protected_roots": [
+      "~/GaokaoPolitics",
+      "~/.codex/skills",
+      "~/.claude/skills",
+      "~/Desktop"
+    ],
+    "allowed_subpath_regex": "/协作/候选/[^/]+/[^/]+/构建/体检(/|$)",
+    "_note": "各书册 paths.root 与本 Skill 目录自动受保护；受保护目录内只允许写到“…/协作/候选/<谁>/<批次>/构建/体检/”，系统临时目录放行；另外不得等于输入、不覆盖非体检报告、不写到有 .docx/.pdf 的目录"
+  },
+  "pixel": {
+    "policy": "same_page_full_pixels",
+    "allow_content_addressed_map": true,
+    "inherit_unchanged_without_ledger": true,
+    "subpixel_tolerance_pt": 0.2,
+    "_ruling": "用户2026-09-23裁定：与上一版正文一样的页（同页或错位仅页码/页脚不同、亚像素位移在容差内）阶段稿不重看；定稿/送印终审用 page_delta --final，仍须旧页实看记录"
+  },
+  "toc": {
+    "pdf_align_min": 0.98,
+    "_pdf_align_min_note": "layout_prepare 读取：目录 PDF 无同版身份记录、显式 --allow-unbound-pdf 时要求的双向正文对位率；有记录时以 SHA 绑定为准"
+  }
+}

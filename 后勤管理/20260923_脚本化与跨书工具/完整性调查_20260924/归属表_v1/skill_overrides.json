@@ -1,0 +1,420 @@
+{
+ "rule_version": "2026-09-24-attribution-v4",
+ "purpose": "逐题/逐小问级覆盖表：只收录本轮能用 Skill/exams.csv 原文逐条核实的事实，供 build_attribution_v3.py 在通用per-question规则之前优先应用。不是脚本先验，每条都带原文出处；找不到原文出处的一律不写入本表，改在 README 已知限制/model_batch 里注明需模型或主代理核实。v3新增14条，均为 确认意见_v2.json major①/③ 指出的、exams.csv notes 或 book-xuanbi-1.md/book-xuanbi-3.md 逐题写明、但 rubric_links.csv 自动匹配结果与之冲突或缺失的题。 v4追加9条：确认意见_v3.json issue2(CY-YIMO Q18(2)小问级不升E1)、issue3(门头沟/房山必修三候选B3=COLLECTED×4)、以及终审意见.json指出的4条admission过时(rubric_links.csv自动重叠打分假阴性，经bank.py get核实确有可读正式细则)。",
+ "overrides": [
+  {
+   "id": "OVR-2026FTYIMO-Q19-NEG",
+   "exam_id": "BJ-2026-FT-YIMO",
+   "scope": "Q19",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "覆盖rubric_links.csv自动匹配结果：该行文本6-gram重叠1.0命中细则.pptx被自动标为'已匹配正式材料'，但book-xuanbi-1.md连续6轮独立核验(见cite)一致确认该pptx对Q19只给答案方向与整题样卷总分，没有逐点采分槽，最多为E3，不能作为E1闭环依据。",
+   "admission": "不收-无E1",
+   "cite": [
+    "book-xuanbi-1.md:43 五道主观题门…2026丰台一模Q19…只有同卷参考答案、讲评或学生样卷总分…以上均最多为E3",
+    "book-xuanbi-1.md:205 2026丰台一模Q19正式阅卷PPT仅给答案方向和学生样卷",
+    "book-xuanbi-1.md:400 2026丰台一模Q19只有答案方向和整题样卷总分",
+    "book-xuanbi-1.md:418 2026丰台一模Q19只有方向／样例／整题赋分",
+    "book-xuanbi-1.md:392 尚未关闭的主观E1为5道…2026丰台一模Q19"
+   ]
+  },
+  {
+   "id": "OVR-2024FTYIMO-Q20-E1",
+   "exam_id": "BJ-2024-FT-YIMO",
+   "scope": "Q20",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-Skill闭环记录（rubric_links.csv该题只有'存在候选'的正式评分材料候选行，未确认匹配；book-xuanbi-1.md独立核验已闭环，按Skill结论收）",
+   "admission": "完整题-有E1",
+   "cite": [
+    "book-xuanbi-1.md:307 本轮主观E1新闭环7题：2024丰台一模Q20、房山一模Q18(2)、西城二模Q17…"
+   ]
+  },
+  {
+   "id": "OVR-2024FTYIMO-Q21-NEG",
+   "exam_id": "BJ-2024-FT-YIMO",
+   "scope": "Q21",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "覆盖rubric_links.csv：该题正式评分材料候选行同为'存在候选'未确认匹配，book-xuanbi-1.md多轮核验确认只有整体等级表/等级条件，没有固定分点，最多E3。",
+   "admission": "不收-无E1",
+   "cite": [
+    "book-xuanbi-1.md:400 2024丰台一模Q21的正式载体只有整篇等级7—8／4—6／2—3／0—1",
+    "book-xuanbi-1.md:418 2024丰台一模Q21只有E3参考方向与同题0—8分等级条件，没有固定分点／角度槽",
+    "book-xuanbi-1.md:419 丰台一模Q21固定分点数0，继续未闭环"
+   ]
+  },
+  {
+   "id": "OVR-2024SJSYIMO-Q19-2-NEG",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "scope": "Q19(2)",
+   "num": 19,
+   "subq": "2",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "该小问不在project-constitution:13/50给Q19(1)的题级例外范围内，且book-xuanbi-1.md独立核验确认Q19(2)只有重复参考答案，最多E3，不落入'待裁决'而是确认负例。",
+   "admission": "不收-无E1",
+   "cite": [
+    "book-xuanbi-1.md:400 2024石景山一模Q19（2）只有重复参考答案",
+    "book-xuanbi-1.md:418 2024石景山一模Q19（2）只有E3参考答案"
+   ],
+   "note_other_subq": "Q19(3)未见book-xuanbi-1.md或exams.csv的可核实具体结论，本表不代为裁定，仍按通用规则落待裁决-证据未核实。"
+  },
+  {
+   "id": "OVR-2026FSYIMO-Q19-E1",
+   "exam_id": "BJ-2026-FS-YIMO",
+   "scope": "Q19",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-Skill闭环记录（rubric_links.csv该题只有'存在候选'的正式评分材料候选行，未确认匹配；book-xuanbi-1.md独立核验已闭环，按Skill结论收）",
+   "admission": "完整题-有E1",
+   "cite": [
+    "book-xuanbi-1.md:307 本轮主观E1新闭环7题：…2026房山一模Q19、海淀一模Q20、海淀期中Q22(1)、西城期末Q20"
+   ]
+  },
+  {
+   "id": "OVR-2026HDQIZHONG-Q22-1-E1",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "scope": "Q22(1)",
+   "num": 22,
+   "subq": "1",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-题库线缺口(rubric_links.csv对该题一行都没有，未核实不是已确认无；book-xuanbi-1.md独立核验已闭环，按Skill结论收，同时列入回传题库线)",
+   "admission": "完整题-有E1",
+   "cite": [
+    "book-xuanbi-1.md:307 本轮主观E1新闭环7题：…海淀期中Q22(1)…"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "把2026海淀期中Q22(1)的正式评分材料登记进 indexes/rubric_links.csv（material_kind=正式评分材料，pair_status=已匹配正式材料）"
+  },
+  {
+   "id": "OVR-2026HDERMO-Q18-1-E1",
+   "exam_id": "BJ-2026-HD-ERMO",
+   "scope": "Q18(1)",
+   "num": 18,
+   "subq": "1",
+   "evidence": "E1",
+   "evidence_detail": "覆盖rubric_links.csv自动匹配：该行被自动标为'仅有参考答案'(E3)，但book-xuanbi-3.md独立核验确认这份材料对Q18(1)实际功能是E1（分析与综合细则曾错配到'减配实验'话题，纠正后E1及答案均为'市场调研'，material_kind应为正式评分材料而非参考答案），已列入回传题库线要求题库线更正material_kind。",
+   "admission": "完整题-有E1",
+   "cite": [
+    "book-xuanbi-3.md:86 2026海淀二模Q18（1）分析与综合细则错配'减配实验'而E1及答案均为'市场调研'"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "把2026海淀二模Q18(1)对应material_source_id在rubric_links.csv中的material_kind由'参考答案'更正为'正式评分材料'、pair_status由'仅有参考答案'更正为'已匹配正式材料'"
+  },
+  {
+   "id": "OVR-2026FTERMO-Q20-NEG",
+   "exam_id": "BJ-2026-FT-ERMO",
+   "scope": "Q20",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "rubric_links.csv对该题一行都没有；但book-xuanbi-1.md独立核验确认正式阅卷PPT从Q19直接跳到Q21，Q20本身缺失评分单元，是'已核实无'而非'未核实'，不落入待裁决。",
+   "admission": "不收-无E1",
+   "cite": [
+    "book-xuanbi-1.md:301 …2026丰台二模Q20…",
+    "book-xuanbi-1.md:205 2026丰台二模Q20在正式阅卷PPT中缺失",
+    "book-xuanbi-1.md:400 2026丰台二模阅卷PPT从Q19直接进入Q21，Q20缺失",
+    "book-xuanbi-1.md:418 2026丰台二模现有正式载体从Q19跳到Q21，没有Q20评分单元"
+   ]
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q8-KEY",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q8",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-官方答案键(D)；该题原在assembly_blocks.csv标'待复核'(matched_exam_id为空)，年份由本表用此官方答案键反向核实为2024届",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:308 本轮客观正式键闭环10项：…门头沟一模Q8=D、Q10=D、Q11=C…正文9个实际题块与正式键9/9一致"
+   ]
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q10-KEY",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q10",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-官方答案键(D)；questions.csv/assembly_blocks.csv均无该题独立行，本行为book-xuanbi-1.md具名核实的书稿具名核实-无汇编/题库独立行候选",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:308 本轮客观正式键闭环10项：…门头沟一模Q8=D、Q10=D、Q11=C…正文9个实际题块与正式键9/9一致"
+   ]
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q11-KEY",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q11",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-官方答案键(C，门头沟Q11旧候选A已纠正为正式键C)；该题原在assembly_blocks.csv标'待复核'(matched_exam_id为空)，年份由本表用此官方答案键反向核实为2024届",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:308 …门头沟Q11旧候选A已纠正为正式键C。正文9个实际题块与正式键9/9一致"
+   ]
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q18-NEG",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q18",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "book-xuanbi-1.md确认该题'题源边界'已核实属于本项目选必一，但同卷只有E3参考答案，没有独立正式E1；该行明确'只修订审计状态，不改正文和正式槽'，本表不因此把归属_X1标为COLLECTED。",
+   "admission": "不收-无E1",
+   "cite": [
+    "book-xuanbi-1.md:401 2024门头沟一模Q18已确认属于本项目选必一题源，纠正历史'题源边界待核'状态；当前载体仍只提供E3参考答案，没有同卷独立正式E1，因此只修订审计状态，不改正文和正式槽",
+    "book-xuanbi-1.md:418 2024门头沟一模Q18只有分类汇编题源与E3",
+    "book-xuanbi-1.md:23 2024门头沟一模Q18的题源边界及同卷E3参考答案均已确认，不得再次标为'题源边界待核'，也不得升级E1"
+   ]
+  },
+  {
+   "id": "OVR-2024FSYIMO-Q14-KEY",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "scope": "Q14",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-官方答案键(C)；questions.csv/assembly_blocks.csv均无该题独立行",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:308 本轮客观正式键闭环10项：2024房山一模Q14=C、Q15=D…正文9个实际题块与正式键9/9一致"
+   ]
+  },
+  {
+   "id": "OVR-2024FSYIMO-Q15-KEY",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "scope": "Q15",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-官方答案键(D)；该题原在assembly_blocks.csv标'待复核'(matched_exam_id为空)，年份由本表用此官方答案键反向核实为2024届",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:308 本轮客观正式键闭环10项：2024房山一模Q14=C、Q15=D…正文9个实际题块与正式键9/9一致"
+   ]
+  },
+  {
+   "id": "OVR-2024FSYIMO-Q18-2-E1",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "scope": "Q18(2)",
+   "num": 18,
+   "subq": "2",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-Skill闭环记录（该题正文已在7个重复落位全部恢复四边框，确认已在选必一正文多处落位，不是候选状态）",
+   "admission": "完整题-有E1",
+   "module_collected": [
+    "X1"
+   ],
+   "cite": [
+    "book-xuanbi-1.md:307 本轮主观E1新闭环7题：2024丰台一模Q20、房山一模Q18(2)、西城二模Q17…",
+    "book-xuanbi-1.md:51 房山一模Q18（2）的'开源'释义在7个重复落位全部恢复四边框，整本真实表格由7张增至22张"
+   ]
+  },
+  {
+   "id": "OVR-2024BJGAOKAO-E1GAP",
+   "exam_id": "BJ-2024-BJ-GAOKAO",
+   "scope": "all_subjective",
+   "evidence": "E1",
+   "evidence_detail": "具名核实-题库线缺口(rubric_links未收录，用户已核实为E1)",
+   "admission": "完整题-有E1",
+   "cite": [
+    "source-inventory.md:102 用户2026-09-22确认《2024年北京市高考政治试题分析(1)》【细则】为2024高考正式细则，按E1使用，不得因标题是'试题分析'降为教研候选；题库旧索引把2024北京高考记作无细则，属题库线待修（由题库负责人处理）。"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "把《2024年北京市高考政治试题分析(1)》登记进 indexes/rubric_links.csv 作为 BJ-2024-BJ-GAOKAO 各主观题的正式评分材料匹配行（material_kind=正式评分材料，pair_status=已匹配正式材料）"
+  },
+  {
+   "id": "OVR-2026BJGAOKAO-NAMEDEXC",
+   "exam_id": "BJ-2026-BJ-GAOKAO",
+   "scope": "all_subjective",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_no_rubric",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:13 special_override：2026-08-22 用户明确宣布 2026 北京高考为第三套整卷无正式细则例外",
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和用户于2026-08-22明确特批的2026北京高考三份具名试卷属于整卷无正式评分细则例外"
+   ]
+  },
+  {
+   "id": "OVR-2024SJSYIMO-Q19-1-NAMEDEXC",
+   "exam_id": "BJ-2024-SJS-YIMO",
+   "scope": "Q19(1)",
+   "num": 19,
+   "subq": "1",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:item_level_no_rubric，只覆盖Q19(1)，不扩张到同卷其他题目",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:13 special_override：2026-08-27 用户明确特批 2024 石景山一模第19题第（1）问为题级无正式细则例外",
+    "project-constitution.md:50 用户于2026-08-27又明确特批必修二2024石景山一模第19题第（1）问为题级例外；该特批只覆盖这一小问，不扩张到同卷其他题目"
+   ],
+   "note_other_subq": "Q19(2)、Q19(3)等同卷其他小问不在例外范围内，仍按通用逐题证据规则判断，不得因Q19(1)例外被卷级带成具名例外（v1的卷级回退bug会把整卷正式评分材料错标E1并连带把该例外错扩到全卷，本版已改逐小问判断修正）。"
+  },
+  {
+   "id": "OVR-2024SYERMO-NAMEDEXC",
+   "exam_id": "BJ-2024-SY-ERMO",
+   "scope": "all_subjective",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_e3only",
+   "admission": "收-具名例外",
+   "cite": [
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和2026北京高考三份具名试卷属于整卷无正式评分细则例外",
+    "exams.csv BJ-2024-SY-ERMO 行 notes 原话：独立E3参考答案，非E1",
+    "book-philosophy.md:30 书末例外严格限于2024顺义二模两题与2026石景山期末两题（该书目前只实际使用两题，不代表证据资格只有两题——证据资格按project-constitution:50为整卷）",
+    "book-culture.md 书末E3例外段：书末E3例外仍只允许2024顺义二模和2026石景山期末（同上，书用法与证据资格是两层）"
+   ],
+   "note": "project-constitution:50 给的是整卷证据资格；各书book-*.md记的'两题'是该书目前实际动用例外的用法范围，不是证据资格的上限。本表evidence列按证据资格（整卷）填，各册是否只用其中两题仍由各册自行决定，不由本表代为扩大实际收录。"
+  },
+  {
+   "id": "OVR-2026SJSQIMO-NAMEDEXC",
+   "exam_id": "BJ-2026-SJS-QIMO",
+   "scope": "Q1-Q20",
+   "evidence": "具名例外",
+   "evidence_detail": "具名例外:whole_exam_e3only",
+   "admission": "收-具名例外",
+   "cite": [
+    "exams.csv BJ-2026-SJS-QIMO 行 notes 原话：Q1-Q20按2026石景山期末具名无正式细则例外使用E3（题库自身登记）",
+    "project-constitution.md:50 全项目当前只有2024顺义二模、2026石景山期末和2026北京高考三份具名试卷属于整卷无正式评分细则例外",
+    "book-philosophy.md:30、book-culture.md 书末E3例外段均列2026石景山期末"
+   ]
+  },
+  {
+   "id": "OVR-2024CYYIMO-Q18-2-NEG",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "scope": "Q18(2)",
+   "num": 18,
+   "subq": "2",
+   "evidence": "缺细则-已核实",
+   "evidence_detail": "确认意见_v3.json issue2返修：exams.csv第30行BJ-2024-CY-YIMO notes原话\"Q16/Q17/Q18(1)/Q19/Q20/Q21正式E1；Q1-Q15与Q18(2)不升E1\"；rubric_links.csv对该question_id按题级判定为E1(该题其它小问已闭合)，但18(2)本身被题库notes明确排除在E1范围之外，题库question_id粒度到题不到小问，需本表逐小问覆盖。",
+   "admission": "不收-无E1",
+   "cite": [
+    "exams.csv BJ-2024-CY-YIMO 行 notes 原话：\"Q16/Q17/Q18(1)/Q19/Q20/Q21正式E1；Q1-Q15与Q18(2)不升E1\""
+   ],
+   "note_other_subq": "Q18(1)不受影响，仍按题级E1收；本条只覆盖(2)"
+  },
+  {
+   "id": "OVR-2023HDYIMO-Q21-E1FIX",
+   "exam_id": "BJ-2023-HD-YIMO",
+   "scope": "Q21",
+   "num": 21,
+   "evidence": "E1",
+   "evidence_detail": "确认意见_v3.json/终审意见.json共同指出的题库线admission过时：rubric_links.csv该题行overlap=0.0/pair_status=存在候选(自动文本匹配因细则文件不逐句复述题号而判0分)，但bank.py get<qid>--with-rubric核实该细则文档确系同卷正式评分材料且已定位到本题对应页，细则第39-49页四段式(试题分析/评分标准/学生问题/反馈试题)覆盖整题两小问",
+   "admission": "完整题-有E1",
+   "cite": [
+    "bank.py get BJ-2023-HD-YIMO-Q21 --with-rubric：正式细则来源S74dee7282b3f p039-049（评分细则，E1，图片体裁已逐页视觉核对），覆盖Q21含小问(1)(2)",
+    "终审意见.json sample_items：BJ-2023-HD-YIMO-Q21#2 X1漏收 verdict=对，\"细则p045-049\""
+   ],
+   "bank_gap": true,
+   "action_for_luna": "rubric_links.csv该行pair_status由'存在候选'更正为'已匹配正式材料'（overlap文本匹配对分页细则文档系统性失效，需人工定位页码而非全文重叠打分）"
+  },
+  {
+   "id": "OVR-2024FTERMO-Q21-E1FIX",
+   "exam_id": "BJ-2024-FT-ERMO",
+   "scope": "Q21",
+   "num": 21,
+   "evidence": "E1",
+   "evidence_detail": "确认意见_v3.json/终审意见.json共同指出的题库线admission过时：rubric_links.csv该题行overlap=0.0/pair_status=存在候选(自动文本匹配因细则文件不逐句复述题号而判0分)，但bank.py get<qid>--with-rubric核实该细则文档确系同卷正式评分材料且已定位到本题对应页，P88-P110完整分级评分标准已核实可读",
+   "admission": "完整题-有E1",
+   "cite": [
+    "bank.py get BJ-2024-FT-ERMO-Q21 --with-rubric：正式细则P88-P110含完整水平分级评分标准(水平1/2/3/4，0-8分各档次描述)",
+    "终审意见.json issues[3]：\"BJ-2024-FT-ERMO-Q21(细则P88-P110)\"已配对E1，attribution仍标待裁决，已过时"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "rubric_links.csv该行pair_status由'存在候选'更正为'已匹配正式材料'（overlap文本匹配对分页细则文档系统性失效，需人工定位页码而非全文重叠打分）"
+  },
+  {
+   "id": "OVR-2025HDERMO-Q20-E1FIX",
+   "exam_id": "BJ-2025-HD-ERMO",
+   "scope": "Q20",
+   "num": 20,
+   "evidence": "E1",
+   "evidence_detail": "确认意见_v3.json/终审意见.json共同指出的题库线admission过时：rubric_links.csv该题行overlap=0.0/pair_status=存在候选(自动文本匹配因细则文件不逐句复述题号而判0分)，但bank.py get<qid>--with-rubric核实该细则文档确系同卷正式评分材料且已定位到本题对应页，细则docx第4-5页评分要点已核实可读",
+   "admission": "完整题-有E1",
+   "cite": [
+    "bank.py get BJ-2025-HD-ERMO-Q20 --with-rubric：正式细则.docx第4-5页给出可选知识角度/阐述层面/矛盾分析法等完整评分要点，渲染证据assets/rubric_pages/page-4.png",
+    "终审意见.json issues[3]：\"BJ-2025-HD-ERMO-Q20（细则第4-5页）\"已配对E1，attribution仍标待裁决，已过时"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "rubric_links.csv该行pair_status由'存在候选'更正为'已匹配正式材料'（overlap文本匹配对分页细则文档系统性失效，需人工定位页码而非全文重叠打分）"
+  },
+  {
+   "id": "OVR-2025FTQIMO-Q19-E1FIX",
+   "exam_id": "BJ-2025-FT-QIMO",
+   "scope": "Q19",
+   "num": 19,
+   "evidence": "E1",
+   "evidence_detail": "确认意见_v3.json/终审意见.json共同指出的题库线admission过时：rubric_links.csv该题行overlap=0.0/pair_status=存在候选(自动文本匹配因细则文件不逐句复述题号而判0分)，但bank.py get<qid>--with-rubric核实该细则文档确系同卷正式评分材料且已定位到本题对应页，bank.py内部逐题状态已确认rubric_status=已匹配正式材料",
+   "admission": "完整题-有E1",
+   "cite": [
+    "bank.py get BJ-2025-FT-QIMO-Q19 --with-rubric：逐题来源记录rubric_source_id=S360d57a4b250，rubric_status=已匹配正式材料（题库bank.py自身解析结论与rubric_links.csv索引行的pair_status=存在候选/overlap=0.0不一致，索引行是文本重叠打分器的假阴性）",
+    "终审意见.json issues[3]：\"BJ-2025-FT-QIMO-Q19（PPTX第46-48张）\"已配对E1，attribution仍标待裁决，已过时"
+   ],
+   "bank_gap": true,
+   "action_for_luna": "rubric_links.csv该行pair_status由'存在候选'更正为'已匹配正式材料'（overlap文本匹配对分页细则文档系统性失效，需人工定位页码而非全文重叠打分）"
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q1-B3",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q1",
+   "evidence": "汇编标注(选择题照收)",
+   "evidence_detail": "确认意见_v3.json issue3返修：assembly_blocks.csv待复核区块(ASM-2024届各区一模试题分类汇编必修3)按届别锁定2024年；必修三第52批阶段审查稿docx题肢出处引用本题6次(scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt)，书稿已收",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "B3"
+   ],
+   "cite": [
+    "必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx 题肢出处引用本题6次"
+   ]
+  },
+  {
+   "id": "OVR-2024MTGYIMO-Q3-B3",
+   "exam_id": "BJ-2024-MTG-YIMO",
+   "scope": "Q3",
+   "evidence": "汇编标注(选择题照收)",
+   "evidence_detail": "确认意见_v3.json issue3返修：assembly_blocks.csv待复核区块(ASM-2024届各区一模试题分类汇编必修3)按届别锁定2024年；必修三第52批阶段审查稿docx题肢出处引用本题6次(scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt)，书稿已收",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "B3"
+   ],
+   "cite": [
+    "必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx 题肢出处引用本题6次"
+   ]
+  },
+  {
+   "id": "OVR-2024FSYIMO-Q9-B3",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "scope": "Q9",
+   "evidence": "汇编标注(选择题照收)",
+   "evidence_detail": "确认意见_v3.json issue3返修：assembly_blocks.csv待复核区块(ASM-2024届各区一模试题分类汇编必修3)按届别锁定2024年；必修三第52批阶段审查稿docx题肢出处引用本题4次(scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt)，书稿已收",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "B3"
+   ],
+   "cite": [
+    "必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx 题肢出处引用本题4次"
+   ]
+  },
+  {
+   "id": "OVR-2024FSYIMO-Q10-B3",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "scope": "Q10",
+   "evidence": "汇编标注(选择题照收)",
+   "evidence_detail": "确认意见_v3.json issue3返修：assembly_blocks.csv待复核区块(ASM-2024届各区一模试题分类汇编必修3)按届别锁定2024年；必修三第52批阶段审查稿docx题肢出处引用本题8次(scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt)，书稿已收",
+   "admission": "完整题-选择题照收",
+   "module_collected": [
+    "B3"
+   ],
+   "cite": [
+    "必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx 题肢出处引用本题8次"
+   ]
+  }
+ ],
+ "not_included_pending_more_evidence": [
+  {
+   "candidate": "BJ-2025-BJ-GAOKAO-Q18(2) 仍未闭合E1",
+   "reason_not_hardcoded": "source-inventory.md:167 只说'只有2025北京高考18（2）仍为RED_UNCLOSED'，未在Skill正文找到同页明确写出'Q18(1)已闭合E1'的原话；rubric_links.csv对该qid只有'存在候选'/'已匹配参考答案'两类行，没有已匹配正式材料的行。按本版规则该题（不分小问，因为题库粒度到题级）落在'待裁决-证据未核实'，比v1的粗暴按卷/整题判断更保守，但仍未做到小问级拆分。",
+   "action": "model_batch/known_gaps.md 已登记，建议下一步：主代理或模型直接读该题细则原文确认(1)(2)两问哪问已閉合，再补一条本表覆盖项。"
+  }
+ ]
+}

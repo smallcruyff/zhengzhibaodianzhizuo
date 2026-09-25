@@ -1,0 +1,104 @@
+{
+  "schema_version": "q19-structured-delta-validation.v2",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "question_id": "BJ-2025-CY-ERMO-Q19",
+  "generated_at": "2026-09-22",
+  "status": "proposal_not_applied",
+  "validation_scope": "read-only source/candidate verification plus v2 structured replacement validation; no production write",
+  "source_validation": {
+    "docx_path": "../isolated_sources/细则_same_sha.docx",
+    "docx_sha256": "73c36c3077dced724eb48b81aec7492e8e5ac59a7f72d7fb729d3581ea3fb5e8",
+    "outer_table_index_zero_based": 3,
+    "cell": "right column E1",
+    "cell_sha256": "c514b32cf33567c4590e3e3fb13b8b7432614b8d56e5ffdeb0c5408cb3c1a284",
+    "docx_text_characters": 927,
+    "docx_text_sha256_matches_cell": true,
+    "docx_text_origin": "../source_specific_delta.json#/delta_items/0/docx_text",
+    "docx_text_reused_without_wording_change": true,
+    "nested_table_dimensions": [9, 3],
+    "nested_table_category_rows": [[0, 1, 2], [3, 4, 5], [6, 7, 8]],
+    "reconstructed_source_text_exact": true
+  },
+  "structured_replacement_validation": {
+    "replacement_format": "Markdown",
+    "replacement_characters": 1097,
+    "replacement_sha256": "7fcf8198b80d5bd86b8f8fba25bc57b99315e77e3eeeadca4400c172dbdd26f4",
+    "category_count": 3,
+    "category_labels_exact": [
+      "①公共法律服务",
+      "②普法工作方面",
+      "③依法治网方面"
+    ],
+    "markdown_tables": 3,
+    "markdown_columns_each": 2,
+    "data_rows_each": 3,
+    "total_suggestion_reason_pairs": 9,
+    "pairing_rule_verified": "same-index paragraph pair in each nested data row, top-to-bottom",
+    "outside_table_note_count": 3,
+    "outside_table_note_exact": true,
+    "final_demotion_prompt_exact": true,
+    "literal 利用利用_count": 1,
+    "literal 以上三个左右对应关系_count": 3
+  },
+  "candidate_application_guard": {
+    "candidate_path": "../controller_ready/candidates/BJ-2025-CY-ERMO-Q19.md",
+    "live_candidate_sha256": "04b54100407cd40b5d47f5d0fb5bfd75266a6a293c2bb1321fd9e4053d2df819",
+    "frozen_candidate_base_sha256_matches_live": true,
+    "shared_parent_sha256": "4c505a8b932eab32c56baf0135f4fea39398e0e94d47a45eeab4475dae5bb9eb",
+    "old_exact_sha256": "8562d8c7833663fb7578181ecb7088b72853a4588befeb002e81da4a8e2a932f",
+    "old_exact_occurrence_count": 1,
+    "old_exact_unique_once_verified": true,
+    "replace_once_only": true,
+    "provisional_post_apply_sha256": "05f11bab92963bbf1028c99570e73a933999eea0b8dc9a119ce563f62b3aedef",
+    "provisional_post_apply_old_exact_occurrence_count": 0,
+    "candidate_written": false,
+    "old_delta_written": false
+  },
+  "preservation_guard": {
+    "e0_question_section_unchanged": true,
+    "e0_pre_sha256": "0c7347220fde938c4ad50f713a28887de5c95175d0c1b5d3c660ae38289c0791",
+    "e0_post_sha256": "0c7347220fde938c4ad50f713a28887de5c95175d0c1b5d3c660ae38289c0791",
+    "e3_reference_answer_section_unchanged": true,
+    "e3_pre_sha256": "ed330b0386399b5ba907f1ec9a7a637a2918032cd826f3a0803aa72819c03984",
+    "e3_post_sha256": "ed330b0386399b5ba907f1ec9a7a637a2918032cd826f3a0803aa72819c03984",
+    "question_number_19_unchanged": true,
+    "score_9_points_unchanged": true,
+    "student_layer_unchanged_and_n_a": true,
+    "student_layer_pre_sha256": "d0fac3a2bee4702b009b8139d23539174993cc49e7242dda15c10b58af39bc3a",
+    "student_layer_post_sha256": "d0fac3a2bee4702b009b8139d23539174993cc49e7242dda15c10b58af39bc3a",
+    "neighbor_q18_sha256": "719c1c390cc80a357eb313503ef76c5dc1639d2cb5e77f4bcbb8cf80d581b0df",
+    "neighbor_q18_unchanged": true,
+    "neighbor_q20_sha256": "0b00b551eef12588551a1a98c10328e9c9121a1a57842c4c83861cb8f0771534",
+    "neighbor_q20_unchanged": true
+  },
+  "page_pairing_guard": {
+    "coordinate_evidence_file": "pairing_map.json",
+    "coordinate_pages": [9, 10, 11],
+    "coordinate_system": "derived readable PDF points, top-left origin, page size 841.89 x 595.304",
+    "three_page_coordinates_present": true,
+    "all_nine_rows_have_left_right_text": true,
+    "same_index_pairing_evidence_present": true
+  },
+  "write_scope_guard": {
+    "only_output_directory_written": true,
+    "shared_parent_modified": false,
+    "shared_index_modified": false,
+    "shared_manifest_modified": false,
+    "controller_ready_modified": false,
+    "status_remains_proposal_not_applied": true
+  },
+  "review_state": {
+    "previous_flat_exact_delta_review": "PASS; reused as source identity and SHA evidence",
+    "structured_v2_independent_review_required": true,
+    "structured_v2_independent_review_status": "pending",
+    "application_or_merge_authorized_here": false
+  },
+  "artifacts": [
+    "README.md",
+    "structured_delta.json",
+    "pairing_map.json",
+    "pairing_map.md",
+    "validation.json"
+  ],
+  "overall": "PASS for source reuse, structured table construction, row pairing, guards, and write isolation; proposal remains unapplied pending another-workstation review."
+}

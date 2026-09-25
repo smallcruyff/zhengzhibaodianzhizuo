@@ -1,0 +1,44 @@
+{
+ "reviewer": "Claude 确认复核（只读，Opus）",
+ "target": "归属表_v1（内容 v3，rule_version 2026-09-24-attribution-v3）",
+ "against": ["确认意见_v2.json", "返修回执_v3.json", "审查意见.json"],
+ "verdict": "FAIL",
+ "summary": "v2 的 blocker 主体已修：跨卷复用和串题不再合并收录状态（2022/2024 高考 Q8、Q13，2026 海淀期中 Q8 现在都是 MAYBE，并标了“关联但不合并”）；除孪生别名外，没有一行在本题 matrix 为空时被标成 COLLECTED。BJ-2025-HD-QIZHONG 的 Q2、Q15、Q19、Q21、Q25 已移出 B2 漏收表。身份错误行已从全部差集排除，每层差集按 canonical_qid+subq 去重后没有重复。major④ 已修：verify_live_inputs_v3.py 会比对 5 个线上文件的哈希，结果全部 OK；分类器输入改为读 inputs_snapshot；questions.csv 的哈希已补记。在 scratchpad 全链路重跑后，31 个产物与交付件逐字节一致。另查了 11 行“未在 rubric_links 找到”的数据，已经不再判为不收。已修的 E1 覆盖逐条核对 Skill 原文，行号都对得上。不过仍有 4 个 major：①别名题级配对沿用了 matrix 的错误 dup_of；②v2 点名的 2024 朝阳一模 Q18(2) 仍是 E1；③必修三汇编里 6 个待复核的门头沟和房山区块没有纳入；④新发现：小问级收录被扩大到整题的所有小问，共 247 个组合。",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "blocker③ 的残留：dup_alias_qid_pairs 直接照抄 matrix.csv 的 dup_of，没有核对题面。审查意见原文已经指出“题级对应不是一一对应（2024 Q16↔2025 Q25，2025 Q16、Q18 无对应）”，v3 仍然这样配对，身份层也没有记录。结果仍有假漏收和按等价类的重复计数。",
+   "evidence": "exam_identity.json 的 dup_alias_qid_pairs 把 BJ-2024-HD-QIZHONG-Q16（咖啡材料题）配给 BJ-2025-HD-QIZHONG-Q25。units.jsonl 中 Q25 的题面是“25.0% 36.5% …<<<OCR p006.ocr.txt”，是图表的 OCR 碎片；bank_duplicate_exams 的 qb=22，说明该卷没有第 25 题。真正的孪生题 BJ-2025-HD-QIZHONG-Q16（同为咖啡材料一）和 BJ-2025-HD-QIZHONG-Q18（同为“小院议事厅”）都没有配对。后果有四点。①BJ-2024-HD-QIZHONG-Q18 的 matrix 值是 bixiu2=M[1/2]、bixiu3=S，但 BJ-2025-HD-QIZHONG-Q18 仍列在 B2_missing_candidates.csv 和 B3_missing_candidates.csv 中，两处都是假漏收。②2024 和 2025 两份登记的 Q16#1、Q16#2 同时出现在 B3、RE、X2 的漏收表中，没有去重。③伪题 Q25#1、#2 作为漏收候选出现在 CU、MI、PH 中。④去重只在同一层内做：同一等价类在 B3、PH、CU、X1、MI、RE 中一侧落在漏收层、另一侧落在 OUT 层，例如 PH 的 BJ-2024-HD-QIZHONG-Q16#1/#2 和 Q21#1/#2，仍按两个单元计数。清单见 scratchpad/attribution_confirm_v3/alias_mispair.txt。",
+   "fix": "配对按题面指纹或人工核对建立，不直接信 dup_of。改为 2024 Q16↔2025 Q16、2024 Q18↔2025 Q18。BJ-2025-HD-QIZHONG-Q25 登记为切分错误并排除出分母，同时回传题库线。同一等价类在同一模块只保留一个状态（取两侧中较强的状态），再分层。"
+  },
+  {
+   "severity": "major",
+   "desc": "major① 的原证据②没有修：exams.csv 写明的小问级 E1 限定没有落实。返修回执说已经逐行核对 exams.csv 全表中 18 行含 E1 的记录，但 v2 确认意见点名的这一条仍然判错。",
+   "evidence": "exams.csv 中 BJ-2024-CY-YIMO 行的 notes 原话是：Q16/Q17/Q18(1)/Q19/Q20/Q21 正式 E1，“Q1-Q15与Q18(2)不升E1”。attribution.csv 中 BJ-2024-CY-YIMO-Q18#2 却是“完整题-有E1 / E1 / 逐题已匹配正式评分材料”，skill_overrides.json 中也没有这一卷的条目。于是这一行在 5 个模块的 missing_candidates 中都算作“按裁定可收”，CU 中为 IN。另外抽查了两个变体：BJ-2024-SY-ERMO 的“非E1”已由具名例外处理，BJ-2020 高考的“E1仅Q16-Q21”判定一致，这两处都没有问题。",
+   "fix": "在 skill_overrides.json 中补上 BJ-2024-CY-YIMO Q18(2)：不收-无E1，证据写“缺细则-已核实”，出处为 exams.csv 该行 notes。再用正则全表扫描“不升E1、仅Qx、非E1”等小问级限定，不要只靠人工挑行。"
+  },
+  {
+   "severity": "major",
+   "desc": "major③ 只修了一部分。v3 只纳入 v2 确认意见点名的 5 个待复核块。assembly_blocks.csv 中 2024 届必修3汇编里另有 6 个待复核块没有处理：门头沟1模 Q1、Q3、Q7、Q21，房山1模 Q9、Q10。它们恰好对应必修三书稿已经收录的题。返修回执以“book-bixiu-3.md 中找不到”为由把这一项列为 deferred，但查的是 Skill 的记录文件，没有查书稿本身，也没有查 not_resolved_or_not_in_bank.csv。",
+   "evidence": "①assembly_blocks.csv 中，ASM-2024届各区一模试题分类汇编必修3 有 6 个 status=待复核 的块，标注分别为“门头沟1模1”“门头沟1模7”“门头沟1模21”“门头沟1模3”“房山1模9”“房山1模10”。门头沟1模1 的题面写有“2024年‘两会热词’”，而且这些块都在“202404各区一模试题分类”目录下，年份可以确定。v3 可能只检索了“门头沟一模”，没有覆盖“门头沟1模”这种写法。②必修三书稿《必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx》的正文题肢出处中，出现“2024门头沟一模1”6 次、“…3”6 次、“…8”8 次，“2024房山一模9”4 次、“…10”8 次（见 scratchpad/attribution_confirm_v3/bx3_mtg_fs_labels.txt）。上一级目录的 not_resolved_or_not_in_bank.csv 也把 bixiu3 列为引用这些题的书。③attribution.csv 中没有 MTG Q1、Q3、Q7、Q21 和 FS Q9、Q10 的任何行。MTG-Q8 的归属_B3=MAYBE，并作为假漏收出现在 B3_missing_candidates.csv 中。④门头沟 Q14、Q20 来自 ASM-2024届…选必3 汇编，同样可以按“2024届”汇编确定年份，却被标成“身份未确认-不计入分母”，没有进入分母。",
+   "fix": "对全部门头沟、房山的待复核块做同样处理，检索时同时匹配“一模”和“1模”，并以汇编所属届别作为年份证据。补上 MTG Q1、Q3、Q7、Q21 和 FS Q9、Q10 的候选行；按书稿引用把 MTG Q1、Q3、Q8 和 FS Q9、Q10 标为 B3=COLLECTED。MTG Q14、Q20 按 2024 届归入对应卷。"
+  },
+  {
+   "severity": "major",
+   "desc": "新发现（v1、v2 已有，此前没有报出）：COLLECTED 判定只看 matrix 列是否非空，忽略了小问标注，例如 S[2]、M[1]。某本书只收了一个小问，同题的其他小问也会被标成已收。小问级漏收因此被隐藏，这正是三路调查摘要第102行所说的缺口。",
+   "evidence": "build_attribution_v3.py 中 collected_direct = bool(book and mrow.get(book))。matrix.csv 的模块列取值包括 S[1]、S[2]、S[1/2]、M[1] 等，原型 classify.py 第220行按 subq in subs 解读这些值。逐行比对后，共有 247 个（小问, 模块）组合在 matrix 中没有收录该小问，却被标成 COLLECTED，涉及 88 题：B2 54、MI 46、B3 41、RE 41、PH 26、X1 25、CU 14。例如：BJ-2024-CY-YIMO-Q18#2 在 B3 的 matrix 值为 S[1]；BJ-2020-BJ-GAOKAO-Q19#1 在 PH 的值为 S[2]；BJ-2024-CY-QIZHONG-Q20#1、#2 在 X1 的值为 S[3]。其中 146 个是“完整题-有E1”，被排除出漏收差集。完整清单见 scratchpad/attribution_confirm_v3/subq_overcollected.tsv。",
+   "fix": "解析 matrix 值中的方括号：有小问列表时，只把列出的小问标成 COLLECTED；没有方括号时才视为整题收录。孪生别名的合并也按同一规则处理。"
+  }
+ ],
+ "verified_fixed": [
+  "blocker③①：只按 dup_alias_qid_pairs 合并。2024 高考 Q8 的 RE、2022 高考 Q8 的 CU、2024 高考 Q13 的 X2、2026 海淀期中 Q8 的 B2 和 RE 都是 MAYBE，并标了“关联但不合并”。变体全表检查：除别名孪生外，没有一行在本题 matrix 为空时被标成 COLLECTED。",
+  "blocker③②：BJ-2025-HD-QIZHONG 的 Q2、Q15、Q19、Q21#1、Q21#2、Q25#1、Q25#2 都已不在 B2 漏收表中（Q25 的配对本身有误，见 issue 1）。",
+  "blocker③③④：24 个差集文件按 canonical_qid+subq 在层内没有重复。BJ-2025-FT-YIMO-Q18 和 3 个身份行不在任何差集中。",
+  "blocker③⑤：书稿标签“2025朝阳期中”已登记为 deferred。回执说“全项目grep未命中”，这一点不准确：上一级目录的 not_resolved_or_not_in_bank.csv 中有 46 条，并给了 fp_suggest 指向 BJ-2026-CY-QIZHONG。但 matrix 已经按这些指纹把 BJ-2026-CY-QIZHONG 的 Q1、Q2、Q5、Q6、Q7、Q13、Q16、Q17、Q21 记为收录，对归属结果没有实际影响，所以不列入 issue。",
+  "major①：BJ-2026-FT-YIMO-Q19 已改为不收-无E1，并对照 book-xuanbi-1.md 第43、418行核实。2026 海淀二模 Q18#1、2026 海淀期中 Q22#1、2024 房山一模 Q18#2、2024 丰台一模 Q20、2026 房山一模 Q19 都是 E1，与 book-xuanbi-1.md 第307行和 book-xuanbi-3.md 第86行一致。变体：第307行其余 3 题（2024 西城二模 Q17、2026 海淀一模 Q20、2026 西城期末 Q20）也都是 E1。“未在 rubric_links 找到却判不收”的行已经清零；不收-无E1 共 52 行，其中 E3 47 行、缺细则-已核实 5 行。",
+  "major③①：BJ-2024-FS-YIMO-Q13 已改为选择题照收，Q17 已改为主观题待裁决。MTG Q8、Q10、Q11 和 FS Q14、Q15、Q18(2) 已标为 X1=COLLECTED，与 not_resolved 表中选必一的引用一致。xuanbi-1 第307、308、401行和 source-inventory 第136行已写进 identity。",
+  "major④：verify_live_inputs_v3.py 比对了线上 5 个文件，全部 OK；questions.csv 的哈希已补记。脚本不再硬编码 /private/tmp。另查：原型脚本/classify.py 和原 tmp 分类器输出，与快照的 classify.py、classified_prod.jsonl、units.jsonl 哈希一致。",
+  "确定性：在 scratchpad 全链路重跑后，31 个产物与交付件逐字节一致。"
+ ],
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_confirm_v3/"
+}

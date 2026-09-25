@@ -1,0 +1,82 @@
+{
+  "summary": "第二轮返修：只改 scripts/apply_patch.py（1215→1344 行），落实主代理对上一轮遗留的 5 条裁定。①diff 不再替人授权：cmd_diff 删除自动补 source_zone:restore/allow_complex:true 的 _zone_tag/_complex_tag，改成 _authz() 只在 op 上标 zone(source/title)、complex_parts（超链接/域/书签/图片/批注/脚注/其他分类计数）与 needs_authorization:[\"source_zone\"|\"allow_complex\"]；check_ops 对没有真授权字段的这类 op 仍照常中止，行为不变，只是不再冒充授权。②diff 对 SequenceMatcher 的 equal 分段（文字未变）逐段比较 keepNext 与 run 颜色/加粗：keepNext 不同生成 set_keepnext op（同样经 _authz 标 zone），run 格式不同（或 run 切分/数量不同、无法逐 run 比对）写进 --report 的 format_changes 列表（段号/样式/文字截取/差异摘要），不生成 op。③report 全面加字段：check_ops 的每条结果补 style/before_text/before_sha（docx_lib.para_sha）；apply 写后逐条补 after_text/after_sha（delete 为 null）、insert 的 inserted 段落文字+指纹列表；set_format/insert_after/insert_before/set_keepnext 都新增显式写后 postcondition（原来只有 delete/replace_text/replace_paragraph/set_keepnext 四种）；apply_replace_text 的 cross_run 分支新增 run_formats（逐 run 的 color/bold）与 swallowed_runs（被整段吞掉的中间 run 的文字+格式，可能是空列表）。④\"未点名段落不变\"的核对从内存树自比改成写出后重新 dl.open_docx(out_path) 打开输出文件再比对；重开失败或比对不过都删除已写出的候选、退出 2，不留半成品。⑤known_limits 按主代理裁定维持 v1 边界（见下）。",
+  "files": {
+    "tool": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch.py",
+    "lines_before": 1215,
+    "lines_after": 1344,
+    "changed_only_this_file": true,
+    "layout_prepare_touched": false,
+    "other_scripts_touched": false,
+    "test_script_scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/run_tests_apply_patch.py",
+    "test_script_copy": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_apply_patch.py",
+    "test_outputs_dir": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch/",
+    "pycache_check": "改前改后核对 skills/scripts/__pycache__ 目录内容一致（仍是 book_incremental/check_drill_admission/source_intake 三个旧 .pyc，未新增 apply_patch/docx_lib/batch_health 的 .pyc）"
+  },
+  "usage": "命令行、补丁格式、退出码含义均不变（见工具文件头）。行为变化仅限 diff 子命令的输出：op 里新增 zone/complex_parts/needs_authorization 三个可选字段，供人工/主代理审阅后决定是否补 source_zone+reason 或 allow_complex；不补的话 check/apply 仍会照常中止（这是延续既有安全语义，不是新限制）。check/apply 的报告 JSON（--report）新增 before_text/before_sha/style（check 与 apply 的 ops 里）与 after_text/after_sha/inserted（apply 的 ops_extra 里），旧字段全部保留，纯增量。",
+  "issues_resolved": [
+    {
+      "desc": "[裁定①] diff 自动给 op 补 source_zone:restore/allow_complex:true，等于替人授权",
+      "how": "删除 _zone_tag/_complex_tag 的自动授权，改成 _authz(op, oi, check_complex) 只标 zone/complex_parts/needs_authorization；_complex_parts() 按 hyperlink/field/bookmark/image/comment/note/other 七类计数。check_ops 的既有中止逻辑不变，缺授权字段的题面区/复杂段 op 照常在 check/apply 时中止。",
+      "test": "全 op check/apply 正例、三条 diff 回归、新增负例——凡是 op 带 needs_authorization 但未被显式授权，check/apply 均按原逻辑中止（见 test_results.json 的 diff(B03_to_B04) 首次未授权时 exit 2）"
+    },
+    {
+      "desc": "[裁定②] 03→04 的 284 处 keepNext 变化没有体现在 diff 结果里",
+      "how": "cmd_diff 新增 _equal_pair_diff：对 SequenceMatcher 'equal' 分段内逐对老/新段落比较 keepNext 与 run 格式；keepNext 不同生成 set_keepnext op（同样过 _authz），run 颜色/加粗不同（或 run 切分数量不同）写入 --report 的 format_changes 列表",
+      "test": "回归：diff(B3_03,B3_04) 生成 op_kinds.set_keepnext==284；apply 后重开候选与 B3_04 逐段比 keepNext 标志，19861 段全部一致（kn_match=True）"
+    },
+    {
+      "desc": "[裁定③] 报告缺逐条改前/改后文字+段落指纹，insert/set_format/set_keepnext 无显式 postcondition",
+      "how": "check_ops 的 row 里新增 style/before_text/before_sha；cmd_apply 写后逐条补 after_text/after_sha/inserted 到 extra[oid]；postcondition 循环新增 set_format（复用新抽出的 _format_matches）与 insert_after/insert_before（插入段数、逐段文字与 paragraphs 规格核对）两类；apply_replace_text 的 cross_run 分支新增 run_formats（逐 run color/bold）与 swallowed_runs（被整段吞掉的中间 run 的文字+格式）",
+      "test": "pos_all_ops 正例：断言 check 报告 P001/P005/P007/P009/P011/P013 都带 index/style/before_text/before_sha；apply 报告 P005/P009/P007/P008/P013 的 after_text/after_sha/inserted 符合预期；P004（跨 2 个 run 的 replace_text）报告含 cross_run、run_formats（2 条，颜色确实不同）、swallowed_runs（本例只跨 2 个 run，无被整段吞掉的中间 run，字段本身存在、值为空列表）"
+    },
+    {
+      "desc": "[裁定④] '未点名段落不变'只在内存树里自比，没有对写出后重新打开的文件核对",
+      "how": "cmd_apply 里 write_docx 之后立即 dl.open_docx(out_path) 重新打开，用重开后的段落列表跑 dl.unchanged_paragraphs；重开失败或比对不过都 out_path.unlink() 删除输出后 exit 2，不留半成品",
+      "test": "pos_all_ops 正例的候选文件重开后核对（④重开候选文件抽样比对未改段落指纹=True）；三条 diff 回归的成功案例（B03_to_B04、B04_to_B52）都实际走了这条重开校验且通过，写出的候选与 B04/B52 段落文字流逐段一致"
+    },
+    {
+      "desc": "[裁定⑤] 其余上一轮遗留（插入后题面区只查新段本身、真实书无批注/脚注样本、diff 无回放模式格式保真）",
+      "how": "维持上一轮的 v1 边界不动，原样写入本轮 known_limits，未重新展开",
+      "test": "无新增测试（未改动这部分代码）"
+    }
+  ],
+  "issues_deferred": [
+    {
+      "desc": "diff() 仍然不是'保留域/超链接/格式、只在纯文字处生成最小 replace_text'的结构感知回放；对含超链接/域/书签/图片的段落，diff 生成的 replace_paragraph/delete_paragraph 仍然只能靠 allow_complex 整段替换/删除，会丢失这些结构本身",
+      "why": "这是对 diff 算法的整体重做，本轮范围是'不替人授权+补报告+补postcondition+补重开校验'，主代理裁定里也明确把这部分列为已知限制而非本轮要交付的功能"
+    },
+    {
+      "desc": "B51→B52 压力测试整批 apply（授权后）仍在第 859 条因锚点是'表格单元格唯一段落'正确中止，不是本轮修的问题",
+      "why": "表格结构变化明确不在 v1 范围内（工具文件头与规格都写了），这是真实边界不是 bug；逐条可行率 98.55%（1628/1652），已如实报告"
+    },
+    {
+      "desc": "题面零改写门仍只核对'新插入段落自己落进哪个 zone'，不做跨段联合绕过检测",
+      "why": "上一轮已验证过全书级 source/title 序列比对方案会因 bh.walk 对无关改动的位置敏感性产生大量误伤，本轮未重新挑战这个结论"
+    }
+  ],
+  "known_limits": [
+    "diff() 只比文字不比格式/结构：对含超链接/域(PAGEREF等)/书签/图片的段落，allow_complex 授权后能让段落文字流与目标版本一致，但会丢失这些结构本身；本轮新增 complex_parts 计数与测试脚本里的结构损失统计（见 tests 里 diff(B04_to_B52) 的 structural_loss_complex_parts: hyperlink 30/field 90，colored_run_loss_estimate 180；diff(B51_to_B52_stress) 的 hyperlink 15/field 45/bookmark 19/image 3，colored_run_loss_estimate 90），供人工/主代理判断是否需要人工核对格式或改走 layout_prepare.py。",
+    "colored_run_loss_estimate 是测试脚本里的估算（replace_paragraph 只保留首个文字 run 的 rPr，其余彩色 run 一律丢；delete_paragraph 全丢），不是 apply_patch.py 本身输出的字段，仅用于本轮回归报告，如需长期使用应挪成工具正式字段。",
+    "表格结构（增删行列、删表格单元格唯一段落）不在 v1 范围内：B51→B52 压力测试整批 apply 在遇到这类 op 时正确中止（op D0859：是表格单元格唯一段落），逐条可行率 98.55%，剩余不可行的都是真实边界（表格单元格 17、锚点歧义 6、命中禁用词 1）。",
+    "题面零改写门只核对'新插入段落自己落进哪个 zone'，不做跨段的全书级联合绕过检测；bh.walk 在大文档上对无关改动的位置敏感性问题不是本工具能解决的（不能改 batch_health.py）。",
+    "本册真实数据（B3_52/03/04/51）里仍没有批注/脚注/track changes 段落，_run_is_simple/COMPLEX_TAGS 只有单元测试与防御性中止验证，没有真实端到端样本。",
+    "工具正文 1344 行，比上一轮的 1215 行更超过规格软指标 900 行——本轮新增的都是报告字段与授权标注，未为凑行数删减功能。"
+  ],
+  "profile_fields_needed": [],
+  "needs_user_decision": [
+    "diff() 的结构感知回放（保留域/超链接/格式，只在纯文字处生成最小 replace_text）仍未实现，当前版本的定位是'审阅材料生成器'：产出的 op 需要人工/主代理逐条补授权字段才能真正落地，格式/结构保真需要另外核对。是否要单独排期做这版重做，还是接受当前边界？",
+    "工具正文行数（1344 行）持续超过 900 行软指标；是否要精简文件头说明（挪到单独文档）来压行数，还是维持现状继续按功能需要增长？"
+  ],
+  "tests": [
+    {"input": "回归：diff(B03_to_B04) 未授权直接 apply", "result": "exit 2，op D0001 锚点落在题面区（zone=title）未给 source_zone 即中止——证明裁定①的'不替人授权'确实生效，不是只改了字段名字", "seconds": 0.92},
+    {"input": "回归②：diff(B03_to_B04) 测试脚本显式授权（344 条 source_zone:restore）后 apply", "result": "exit 0，段落文字流与 B04 逐段一致（paragraph_stream_matches=True）；op_kinds.set_keepnext==284；重开候选文件 19861 段 keepNext 标志与 B04 逐段一致", "seconds": 111.54},
+    {"input": "回归③：diff(B04_to_B52) 测试脚本显式授权（30 条 allow_complex）后 apply", "result": "exit 0，段落文字流与 B52 逐段一致；structural_loss_complex_parts={hyperlink:30, field:90}，colored_run_loss_estimate=180（如实报进 known_limits，不算失败）", "seconds": 8.26},
+    {"input": "压力测试：diff(B51_to_B52_stress) 测试脚本显式授权（591 source_zone + 37 allow_complex）后 apply", "result": "exit 2，op D0859 是表格单元格唯一段落（v1 明确边界，非 bug）；逐条可行率 98.55%（1628/1652，剩余为表格单元格17/锚点歧义6/禁用词1）", "seconds": 140.94},
+    {"input": "pos_all_ops 正例：check 报告逐条含 index/style/before_text/before_sha", "result": "P001/P005/P007/P009/P011/P013 全部具备", "seconds": 0},
+    {"input": "pos_all_ops 正例：apply 报告逐条含 after_text/after_sha/inserted", "result": "P005 after_text='数字中国建设'+sha；P009（已删除）after_text/after_sha 均为 null；P007 插入 1 段、P008 插入 2 段的 inserted 列表长度分别为 1/2", "seconds": 0},
+    {"input": "pos_all_ops 正例：P004 跨 2 个 run 的 replace_text（new_format）", "result": "报告含 cross_run=True、run_formats（2 条，颜色分别为 1F4E79/None）、swallowed_runs=[]（本例无被整段吞掉的中间 run，字段存在值为空属预期）", "seconds": 0},
+    {"input": "裁定④：pos_all_ops 候选文件重开后抽样核对未改段落指纹", "result": "20 个抽样位置的 para_sha 与原稿一致", "seconds": 0},
+    {"input": "全部既有回归（上一轮 verify_apply_patch.json 点名的 blocker①②④⑥⑦⑨⑩ 等）", "result": "重跑全部通过，未因本轮改动回退（见 test_results.json）", "seconds": null},
+    {"input": "真实输入文件（B3_52/B3_03/B3_04/B3_51/B2_230）SHA/mtime 核对", "result": "改前改后一致，未被测试写脏", "seconds": 0}
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "exam_id": "BJ-2026-FT-YIMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-FT-YIMO-Q1": "6a80abc47437b8a8903c73cddd6f0425a1033b75a0b6cff45f5ce350c1f5edac",
+    "BJ-2026-FT-YIMO-Q2": "6e491f8b60683e9b7a768381034a54db8dd6d00d5af36c49bccd936b6cee6721",
+    "BJ-2026-FT-YIMO-Q3": "a65975d70894bb1fe6cb1fab135b7a85e5951fe36185494f8abffd2a82d0079c",
+    "BJ-2026-FT-YIMO-Q4": "dae46176cf5799a79a3ed656acdf8b6b9f5b905b197abeab0fcf1bcf1dfe53a0",
+    "BJ-2026-FT-YIMO-Q5": "ee14dad403298e92f03f7995f0b847a452228407d79e3e4c6e6e00d277046aa8",
+    "BJ-2026-FT-YIMO-Q6": "89b635be922904e2530c301c0b2ba7f94936947f12c53cc43a4005d3e890cd67",
+    "BJ-2026-FT-YIMO-Q7": "dae3c07d07d3077c530f5ffccd4dae0b5202f995db6bebec0843472aa466af03",
+    "BJ-2026-FT-YIMO-Q8": "330e28c64571052f8e4dfd3a6057e97c7b37d6d4a420d059ae8e82b95b95c32a",
+    "BJ-2026-FT-YIMO-Q9": "c883a926e3032902d7f40b38d78b9988ef7a17c3db816f8c6371157872e16046",
+    "BJ-2026-FT-YIMO-Q10": "3a94c25fcaaeda9e6d77470f13d7a0c0bd20a53e7ecfdcb6089b8d9499b0b1c2",
+    "BJ-2026-FT-YIMO-Q11": "7cb76a7b8d3d75d0679aac311555f9e956fce814afaf5b673013549ed249fc80",
+    "BJ-2026-FT-YIMO-Q12": "c7061c1a721c5be649508373f4f3ad2912673dc5341d836e0586e264aae412f1",
+    "BJ-2026-FT-YIMO-Q13": "c3c63f74b7f3eac6076aa58ebd06412fdfbdc34a4775daeb808d30875f33353b",
+    "BJ-2026-FT-YIMO-Q14": "5109d755c360bea64fffcf2eac9cdd8e1246eb7b3196bdfeefd8602d5ec696e4",
+    "BJ-2026-FT-YIMO-Q15": "22dd8ce44778c588c54703e22e8fa670042238a3842cf5b18e06d52030912dd7",
+    "BJ-2026-FT-YIMO-Q16": "f705274821b730ffd693d1a1d341d20550c1d18cadaf2061bc8caaba4d707739",
+    "BJ-2026-FT-YIMO-Q17": "c6c7f45aa9eee431947184658742d0c6d3c73f164d766a6cb6a97f1f21884a66",
+    "BJ-2026-FT-YIMO-Q18": "db689a6c48d5b8ed961687fac13a83c2874204b9c70acfb9c36ec1bda126bf54",
+    "BJ-2026-FT-YIMO-Q19": "6d0de864bc6f27c4c0d31e1643e58144a43550c307ada83d9aca675709ff7ad4",
+    "BJ-2026-FT-YIMO-Q20": "fffef402af1755f5a734473fd91105bf6ddcbd0b064543e9b5393d7a8aed8b0b",
+    "BJ-2026-FT-YIMO-Q21": "429a5ee812aac9790df7feb7010ba7d6b49403e9c56447fd00f151e76535923b"
+  },
+  "source_pages": {
+    "paper": 10,
+    "rubric": 68
+  },
+  "source_page_total": 78,
+  "source_roles": {
+    "paper": "S6e8f2df5ef86",
+    "rubric": "S26649804f1de"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "E1/E3/学生层，Q1-Q15（全部选择题）: conversion_manifest.json exceptions字段明确『无独立参考答案文件』；本卷输入范围（原卷PDF+细则.pptx）内未发现任何与Q1-Q15匹配的独立答案表、正式细则或学生样卷；独立复核回执independent_verify/verification.json『证据角色边界』一节确认Q1-Q15均为N/A_with_basis，不推算字母",
+    "E1，Q17/Q19/Q20: PPT slides 16/42/51标题为『参考答案』，正文为总结性文字，无本题专属给分槽或分档等级表；独立复核回执明确判定为E3而非E1，不得升级"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2026-FT-YIMO-Q16",
+      "location": "讲评与阅卷记录／复练试题评分表『7分』单元格手写批注（slide 13）",
+      "partial_reading": "“价值观具有导向作用”√ 正+1，价值观【?】地【?】作用，【?】对正确价值观，【?】对数字化世界“数字原民”应当【?」；【下一行】【?】对信息【?】知识【?】运用【?】撑，作为辅助，……",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "BJ-2026-FT-YIMO-Q19",
+      "location": "学生示例／PPT slides 44-47右上角大号手写标记",
+      "partial_reading": "形似“8”的大号手写符号，具体数值/含义未定",
+      "affects_answering": false,
+      "round": "r1"
+    },
+    {
+      "qid": "多题（Q17/Q18/Q20/Q21学生示例层）",
+      "location": "学生示例、原答、批注与实得分（除Q19 slide43外的22张学生原答/批注图）",
+      "partial_reading": "沿用旧组机器转写记录（原答关键词、教师批注、涂改、分数），本轮未逐张重新以600dpi裁图复核",
+      "affects_answering": false,
+      "round": "r1"
+    }
+  ],
+  "review_receipts": {
+    "previous_acceptance": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/batch_acceptance_receipts/codex-bank-direct-ft-yimo-20260922__BJ-2026-FT-YIMO.json"
+    ],
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/primary_review/BJ-2026-FT-YIMO.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/independent_verification/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-FT-YIMO/retro-batch1-bj-2026-ft-yimo-20260924_merge.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/reopen_for_resign/BJ-2026-FT-YIMO.json",
+    "rounds": []
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "codex-bj-2026-ft-yimo-accept-20260922",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T02:32:56.597159+00:00"
+    },
+    {
+      "event": "reopen_accepted_exam_for_resign",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T05:06:47.202933-07:00",
+      "reason": "后续回溯题面修订已经合入；保留并暂挂旧验收签名，重新走标准全卷验收。"
+    },
+    {
+      "spec_id": "bj-2026-ft-yimo-state1-retro-batch1-resign-20260924-v1",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T12:09:30.714573+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch1-bj-2026-ft-yimo-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T11:59:46.763537+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2026-FT-YIMO/retro-batch1-bj-2026-ft-yimo-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2026-FT-YIMO-Q16": "f705274821b730ffd693d1a1d341d20550c1d18cadaf2061bc8caaba4d707739",
+        "BJ-2026-FT-YIMO-Q21": "429a5ee812aac9790df7feb7010ba7d6b49403e9c56447fd00f151e76535923b"
+      }
+    }
+  ],
+  "accepted_at": "2026-09-24T12:11:41.393803+00:00"
+}

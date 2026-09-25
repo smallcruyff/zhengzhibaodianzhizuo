@@ -1,0 +1,64 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "写后单练门“新增 FAIL”基线对表级 FAIL 仍然失效。_fail_content_key 只取 (rule, 去序号后 norm 的 excerpt)。bh 的表级 FAIL 不带 excerpt，例如“A2 表内正误不齐”只有 table/answers 字段，所以键都变成 (rule, '')。只要父稿已有任意一张表的这条 FAIL，本次 build 在另一张表新造的同规则 FAIL 就会被当成“父稿原有”，退出码 0，照样写出。工具自己的提示里已经列出 table 864 和 865 两条，却仍然说它们“与父稿原有 FAIL 相同”。同样的问题还会出现在“A1/A2 同序号条目不一致（其余）”，以及配置成 FAIL 的“A2 同一判断连续过长”上。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final && TMPDIR=$PWD/tmp /usr/bin/python3 -B final_attack.py N1 → [BUG] N1：B2_230 副本（使用临时 frozen=false 配置，each_table_has_both=true）。先删掉第 864 表的 42 条错误项，父稿因此带有“A2 表内正误不齐 table=864”。items 再删掉第 865 表的全部错误项，build 结果为 exit 0、out_exists=true。stderr：“提示：写后单练门仍有 2 条 FAIL，但与父稿原有 FAIL 相同，不算新增……\"rule\": \"A2 表内正误不齐\", \"table\": \"864\" … \"table\": \"865\"”。对照组用未改坏的父稿做同样删除：exit 1，stderr“写后单练门体检比父稿新增 1 条 FAIL … table 865”，不留输出。代码位置 drill_tool.py 812-818 行（_fail_content_key）和 1067-1068 行。",
+   "fix": "基线键要带上能区分对象的字段。没有 excerpt 时，用 (rule, table, 其余 extra 字段中去掉 where/src 后的排序 JSON)；有 excerpt 时，也并入 table 或 answers。补一条回归：父稿某表已有表级 FAIL，另一张表新造同规则 FAIL，退出码必须为 1。"
+  },
+  {
+   "severity": "major",
+   "desc": "_renumber_row 会把题干改错。它遍历题干段落的全部直接 w:r，只要某个 w:t 以旧序号开头就当作序号来替换。如果序号被拆成两个 run（如“1”和“0、”），前两个 run 都匹配不上，接着命中题干里第一个以相同数字开头的 run。结果题干“10个…”被改成“11个…”，A1、A2 两侧一样；序号仍是“10、”，与前一条重号。build 退出码 0。写后 bh 门看不出来，要单独跑 drill_tool check 才会报“条目编号不是 1..N 连续”。fix3 回执 known_limits 写的是“_renumber_row 找不到就 Abort(2)……不会猜测拼接位置”，与事实不符。报错文字“改用模板重建”，实际却是中止，也容易误导。题干以年份开头（如第 20 条“2025年…”）时，同样会被改坏。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final && TMPDIR=$PWD/tmp /usr/bin/python3 -B final_attack.py N9 → [BUG] N9：B3_52 副本第 10 条 A1、A2 的序号 run 拆成“1”“0、”，题干首个文字 run 前加“10个”。extract exit 0；在第 1 组开头插 1 条后 build：exit 0，stderr 为空。输出 A2：“10、\\t11个不能割断历史，不能想象突然就搬来一座政治制度上的“飞来峰” | 正确 | 2023朝阳二模1”，A1：“10、\\t11个不能割断历史… | （　） | 2023朝阳二模1”。对输出跑 check，新增 FAIL“条目编号不是 1..N 连续（跳号/重号）”。代码位置 drill_tool.py 797-806 行。",
+   "fix": "只认段首：从第一个有文字的 w:t 起按顺序拼接，要求 item_rx 匹配到的序号整段落在这一个 run 的开头；否则 Abort(2)，并把报错文字改为“中止”。替换后再核对一次：该 tc 的全文等于“新序号＋原全文去掉旧序号”，A1、A2 都做。补一条序号拆 run 的回归用例。"
+  },
+  {
+   "severity": "major",
+   "desc": "build 的写后门只跑 bh.check_drill，不跑 drill_tool 自己的 check 项：题源为空、序号连续、A1/A2 题干逐字一致、分组标签。所以新增一条题源为空的条目，build 退出码为 0。上面 N9 的重号也是因此漏过写后门。规格一·4 要求写后重开核对后置条件，任何一条校验失败就整批中止；build 退出码 0 会让主代理以为候选稿可以直接用。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final && TMPDIR=$PWD/tmp /usr/bin/python3 -B final_attack.py N8 → [BUG] N8：B3_52 第 1 组开头插 1 条 source='' 的正确项，build exit 0、out_exists=true、stderr 为空。随后对输出跑 check，exit 1，“题源为空”从 16 条变为 17 条，新增一条的 excerpt 为“1、\\t新增正确题肢0：国家治理需要法治保障。”。父稿原有的 16 条“题源为空”是 B3_52 书稿本身的缺口（例如第 36、38、124 条题源单元格为空），不是工具误报。",
+   "fix": "build 写临时稿后，对临时稿和父稿各跑一遍 cmd_check 里的补充检查（_check_seq_and_stems、题源为空、_check_group_labels），并入 F2/F0，用修正后的基线键比较是否有新增 FAIL。"
+  },
+  {
+   "severity": "minor",
+   "desc": "新增错误项的模板如果是“题干与纠正同段”的行（B2_230 第 869、870 组），生成的新行会丢掉模板里题干与纠正之间的 <w:br/>，并在序号后多加一个制表符，而该模板没有制表符。新行显示为“587、\\t…国家机关。纠正：…”，与同组原行“题干<换行>纠正”的样式不一致。build 退出码 0，bh 门也不报。fix3 回执说“生成结果单段内题干+红字错处+绿字纠正结构正确”，说法不准确。目前只有冻结的必修二有这种行，B3_52 没有，所以实际影响有限。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final && TMPDIR=$PWD/tmp /usr/bin/python3 -B final_attack.py N5 → exit 0；重编号的 234 行和原样复用的 586 行 C14N 与原稿相比 0 差异（这部分合格）。新行 run 结构：[[t],[tab],[t],[t],[t],[t]]，文字“587、\\t新增错误题肢1：政协是国家机关。纠正：政协不是国家机关。”，没有 br。同组模板行 587 的原 run 结构：[[t],[t],[t],[t],[br],[t]]（“587、”“我国在不断”“追求实现社会的高福利”“”<br/>“纠正：…”）。",
+   "fix": "_rebuild_stem_cell 走同段分支时，把模板里题干与纠正之间的分隔 run（w:br）一起复制过来；序号后的分隔符（“、\\t”或“、”）也按模板行的实际样式生成，不要固定加 tab。"
+  },
+  {
+   "severity": "minor",
+   "desc": "--admission-mode execution 只按题干哈希核对，不核题源。执行时某条保留条目的题源被改掉，仍然判 pass。cda.verify 的语义同时核 statement 和 source，decision 模式也核 source，两种模式的口径不一致。",
+   "evidence": "cd /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final && TMPDIR=$PWD/tmp /usr/bin/python3 -B final_attack.py N6 → [BUG] N6b：按决策删掉 2 条 exclude，同时把第 1 条保留条目的 source 改成“…（错源）”。build 之后跑 check --admission-mode execution，admission={'status':'pass','missing_retained':0,'still_excluded':0,'unexpected_extra':0}，没有准入类 FAIL。",
+   "fix": "execution 模式对 retain 的条目再比一次 source（norm 后），或把稳定 id 定义为 hash(norm(stem)+'|'+norm(source))。"
+  }
+ ],
+ "checked": [
+  "上一轮 major①（基线键是 (rule,None)）：复跑审查者 extra.py，F4（父稿已有“A2 错误行缺绿色纠正”，再新增一条同规则坏条目）exit 1，不留输出，stderr“写后单练门体检比父稿新增 1 条 FAIL…677、\\t新增错误题肢…”；对照组 F5 exit 1。条目级 FAIL 已修好（表级 FAIL 仍有漏洞，见 issue 1）。另加 N1b：新增条目与父稿缺纠正条目的前 45 字相同，exit 1，拦住了。",
+  "上一轮 major②（error_runs 重叠）：attack.py C4 → exit 2“error_runs 片段重叠”。N2 新增 5 种：两段完全相同 → 2；字符串片段加偏移片段重叠 → 2；首尾相接 → 0，红字为[是领,导力量]，文字不变；乱序但不重叠 → 0，按位置上色；空片段 → 0，文字不变。代码里有 _verify_built_stem 写后核对，不是只改了测试。",
+  "上一轮 major③（A1 未由 A2 派生）：attack.py J → build 0，A1 行已由 A2 重建（■ 和“错误”都没了）。N3：父稿 A1 同时有 4 种漂移（题干末字、判断栏填“正确”、题源加“（改）”、题干 run 标红），原位往返和第 1 组插入后走重编号两条路径都由 A2 派生，4 行 stem/blank/source 全对、无红绿，第 329 表 rebuilt=4。",
+  "上一轮 major④（重编号行被模板重建）：attack.py B → B3_52、B2_230 在第 1 组插 3 条，rows_differ_beyond_number=0。N4 用 exclusive C14N 逐行严格比对（只允许首个 w:t 的序号不同）：B3_52 插 3 条，1352 行 0 差异，renumbered=676；B2_230 插 1 条，1640 行 0 差异，含 190 行无制表符的 A2 行，renumbered=820。b2ins2.py：原“781、亚投行…”变为“782、亚投行…”，没有加制表符。N5：在同段纠正模板所在组（587 号）前插入错误项，exit 0（上一轮是 Abort 2）。",
+  "上一轮 major⑤（--admission）：attack.py H1–H4 全部符合预期。N6：父稿 decision 模式 status=pass、excluded_count=2、无准入类 FAIL；父稿 execution 模式 fail，still_excluded=2；按决策 build 后的候选稿用 execution 模式 pass；只删 1 条的候选稿 fail。真实 B3_52 的 duplicate_stable_ids=0。",
+  "上一轮 major⑥（paragraph/card build）：主代理已裁定延后，不计为问题。attack.py I：两种版式的拒绝信息都写明“功能未实现，不是配置缺失”，并列出所需字段。",
+  "上一轮 major⑦（--report 覆盖 items.json）：attack.py G 与 N7 共 14 例：check --report 指向 approved items → 3；build --report 等于 --items → 3；build --report 指向另一份 items → 3；extract --report 指向已存在的 items → 3；build --report 指向已有 check 报告（mode 不同）→ 3；extract --out 指向 check 报告 → 3；build --out 指向已存在的 docx → 3；build --out 等于 --docx → 3；真实 bixiu2 build → 3。以上被指向的文件 SHA 全部不变，被拒的用例都没有留下 docx 或 items 输出。check --report 覆盖自己的 check 报告被允许（exit 1，符合设计）。",
+  "上一轮 minor（守卫退出码）：guard_json 的 GuardError 一律为 3，上面各例都复现为 3。上一轮 minor（drill_tool_verify.py）：已移到 测试/审查者辅助脚本/，Skill scripts/ 下没有 *_verify.py。",
+  "受保护目录（只用预期被拒的命令）：extract --out 指向 00_必修三最新审查稿、check --report 指向 必修三…/协作/、extract --out 指向 Skill scripts/、build --report 指向项目根，全部 exit 3，事后四个路径都不存在；attack.py G 的 8 个守卫函数用例全部 refused(3)。",
+  "attack.py 全部 38 例复跑：DONE 0 bugs of 38（B3_52、B2_230 金标准往返 body C14N 完全相同）。日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/prev/attack.log",
+  "编写者测试 run_tests_drill_tool.py：TMPDIR=/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/suite_tmp，/usr/bin/python3 -B，exit 0，“全部用例：PASS”，用时 3:48，4 个真实输入 SHA/mtime 测试前后一致。日志 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/suite.log",
+  "测试前后快照（snap.py）：5 份真实 docx、drill_tool/batch_health/docx_lib/profile_lib/check_drill_admission、profiles/* 共 14 个文件的 SHA 和 mtime 不变；审阅入口（必修二、必修三）、必修三工作区、协作/、项目根、Skill scripts/、scripts/__pycache__、第52批构建目录、中央状态目录的文件列表前后一致（diff 为空）。scripts/__pycache__ 仍只有 3 个旧 cpython-312 pyc。",
+  "drill_tool.py 共 1200 行（≤1200），第 99 行设置 sys.dont_write_bytecode=True。未改工具代码和其他脚本，未运行 collab.py，未启动子代理。",
+  "旁注（书稿问题，非工具问题）：真实 B3_52 用 drill_tool check 有 18 条 FAIL，其中 16 条“题源为空”（第 36、38、39、41、48、76–79、124–126、142、155、168、169 条），2 条分组标签“【·三统一、过程总述与结果总述】”缺模块前缀。规格“可选对照正文 → CANDIDATE”未实现，已写入文件头“已知不做的事”，属可选项，不计为问题。",
+  "本复审所有产物都在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/ 下：final_attack.py、write_receipt.py、diag_n4.py、cases/、prev/（复制来的上一轮 attack.py、extra.py、b2ins*.py 及其 cases/）、tmp/、suite_tmp/。"
+ ],
+ "actual_model": "Claude Opus 5.5（终审独立复核）",
+ "files": [
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/final_attack.py",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/final_attack.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/final_attack_N4.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/final_attack_N9N5.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/prev/attack.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/prev/extra.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/suite.log",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/snap_before.json",
+  "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/drill_tool_final/snap_after.json"
+ ]
+}

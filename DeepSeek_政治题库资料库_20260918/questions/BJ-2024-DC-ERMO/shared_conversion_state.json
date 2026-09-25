@@ -1,0 +1,153 @@
+{
+  "exam_id": "BJ-2024-DC-ERMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-DC-ERMO-Q1": "c5888f7cd2a2b73b28a21287553b9195b5169fad2a8c3f5dee4c61ab9762edc9",
+    "BJ-2024-DC-ERMO-Q2": "0147b1d0c29c56afba48d829838cf5dc5cc057a927743a29523e7379a538f6f9",
+    "BJ-2024-DC-ERMO-Q3": "bbff4723a150c642292d9fa3b417d6ff38147d15e7c41abb616533f7b8892840",
+    "BJ-2024-DC-ERMO-Q4": "05c51fe779bd9be52f691f31c4b1eddf66dcf982a5a74d439d7d20d9ff699c00",
+    "BJ-2024-DC-ERMO-Q5": "b018b3f9d34f04d12d673c208b3daed4b96301e366f30184d36af6b6c74d31bf",
+    "BJ-2024-DC-ERMO-Q6": "360122fa6d1ae375aed1ca7f3abf21dc3684f1486ead864fcf6052db4ce48ec6",
+    "BJ-2024-DC-ERMO-Q7": "f3e3dd355c33cb2615b7d75a4aacd5ab6b8c6a2a8fb87a31f052f7364c3372bd",
+    "BJ-2024-DC-ERMO-Q8": "439a826ac15e55fb95dbf41f9c5baacfeccd2ce65c3f76fd0a65223ef600d317",
+    "BJ-2024-DC-ERMO-Q9": "5d8e3437c6ab6c7a2929e2243ba51425939306d6534cf64a923b9f8a5b0a6a9f",
+    "BJ-2024-DC-ERMO-Q10": "aee341a4260b6fcf3d420a8bd2c69e6db42b5659badb05efc9c827297fa31fa8",
+    "BJ-2024-DC-ERMO-Q11": "866eae51c10c9e072f26102e902bda8c26d90ccf48d5319c5f36bdb416476fdf",
+    "BJ-2024-DC-ERMO-Q12": "b6da002399c9587ca6d5de15ee8adf058eb29e858865913c464a5c3beee3d130",
+    "BJ-2024-DC-ERMO-Q13": "f023ae59139236f306686ed88969dc02ef3f16f8bddaf313eac7d9013b1b7c7e",
+    "BJ-2024-DC-ERMO-Q14": "53ead54fe35978df789d4961ae77c7f6ebfdcae846f0383ce160bd845993d449",
+    "BJ-2024-DC-ERMO-Q15": "b544eac4742be5ad949d9713c0df304c29745ac72e94957d24b8474c9955d7c5",
+    "BJ-2024-DC-ERMO-Q16": "bb0dfbcaf3edf3e20af51d7f9181cf0cf97c2d15bbc2da0a31a697ffef3efed9",
+    "BJ-2024-DC-ERMO-Q17": "8fb46e418bd6a4556dbec68257b4e47f12a1b949d4a8fe10a7c95d4ea4985221",
+    "BJ-2024-DC-ERMO-Q18": "44872089052d2fdc86af509e672b9bae1211e3e904248bda7b1d1a0a5c99114a",
+    "BJ-2024-DC-ERMO-Q19": "a39cfc840ba73d7f64476a7434ce8639a9effcab021c4abf48ba841655cf69cf",
+    "BJ-2024-DC-ERMO-Q20": "376b7d592933882b5450934618f7c8ee2277f59e8055d7b7c3413dd8ac086263",
+    "BJ-2024-DC-ERMO-Q21": "6990a98c1314b83a085b27872f1814f3d043110b5e52da43c3d5051bbf36aa9b"
+  },
+  "source_pages": {
+    "paper": 12,
+    "讲评_1": 11,
+    "讲评_2": 17,
+    "rubric": 1,
+    "rubric_slices_1": 0,
+    "rubric_slices_2": 6,
+    "rubric_slices_3": 0,
+    "rubric_slices_4": 0,
+    "rubric_slices_5": 0,
+    "rubric_slices_6": 0,
+    "rubric_slices_7": 0,
+    "rubric_slices_8": 0,
+    "rubric_slices_9": 0,
+    "rubric_slices_10": 0,
+    "rubric_slices_11": 9
+  },
+  "source_page_total": 56,
+  "source_roles": {
+    "paper": "Sda9fdcae666d",
+    "讲评_1": "S0699487fb810",
+    "讲评_2": "S5253381d5b61",
+    "rubric": "S8db78abe18de",
+    "rubric_slices_1": "S3fe06deac367",
+    "rubric_slices_2": "S896b0f378cbd",
+    "rubric_slices_3": "S47c34e3af056",
+    "rubric_slices_4": "S72fd64a3dddd",
+    "rubric_slices_5": "S4238b9f0bc92",
+    "rubric_slices_6": "S6c445538df98",
+    "rubric_slices_7": "Sd682ecb2695e",
+    "rubric_slices_8": "S5c18cbecb82d",
+    "rubric_slices_9": "S4c98484a2246",
+    "rubric_slices_10": "S9019906692e8",
+    "rubric_slices_11": "Sbdc183dc9541"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "独立参考答案文件：N/A_with_basis——已核来源清单及同卷目录未另行提供；卷内答案键、阅卷总结和讲评材料仍按各自原来源角色保留，不以其替代正式E1。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "STUDENT_LAYER",
+      "location": "SL002、SL003、SL004、SL005、SL011、SL012、SL014、SL015、SL016、SL017、SL020",
+      "partial_reading": "原图边界处的手写/裁切只保留可辨片段、可见批注/评分和不完整落位；逐图读法见sources/support_42_student_layer/student_layer.json及student_layer.md，原图保留。",
+      "affects_answering": false,
+      "round": "r1 independent B residual",
+      "basis": "B1复核认定为学生书写/裁切限制，不属于题面或评分原文；学生错误未用答案订正，也不影响作答。"
+    },
+    {
+      "qid": "Q18",
+      "location": "SL013：Q18(2)两条建议分隔、建议2主体/句末标点、建议3淡字依据",
+      "partial_reading": "局部可读为“难以”“利用”；主体标签、标点和淡字依据保留不确定，见原图assets/student_layer/images/SL013__q18_2_review__image2.jpeg。",
+      "affects_answering": false,
+      "round": "r1 independent B residual",
+      "basis": "B1同意有界残留；不得用参考答案修正学生原答。"
+    },
+    {
+      "qid": "Q21",
+      "location": "SL022：答题点1–4及第3/4点间黑色插入",
+      "partial_reading": "878×494屏幕原图仅支持已记录片段；插入处单列不确定内容，原图assets/student_layer/images/SL022__q21_review__image2.jpeg保留。",
+      "affects_answering": false,
+      "round": "r1 independent B residual",
+      "basis": "B1认定为学生作答图像边界，不影响标准题面与评分来源。"
+    },
+    {
+      "qid": "README",
+      "location": "选择题讲评PPTX幻灯片8真值表第3/第5列、幻灯片4海报展签小字",
+      "partial_reading": "两处微小/遮挡文字没有推补；逐页转写与原图链接保留在讲评材料章节及assets/lecture_sources/。",
+      "affects_answering": false,
+      "round": "r1 independent B residual",
+      "basis": "B1确认属于非评分讲评教学材料，不承载本卷作答或评分规则。"
+    },
+    {
+      "qid": "Q18",
+      "location": "q18_2_review.docx页眉/日期/组长字段及两个空答题类别标签",
+      "partial_reading": "B2 minor指出这些来源元数据与空标签未抄入Q18正文；原始DOCX随完整sources包保留，SHA及位置见Q18来源记录。",
+      "affects_answering": false,
+      "round": "r2 independent B minor",
+      "basis": "作为非阻断的来源元数据残留记录；不改变题面、评分点或学生作答，原件可回溯。"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "r3"
+    ],
+    "independent": [
+      {
+        "path": "BJ-2024-DC-ERMO/r1_verify/verification.json",
+        "sha256": "20d6587902d44cc71d3b1e3c6e535174e44a8b2823754efd0dd0c73d65e8fdb7",
+        "overall": "fail_M1_later_closed"
+      },
+      {
+        "path": "BJ-2024-DC-ERMO/r2_verify/verification.json",
+        "sha256": "5e26d3193f37f4b7e7ae7101a28eb3942e948026187ebddfc2d968c4dba56b7b",
+        "overall": "fail_M2_later_closed"
+      },
+      {
+        "path": "BJ-2024-DC-ERMO/r3_verify/verification.json",
+        "sha256": "4281b229a42fa1e52ac7c01651fa176049fbcff00a538ae669dcd6a1077bdced",
+        "overall": "pass"
+      }
+    ],
+    "merged_delta": "BJ-2024-DC-ERMO/r3_full/delta.json",
+    "merge_receipt": "BJ-2024-DC-ERMO/dc_ermo_r3_full_materialization_merge.json",
+    "root_visual_review": "主控亲看原卷P04低空经济产业链三栏图及Q12转写：上游/中游/下游、项目符号、两条右向实心箭头、图下题干/四条陈述/横向选项关系相符；另亲看原始q16_scoring.pptx slide4并核对MD的E1阅卷细则层级。"
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-dc-ermo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T08:25:02.172256+00:00"
+    },
+    {
+      "spec_id": "bj-2024-dc-ermo-state2",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T08:29:01.156384+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T08:30:10.398788+00:00"
+}

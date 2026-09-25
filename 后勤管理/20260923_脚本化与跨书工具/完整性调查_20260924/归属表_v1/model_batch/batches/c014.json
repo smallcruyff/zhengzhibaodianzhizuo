@@ -1,0 +1,392 @@
+{
+ "batch_id": "c014",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "choice",
+ "n_units": 12,
+ "units": [
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q4",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n4．改良利用好适宜种植粮食的5亿亩盐碱地，对维护国家粮食安全、端牢中国饭碗具有重要\n战略保障意义。为克服“洗土法”需要消耗大量水资源的弊端，某科研团队在盐碱地上种\n植盐角草等优质“吃盐”植物，3年累计降低盐碱地85%到90%的盐分，而消耗的水资源\n只有“洗土法”的15%。选育“吃盐”植物驱盐化碱\nA．体现出人们根据事物的属性，在草、盐、地、粮之间建立新的联系\nB．是遵循适度原则、创造条件促进盐碱地向粮田转变的科学方法\nC．做到了把严谨的科学态度和改良客观规律相结合，从而改造了自然\nD．表明正确的自然观在改造自然的生产实践中发挥了决定性作用\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q4`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：4；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q4.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`7fa53956d8042eb2e029597ee34ace58588fc1c8e9988073c2cf0936ff740a50`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 2 页整页图：`assets/original_pages/page-2.png`\n\n### [PPTX 第 12 张（原生文本）]\n4.改良利用好适宜种植粮食的5亿亩盐碱地，对维护国家粮食安全、端牢中国饭碗具有重要战略保障意义。为克服“洗土法”需要消耗大量水资源的弊端，某科研团队在盐碱地上种植盐角草等优质“吃盐”植物，3年累计降低盐碱地85％到90％的盐分,而消耗的水资源只有“洗土法”的15%。选育“吃盐”植物驱盐化碱\nA.体现出人们根据事物的属性，在草、盐、地、粮之间建立新的联系\nB.是遵循适度原则、创造条件促进盐碱地向粮田转变的科学方法\nC.做到了把严谨的科学态度和改良客观规律相结合，从而改造了自然\nD.表明正确的自然观在改造自然的生产实践中发挥了决定性作用\n\nA\n\n本题主要考查学生对材料主旨的概括、理解能力，\n选择最能体现选育“吃盐”植物驱盐化碱的哲学道理的选项。\n\n### [PPTX 第 13 张（原生文本）]\nA\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q4`\n- `parent_sha256_current`: `7fa53956d8042eb2e029597ee34ace58588fc1c8e9988073c2cf0936ff740a50`\n- `new_question`: `False`\n- `canonical_slides`: `['S12']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[2]`；题级唯一幻灯片绑定：`['S12']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-12.png']\n- 清晰评分页：['assets/renders/scoring/page-12.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q4.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.体现出人们根据事物的属性，在草、盐、地、粮之间建立新的联系\nB.是遵循适度原则、创造条件促进盐碱地向粮田转变的科学方法\nC.做到了把严谨的科学态度和改良客观规律相结合，从而改造了自然\nD.表明正确的自然观在改造自然的生产实践中发挥了决定性作用",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**A**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q5",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "5",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n5．在京津冀协同发展战略实施十周年来临之际，北京城市副中心三大文化建筑———北京艺\n术中心、北京城市图书馆、北京大运河博物馆，于2023年12月27日起对公众开放。\n北京艺术中心标志 北京城市图书馆标志 北京大运河博物馆标志\n三大文化建筑的开放\n①是传承北京历史文脉、落实首都战略定位的重要举措和生动实践\n②融通了各种资源，旨在实现城市现代文明与悠久运河文化的碰撞\n③有利于让文化发展成果更好地惠及人民，满足大众精神文化需求\n④打造了全面展示中华传统文化、服务京津冀协同发展的文化阵地\nA．①③\nB．①④\nC．②③\nD．②④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q5`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：5；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q5.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`61254ab1379b44a8b950bc02da1742e563f2b522a09bdf92b0cab02995674b80`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 2 页整页图：`assets/original_pages/page-2.png`\n- 题级裁切资产：`assets/source_crops/Q05_logos.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n原卷图像为三个并列标志，题下注明“北京艺术中心标志”“北京城市图书馆标志”“北京大运河博物馆标志”；标志图形本身保留在原卷页图/裁切图中。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q5`\n- `parent_sha256_current`: `61254ab1379b44a8b950bc02da1742e563f2b522a09bdf92b0cab02995674b80`\n- `new_question`: `False`\n- `canonical_slides`: `['S13']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[2]`；题级唯一幻灯片绑定：`['S13']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-13.png']\n- 清晰评分页：['assets/renders/scoring/page-13.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q5.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S13/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": "A．①③\nB．①④\nC．②③\nD．②④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**A**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]\n\n[讲评 PPTX 未提供该题独立参考示例；以原卷和 DOCX 答案键/文字为准。]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q6",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n6．要想准确鲜明地表达思想，思维必须合乎逻辑。下列表达中，符合逻辑规则的是\nA．财产权可分为物权、债权、知识产权、著作权、商标权\nB．我不赞成所有人都有崇高的理想，也不赞成所有人都没有崇高的理想\nC．所有的科技人员都是懂计算机的，并且有些不懂计算机的是科技人员\nD．我无法一天读完老舍的作品，《茶馆》是老舍的作品，因此我无法一天读完《茶馆》\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q6`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：6；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q6.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`0a267b43102136809f93c1dfb31b4472ecd6aff7ae48b7304cd868ede6f174a7`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 2 页整页图：`assets/original_pages/page-2.png`\n\n### [PPTX 第 14 张（原生文本）]\n6.要想准确鲜明地表达思想，思维必须合乎逻辑。下列表达中，符合逻辑规则的是\nA.财产权可分为物权、债权、知识产权、著作权、商标权（越级划分）\nB.我不赞成所有人都有崇高的理想，也不赞成所有人都没有崇高的理想（排中律）\nC.所有的科技人员都是懂计算机的，并且有些不懂计算机的是科技人员（矛盾律）\nD.我无法一天读完老舍的作品，《茶馆》是老舍的作品，因此我无法一天读完《茶馆》（四概念）\n\nB\n\n### [PPTX 第 15 张（原生文本）]\nC\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q6`\n- `parent_sha256_current`: `0a267b43102136809f93c1dfb31b4472ecd6aff7ae48b7304cd868ede6f174a7`\n- `new_question`: `False`\n- `canonical_slides`: `['S14']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[2]`；题级唯一幻灯片绑定：`['S14']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-14.png']\n- 清晰评分页：['assets/renders/scoring/page-14.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q6.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.财产权可分为物权、债权、知识产权、著作权、商标权（越级划分）\nB.我不赞成所有人都有崇高的理想，也不赞成所有人都没有崇高的理想（排中律）\nC.所有的科技人员都是懂计算机的，并且有些不懂计算机的是科技人员（矛盾律）\nD.我无法一天读完老舍的作品，《茶馆》是老舍的作品，因此我无法一天读完《茶馆》（四概念）",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**B**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q8",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "8",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n8．随着数字技术的迅猛发展，网络预约、线上购票已深入人们生活的方方面面。但看似智\n能简便的流程，却是部分人群的“数字鸿沟”。近日，文化和旅游部有关负责人表示，将推\n动旅游景区保留人工窗口。保留人工窗口的做法\n①是建设保障权利、和谐有序的社会主义法治社会的题中之义\n②是通过在服务便利化上做减法，让数字便利关照更多人的生活\n③不仅仅适用于文化和旅游领域，而且也值得其他领域借鉴\n④体现了政府部门“致广大而尽精微”，践行以人民为中心的思想\nA．①②\nB．①③\nC．②④\nD．③④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q8`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：8；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q8.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`f3da84b614b90416f5fcfe5be5b7e588da102e88d6f5fb7844f2672c609b07af`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 3 页整页图：`assets/original_pages/page-3.png`\n\n### [PPTX 第 16 张（原生文本）]\n8.随着数字技术的迅猛发展，网络预约、线上购票已深入人们生活的方方面面。但看似智能简便的流程，却是部分人群的“数字鸿沟”。近日，文化和旅游部有关负责人表示，将推动旅游景区保留人工窗口。保留人工窗口的做法\n①是建设保障权利、和谐有序的社会主义法治社会的题中之义（不可或缺的关键、核心、目的）\n②是通过在服务便利化上做减法，让数字便利关照更多人的生活\n③不仅适用于文化和旅游领域，而且也值得其他领域借鉴\n④体现了政府部门“致广大而尽精微”，践行以人民为中心的思想\nA.①②\t    B.①③\t    C.②④\t    D.③④\n\nD\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q8`\n- `parent_sha256_current`: `f3da84b614b90416f5fcfe5be5b7e588da102e88d6f5fb7844f2672c609b07af`\n- `new_question`: `False`\n- `canonical_slides`: `['S16']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[3]`；题级唯一幻灯片绑定：`['S16']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-16.png']\n- 清晰评分页：['assets/renders/scoring/page-16.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q8.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.①②\t    B.①③\t    C.②④\t    D.③④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**D**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q9",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "9",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n9．几名中学生针对许多小区存在的闲置车辆长期占用车位导致车位紧张的问题，在模拟政\n协活动中提出解决该问题的提案。市政协委员关注到了这一模拟提案，指导同学们务实\n调查、充实内容、完善提案。在此基础上，市政协委员向市政协会议提交了相关正式提\n案。从“模拟提案”到“正式提案”的探索\n①需要针对所研究的问题制定具体政策，协调多方利益\n②有益于提高学生引领社会治理、参与政治生活的能力\n③需要坚持系统观念，有序地完成调查研究和思考任务\n④有益于增进学生对于中国特色社会主义制度的特点和优势的理解\nA．①②\nB．①④\nC．②③\nD．③④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q9`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：9；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q9.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`04657326bb2330b12eb6b1f49ecdbf1a67374c8461dc1433e15ce4043b7f9965`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 3 页整页图：`assets/original_pages/page-3.png`\n\n### [PPTX 第 17 张（原生文本）]\n9.几名中学生针对许多小区存在闲置车辆长期占用车位，导致小区车位紧张的问题，在模拟政协活动中提出解决该问题的提案。市政协委员关注到了这一模拟提案，指导同学们务实调查、充实内容、完善提案。在此基础上，市政协委员向市政协会议提交了相关正式提案。从“模拟提案”到“正式提案”的探索\n①需要针对所研究的问题制定具体政策，协调多方利益\n②有益于提高学生引领社会治理、参与政治生活的能力\n③需要坚持系统观念，有序地完成调查研究和思考任务\n④有益于增进学生对于中国特色社会主义制度的特点和优势的理解\nA.①②\t    B.①④\t    C.②③\t    D.③④\n\nD\n\n### [PPTX 第 18 张（原生文本）]\nC\n\n本题主要考查学生对案情材料信息的充分关照、解读的能力。\n\n限制民事行为能力人，实施民事法律行为由其法定代理人代理或者经其法定代理人同意、追认；\n但是，可以独立实施纯获利益的民事法律行为或者与其智力、精神健康状况相适应的民事法律行为。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q9`\n- `parent_sha256_current`: `04657326bb2330b12eb6b1f49ecdbf1a67374c8461dc1433e15ce4043b7f9965`\n- `new_question`: `False`\n- `canonical_slides`: `['S17']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[3]`；题级唯一幻灯片绑定：`['S17']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-17.png']\n- 清晰评分页：['assets/renders/scoring/page-17.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q9.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.①②\t    B.①④\t    C.②③\t    D.③④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**D**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q10",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "10",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n10．\n【案情介绍】\n刘某到某饭店就餐。就餐期间，刘某看见吧台有一个水壶，水壶样式与饭店提\n供茶水的水壶完全一样，但未注意到壶上模糊的提示标志。刘某将该水壶带回饭\n桌，将水壶中在外观上与普通饮用水无任何差异的透明液体倒入水杯之中并饮下一\n口，喝下后很快感觉身体不适，经询问才知该水壶中的液体是燃料酒精。此后，刘某\n将饭店诉至法院，法院予以登记立案。\n下列对本案分析正确的是\n①该饭店的过错导致刘某的健康权受到侵害，应当承担全部侵权责任\n②作为完全民事行为能力人，刘某存在疏于观察的过错，故应承担相应责任\n③该饭店摆放易燃物不当，未尽到合理的安全保障义务，应对其过错承担责任\n④该饭店作为经营场所，应该就刘某的健康权受到伤害承担无过错侵权责任\nA．①③\nB．①④\nC．②③\nD．②④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q10`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：10；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q10.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`None`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 3 页整页图：`assets/original_pages/page-3.png`\n- 题级裁切资产：`assets/source_crops/Q10_case_box.png`（整页图仍为最高视觉依据）。\n\n### [PPTX 第 18 张（原生文本）]\nC\n\n本题主要考查学生对案情材料信息的充分关照、解读的能力。\n\n限制民事行为能力人，实施民事法律行为由其法定代理人代理或者经其法定代理人同意、追认；\n但是，可以独立实施纯获利益的民事法律行为或者与其智力、精神健康状况相适应的民事法律行为。\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前题库缺少父 Markdown 文件。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q10`\n- `parent_sha256_current`: `None`\n- `new_question`: `True`\n- `canonical_slides`: `['S18']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[3]`；题级唯一幻灯片绑定：`['S18']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-18.png']\n- 清晰评分页：['assets/renders/scoring/page-18.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q10.md`；Q10 无当前共享父稿，保留 `parent_sha256=null` 的 new-question 候选边界。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S18/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": "A．①③\nB．①④\nC．②③\nD．②④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**C**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q11",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "11",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n11．所有权是权利人对自己的不动产或者动产，依法享有的占有、使用、收益和处分的权利。\n下列案例中，涉及所有权归属争议的是\n①陈某以极低价格购得一台全新笔记本电脑，不久该电脑被警察作为赃物扣押\n②甲公司在围墙上安装了三盏照明设备，对15米外王某的住宅构成光污染侵害\n③李某承包了本村两亩土地，其去世后，村集体收回了土地，李某之子提出异议\n④丁某购买王某的一处房产并支付80%房款，几天后王某将该房产过户给了刘某\nA．①②\nB．①④\nC．②③\nD．③④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q11`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：11；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q11.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`3aa3d75ae9f567a4c70cde87a8ace3fc703ac9f8bcc4f6f800c32a2ac7300bc6`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 3 页整页图：`assets/original_pages/page-3.png`\n\n### [PPTX 第 19 张（原生文本）]\n11.所有权是权利人对自己的不动产或者动产,依法享有的占有、使用、收益和处分的权利。下列案例中，涉及所有权归属争议的是\n①陈某以极低价格购得一台全新笔记本电脑，不久该电脑被警察作为赃物扣押\n②甲公司在围墙上安装了三盏照明设备,对15米外王某的住宅构成光污染侵害\n③李某承包了本村两亩土地,其去世后,村集体收回了土地,李某之子提出异议\n④丁某购买王某的一处房产并支付80%房款，几天后王某将该房产过户给了刘某 \nA．①②             B．①④                  C．②③              D．③④\n\nB\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q11`\n- `parent_sha256_current`: `3aa3d75ae9f567a4c70cde87a8ace3fc703ac9f8bcc4f6f800c32a2ac7300bc6`\n- `new_question`: `False`\n- `canonical_slides`: `['S19', 'S20', 'S21']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[3]`；题级唯一幻灯片绑定：`['S19', 'S20', 'S21']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-19.png', 'assets/renders/lecture/page-20.png', 'assets/renders/lecture/page-21.png']\n- 清晰评分页：['assets/renders/scoring/page-19.png', 'assets/renders/scoring/page-20.png', 'assets/renders/scoring/page-21.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q11.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S20/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": "A．①②             B．①④                  C．②③              D．③④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**B**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q12",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "12",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n12．一名12周岁的学生，在老师的指导下设计了一款垃圾收纳装置，获得了国家知识产权局\n授权的“实用新型专利证书”。这一专利\nA．只要保密得当，就可以一直受到专利法的保护\nB．与实用技术无关，仅涉及产品设计的美观效果\nC．保护期满后，则进入公共领域，任何人都可以免费使用\nD．只要经该学生授权，厂家就可运用该专利生产产品并销售\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q12`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：12；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q12.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`63b900b52f8d5cdd22f4af5635a2ac12a61a7c6755ae7cc5d13f9eaca1e86d68`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 4 页整页图：`assets/original_pages/page-4.png`\n\n### [PPTX 第 22 张（原生文本）]\n12.一名12周岁的学生,在老师的指导下设计了一款垃圾收纳装置，获得了国家知识产权局授权的“实用新型专利证书”。这一专利\nA.只要保密得当，就可以一直受到专利法的保护\nB.与实用技术无关，仅涉及产品设计的美观效果\nC.保护期满后，则进入公共领域，任何人都可以免费使用\nD.只要经该学生授权，厂家就可运用该专利生产产品并销售\n\nC\n\n### [PPTX 第 23 张（原生文本）]\nD\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q12`\n- `parent_sha256_current`: `63b900b52f8d5cdd22f4af5635a2ac12a61a7c6755ae7cc5d13f9eaca1e86d68`\n- `new_question`: `False`\n- `canonical_slides`: `['S22']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[4]`；题级唯一幻灯片绑定：`['S22']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-22.png']\n- 清晰评分页：['assets/renders/scoring/page-22.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q12.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.只要保密得当，就可以一直受到专利法的保护\nB.与实用技术无关，仅涉及产品设计的美观效果\nC.保护期满后，则进入公共领域，任何人都可以免费使用\nD.只要经该学生授权，厂家就可运用该专利生产产品并销售",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**C**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q13",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "13",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n13．从2024年开始，国家拟连续几年发行超长期特别\n国债，专项用于国家重大战略实施和重点领域安\n全能力建设，重点支持科技创新、城乡融合发展、\n区域协调发展、粮食能源安全、人口高质量发展等\n领域建设。超长期特别国债既利当前，又惠长远，\n其对国民经济影响的路径正确的是\nA．政府投资规模扩大→重大战略投入增长→夯实能源安全基石→提高经济增长速度\nB．政府财政支出增加→城乡融合进程加快→实现公共服务均等→推动经济回升向好\nC．政府扩大债券规模→居民投资渠道扩大→居民劳动收入增长→促进投资消费增长\nD．政府财政资金增加→科研经费支出增长→提升科技创新能力→增强经济运行效能\n\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q13`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：13；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q13.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`f6a04475972a5d4b1a74e8bd722e57d8fa972ecbe766c9818512658d27492355`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 4 页整页图：`assets/original_pages/page-4.png`\n- 题级裁切资产：`assets/source_crops/Q13_bond_definition_box.png`（整页图仍为最高视觉依据）。\n\n### [视觉对象文字/结构转录（不替代原图）]\n图框文字：国债是国家为了筹集财政资金而发行的一种政府债券。“超长期”指的是债券的发行期限在10年以上。“特别”指的是为特定目标发行的、具有明确用途。\n\n### [PPTX 第 23 张（原生文本）]\nD\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q13`\n- `parent_sha256_current`: `f6a04475972a5d4b1a74e8bd722e57d8fa972ecbe766c9818512658d27492355`\n- `new_question`: `False`\n- `canonical_slides`: `['S23']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[4]`；题级唯一幻灯片绑定：`['S23']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-23.png']\n- 清晰评分页：['assets/renders/scoring/page-23.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q13.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。\n- 逐嵌图对象机器转写：`sources/transcripts/embedded_visual_transcriptions.json#/slide_objects/S23/objects/0`；对象清单：`sources/transcripts/visual_object_inventory.json`。\n- 状态 `manually_transcribed_and_visually_verified`：文字、框线、箭头方向、分组/拓扑和原版差异均保留，不将无箭头图形伪造为流程。",
+   "options_text": "A．政府投资规模扩大→重大战略投入增长→夯实能源安全基石→提高经济增长速度\nB．政府财政支出增加→城乡融合进程加快→实现公共服务均等→推动经济回升向好\nC．政府扩大债券规模→居民投资渠道扩大→居民劳动收入增长→促进投资消费增长\nD．政府财政资金增加→科研经费支出增长→提升科技创新能力→增强经济运行效能",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**D**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q14",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "14",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n14．制度型开放是指在经济发展和对外开放的过程中，不断对标国际通行规则，进而实现制\n度创新的对外开放战略。从传统的商品、要素、服务的流动型开放转变为制度型开放，\n从制度的被动接受者转变为主动供给者，中国对外开放的水平不断提高。我国稳步扩\n大规则、规制、管理、标准等制度型开放\n①有利于营造市场化、法治化、国际化的一流营商环境\n②是以开放促改革的需要，也是深度融入全球化的需要\n③需要修改与现有国际贸易规则相抵触的国内法律法规\n④为形成多元稳定的经贸关系提供了完善的体制机制保障\nA．①②\nB．①③\nC．②④\nD．③④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q14`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：14；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q14.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`85e2e742b4aa3901489f1856d2a3138728eae7613cff9b1a99e8117509ff4f79`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 4 页整页图：`assets/original_pages/page-4.png`\n\n### [PPTX 第 24 张（原生文本）]\n14.制度型开放是指在经济发展和对外开放的过程中，不断对标国际通行规则，进而实现制度创新的对外开放战略。从传统的商品、要素、服务的流动型开放转变为制度型开放，从制度的被动接受者转变为主动供给者，中国对外开放的水平不断提高。我国稳步扩大规则、规制、管理、标准等制度型开放\n①有利于营造市场化、法治化、国际化的一流营商环境\n②是以开放促改革的需要，也是深度融入全球化的需要\n③需要修改与现有国际贸易规则相抵触的国内法律法规\n④为形成多元稳定的经贸关系提供了完善的体制机制保障\nA.①②            B.①③           C.②④             D.③④\n\nA\n\n突出考查教材的新增点、变化点\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q14`\n- `parent_sha256_current`: `85e2e742b4aa3901489f1856d2a3138728eae7613cff9b1a99e8117509ff4f79`\n- `new_question`: `False`\n- `canonical_slides`: `['S24']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[4]`；题级唯一幻灯片绑定：`['S24']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-24.png']\n- 清晰评分页：['assets/renders/scoring/page-24.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q14.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.①②            B.①③           C.②④             D.③④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**A**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-CY-YIMO-Q15",
+   "exam_id": "BJ-2024-CY-YIMO",
+   "num": "15",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷完整题面（以原卷 PDF 和页面图为准）]\n\n15．在金砖国家、APEC、上合组织、G20等多边外交舞台上，中国致力于解决短期的热点问题\n和完善长期的全球治理，为促进世界和平与合作贡献负责任的大国力量。新时代中国\n特色大国外交要更有作为，必须做到\n①坚持原则，牢牢占据国际道义制高点，获得全球各国支持\n②坚持外交大权在党中央，增强定力、把握大势、掌握主动\n③弘扬独立自主精神，捍卫弱国利益和尊严，体现大国担当\n④守正创新，坚守外交优良传统，推动外交理论和实践创新\nA．①②\nB．①③\nC．②④\nD．③④\n> 原卷图形/版面不能由文字层替代；见下方页面图和题级裁切资产。\n\n### [身份与父文件]\n\n- question_id: `BJ-2024-CY-YIMO-Q15`\n- exam_id: `BJ-2024-CY-YIMO`\n- 题号：15；题型：选择题；原卷分值：3分\n- 父文件：`/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q15.md`\n- 历史状态已停用（原记录：父文件 SHA-256（候选生成前）：`df0639d42c1d123ba5d92b1d17a001286f84f67fe262884ff1b88365afb9745d`）；当前状态以 conversion_manifest.json 与验收回执为准。\n- 转换状态：以本卷 `shared_conversion_state.json` 与转换主清单为准（历史候选标签：`controller_ready_candidate_pending_merge`，已停用）\n\n### [原卷页面、图表与结构]\n\n- 原卷第 4 页整页图：`assets/original_pages/page-4.png`\n\n### [PPTX 第 25 张（原生文本）]\n15.在金砖国家、APEC、上合组织、G20等多边外交舞台上，中国致力于解决短期的热点问题和完善长期的全球治理，为促进世界和平与合作贡献了负责任的大国力量。新时代中国特色大国外交要更有作为，必须做到\n①坚持原则，牢牢占据国际道义制高点，获得全球各国支持（团结争取世界大多数）\n②坚持外交大权在党中央，增强定力、把握大势、掌握主动\n③弘扬独立自主精神，捍卫弱国利益和尊严，体现大国担当（捍卫国家利益和民族尊严）\n④守正创新，坚守外交优良传统，推动外交理论和实践创新\nA.①②              B.①③          C.②④              D.③④\n\nC\n\n12月中央外事工作会议\n\n### [当前父 MD 缺陷（只读观察）]\n\n- 当前 MD 未形成可直接采用的原卷逐字题面；部分题只保留 OCR/讲评来源块。\n- 当前 MD 的分值/小问元数据缺失或不完整。\n- 当前 MD 未明确记录学生原答、批注与实得分层的缺源状态。\n- 选择题答案与题面/答案键未在同一原卷证据层闭合。\n\n### [审计限制]\n\n- 图内文字/框线/箭头以整页原卷 PNG 为最高视觉依据；文字转录不能替代原图。\n- 形式评分层不将普通答案、讲评模型答案或 DOCX“参考答案”升级为正式细则；未定位的题保持可恢复未决状态。\n\n### [35 修复版整合记录（未执行 canonical merge）]\n\n- `integration_status`: `controller_ready_candidate_pending_independent_review`\n- `question_id`: `BJ-2024-CY-YIMO-Q15`\n- `parent_sha256_current`: `df0639d42c1d123ba5d92b1d17a001286f84f67fe262884ff1b88365afb9745d`\n- `new_question`: `False`\n- `canonical_slides`: `['S25']`；`formal_scoring_slides`: `[]`\n- 原卷页：`[4]`；题级唯一幻灯片绑定：`['S25']`。\n- 50/50 PPTX 清晰页、嵌图媒体和原生 shape/机器 OCR 转写已在 `sources/transcripts/` 闭合；答案 DOCX 全文、表格/等级表与3页清晰渲染已保留。\n- 清晰讲评页：['assets/renders/lecture/page-25.png']\n- 清晰评分页：['assets/renders/scoring/page-25.png']\n- 当前父稿绑定：`parent_snapshot/BJ-2024-CY-YIMO-Q15.md`；SHA 以本包 `materialization.json` 为准。\n- 答案 DOCX canonical fresh render：3页；页码变化边界只在 `sources/support/readable_render_check.json` 登记，不回写旧回执。\n- E1 边界未升格：Q1–Q15 与 Q18（2）保持无 E1；学生层为 `N/A_with_basis`。",
+   "options_text": "A.①②              B.①③          C.②④              D.③④",
+   "answer_key": {
+    "text": "### [参考答案/参考作答（E3）]\n\n答案键：**C**（E3；来源：补充材料 DOCX Table 0，渲染第1页；讲评 PPTX 中可见题的答案另见对应幻灯片）。\n\n### [讲评 PPTX 相关页（E3/教研示例层）]",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料（E1）]\n\n- E1 状态：`not_located_in_provided_scoring_source`。\n- 评分 PPTX 原生文字与页图均保留；PPTX 与“讲评”路径为同 SHA 的物理重复源。\n未在所给 50 张 PPTX 的该题页定位到题级正式评分槽；讲评页的答案/解析和 DOCX 答案键仅作 E3，不能据此拆正式分值、评分槽或失分条件。\n\n后续如有同卷正式阅卷细则，应按题号回源；本候选不把当前缺证写成“没有细则”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=E3 | detail=逐题已匹配参考答案",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收整题",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-DC-ERMO-Q1",
+   "exam_id": "BJ-2024-DC-ERMO",
+   "num": "1",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [来源角色：ORIGINAL_QUESTION（原卷视觉回源）]\n- source_pdf: [paper.pdf](sources/legacy_30_sources/originals/paper.pdf)；physical_page=P01；printed_score=3\n- page_asset: [P01.png](assets/visual_support/q1_q15/pages/P01.png)\n- crop_asset: [Q01.png](assets/visual_support/q1_q15/crops/Q01.png)\n- crop_sha256: `43b27270299533950d639335b4eaa3f5453918c6f9bcae3e27db9d9c4ce2c427`\n- source_role_boundary: 仅用于题面；不含答案或正式评分推断。\n\n### [原卷逐项转写]\n\n### [figure_caption]\n北京市“大思政课”实践教学基地数字地图\n\n### [figure_text]\n- **quote_box**: “大思政课”我们要善用之，一定要跟现实结合起来。思政课不仅应该在课堂上讲，也应该在社会生活中来讲。把思政小课堂同社会大课堂结合起来。——习近平\n- **slogan**:\n  - 网页跳转，历史文化跃然眼前\n  - 指尖轻点，思政奥妙纷至沓来\n- **map_labels**:\n  - 延庆区\n  - 怀柔区\n  - 密云区\n  - 昌平区\n  - 平谷区\n  - 海淀区\n  - 顺义区\n  - 门头沟区\n  - 石景山区\n  - 东城区\n  - 西城区\n  - 朝阳区\n  - 丰台区\n  - 通州区\n  - 房山区\n  - 大兴区\n- **feature_labels**:\n  - 实践教学基地\n  - 生动实践\n  - 数字展馆\n  - 虚拟展馆\n  - 北京中轴线\n  - 北大红楼\n  - 中国抗日战争纪念馆\n  - 香山革命纪念地\n  - 八达岭长城\n- **legend_and_counts**:\n  - 16区\n  - 200余个\n  - 全市\n  - 实践教学基地\n\n### [material]\n前门议事厅、12345市民热线服务中心、北京国子监博物馆、北大红楼……目前，在北京市“大思政课”实践教学基地数字地图上，分布于全市16区的200余个实践教学基地已全部点亮。这一举措\n\n### [statements]\n- ①联通过去与未来，丰富首都文化内涵\n- ②实现数字赋能传统教育，提供差异化公共文化服务\n- ③激活京华大地鲜活课堂，为“大思政课”注入源头活水\n- ④强化实践资源供给，启智润心，引领学生成长与时代发展同频共振\n\n### [options]\n- **A**: ①②\n- **B**: ①③\n- **C**: ②④\n- **D**: ③④\n\n### [图表/框线/拓扑结构]\n- 题号在图框左上外侧。\n- 题面主体为虚线外框；左上为圆角引用框；右上为两行宣传语。\n- 中央为北京市地图，标出16区和多个定位图钉；四周有实践教学基地/展馆/文化场所的引线气泡与装饰性图片。\n- 底部有16区、200余个两个数量标签及全市/实践教学基地两个图例按钮；无坐标轴。\n\n### [视觉修正/未决]\n- 左侧书封、网页缩略图及右下文化图片中的微小装饰文字在原始栅格图中不宜逐字采用；已保留原图裁切，题干有效标签已逐字回源。\n- \n- 以本对象 transcription 全量替换题面；score=3；插入/保留 Q01_map_material 资产；答案字段不动。\n\n### [整合护栏]\n- 不修正答案、不把图中装饰微字臆补为题面、不扁平化地图/虚线框/图表/箭头结构。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [来源角色：ANSWER_KEY（保留的旧答案源）]\n- 该答案字段来自 30 包评分扫描视觉答案键，不来自 32 视觉支持；只作为答案角色保留，不升级为题面或评分槽。\n- answer_key: `D`\n- scoring_status: `choice_answer_key_only`; 每题分值由原卷首部统一确定为3，未由答案键拆分评分槽。",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [来源角色：ANSWER_KEY（保留的旧答案源）]\n- 该答案字段来自 30 包评分扫描视觉答案键，不来自 32 视觉支持；只作为答案角色保留，不升级为题面或评分槽。\n- answer_key: `D`\n- scoring_status: `choice_answer_key_only`; 每题分值由原卷首部统一确定为3，未由答案键拆分评分槽。",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  }
+ ]
+}

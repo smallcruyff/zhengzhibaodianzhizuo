@@ -1,0 +1,7 @@
+﻿unit_id,qid,canonical_qid,exam_id_canonical,num,type,subq,grain,归属_MI,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2024-DC-ERMO-Q15,BJ-2024-DC-ERMO-Q15,BJ-2024-DC-ERMO-Q15,BJ-2024-DC-ERMO,15,选择题,,整题,COLLECTED,MI,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v3
+BJ-2025-FT-ERMO-Q4,BJ-2025-FT-ERMO-Q4,BJ-2025-FT-ERMO-Q4,BJ-2025-FT-ERMO,4,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v3
+BJ-2026-DC-ERMO-Q2,BJ-2026-DC-ERMO-Q2,BJ-2026-DC-ERMO-Q2,BJ-2026-DC-ERMO,2,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v3
+BJ-2026-SJS-ERMO-Q2,BJ-2026-SJS-ERMO-Q2,BJ-2026-SJS-ERMO-Q2,BJ-2026-SJS-ERMO,2,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v3
+BJ-2026-FT-QIMO-Q20,BJ-2026-FT-QIMO-Q20,BJ-2026-FT-QIMO-Q20,BJ-2026-FT-QIMO,20,主观题,,整题,COLLECTED,MI,完整题-有E1,E1,逐题已匹配正式评分材料,倾向,2026-09-24-attribution-v3
+BJ-2024-BJ-GAOKAO-Q4,BJ-2024-BJ-GAOKAO-Q4,BJ-2024-BJ-GAOKAO-Q4,BJ-2024-BJ-GAOKAO,4,选择题,,整题,COLLECTED,MI,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v3

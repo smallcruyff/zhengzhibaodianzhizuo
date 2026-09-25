@@ -1,0 +1,91 @@
+{
+  "exam_id": "BJ-2024-DC-YIMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2024-DC-YIMO-Q1": "e967f132828d2da167f7e9c6aa81bee2c20905020fc88025b159f76fee00e99c",
+    "BJ-2024-DC-YIMO-Q2": "b43efe108cb5742492763e86a3f79785be627079169752588081bdcd8d886e61",
+    "BJ-2024-DC-YIMO-Q3": "32a7f2d46e086b43cdc4d1b766a607b455a77dbfbbb395920e9999291560c39b",
+    "BJ-2024-DC-YIMO-Q4": "10e7dbdedaeb29e5a9fb0da8a0cda9f278fa31f455f903a8df1eccde6223cb35",
+    "BJ-2024-DC-YIMO-Q5": "daa94a677dadcb4fca45a74fa417351f599b84ed746f70bddb1ccb26c5f6dcc4",
+    "BJ-2024-DC-YIMO-Q6": "0a1d736d2d02615e79d2c5566896afede9222422e076a52b58a09662cd87acbc",
+    "BJ-2024-DC-YIMO-Q7": "d74c13883853b5456564e899d9324a601437a264af7f7e707944ec9c88680c73",
+    "BJ-2024-DC-YIMO-Q8": "63844ef14a4a86235ae6160efedaefb4661fbecafaf1c4874456e48d3b09dfbc",
+    "BJ-2024-DC-YIMO-Q9": "19281550883459cc5046f3b0c08e7b3c74b0f333864ad6ecedf67c051d33d3ef",
+    "BJ-2024-DC-YIMO-Q10": "948ddfc646bee29fe507162c0df1cc61272ea9d0147fd8c5c0a1fae71b514fd0",
+    "BJ-2024-DC-YIMO-Q11": "cd979d714b18437fb4e293bb054f111727bb259898c53b710415460846f3080e",
+    "BJ-2024-DC-YIMO-Q12": "588f5583bbe4c0d425b384c56f6af3fd29b2f1b6c42b7b74b73686abbe093286",
+    "BJ-2024-DC-YIMO-Q13": "114f07154d07aaab87eb90bd0bf0f349bc4311ca50f35f64e314c8027a5a4ee8",
+    "BJ-2024-DC-YIMO-Q14": "52f6686d349331410ce97cc199b784a808aa75d26576d917396f19bd8a973beb",
+    "BJ-2024-DC-YIMO-Q15": "7fce3a6268fd84ef94a2991e6e64795ec3cdb11b5b2d79bd6b3e9c1677226026",
+    "BJ-2024-DC-YIMO-Q16": "678a8fe1c7f9a952824abf20c8b0c937de5e6b858942a483a38a1f48eb86ade5",
+    "BJ-2024-DC-YIMO-Q17": "2d7de109fe3986b00250c6b02bf24fc43364b7eb01e46b45e4191386f5d5b9c4",
+    "BJ-2024-DC-YIMO-Q18": "297be9b48493deeb1f0e3fd4664cf6ccde0c046fc2488ef3fd6d9b9298ea99a5",
+    "BJ-2024-DC-YIMO-Q19": "796c02724c57c97735f050687ccc1ed3a677d85d87dea3e55a4f2231dd16f390",
+    "BJ-2024-DC-YIMO-Q20": "129909abf6dd4d58d7d6454328439270914d3857383d5967c29e8dbcb895f096",
+    "BJ-2024-DC-YIMO-Q21": "e34ea95f82dc6849a08a69a3ea6893ee350fa2cae433563da85a231f8e73bf24"
+  },
+  "source_pages": {
+    "paper": 12,
+    "rubric_1": 74,
+    "rubric_2": 1
+  },
+  "source_page_total": 87,
+  "source_roles": {
+    "paper": "S74cdfac92537",
+    "rubric_1": "S4b2073bcc9e2",
+    "rubric_2": "S7b4eece29632"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "S7b4eece29632 是答案PDF与通用等级层混合载体：Q1—Q15有答案键，Q16—Q21有主观题参考答案，Q16/Q21附通用等级区间；不作为完整逐点E1细则。",
+    "S4b2073bcc9e2 是评分/讲评PPTX混合载体，包含题级评分、讲评、阅卷提示和学生答卷；各层按来源身份分别转写，不把学生示例混作标准答案。",
+    "Q18学生样例若干手写局部无法可靠辨认；原图和[uncertain]标记保留，不用答案反推。该残留不影响题目作答。",
+    "Q19、Q21学生样例中未见可确认的实得总分，仍记null；不从作答内容推算。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q18",
+      "location": "S4 slides 42/46/47/52 student samples",
+      "partial_reading": "局部手写仍有48处[uncertain]标记；原图保留，文字不猜补。",
+      "affects_answering": false,
+      "round": "r1",
+      "review_basis": "B independent verification: pass_with_residual"
+    },
+    {
+      "qid": "Q19",
+      "location": "S4 slide 58 student sample",
+      "partial_reading": "手写局部有界保留；画面未显示可确认的实得总分，继续记null。",
+      "affects_answering": false,
+      "round": "r1",
+      "review_basis": "B independent verification: pass_with_residual"
+    },
+    {
+      "qid": "Q21",
+      "location": "S4 slides 73-74 student samples",
+      "partial_reading": "手写局部有界保留；两页均未显示可确认的实得分，继续记null。",
+      "affects_answering": false,
+      "round": "r1",
+      "review_basis": "B independent verification: pass_with_residual"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1"
+    ],
+    "independent_verification": "BJ-2024-DC-YIMO/r1_verify/verification.json",
+    "merge": "BJ-2024-DC-YIMO/bj-2024-dc-yimo-r1_merge.json"
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2024-dc-yimo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T04:51:24.313449+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T04:53:39.956201+00:00"
+}

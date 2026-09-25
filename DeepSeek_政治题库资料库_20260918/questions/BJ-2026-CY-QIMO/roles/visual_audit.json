@@ -1,0 +1,49 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "render_method": "Poppler pdftoppm PNG at 180 dpi",
+  "all_paper_pages_individually_opened": true,
+  "opened_paper_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "all_rubric_pages_individually_opened": true,
+  "opened_rubric_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "complex_layouts_opened": [
+    "Q4 p2 painting",
+    "Q6 p2 boxed conditions",
+    "Q16 p4 stage image; full question ends on p4",
+    "Q19 p6 policy table and p7 continuation",
+    "Q21 p8 one teacher box plus one shared lower box for students A-D"
+  ],
+  "page_images": [
+    "evidence/paper_pages/p001.png",
+    "evidence/paper_pages/p002.png",
+    "evidence/paper_pages/p003.png",
+    "evidence/paper_pages/p004.png",
+    "evidence/paper_pages/p005.png",
+    "evidence/paper_pages/p006.png",
+    "evidence/paper_pages/p007.png",
+    "evidence/paper_pages/p008.png",
+    "evidence/rubric_pages/p001.png",
+    "evidence/rubric_pages/p002.png",
+    "evidence/rubric_pages/p003.png",
+    "evidence/rubric_pages/p004.png"
+  ],
+  "independent_review": "未完成；本目录仅为转写工位候选。",
+  "controller_additional_structure_review": {
+    "Q2": "镜头一、镜头二位于同一共同矩形框。",
+    "Q18": "第一千零二十五条在上方独立圆角横框；甲、乙在下方左右两个独立矩形框；三框无箭头。"
+  },
+  "current_shared_metadata_note": "20260922仅同步确定性路径/状态及已独立复核的Q2/Q18框线；R6原字节见sources/history_r6；其他原件和内容不改。"
+}

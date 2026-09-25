@@ -1,0 +1,115 @@
+{
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "source_id": "Sd28336f73700",
+  "source_title": "2020年北京政治高考.pdf",
+  "source_role": "正式评分细则/E1",
+  "source_pdf": {
+    "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/sources/originals/Sd28336f73700_2020北京政治高考.pdf",
+    "sha256": "d28336f737005ee888d1d4e31a79d5f11f6691afa4c4504ddb614d6129e0c42b",
+    "pages": 4
+  },
+  "source_transcript": {
+    "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/sources/transcripts/Sd28336f73700.txt",
+    "copied_path": "evidence/source_transcript/Sd28336f73700.txt",
+    "sha256": "ee5902983482ee5c5091f8a650f04965f1b8f461059a740539d77a1048f30172"
+  },
+  "page_assets": [
+    {
+      "page": 1,
+      "questions": ["BJ-2020-BJ-GAOKAO-Q16", "BJ-2020-BJ-GAOKAO-Q17"],
+      "copied_path": "evidence/source_pages/rubric/p001.png",
+      "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/source_pages/rubric/p001.png",
+      "sha256": "3d3a2d4389d2b4947b1ae755857e46a4e357c77633e55d08b2a2435e51e4e936"
+    },
+    {
+      "page": 2,
+      "questions": ["BJ-2020-BJ-GAOKAO-Q17", "BJ-2020-BJ-GAOKAO-Q18", "BJ-2020-BJ-GAOKAO-Q19"],
+      "copied_path": "evidence/source_pages/rubric/p002.png",
+      "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/source_pages/rubric/p002.png",
+      "sha256": "fdf3294def98b407959d2f6747d95b8249f28ab7e8db94a992af3fa3ed32c225"
+    },
+    {
+      "page": 3,
+      "questions": ["BJ-2020-BJ-GAOKAO-Q19", "BJ-2020-BJ-GAOKAO-Q20", "BJ-2020-BJ-GAOKAO-Q21"],
+      "copied_path": "evidence/source_pages/rubric/p003.png",
+      "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/source_pages/rubric/p003.png",
+      "sha256": "90e703c614a27fe344904868dc9f4350b8efb2c0a2601a70405086c5459ca8ed"
+    },
+    {
+      "page": 4,
+      "questions": ["BJ-2020-BJ-GAOKAO-Q21"],
+      "copied_path": "evidence/source_pages/rubric/p004.png",
+      "original_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2020-BJ-GAOKAO/assets/source_pages/rubric/p004.png",
+      "sha256": "092ed45f858d23827daa962ab8ee3b4788da79149d04fee4043e224d3191a21e"
+    }
+  ],
+  "question_page_map": {
+    "BJ-2020-BJ-GAOKAO-Q16": {
+      "pages": [1],
+      "crops": [
+        {
+          "path": "evidence/crops/p001_q16.png",
+          "sha256": "c0227b06765b11a3e0de66bcc49dea60d99b57c540d14bb7b475b86f8c04a113"
+        }
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q17": {
+      "pages": [1, 2],
+      "crops": [
+        {
+          "path": "evidence/crops/p001_q17.png",
+          "sha256": "46a8f0f1b60c89d0c9ff5394be6d5b2d00e57e61225049fc0791773c1ff391b7"
+        },
+        {
+          "path": "evidence/crops/p002_q17.png",
+          "sha256": "c289f1a0a4c6e4d9c188a7e623dbf487f05055fbb8c454e3f0448782763d4bec"
+        }
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q18": {
+      "pages": [2],
+      "crops": [
+        {
+          "path": "evidence/crops/p002_q18.png",
+          "sha256": "b14bb085f229bb3df4d1ec3b39a683f32874ba467acc3198871ab57f80b7341c"
+        }
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q19": {
+      "pages": [2, 3],
+      "crops": [
+        {
+          "path": "evidence/crops/p002_q19.png",
+          "sha256": "a8de9f5238202670bc3b0322bc6850a82614c8a66985d616edf3d9f49a2da73b"
+        },
+        {
+          "path": "evidence/crops/p003_q19.png",
+          "sha256": "ceaa449e347ea1299458780bea750e3836b470d978cc3171da1d4ed6da8c90c4"
+        }
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q20": {
+      "pages": [3],
+      "crops": [
+        {
+          "path": "evidence/crops/p003_q20.png",
+          "sha256": "88a9f9ad3636e61715e675636d170234afd162534ac5aa74ba39bbdef5380b2e"
+        }
+      ]
+    },
+    "BJ-2020-BJ-GAOKAO-Q21": {
+      "pages": [3, 4],
+      "crops": [
+        {
+          "path": "evidence/crops/p003_q21.png",
+          "sha256": "729469127bd42e9458661ba089673173e5e19da3c9f1c145106ddee361167444"
+        },
+        {
+          "path": "evidence/crops/p004_q21.png",
+          "sha256": "647526d58d11347c5644243c55bac350f3ef0df345fa6c67ce1bb7c58931754a"
+        }
+      ]
+    }
+  },
+  "page_coverage_assertion": "p001-p004全部有去向；Q16-Q21逐题均映射到至少一张原页与一张题级裁图"
+}

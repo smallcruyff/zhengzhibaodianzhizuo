@@ -1,0 +1,744 @@
+{
+ "batch_id": "c052",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "choice",
+ "n_units": 23,
+ "units": [
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q2",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "2",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n“邹忌照镜”是人们熟知的故事。面对“吾与徐公孰美”的提问，邹忌身边的人都回答说邹忌更美。邹忌却不相信，从身边人的举动，辨明其不同动机。知人者智，自知者明。这启示党员干部应\n\n①坚持全面的观点，既重视他人评价又不盲从\n\n②主动担当作为，立足他人评价作出价值选择\n\n③承担起自身的责任和使命，坚守为人民服务的政治本色\n\n④抓住主要矛盾，在他人的评价中认清自我、察觉自我\n\nA．①③　　B．①④　　C．②③　　D．②④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p01](assets/pages/p001.png)\n\n### [视觉核验结论]\n\n已核对原卷 p01：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①③　　B．①④　　C．②③　　D．②④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q3",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "3",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n2025年世界人工智能大会上，某具身智能机器人展现了其在戏剧研究领域的新突破。它通过对上千部京剧经典进行数据化处理与智能分析，不仅能精准模仿各流派表演，还能识别出此前未被发现的艺术特征。这一智能机器人\n\nA．作为新型研究工具，能深化人们对表演规律的认识\n\nB．通过数据关联建立起戏剧艺术各要素间的本质联系\n\nC．能够挖掘新的艺术价值，成为新的艺术创作主体\n\nD．是推动当代戏剧艺术创新发展的源泉和根本动力\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p01](assets/pages/p001.png)\n\n### [视觉核验结论]\n\n已核对原卷 p01：题干、A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．作为新型研究工具，能深化人们对表演规律的认识\nB．通过数据关联建立起戏剧艺术各要素间的本质联系\nC．能够挖掘新的艺术价值，成为新的艺术创作主体\nD．是推动当代戏剧艺术创新发展的源泉和根本动力",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q4",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n新时代人文经济学是以我国人文经济实践为现实基础，以文化与经济的融合关系为研究对象的交叉学科。新时代人文经济学强调，现代化不仅仅是经济的增长、科技的进步，更是人的现代化……它以一系列具有鲜明时代性、原创性、系统性的成果，开拓马克思主义政治经济学新境界。新时代人文经济学\n\n①在对已有经济学先肯定后否定的过程中实现创新发展\n\n②始终以增进人民福祉为根本出发点，既见物更见人\n\n③推动文化繁荣与经济发展统一于中国式现代化的实践\n\n④实现了传统民本思想从价值诉求到生产实践的转化\n\nA．①②　　B．①④　　C．②③　　D．③④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p02](assets/pages/p002.png)\n\n### [视觉核验结论]\n\n已核对原卷 p02：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①②　　B．①④　　C．②③　　D．③④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q5",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "5",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n以文相交，汇纳百川。中国（深圳）国际文化产业博览交易会展示了文化发展的多种可能。\n\n【科技解码文明基因】通过数字建模让良渚玉琮纹样化为动态穹顶，以数字技术解码文明基因，让古老智慧焕发新生。\n\n【文化驱动产业增值】将东方美学融入汽车设计，通过虚拟现实技术展示景区风光，以文化赋能提升产品价值，形成“文化赋能—产业升级”的良性循环。\n\n【构建开放创新生态】增设了文化出海、世界与中国青年文创项目孵化等展区，组织一大批文化出海头部服务企业参展，助推更多文化产品及服务“走出去”。\n\n对此，以下解读正确的是\n\n①科技赋能文化传承，旨在赋予传统文化新的时代内涵\n\n②文化推动产业升级，软实力成为驱动经济发展的核心动能\n\n③交易会通过文化交流互鉴，增强中华文明的传播力影响力\n\n④这一活动在传统与现代双向奔赴的生动表达中，彰显文化自信\n\nA．①②　　B．①④　　C．②③　　D．③④\n\n### [原卷图文/结构证据]\n\n原卷 p2：三条材料均以圆角虚线框包围，框内文字前均有菱形/加号样式项目符号“◇”；三段依次标题化为“科技解码文明基因”“文化驱动产业增值”“构建开放创新生态”（原文用【】标出的是本转写为便于引用添加的分段标记，原图中三段并列于同一个虚线框内，段落之间以项目符号“◇”分隔，不是三个独立方框）。\n\n原卷页图：![原卷 p02](assets/pages/p002.png)\n\n### [视觉核验结论]\n\n已核对原卷 p02：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①②　　B．①④　　C．②③　　D．③④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q6",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n甲公司长期研发新能源汽车，形成了独有的汽车底盘技术，并将该技术列入核心商业秘密。乙公司为快速进入该市场，在短时间内有计划地大规模接触甲公司掌握核心技术秘密的员工，获取该技术并推出相关产品。甲公司遂向法院提起诉讼。对此，下列分析正确的是\n\nA．甲公司的核心技术保护期届满后应向社会公开\n\nB．乙公司行为侵害了甲公司对核心技术享有的隐私权\n\nC．甲公司主张乙公司承担侵权责任的诉讼请求应得到支持\n\nD．乙公司推出相同技术产品构成混淆行为，属于不正当竞争\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p02](assets/pages/p002.png)\n\n### [视觉核验结论]\n\n已核对原卷 p02：题干、A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．甲公司的核心技术保护期届满后应向社会公开\nB．乙公司行为侵害了甲公司对核心技术享有的隐私权\nC．甲公司主张乙公司承担侵权责任的诉讼请求应得到支持\nD．乙公司推出相同技术产品构成混淆行为，属于不正当竞争",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q7",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "7",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n张某驾驶机动车停靠在路边，未观察后方路况便随手打开前车门。此时，正在骑行的李某（15岁）因距离过近无法及时避让，撞在车门上导致身体失衡摔倒，造成左臂骨折。在报警处理后，李某家长与张某就赔偿事宜协商未果，遂将张某诉至法院。\n\n关于本案，下列说法正确的是\n\nA．为了保护限制民事行为能力人权益，举证责任应倒置于张某\n\nB．李某家长可以委托辩护人帮助进行诉讼活动，维护合法权益\n\nC．双方就赔偿事宜协商未果，说明诉讼才是纠纷解决的最佳方式\n\nD．张某未依法履行注意义务，应当赔礼道歉、赔偿损失\n\n### [原卷图文/结构证据]\n\n原卷 p2：材料以圆角虚线框包围（无标题、无项目符号，单段叙事性案情）。\n\n原卷页图：![原卷 p02](assets/pages/p002.png)\n\n### [视觉核验结论]\n\n已核对原卷 p02：题干、A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．为了保护限制民事行为能力人权益，举证责任应倒置于张某\nB．李某家长可以委托辩护人帮助进行诉讼活动，维护合法权益\nC．双方就赔偿事宜协商未果，说明诉讼才是纠纷解决的最佳方式\nD．张某未依法履行注意义务，应当赔礼道歉、赔偿损失",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q8",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "8",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n婚姻是家庭的基石，婚姻登记作为确立婚姻关系的法律程序，关乎家庭幸福与社会和谐稳定。2025年新修订的《婚姻登记条例》正式发布。下列解读正确的是\n\n| 编号 | 修订亮点 | 解读 |\n|---|---|---|\n| ① | 基于全国婚姻基础信息库，全面实现婚姻登记“全国通办”，取消“回户籍地办理”要求 | 科技赋能实现就近领证，方便群众 |\n| ② | 材料手续简化，取消户口簿证件材料要求 | 婚姻登记机关无需对材料的真实性进行核查，提高行政服务效率 |\n| ③ | 婚姻登记机关应当提供婚姻家庭辅导服务，例如婚前教育、矛盾调解等 | 引导全社会形成正确的婚恋观、家庭观 |\n| ④ | 严禁婚姻登记机关及其工作人员违反规定泄露或者向他人非法提供婚姻登记工作中知悉的个人隐私或者个人信息 | 婚姻登记机关及其工作人员处理个人信息时应当遵循自愿原则 |\n\nA．①③　　B．①④　　C．②③　　D．②④\n\n### [原卷图文/结构证据]\n\n原卷 p3 为一张 4 行×3 列表格（编号｜修订亮点｜解读），表格带完整框线，行与编号①—④一一对应；已转写为上方 Markdown 表格，行列关系与原表一致。\n\n原卷页图：![原卷 p03](assets/pages/p003.png)\n\n### [视觉核验结论]\n\n已核对原卷 p03：题干、表格四行与 A–D 选项与标准答案均与原图一致；OCR 底稿中的“和谱”已按原图改正为“和谐”。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①③　　B．①④　　C．②③　　D．②④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**A**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "已收整题",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q9",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "9",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n规范企业用工行为，有助于促进劳动关系和谐稳定。某企业存在未依法与劳动者订立书面劳动合同、任意辞退试用期员工等行为。对此，下列看法正确的是\n\n①企业应对试用期员工进行特殊劳动保护\n\n②未订立书面劳动合同不影响劳动关系的成立\n\n③劳动争议未经调解不得直接向人民法院起诉\n\n④若试用期员工被证明不符合录用条件，企业可依法解除劳动合同\n\nA．①③　　B．①④　　C．②③　　D．②④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p03](assets/pages/p003.png)\n\n### [视觉核验结论]\n\n已核对原卷 p03：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①③　　B．①④　　C．②③　　D．②④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q10",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "10",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n近年来，有的消费者以“七天无理由退货”为由，将服装吊牌暗藏后穿着数日，再申请退货。有的商家为规避损失，使用材质坚硬的巨型吊牌予以防范，妨碍了消费者正常试穿。对这一现象，下列说法正确的是\n\n①有的消费者滥用“七天无理由退货”的行为违反了诚信原则\n\n②商家使用巨型吊牌规避损失的行为侵害了消费者的用益物权\n\n③面对违约行为，任何一方均可直接向仲裁委员会申请仲裁\n\n④相关部门应完善市场规则，以平衡消费者与商家之间的利益\n\nA．①③　　B．①④　　C．②③　　D．②④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p03](assets/pages/p003.png)\n\n### [视觉核验结论]\n\n已核对原卷 p03：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①③　　B．①④　　C．②③　　D．②④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q11",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "11",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n有意注意是指有预定目的的注意，是需要意志努力的注意。有意注意是人所特有的心理现象。它如同意识的缰绳，引导人们在面对种种干扰时将注意力集中在目标上。心理学上认为，把智力活动和实际操作合理组织起来的活动，比如边阅读边记笔记、编写提纲等活动，可以帮助人们提高有意注意的效果。据此，以下分析正确的是\n\nA．“有意注意是指有预定目的的注意，是需要意志努力的注意”是相容选言判断\n\nB．“有意注意是人所特有的心理现象”，这一判断的谓项是不周延的\n\nC．用“意识的缰绳”比喻“有意注意”，是运用类比推理方法揭示其功能\n\nD．只要把智力活动和实际操作合理组织起来，就能保持有意注意\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p03](assets/pages/p003.png)\n\n### [视觉核验结论]\n\n已核对原卷 p03：题干、A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．“有意注意是指有预定目的的注意，是需要意志努力的注意”是相容选言判断\nB．“有意注意是人所特有的心理现象”，这一判断的谓项是不周延的\nC．用“意识的缰绳”比喻“有意注意”，是运用类比推理方法揭示其功能\nD．只要把智力活动和实际操作合理组织起来，就能保持有意注意",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q12",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "12",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n松花江畔，东北振兴展现新活力；珠江口岸，粤港澳大湾区崛起世界级城市群……近年来，我国大力发展流域经济，不断将地理优势转变为发展优势。基于上述背景，在我国\n\n①流域经济是促进区域联动发展的重要模式\n\n②流域经济是以河流为纽带形成的区域经济形态\n\n③以河流为纽带形成的区域经济形态是促进区域联动发展的新模式\n\n④有些促进区域联动发展的重要模式是以河流为纽带形成的区域经济形态\n\n从以上四个判断中选择三个，依次作为大前提、小前提、结论。下列选项中符合三段论推理规则的是\n\nA．①—④—②　　B．②—③—①　　C．②—①—④　　D．③—②—①\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p04](assets/pages/p004.png)\n\n### [视觉核验结论]\n\n已核对原卷 p04：题干、①④四项判断与 A–D 选项与标准答案均与原图一致；OCR 底稿中的分隔线错位已按原图整理为标准选项格式。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①—④—②　　B．②—③—①　　C．②—①—④　　D．③—②—①",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q13",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "13",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n为探究“中学生使用错题本与提升成绩之间的关系”，某校研究性学习小组提出了若干研究方案。下列方案中合理的是\n\n①访谈成绩提升的同学，运用演绎推理得出一般性结论\n\n②考察更多的认识对象，对不同学校、不同年级的中学生进行问卷调查\n\n③运用求异法，追踪多组学习条件相近的同学，观察是否使用错题本对其成绩的影响\n\n④运用共变法，对比同样使用错题本且成绩提升的同学，分析他们在努力程度等因素上的变化\n\nA．①③　　B．①④　　C．②③　　D．②④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p04](assets/pages/p004.png)\n\n### [视觉核验结论]\n\n已核对原卷 p04：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①③　　B．①④　　C．②③　　D．②④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**C**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q14",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "14",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n每天一个鸡蛋，胆固醇会升高吗？一项对30～64岁人群的研究结果显示：每周食用五个或更多鸡蛋不会对葡萄糖或血压相关结果产生不利影响；相反，适量地摄入鸡蛋还能降低糖尿病和高血压的发生风险，配合健康饮食模式效果更佳。该研究\n\nA．对鸡蛋进行定性分析，以确定鸡蛋是否具有引起胆固醇升高的成分\n\nB．结论不具备必然性，可能会因对象、饮食方式等具体条件的不同而不同\n\nC．深化了对鸡蛋健康效应的认识，由思维具体上升为思维抽象\n\nD．表明健康食用鸡蛋要采取折中主义的思维方式，遵循适度原则\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p04](assets/pages/p004.png)\n\n### [视觉核验结论]\n\n已核对原卷 p04：题干、A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．对鸡蛋进行定性分析，以确定鸡蛋是否具有引起胆固醇升高的成分\nB．结论不具备必然性，可能会因对象、饮食方式等具体条件的不同而不同\nC．深化了对鸡蛋健康效应的认识，由思维具体上升为思维抽象\nD．表明健康食用鸡蛋要采取折中主义的思维方式，遵循适度原则",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**B**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "已收整题"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIMO-Q15",
+   "exam_id": "BJ-2026-HD-QIMO",
+   "num": "15",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题面]\n\n“每个景区小程序都要注册”“得记着不同景点的预约时间，生怕冲突”……为解决游客烦恼，北京市推出全市统一旅游预约平台，全链条整合交通、住宿、餐饮、景点、体验式场景等资源。游客可在这一平台完成所有合作景区的实名预约，并清晰掌握全部已预约景点信息，有效避免行程冲突或遗漏，堪称“随身行程管家”。这一做法\n\n①利用检核表法将信息逐步引导到条理化的逻辑思路中\n\n②优化了旅游景点布局，创造性地解决了游客烦恼\n\n③聚焦问题，推动公共服务供给与人民需求精准对接\n\n④全链条整合各类场景资源，体现了综合的思维方法\n\nA．①②　　B．①③　　C．②④　　D．③④\n\n### [原卷图文/结构证据]\n\n本题无独立图表；段落、分组、选项和边界以原卷页图为准。\n\n原卷页图：![原卷 p04](assets/pages/p004.png)\n\n### [视觉核验结论]\n\n已核对原卷 p04：题干、①④四项判断与 A–D 选项与标准答案均与原图一致。本条目保留原页图、来源页位和 E1 页位；不把学生错误、手写难辨局部或 E1 教师说明修正为标准答案。",
+   "options_text": "A．①②　　B．①③　　C．②④　　D．③④",
+   "answer_key": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [参考答案（两处同卷来源交叉核对）]\n\n- 标准答案：**D**。\n- 来源一：原卷 p9《思想政治参考答案》第一部分答案表（E3 层，随卷参考答案，见 [`sources/paper_reference_answer_full.md`](sources/paper_reference_answer_full.md)）。\n- 来源二：E1 正式评分材料（`细则.pdf`）p1 选择题答案表（见 [`sources/e1_rubric_transcription.md`](sources/e1_rubric_transcription.md)）。\n- 两处来源答案一致；本卷无独立参考答案文件，未将任何其他卷答案移入。\n- 原卷 p9 图：![原卷 p9](assets/pages/p009.png)；E1 p1 图：![E1 p1](assets/rubric/p001.png)",
+    "is_formal_E1": false,
+    "source": "无正式细则，用参考答案/内附详解等非正式材料代替"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=答案键来源未核实(候选未确认) | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库bank.py本身未取得该题可作题面的小节（原卷角色文本缺失），题面须回原卷核实；本记录题面为空或极短，判定时须谨慎，不代为回原卷杜撰题面。"
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q1",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "1",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 6-12，选项标记 4）]\n\n1.大国重器，砥定乾坤。2025年9月3日，北京天安门广场举行盛大阅兵仪式，所有受阅装备都是国产现役主战装备，其中无人智能、水下作战等新域新质力量首次大规模集结，展现了我国强大的科技实力和创新能力，受阅武器装备实现历史性跨越。这一历史性跨越\n①离不开社会主义革命和建设时期奠定的工业基础\n②意味着我国的基本国情与国际地位发生了深刻改变\n③表明自主创新是坚持和发展中国特色社会主义的必由之路\n④彰显了中国人民捍卫国家主权、安全和发展利益的决心\nA.①③\t\tB.①④\t\tC.②③\t\tD.②④",
+   "options_text": "A.①③\t\tB.①④\t\tC.②③\t\tD.②④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q2",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "2",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 12-23，选项标记 4）]\n\n2.2025年8月，最高人民法院发布《关于贯彻落实（中华人民共和国民营经济促进法）的指导意见》、提出了司法保障民营经济发展壮大的具体举措。以下是其中部分内容。\n\n<!-- 表格 1（1 行） -->\n| 严格落实“非禁即入”政策<br>依法规制垄断和不正当竞争行为<br>依法助力拓宽融资渠道<br>强化科技创新司法保护 |\n| --- |\n\n对上述措施发挥作用的机制，理解正确的是\nA.严格落实“非禁即人”政策→保障民营企业公平参与竞争→巩固社会主义经济制度的基础\nB.依法规制垄断和不正当竞争行为→完善现代企业产权结构→助推全国统一大市场建设\nC.依法助力拓宽融资渠道→助力民营企业破解融资难题→降低市场经营风险\nD.强化科技创新司法保护→保护民营企业合法权益→发挥民营企业技术创新重要主体作用\n\n### [讲评来源块（含答案与解析，不得当作题面）]\n> 讲评块常把题面与解析连写，不能当作题面。",
+   "options_text": "A.严格落实“非禁即人”政策→保障民营企业公平参与竞争→巩固社会主义经济制度的基础\nB.依法规制垄断和不正当竞争行为→完善现代企业产权结构→助推全国统一大市场建设\nC.依法助力拓宽融资渠道→助力民营企业破解融资难题→降低市场经营风险\nD.强化科技创新司法保护→保护民营企业合法权益→发挥民营企业技术创新重要主体作用",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q3",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "3",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 23-29，选项标记 4）]\n\n3.从1元秒杀的网红奶茶、9.9元包邮的纯棉卫衣，到不足5万元的新能源汽车……部分企业为争夺市场份额，不惜以牺牲利润为代价，采取无限度降价策略。对此\nA.企业应差异化竞争，从争夺存量转向创造增量\nB.行业协会应制定产品价格，维护行业整体利益\nC.政府应加强价格监测，避免市场调节的盲目性\nD.政府应加大补贴力度，缓解企业的竞争压力\n\n### [讲评来源块（含答案与解析，不得当作题面）]\n> 讲评块常把题面与解析连写，不能当作题面。",
+   "options_text": "A.企业应差异化竞争，从争夺存量转向创造增量\nB.行业协会应制定产品价格，维护行业整体利益\nC.政府应加强价格监测，避免市场调节的盲目性\nD.政府应加大补贴力度，缓解企业的竞争压力",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q4",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "4",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 29-36，选项标记 4）]\n\n4.上直播间不仅能“淘”好物，还能“淘”工作|近年来，多地人力资源社会保障部门搭台，用人单位直播招聘。“直播带岗”让求职者在家即可刷到全国各地的岗位，为劳动者就业、企业招聘打开一扇新窗。“直播带岗”\n①打破时空限制，拓宽求职渠道，助力高质量充分就业\n②创新公共就业服务形式，扩大就业岗位需求\n③提升人力资源供需对接效率，增强劳动力市场流动性\n④完善社会保障体系，保护劳动者平等就业的权利\nA.①②\t\t\tB.①③\nC.②④\t\t\tD.③④\n\n### [讲评来源块（含答案与解析，不得当作题面）]\n> 讲评块常把题面与解析连写，不能当作题面。",
+   "options_text": "A.①②\t\t\tB.①③\nC.②④\t\t\tD.③④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q6",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "6",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 42-53，选项标记 3）]\n\n6.2025年政府工作报告提出，推动更多资金资源“投资于人”。\n\n<!-- 表格 2（1 行） -->\n| 实施育儿补贴政策，补贴标准为每孩每年3600元<br>健全灵活就业人员、农民工、新就业形态人员社保制度，全面取消在就业地参保户籍限制<br>聚焦高精尖产业与急需行业、就业重点群体等开展补贴性培训<br>…… |\n| --- |\n\n对上述政策，认识正确的是\nA育儿补贴缓解育儿家庭压力，筑牢社会成员生活安全“最后一道防线”\nB.社会保险覆盖面不断扩大，适应了社会发展需要和居民个性化保障需求\nC.补贴性培训可以缩小因技能差异导致的收人差距，推动收入分配均等化\nD.更多资金资源“投资于人”有助于形成经济发展和民生改善的良性循环",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q7",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "7",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 53-65，选项标记 4）]\n\n7.延安作风是中国共产党在延安时期形成的独特革命精神风貌。\n\n<!-- 表格 3（1 行） -->\n| 我们是共产党人……就万万不能沾染官僚习气……我们要养成一种新的风气，延安作风。——毛泽东<br>我们党之所以能够取得新民主主义革命的胜利，带领人民建立了新中国，原因有很多条，其中重要一条是我们党始终保持同人民群众的血肉联系，最终“用廷安作风打败西安作风”。——习近平 |\n| --- |\n\n关于延安作风，下列理解正确的是\n①延安作风是党的宝贵精神财富，是党认识和解决问题的行动依据\n②延安作风集中体现了党的初心使命和性质宗旨，广泛赢得了民心\n③延安作风为新时代作风建设提供历史参照，是新时代党员的根本行为规范\n④新的历史条件下不断传承弘扬延安作风，要一以贯之推进全面从严治党\nA.①②\t\t\tB.①③\t\t\tC.②④\t\t\tD.③④",
+   "options_text": "A.①②\t\t\tB.①③\t\t\tC.②④\t\t\tD.③④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q8",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "8",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 65-77，选项标记 4）]\n\n8.思政课上，某同学播报了以下内容。\n\n<!-- 表格 4（1 行） -->\n| 在十四届全国人大常委会第十七次会议上，受国务院委托，财政部部长作了关于今年以来预算执行情况的报告。<br>2024年，28件次法律草案通过全国人大代表信息化平台征求代表意见，499人次代表提出1336条具体意见建议。<br>全国政协提案摘编显示，政协委员提出加快自动驾驶法立法进程、加强新就业形态劳动者法律提助等提案。<br>2025年，全国政协《关于推动海洋经济高质量发展的提案》被列为年度重点提案之。自然资源部会同相关部门，积极吸纳提案建议，推动海洋经济高质量发展。 |\n| --- |\n\n围绕以上内容，下列说法正确的是\n①全国人大常委会听取预算执行情况报告，体现民主集中制原则\n②通过信息化平台征求代表意见、简化立法程序，提高立法效率\n③政协委员提出立法建议，依法行使提案权，推进法治国家建设\n④相关部门吸纳政协提案建议，将协商民主优势转化为治理效能\nA.①②\t\t\tB.①④\t\t\tC.②③\t\t\tD.③④\n\n### [讲评来源块（含答案与解析，不得当作题面）]\n> 讲评块常把题面与解析连写，不能当作题面。",
+   "options_text": "A.①②\t\t\tB.①④\t\t\tC.②③\t\t\tD.③④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无) | downgrade=关联但不合并(疑似跨卷复用/串题,非duplicate_registration_alias):dup_of=BJ-2024-BJ-GAOKAO-Q18 | dup_of=BJ-2024-BJ-GAOKAO-Q18",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q9",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "9",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 77-83，选项标记 4）]\n\n9.在北京市“十五五”规划建言征集中，83岁的退休教育工作者提笔写下对城市供暖与环保的思考，12岁的“小钓友”提出了增加亲水垂钓区、改善水生态的建议。一老一少的建言里，藏着对首都“蓝天碧水”与“民生温度”的共同期待。“十五五”规划建言征集活动\n①坚持问计于民，激发人民群众的智慧和力量\n②尊重公民的决策权，是全过程人民民主的生动实践\n③充分发扬民主，折射出以人民为中心的价值取向\n④推动科学决策，实现选举民主与协商民主相促进\nA.①③\t\t\tB.①④\t\t\tC.②③\t\t\tD.②④",
+   "options_text": "A.①③\t\t\tB.①④\t\t\tC.②③\t\t\tD.②④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2026-HD-QIZHONG-Q10",
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "num": "10",
+   "subq": null,
+   "type": "选择题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·native，读取优先）]\n> 本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。\n\n### [来源：`2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx`（角色 原卷 / native，位置 83-94，选项标记 4）]\n\n10.“看着北斗星走不迷路，跟着共产党走会幸福。”西藏自治区成立60年来，创造了“短短几十年、跨越上千年”的人间奇迹，雪域高原发生翻天覆地的变化。下列相关新闻报道的解读，正确的是\n\n<!-- 表格 5（5 行） -->\n|   | 新闻报道 | 解读 |\n| --- | --- | --- |\n| ① | 广东省援藏工作队在西藏林芝嘎拉村引入“景区带村”模式，开发本地特色旅游项目 | 对口援藏优先促进民族地区发展，彰显了民族区域自治制度的优越性 |\n| ② | 国家投资建设川藏铁路，全线贯通后，川藏两地的交通时间将缩短至13小时左右 | 建设川藏铁路有利于促进民族团结，维护和发展社会主义民族关系 |\n| ③ | 2024年西藏城镇居民人均可支配收入是1965年的121倍 | 西藏经济社会跨越式发展，消除了区域经济发展差距 |\n| ④ | 自治区人大常委会审议通过《西藏自治区民族团结进步模范区创建条例》 | 自治区人大常委会依法行使自治权，将民族团结工作纳入法治化轨道 |\n\nA.①③\t\t\tB.①④\t\t\tC.②③\t\t\tD.②④",
+   "options_text": "A.①③\t\t\tB.①④\t\t\tC.②③\t\t\tD.②④",
+   "answer_key": {
+    "text": "### [参考答案原文]\n\n（无）",
+    "source": "参考答案原文(E3，确认)"
+   },
+   "rubric": {
+    "text": "### [正式评分材料原文]\n\n（未找到已确认的正式评分材料；见下方候选区）\n\n### [候选评分材料（尚未确认，不得当作正式细则）]\n\n（无候选）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-选择题照收 | evidence=缺答案键 | detail=未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  }
+ ]
+}

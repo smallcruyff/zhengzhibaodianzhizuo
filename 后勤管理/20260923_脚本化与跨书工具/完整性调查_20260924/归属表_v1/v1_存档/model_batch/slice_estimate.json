@@ -1,0 +1,42 @@
+{
+ "rule_version": "2026-09-24-attribution-v1",
+ "method": "队列=归属列里至少一模块为MAYBE的题，并入conflict_script_out非空的疑似错收题（去重）。字符数直接取 classifier/units.jsonl 的 stem_len/rubric_len 真实值，不做400字截断假设（呼应blind_spot修复）。批大小、每次调用开销、中文字符/token比例、每题输出token都是本脚本的可调假设（见各参数），不是实测值；真正执行时应先用一批小样本实测校准这些参数，再乘队列规模。",
+ "queue_unique_qids": 1743,
+ "queue_maybe_only": 1742,
+ "queue_conflict_only_extra": 1,
+ "queue_missing_from_units_jsonl": [],
+ "by_type": {
+  "选择题": {
+   "n_units": 1251,
+   "chars_total": 427449,
+   "chars_avg": 342
+  },
+  "主观题": {
+   "n_units": 492,
+   "chars_stem_total": 290460,
+   "chars_rubric_total": 501565,
+   "chars_avg_stem": 590,
+   "chars_avg_rubric": 1019
+  }
+ },
+ "assumptions": {
+  "batch_size_choice_units_per_call": 25,
+  "batch_size_subj_units_per_call": 10,
+  "overhead_tokens_per_call": 3000,
+  "chars_per_token": 1.5,
+  "output_tokens_per_unit": 120
+ },
+ "estimate": {
+  "calls_choice_batches": 51,
+  "calls_subj_batches": 50,
+  "calls_total": 101,
+  "input_tokens_content_only": 812983,
+  "input_tokens_overhead_only": 303000,
+  "input_tokens_low": 1115983,
+  "input_tokens_high": 1450777,
+  "output_tokens_estimate": 209160,
+  "total_tokens_low": 1325143,
+  "total_tokens_high": 1659937
+ },
+ "compare_to_critic_prior_estimate": "三路调查与审查摘要.txt 第122行：旧口径（含400字截断、更大批大小）估算约78次调用、0.95M-1.73M token。本估算队列更小（只含仍MAYBE/冲突的题，不含已确定题）但细则不截断，量级应相近或略高，供主代理定批大小前参考，不是最终值。"
+}

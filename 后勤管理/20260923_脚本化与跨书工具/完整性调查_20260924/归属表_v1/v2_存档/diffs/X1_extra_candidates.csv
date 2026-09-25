@@ -1,0 +1,11 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_X1,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2022-BJ-GAOKAO-Q11,BJ-2022-BJ-GAOKAO-Q11,BJ-2022-BJ-GAOKAO,11,选择题,,整题,COLLECTED,X1,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v2
+BJ-2024-DC-YIMO-Q1,BJ-2024-DC-YIMO-Q1,BJ-2024-DC-YIMO,1,选择题,,整题,COLLECTED,X1,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v2
+BJ-2024-XC-YIMO-Q1,BJ-2024-XC-YIMO-Q1,BJ-2024-XC-YIMO,1,选择题,,整题,COLLECTED,X1,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v2
+BJ-2025-MTG-YIMO-Q9,BJ-2025-MTG-YIMO-Q9,BJ-2025-MTG-YIMO,9,选择题,,整题,COLLECTED,X1,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2025-FT-ERMO-Q13,BJ-2025-FT-ERMO-Q13,BJ-2025-FT-ERMO,13,选择题,,整题,COLLECTED,X1,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2025-CP-ERMO-Q8,BJ-2025-CP-ERMO-Q8,BJ-2025-CP-ERMO,8,选择题,,整题,COLLECTED,X1,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v2
+BJ-2026-XC-YIMO-Q12,BJ-2026-XC-YIMO-Q12,BJ-2026-XC-YIMO,12,选择题,,整题,COLLECTED,X1,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2026-DC-ERMO-Q6,BJ-2026-DC-ERMO-Q6,BJ-2026-DC-ERMO,6,选择题,,整题,COLLECTED,X1,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v2
+BJ-2026-SY-ERMO-Q1,BJ-2026-SY-ERMO-Q1,BJ-2026-SY-ERMO,1,选择题,,整题,COLLECTED,X1,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2026-HD-QIZHONG-Q5,BJ-2026-HD-QIZHONG-Q5,BJ-2026-HD-QIZHONG,5,选择题,,整题,COLLECTED,X1,完整题-选择题照收,缺答案键,"未在rubric_links.csv找到该题任何行(未核实,不是已确认无)",不明,2026-09-24-attribution-v2

@@ -1,0 +1,119 @@
+{
+  "summary": "针对 verify_style_roles.json（Claude Opus 5.5 对抗性审查，2026-09-24）返修 style_roles.py：1 条 blocker、5 条 major、3 条 minor 全部处理，另在返修过程的真实 apply 全流程测试中额外发现并修复一处此前从未暴露的写入 bug（_apply_field 把 'ea' 字段直接当 XML 属性名写成不存在的 w:ea，应为 w:eastAsia——material_font/stem_teaching_font 的 fixable 长期恒为 True 却从没人真正跑通 apply，所以没暴露）。核心方向：material_font/stem_teaching_font 在没有人工登记 typography.<角色>.rules（按 ex.kind/zone/label 的条件角色表）时，一律降级为 CANDIDATE 计数、fixable 恒 False、禁止生成计划——不再对已定稿书按单一样式名猜格式；teach_mis_blue 链路（口径与 bh.check_blue 完全一致，已在七本书验证）保留并加固：颜色/字体解析感知 themeColor/eastAsiaTheme 等 theme 属性（遇到只有 theme 没有可读值时视为未知、不当确定值；apply 写入时一并清除 theme 属性，防止“判已修好，Word 仍显蓝”）；误蓝修复目标色改用配置正文色或同段非蓝众数，不再写死 auto；新增“样式全书颜色一致性”检测，把疑似有意设计的样式色（如错肢分组标题）降级为 CANDIDATE 不机械修复；apply 端不再信任 plan 文件里的 before/after，对每条操作用与 audit 完全相同的判定函数在当前书稿上独立重算并要求逐字段相等，防 plan 篡改（颜色改任意值、混入 bold、非法颜色值、重复指名同一 run 等一律在重算这一步被拦下，比单纯白名单更彻底）；写后体检默认开启（--no-health 可关）、按 (check, rule) 逐门比较，任何门新增 FAIL 立即中止并删除输出，不再只比总数被抵消；报告覆盖只认“本工具生成、mode 与 docx_sha256 都相同”的旧文件；plan 核对 --docx 的 SHA 等于 audit 记录、空计划退出码从 1 改为 0（与文件头一致，非空为 1）；drill_color（原 drill_color_misplace）改用 bh_rule 精确白名单，补上旧“红/绿/颜色/纠正”关键词匹配会漏掉的“A2 表内正误不齐”；文件头与拒绝提示改口径，不再说“疑似要改文字”，明确“暂不支持加粗 b/bCs”。version 从 0.1.0 升到 0.2.0，1091 行（超出规格建议的 900 行上限——四个通用工具的行数上限约定针对 apply_patch/layout_prepare/publish_review/drill_tool，style_roles 不在其列；本轮为堵安全漏洞新增的 theme 感知、条件角色规则、独立重算校验、按门体检都复用 batch_health/docx_lib 现成函数，没有重复实现判定逻辑，如需精简可后续拆分子模块）。",
+  "files": {
+    "modified": [
+      "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/style_roles.py"
+    ],
+    "test_added_or_updated": [
+      "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_style_roles.py（原 5 组 13 项全部保留仍通过，① 的 plan 退出码期望值随 minor 修复由 0 改为 1；新增 ⑥–⑬ 共 19 项覆盖 6 条 blocker/major 与 2 条 minor 及额外发现的 w:eastAsia 写入 bug，合计 32 项）"
+    ],
+    "scratch_only": [
+      "$SCRATCH/booktools3/style_roles/run_tests_style_roles.py（先跑的副本，与项目内文件内容一致）",
+      "$SCRATCH/booktools3/style_roles/fixwork/mutate2.py（构造 themeColor 攻击样本）",
+      "$SCRATCH/booktools3/style_roles/fixwork/test_health_gate.py（--health 按门比较的打桩单测，独立于 run_tests 的等价测试）",
+      "$SCRATCH/booktools3/style_roles/fixwork/bixiu3_with_rules.json、bixiu3_conflict.json（临时角色表配置副本，未登记进真实 profiles/bixiu3.json）",
+      "$SCRATCH/booktools3/style_roles/fixwork/ 下各 *.audit.json / *.plan.json / *.docx 中间产物",
+      "$SCRATCH/booktools3/style_roles/fixwork/fix_style_roles.json（本回执的暂存副本）"
+    ]
+  },
+  "tests": [
+    {
+      "input": "run_tests_style_roles.py（返修后，含新增 ⑥–⑬，共 32 项；先在 $SCRATCH/booktools3/style_roles/ 跑，再在项目 测试/ 目录原样重跑一次）",
+      "result": "两次都是全部 32 项 PASS，0 FAIL，退出码 0；真实输入 b3_52/b2_230/xuanbi2/philosophy 四本书 SHA256 与 mtime 全程未变；Skill 目录 __pycache__ 无 style_roles 字节码",
+      "seconds": "约 96s（多为 b3_52/b2_230 等大文件的 audit/health 耗时）"
+    },
+    {
+      "input": "复跑审查者 verify_style_roles.json 的关键复现：b3_52 material_font 按题型拆分核查、b2_230 audit 只读、xa.docx 的三处攻击（themeColor / 跨run混合标签第91段 / 同段多命中第105段）、哲学“错肢分组”标题误报",
+      "result": "b3_52/b2_230 的 material_font/stem_teaching_font fixable_runs 现为 0（原为大面积 True）；xa.docx 三处攻击行为与审查记录的“通过”项一致（混合标签仍 skip、同段 3 处独立修好）且新增的 themeColor 处现在 apply 后 val 与 themeColor 都被正确处理；哲学第10785段“错肢分组”现判 CANDIDATE、plan 得 0 ops（原是 1 个错误的 fixable plan）",
+      "seconds": "约 10s"
+    },
+    {
+      "input": "登记显式 typography.material.rules（按 ex.kind 区分选择题/主观题）后的正向路径：b3_52 真实数据 audit 0 误报 + 人为制造 1 处真偏差（把一个选择题题干 run 改成 Kaiti SC）→ audit 精确判定 fixable → plan → apply",
+      "result": "audit 精确判定正确（材料区/题面区不再混报）；apply 后该 run 的 w:rFonts eastAsia 真的被写成 Songti SC——顺带验证并修好了 _apply_field 的 w:ea/w:eastAsia 属性名 bug（旧代码从未真正写对过字体）",
+      "seconds": "约 3s"
+    },
+    {
+      "input": "apply 端独立重算校验的对抗用例：篡改 after.color 为任意红色、混入 after.bold、after.color 塞入非法/注入字符串、同一 run 被计划里两条操作重复指名",
+      "result": "全部 exit=2、不留输出；均在“与现在独立重算的判定不符”或“不支持的格式字段”一步被拦下，不依赖单纯的静态白名单",
+      "seconds": "各 0.4–12s（含一次全书写后重开核对）"
+    },
+    {
+      "input": "--health 按 (check, rule) 逐门比较的打桩单测（run_tests 内 ⑫ 与独立的 test_health_gate.py 两套）：场景①被修门下降、其余门不变；场景②被修门下降但另一个不相关门新增 FAIL",
+      "result": "场景①正常写出（exit 0）；场景②总 FAIL 仍是净下降（198→149）但按门比较能发现新增，正确中止并删除已写输出（exit 1）——验证了旧代码“只比总数会被抵消”的问题已解决",
+      "seconds": "<1s（打桩，不重复跑体检）"
+    },
+    {
+      "input": "报告覆盖守卫：复制一份 xuanbi2 的 audit 报告改名为 other.audit.json，再用 plan --out 指向它",
+      "result": "exit=3 拒绝写出，other.audit.json 内容与 mode 保持 audit 不变，未被静默覆盖成 plan",
+      "seconds": "<1s"
+    },
+    {
+      "input": "冻结册守卫回归：真实 230 路径 + bixiu2 apply（未过 --profile 显式指定草案）",
+      "result": "exit=3，拒绝写出，未在真实路径留下任何文件（沿用原有测试③，未受本轮改动影响）",
+      "seconds": "<1s"
+    }
+  ],
+  "issues_resolved": [
+    {
+      "desc": "blocker：material_font/stem_teaching_font 只按样式名判角色，不分选择题/主观题/材料/设问/考法说明，在已定稿书上大面积误报且标为 fixable，照计划 apply 会把符合版式协议的格式改坏。",
+      "how": "新增 typography.<key>.rules（每条带 kind 题型条件，可选 zone/label，styles 必填）作为唯一能产出 fixable 结果的配置来源；_role_rules() 读取它，_rule_matches() 按 (style, ex.kind, zone, label) 精确匹配，_audit_font_role_rules() 只对匹配到的 run 判定，多条规则目标不同记为配置冲突（FAIL、不 fixable，交主代理裁定，不二选一瞎猜）。没有登记这张表时（目前所有 profile 都没有，包括 bixiu2/bixiu3），_audit_font_role_candidate() 只按 (kind, zone, label, style) 汇总观测到的字体分布，级别 CANDIDATE，fixable 恒 False、不产出 after；cmd_plan 对 material_font/stem_teaching_font 额外核验该书是否有 _role_rules()，没有就直接中止（退出码2），不会走到旧的“按 fixable 生成 ops”那一步。",
+      "test": "run_tests ⑥（b3_52 fixable_runs 从大量 True 变 0，plan material_font 被拒绝，退出码2）；⑬（临时登记显式 rules 后正向验证：真实数据 0 误报，人为制造的偏差能精确判定并修好，附带修好 w:eastAsia 写入 bug）；单独跑的冲突场景（两条规则目标不同）确认 1535 处全部 fixable=False 且 note 明确写“配置冲突”。"
+    },
+    {
+      "desc": "major：字体角色依赖草案里单一的 _style 样本，把角色映射错；字体检查不按 zone 过滤，教学/细则段落被当材料改。",
+      "how": "沿用旧的 _style/styles 启发式，但只作为 CANDIDATE 兜底的“扫描范围”提示（决定看哪些样式），不再当作确定目标——没有 typography.<key>.rules 就不产出 fixable/after，从根上切断“猜错角色→机械改坏”的路径；CANDIDATE 结果里带上 zone/label/kind 字段，供主代理核对分布后再决定要不要补一张真正的角色表。",
+      "test": "run_tests ⑥（草案配置下 material_font 只出 CANDIDATE，role_config.precise_rules=false，report 里明写“字体检查已降级为 CANDIDATE 计数、不支持 plan”）。"
+    },
+    {
+      "desc": "major：apply --health 只比较 FAIL 总数，after 值不设白名单，写后新增的误蓝会被别处下降抵消；体检默认不跑。",
+      "how": "--health 改为默认开启（新增 --no-health 关闭）；health 段落改按 (check, rule) 逐门比较 before/after_health 的 findings_by_rule（bh.run_health 本就输出这个字段，不用重新实现判定），任何门 after>before 一律中止、删除已写输出、退出码1，报告里列出具体是哪个门新增了多少。除此之外，apply 端不再信任 plan 文件里的 before/after：每条操作在当前书稿上用与 audit 完全相同的判定函数独立重算，要求 fixable 且 after 逐字段相等才放行——这比单纯给 after 设静态白名单更彻底，篡改 after 为任意颜色/塞入 bold/非法值/重复指名同一 run 等都在这一步被拦下，而不是等到写后体检才发现。",
+      "test": "run_tests ⑫ 与独立 test_health_gate.py（按门比较的两个打桩场景）；⑨（4 个 apply 篡改场景全部 exit=2 不留输出）。"
+    },
+    {
+      "desc": "major：颜色和字体只读 w:val 与 eastAsia/ascii，忽略 themeColor 与 *Theme 属性；带 themeColor 的蓝字修复后 Word 仍显示蓝色，工具却判为已修好。",
+      "how": "_run_direct_fields/StyleTable.run_format 新增对 eastAsiaTheme/asciiTheme/themeColor 的解析：val 与 theme 属性都存在时正常按 val 判定（能确信当前值，可以修，同时记下 theme 标记）；只有 theme 属性没有可读 val 时视为“未知”，不再假装继承样式值，也不当成确定偏差（font 角色判定里遇到这种情况直接跳过该字段，不报偏差）。_apply_field 设置 color/ea/ascii 时一并删除 themeColor/themeTint/themeShade 或 eastAsiaTheme/asciiTheme，避免 Word 渲染时 theme 属性优先于新写的 val。",
+      "test": "run_tests ⑧（构造 val=1F4E79+themeColor=accent1 的攻击样本：audit 仍判 fixable，apply 后 val 变了且 themeColor 被删除）。"
+    },
+    {
+      "desc": "major：误蓝修复一律写死 auto，不用该书正文色，也不区分蓝色来自 run 直接格式还是段落样式的设计色。",
+      "how": "新增 _target_body_color()：优先取 typography.stem_teaching.color / typography.material.color / typography.colors.body（按此顺序），没有配置就取同段其余非蓝文字 run 的颜色众数，都没有才退回 auto。fixable 判定新增两条门槛：①run 自己 rPr 里必须有直接颜色（不是继承自段落/字符样式）；②新增 _style_color_consistency()，统计每个段落样式在全书（不限区位）的颜色分布，某样式绝大多数实例都是同一蓝色时判定为“这本书里这个样式本来就设计成这个颜色”，命中的 run 降级为 CANDIDATE，不机械修复——这一条是实测发现单靠“有没有直接颜色”不够用后补的：哲学“错肢分组”标题的蓝色技术上是每处 run 直接写的（不是继承自 pStyle），但全书 18 处里 17 处一致，明显是设计色，只是这一处恰好落进了 teaching 区。",
+      "test": "run_tests ①（xuanbi2 用配置的 typography.stem_teaching.color=222222 而不是硬编码 auto，58 处全部一致）；⑦（哲学“错肢分组”标题从 fixable=True 变为 CANDIDATE，plan 得 0 ops）。"
+    },
+    {
+      "desc": "major：规格要求的“加粗”没有实现；改加粗被拒时提示成“疑似要改文字”，会误导使用者。",
+      "how": "选择“改提示文字”这一支（规格允许二选一）：ALLOWED_AFTER_FIELDS 保持只有 color/ea/ascii/pt；文件头明确写“暂不支持加粗（w:b/w:bCs）”并列入 KNOWN_LIMITS；_apply_field 与 cmd_apply 的拒绝提示改成“不支持的格式字段（本工具目前只支持 color/ea/ascii/pt，暂不支持加粗 b/bCs）”，不再说“疑似要改文字”。",
+      "test": "run_tests ⑨ neg_bold_field（提示文字已核对，exit=2）。"
+    },
+    {
+      "desc": "minor：plan 的 --docx 完全没用到，且为空时返回 exit 1 与文件头“生成的计划为空 → 0”自相矛盾。",
+      "how": "cmd_plan 新增核对：--docx 的 sha256 必须等于 audit.inputs.docx_sha256，不符按父稿不符中止（dl.ParentMismatch，退出码2）；退出码逻辑改为 `1 if ops else 0`（非空按 check 语义算“待处理”退出1，与 audit/apply 的语义一致；原代码写反了）。",
+      "test": "run_tests ①（非空计划现在 exit=1）；⑦/其它 plan 调用（空计划现在 exit=0）。"
+    },
+    {
+      "desc": "minor：报告输出允许覆盖任何一份本工具生成的 JSON，plan --out 指向另一份 audit 报告会被静默覆盖。",
+      "how": "_own_report() 增加 mode 与 docx_sha256 两个参数，只有“本工具生成、mode 与 docx_sha256 都与本次操作相同”才允许覆盖；audit/plan/apply 三处写报告都传入对应的 mode/docx_sha。",
+      "test": "run_tests ⑩（cp 一份 audit 报告改名，plan --out 指向它，exit=3，内容未变）。"
+    },
+    {
+      "desc": "minor：drill_color_misplace 靠规则名里有没有“红/绿/颜色/纠正”筛选，会漏掉“A2 表内正误不齐”这类不含这几个字的规则名。",
+      "how": "改用显式白名单 DRILL_COLOR_RULES（5 条 bh_rule 原名，含“A2 表内正误不齐”），类别名从 drill_color_misplace 改成 drill_color（不再暗示“错位”），报告里继续保留 bh_rule 原名。",
+      "test": "run_tests ⑪（哲学书两条命中，bh_rule 均为“A2 错误行缺红色错处”，类别名已是 drill_color；白名单成员断言含“A2 表内正误不齐”）。"
+    },
+    {
+      "desc": "额外发现（不在审查清单里，由本轮真实 apply 全流程测试测出）：_apply_field 的 ea/ascii 分支把内部字段名 'ea' 直接当 XML 属性名写成 w:ea（不存在的属性），应为 w:eastAsia；'ascii' 恰好同名所以之前没暴露。material_font/stem_teaching_font 的 fixable 此前长期恒为 True，但从没有人真正跑通一次“audit→plan→apply→重开核对字体确实改了”的全流程，所以这个 bug 一直没暴露——本轮为了验证 issue 1/2 的修复效果而真的跑了一次完整的字体 apply，才测出写入无效。",
+      "how": "xml_attr = 'eastAsia' if field == 'ea' else 'ascii'，_apply_field 用这个真实属性名去 set/del，不再用内部字段名 field 直接当属性名。",
+      "test": "run_tests ⑬（人为制造字体偏差 → apply → 重开文档确认 w:rFonts 的 eastAsia 属性真的变成了 Songti SC）。"
+    }
+  ],
+  "issues_deferred": [
+    "主观题的“材料”与“设问”常共用同一段落样式甚至同一段落（同段不同 run），本书族现有配置（styles.source 等）不带材料/设问的显式标签区分，无法仅凭样式名/zone 在 run 级精确区分——写进了 typography.<role>.rules 的设计里（rules 支持可选 label 条件），但要真正用上仍需主代理为每本书补充材料/设问的显式标注或标签约定，本轮不代为决定。",
+    "material_font/stem_teaching_font 目前对全部七本已有草案/正式配置的书都还没有可信的 typography.<key>.rules，仍处于“只做 CANDIDATE 观测”的状态；本回执建议的 profile_fields_needed（见下）需要主代理逐本核对 style-spec.md 与实际排版后登记，不在本次返修范围内代为登记进 profiles/*.json（规格第1条：需要新配置字段只在代码里给默认值、写进回执，由主代理登记）。",
+    "字体/颜色完全由 theme 决定、没有任何可读直接值时，本工具不解析 themeN.xml 主题色板，一律当作未知跳过——如果某本书大量使用纯主题字体/颜色（目前七本书正文 run 里还没有这种情况，只在 styles.xml 里见到 majorEastAsia 等），这类偏差会被本工具漏检，需要另外的工具或人工核对。",
+    "仍未实现加粗（w:b/w:bCs）的审计与修复，选择了“改提示文字”的方案（规格允许二选一）；如后续确有加粗类偏差需要机械修复，需要新的一轮开发。",
+    "_style_color_consistency() 的“全书同一样式≥80%实例同色即判定为设计色”是启发式阈值，用真实数据验证过（哲学“错肢分组”），但理论上如果某本书里一个正常内容样式恰好系统性地被错误染成同一个蓝色（≥80%的实例都错），会被本工具误判为“设计色”而不予修复，需要主代理留意这种极端情况（各书目前的抽查没有发现这类反例）。"
+  ],
+  "profile_fields_needed": [
+    "typography.material.rules / typography.stem_teaching.rules（每条 {kind, zone?, label?, styles, ea, ascii, pt}）：material_font/stem_teaching_font 精确判定与 plan/apply 的前提，目前所有 profile 都未登记；bixiu3 至少需要区分 choice/subjective 两种 kind（style-spec.md:136：完整选择题题干统一 Songti SC，主观题材料保留 Kaiti SC）。",
+    "typography.stem_teaching.color / typography.material.color / typography.colors.body：误蓝修复的目标正文色，目前只有选必二草案给了 stem_teaching.color=222222，其余书没有登记，会退回同段非蓝众数（已验证可用，但不如显式配置稳）。"
+  ]
+}

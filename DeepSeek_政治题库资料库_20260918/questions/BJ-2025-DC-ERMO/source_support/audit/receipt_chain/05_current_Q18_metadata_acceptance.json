@@ -1,0 +1,19 @@
+{
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "accepted_at": "2026-09-22T12:18:13.400980+00:00",
+  "decision": "preserve_current_shared_equivalent_metadata_wording",
+  "source_authority": "existing user full source conversion goal;current sole controller",
+  "old_shared_sha256": "68d4af940702158e08a77b15b79238c24a9d4f8d4ae5b9e5192c07e7130febd2",
+  "current_shared_sha256": "9e1ef21c6736a43c20781080e82fc64fdb41b88349d21153f1ca4e96b16dd64b",
+  "exact_replacement": {
+    "old": "不再保留“未找到已确认的正式评分材料”占位",
+    "new": "不再保留旧版“未找到已确认的正式评分材料”空缺说明"
+  },
+  "all_other_bytes_equal": true,
+  "original_change_actor_and_time": "not established;this receipt is current acceptance,not retrospective attribution",
+  "source_content_modified": false,
+  "shared_question_modified_this_action": false,
+  "old_materialization_rerun": false,
+  "whole_exam_accepted": false,
+  "independent_consolidated_review_sha256": "7ecf45e00a697d3d4663a156e00114be6fc0325f9ba8e4b688c7828bb087a7ca"
+}

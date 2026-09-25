@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "exam_id": "BJ-2026-CP-QIMO",
+  "review_type": "independent_targeted_delta_review_r2",
+  "reviewer_role": "independent_verifier",
+  "supersedes_for_current_merge_decision": "历史 independent_verification.md/json 中针对 FIG-Q16-IMG3-LABEL-DUP 的 fail；历史文件保留作审计",
+  "scope": {
+    "target": "Q16 image3 transcription repair and rebuild persistence",
+    "defect_id": "FIG-Q16-IMG3-LABEL-DUP",
+    "full_exam_rerun": false,
+    "basis": "prior independent review covered 21 questions, teacher render 10/10 pages, scoring render 3/3 pages and 4/4 embedded images; this review verifies only the repaired delta"
+  },
+  "status": "pass",
+  "conversion_complete": true,
+  "merge_ready": true,
+  "defects": [],
+  "q16": {
+    "status": "pass",
+    "teacher_pages": [4, 5],
+    "answer_pages": [7],
+    "rubric_pages": [1],
+    "score": null,
+    "score_basis": "Q16 score is not explicitly stated; retained null and not inferred from the second-part total of 55",
+    "media": [
+      {
+        "file": "image2.png",
+        "actual_viewed": true,
+        "dimensions": [544, 584],
+        "transcription": "image2 为红色雕漆器物照片，图下标注“雕漆”；原题表格文字另在题面转写中完整保留。",
+        "sha256_evidence": "e2ee356dcb817c7fb2f10243686a198dda7c3ce1a136c3cd6099a2e08a1e5f57",
+        "sha256_candidate_asset": "e2ee356dcb817c7fb2f10243686a198dda7c3ce1a136c3cd6099a2e08a1e5f57"
+      },
+      {
+        "file": "image3.png",
+        "actual_viewed": true,
+        "dimensions": [541, 579],
+        "transcription": "image3 为红底彩色刺绣纹样照片，图下标注“京绣”；原题表格文字另在题面转写中完整保留。",
+        "sha256_evidence": "6e49362e3814ea8f4ab84f580131234f3da66a51e50de862109812c11ad393bb",
+        "sha256_candidate_asset": "6e49362e3814ea8f4ab84f580131234f3da66a51e50de862109812c11ad393bb"
+      }
+    ],
+    "topology": "两张图片在教师版第4页题面表格左栏上下排列，分别对应右栏的雕漆、京绣说明。",
+    "relation_to_prompt": "图像是 Q16 表格中的配图；题干的材料文字与表格说明已完整保留，图像不含另行作答所必需的数值或隐藏评分信息。",
+    "independent_answerability": "可依据已保留的教师版题面材料作答；本回执不把缺失独立原卷、独立答案或学生层补成已提供。"
+  },
+  "rebuild_check": {
+    "script": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/build_candidate.py",
+    "independent_transcription_mapping": true,
+    "image2_mapping": "FIGURES['Q16']['transcriptions']['image2.png']",
+    "image3_mapping": "FIGURES['Q16']['transcriptions']['image3.png']",
+    "figure_text_reads_by_filename": true,
+    "figure_rows_reads_by_filename": true,
+    "regression_found": false
+  },
+  "hash_checks": {
+    "candidate_q16_sha256": {
+      "actual": "3eae218a503a1e8365dad4b55749a2e06bed203ef83b2ae16b2cb586a30c4b7d",
+      "complete_candidate": "3eae218a503a1e8365dad4b55749a2e06bed203ef83b2ae16b2cb586a30c4b7d",
+      "self_check": "3eae218a503a1e8365dad4b55749a2e06bed203ef83b2ae16b2cb586a30c4b7d",
+      "match": true
+    },
+    "figures_md_sha256": {
+      "actual": "22d08befcceaa13761807d8b6d2f24fbae5a0ed7e50372d9815fab5e04f35737",
+      "complete_candidate": "22d08befcceaa13761807d8b6d2f24fbae5a0ed7e50372d9815fab5e04f35737",
+      "repair_receipt": "22d08befcceaa13761807d8b6d2f24fbae5a0ed7e50372d9815fab5e04f35737",
+      "match": true
+    },
+    "figures_json_sha256": {
+      "actual": "07c30ed895dfa963b55c6800b6370fbcdfb8bd3daa190ec88e40f281e30cd16c",
+      "complete_candidate": "07c30ed895dfa963b55c6800b6370fbcdfb8bd3daa190ec88e40f281e30cd16c",
+      "repair_receipt": "07c30ed895dfa963b55c6800b6370fbcdfb8bd3daa190ec88e40f281e30cd16c",
+      "match": true
+    },
+    "media_sha256_match": true,
+    "candidate_asset_sha256_match": true,
+    "manifest_unchanged": true,
+    "shared_modified": false
+  },
+  "machine_checks": {
+    "self_check_result": "PASS_machine_integrity_only",
+    "candidate_files_ok": true,
+    "image_links_ok": true,
+    "source_copies_ok": true,
+    "manifest_unchanged": true,
+    "shared_modified": false
+  },
+  "source_limitations": [
+    {
+      "item": "independent_original_exam",
+      "status": "not_provided",
+      "effect": "non_blocking_for_conversion_complete"
+    },
+    {
+      "item": "independent_answer_key",
+      "status": "not_provided",
+      "effect": "non_blocking_for_conversion_complete; teacher answer remains E3"
+    },
+    {
+      "item": "student_answers_annotations_and_actual_scores",
+      "status": "not_provided",
+      "effect": "non_blocking_for_conversion_complete; student layer remains N/A with basis"
+    },
+    {
+      "item": "Q16_item_score",
+      "status": "not_explicitly_stated",
+      "effect": "retained null; no inference from total 55"
+    }
+  ],
+  "artifacts_checked": {
+    "repair_markdown": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/review/q16_image3_repair.md",
+    "repair_json": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/review/q16_image3_repair.json",
+    "figure_markdown": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/figure_transcription/figures.md",
+    "figure_json": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/figure_transcription/figures.json",
+    "candidate_q16": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/candidates/BJ-2026-CP-QIMO-Q16.md",
+    "builder": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/build_candidate.py",
+    "complete_candidate": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/complete_candidate.json",
+    "self_check": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/self_check.json"
+  },
+  "shared_write_check": {
+    "candidate_modified_by_this_review": false,
+    "shared_bank_modified": false,
+    "index_modified": false,
+    "manifest_modified": false,
+    "source_modified": false,
+    "only_outputs_written": [
+      "review/independent_verification_r2.md",
+      "review/independent_verification_r2.json"
+    ]
+  }
+}

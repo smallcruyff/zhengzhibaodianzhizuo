@@ -1,0 +1,36 @@
+{
+  "saved_at": "2026-09-23T22:07:54.153286+00:00",
+  "owner": "claude:3bd4f1ab-82ef-482b-9938-ae3c518113e0",
+  "note": "# 第52批交接说明（2026-09-23）\n\n- 状态：第52批已晋升为中央工作头并发布到 00_必修三最新审查稿（811页，Word SHA c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6）。第51批原样归档在 必修三_人工审查历史/第51批_原样审阅_20260923_150732。\n- 内容：按用户对第51批的十条意见修改，详见本目录 本轮修订与审查说明_第52批.md。\n- 工程：build_b52.py 串起 restructure_p1.py（第一部分常见表述/题型分类拆分，读 构建/题型组定稿.json）、insert_topics_b52.py（主体专题并入，例题题面整块沿用第一部分同题原排版）、part2_b52.py（综合运用所学正文替换、任务型修正、专题调序改名）；基底是第51批 构建/01b_四权一串写.docx。技术验收在 构建/最终主代理技术验收.json。\n- Skill：6.3.31，style-spec 新增“常见表述与题型分类分成两块”“怎么写说清顺序”“专题例题题面和原题几乎一模一样”；book-bixiu-3-current 记第二部分新结构。\n- 下一动作：等用户按“第52批＋PDF页码”提意见。主体专题的内容源仍是 第50批_类型分类推广_20260922/专题小样/{主体}_主体专题小样.md。",
+  "snapshot": {
+    "book": "必修三",
+    "ready": true,
+    "revision": "batch52",
+    "central_confirmed_revision": null,
+    "status": "stage_review_copy_not_final",
+    "pdf_pages": 811,
+    "files": {
+      "docx": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx",
+        "sha256": "c007d7198422050cdf47d1ec679a097d0b350f1bfb9c70d41672103780f76eb6",
+        "size": 15612374
+      },
+      "pdf": {
+        "path": "必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.pdf",
+        "sha256": "535ca09d53d40ad9de527634074b0c1f940b68f02bac0ae29e1fc770e4b78933",
+        "size": 20734415
+      }
+    },
+    "progress_fingerprints": {
+      "00_必修三最新审查稿/.review-manifest.json": "d26ea26dac69ec739f1099b955afeecda283e1468679c6051f5158fb36c498ae",
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json": "635d75f2f435a29128cf32121ee13de82aa6e270f96492f0743b7d489084cf56",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md": "23730d06056e1245f4fb22d12b6b2d90975f3ecad5db809c5d35a19956d96de1"
+    },
+    "user_modified_review_copies": [],
+    "progress_files": [
+      "/Users/wanglifei/GaokaoPolitics/Codex的北京高考政治/必修三续作_20260908/当前状态.json",
+      "必修三_最新Skill修订_20260913/本轮修订与审查说明.md"
+    ],
+    "note": "revision为当前审阅版本；未渲染或更新中的候选须另读progress_files，不自动视为终稿"
+  }
+}

@@ -1,0 +1,56 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "目录同版闸仍未实现（fix3 回执已如实说明没做）。--toc-pdf 只核“链接文字前缀＋落页上能找到标题”，没有调用 bh.check_same_version，也不读 同版身份.json（profiles 已登记 render.identity_file，_house.json 也登记了 same_version.title_found_min），报告里也没有 pdf_same_version_proven 这类字段。结果是：PDF 整体错页、正文增删但标题不变、同版身份记录冲突或缺失，这几种情况下 repair --toc 都退出 0 并写出错误页码，stderr 为空。check 把这些错页码当作“可修待办”报出来，toc_version_problems 为空，会误导主代理。第51批旧 PDF、B2 PDF 这种标题对不上的旧版仍能拦下。",
+   "evidence": "①原证据复现：/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_r3verify/reproduce.py n2 → N2：exit 0，out_written=true，32 条目录页码全部比真实 B3_52 多 1（段 6 4→5、段 8 15→16），needs_rerender=false，stderr 为空；check 带同一 PDF 报 pending 32，toc_version_problems=[]。②新攻击 B（标题不变、正文增删）：/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_r3verify/r3attack.py b。把 B3_04 删掉 120 段正文、标题不动，再配旧的 目录定位/04.pdf 执行 repair --toc --expect-sha。结果：被删的 120 段里有 117 段仍能在旧 PDF 文字里找到，说明版本明显不同；工具 exit 0，写出，toc 改了 30 处，needs_rerender=false，报告里没有任何 same_version 字段；check 报 pending 30、toc_version_problems 为空。③新攻击 C（同版身份冲突/缺失）：r3attack.py c。在临时目录放一份 同版身份.json，记录这份 PDF 是由原 04（不是当前 DOCX）渲染的。bh.check_same_version 给出 identity=docx_mismatch、FAIL 1；本工具 exit 0 并写出。删掉该记录后同样 exit 0 写出，stderr 为空。④对照 D：第51批 PDF 作 04 的 --toc-pdf，exit 2 不写，这一类确认已拦住。",
+   "fix": "repair --toc 与 check --toc-pdf 先调用 bh.check_same_version(items,P,F,texts,docx,docx_sha,pdf,pdf_sha,identity)，这是复用 bh，不是另写一套。identity 为 docx_mismatch 或 pdf_mismatch 就 Abort(2)。identity 不是 match 时，还要证明正文同版，二选一：新增 --expect-pdf-sha 或 --identity，或者比较 DOCX 正文段落指纹与 PDF 非目录页文字的对位率，低于阈值就 Abort(2)。报告写入 same_version 统计和 pdf_same_version_proven。金标准 04→52 用的 目录定位/04.pdf 没有身份记录，需要按对位率放行，或者由主代理补一份记录。回归测试补上 B、C、N2 三个用例。"
+  },
+  {
+   "severity": "major",
+   "desc": "失败清理仍不完整：DOCX 已经 os.replace 到位之后，写后阶段只有显式 fail_after_write 的分支会删除输出。以下三种情况都会留下未经复核的 DOCX，只以 exit 2 退出，违反共同约定第4条“任何校验失败 → 不留输出”：写后复核本身抛出非 Abort 异常（写后重读 PDF 失败、--health 的 bh.run_health 崩溃）；write_report 失败。前一种是本轮新发现，范围比上一轮 minor n8 更大。",
+   "evidence": "原证据复现：reproduce.py n8，write_report 抛 OSError → exit 2，docx_left_behind=true，report_exists=false。新攻击 F：r3attack.py f，进程内打补丁。(a) bh.run_health 抛 RuntimeError，repair B3_52 --keepnext --health → exit 2，stderr“内部错误：模拟体检崩溃”，docx_left_behind=true。(b) 第二次调用 toc_pdf_dests（写后复核）抛异常，repair B3_04 --toc → exit 2，docx_left_behind=true。",
+   "fix": "write_docx 之后的整段写后复核和写报告放进 try/except BaseException，出任何异常都先 unlink 输出再重新抛出。更稳的做法是先写到同目录的临时名，复核通过、报告写成功之后再 os.replace 到最终路径。"
+  },
+  {
+   "severity": "minor",
+   "desc": "write_report 用固定临时名 .<报告名>.tmp，并且用 write_text 直接写入，会跟随预先存在的符号链接：内容写进链接目标，随后 os.replace 把链接本身改名成报告。guard_report 只检查了最终路径，这个临时路径没有经过守卫。只要允许写的目录里有一个指向受保护文件的同名链接，就能绕过守卫把受保护文件覆盖掉。docx_lib.write_docx 用 mkstemp，没有这个问题。",
+   "evidence": "r3attack.py g，全部在 scratch 内完成：在 out3/g_dir/ 预置符号链接 .r.json.tmp，指向 out3/g_dir/victim/precious.txt（原内容 VICTIM-ORIGINAL），然后执行 check --docx B3_52 --report out3/g_dir/r.json。结果 exit 0；precious.txt 的内容被替换成 layout_prepare 报告（开头是 {\"tool\": {\"name\": \"layout_prepare\"...），r.json 变成指向 precious.txt 的符号链接。",
+   "fix": "改用 tempfile.mkstemp(dir=out.parent)，或以 os.open(O_CREAT|O_EXCL|O_NOFOLLOW) 写临时文件，再 os.replace。"
+  },
+  {
+   "severity": "minor",
+   "desc": "批量误改保护未实现（fix3 规格2 未做，回执已如实说明）：别册内容复制到临时目录后，detect_profile 得到 None，按 --profile bixiu3 改编号 42 处，退出 0；加 --allow-blocked 后，考法 63 处 actual=0 的 blocked 也能放行写出。",
+   "evidence": "reproduce.py n3：numbering_only 结果 exit 0，numbering 42；numbering+method 结果 exit 2，63 处 blocked；加 allow_blocked 后 exit 0 并写出。附带 r3attack.py e：哲学 R10 加 --profile bixiu3，按 bixiu3 识别出 1119 个编号标题，改动 0 处、exit 0。这个样本本身没有造成误改，但工具也没有核对书册内容。",
+   "fix": "见上轮建议：detect_profile 为 None 时核对书册内容特征；编号改动比例超过阈值时判 blocked，并且不许 --allow-blocked 放行，只能用单独的 --allow-mass-renumber 放行。"
+  },
+  {
+   "severity": "minor",
+   "desc": "keepNext 长链闸在 check 与 repair 之间口径仍不一致：check 把会触发链长闸的标签行算作可修 pending（exit 1），repair 却 blocked 并 Abort(2)。",
+   "evidence": "reproduce.py n4：label_para 239，chain_if_added 28。check 结果 pending 1、keepnext 1；repair 结果 exit 2（“会把 keepNext 链撑到 28 段（上限 20）”）；加 --allow-blocked 后 exit 0，改动 0 处。",
+   "fix": "plan_keepnext 在 check 时同样模拟链长，把会触发链长闸的条目列为 blocked_candidates，不计入 pending。"
+  },
+  {
+   "severity": "minor",
+   "desc": "定位坐标系过严导致误拦（安全方向失败，不会写错），上轮问题仍在：段首只含空白的 run、被拆成多段的 PAGEREF instrText 都会被判 blocked，整批 Abort(2)。",
+   "evidence": "reproduce.py n6：check 报 numbering 1，repair exit 2（“重新匹配标题正则未取到编号 span”）。reproduce.py n5：nodes_found_after_split=0，bh 仍读得出 cached=14；repair exit 2（toc blocked，para 9）。",
+   "fix": "num_span_in_ttext 先按 read_docx 的同一规则去掉前导空白和零宽字符，再换算偏移；toc_page_nodes 把同一个域内的 instrText 拼接后再判断是否含 PAGEREF。"
+  },
+  {
+   "severity": "minor",
+   "desc": "文件头说明已过时：fix3 已把 keep_next_labels 的缺省值改为 []（第475行附近），但文件头第50–53行仍写着“缺省 ['【思维链条】', '【答案落点】']…未配置时按此缺省”，第47行还写着“两册配置尚未登记”（bixiu3.json 第503行已经登记了 keep_next_labels）。",
+   "evidence": "grep -n \"缺省 \\['【思维链条】'\" layout_prepare.py → 52:    keepNext 的行（缺省 ['【思维链条】', '【答案落点】']，现行必修三口径；未配置时按此缺省…；bixiu3.json:503 \"keep_next_labels\": [\"【思维链条】\", \"【答案落点】\"]。",
+   "fix": "把文件头这段改为：缺省 []，未配置不启用；bixiu3 已登记。max_keep_next_chain 仍未登记，保留原说明。"
+  }
+ ],
+ "checked": [
+  "上轮 blocker（--report 越权写）确认已修，修在工具里，不是只改了测试：reproduce.py n1 原守卫矩阵中，审阅入口（新文件、.review-manifest.json）、B3 工作区根、协作/、人工审查历史、中央状态、Skill scripts、项目根、B2 冻结工作区全部 REFUSED(3)，与 dl.guard_write、bh._unsafe_out 的判定一致；临时目录放行；第52批 构建/ 与 rendered/ 放行，这符合规格“一、7”（只有 bh._unsafe_out 更严）。审阅入口里的越界报告 __verify_never_written__.json 已不在该目录（现有列表：先看这里.md、单题样稿/、第52批 docx 与 pdf、.review-manifest.json、~$ 临时文件）。",
+  "新攻击 A：r3attack.py a 只调用守卫函数。--report 和 --out 两个守卫对以下目标全部拒绝：审阅入口，以及它的大小写变体（/DESKTOP/）和 .. 穿越路径；协作/、中央状态、哲学交付目录、选必二工作稿（这两本都没有配置）、~/.claude/skills 发布副本、00_共同资料 的 Skill 副本、Skill 母版、~/Desktop、项目根；scratch 内的目录链接、二级链接、指向中央状态和审阅入口的悬空链接、指向真实输入 B3_52 的链接。只放行 构建/ 与临时目录。受保护目录的列表前后一致（dirs_changed=[]）。",
+  "上轮 major（自洽错版 PDF）仍然复现，见 issues[0]。上轮 minor n3、n4、n5、n6、n8 逐条复现，结论与上轮相同；n8 升级并入 major 失败清理一条。n7（符号链接指向冻结稿）仍 exit 3，不写。",
+  "金标准：r3attack.py h 独立用 CLI 复跑。B3_03 repair --numbering --method-counts --keepnext --expect-sha --health：exit 0，编号 344、keepNext 284，输出 SHA 与 B3_04（e8212260…）逐字节相同。B3_04 repair --toc --toc-pdf 目录定位/04.pdf --expect-sha --health：exit 0，toc 30，输出 SHA c007d719… 与 B3_52 逐字节相同。B3_52 加同版 PDF 执行 check：pending 0，exit 0。",
+  "测试集：run_tests_layout_prepare.py 复制到 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_r3verify/tests/ 下运行（PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3），29/29 PASS，用时约 119s，日志在 tests/run.log。",
+  "新攻击用例共 8 个（A 守卫矩阵，含符号链接、大小写和 .. 穿越；B 标题不变正文增删；C 同版身份冲突/缺失；D 旧批次 PDF；E 无配置书册批量改；F 写后异常清理；G 报告临时名符号链接；H 金标准），脚本为 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_r3verify/r3attack.py，结果在 r3attack_results_a.json、r3attack_results_b_c_d_e_f_g_h.json、r3attack.log；上轮证据复现脚本为 reproduce.py，结果在 reattack_results_all.json、reproduce.log。",
+  "纪律：真实输入 SHA 与 mtime 在测试前后一致（snap_before.json 对比 snap_after.json，差异为 0）。覆盖 B3_52 及其 PDF、B3_03、B3_04、目录定位 PDF、B3_51 及其 PDF、B2_230 及其 PDF、layout_prepare.py、batch_health.py、docx_lib.py、profile_lib.py、bixiu2/3.json；构建/、rendered/、目录定位/、00_必修三最新审查稿、B3 工作区、协作/、人工审查历史、中央状态、项目根、Skill scripts/ 的目录列表也都不变。scripts/__pycache__ 只有原有 3 个 cpython-312.pyc，没有新增。没有改工具代码，没有运行 collab.py，没有启动子代理；所有产物都在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_r3verify/ 下。"
+ ]
+}

@@ -1,0 +1,532 @@
+[
+ {
+  "cat": "S01_extract_inventory",
+  "B2": 11,
+  "B3": 29,
+  "B3ext": 57,
+  "clusters_j60": 66,
+  "median_pair": 0.12025316455696203,
+  "cross_b3_to_b2_median": 0.16666666666666666,
+  "lines": 8219,
+  "examples": {
+   "B2": [
+    "extract_217_seven_impact_mechanical.py",
+    "extract_217_six_impact_mechanical.py",
+    "extract_217_pending18_mechanical.py",
+    "generate_现稿定位.py",
+    "collect_final_qa212.py",
+    "collect_delivery_qa212.py"
+   ],
+   "B3": [
+    "extract_inventory.py",
+    "match_blocks.py",
+    "collect_fix.py",
+    "collect_banke.py",
+    "extract_o22_o23_excerpts.py",
+    "extract_12_blocks.py"
+   ],
+   "B3ext": [
+    "build_gaokao_source_forward.py",
+    "source_forward_record.py",
+    "save_tz_first_pools.py",
+    "save_mtg_source_forward.py",
+    "save_hd_second_forward.py",
+    "save_xc_first_forward.py"
+   ]
+  }
+ },
+ {
+  "cat": "S02_evidence_rubric",
+  "B2": 17,
+  "B3": 3,
+  "B3ext": 3,
+  "clusters_j60": 22,
+  "median_pair": 0.13297872340425532,
+  "cross_b3_to_b2_median": 0.19678714859437751,
+  "lines": 2897,
+  "examples": {
+   "B2": [
+    "apply217_batch8_scoring.py",
+    "prepare_conflicts.py",
+    "fix218_scores.py",
+    "apply217_batch7_scoring.py",
+    "apply217_arbitration_human.py",
+    "apply217_three_rubric_terms.py"
+   ],
+   "B3": [
+    "review_o5_rubric_diff.py",
+    "refine_o5_student_rubrics.py",
+    "生成10处来源待核留存.py"
+   ],
+   "B3ext": [
+    "build_evidence_pack.py",
+    "build_new_subjective_evidence.py",
+    "correct_new_evidence_status.py"
+   ]
+  }
+ },
+ {
+  "cat": "S03_source_restore",
+  "B2": 34,
+  "B3": 7,
+  "B3ext": 4,
+  "clusters_j60": 43,
+  "median_pair": 0.14979757085020243,
+  "cross_b3_to_b2_median": 0.26804123711340205,
+  "lines": 5486,
+  "examples": {
+   "B2": [
+    "prepare_cities.py",
+    "restore_b008.py",
+    "source_fixes212.py",
+    "mc_source_group212.py",
+    "integrate_source_final.py",
+    "restore_2025_fangshan_q18_material.py"
+   ],
+   "B3": [
+    "restore_shunyi17.py",
+    "restore_xicheng21.py",
+    "replace_sources44.py",
+    "restore_dongcheng18.py",
+    "restore_fangshan21.py",
+    "restore_xicheng4.py"
+   ],
+   "B3ext": [
+    "extract_sources.py",
+    "prepare_final_sources.py",
+    "extract_sources.py",
+    "reconcile_2024_sources.py"
+   ]
+  }
+ },
+ {
+  "cat": "S04_numbering_count",
+  "B2": 2,
+  "B3": 2,
+  "B3ext": 0,
+  "clusters_j60": 4,
+  "median_pair": 0.11214953271028037,
+  "cross_b3_to_b2_median": 0.13513513513513514,
+  "lines": 990,
+  "examples": {
+   "B2": [
+    "build_baseline_index.py",
+    "apply_revision188_classification.py"
+   ],
+   "B3": [
+    "dump_types.py",
+    "apply_o24_index_corrections.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S05_toc",
+  "B2": 14,
+  "B3": 2,
+  "B3ext": 0,
+  "clusters_j60": 8,
+  "median_pair": 0.23170731707317074,
+  "cross_b3_to_b2_median": 0.29577464788732394,
+  "lines": 1020,
+  "examples": {
+   "B2": [
+    "check_toc219.py",
+    "check_toc220.py",
+    "sync_toc217.py",
+    "fix_toc.py",
+    "refresh187_toc.py",
+    "refresh189_final_toc.py"
+   ],
+   "B3": [
+    "目录同版核验.py",
+    "toc_pages.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S06_pagination_keepnext",
+  "B2": 14,
+  "B3": 4,
+  "B3ext": 0,
+  "clusters_j60": 13,
+  "median_pair": 0.22297297297297297,
+  "cross_b3_to_b2_median": 0.4489795918367347,
+  "lines": 857,
+  "examples": {
+   "B2": [
+    "apply217_end_flow.py",
+    "pagination212.py",
+    "compare_keepnext.py",
+    "check189_final_flow.py",
+    "fix189_pagination.py",
+    "fix191_a32_pagination_v2.py"
+   ],
+   "B3": [
+    "pagination44.py",
+    "第九组图题衔接.py",
+    "第七组分页修复.py",
+    "keepnext_labels.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S07_render",
+  "B2": 17,
+  "B3": 25,
+  "B3ext": 2,
+  "clusters_j60": 16,
+  "median_pair": 0.22580645161290322,
+  "cross_b3_to_b2_median": 0.3458646616541353,
+  "lines": 1349,
+  "examples": {
+   "B2": [
+    "render_toc_candidate217.py",
+    "render217_delta.py",
+    "render218.py",
+    "render219.py",
+    "render226.py",
+    "render226_final.py"
+   ],
+   "B3": [
+    "render44_4.py",
+    "render44_1.py",
+    "render44_5.py",
+    "render44_2.py",
+    "render44_6.py",
+    "render44_7.py"
+   ],
+   "B3ext": [
+    "render_docx_last.py",
+    "render_remaining.py"
+   ]
+  }
+ },
+ {
+  "cat": "S09_pixel",
+  "B2": 10,
+  "B3": 5,
+  "B3ext": 1,
+  "clusters_j60": 10,
+  "median_pair": 0.19166666666666668,
+  "cross_b3_to_b2_median": 0.3592233009708738,
+  "lines": 385,
+  "examples": {
+   "B2": [
+    "pagediff.py",
+    "pagematch.py",
+    "compare_pages214.py",
+    "map_layout214.py",
+    "map_layout213.py",
+    "map_layout215.py"
+   ],
+   "B3": [
+    "pixels44_5.py",
+    "pixels44_7.py",
+    "pixels44_6.py",
+    "pixels44_8.py",
+    "验收逐像素.py"
+   ],
+   "B3ext": [
+    "compare_snapshot.py"
+   ]
+  }
+ },
+ {
+  "cat": "S10_check_review",
+  "B2": 55,
+  "B3": 42,
+  "B3ext": 26,
+  "clusters_j60": 114,
+  "median_pair": 0.12727272727272726,
+  "cross_b3_to_b2_median": 0.18042813455657492,
+  "lines": 18066,
+  "examples": {
+   "B2": [
+    "prepare_final_core.py",
+    "audit216.py",
+    "check217.py",
+    "final_audit215.py",
+    "scan_217_adjacent_card_header_risk.py",
+    "scan_217_student_judgment_residue_988.py"
+   ],
+   "B3": [
+    "verify44_8.py",
+    "accept44_8.py",
+    "accept44.py",
+    "verify44_final.py",
+    "最终技术核验.py",
+    "check_final.py"
+   ],
+   "B3ext": [
+    "accept_fidelity_batch14.py",
+    "accept_fidelity_batch10.py",
+    "accept_fidelity_batch4.py",
+    "accept_fidelity_batch11.py",
+    "accept_fidelity_batch5.py",
+    "accept_fidelity_batch15.py"
+   ]
+  }
+ },
+ {
+  "cat": "S11_publish",
+  "B2": 22,
+  "B3": 9,
+  "B3ext": 0,
+  "clusters_j60": 16,
+  "median_pair": 0.2150170648464164,
+  "cross_b3_to_b2_median": 0.2421602787456446,
+  "lines": 4289,
+  "examples": {
+   "B2": [
+    "publish218_working_snapshot.py",
+    "publish219_snapshot.py",
+    "publish228.py",
+    "publish226.py",
+    "publish230.py",
+    "publish222.py"
+   ],
+   "B3": [
+    "publish44.py",
+    "publish44_8.py",
+    "publish49_review_claude.py",
+    "publish_b50.py",
+    "publish_b51.py",
+    "publish_batch.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S12_drill",
+  "B2": 17,
+  "B3": 2,
+  "B3ext": 0,
+  "clusters_j60": 11,
+  "median_pair": 0.19491525423728814,
+  "cross_b3_to_b2_median": 0.3465909090909091,
+  "lines": 1075,
+  "examples": {
+   "B2": [
+    "apply217_l196_drill.py",
+    "merge_revision191_r24_drills.py",
+    "merge_revision191_r22_drills.py",
+    "prepare191_r25_drills.py",
+    "export_independent_drills.py",
+    "prepare191_r22_drills.py"
+   ],
+   "B3": [
+    "build_drill_report.py",
+    "第六组题肢裁决.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S13_skill_rules",
+  "B2": 3,
+  "B3": 4,
+  "B3ext": 0,
+  "clusters_j60": 5,
+  "median_pair": 0.2916666666666667,
+  "cross_b3_to_b2_median": 0.33793103448275863,
+  "lines": 369,
+  "examples": {
+   "B2": [
+    "update_skill214.py",
+    "repack_skill.py",
+    "pack_skill.py"
+   ],
+   "B3": [
+    "skill_update_632.py",
+    "update_skill.py",
+    "update_rules_r2.py",
+    "update_rules_r3.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S14_state_handoff",
+  "B2": 36,
+  "B3": 21,
+  "B3ext": 5,
+  "clusters_j60": 55,
+  "median_pair": 0.13304721030042918,
+  "cross_b3_to_b2_median": 0.203125,
+  "lines": 9391,
+  "examples": {
+   "B2": [
+    "promote216.py",
+    "make_repair_ledger.py",
+    "record218_cycle.py",
+    "promote215.py",
+    "finish222_records.py",
+    "保存终审完成221.py"
+   ],
+   "B3": [
+    "第43批收口.py",
+    "promote_final49_claude.py",
+    "to_final.py",
+    "promote_b50.py",
+    "promote_b51.py",
+    "save_progress.py"
+   ],
+   "B3ext": [
+    "record_fidelity.py",
+    "build_2026_handoff.py",
+    "finalize_choice_handoff.py",
+    "save_2024_supplement_checkpoint.py",
+    "build_package.py"
+   ]
+  }
+ },
+ {
+  "cat": "S15_font_style_roles",
+  "B2": 27,
+  "B3": 8,
+  "B3ext": 0,
+  "clusters_j60": 26,
+  "median_pair": 0.23684210526315788,
+  "cross_b3_to_b2_median": 0.25925925925925924,
+  "lines": 3735,
+  "examples": {
+   "B2": [
+    "finish_format212.py",
+    "last_layout212.py",
+    "normalize_mc212.py",
+    "softreturns212.py",
+    "normalize_mc.py",
+    "fix204_headers_material_box.py"
+   ],
+   "B3": [
+    "apply_question_roles44.py",
+    "第八组局部版式.py",
+    "audit_font_colors.py",
+    "audit_font_colors.py",
+    "add_0365_table_borders.py",
+    "audit_material_fonts.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S16_image_crop",
+  "B2": 21,
+  "B3": 5,
+  "B3ext": 1,
+  "clusters_j60": 25,
+  "median_pair": 0.14473684210526316,
+  "cross_b3_to_b2_median": 0.23770491803278687,
+  "lines": 2268,
+  "examples": {
+   "B2": [
+    "补充217未决图页.py",
+    "prepare_rubric_images.py",
+    "apply217_l161_current_image.py",
+    "apply217_five_diagrams.py",
+    "prepare217_five_diagrams.py",
+    "build_coverage_reconciliation.py"
+   ],
+   "B3": [
+    "vector_sources44.py",
+    "outline_svg44.py",
+    "make_cover.py",
+    "generate_crop_assets.py",
+    "recover_2023_root_teaching.py"
+   ],
+   "B3ext": [
+    "crop_fidelity_batch2.py"
+   ]
+  }
+ },
+ {
+  "cat": "S17_table",
+  "B2": 5,
+  "B3": 5,
+  "B3ext": 0,
+  "clusters_j60": 10,
+  "median_pair": 0.22946859903381642,
+  "cross_b3_to_b2_median": 0.22636103151862463,
+  "lines": 1102,
+  "examples": {
+   "B2": [
+    "fix190_native_table_widths.py",
+    "merge191_c32_and_table_width.py",
+    "fix191_cp21_source_table.py",
+    "fix191_fs_table_width.py",
+    "fix191_sjs20_table_source.py"
+   ],
+   "B3": [
+    "build_three_card_table_asset.py",
+    "write_native_table_fidelity_review.py",
+    "build_private_native_table_patch.py",
+    "构建三表保真源.py",
+    "final_r3_tables.py"
+   ],
+   "B3ext": []
+  }
+ },
+ {
+  "cat": "S18_content_patch",
+  "B2": 225,
+  "B3": 96,
+  "B3ext": 69,
+  "clusters_j60": 282,
+  "median_pair": 0.13559322033898305,
+  "cross_b3_to_b2_median": 0.25274725274725274,
+  "lines": 47361,
+  "examples": {
+   "B2": [
+    "apply217_l196.py",
+    "prepare217_remaining_live.py",
+    "apply217_batch5_second.py",
+    "write217_batch7_rulings.py",
+    "apply217_remaining60_first.py",
+    "apply217_culture_price_charity.py"
+   ],
+   "B3": [
+    "build44.py",
+    "refine44_4.py",
+    "refine44_5.py",
+    "refine44.py",
+    "refine44_8.py",
+    "build_pension44.py"
+   ],
+   "B3ext": [
+    "root_revision_batch2.py",
+    "root_revision_batch33.py",
+    "root_revision_batch23.py",
+    "root_revision_batch17.py",
+    "root_revision_batch6.py",
+    "root_revision_batch37.py"
+   ]
+  }
+ },
+ {
+  "cat": "S19_orchestration",
+  "B2": 1,
+  "B3": 7,
+  "B3ext": 0,
+  "clusters_j60": 5,
+  "median_pair": 0.18575851393188855,
+  "cross_b3_to_b2_median": 0.0234375,
+  "lines": 2742,
+  "examples": {
+   "B2": [
+    "carrier_youzy_controller.js"
+   ],
+   "B3": [
+    "build_evidence_ready_packs_v2.py",
+    "build_evidence_ready_packs.py",
+    "build_evidence_ready_packs_o7.py",
+    "build_next_calibration_packs.py",
+    "build_calibration_packs.py",
+    "build_o25_packages.py"
+   ],
+   "B3ext": []
+  }
+ }
+]

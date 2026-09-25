@@ -1,0 +1,16 @@
+{
+ "reviewer": "Claude 确认复核（只读，Opus）",
+ "target": "归属表_v1（应为内容 v4）",
+ "against": ["确认意见_v3.json", "返修回执_v4.json（不存在）"],
+ "verdict": "FAIL",
+ "summary": "没有可确认的 v4 交付。目录里不存在 返修回执_v4.json，README 仍是 v3（rule_version 2026-09-24-attribution-v3）。确认意见_v3.json 写于 14:18，此后只有它一个文件更新；attribution.csv、diffs、exam_identity.json、skill_overrides.json、scripts 都停在 14:05 到 14:07，脚本仍是 *_v3.py。按原证据复现，v3 的 4 个 major 全部仍在。",
+ "issues": [
+  {"severity": "blocker", "desc": "v4 返修没有产出：缺返修回执_v4.json，交付件也没有在 v3 复核之后更新。", "evidence": "find . -newer 确认意见_v3.json 只命中 确认意见_v3.json 本身。README 首行仍是“完整性归属表 v3”，scripts/ 下只有 *_v3.py。", "fix": "先完成 v4 返修，写出返修回执_v4.json，再发起确认。"},
+  {"severity": "major", "desc": "v3 major①未修：孪生题配对仍照抄 matrix 的 dup_of。", "evidence": "exam_identity.json 第96行仍把 BJ-2024-HD-QIZHONG-Q16 配给 alias BJ-2025-HD-QIZHONG-Q25；identity 的说明原话仍是“2025 Q16/Q18 在 matrix.csv 中无对应”。BJ-2025-HD-QIZHONG-Q18 仍同时出现在 B2_missing_candidates.csv 和 B3_missing_candidates.csv 中。", "fix": "按 确认意见_v3.json issue 1 的修法处理。"},
+  {"severity": "major", "desc": "v3 major②未修：BJ-2024-CY-YIMO 的 Q18(2) 仍判为 E1。", "evidence": "attribution.csv 中 BJ-2024-CY-YIMO-Q18#2 仍是“完整题-有E1 / E1 / 逐题已匹配正式评分材料”；skill_overrides.json 中查不到 CY-YIMO，命中 0 次。", "fix": "按 确认意见_v3.json issue 2 的修法处理。"},
+  {"severity": "major", "desc": "v3 major③未修：必修三汇编中门头沟、房山的待复核块仍未纳入。", "evidence": "attribution.csv 中仍没有 BJ-2024-MTG-YIMO-Q1、Q3、Q21，也没有 BJ-2024-FS-YIMO-Q9、Q10 的任何行。2024 年只有 MTG Q7 和 Q10 有行。", "fix": "按 确认意见_v3.json issue 3 的修法处理。"},
+  {"severity": "major", "desc": "v3 major④未修：小问级收录仍被扩大到整题。", "evidence": "scripts/build_attribution_v3.py 第392行仍是 collected_direct = bool(book and mrow.get(book))。BJ-2024-CY-YIMO-Q18#2 在 B3 列仍为 COLLECTED，而 matrix 在 B3 列只记了 S[1]。", "fix": "按 确认意见_v3.json issue 4 的修法处理。"}
+ ],
+ "verified_fixed": [],
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/attribution_confirm_v4/"
+}

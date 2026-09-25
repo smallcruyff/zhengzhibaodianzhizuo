@@ -1,0 +1,243 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "paper_pages": {
+    "1": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p001.png"
+    },
+    "2": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p002.png"
+    },
+    "3": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p003.png"
+    },
+    "4": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p004.png"
+    },
+    "5": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p005.png"
+    },
+    "6": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p006.png"
+    },
+    "7": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p007.png"
+    },
+    "8": {
+      "role": "原卷",
+      "opened": true,
+      "asset": "evidence/paper_pages/p008.png"
+    }
+  },
+  "rubric_pages": {
+    "1": {
+      "role": "评分材料",
+      "opened": true,
+      "asset": "evidence/rubric_pages/p001.png"
+    },
+    "2": {
+      "role": "评分材料",
+      "opened": true,
+      "asset": "evidence/rubric_pages/p002.png"
+    },
+    "3": {
+      "role": "评分材料",
+      "opened": true,
+      "asset": "evidence/rubric_pages/p003.png"
+    },
+    "4": {
+      "role": "评分材料",
+      "opened": true,
+      "asset": "evidence/rubric_pages/p004.png"
+    }
+  },
+  "question_links": {
+    "Q1": {
+      "paper_pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q1.md"
+    },
+    "Q2": {
+      "paper_pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q2.md"
+    },
+    "Q3": {
+      "paper_pages": [
+        1
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q3.md"
+    },
+    "Q4": {
+      "paper_pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q4.md"
+    },
+    "Q5": {
+      "paper_pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q5.md"
+    },
+    "Q6": {
+      "paper_pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q6.md"
+    },
+    "Q7": {
+      "paper_pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q7.md"
+    },
+    "Q8": {
+      "paper_pages": [
+        2
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q8.md"
+    },
+    "Q9": {
+      "paper_pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q9.md"
+    },
+    "Q10": {
+      "paper_pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q10.md"
+    },
+    "Q11": {
+      "paper_pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q11.md"
+    },
+    "Q12": {
+      "paper_pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q12.md"
+    },
+    "Q13": {
+      "paper_pages": [
+        3
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q13.md"
+    },
+    "Q14": {
+      "paper_pages": [
+        4
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q14.md"
+    },
+    "Q15": {
+      "paper_pages": [
+        4
+      ],
+      "rubric_pages": [],
+      "candidate": "BJ-2026-CY-QIMO-Q15.md"
+    },
+    "Q16": {
+      "paper_pages": [
+        4
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q16.md"
+    },
+    "Q17": {
+      "paper_pages": [
+        5
+      ],
+      "rubric_pages": [
+        1
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q17.md"
+    },
+    "Q18": {
+      "paper_pages": [
+        5,
+        6
+      ],
+      "rubric_pages": [
+        2
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q18.md"
+    },
+    "Q19": {
+      "paper_pages": [
+        6,
+        7
+      ],
+      "rubric_pages": [
+        3
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q19.md"
+    },
+    "Q20": {
+      "paper_pages": [
+        7
+      ],
+      "rubric_pages": [
+        3
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q20.md"
+    },
+    "Q21": {
+      "paper_pages": [
+        8
+      ],
+      "rubric_pages": [
+        4
+      ],
+      "candidate": "BJ-2026-CY-QIMO-Q21.md"
+    }
+  },
+  "complex_assets": {
+    "Q4": "evidence/figures/Q04_p002_rui_gu_tu.png",
+    "Q6": "evidence/figures/Q06_p002_condition_box.png",
+    "Q16": "evidence/figures/Q16_p004_stage.png",
+    "Q19": "evidence/figures/Q19_p006_policy_table.png",
+    "Q21": "evidence/figures/Q21_p008_discussion_boxes.png"
+  },
+  "coverage_gap": "无来源页静默丢失；无学生层来源，学生层按N/A_with_basis登记。",
+  "structure_descriptions": {
+    "Q2": "镜头一、镜头二位于同一共同矩形框。",
+    "Q18": "第一千零二十五条在上方独立圆角横框；甲、乙在下方左右两个独立矩形框；三框无箭头。"
+  },
+  "current_shared_metadata_note": "20260922仅同步确定性路径/状态及已独立复核的Q2/Q18框线；R6原字节见sources/history_r6；其他原件和内容不改。"
+}

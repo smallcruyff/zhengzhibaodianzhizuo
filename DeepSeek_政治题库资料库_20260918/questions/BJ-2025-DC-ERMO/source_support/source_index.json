@@ -1,0 +1,252 @@
+{
+  "schema_version": "source_support_delta.v1",
+  "exam_id": "BJ-2025-DC-ERMO",
+  "status": "source_support_only_not_question_materialization",
+  "generated_at": "2026-09-22",
+  "write_boundary": {
+    "question_files_modified": false,
+    "shared_question_bank_modified": false,
+    "indexes_or_manifest_modified": false,
+    "old_materialization_rerun": false
+  },
+  "sources": [
+    {
+      "role": "main_exam_E0_plus_embedded_E3_and_levels",
+      "path": "sources/original/main_exam_试卷.pdf",
+      "sha256": "9b287871f660f23de9593be4c16952103c1c6873d6bd52d25ddd57ddd1a8d268",
+      "bytes": 575180,
+      "pages": 8,
+      "source_id": "S9b287871f660"
+    },
+    {
+      "role": "formal_scoring_E1_plus_aggregate_marking_report",
+      "path": "sources/original/formal_scoring_细则.pdf",
+      "sha256": "606dbae1d5ce3e59c8daef227c8b797cfbda2b7f90b8c9e07f47654af13e1cc2",
+      "bytes": 327662,
+      "pages": 5,
+      "source_id": "S606dbae1d5ce"
+    }
+  ],
+  "source_page_assets": {
+    "main_exam": {
+      "p001": "4d72ae41f37c89ca501391ac9fed5d5d64a40853351c59d9e958d9c90f724978",
+      "p002": "e558cb48333e3e3b677b33d2139f7e0f2a4e53c19c18b553ebdc07e66b024755",
+      "p003": "1bad360e4165dff70e462cc2697dd787b695dd42307da518633a868dbfb4b1a7",
+      "p004": "9eb8cb831c74b52ce1fc29080903234e95324f5b07acb67f00bf8bdde6a4158b",
+      "p005": "3fbdcb71702e05aa057bfe1ca4e98ec523014eefe96b70e851f98cf49dceaa1f",
+      "p006": "3b3192bc1bd642b6eb7865cb3357b0c144821c10ffd7bb152894004d4b755b6c",
+      "p007": "3e9781a28e3b4d34e5cc615e68bd9899a79fedfeb5a980b033d2ddaa6cd41e0e",
+      "p008": "1ed07ad444c556689ef5be81a807cf33c80f8f5369f1179b1d542c711d12c390"
+    },
+    "formal_scoring": {
+      "p001": "c19cef991c99ec918518fc4ffeadcf2201149e78904dc004f9edc305bda3e468",
+      "p002": "cc7478361bde55ae561dd1c540c2d52a1010b5d6bc9225344c778828f3638204",
+      "p003": "403ab65e4b8da9739cb4d9ac735ed630debd973ab7f798c9221dca87d20e9e2c",
+      "p004": "5980e2a901fd07971e08255d8a24bd78e2dd7c86ac7b309eeab30c7d3588ba48",
+      "p005": "ff77021a6f1723712a132d7d19fa757599dfdfc09409b83ff428b2670b0b023e"
+    },
+    "Q3_figure": {
+      "path": "assets/figures/Q3_painting_caption.png",
+      "sha256": "062372bfc740b349808db71e222f939b7015d4c8c973155030f62a466dfa5008",
+      "visible_caption": "张京生 王元珍；《没有共产党就没有新中国》"
+    }
+  },
+  "transcriptions": {
+    "main_exam_cached_native": {
+      "path": "transcriptions/cached_native/main_exam_raw.txt",
+      "sha256": "1e9909acac1e852d4d0bbdb17a1dec8b15495545d184a9bf20a7aed0f2079ffd"
+    },
+    "main_exam_cached_cleaned_full": {
+      "path": "transcriptions/cached_cleaned/main_exam_full.md",
+      "sha256": "c7db51d145978856715bd0d8e2c42fe0ec09cfc8db9dedc50f61954c3ea35afe"
+    },
+    "main_exam_layout": {
+      "path": "transcriptions/layout/main_exam_layout.txt",
+      "sha256": "8df642af7c4a584f4d663c7cdaa381e394b1dd7e5011bbc00abd2e2226be3ad2"
+    },
+    "formal_scoring_cached_native": {
+      "path": "transcriptions/cached_native/formal_scoring_raw.txt",
+      "sha256": "58a28ea033518113d48f661d6c9d71cfb37878631e9193d4745af97580745ae1"
+    },
+    "formal_scoring_cached_cleaned_full": {
+      "path": "transcriptions/cached_cleaned/formal_scoring_full.md",
+      "sha256": "15d917025e1329cbeecf282391550d446bccc22627ba5b1e841e8645638afe61"
+    },
+    "formal_scoring_layout": {
+      "path": "transcriptions/layout/formal_scoring_layout.txt",
+      "sha256": "9fa35aeb08084a5f85cccded2c50af1edb7e89f9d98bea01e0e198a4e920a986"
+    }
+  },
+  "page_role_map": {
+    "main_exam": {
+      "p001": {
+        "role": "E0_and_frontmatter",
+        "questions": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4_start"
+        ]
+      },
+      "p002": {
+        "role": "E0",
+        "questions": [
+          "Q4_end",
+          "Q5",
+          "Q6",
+          "Q7",
+          "Q8",
+          "Q9_start"
+        ]
+      },
+      "p003": {
+        "role": "E0",
+        "questions": [
+          "Q9_end",
+          "Q10",
+          "Q11",
+          "Q12",
+          "Q13",
+          "Q14_start"
+        ]
+      },
+      "p004": {
+        "role": "E0_and_part2_heading",
+        "questions": [
+          "Q14_end",
+          "Q15",
+          "Q16",
+          "Q17"
+        ]
+      },
+      "p005": {
+        "role": "E0",
+        "questions": [
+          "Q18",
+          "Q19_start"
+        ]
+      },
+      "p006": {
+        "role": "E0",
+        "questions": [
+          "Q19_end",
+          "Q20",
+          "Q21"
+        ]
+      },
+      "p007": {
+        "role": "embedded_E3_not_independent",
+        "questions": [
+          "Q1-Q20"
+        ]
+      },
+      "p008": {
+        "role": "embedded_E3_and_level_descriptions_not_formal_E1",
+        "questions": [
+          "Q20",
+          "Q21"
+        ]
+      }
+    },
+    "formal_scoring": {
+      "p001": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q16"
+        ]
+      },
+      "p002": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q16_tail",
+          "Q17",
+          "Q18_1_start"
+        ]
+      },
+      "p003": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q18_1_tail",
+          "Q18_2",
+          "Q19_start"
+        ]
+      },
+      "p004": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q19_tail",
+          "Q20_start"
+        ]
+      },
+      "p005": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q20_tail",
+          "Q21"
+        ]
+      }
+    }
+  },
+  "current_shared_question_sha256": {
+    "Q1": "d56c2840c919ed014dfe5a2eeecc16059675a815fb97f8af9acbc18e401eeef6",
+    "Q2": "460d3a784f7f705f5571fa4762cd40e773403d57fa5fa42059147f13df20af89",
+    "Q3": "e96b35918397f2c65e121069a3124c2f949012b14484585fd1cb9037fc571a87",
+    "Q4": "93c4ee2198e6723478a8af1976bcd4dde1a28f3e75ac097b116e6dd3db15a794",
+    "Q5": "2d07665bfb6cb5ddc54e1ada198e09e2092f3bb27c6e2952539d7232c2ebd1ad",
+    "Q6": "4a3198c39638f112cd2b82898e6606ed4c3319020bfd0fc28d29ef53a22605e3",
+    "Q7": "7094ee1be40150a7cd7721f600ac6560201990814d2844e28e42d89dd0aaf4ed",
+    "Q8": "5335a81acb2a3eed6b2ec01c10d6ab3be73fa20740d59303bef6334c0edf1fe5",
+    "Q9": "1fdb65937ac387bfbf07f493294609f9bb3ce2d81b8cafd13d88b5a63fea30e9",
+    "Q10": "db325e2c2beae84b0b930d62c7fe38bdffe562dca77875e0546dcf6123c03e4d",
+    "Q11": "65bd9cefed40245ce5262a0d23f8c5fd48c9ff713289cb6eaafdd76226335af5",
+    "Q12": "5932515d916ac11a3def97a211f8d5ddfd6757bfbf00b411d9cc33794c034579",
+    "Q13": "860529c6d4ae7173c922e0e6a0820387345695679dcc1f8aa5226ecdf2f76ef1",
+    "Q14": "b6cdb133453597dd4f67a3356cc8ca25d6570949373603b3e9341d995b3a2e2a",
+    "Q15": "cc1c78f40f58b3fa04540e5c66761a927b2a9cb024db11e307c14a75b562bade",
+    "Q16": "53884b5ef9d268c7da7d5ff15829d75a8656565dca0b719efe65e0e871e38bcd",
+    "Q17": "46e3bfd8f5b16a4e2f75dac20b98c8259eaa2560190c0419d11076f7de68a6ff",
+    "Q18": "9e1ef21c6736a43c20781080e82fc64fdb41b88349d21153f1ca4e96b16dd64b",
+    "Q19": "191b359e9478047c9cfb8ef256a457eea7c86cfdfe8247358a9dd21662db6e45",
+    "Q20": "40787eb56c2f7e75f4d22f55c7ed4829133c44f94b93e382d38162b429d648a1",
+    "Q21": "f0ea5da8ffbe6a30a6a0bb93ed7defa674100ecee2b030ba461fc7c8dc787909"
+  },
+  "receipt_chain": [
+    {
+      "path": "audit/receipt_chain/01_all_13_pages_opened_and_question_repair_mapping.json",
+      "sha256": "00759fdba1ce86b4e8bc537d0ee860d3792cbfd6659b1d9e45e7f6a757c02829",
+      "role": "all_13_pages_opened_and_question_repair_mapping",
+      "production_receipt_path": "../../../repair_2025_dc_ermo/checkpoint.json"
+    },
+    {
+      "path": "audit/receipt_chain/02_remaining_questions_visual_and_role_completion.json",
+      "sha256": "0247e7c639eb99ee52f8bf6b3efe3f34b5ea99cfc6a51889bfcf466d0a6623d6",
+      "role": "remaining_questions_visual_and_role_completion",
+      "production_receipt_path": "../../../complete_2025_dc_ermo_remaining/completion.json"
+    },
+    {
+      "path": "audit/receipt_chain/03_legacy_materialization_integrity_read_only_do_not_rerun.json",
+      "sha256": "18a6b7eb409539fb70f24f2a2e9ccb67c38b90f4f207f24295004903f375e89a",
+      "role": "legacy_materialization_integrity_read_only_do_not_rerun",
+      "production_receipt_path": "../../../materialize_2025_dc_ermo_merge_ready/verification.json"
+    },
+    {
+      "path": "audit/receipt_chain/04_current_shared_consolidated_signoff.json",
+      "sha256": "7ecf45e00a697d3d4663a156e00114be6fc0325f9ba8e4b688c7828bb087a7ca",
+      "role": "current_shared_consolidated_signoff",
+      "production_receipt_path": "../resume_audit_20260922/consolidated_signoff/verification.json"
+    },
+    {
+      "path": "audit/receipt_chain/05_current_Q18_metadata_acceptance.json",
+      "sha256": "d7398862f50a5dffc99b7ffc65fd50439b6fef672d1a47cfd771b4caf4938cbc",
+      "role": "current_Q18_metadata_acceptance",
+      "production_receipt_path": "../../../new_controller_20260922/BJ-2025-DC-ERMO_Q18_current_metadata_acceptance.json"
+    }
+  ],
+  "source_limits": {
+    "independent_answer_file": "not_provided",
+    "student_original_answers_annotations_scores": "source_not_provided",
+    "aggregate_report_not_student_layer": true,
+    "embedded_exam_answers_not_E1": true
+  },
+  "deployment_note": "Only receipt paths localized; source/question bytes unchanged. Production source index preserved under audit."
+}

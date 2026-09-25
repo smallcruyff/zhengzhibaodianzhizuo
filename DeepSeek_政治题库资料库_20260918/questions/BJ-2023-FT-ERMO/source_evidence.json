@@ -1,0 +1,53 @@
+{
+  "schema_version": "bj-2023-ft-ermo-small-delta-source-evidence.v1",
+  "exam_id": "BJ-2023-FT-ERMO",
+  "status": "isolated_small_delta_v2_pending_independent_review",
+  "parent_candidate_manifest_sha256": "5a16f5cff905bf92eecba9495a1949e221355af893e3cf22e81cb6df426f1a10",
+  "sources": [
+    {
+      "source_id": "Sd92728609289",
+      "source_role": "原卷题面/E0 source",
+      "source_sha256": "d9272860928903ecbea4e56d5c3779e3fdfbaff8764b37f66dcf3732dc4bdf26",
+      "original_path": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二试卷.pdf",
+      "packaged_original_path": "candidates/sources/originals/Sd92728609289_丰台高三政治练习二试卷.pdf",
+      "physical_pages": 10,
+      "opened_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "page_assets": "assets/source_pages/page-01.png through page-10.png",
+      "front_matter_evidence": ["assets/source_pages/page-01.png", "assets/source_pages/page-06.png"],
+      "transcript_path": "candidates/sources/transcripts/Sd92728609289.txt"
+    },
+    {
+      "source_id": "Saccdd9d42a77",
+      "source_role": "同卷参考答案/E3 only",
+      "source_sha256": "accdd9d42a770f7051e40186931a172089f04e8ba38198f321aeeade9fb3c032",
+      "original_path": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二（答案）.pdf",
+      "packaged_original_path": "candidates/sources/originals/Saccdd9d42a77_丰台高三政治练习二（答案）.pdf",
+      "physical_pages": 2,
+      "opened_pages": [1, 2],
+      "page_assets": "assets/answer_pages/page-1.png and page-2.png",
+      "transcript_path": "candidates/sources/transcripts/Saccdd9d42a77.txt"
+    }
+  ],
+  "formal_rubric_sources": [],
+  "student_example_sources": [],
+  "question_figure_evidence": {
+    "figure_asset_count": 9,
+    "figure_assets_frozen": true,
+    "target_figure_assets": [
+      "assets/figures/BJ-2023-FT-ERMO-Q6_carbon_incentive_flow.png",
+      "assets/figures/BJ-2023-FT-ERMO-Q19_copyright_flow_and_card.png"
+    ],
+    "q6_visual_basis": "缓存原页第2页及Q6图：获取碳币向下的一条箭头进入同一购物车节点，节点内列三行标签。",
+    "q19_visual_basis": "缓存原页第8页及Q19图：标题、三项输出下行入版权链、案件画像无下行、材料一键调取下行入天平链、底部两链相向箭头。"
+  },
+  "evidence_boundary": {
+    "answer_layer": "E3_only",
+    "formal_rubric": "not_available_same_exam_formal_rubric",
+    "student_layer": "N/A_with_basis",
+    "no_source_exam_text_substitution": true,
+    "no_short_fragment_as_front_matter": true,
+    "source_roles_unchanged": true
+  },
+  "shared_modified": [],
+  "controller_ready_generated": false
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "source_support_validation.v1",
+  "exam_id": "BJ-2025-DC-ERMO",
+  "recorded_at": "2026-09-22",
+  "overall": "PASS_PRODUCTION_AWAITING_INDEPENDENT_REVIEW",
+  "scope": "source-support files only; no question materialization or shared write",
+  "checks": {
+    "source_pdf_sha": {"checked": 2, "passed": 2},
+    "source_page_assets_byte_equal_to_verified_cache": {"checked": 13, "passed": 13},
+    "Q3_figure_byte_equal_to_verified_parent_asset": true,
+    "cached_full_transcriptions_byte_equal": {"checked": 2, "passed": 2},
+    "cached_native_transcriptions_present": {"checked": 2, "passed": 2},
+    "layout_transcriptions_present": {"checked": 2, "passed": 2},
+    "current_shared_question_sha_lock": {"checked": 21, "passed": 21},
+    "receipt_chain_sha_and_paths": {"checked": 5, "passed": 5},
+    "question_md_inside_delta": 0,
+    "json_parse": "PASS"
+  },
+  "payload_before_validation": {
+    "file_count": 27,
+    "tree_sha256": "8ee3d280f380b2441a330d0c7428df552400d9ebf42964a17531568bb64afda7",
+    "algorithm": "sorted relative path + NUL + file SHA-256 + NUL; excludes validation.json/md and future review/"
+  },
+  "role_guards": {
+    "main_exam_p007_p008": "embedded_E3_and_level_material_not_independent_answer_and_not_formal_E1",
+    "formal_scoring_p001_p005": "formal_E1_plus_aggregate_marking_report",
+    "student_layer": "source_not_provided",
+    "aggregate_student_performance_text": "not_individual_student_layer",
+    "Q17_native_anomalies": "preserved_separately_from_visual_reading",
+    "Q3_caption": "张京生 王元珍; image-text locator only"
+  },
+  "fresh_shared_sha": {
+    "question_count": 21,
+    "Q18": "9e1ef21c6736a43c20781080e82fc64fdb41b88349d21153f1ca4e96b16dd64b",
+    "accepted_by_controller_receipt": true
+  },
+  "writes": {
+    "shared_question_bank": false,
+    "question_files": false,
+    "indexes_or_manifest": false,
+    "old_materialization_rerun": false,
+    "source_pdfs": false
+  },
+  "next_step": "A different agent must independently review the new metadata/frontmatter/full-transcript entry, all 13 page assets, receipt links and the 21 SHA guard."
+}

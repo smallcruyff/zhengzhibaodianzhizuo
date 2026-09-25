@@ -1,0 +1,281 @@
+{
+  "schema_version": "complete_candidate_package.v1",
+  "receipt_id": "complete_2025_dc_ermo_remaining",
+  "exam_id": "BJ-2025-DC-ERMO",
+  "created_at": "2026-09-21",
+  "agent": "/root/complete_2025_dc_ermo_remaining",
+  "status": "candidate_only_not_merged",
+  "scope": "只补齐尚未独立接受的继承题 Q7/Q8/Q10-Q13/Q15/Q16/Q21；不重做 repair checkpoint 已验证的 12 项候选；不修改共享题库、indexes、evidence、conversion_manifest 或原始题源。",
+  "output_dir": "后勤管理/MD全库流水线_20260921/receipts/complete_2025_dc_ermo_remaining",
+  "source_fingerprints": {
+    "paper": {
+      "path": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+      "sha256": "9b287871f660f23de9593be4c16952103c1c6873d6bd52d25ddd57ddd1a8d268",
+      "pages": 8
+    },
+    "rubric": {
+      "path": "/Users/wanglifei/Desktop/2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf",
+      "sha256": "606dbae1d5ce3e59c8daef227c8b797cfbda2b7f90b8c9e07f47654af13e1cc2",
+      "pages": 5
+    },
+    "complete_transcription_scope": {
+      "path": "后勤管理/MD全库流水线_20260921/20260921_用户确认_完整转写范围.md",
+      "sha256": "3c22e82b6ed03780d3f38c413158d1f35e724996dd32c1751b8000cf1bf4be6e"
+    },
+    "review_receipt": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/review_2025_dc_ermo.json",
+      "sha256": "f5cfce5b01d1988fd52efb719a6371616c4f4300653dd450dd922f37fc451e40"
+    },
+    "repair_checkpoint": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/repair_2025_dc_ermo/checkpoint.json",
+      "sha256": "00759fdba1ce86b4e8bc537d0ee860d3792cbfd6659b1d9e45e7f6a757c02829"
+    },
+    "prior_verification": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/verify_2025_dc_ermo_complete/verification.json",
+      "sha256": "86461777f3aea88b397601b9f430cdad5e3fdb0326b574bfeb282cf7156dabde"
+    },
+    "prior_repair_candidate_reference": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/BJ-2025-DC-ERMO_修复候选完整题面.md",
+      "sha256": "e4c9f68d37a7a5b0ebe0757fc6ca5e9dae2f4681d13feba6b55464e30f257f7e"
+    },
+    "manifest": {
+      "path": "后勤管理/MD全库流水线_20260921/conversion_manifest.json",
+      "sha256_at_review": "355e39dce5f8fe8f96f17255f633aff8a6381da10f8ca6088066a7c66ea11e87",
+      "sha256_current_at_completion": "36630ca71621384534c2a11b4ace8f0d6cb07e3214aa5a26329b4c7373d97c7e",
+      "note": "当前 manifest SHA 与 review 回执记录不同；本轮未写入，未据此重建或晋升共享状态。",
+      "modified_by_this_receipt": false
+    }
+  },
+  "page_sha256": {
+    "paper:p002": "d62a04bdd7892bd058b27f58d8b37ec0d00ec9e86c20127e604b06144f414892",
+    "paper:p003": "672ad373f6066b7564898b2c032c4c83c09d5de93331fb43886078a3384efc64",
+    "paper:p004": "c88741cccb2d3f1ae3a1bf1dce36dcd4700009b2a22424cb37980e78c60f28f5",
+    "paper:p006": "a9f12e0cd2fa027712689260142490734bcf6d5d3a330c0d6fb4e5ea8b4b3be8",
+    "paper:p007": "55e2aa8b9bc9f5242197caa173fd50af6989b39f33dc9223bfd3d8219ce41cbf",
+    "paper:p008": "d525b16e5e1b40cb6809efcaea86f80c29cd5cd548d54f528323662a1eb9cfe8",
+    "rubric:p001": "5a3fd06add64d09ecec93e4e3508f9c62bb8ac4aad06df542034db473da9c7d1",
+    "rubric:p002": "696135809eb5d574ec8675526c7fbf0c5266e6d0bccd1862a15219697591956f",
+    "rubric:p005": "8d228d6e602462d45501332e0d4cf850a5702beab6c7992c55dd6303a9c60358"
+  },
+  "source_read_and_visual_scope": {
+    "paper_pages_opened": [2, 3, 4, 6, 7, 8],
+    "rubric_pages_opened": [1, 2, 3, 4, 5],
+    "visual_objects_checked": [
+      "p002 Q7/Q8题面",
+      "p003 Q10-Q13题面",
+      "p004 Q15题面、第二部分标题、Q16题面",
+      "p006 Q20尾部与Q21完整题面",
+      "p007内嵌选择题答案、Q16-Q21答案/方向",
+      "p008 Q20与Q21两张等级表",
+      "rubric:p001 Q16评分块",
+      "rubric:p005 Q21评分块"
+    ],
+    "student_layer_result": "source_not_provided：原卷、内嵌答案/等级页和评分 PDF均未提供学生原答、错误/遗漏/涂改/圈划、教师批注、评分标记或逐生实得分；评分材料中的学生表现/教学启示仅为聚合报告。"
+  },
+  "questions": [
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q7",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q7.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q7.md",
+      "parent_sha256": "777ed9b2f6868a2f726a7eb2c398c9da88f7f3d5fe444c62751125350701366c",
+      "candidate_sha256": "7094ee1be40150a7cd7721f600ac6560201990814d2844e28e42d89dd0aaf4ed",
+      "paper_pages": [2],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "7.B；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p002 完整；无Q7专属正式评分段；原有泛化评分候选排除；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q8",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q8.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q8.md",
+      "parent_sha256": "ede8c6c75b878b4923b239bd0a51627eba249348881c41665b68143c15924634",
+      "candidate_sha256": "5335a81acb2a3eed6b2ec01c10d6ab3be73fa20740d59303bef6334c0edf1fe5",
+      "paper_pages": [2],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "8.A；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p002 完整；无Q8专属正式评分段；原有泛化评分候选排除；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q10",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q10.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q10.md",
+      "parent_sha256": "3c80214e13c839480e5de6725b42868700645016c9c504a8a4eb33bbb62a9cc1",
+      "candidate_sha256": "db325e2c2beae84b0b930d62c7fe38bdffe562dca77875e0546dcf6123c03e4d",
+      "paper_pages": [3],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "10.D；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p003 完整；无Q10专属正式评分段；原有泛化评分候选排除；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q11",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q11.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q11.md",
+      "parent_sha256": "21486cd309a86739ee867d32ed9e40c5973f11dac548dd2cb74e94b444c7c54b",
+      "candidate_sha256": "65bd9cefed40245ce5262a0d23f8c5fd48c9ff713289cb6eaafdd76226335af5",
+      "paper_pages": [3],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "原页字面11.4；原卷内嵌非独立答案，不改写为D",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p003 完整；无Q11专属正式评分段；异常答案字面11.4按原页保留；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q12",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q12.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q12.md",
+      "parent_sha256": "fc682eab3160191505a5ef61c233f77a1acd1511dc4c3b0f324730517e1400b0",
+      "candidate_sha256": "5932515d916ac11a3def97a211f8d5ddfd6757bfbf00b411d9cc33794c034579",
+      "paper_pages": [3],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "12.D；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p003 完整；无Q12专属正式评分段；原有泛化评分候选排除；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q13",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q13.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q13.md",
+      "parent_sha256": "ac4933286a862fa5b7549546852db2d203178f49d4bdcc09f8ece2b8027cee3b",
+      "candidate_sha256": "860529c6d4ae7173c922e0e6a0820387345695679dcc1f8aa5226ecdf2f76ef1",
+      "paper_pages": [3],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "13.B；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p003 完整；无Q13专属正式评分段；原有泛化评分候选排除；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q15",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q15.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q15.md",
+      "parent_sha256": "7ce12e3dcb7a28a67600125c9986792d80c305d3ed6bb9d8bd0bd2a257a55f55",
+      "candidate_sha256": "cc1c78f40f58b3fa04540e5c66761a927b2a9cb024db11e307c14a75b562bade",
+      "paper_pages": [4],
+      "rubric_pages": [],
+      "answer_pages": [7],
+      "score": "3分（卷首统一说明）",
+      "answer_role": "15.C；原卷内嵌非独立答案，不是E1",
+      "rubric_status": "no_q_specific_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p004、第二部分标题和 OCR 候选边界完整；无Q15专属正式评分段；OCR仅作未采用层；无图表。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q16",
+      "status": "pass_inherited",
+      "operation": "add_score_and_embedded_answer_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q16.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q16.md",
+      "parent_sha256": "6d8a7a0ad58d7b57864f0e019dd75f877542b1ea37afecb1b30479ee4161f178",
+      "candidate_sha256": "53884b5ef9d268c7da7d5ff15829d75a8656565dca0b719efe65e0e871e38bcd",
+      "paper_pages": [4, 7],
+      "rubric_pages": [1, 2],
+      "answer_pages": [7],
+      "score": "8分",
+      "answer_role": "p007内嵌方向性参考答案；非独立答案源，不是E1",
+      "rubric_status": "confirmed_Q16_full_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "题面 p004、Q16 rubric:p001-p002 和 p007方向性答案边界一致；父稿仅缺身份分值和答案角色元数据；无学生样本。"
+    },
+    {
+      "question_id": "BJ-2025-DC-ERMO-Q21",
+      "status": "pass_inherited_after_parent_sha_refresh",
+      "operation": "refresh_current_parent_sha_remove_footer_and_add_embedded_levels_candidate_only",
+      "candidate_path": "candidate_questions/BJ-2025-DC-ERMO-Q21.md",
+      "parent_path": "DeepSeek_政治题库资料库_20260918/questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q21.md",
+      "parent_sha256_current": "0fc392bf7765f166e6b17c79bbc350227bb6fbe15e051a5269e5309e00af0f50",
+      "parent_sha256_review_recorded_old": "0fc392bf7765f166e6b17c79bbc350227bb6faa997f50dbd168684d0798ec5af4be",
+      "candidate_sha256": "f0ea5da8ffbe6a30a6a0bb93ed7defa674100ecee2b030ba461fc7c8dc787909",
+      "paper_pages": [6, 7, 8],
+      "rubric_pages": [5],
+      "answer_pages": [7, 8],
+      "score": "10分",
+      "answer_role": "p007方向性空行+p008实践与认识/党的领导/全过程人民民主/科学民主立法角度及Q21等级表；内嵌非独立材料，不是E1",
+      "rubric_status": "confirmed_Q21_full_rubric",
+      "student_layer": "source_not_provided",
+      "finding": "当前父 SHA 已刷新；候选移除 p006 native 题面误带的‘第6页/共8页’页脚，保留完整题面、rubric:p005和p008 Q21等级表。"
+    }
+  ],
+  "not_redone": [
+    "BJ-2025-DC-ERMO-Q1",
+    "BJ-2025-DC-ERMO-Q2",
+    "BJ-2025-DC-ERMO-Q3",
+    "BJ-2025-DC-ERMO-Q4",
+    "BJ-2025-DC-ERMO-Q5",
+    "BJ-2025-DC-ERMO-Q6",
+    "BJ-2025-DC-ERMO-Q9",
+    "BJ-2025-DC-ERMO-Q14",
+    "BJ-2025-DC-ERMO-Q17",
+    "BJ-2025-DC-ERMO-Q18",
+    "BJ-2025-DC-ERMO-Q19",
+    "BJ-2025-DC-ERMO-Q20"
+  ],
+  "verification_performed": [
+    "逐题回读当前共享 Q7/Q8/Q10-Q13/Q15/Q16/Q21 MD，并计算父 SHA；Q21 使用当前共享文件 SHA，不沿用旧 review SHA。",
+    "实际打开原卷 p002、p003、p004、p006、p007、p008；核对题号、材料、选项/设问、分值、跨页边界、第二部分标题、内嵌答案和等级表。",
+    "实际打开评分 PDF p001-p005；确认 Q16 的 rubric:p001-p002、Q21 的 rubric:p005 与题目配对；确认 Q7/Q8/Q10-Q13/Q15 无题号对应正式评分段。",
+    "对 Q11 保留原页异常答案字面 11.4，不擅自改为 D；对 Q15 保留 OCR 候选为未采用层；对 Q21 移除题面误带页脚。",
+    "候选文件均写入独立 receipts/complete_2025_dc_ermo_remaining/candidate_questions；未写共享题库、indexes、evidence、conversion_manifest 或原始 PDF。",
+    "未补造学生原答、教师批注、评分标记或逐生实得分；聚合阅卷报告仅按来源角色保留。"
+  ],
+  "write_boundary": {
+    "shared_question_md_modified": false,
+    "shared_indexes_modified": false,
+    "shared_evidence_modified": false,
+    "shared_manifest_modified": false,
+    "source_pdfs_modified": false,
+    "writes_confined_to": "后勤管理/MD全库流水线_20260921/receipts/complete_2025_dc_ermo_remaining/"
+  },
+  "closure": {
+    "target_question_ids": [
+      "BJ-2025-DC-ERMO-Q7",
+      "BJ-2025-DC-ERMO-Q8",
+      "BJ-2025-DC-ERMO-Q10",
+      "BJ-2025-DC-ERMO-Q11",
+      "BJ-2025-DC-ERMO-Q12",
+      "BJ-2025-DC-ERMO-Q13",
+      "BJ-2025-DC-ERMO-Q15",
+      "BJ-2025-DC-ERMO-Q16",
+      "BJ-2025-DC-ERMO-Q21"
+    ],
+    "candidate_count": 9,
+    "pass_inherited_count": 8,
+    "parent_sha_refresh_count": 1,
+    "missing_candidates": [],
+    "shared_state_changed": false,
+    "full_exam_acceptance": false,
+    "next_step": "合稿负责人逐题按 completion.json 的当前父 SHA、候选 SHA 和来源边界决定是否合并；合稿后重新渲染受影响题块并更新共享状态。"
+  }
+}

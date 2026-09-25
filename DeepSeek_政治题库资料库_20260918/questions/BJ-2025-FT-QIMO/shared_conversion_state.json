@@ -1,0 +1,84 @@
+{
+  "exam_id": "BJ-2025-FT-QIMO",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2025-FT-QIMO-Q1": "b826a63c2362ce8770b11952cd60bb29bf181dd0ac6e6594bf97706dd9a6a591",
+    "BJ-2025-FT-QIMO-Q2": "1119e35a34503d8120962249a8ee5f86fd74a19d7c5d072c3087d9814390591f",
+    "BJ-2025-FT-QIMO-Q3": "e912397c8bdf9ef8cf7c7c8b9b1b9dee4deca76e2f371b51f8bb037880ca9631",
+    "BJ-2025-FT-QIMO-Q4": "b206541503b369d52de0eab3c124ca8a1f4619b4cebf36a5c6843f4624c66680",
+    "BJ-2025-FT-QIMO-Q5": "307e717cec4a5987da6a7edeaf0975cd9015c4f8d4254eb6aa947852113a024f",
+    "BJ-2025-FT-QIMO-Q6": "887e2d8a05971e752718dca4f3ede072d43f905fd7218e34a7ca8b32cdec71f1",
+    "BJ-2025-FT-QIMO-Q7": "b119945b4f650a6f9cf7f8c42e622abd43c3574bebc8b182288684d5ead0b4be",
+    "BJ-2025-FT-QIMO-Q8": "a8541a657ca3be4b01df446c002911edb365545a9e8f9221be292b5c6a30dffd",
+    "BJ-2025-FT-QIMO-Q9": "831e902cb8397aeb13fc7687defa8f3d7158e29c4aa1075c139bc10f9eb52496",
+    "BJ-2025-FT-QIMO-Q10": "5fe790752d7f9f16521a8ae8d567585bd780c30508c27f61a76e0283190fd419",
+    "BJ-2025-FT-QIMO-Q11": "8f9f9cf1bc8458e0c965e56ade1745b0bd51b7792ba81936fa8cf0b51bab7e5d",
+    "BJ-2025-FT-QIMO-Q12": "943b2f27929fd03ac05d2b4acbe35ee73ca2c2b86f284c77f846ac5906a5366d",
+    "BJ-2025-FT-QIMO-Q13": "53aa515bb13084895a1d105afa23fa269f2719902be6bf81f510e138e6b61c48",
+    "BJ-2025-FT-QIMO-Q14": "6484dcd6fb1c991be7015e6f405323660c35ffaed29c69b8a716a299c4547697",
+    "BJ-2025-FT-QIMO-Q15": "a781dfe87c0f5c684c275ea2a7ada5a77bd8816e7e2d95b86da5239ad62f8eae",
+    "BJ-2025-FT-QIMO-Q16": "7cd85848c4cdd541db1a1d2c6c3684bfed6743771fec8b9f96f65a2e25d2da22",
+    "BJ-2025-FT-QIMO-Q17": "10aea168f8955bf8c0dc39df76fd523f4f5e259b616d58fa77b3ab83cd817f78",
+    "BJ-2025-FT-QIMO-Q18": "d3fa30eb7ad1af29211f5169e20eb561a57a927e3ca0061be7062e637850d182",
+    "BJ-2025-FT-QIMO-Q19": "df5b4118fc019a3f492228d96eaa7b99d49bc78c7eb4f5294719a2064a307ccd",
+    "BJ-2025-FT-QIMO-Q20": "421b0fbcae05f80a5f657c07379c62279a247af3d0179c03b66bc7483b0d71d6",
+    "BJ-2025-FT-QIMO-Q21": "19f702cc912e8b6362efe5083cbb44f18ea8fc2a932ac981a34b990b765e3427"
+  },
+  "source_pages": {
+    "paper": 18,
+    "rubric": 62
+  },
+  "source_page_total": 80,
+  "source_roles": {
+    "paper": "S89765092a6f2",
+    "rubric": "S360d57a4b250"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "N/A_with_basis：无独立参考答案文件；原卷内嵌答案仅作为E3保留，不以E3替代E1。",
+    "N/A_with_basis：未提供学生答卷、学生原答、教师批注、实得分或学生讲评样本。",
+    "原卷Q16—Q21题面未逐题单列分值；E1及candidate-only线索按各自来源层保留。",
+    "Q21正式题级分值未确认：原卷p008无独立题级分值；PPTX第58张“7到8分”未标注题号，最高档仅candidate-only。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "BJ-2025-FT-QIMO-Q21",
+      "location": "原卷p008题末；评分PPTX第58张",
+      "partial_reading": "原卷题面未独立印Q21分值；PPTX原生文字含“写两个以上逻辑+多个制度优势7到8分。水平四”，但无Q21题号。",
+      "affects_answering": false,
+      "basis": "分值线索归属不可由现有原件核实；完整卷面总分100与Q1—Q20已知分值合计92并列记录，不把差额补推为Q21分值。"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r2",
+      "r3",
+      "controller_metadata_correction_r3_cumulative_verified_20260923"
+    ],
+    "primary": "BJ-2025-FT-QIMO/controller_metadata_correction_r3_cumulative_verified_20260923/primary_review_r4_postmerge.json",
+    "independent": [
+      "../group_2025_west/BJ-2025-FT-QIMO/independent_review_v3/verification.json",
+      "../group_2025_west/BJ-2025-FT-QIMO/merge_wrapper_v1_independent_review_v2/verification.json",
+      "../group_2025_west/BJ-2025-FT-QIMO/controller_major_r2_20260923/B_r2_scoped_review/verification.json",
+      "BJ-2025-FT-QIMO/r3_merge_release_verify_schema_20260923/verification.json",
+      "BJ-2025-FT-QIMO/controller_metadata_correction_r1_20260923/B_r1_scoped_review/verification.json",
+      "BJ-2025-FT-QIMO/controller_metadata_correction_r2_link_repair_20260923/B_r2_scoped_review/verification.json"
+    ],
+    "controller_aggregate": "BJ-2025-FT-QIMO/controller_metadata_correction_r3_cumulative_verified_20260923/B_final_aggregate/verification.json",
+    "latest_merge": "BJ-2025-FT-QIMO/bj-2025-ft-qimo-controller-metadata-correction-r3-cumulative-verified-20260923_merge.json"
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-ft-qimo-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T17:20:27.725499+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T17:23:35.384232+00:00"
+}

@@ -1,0 +1,3608 @@
+{
+ "schema": "bank_compile.heading_roles/1",
+ "generated_at": "2026-09-24",
+ "generated_from": "2026-09-24 全库 85 卷 questions/*/<题键>.md 二级标题普查（1761 个题文件，413 种标题）",
+ "precedence": [
+  "文件内“读取指引（机器可读）”/“读取指引”点名的题面与评分小节",
+  "bank.py 受控别名（STEM_ALIASES、ROLE_SECTION_ALIASES、ROLE_SECTION_QID_ALIASES、STRUCTURE_SECTIONS）",
+  "本文件 headings 精确标题",
+  "本文件 qid_overrides（逐题改判）"
+ ],
+ "roles": {
+  "stem": "题面：材料、设问、图表引用（同题多份时按读取指引/别名选一份，其余视为备选题面进后台）",
+  "stem_variant": "题面变体（OCR 候选、教师版含答案、DOCX/native 提取变体）：只在没有正式题面时被读取指引或兜底采用，并由门禁报为不可采用",
+  "options": "选择题 A—D 选项（题库目前没有单独选项小节，选项在题面内，由编译器从题面解析）",
+  "answer": "答案键或参考答案；source_role 注明来源角色；includes 标出同块夹带的解析/讲评",
+  "e1": "正式评分细则原文，或本题 E1 状态说明（具名例外/缺源）",
+  "e3": "教师解析（分析、详解）",
+  "commentary": "讲评、阅卷说明、群体反馈、教学建议",
+  "student": "学生原答、批注、实得分（含 N/A_with_basis 状态）",
+  "figures": "原题图、表、页图与结构转写",
+  "backstage": "修复记录、变体对照、配对状态、候选说明、身份与父对象、来源覆盖等一切工程内容：不进读者版",
+  "source_block": "原样来源块：正文每行都已在本文件其他小节出现 → 视为重复进后台；否则判 ambiguous",
+  "ambiguous": "一个小节混有多个角色或角色无法从标题/正文确定：编译报歧义，须拆分或改标题，不得猜"
+ },
+ "how_to_add": "新标题编译会报“未登记标题”。登记时写 role、basis（看过哪份文件的正文、为什么是这个角色）、example；混合多角色的小节不要硬归类，标 ambiguous 或先把小节拆开。逐题改判写进 qid_overrides：{题键: {标题: {role, basis}}}。",
+ "role_counts": {
+  "backstage": 123,
+  "e1": 52,
+  "answer": 63,
+  "stem": 67,
+  "stem_variant": 11,
+  "source_block": 4,
+  "student": 35,
+  "figures": 42,
+  "commentary": 9,
+  "e3": 3,
+  "ambiguous": 14
+ },
+ "headings": {
+  "身份信息": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 1388,
+   "exams": 68
+  },
+  "读取指引（机器可读）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 917,
+   "exams": 46
+  },
+  "正式评分材料原文": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 897,
+   "exams": 46,
+   "source_role": "正式评分材料（E1）"
+  },
+  "来源定位": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 892,
+   "exams": 45
+  },
+  "配对状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 849,
+   "exams": 43
+  },
+  "参考答案原文": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 834,
+   "exams": 42,
+   "source_role": "E3 参考答案"
+  },
+  "质量标记": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 829,
+   "exams": 42
+  },
+  "候选评分材料（尚未确认，不得当作正式细则）": {
+   "role": "backstage",
+   "basis": "未确认的候选评分材料，不得当作 E1",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 798,
+   "exams": 42
+  },
+  "题目原文（原卷·native，读取优先）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 556,
+   "exams": 31
+  },
+  "原卷 OCR 候选（未逐字对照，不得直接采用）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 420,
+   "exams": 37,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "正式评分材料（E1）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q1.md",
+   "files": 211,
+   "exams": 11,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分细则（E1）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 176,
+   "exams": 9,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料来源块（原样保留，配对状态见下）": {
+   "role": "source_block",
+   "basis": "原样来源块（bank.py 透传）：与正式评分材料原文/候选评分材料重复或角色未定",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q16.md",
+   "files": 173,
+   "exams": 33
+  },
+  "学生示例、教师批注与实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 142,
+   "exams": 7
+  },
+  "证据状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 128,
+   "exams": 7
+  },
+  "原题图片、表格与结构": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 127,
+   "exams": 6
+  },
+  "学生样卷、批注、评分标记与实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 127,
+   "exams": 6
+  },
+  "来源页与实际查看": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 127,
+   "exams": 6
+  },
+  "教师版题面来源（含答案，须回原卷核实）": {
+   "role": "stem_variant",
+   "basis": "教师版题面来源，题面与答案同块",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 103,
+   "exams": 6,
+   "variant": "teacher_with_answers",
+   "unsafe_as_stem": "教师版题面与答案同块"
+  },
+  "参考答案（E3）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2021-BJ-GAOKAO/BJ-2021-BJ-GAOKAO-Q1.md",
+   "files": 99,
+   "exams": 5,
+   "source_role": "E3 参考答案"
+  },
+  "身份与状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 87,
+   "exams": 5
+  },
+  "学生示例、批注与实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-FT-ERMO/BJ-2023-FT-ERMO-Q1.md",
+   "files": 85,
+   "exams": 4
+  },
+  "来源角色边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 66,
+   "exams": 4
+  },
+  "参考答案与解析（E3，不是正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为教师版【分析】【解答】与“故选”，答案与解析同块",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 65,
+   "exams": 3,
+   "source_role": "E3 参考答案",
+   "includes": [
+    "e3"
+   ]
+  },
+  "审计限制": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 63,
+   "exams": 3
+  },
+  "来源覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SY-ERMO/BJ-2024-SY-ERMO-Q1.md",
+   "files": 63,
+   "exams": 3
+  },
+  "身份与证据状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 63,
+   "exams": 3
+  },
+  "已排除的材料（文件名明确指向他题，非本题材料）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-YIMO/BJ-2025-CY-YIMO-Q1.md",
+   "files": 61,
+   "exams": 3
+  },
+  "参考答案原文（教师版 E3）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CP-ERMO/BJ-2026-CP-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2,
+   "source_role": "教师版 E3"
+  },
+  "参考答案（E3，不得当作正式评分依据）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2,
+   "source_role": "E3 参考答案"
+  },
+  "学生样卷、批注与实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-HD-ERMO/BJ-2023-HD-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2
+  },
+  "学生示例与教师批注层": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 43,
+   "exams": 2
+  },
+  "教师讲评／解题提示（非E1补充层）": {
+   "role": "commentary",
+   "basis": "正文为细则 PPT 的解题提示/讲评幻灯片转写，自述非 E1",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2
+  },
+  "页级覆盖与可回查性": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2
+  },
+  "题面原文（教师版）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CP-ERMO/BJ-2026-CP-ERMO-Q1.md",
+   "files": 43,
+   "exams": 2
+  },
+  "全部源页覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q1.md",
+   "files": 42,
+   "exams": 2
+  },
+  "题面（Luna/max独立复核通过，verified）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-BJ-GAOKAO/BJ-2026-BJ-GAOKAO-Q1.md",
+   "files": 41,
+   "exams": 2
+  },
+  "题面（教师版混合载体p1-p7的完整试卷区）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2022-BJ-GAOKAO/BJ-2022-BJ-GAOKAO-Q1.md",
+   "files": 41,
+   "exams": 2
+  },
+  "原卷页图（不可替代的完整保真载荷）": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 40,
+   "exams": 2
+  },
+  "讲评来源块（含答案与解析，不得当作题面）": {
+   "role": "commentary",
+   "basis": "讲评 PPT 原样来源块，正文为讲评内容（含答案与解析）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-CY-YIMO/BJ-2025-CY-YIMO-Q1.md",
+   "files": 35,
+   "exams": 3
+  },
+  "学生示例、原答、批注与实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 26,
+   "exams": 2
+  },
+  "学生示例与批注": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q1.md",
+   "files": 24,
+   "exams": 2
+  },
+  "正式评分材料原文（E1）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q18.md",
+   "files": 24,
+   "exams": 2,
+   "source_role": "正式评分材料（E1）"
+  },
+  "参考答案（E3；不得当作正式评分依据）": {
+   "role": "answer",
+   "basis": "正文为“阅卷前制定的参考答案”原文（E3）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-CY-ERMO/BJ-2025-CY-ERMO-Q1.md",
+   "files": 23,
+   "exams": 2,
+   "source_role": "E3 参考答案"
+  },
+  "学生原答、教师批注、评分标记与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-ERMO/BJ-2025-CY-ERMO-Q1.md",
+   "files": 23,
+   "exams": 2
+  },
+  "内附分析（来源载体内容；与答案分层）": {
+   "role": "e3",
+   "basis": "正文为【分析】教师解析",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "内附答案（来源载体内容；非独立参考答案）": {
+   "role": "answer",
+   "basis": "正文为【答案】",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "内附详解（来源载体内容；非正式评分细则）": {
+   "role": "e3",
+   "basis": "正文为【详解】教师解析",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "原题文字（已对照原卷页）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "原题视觉证据": {
+   "role": "figures",
+   "basis": "正文为原卷页图",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "原题题面（依据教师版 p1-p11）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "参考答案层 E3": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案（E3，不是正式细则）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案（E3；不得视为正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为答案 PDF 的参考答案与等级描述（E3）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-FT-ERMO/BJ-2023-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "图像、表格与来源页资产": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-FT-ERMO/BJ-2023-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "学生原答、批注与评分标记": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "整卷与来源入口": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "来源与边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "来源定位与边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "正式评分材料层 E1": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "视觉与未决": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "证据边界与待复核": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-FT-ERMO/BJ-2023-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "身份与父稿": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-HD-ERMO/BJ-2025-HD-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "页/段覆盖与独立复核入口": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-ERMO/BJ-2025-CY-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "题目原文（原卷 native；未以答案/细则反推）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-ERMO/BJ-2025-CY-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "题目原文（原卷·已对照页图）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-CP-ERMO/BJ-2025-CP-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "题面原页图": {
+   "role": "figures",
+   "basis": "正文为题面原页图",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "题面（不含内附答案、分析、详解）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "题面（原卷视觉核对转写）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-FT-ERMO/BJ-2023-FT-ERMO-Q1.md",
+   "files": 22,
+   "exams": 1
+  },
+  "35 修复版整合记录（未执行 canonical merge）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "E0原卷页与结构化图文转写": {
+   "role": "figures",
+   "basis": "正文为原卷页图链接与题内传导图的结构化转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "E0教师版有界题面（不含答案/解析）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "E1 正式评分材料原文": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1评分层（严格不升格）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E3 参考答案原文": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "E3教师版参考答案（独立答案缺失）": {
+   "role": "answer",
+   "basis": "正文为教师版参考答案（E3），内含 ### 分析/详解 子节",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "E3答案/讲评（非独立参考答案）": {
+   "role": "answer",
+   "basis": "正文为原卷附录答案/讲评页的定位与角色说明（E3）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "讲评/原卷附录答案（E3）"
+  },
+  "S7答案与通用等级层（S7b4eece29632）": {
+   "role": "answer",
+   "basis": "正文为《参考答案及评分标准》的答案键/主观参考答案与通用等级区间，已裁定非逐点细则",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "S8 来源角色修复（隔离候选）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "修复记录": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "修复身份": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "候选工位补充（2026-09-22）": {
+   "role": "backstage",
+   "basis": "候选工位补充说明（页图、状态），含候选说明",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "候选状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "候选生成时的状态记录": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "全部来源覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "卷内参考答案（E3；不得当作正式评分依据）": {
+   "role": "answer",
+   "basis": "正文为卷内参考答案表答案键（E3）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "原卷图像与题内图表": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷图文/结构证据": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷完整题面（以原卷 PDF 和页面图为准）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷视觉核验候选题面": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷逐字转写": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷页图与图文关系": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-YIMO/BJ-2026-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷页面、图表与结构": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷题面（视觉核校转写）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原卷题面（逐页视觉核验后的可读转写）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原页与来源链接": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原题保真转写": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原题原页图（视觉核定权威证据）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原题图片与结构资产": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原题完整候选文字（原卷页级对照）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "原题（E0：原卷）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-YIMO/BJ-2026-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "参考答案/参考作答（E3）": {
+   "role": "answer",
+   "basis": "正文为答案键（E3），另附讲评 PPTX 相关页转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案",
+   "includes": [
+    "commentary"
+   ]
+  },
+  "参考答案与正式评分层": {
+   "role": "ambiguous",
+   "basis": "同一标题在 Q1–Q15 放答案键+E1/学生状态，在 Q16–Q21 只放指向下文的说明，内容随题而变",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "参考答案与解析（E3）": {
+   "role": "answer",
+   "basis": "正文为教师版题目重述 + 答案 + 解析同块",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2022-BJ-GAOKAO/BJ-2022-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案",
+   "includes": [
+    "e3"
+   ]
+  },
+  "参考答案原文/答案键（E3；非E1）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "答案键（E3）"
+  },
+  "参考答案来源块（不得当作评分依据）": {
+   "role": "source_block",
+   "basis": "原样来源块（bank.py 透传）：与参考答案原文重复或角色未定",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q16.md",
+   "files": 21,
+   "exams": 4
+  },
+  "参考答案（E3，不是正式评分细则）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案（E3：原卷同一PDF内嵌参考答案）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-YIMO/BJ-2026-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "参考答案（E3；不得据此拆分E1）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-HD-ERMO/BJ-2023-HD-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "图像与原页证据": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "图片、图中文字、表格、箭头与版面关系": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "图表、框线与逐页核对": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-YIMO/BJ-2023-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "复核修复记录（Claude 题库线 c1，2026-09-22）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "复核提示": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "复核记录与历史关注项": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答、批注与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-YIMO/BJ-2023-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答、教师批注、实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答、教师批注、实得分与学生讲评样卷": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答、错误、批注与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答、错误、涂改、批注与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-QIMO/BJ-2025-DC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生原答及教师批注": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生层": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生样例、教师批注、评分标记与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-YIMO/BJ-2026-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生样卷、教师批注与实得分图像": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-FT-ERMO/BJ-2025-FT-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生示例、批注、评分标记与实得分": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "学生示例、教师批注与实得分层": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "完整来源与追溯": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "工程状态说明": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "当前父 MD 缺陷（只读观察）": {
+   "role": "backstage",
+   "basis": "对父稿缺陷的观察记录",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "当前证据裁决与历史候选记录": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "教师示例/讲评示例（不是学生答卷）": {
+   "role": "commentary",
+   "basis": "正文为教师示范作答/讲评示例，自述不是学生答卷",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "本轮证据状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-YIMO/BJ-2023-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源、修复变更与质量核验": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-ERMO/BJ-2025-FT-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源、覆盖与候选限制": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-BJ-GAOKAO/BJ-2025-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源与审计记录": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源定位与覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CP-QIMO/BJ-2026-CP-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源覆盖与未决": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源角色：STUDENT_LAYER": {
+   "role": "student",
+   "basis": "正文为学生图逐图索引与转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "来源页覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "正式评分材料全文（E1；仅 Q16—Q21 有同题评分页）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "答案层（与评分细则分层）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "视觉核定身份": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "视觉核验结论": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "讲评（《24届北京高考政治试题分析》PPT 摘录，第三方教研材料，非评分依据）": {
+   "role": "commentary",
+   "basis": "标题为讲评/试题分析/阅卷反馈",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "详细题级评分主载体（S4b2073bcc9e2）": {
+   "role": "ambiguous",
+   "basis": "细则/讲评 PPTX 逐张页图，正文自述含评分、教学扩展、答案分析、学生答卷，未分层",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "身份与分值": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-YIMO/BJ-2024-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "身份与来源": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "身份与父文件": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-YIMO/BJ-2024-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "身份与读取顺序": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "逐题审计结论": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "逐题来源与状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "页级来源与证据状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-ERMO/BJ-2023-HD-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "页级来源角色边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "页级覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-YIMO/BJ-2025-DC-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题图（教师版原图，Markdown 嵌入）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-CY-QIZHONG/BJ-2026-CY-QIZHONG-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文（原卷·native，修复候选）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-FT-ERMO/BJ-2025-FT-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文（原卷·native；文字为已核对的缓存转写，原页图为保真依据）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-HD-ERMO/BJ-2023-HD-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文（原卷·视觉核校转写）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-CY-QIMO/BJ-2026-CY-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文（原卷·视觉核验候选）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题目原文（原卷·逐页对照）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-QIMO/BJ-2025-DC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题级来源覆盖与证据分层（机器可读）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题面": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题面（原卷native主读版）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-YIMO/BJ-2023-CY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题面（教师版混合载体 p1-p7 的原卷区，已逐页视觉核对）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "题面（教师版混合载体p1-p10的完整试卷区）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2021-BJ-GAOKAO/BJ-2021-BJ-GAOKAO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "E3 来源定位（本轮纯追加）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "全部来源页覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "原卷题面（完整原生转写）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "原题文字（视觉核对候选；页图为保真主证据）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "原题转录（视觉核对候选）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-SJS-QIMO/BJ-2026-SJS-QIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "参考答案原文（原卷参考答案页 / 同卷答案及评分参考，E3）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-XC-ERMO/BJ-2025-XC-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "参考答案（E3，同卷答案角色）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "参考答案（E3／答案键层，与E1分层）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-SJS-ERMO/BJ-2026-SJS-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "答案键（E3）"
+  },
+  "同卷答案及评分参考（E3；非E1）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-SJS-QIMO/BJ-2026-SJS-QIMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "学生示例、原答与批注": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "本地证据与视觉覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-XC-ERMO/BJ-2025-XC-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "本题未决": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "本题来源与证据层次": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "来源定位与完整性": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-SJS-ERMO/BJ-2026-SJS-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "来源差异与学生层": {
+   "role": "ambiguous",
+   "basis": "同一小节混写来源分值差异与学生层 N/A 状态",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-SY-ERMO/BJ-2024-SY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "正式评分材料边界": {
+   "role": "e1",
+   "basis": "正文为本题 E1 状态说明（答案页不作主观 E1）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分边界": {
+   "role": "e1",
+   "basis": "正文为本题 E1 具名例外说明（2024顺义二模整卷无正式细则例外）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-SY-ERMO/BJ-2024-SY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "独立参考答案原文（E3）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SY-ERMO/BJ-2024-SY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "证据与来源角色": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-SJS-QIMO/BJ-2026-SJS-QIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "身份与父稿保护": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SJS-YIMO/BJ-2024-SJS-YIMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "题目原文（原卷·native＋原图视觉核验）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-SY-ERMO/BJ-2024-SY-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "题目原文（原卷·native，逐页视觉核对版）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-XC-ERMO/BJ-2025-XC-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "题面（E0｜教师版题面来源）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-SJS-ERMO/BJ-2026-SJS-ERMO-Q1.md",
+   "files": 20,
+   "exams": 1
+  },
+  "原卷题面（原卷·native，读取优先）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-XC-ERMO/BJ-2024-XC-ERMO-Q1.md",
+   "files": 19,
+   "exams": 1
+  },
+  "参考答案层（来自正式评分材料中的答案键或答案段）": {
+   "role": "answer",
+   "basis": "正文为细则 DOCX 中的答案键，已裁定为参考答案层",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q1.md",
+   "files": 19,
+   "exams": 1,
+   "source_role": "评分材料内答案键（非 E1）"
+  },
+  "参考答案（独立裁定：参考答案；附通用等级描述，非E1）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q1.md",
+   "files": 19,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案（附通用等级描述，非E1）（S85）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-XC-ERMO/BJ-2024-XC-ERMO-Q1.md",
+   "files": 19,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "来源覆盖与审计备注": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q1.md",
+   "files": 19,
+   "exams": 1
+  },
+  "正式评分材料（E1；与候选答案层分离）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-XC-ERMO/BJ-2024-XC-ERMO-Q1.md",
+   "files": 19,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料（角色：正式评分材料）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q1.md",
+   "files": 19,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "读取指引": {
+   "role": "backstage",
+   "basis": "非机器可读版读取指引；“题面优先读取/正式评分优先读取”键由编译器解析",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q1.md",
+   "files": 19,
+   "exams": 1
+  },
+  "E1正式评分材料原文（本题未确认正式题号配对）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）；本节是 E1 状态说明",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q1.md",
+   "files": 16,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "原卷嵌入式参考答案（非独立答案源）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q10.md",
+   "files": 16,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "参考答案层（N/A_with_basis；缺源，不得推算）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案来源块（独立 E3；非正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为独立参考答案 DOCX 的答案键，不是原样来源块",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案（两处同卷来源交叉核对）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "同卷答案键（E3；非正式逐点细则）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "复核修复记录（Claude 题库线 r1，2026-09-22）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "学生示例与批注层（N/A with basis）": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "已核题面（原卷逐页核对，读取优先）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "教师版参考解析（E3）": {
+   "role": "e3",
+   "basis": "正文为教师版逐题解析（E3），答案表另在参考答案原文",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "教师版答案键（E3）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "教师版 E3"
+  },
+  "整合护栏": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "来源角色：ANSWER_KEY（保留的旧答案源）": {
+   "role": "answer",
+   "basis": "正文含 answer_key 字段（选择题答案键）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "来源角色：ORIGINAL_QUESTION（原卷视觉回源）": {
+   "role": "stem",
+   "basis": "正文为 source_pdf/page_asset 两行出处后接原卷题面转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "正式评分材料（无题级E1）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）；本节是 E1 状态说明",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分细则层（N/A_with_basis；不适用/缺源）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）；本节是 E1 状态说明",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "答案与评分证据（分层保留）": {
+   "role": "answer",
+   "basis": "正文为选择题答案键状态（独立答案缺源、细则内嵌答案表的答案字母）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "评分材料内答案键（非 E1）"
+  },
+  "索引状态说明（本轮未修改共享索引）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "证据层级说明": {
+   "role": "backstage",
+   "basis": "正文为证据分层说明（含选择题 E1 不适用的依据）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "证据边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "评分材料边界": {
+   "role": "e1",
+   "basis": "正文为本题 E1 状态说明（not_applicable_choice）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-CY-YIMO/BJ-2026-CY-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "选择题答案键": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1,
+   "source_role": "答案键（E3）"
+  },
+  "题库缓存转写（逐页视觉核定清洁文本）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "题面（原卷第一部分，已逐页视觉核对，与文本层比对一致）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q1.md",
+   "files": 15,
+   "exams": 1
+  },
+  "隔离候选质量状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-XC-ERMO/BJ-2024-XC-ERMO-Q1.md",
+   "files": 14,
+   "exams": 1
+  },
+  "原卷页面图（文字层与原图并存）": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q10.md",
+   "files": 13,
+   "exams": 1
+  },
+  "精确修复记录": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 12,
+   "exams": 1
+  },
+  "身份与父对象": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 12,
+   "exams": 1
+  },
+  "本轮候选修复": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q10.md",
+   "files": 11,
+   "exams": 1
+  },
+  "正式评分材料": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q1.md",
+   "files": 10,
+   "exams": 2,
+   "source_role": "正式评分材料（E1）"
+  },
+  "独立修复候选定位": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q1.md",
+   "files": 10,
+   "exams": 1
+  },
+  "原卷 OCR 候选（仅证据层，不得采用）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-ERMO/BJ-2025-FT-ERMO-Q1.md",
+   "files": 9,
+   "exams": 1,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "参考答案原文（非评分依据）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q1.md",
+   "files": 9,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "图文、表格与框线关系": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q13.md",
+   "files": 9,
+   "exams": 1
+  },
+  "本轮验收结论": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q10.md",
+   "files": 9,
+   "exams": 1
+  },
+  "题目原文（原卷·native）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-XC-ERMO/BJ-2023-XC-ERMO-Q1.md",
+   "files": 9,
+   "exams": 1
+  },
+  "学生证据与批注": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q12.md",
+   "files": 8,
+   "exams": 1
+  },
+  "物化边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q12.md",
+   "files": 8,
+   "exams": 1
+  },
+  "教学建议与复练（与本题正式细则分层）": {
+   "role": "commentary",
+   "basis": "正文为细则 PPT 的教学建议与复练页",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q16.md",
+   "files": 7,
+   "exams": 1
+  },
+  "题目原文（原卷·native，完整保留）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 7,
+   "exams": 1
+  },
+  "bounded 边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "修复说明": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q14.md",
+   "files": 6,
+   "exams": 1
+  },
+  "参考答案及正式评分材料": {
+   "role": "ambiguous",
+   "basis": "标题同时声称参考答案与正式评分材料，正文取自答案 PDF，角色无法确定",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-DC-YIMO/BJ-2023-DC-YIMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "来源角色：OFFICIAL_ANSWER_AND_SCORING": {
+   "role": "ambiguous",
+   "basis": "答案与正式评分合称，正文只有指向转写文件的链接",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "来源角色：ORIGINAL_QUESTION（原卷）": {
+   "role": "stem",
+   "basis": "正文为原卷逐页转写（自述 raw OCR，由题面质量检查另行报出）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "正式评分材料原文（E1，正式阅卷细则）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料（E1；S54715a1e650d）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q16.md",
+   "files": 6,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "答案来源层级与学生证据": {
+   "role": "ambiguous",
+   "basis": "同一小节混写参考答案缺源状态与学生层 N/A 状态",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "规范化题面/版面支持": {
+   "role": "backstage",
+   "basis": "正文只是 support.md / visual_check.md 链接与锁定说明，没有题面文字",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "视觉核定完整题面（覆盖缓存缺失/污染）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "讲评与阅卷记录（PPT《细则.pptx》相关页，讲评，非评分依据）": {
+   "role": "commentary",
+   "basis": "标题为讲评/试题分析/阅卷反馈",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "评分PPT讲评页（试题分析/讲解示例，讲评，非评分依据）": {
+   "role": "commentary",
+   "basis": "标题为讲评/试题分析/阅卷反馈",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-ERMO/BJ-2023-HD-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "评分材料与独立参考答案来源块（原样保留，配对状态见下）": {
+   "role": "source_block",
+   "basis": "原样来源块：内容若已在其他小节出现即为重复，否则角色待定",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "评标载体中的试题分析/参考答案（与E1评分条件分层）": {
+   "role": "ambiguous",
+   "basis": "试题分析（讲评）与参考答案同块",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FT-ERMO/BJ-2026-FT-ERMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "题目原文（原卷·PDF权威，修复候选）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q10.md",
+   "files": 6,
+   "exams": 1
+  },
+  "题面（原卷第二部分，已逐页视觉核对，与文本层比对一致）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q16.md",
+   "files": 6,
+   "exams": 1
+  },
+  "E1 正式评分证据（阅卷总结/评分细则）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q16.md",
+   "files": 5,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1页级覆盖": {
+   "role": "backstage",
+   "basis": "正文只列正式评分页图文件名与覆盖说明",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-CY-ERMO/BJ-2024-CY-ERMO-Q16.md",
+   "files": 5,
+   "exams": 1
+  },
+  "内容质量状态": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-XC-ERMO/BJ-2024-XC-ERMO-Q15.md",
+   "files": 5,
+   "exams": 1
+  },
+  "原卷视觉核对结构化转写": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q15.md",
+   "files": 5,
+   "exams": 1
+  },
+  "双载体评分定位（repair_v3 delta；不混称）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-SJS-ERMO/BJ-2026-SJS-ERMO-Q16.md",
+   "files": 5,
+   "exams": 1
+  },
+  "复核修复记录（Claude 题库线 r1，2026-09-22；r2 补充，2026-09-22）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q17.md",
+   "files": 5,
+   "exams": 1
+  },
+  "学生样卷、教师批注、实得分": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q16.md",
+   "files": 5,
+   "exams": 1
+  },
+  "本轮修复说明": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q13.md",
+   "files": 5,
+   "exams": 1
+  },
+  "正式评分材料原文（候选物化；未晋升）": {
+   "role": "backstage",
+   "basis": "标题自述候选、未晋升：不作 E1；E1 状态由其他小节决定",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q17.md",
+   "files": 5,
+   "exams": 1
+  },
+  "参考答案原文（参考答案层，不等同正式细则）": {
+   "role": "answer",
+   "basis": "bank.py 受控别名（answer）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q17.md",
+   "files": 4,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "图像与来源覆盖": {
+   "role": "figures",
+   "basis": "正文列原题页图与评分页图",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 4,
+   "exams": 1
+  },
+  "嵌入式参考答案（原卷 p007；不是正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为原卷内嵌参考答案（如 1.A）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 4,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "细则配对结论": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q1.md",
+   "files": 4,
+   "exams": 1
+  },
+  "评分证据修复": {
+   "role": "backstage",
+   "basis": "修复记录（含隔离的误配块）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 4,
+   "exams": 1
+  },
+  "配对状态与来源覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md",
+   "files": 4,
+   "exams": 1
+  },
+  "配对状态与覆盖": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q14.md",
+   "files": 4,
+   "exams": 1
+  },
+  "错配历史来源定位": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q1.md",
+   "files": 4,
+   "exams": 1
+  },
+  "题目原文（原卷·native，跨页完整保留）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q14.md",
+   "files": 4,
+   "exams": 1
+  },
+  "E3 随卷参考答案（原卷 p10，完整模范文本）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q18.md",
+   "files": 3,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "Source specific DOCX 题面层 不覆盖上方 PDF 层": {
+   "role": "stem_variant",
+   "basis": "标题与正文均声明为 DOCX 来源特定题面层，不覆盖 PDF 权威题面",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q11.md",
+   "files": 3,
+   "exams": 1,
+   "variant": "alt_transcription"
+  },
+  "原卷 OCR 候选（原样保留；不得替代 native）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q1.md",
+   "files": 3,
+   "exams": 1,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "参考答案原文（教师版 E3，示范论述）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q17.md",
+   "files": 3,
+   "exams": 1,
+   "source_role": "教师版 E3"
+  },
+  "参考答案层（E3；仅参考答案，不是正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为细则 PPT“参考答案”页原文（E3）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q17.md",
+   "files": 3,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "参考答案层（缺源）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q16.md",
+   "files": 3,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "正式评分细则层（N/A_with_basis；无 E1，不得把 E3 升级为 E1）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）；本节是 E1 状态说明",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q17.md",
+   "files": 3,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "群体性反馈/讲评来源定位（本题旁证，不改证据角色）": {
+   "role": "commentary",
+   "basis": "正文为评分讲评课件群体性反馈（存在问题、复习建议）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q16.md",
+   "files": 3,
+   "exams": 1
+  },
+  "题库缓存转写（独立候选原文）": {
+   "role": "stem_variant",
+   "basis": "正文嵌入整份旧题稿（含教师版含答案块），同文件另有“视觉核定完整题面”",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q17.md",
+   "files": 3,
+   "exams": 1,
+   "variant": "embedded_legacy",
+   "unsafe_as_stem": "嵌入整份旧题稿"
+  },
+  "题目原文（原卷·native，补足缺失的原卷角色）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FT-QIMO/BJ-2025-FT-QIMO-Q16.md",
+   "files": 3,
+   "exams": 1
+  },
+  "题面（教师版 p2，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q4.md",
+   "files": 3,
+   "exams": 1
+  },
+  "题面（教师版 p4，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q11.md",
+   "files": 3,
+   "exams": 1
+  },
+  "E3 随卷参考答案（原卷 p9，等级水平表）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q16.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "Source-specific DOCX native 题面层（不覆盖上方 PDF 权威层）": {
+   "role": "stem_variant",
+   "basis": "同上：DOCX 来源特定题面层，不覆盖 PDF 权威层",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q13.md",
+   "files": 2,
+   "exams": 1,
+   "variant": "alt_transcription"
+  },
+  "历史OCR候选（仅差异记录，不采用）": {
+   "role": "backstage",
+   "basis": "正文只记录 OCR 旧候选的错误，不含题面",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q15.md",
+   "files": 2,
+   "exams": 1
+  },
+  "原卷 OCR 候选（已对照原页修复题界）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q6.md",
+   "files": 2,
+   "exams": 1,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "参考答案原文（教师版 E3，笼统等级描述）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q16.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "教师版 E3"
+  },
+  "来源与质量标记": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q15.md",
+   "files": 2,
+   "exams": 1
+  },
+  "来源分层裁决（引用 `../evidence/adjudicate_2024_ft_yimo_conflicts.json`；不静默改写）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q17.md",
+   "files": 2,
+   "exams": 1
+  },
+  "正式评分材料原文（E1，按小问闭合）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q17.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料（E1，限同题等级标准）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q16.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "源间差异与冲突（不静默修正）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q17.md",
+   "files": 2,
+   "exams": 1
+  },
+  "精确题号绑定E1（原生评标DOCX）": {
+   "role": "e1",
+   "basis": "正文为 E1 源文件、段位与拆分文件链接（E1 正文在链接文件中）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q16.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "载体内等级描述（来源载体内容；不是正式评分细则）": {
+   "role": "answer",
+   "basis": "正文为答案载体内的通用等级表，自述不是正式评分细则",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-FT-YIMO/BJ-2023-FT-YIMO-Q16.md",
+   "files": 2,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "错配配对结论": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q3.md",
+   "files": 2,
+   "exams": 1
+  },
+  "页级来源角色分离": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q18.md",
+   "files": 2,
+   "exams": 1
+  },
+  "题面（教师版 p1，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q1.md",
+   "files": 2,
+   "exams": 1
+  },
+  "题面（教师版 p3，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q8.md",
+   "files": 2,
+   "exams": 1
+  },
+  "题面（教师版 p5，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q15.md",
+   "files": 2,
+   "exams": 1
+  },
+  "题面（教师版 p6，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q18.md",
+   "files": 2,
+   "exams": 1
+  },
+  "题面（教师版 p7，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q20.md",
+   "files": 2,
+   "exams": 1
+  },
+  "1. 范围、题面与角色隔离": {
+   "role": "backstage",
+   "basis": "嵌入的样卷复核文档第 1 节：范围与角色隔离说明",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "2. 样卷 A：p005，页面显示实得分 8.0": {
+   "role": "student",
+   "basis": "学生样卷 A 转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "3. 样卷 B：p007，页面显示实得分 2.0": {
+   "role": "student",
+   "basis": "学生样卷 B 转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "4. 24 个 uncertain 坐标完整保留清单": {
+   "role": "backstage",
+   "basis": "样卷转写的不确定坐标清单（工程记录）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "40_full_gap 隔离小修候选": {
+   "role": "ambiguous",
+   "basis": "候选修补记录中夹带“材料二图示拓扑”题面图表转写，工程与图表内容混在同一小节",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "5. 本轮复核结论": {
+   "role": "backstage",
+   "basis": "复核结论",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "E1 正式评分细则（细则.pdf p1，可执行点值表）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q16.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1 正式评分细则（细则.pdf p2–p3，可执行点值表）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1 正式评分细则（细则.pdf p2，四列表格）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q17.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1 正式评分细则（细则.pdf p4–p5，可执行点值表）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1 正式评分细则（细则.pdf p4，可执行点值表）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E1 正式评分细则（细则.pdf p6，可执行点值表）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "E3 随卷参考答案（原卷 p10，等级水平表）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-HD-QIMO/BJ-2026-HD-QIMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "F06 视觉结构增量（版本化候选）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q8.md",
+   "files": 1,
+   "exams": 1
+  },
+  "F07 视觉结构增量（版本化候选）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q10.md",
+   "files": 1,
+   "exams": 1
+  },
+  "F08 视觉结构增量（版本化候选）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-ERMO/BJ-2023-CY-ERMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "Q22 学生层物化附件（未完成；非整卷验收）": {
+   "role": "student",
+   "basis": "学生层物化附件说明与原图链接（自述未完成）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-HD-YIMO/BJ-2025-HD-YIMO-Q22.md",
+   "files": 1,
+   "exams": 1
+  },
+  "v6 source-specific 视觉图补充（2026-09-22）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "v6新增视觉关系补充（2026-09-22）": {
+   "role": "figures",
+   "basis": "正文为题图四框连接关系转写",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q3.md",
+   "files": 1,
+   "exams": 1
+  },
+  "v6新增读图估计补充（2026-09-22）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q12.md",
+   "files": 1,
+   "exams": 1
+  },
+  "修复说明（本轮，2026-09-22）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q15.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原卷 OCR 候选（原样保留；未逐字对照，不得替代 native）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "原卷 native 文本层提取变体（原样保留，不作为视觉替代）": {
+   "role": "stem_variant",
+   "basis": "正文自述为 native 字面提取变体，不作视觉替代",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md",
+   "files": 1,
+   "exams": 1,
+   "variant": "alt_transcription"
+  },
+  "原卷 p008 等级描述（Q20 对应表；保留源页背景）": {
+   "role": "answer",
+   "basis": "正文为原卷内嵌等级水平表（随卷答案层），自述不能替代细则",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "原卷OCR候选（未逐字对照，不得直接采用）": {
+   "role": "stem_variant",
+   "basis": "标题为原卷 OCR 候选：未逐字对照的题面变体",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "variant": "ocr_candidate",
+   "unsafe_as_stem": "OCR 候选未逐字对照"
+  },
+  "原卷图像状态与适用性（原卷 p005）": {
+   "role": "figures",
+   "basis": "正文说明本题原卷无图（无图是原题实际呈现）",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原卷嵌入图（题面组成部分）": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q2.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原卷嵌入式参考答案与等级材料（非独立答案源）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "原卷嵌入式参考答案摘录（非题面；非正式评分材料）": {
+   "role": "answer",
+   "basis": "正文为原卷 p9 内嵌参考答案的 OCR 候选摘录",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "原卷/同卷内嵌答案（E3）"
+  },
+  "原卷第1页手绘家书图文字逐项转写（repair_v2增量）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-XC-ERMO/BJ-2025-XC-ERMO-Q1.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原生评标DOCX Q19专属答案/正式评分块（已截断串题尾段）": {
+   "role": "ambiguous",
+   "basis": "答案与正式评分同块，无法按角色拆分",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-FS-ERMO/BJ-2026-FS-ERMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原页版式标记（非题面文字）": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-XC-QIMO/BJ-2026-XC-QIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "原题图片与结构": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q8.md",
+   "files": 1,
+   "exams": 1
+  },
+  "参考答案原文（教师版 E3，填空答案+示范论述）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-CY-ERMO/BJ-2026-CY-ERMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3"
+  },
+  "参考答案原文（来源冲突，必须并列保留）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q9.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "E3 参考答案"
+  },
+  "图像与图内文字结构化转写（原卷 p003）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q11.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图像与图内文字结构化转写（原卷 p004）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q15.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图像与图内文字结构化转写（原卷 p006）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-FS-YIMO/BJ-2025-FS-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图像分层转写（E0视觉核验；不替代题面文字）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-SJS-ERMO/BJ-2026-SJS-ERMO-Q2.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图片来源与分辨率说明（c1 补全）": {
+   "role": "backstage",
+   "basis": "正文为图片来源与分辨率的工程说明",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q2.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图示拓扑补充说明": {
+   "role": "figures",
+   "basis": "正文为题图拓扑的机器可读说明",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-FT-YIMO/BJ-2024-FT-YIMO-Q9.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图表/框线关系注记": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q9.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图表关系注记": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-ERMO/BJ-2024-HD-ERMO-Q20.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图表来源与物化记录": {
+   "role": "backstage",
+   "basis": "正文为图表来源与物化过程记录",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-YQ-YIMO/BJ-2025-YQ-YIMO-Q12.md",
+   "files": 1,
+   "exams": 1
+  },
+  "图表走势约读（本轮 Q11 visual textualization）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-CY-YIMO/BJ-2023-CY-YIMO-Q11.md",
+   "files": 1,
+   "exams": 1
+  },
+  "增量视觉结构补充（F03，2026-09-22）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q1.md",
+   "files": 1,
+   "exams": 1
+  },
+  "增量视觉结构补充（F04，2026-09-22）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q3.md",
+   "files": 1,
+   "exams": 1
+  },
+  "增量视觉结构补充（F05，2026-09-22）": {
+   "role": "figures",
+   "basis": "标题为原题图、表、页图或结构转写",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-BJ-GAOKAO/BJ-2023-BJ-GAOKAO-Q12.md",
+   "files": 1,
+   "exams": 1
+  },
+  "复核修复记录（Claude 题库线 r1，2026-09-22；r2 订正，2026-09-22）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q10.md",
+   "files": 1,
+   "exams": 1
+  },
+  "学生样卷、教师批注与评分标记（评分材料嵌图；非标准答案）": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "学生示例与教师批注（独立样卷层；不作为标准答案）": {
+   "role": "student",
+   "basis": "bank.py 受控别名（student）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "学生示例样卷（评分材料嵌图；非标准答案）": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q16.md",
+   "files": 1,
+   "exams": 1
+  },
+  "完整性与未决项": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "小问(1)（6分）：E1 来源 p025–033": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "小问(1)（8分）：E1 来源 p039–044": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "小问(2)（6分）：E1 来源 p034–038": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "小问(2)（6分）：E1 来源 p045–049": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-YIMO/BJ-2023-HD-YIMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "已隔离的旧截断块（原样保留；不得当作完整Q19评分细则）": {
+   "role": "backstage",
+   "basis": "隔离的历史截断块，自述不得当作细则",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "已隔离的错配评分材料（原样保留；不得当作Q1正式细则）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q1.md",
+   "files": 1,
+   "exams": 1
+  },
+  "已隔离的错配评分材料（原样保留；不得当作Q2正式细则）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q2.md",
+   "files": 1,
+   "exams": 1
+  },
+  "已隔离的错配评分材料（原样保留；不得当作Q3正式细则）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q3.md",
+   "files": 1,
+   "exams": 1
+  },
+  "已隔离的错配评分材料（原样保留；不得当作Q4正式细则）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q4.md",
+   "files": 1,
+   "exams": 1
+  },
+  "手写/批注证据说明（第三方分析页 41–42，更正此前\"学生图层\"定性；r2 补充页41版面与页42双层构成）": {
+   "role": "commentary",
+   "basis": "正文说明第三方试题分析 PDF 页上的手绘批注，已更正为非学生层",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "教师版参考答案与讲解（E3，教师版页 11，第 16 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q16.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "教师版参考答案与讲解（E3，教师版页 11，第 17 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q17.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "教师版参考答案与讲解（E3，教师版页 12–13，第 19 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "教师版参考答案与讲解（E3，教师版页 12，第 18 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "教师版参考答案与讲解（E3，教师版页 13，第 20 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "教师版参考答案与讲解（E3，教师版页 13，第 21 题）": {
+   "role": "answer",
+   "basis": "标题为参考答案/答案键（E3 或卷内答案）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-BJ-GAOKAO/BJ-2024-BJ-GAOKAO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "教师版 E3",
+   "includes": [
+    "e3"
+   ]
+  },
+  "未知PPT混合载体（逐张保留；不整份升E1）": {
+   "role": "ambiguous",
+   "basis": "混合答案/评分载体逐张保留，标题与正文都声明不构成 E1，也未拆出答案/讲评层",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2025-CY-QIMO/BJ-2025-CY-QIMO-Q20.md",
+   "files": 1,
+   "exams": 1
+  },
+  "本轮结构差分（仅补图形关系，不改六个1分节点）": {
+   "role": "figures",
+   "basis": "bank.py 受控别名（figures）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "来源、角色与转写规则": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "来源角色：按证据单元分层（Q16 q16_scoring.pptx）": {
+   "role": "ambiguous",
+   "basis": "容器内 ### 子节混有 E3 答案、E1 细则、教师反馈、教学建议",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q16.md",
+   "files": 1,
+   "exams": 1
+  },
+  "来源角色：按证据单元分层（Q18(2) q18_2_review.docx）": {
+   "role": "ambiguous",
+   "basis": "同上，容器内多角色子节",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "来源角色：按证据单元分层（Q21 q21_scoring.pptx）": {
+   "role": "ambiguous",
+   "basis": "同上，容器内多角色子节",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-DC-ERMO/BJ-2024-DC-ERMO-Q21.md",
+   "files": 1,
+   "exams": 1
+  },
+  "样卷一（评分 DOCX image2；paragraph_seq 64）": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "样卷三（评分 DOCX image4；paragraph_seq 68）": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "样卷二（评分 DOCX image3；paragraph_seq 67）": {
+   "role": "student",
+   "basis": "标题为学生原答/样卷/批注/实得分层（含 N/A_with_basis 状态）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-XC-YIMO/BJ-2023-XC-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1
+  },
+  "正式评分材料原文（E1，细则.docx）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（E1，细则表2）": {
+   "role": "e1",
+   "basis": "bank.py 受控别名（e1）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（rubric:p002–p003；完整重配）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（rubric:p002；只保留 Q17 边界）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（rubric:p003–p004；完整保留）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（rubric:p004–p005；完整重配）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分材料原文（四小问精确配对）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分细则层（E1；PPT slides 27、35–36）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分细则层（E1；PPT slides 3–5）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q16.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "正式评分细则层（E1；PPT slides 61–64）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-FT-YIMO/BJ-2026-FT-YIMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "状态与合并边界": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-HD-QIZHONG/BJ-2024-HD-QIZHONG-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "评分材料（与题面分层）": {
+   "role": "e1",
+   "basis": "正文首个子节为“正式评分材料原文（E1）”及正式评分表",
+   "decided_by": "人工改判",
+   "example": "questions/BJ-2024-HD-YIMO/BJ-2024-HD-YIMO-Q16.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P13–P19；仅本题）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q17.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P20–P60；按小问独立配对）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q18.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P3–P11；仅本题）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q16.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P63–P76；仅本题）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q19.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P78–P87；仅本题）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q20.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "评分材料（同卷正式材料·P88–P110；仅本题）": {
+   "role": "e1",
+   "basis": "标题为正式评分材料/E1（含 E1 状态说明）",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-FT-ERMO/BJ-2024-FT-ERMO-Q21.md",
+   "files": 1,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "载体差异（必须保留，不静默统一）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2024-XC-YIMO/BJ-2024-XC-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  },
+  "错配来源（实际属于Q17；原评分材料原文保留）": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2026-DC-YIMO/BJ-2026-DC-YIMO-Q2.md",
+   "files": 1,
+   "exams": 1
+  },
+  "页/幻灯片覆盖与阻断": {
+   "role": "backstage",
+   "basis": "标题为身份、来源、覆盖、状态、修复、审计等工程内容",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-QIMO/BJ-2025-CY-QIMO-Q20.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题目原文（原卷 p004；视觉复核，不静默规范化）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2025-DC-ERMO/BJ-2025-DC-ERMO-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题目原文（原卷PDF native；以题面为准）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2025-CY-QIMO/BJ-2025-CY-QIMO-Q20.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（原页双重核验，verified）": {
+   "role": "stem",
+   "basis": "bank.py 受控别名（stem）",
+   "decided_by": "bank.py 别名",
+   "example": "questions/BJ-2026-BJ-GAOKAO/BJ-2026-BJ-GAOKAO-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p1-p2，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q3.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p2-p3，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q7.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p3-p4，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q10.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p4-p5，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q14.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p5-p6，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q17.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p7-p8，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q22.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（教师版 p8，已逐页视觉核对；本卷无独立原卷文件，教师版题干区即唯一题面来源）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-HD-QIZHONG/BJ-2023-HD-QIZHONG-Q23.md",
+   "files": 1,
+   "exams": 1
+  },
+  "题面（视觉核对候选转写）": {
+   "role": "stem",
+   "basis": "标题为题面/原题转写，正文为题干、材料、设问",
+   "decided_by": "规则",
+   "example": "questions/BJ-2023-DC-ERMO/BJ-2023-DC-ERMO-Q8.md",
+   "files": 1,
+   "exams": 1
+  },
+  "评分材料来源块（原样保留）": {
+   "role": "source_block",
+   "basis": "bank.py 透传的原样来源块（当前题库未出现）：内容已在其他小节即重复，否则角色待定",
+   "decided_by": "人工改判",
+   "example": "",
+   "files": 0,
+   "exams": 0
+  },
+  "评分材料答案键（非独立参考答案）": {
+   "role": "answer",
+   "basis": "bank.py 透传小节（当前题库未出现）：标题写明是评分材料里的答案键、非独立参考答案",
+   "decided_by": "人工改判",
+   "example": "",
+   "files": 0,
+   "exams": 0,
+   "source_role": "评分材料内答案键（非 E1）"
+  },
+  "待确认材料来源块（角色未定，须人工裁决）": {
+   "role": "ambiguous",
+   "basis": "bank.py UNKNOWN_ROLE_SECTIONS：标题即写明角色未定、须人工裁决",
+   "decided_by": "人工改判",
+   "example": "",
+   "files": 0,
+   "exams": 0
+  },
+  "身份与候选状态": {
+   "role": "backstage",
+   "basis": "本卷题号、父题SHA、来源SHA、转换状态及历史候选标签均为身份/状态元数据；Q1、Q11、Q21格式一致，不是题面、答案、E1或学生作答。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "角色边界（重要）": {
+   "role": "backstage",
+   "basis": "正文明确规定主卷E0、参考答案/解析E3、细则中列明的评分条件E1、学生样卷各自边界；是角色判定说明，不是任何一种证据正文。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "参考答案与解析（E3；不得升格为 E1）": {
+   "role": "answer",
+   "basis": "标题明示E3且不得升格；Q1/Q11/Q21正文为主卷参考答案/解析及E3答案键定位，没有E1评分条件。主卷PDF SHA在题文件中同一登记。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1,
+   "source_role": "E3 参考答案",
+   "includes": [
+    "e3"
+   ]
+  },
+  "正式评分材料（E1；仅原始评分条件，答案不得误升）": {
+   "role": "e1",
+   "basis": "标题明确限E1原始评分条件；同卷细则DOCX SHA已核对，Q1/Q15为明确无同题E1状态，Q16/Q18/Q19含明确评分条件。Q17和Q20的H2正文还嵌有非E1阅卷诊断H3，故通过逐题ambiguous覆盖保留G3，待拆分后再用。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q16.md",
+   "files": 20,
+   "exams": 1,
+   "source_role": "正式评分材料（E1）"
+  },
+  "学生原答、错误/涂改/教师批注与实得分": {
+   "role": "student",
+   "basis": "标题与正文只指学生样卷/原答/批注/实得分；Q1/Q11为有依据的N/A状态，Q21链接原样保留的学生样卷并注明不可推定个人得分，不含答案或E1。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "复核入口": {
+   "role": "backstage",
+   "basis": "正文只给原卷/E3页码及独立复核状态，声明未复核不得晋升验收；属于复核/流程状态元数据。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q1.md",
+   "files": 21,
+   "exams": 1
+  },
+  "细则DOCX阅卷诊断标题（非E1）": {
+   "role": "backstage",
+   "basis": "Q19正文仅记载DOCX原生“存在问题”空标题及段落/README定位，并明确不视为评分条件；该记录是来源结构注记，不是E1、E3或诊断正文。",
+   "decided_by": "Codex Luna/max候选（待控制器审定）",
+   "example": "questions/BJ-2025-SY-YIMO/BJ-2025-SY-YIMO-Q19.md",
+   "files": 1,
+   "exams": 1
+  }
+ },
+ "qid_overrides": {
+  "BJ-2025-SY-YIMO-Q17": {
+   "正式评分材料（E1；仅原始评分条件，答案不得误升）": {
+    "role": "ambiguous",
+    "basis": "本H2同时含E1评分条件与嵌套H3“细则DOCX阅卷诊断摘录（非E1评分条件）”；bank_compile仅按H2切分，若判为E1会把非E1诊断一并升格。先保留G3，待将该H3拆为独立H2后复核。"
+   }
+  },
+  "BJ-2025-SY-YIMO-Q20": {
+   "正式评分材料（E1；仅原始评分条件，答案不得误升）": {
+    "role": "ambiguous",
+    "basis": "本H2同时含E1评分条件与嵌套H3“细则DOCX阅卷诊断与样卷标签（原生段落70–71、75–84；非E1评分条件）”；bank_compile仅按H2切分，若判为E1会把非E1诊断一并升格。先保留G3，待将该H3拆为独立H2后复核。"
+   }
+  }
+ },
+ "stem_marker_allow": {},
+ "stem_marker_allow_note": "题面里合法出现“参考答案/评分标准/细则”等字样（例如题目本身讨论评分标准）时，按 {题键: [原行中的一段原文]} 登记，门禁只放行该行；每条须能在题文件里原样找到。"
+}

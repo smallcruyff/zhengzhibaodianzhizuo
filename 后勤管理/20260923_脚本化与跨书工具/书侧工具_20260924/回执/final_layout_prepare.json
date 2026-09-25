@@ -1,0 +1,34 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "目录同版闸只修了一半。身份记录冲突（docx_mismatch/pdf_mismatch）现在能拦住，但没有身份记录时只看 block_index.align 的单向对位率（DOCX 段落能否在 PDF 里找到）。这个指标发现不了三种错版：正文删段，因为删后剩下的段落都还在旧 PDF 里；少量新增段落；以及文字相同、只有分页不同的 PDF，例如用 03 渲染的 PDF 去配加了 keepNext 的 04。上轮 major#1 的原证据 N2 和攻击 B 原样复现：repair --toc exit 0，写入错误页码，stderr 为空；check 把这些错页码报为可修 pending，toc_version_problems=[]。代码第383–384行的 docstring 写着“专门补……标题也没变但正文有增删的情况”，与实测不符。fix4 新增的 fix4-1～4 只覆盖身份记录冲突和同版通过两类，上轮点名要补的 B、C（记录缺失）、N2 回归用例都没有加。",
+   "evidence": "/usr/bin/python3 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_final/final_attack.py n2 bx c（日志在 attack1.log）。① N2：B3_52 PDF 插入一张空白页后，作为 B3_04 的 --toc-pdf。identity=unrelated，align_ratio=0.995≥0.98；repair exit 0，out_written=true，32/32 个目录页码与真实 B3_52 不一致，needs_rerender=false；check 输出 {\"pending\": 32, ..., \"toc\": 32, \"toc_version_problems\": []}。② B3_04 删去 120 段正文、标题不动，配旧的 目录定位/04.pdf：align_ratio=0.995，exit 0，toc 改 30 处。删去 600 段（19861→19261 段）时 align_ratio 仍为 0.9948，exit 0。tocdiff.py 显示输出目录与未删段的 B3_52 完全相同（0/32 处不同），也就是说删了 600 段，目录页码一处没变。③ 新增 120 段 PDF 中不存在的正文：align_ratio=0.9882，exit 0，写出。只有新增 600 段时（0.9619）才被拦下，exit 2。④ 删除身份记录（C missing_record）：exit 0，写出，改了 30 处。对照组：docx_mismatch、pdf_mismatch 记录与第51批 PDF 都 exit 2、不写，check 也都列入 toc_version_problems，这一部分确实已修好。",
+   "fix": "repair --toc 缺省要求 identity=match，身份记录可以来自 render.identity_file、审阅清单或新增的 --identity 参数，也可以用 --expect-pdf-sha 核对渲染管线登记的 PDF SHA。对位率只能作为辅助信号：它是文字证据，证明不了分页相同。如果仍要保留“无记录按对位率放行”，至少做到三点：(a) 加反向覆盖率，即 PDF 正文文字被 DOCX 覆盖的比例，用来发现删段；(b) 报告写 pdf_same_version_proven=false，stderr 给 WARN，check 把这类页码差异列为 toc_version_unproven，不计入可修 pending；(c) 由主代理给 目录定位/04_编号与考法计数.pdf 补一份同版身份记录，让金标准 04→52 走 match 路径。回归测试补上 N2、删段、少量增段、记录缺失四个用例。"
+  },
+  {
+   "severity": "minor",
+   "desc": "keepNext 长链闸的 check 与 repair 退出码仍不一致。fix4 已把会触发长链闸的候选移到 blocked.keepnext，不再计入 pending。但 check 因此 exit 0（“无待改”），同一输入 repair --keepnext 却因为 blocked 退出 2。主代理看到 check 为 0，再跑 repair 会意外失败。",
+   "evidence": "final_attack.py n4（attack2.log）：check_exit=0，check_pending=0，check_blocked={keepnext:[{para:239, reason:'会把 keepNext 链撑到 28 段（上限 20，改前这条链 0 段）'}]}；repair --keepnext exit 2，stderr“定位被跳过（blocked，共 1 处），按规格判失败，不写输出”。",
+   "fix": "check 在 blocked_count 非零时退出 1，或单列 needs_attention。也可以让 repair 在点名操作只有 blocked、没有可改项时明确提示“check 已列为 blocked”。二选一，并在文件头写明。"
+  },
+  {
+   "severity": "minor",
+   "desc": "注释过时和行数超标。plan_keepnext 第542–545行仍写着“本工具新增字段（两册配置尚未登记）”“缺省即现行必修三的两个标签”，与紧接着第546–547行、文件头第51–54行（缺省 []、bixiu3 已登记）自相矛盾。全文件 1050 行，超出规格“一、9”的 ≤900 行目标。",
+   "evidence": "sed -n '542,547p' layout_prepare.py → 第545行“配置补上，缺省即现行必修三的两个标签。”，第546行“缺省 []：未登记该字段的书册不套用必修三的标签”；wc -l layout_prepare.py → 1050。",
+   "fix": "删掉第542–545行里过时的两句。行数可以把 do_check/do_repair 的报告拼装部分合并成共用函数来压缩，或者由主代理在规格里放宽上限。"
+  }
+ ],
+ "checked": [
+  "上轮 major#1（目录同版闸）逐条复现：身份记录冲突部分已修好，修在工具里，不是只改测试。C docx_mismatch 记录和 pdf_mismatch 记录 repair 都 exit 2、不写，check 列入 toc_version_problems；第51批 PDF 配 04 repair exit 2（.review-manifest.json 判 docx_mismatch），B3_52 配 51 PDF 做 check 进入 toc_version_problems。N2、B（删 120 段）、记录缺失三项仍复现，见 issues[0]。",
+  "上轮 major#2（写后失败清理）确认已修，修在工具里（第841–926行 try/except BaseException 包住写后复核与写报告）：final_attack.py f 进程内打补丁测了五种情况：bh.run_health 抛 RuntimeError、写后第二次 toc_pdf_dests 抛异常、write_report 抛 OSError、报告 os.replace 抛 OSError、写报告时 KeyboardInterrupt。五种都是 docx_left_behind=false，report_exists=false，输出目录没有新增任何文件，包括 mkstemp 临时文件；前四种 exit 2，KeyboardInterrupt 向外抛出，但输出已清理。",
+  "上轮 minor 复核：G 报告临时名符号链接已修，受害文件内容仍为 VICTIM-ORIGINAL，报告是普通文件，没有残留 .tmp；最终报告名预置为指向受害文件的符号链接时 exit 3，受害文件不变。N5 拆分的 PAGEREF instrText 已修（nodes_found=1，repair exit 0，目录与 B3_52 一致，0/32 处不同）。N6 段首空白 run 已修（repair exit 0，编号恢复为“例题 1”）。N4 check/repair 的计数口径已统一（check pending 0，blocked 列出 para 239），但退出码语义仍不一致，见 issues[1]。文件头第51–54行已改为缺省 []。",
+  "批量误改保护（新代码攻击）：B2_230 复制到 scratch，加 --profile bixiu3。--numbering 结果 exit 2（42/111=37.8%）；--numbering --allow-blocked 仍 exit 2；--method-counts --allow-blocked 结果 exit 2（63 处归零）；--allow-mass-renumber 放行编号后，考法归零仍按 blocked 以 exit 2 拦下。B3_03 复制到 scratch：--numbering 与 --numbering --allow-blocked 都 exit 2（344/734=46.9%），--allow-blocked 放不行。scratch 内指向已登记 B3_03 的符号链接按真实落点识别为已登记书册，正常写出。--keepnext 单独使用不受这条保护，但改动为 0 处。",
+  "损坏的 --toc-pdf（截断到 1/3）：repair exit 2 不写（对位率 0/17408），check 列入 toc_version_problems，没有 traceback。",
+  "金标准 CLI 独立复跑（final_attack.py golden）：B3_03 repair --numbering --method-counts --keepnext --expect-sha --health 结果 exit 0，编号 344、keepNext 284，输出 SHA 与 B3_04 逐字节相同。B3_04 repair --toc --toc-pdf 目录定位/04.pdf --expect-sha --health 结果 exit 0，toc 30，输出 SHA c007d719… 与 B3_52 逐字节相同，走的是对位率路径（identity=unrelated，0.995）。B3_52 加同版 PDF 执行 check：pending 0，exit 0。",
+  "回归测试集：run_tests_layout_prepare.py 复制到 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_final/tests/ 下运行（PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3），39/39 PASS，EXIT=0，日志在 tests/run.log。",
+  "新攻击用例：N2 插页错版、删 120 段、删 600 段、增 120 段、增 600 段、身份记录缺失、pdf_mismatch 记录、五种写后异常、最终报告名符号链接、批量误改六种组合、B3_03 未登记副本、指向已登记稿件的符号链接、损坏 PDF、金标准 CLI。脚本为 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_final/final_attack.py 和 tocdiff.py，日志为 attack1.log、attack2.log、attack3.log，结果在 final_attack_results_*.json，产物在 out/。",
+  "纪律：snap_before.json 与 snap_after.json 的差异为 0。覆盖 B3_52 及其 PDF、B3_03、B3_04、目录定位 PDF、B3_51 及其 PDF、B2_230 及其 PDF、layout_prepare.py（d8590c34…）、batch_health.py、docx_lib.py、profile_lib.py、bixiu2/3.json 的 SHA 与 mtime，以及 构建/、rendered/、目录定位/、00_必修三最新审查稿、B3 工作区、协作/、人工审查历史、中央状态、项目根、Skill scripts/ 的目录列表。scripts/__pycache__ 仍只有原有 3 个 cpython-312.pyc；scripts/ 下没有 *verify* 文件。没有改工具代码，没有运行 collab.py，没有启动子代理，没有使用会话管理工具；所有产物都在 layout_prepare_final/ 下。"
+ ]
+}

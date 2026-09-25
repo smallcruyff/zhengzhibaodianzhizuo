@@ -1,0 +1,256 @@
+{
+  "schema_version": "docx-native-source-comparison.v2",
+  "exam_id": "BJ-2025-CY-ERMO",
+  "source_id": "S73c36c3077dc",
+  "status": "delta_found",
+  "comparison_scope": "all seven DOCX one-row/two-column tables versus existing S73 native Markdown transcription",
+  "normalization_note": "NFKC plus whitespace normalization; Markdown <br> markers are removed for comparison",
+  "table_checks": [
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q16",
+      "table_index": 0,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 415,
+          "native_md_characters": 428,
+          "docx_sha256": "11b7d5236c34b606fa121f981641eb7d77a6003d19dab824782756ff96b4423a",
+          "native_md_sha256": "71f5f9ed993cf7e2779cbc13807f6449732bb9542cb5b038e4311f5e9dc8c18a",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 705,
+          "native_md_characters": 742,
+          "docx_sha256": "8fd5961850e567a4021a3187a4189b053ff1423389e9e9daa127389c7e0b157b",
+          "native_md_sha256": "e06d6c6f1f55ab9c6ea2fcdedaa7dde367ecd2154cec2cb2f62f2e184f11b79f",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q17",
+      "table_index": 1,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 201,
+          "native_md_characters": 219,
+          "docx_sha256": "6c9a12a4df25c9f856b8fcbe7b34bc118a9608b07a9055026a5e91b6473485a8",
+          "native_md_sha256": "c699cc1b26b6a53656facf114b42d433de04a028f76c433fae8e858eb1c60c2d",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 388,
+          "native_md_characters": 418,
+          "docx_sha256": "e863bb441e81782d5b38b08126f5bad3dde3d76d56c2d678b208def44441aa2f",
+          "native_md_sha256": "957c6580eee5eba22c2be940d4871acafe9926adf0c253d7156d40118d09ef17",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q18",
+      "table_index": 2,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 342,
+          "native_md_characters": 353,
+          "docx_sha256": "92d3f46cb61804352cedb2fa217f53268b96fe56d479076b2b83bc9463404295",
+          "native_md_sha256": "bea4bc935af5eb76429bd7eb17a3a853c066d5216cf5b9c1b386a141257fcb81",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 484,
+          "native_md_characters": 520,
+          "docx_sha256": "73189d9a3a68e00ca6db0c9f5c225643c0945bffb8b7fc4d11b61fcb34658994",
+          "native_md_sha256": "4a9eb129bed3c9dfdd3561e40f00424afc8a82a89c828c3aa8c71c85a788c78d",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q19",
+      "table_index": 3,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 364,
+          "native_md_characters": 380,
+          "docx_sha256": "8f88966058893b84c668f52d5e1123440dec42355d7e873224d155ed28416896",
+          "native_md_sha256": "b11a36f7f2fa3e811f201cf5c8ba181019e74421ddaf9fc9f45b490f0f6afa02",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 927,
+          "native_md_characters": 57,
+          "docx_sha256": "c514b32cf33567c4590e3e3fb13b8b7432614b8d56e5ffdeb0c5408cb3c1a284",
+          "native_md_sha256": "a31960d019a89b3e12893ce2e7e08b2381265058da0cd0f0b44db331f07e1bac",
+          "exact_after_normalization": false
+        }
+      ],
+      "all_cells_exact_after_normalization": false
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q20",
+      "table_index": 4,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 370,
+          "native_md_characters": 386,
+          "docx_sha256": "64834d55266431d4cacab13b6f375f8244de88a37f36729302bfce090e58b4e0",
+          "native_md_sha256": "d37b63753c67c19c1a53049d941a0403105097ec1f59a9e587c0ec2fcde5ecdb",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 639,
+          "native_md_characters": 673,
+          "docx_sha256": "a4290c5b8f9b5dd817afa92e15a42c9c55eec510fac992319262131126b7071b",
+          "native_md_sha256": "7391f2c93ad756bd29adc8f450f28a5dbad4d3740f54346ccf3ec606fe920010",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q21",
+      "table_index": 5,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 305,
+          "native_md_characters": 313,
+          "docx_sha256": "87282755a086893c51495cfeb42c1c84c7c8f9577efc132763c9fddfc5820e71",
+          "native_md_sha256": "d0d452ff877900848a7c2bca5e6c41fd6ec0c6b6e10ec584386c1066d3b1e613",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 823,
+          "native_md_characters": 848,
+          "docx_sha256": "ed216917082eaaa2cde4ba3dc6e69327539a187f1d3a7d43d1821822f3cce133",
+          "native_md_sha256": "65eef80261d8b9fb48b1ed5b163c5dbf6c2295bcebbc16165e97cb6977ec7e2e",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    },
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q22",
+      "table_index": 6,
+      "docx_dimensions": [
+        1,
+        2
+      ],
+      "native_md_dimensions": [
+        1,
+        2
+      ],
+      "cell_checks": [
+        {
+          "cell_index": 0,
+          "docx_characters": 953,
+          "native_md_characters": 983,
+          "docx_sha256": "dcb0ba7dd4683d3519ec6c24e2a6466970aa2602f43358e252280fb57c8eb169",
+          "native_md_sha256": "a4918fc5f82018d16142f6274c90c22f4ab59de9fbbe1b69f6749547fab13b46",
+          "exact_after_normalization": true
+        },
+        {
+          "cell_index": 1,
+          "docx_characters": 769,
+          "native_md_characters": 799,
+          "docx_sha256": "34fbfbf674482997251e361410750e547573fa26a519a1cfcff9ff43ac49b45e",
+          "native_md_sha256": "ec919d4e48138dd0857a15d0b59e5ff5cb6d2a129739bcc0f57e8c77330f50a5",
+          "exact_after_normalization": true
+        }
+      ],
+      "all_cells_exact_after_normalization": true
+    }
+  ],
+  "delta_items": [
+    {
+      "question_id": "BJ-2025-CY-ERMO-Q19",
+      "table_index": 3,
+      "cell_index": 1,
+      "role": "right_E1",
+      "docx_characters": 927,
+      "native_md_characters": 57,
+      "docx_sha256": "c514b32cf33567c4590e3e3fb13b8b7432614b8d56e5ffdeb0c5408cb3c1a284",
+      "native_md_sha256": "a31960d019a89b3e12893ce2e7e08b2381265058da0cd0f0b44db331f07e1bac",
+      "docx_text": "评分细则、答案变通说明①公共法律服务建议  2分理由 1分建设完备的法律服务体系，推动公共法律服务体系在区域和人群覆盖方面的均衡化发展。加强对欠发达地区和农村地区公共法律服务的投入，设立专项资金支持其公共法律服务体系建设。针对弱势群体，建立专门的法律援助绿色通道，简化申请程序，降低他们获取法律服务的成本。我国是人民民主专政的社会主义国家，人民是国家的主人。要坚持以人民为中心的发展思想。保障人民平等享有公共法律服务，有助于维护社会公平正义，体现社会主义民主真实性，形成良好法治环境。政府有社会建设职能，有责任完善公共法律服务体系，促进区域和人群间公共法律服务均衡发展是政府的责任。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分②普法工作方面建议  2分理由 1分深入开展法治宣传教育，增强普法内容的人群针对性和方式多样性、实效性。多种形式调研，广泛收集不同群体需求，根据需求确定普法内容。充分利用新媒体平台，创新普法形式，开展生动有趣、通俗易懂的普法活动。公民的法律意识和法治观念是法治社会建设的重要基础。使法律知识深入人心，提高群众法律素养，促进尊法学法守法用法，营造良好法治社会氛围。新媒体在信息传播方面具有广泛、快速、便捷等优势，利用新媒体普法能更好地适应时代发展和群众需求。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分③依法治网方面建议  2分理由 1分提高社会治理法治化水平，完善网络立法，立法机关科学民主立法，执法机关严格执法、公正司法。加强网络立法工作，关注技术发展趋势和新的网络问题，加快制定修订相关法律法规，填补法律空白。加强网络执法队伍建设，建立跨部门、跨地域网络执法联动机制，利用利用现代信息技术提高执法能力。法律是治国之重器，全面依法治国是中国特色社会主义的本质要求和重要保障。加强立法前瞻性协调性，可为网络空间的健康发展提供坚实的法律依据。克服网络违法隐蔽性强、跨地域执法复杂等困难；维护网络空间法治秩序，保障公民组织在网络空间合法权益。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分提示：如上面建议和理由不能一一对应，则建议答出任意2个给2分，理由答出任意1个给1分。",
+      "native_md_text": "评分细则、答案变通说明\n提示：如上面建议和理由不能一一对应，则建议答出任意2个给2分，理由答出任意1个给1分。\n ",
+      "action": "记录精确 delta；不改题文件、不覆盖现有候选",
+      "docx_only_detail_before_prompt": "①公共法律服务建议  2分理由 1分建设完备的法律服务体系，推动公共法律服务体系在区域和人群覆盖方面的均衡化发展。加强对欠发达地区和农村地区公共法律服务的投入，设立专项资金支持其公共法律服务体系建设。针对弱势群体，建立专门的法律援助绿色通道，简化申请程序，降低他们获取法律服务的成本。我国是人民民主专政的社会主义国家，人民是国家的主人。要坚持以人民为中心的发展思想。保障人民平等享有公共法律服务，有助于维护社会公平正义，体现社会主义民主真实性，形成良好法治环境。政府有社会建设职能，有责任完善公共法律服务体系，促进区域和人群间公共法律服务均衡发展是政府的责任。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分②普法工作方面建议  2分理由 1分深入开展法治宣传教育，增强普法内容的人群针对性和方式多样性、实效性。多种形式调研，广泛收集不同群体需求，根据需求确定普法内容。充分利用新媒体平台，创新普法形式，开展生动有趣、通俗易懂的普法活动。公民的法律意识和法治观念是法治社会建设的重要基础。使法律知识深入人心，提高群众法律素养，促进尊法学法守法用法，营造良好法治社会氛围。新媒体在信息传播方面具有广泛、快速、便捷等优势，利用新媒体普法能更好地适应时代发展和群众需求。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分③依法治网方面建议  2分理由 1分提高社会治理法治化水平，完善网络立法，立法机关科学民主立法，执法机关严格执法、公正司法。加强网络立法工作，关注技术发展趋势和新的网络问题，加快制定修订相关法律法规，填补法律空白。加强网络执法队伍建设，建立跨部门、跨地域网络执法联动机制，利用利用现代信息技术提高执法能力。法律是治国之重器，全面依法治国是中国特色社会主义的本质要求和重要保障。加强立法前瞻性协调性，可为网络空间的健康发展提供坚实的法律依据。克服网络违法隐蔽性强、跨地域执法复杂等困难；维护网络空间法治秩序，保障公民组织在网络空间合法权益。以上三个左右对应关系，答出任意一个“建议 + 理由”，即可得3分"
+    }
+  ],
+  "candidate_boundary": {
+    "question_ids": [
+      "BJ-2025-CY-ERMO-Q16",
+      "BJ-2025-CY-ERMO-Q17",
+      "BJ-2025-CY-ERMO-Q18",
+      "BJ-2025-CY-ERMO-Q19",
+      "BJ-2025-CY-ERMO-Q20",
+      "BJ-2025-CY-ERMO-Q21",
+      "BJ-2025-CY-ERMO-Q22"
+    ],
+    "candidate_content_changed": false,
+    "note": "The Q19 right-column DOCX detail is recorded as a source-specific transcription delta only."
+  }
+}

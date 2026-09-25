@@ -1,0 +1,296 @@
+{
+ "batch_id": "s018",
+ "rule_version": "2026-09-24-model-batch-v1",
+ "type": "subjective",
+ "n_units": 9,
+ "units": [
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q18#3",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "18",
+   "subq": "3",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n18.（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。\n\n【材料】\n\n图1：北京市人才资源总量（万人）。图中比较2013年与2022年，标注增长36.7%。注：北京市拥有90多所大学、1000多所科研院所；加强人才国际交流，积极吸纳海外高端人才和留学人才。\n\n图2：北京市全社会研究与试验发展（R&D）经费投入（亿元）。图中比较2013年与2022年，标注增长136.8%。注：北京市全社会R&D经费投入位居全国前列；2022年全社会R&D经费中，基础研究经费占比为16.6%，占比逐年稳步提升。\n\n北京已建成相对完善的数字基础设施，2023年，全市实现数字经济增加值18766.7亿元，占地区生产总值的比重为42.9%；依托中关村加快推进高水平科技自立自强先行先试改革，实施24项重大改革措施，出台50多项配套改革措施，出台科研项目经费“包干制”、技术攻关“揭榜挂帅”等政策……北京正充分发挥首都优势，逐“新”而行。\n\n（1）根据材料，概括北京在发展新质生产力方面的优势，并运用《经济与社会》知识，分析这些优势如何助力新质生产力发展。（8分）\n\n如何发展新质生产力？政协破题。\n\n甲地：将“前瞻布局未来产业，积极培育发展新质生产力”作为政协重点调研课题，实地调研，学习先发地区经验，召开座谈会，充分听取各方意见。\n\n乙地：推进智能高铁2.0发展；推动高等院校、科研院所与企业开展生物医药领域人才培养战略合作；利用数字技术为畜牧业节粮提效，注入新质生产力……科学技术界、医药卫生界、农业界等界别委员围绕新质生产力建真言谋良策。\n\n丙地：政协召开“关于以科技创新推动企业协同发展”的重点提案督办会，提案主办单位科技局、工信局重点汇报提案办理情况，并与委员进行交流。\n\n（2）结合材料，分析政协在推动新质生产力发展中所发挥的作用。（6分）\n\n传统产业在我国制造业中占比超80%，是现代化产业体系的基底。多年来，我国轻工、纺织、机械等传统产业带动效应强、产业关联度大、国际市场占有率高，是我国参与国际竞争的生力军。但也存在低端产能过剩、高端供给不足、产业基础不牢、创新能力薄弱等问题，对数字化、智能化有着庞大、迫切的实际需求。\n\n当前，从人形机器人到量子计算机，从脑机接口到6G网络设备……中国未来产业正在科技新赛道上加速前进。未来材料、未来网络等能够广泛渗透传统产业链上下游各个环节，引领传统优势产业高端化、智能化、绿色化转型。\n\n（3）发展新质生产力，要正确认识传统产业和未来产业的关系。结合材料，运用《逻辑与思维》知识，谈谈你的看法。（6分）\n\n### [原卷页图证据]\n- 原卷第 7 页：![原卷第7页](assets/original/p007.png)；页面原图含题面、表格/图表/题内图片及页脚。\n- 原卷第 8 页：![原卷第8页](assets/original/p008.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 40 原生文字层]\n\n（原生文字对象数：0；原生空文件 SHA-256：`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`。）\n\n### [幻灯片 40 视觉 source payload 补足（本轮候选）]\n\n完整逐字转写、两张图表的轴/刻度/增长标注/注释、对象坐标、PPTX 关系和原图 SHA 见 `../../visual_transcription.md#幻灯片-40--q18非选择题第（1）问原题材料`、`../../visual_transcription.json`、`../../object_map.json`。\n见本轮 sidecar：[逐字转写](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/visual_transcription.md#幻灯片-40--q18非选择题第（1）问原题材料)、[结构化转写](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/visual_transcription.json)、[对象映射](../../../后勤管理/MD全库流水线_20260921/receipts/group_2024_remaining/BJ-2024-DC-YIMO/32_source_payload_fix/group_b/object_map.json)。\n\n机器可读正文：\n\n```text\n18．（20分）新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。\n材料\n左图：北京市人才资源总量；（万人）；纵轴0—900每100一格；2013年、2022年；按纵轴估读两柱约600万人、约800万人（原图无柱顶数值标签）；灰色箭头由2013年柱指向2022年柱并向右上，标注36.7%；注：北京市拥有90多所大学、1000多所科研院所；加强人才国际交流，积极吸纳海外高端人才和留学人才。\n右图：北京市全社会研究与试验发展（R&D）经费投入；（亿元）；纵轴0—3000每500一格；2013年、2022年；按纵轴估读两柱约1200亿元、约2800亿元（原图无柱顶数值标签）；灰色箭头由2013年柱指向2022年柱并向右上，标注136.8%；注：北京市全社会R&D经费投入位居全国前列；2022年全社会R&D经费中，基础研究经费占比为16.6%，占比逐年稳步提升。\n北京已建成相对完善的数字基础设施，2023年，全市实现数字经济增加值18766.7亿元，占地区生产总值的比重为42.9%；依托中关村加快推进高水平科技自立自强先行先试改革，实施24项重大改革措施，出台50多项配套改革措施，出台科研项目经费“包干制”、技术攻关“揭榜挂帅”等政策……北京正充分发挥首都优势，逐“新”而行。\n（1）根据材料，概括北京在发展新质生产力方面的优势，并运用《经济与社会》知识，分析这些优势如何助力新质生产力发展。（8分）\n```\n\n原生对象映射：`pic id=3/name=图片 2`，EMU `[1110438,611568,9594138,5634863]`，`rId2 → ppt/media/image34.png`；嵌图 SHA-256 `5276c4cfdd0dd16af96f5eda36b5bdb19747636ab03a37824aa724032d4d5bed`。图表、箭头、坐标、柱形和灰色换行标记均为嵌图内部内容，不是可单独提取的 native text/shape；没有手写批注。\n- 可见版式标记：定义行末、材料标签行末、材料正文行末及设问行末均见灰色“↵”；据原图与对象映射，这是可见的换行/版式符号，不作题面文字。\n- 幻灯片 41: ![细则/讲评 PPTX slide 41](assets/rubric/p-41.png)；文字层文件：`assets/pptx_text/slide041.txt`。\n\n### [幻灯片 41 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n拓展阅读：让科技创新为新质生产力发展注入强大动能  阴和俊\n\n优势：教育、人才优势突出，研发投入持续增长，数字经济成为重要引擎，科技体制改革持续深化。（2分）\n如何助力：\n①教育、人才优势提高劳动者素质，为新质生产力提供创新型人才（人才支撑）；\n②研发投入的增长提高原始创新能力，有助于形成颠覆性技术和重大原创成果；    ③数字经济赋能产业发展，与实体经济深度融合，推动新型工业化；\n④科技体制改革推动形成与新质生产力相适应的生产关系，以体制机制创新带动科技创新。（6分）\n```\n- 幻灯片 42: ![细则/讲评 PPTX slide 42](assets/rubric/p-42.png)；文字层文件：`assets/pptx_text/slide042.txt`。\n\n### [幻灯片 42 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 45: ![细则/讲评 PPTX slide 45](assets/rubric/p-45.png)；文字层文件：`assets/pptx_text/slide045.txt`。\n\n### [幻灯片 45 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：主体+做法（措施）+结果\n\n政协作为社会主义协商民主的重要渠道和专门协商机构，\n聚焦党和国家中心任务，参政议政，广泛反映各方建议，为发展新质生产力凝心聚力；\n政协委员通过调研，形成高质量的提案，为促进新质生产力发展建言献策；\n政协开展督办协商活动，进行民主监督，推动提案落实。\n```\n- 幻灯片 46: ![细则/讲评 PPTX slide 46](assets/rubric/p-46.png)；文字层文件：`assets/pptx_text/slide046.txt`。\n\n### [幻灯片 46 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 47: ![细则/讲评 PPTX slide 47](assets/rubric/p-47.png)；文字层文件：`assets/pptx_text/slide047.txt`。\n\n### [幻灯片 47 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 50: ![细则/讲评 PPTX slide 50](assets/rubric/p-50.png)；文字层文件：`assets/pptx_text/slide050.txt`。\n\n### [幻灯片 50 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：紧扣二者关系，从是何+如何角度阐述。\n\n传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。\n发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；要运用超前思维布局建设未来产业，完善现代化产业体系。（6分）\n```\n- 幻灯片 51: ![细则/讲评 PPTX slide 51](assets/rubric/p-51.png)；文字层文件：`assets/pptx_text/slide051.txt`。\n\n### [幻灯片 51 原生文字层（逐字保留）]\n\n```text\n理论+分析 3+3 \n是何：传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。（2分）\n如何：发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；（2分）要运用超前思维布局建设未来产业，完善现代化产业体系。（2分）\n变通：二者关系：辩证统一、对立统一；传统产业：辩证思维、矛盾观点；\n未来产业：创新思维、科学思维、矛盾分析法等替代原理分。\n\n1、逻辑思维原理+经济语言分析，学生片面运用逻辑或经济回答。分析不到位，不是围绕二者关系谈。\n2、单一角度运用如创新思维回答，没有从材料中读出辩证思维角度。\n3、对传统产业与未来产业的关系理解有误。如，把二者理解为新旧事物；认为未来产业是传统产业的辩否；认为传统产业经过量的积累实现质的飞跃后变成未来产业等。\n4、关系类试题应该是二者相互作用，学生只谈未来产业引导传统产业转型，不谈传统产业对未来产业的支撑作用。\n```\n- 幻灯片 52: ![细则/讲评 PPTX slide 52](assets/rubric/p-52.png)；文字层文件：`assets/pptx_text/slide052.txt`。\n\n### [幻灯片 52 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q18-S1：slide 42，18（1），得分 8.0/8]\n\n来源：`assets/student_samples/pptx_media/slide42_image35.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide042_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide42.png`。\n\n右侧红色显示 8.0；右侧小问栏可见 `18(2.0分)` 输入 2 和 `18(6.0分)` 输入 6。当前页从第 18 题（1）开始，底部已经露出（2）题头和下一行，故这里只转写当前页可见区域，不推断后续页。\n\n```text\n（1）（8分）依托优势：北京人才资源总量增加，包含科研院所和高校资源，[uncertain]。\n\n经费投入大幅提升，数字经济[uncertain]发展，科技体制、[uncertain]改革[uncertain]。\n\n如何：人才资源量增加，创新型人才增多，[uncertain]；[uncertain]。\n\n促进技术创新和发展，转变经济增长方式，推动经济发展[uncertain]。\n\n依托[uncertain]数字基础设施，推动数字经济发展，降低[uncertain]成本，促进[uncertain]发展。\n\n科研经费占比逐年提升，为创新发展注入活力，促进新质生产力发展；[uncertain]。\n\n北京建设数字基础设施，实现数字经济[uncertain]，依托[uncertain]改革措施，推动[uncertain]。\n\n（2）（6分）△ 政协开展调研课题，召开座谈会，充分发挥[uncertain]……（本页下缘截断）\n```\n\n说明：Q18（1）的数字、专业名词和连词有多处受拍屏纹理影响，未用题面或评分文字反填。原图中的 2 分、6 分小问栏和红色 8.0 是评分证据。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image35.jpeg`；原图尺寸：`1325×994`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide42_image35.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide42.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide42.png)。\n- 原生文字层：[assets/student_samples/native_text/slide042.txt](assets/student_samples/native_text/slide042.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[15, 80, 1115, 910]`。\n- 画面可见实得分：`8.0`；分值范围：`18(1) / 8 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 8.0; right inputs 2 and 6 for the two 18 subparts。\n- 可见批注/标记/涂改：black handwriting; black underlines；红色逐点标记：`no_separately_readable_red_point_marks`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[15, 80, 1115, 250]`：advantage summary; multiple characters obscured by screen raster。\n  - `[15, 250, 1115, 560]`：how-portion lines; several terms unstable。\n  - `[15, 560, 1115, 910]`：lower part of (1) plus start of (2), page crop boundary。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide042_shape01.jpg](assets/student_samples/native_shape_refs/slide042_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S2：slide 46，18（2），得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide46_image39.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide046_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide46.png`。\n\n可辨手写转写：\n\n```text\n（2）（6分）政协发挥政治协商、民主监督、参政议政职能，政协委员围绕新质生产力建言献策、凝聚共识，充分发挥[uncertain]。\n\n政协通过召开座谈会、组织协商，听取各方意见，提出[uncertain]建议，推动[uncertain]发展。\n\n政协协商民主制度具有独特优势，政协委员围绕新质生产力建言献策，发挥协调作用，推动[uncertain]。\n\n政协委员通过提案和协商履行职责，提案主办单位与委员交流，推动问题解决。\n\n通过督办提案、沟通协调，发挥民主监督职能，推动政府/有关部门改进工作。\n```\n\n说明：原图上部是上一小问末行的截断片段，下部出现“（3）（6分）”题头但没有完整（3）答案；本转写不把下缘以外的内容补入。右侧红色 6.0、小问栏 `18-2(6.0分)` 与输入值 `6` 原样保留。画面中有黑色下划线、圈写、插入字和覆盖笔画，无法确定每一笔是学生自改还是阅卷标记，故不强行归类。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image39.jpeg`；原图尺寸：`1016×762`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide46_image39.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide46.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide46.png)。\n- 原生文字层：[assets/student_samples/native_text/slide046.txt](assets/student_samples/native_text/slide046.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[65, 90, 900, 700]`。\n- 画面可见实得分：`6.0`；分值范围：`18(2) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-2(6.0分); right input 6。\n- 可见批注/标记/涂改：black underlines; circle/rewriting; possible black marking strokes；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[65, 90, 900, 220]`：top continuation from previous subpart, deliberately not reconstructed。\n  - `[65, 220, 900, 600]`：18(2) answer; several words affected by screen moire。\n  - `[65, 600, 900, 700]`：start of 18(3), cropped at lower edge。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide046_shape01.jpg](assets/student_samples/native_shape_refs/slide046_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S3：slide 47，18（2）另一份样卷，得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide47_image40.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide047_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide47.png`。\n\n可辨手写转写：\n\n```text\n（2）（6分）① [开头有覆盖/涂改，稳定可辨片段] 围绕/政协履行[uncertain]职能，围绕新质生产力建言献策，促进[uncertain]。\n\n政协协商民主制度具有独特优势，能够充分发挥协商民主作用，推动[uncertain]；[uncertain]。\n\n② 政协委员[uncertain]围绕新质生产力建言献策，提出[uncertain]，充分发挥[uncertain]作用，推动[uncertain]。\n\n③ 政协[uncertain]发挥民主监督作用，召开提案督办会，推动有关部门办理提案；[uncertain]。\n\n（3）（6分）① 我认为传统产业与未来产业[uncertain]，要[uncertain]。\n```\n\n可见批注/涂改：第（2）题开头有多处黑色覆盖线；中部有圈号、上方插入字（视觉上像“[uncertain]”），第③点附近有删除线和重写；下方第（3）题开头也有下划线。右侧红色 6.0、输入框 6 和绿色提交/确认图标保留；底部系统栏可见“试题 18-2”“密号 -18590496”“评卷量 284”“速度 18.61秒/份”“平均分 3.99分”“用时 00:00:53”。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image40.jpeg`；原图尺寸：`1175×881`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide47_image40.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide47.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide47.png)。\n- 原生文字层：[assets/student_samples/native_text/slide047.txt](assets/student_samples/native_text/slide047.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[70, 130, 1000, 750]`。\n- 画面可见实得分：`6.0`；分值范围：`18(2) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-2(6.0分); right input 6; green submit/confirm icon。\n- 可见批注/标记/涂改：black strikethrough; black insertion/correction; underlines; circled point numbers；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[70, 130, 1000, 260]`：previous-subpart tail and start of 18(2) overlap。\n  - `[70, 260, 1000, 650]`：18(2) answer with multiple overwritten words and annotation strokes。\n  - `[70, 650, 1000, 750]`：start of 18(3) is visible but lower answer is outside image。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide047_shape01.jpg](assets/student_samples/native_shape_refs/slide047_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q18-S4：slide 52，18（3），得分 6.0/6]\n\n来源：`assets/student_samples/pptx_media/slide52_image43.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide052_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide52.png`。\n\n可辨手写转写：\n\n```text\n（3）（6分）要用联系观点、全面的观点[uncertain]。传统产业与\n未来产业相互联系、相互补充，传统产业是[uncertain]发展的基础，未来产业[uncertain]。\n\n传统产业发展，[uncertain]；要努力打造[uncertain]，再产业是[uncertain]。\n\n传统产业[uncertain]，要用未来产业带动[uncertain]，推动传统产业转型升级，实现高质量发展。\n\n要用辩证的观点看待，认识到传统产业与未来产业相互联系、相互促进，二者[uncertain]。\n```\n\n说明：页面上缘有上一小问末尾残行；（3）答案正文从“要用联系观点……”开始。可见的下划线、黑色覆盖/改写和右侧“更改”下拉界面保留。右侧红色 6.0、小问栏 `18-3(6.0分)` 与输入值 6 为画面分数。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image43.jpeg`；原图尺寸：`1129×635`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide52_image43.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide52.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide52.png)。\n- 原生文字层：[assets/student_samples/native_text/slide052.txt](assets/student_samples/native_text/slide052.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[70, 75, 1000, 590]`。\n- 画面可见实得分：`6.0`；分值范围：`18(3) / 6 points`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：right red 6.0; label 18-3(6.0分); right input 6。\n- 可见批注/标记/涂改：black underlines; black overwriting; 更改 dropdown；红色逐点标记：`score_only`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[70, 75, 1000, 125]`：upper fragment from preceding subpart。\n  - `[70, 125, 1000, 540]`：18(3) handwriting; several terms unstable。\n  - `[70, 540, 1000, 590]`：final line/end punctuation and lower crop。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide052_shape01.jpg](assets/student_samples/native_shape_refs/slide052_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n学生层结论（Q18）：以上 4 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案（S7b4eece29632，独立主观参考答案层；角色已裁定，不作为逐点E1）：\n\n（1）教育、人才优势突出，研发投入持续增长，数字经济成为重要引擎，科技体制改革持续深化。（2分）\n教育、人才优势提高劳动者素质，为新质生产力提供创新型人才；研发投入的增长提高原始创新能力，有助于形成颠覆性技术和重大原创成果；数字经济赋能产业发展，与实体经济深度融合，推动新型工业化；科技体制改革推动形成与新质生产力相适应的生产关系，以体制机制创新带动科技创新。（6分）\n\n（2）政协作为社会主义协商民主的重要渠道和专门协商机构，聚焦党和国家中心任务，参政议政，广泛反映各方建议，为发展新质生产力凝心聚力；政协委员通过调研，形成高质量的提案，为促进新质生产力发展建言献策；政协开展督办协商活动，进行民主监督，推动提案落实。（6分）\n\n（3）传统产业与未来产业密不可分、相互促进。传统产业为未来产业发展提供原材料、零部件等支撑和强大的市场；未来产业赋能传统产业，引领传统产业转型升级。发展新质生产力，不是要忽视、放弃传统产业，要辩证否定，改造提升传统产业；要运用超前思维布局建设未来产业，完善现代化产业体系。（6分）\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 40: ![细则/讲评 PPTX slide 40](assets/rubric/p-40.png)；文字层文件：`assets/pptx_text/slide040.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收第3问",
+    "B3": "已收第3问",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收第3问",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第3问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第3问单独给出结论/所需模块。"
+  },
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q19",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "19",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n19.（6分）\n\n案件1　2018年，郭某为李某制作电表箱，李某为郭某出具欠据，约定2019年2月1日前还清。期间，郭某从未催要钱款。2024年3月，郭某向李某催讨钱款，李某拒绝还款。郭某无奈将李某告上法庭，最终因李某主张诉讼时效届满而败诉。\n\n案件2　冯某与其母程某约定，自2018年3月起，冯某每月向程某支付赡养费。2019年1月起，冯某再未支付上述费用，程某从未催讨。2024年2月，程某将冯某诉至法庭，要求其支付5年来未支付的相关费用。冯某以诉讼时效届满为由进行抗辩。法院依据《中华人民共和国民法典》第一百九十六条，以请求支付赡养费不适用诉讼时效为由，对冯某的主张不予支持，判令冯某如数支付相关费用。\n\n【资料卡】诉讼时效是指权利主体在法定期间内不行使权利，义务人便享有抗辩权（权利人行使其请求权时，义务人享有的拒绝其请求的权利），从而导致权利人无法胜诉的法律制度。\n\n针对上述案件，运用《法律与生活》知识，谈谈法律规定诉讼时效并对其不适用的情形加以规定的原因。\n\n### [原卷页图证据]\n- 原卷第 9 页：![原卷第9页](assets/original/p009.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 57 原生文字层（逐字保留）]\n\n```text\n【试题分析】\n\n逻辑思路：理论逻辑+实践逻辑\n\n法律规定诉讼时效有助于督促当事人积极主张权利/行使权利/积极维权/强化当事人依法维权/提高法律意识/积极解决纠纷/节约司法资源（2分）\n法律对赡养不适用诉讼时效的规定因为：\n成年人对父母有赡养的义务（2分）。\n这样做有利于保护老年人的合法权益/保护老年人的基本生存权利/构建和谐家庭（弘扬家庭美德）/彰显公序良俗（社会主义和谐价值观、社会秩序）（2分）。\n```\n- 幻灯片 58: ![细则/讲评 PPTX slide 58](assets/rubric/p-58.png)；文字层文件：`assets/pptx_text/slide058.txt`。\n\n### [幻灯片 58 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q19-S1：slide 58，实得分未显示]\n\n来源：`assets/student_samples/pptx_media/slide58_image47.png`；原生裁图副本：`assets/student_samples/native_shape_refs/slide058_shape01.png`；幻灯片渲染：`assets/student_samples/rendered_slides/slide58.png`。\n\n这是单独截取的第 19 题手写答卷图，没有题头、右侧评分栏或可确认分值。可辨字很少，拍屏摩尔纹覆盖几乎每一行；不作答案反推。按图像自上而下保留如下可辨片段：\n\n```text\n[第1行] [uncertain]权利义务：[uncertain]权利人[uncertain]积极[uncertain]行使[uncertain]，以便[uncertain]……\n\n[第2行] [uncertain]中，诉讼时效[uncertain]，自[uncertain]……\n\n[第3行] [uncertain]，故[uncertain]积极[uncertain]，还会[uncertain]……\n\n[第4行] [uncertain]法律规定，诉讼时效不适用[uncertain]，保护[uncertain]的[uncertain]合法权益。\n\n[第5行] [uncertain]，赡养义务[uncertain]，成年子女[uncertain]父母[uncertain]。\n\n[第6行] [uncertain]赡养费[uncertain]，有利于[uncertain]老年人[uncertain]基本生存权利[uncertain]，构建和谐家庭/彰显[uncertain]。\n```\n\n说明：上述每行均是“可辨片段＋不确定局部标记”，不是把模糊字猜成标准答案。完整连续笔迹、行线和裁剪边界只以 `slide58_image47.png` 为准；`evidence/student_inventory.json` 记录了整体学生答卷框和逐行不确定区域。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image47.png`；原图尺寸：`1155×547`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide58_image47.png)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide58.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide58.png)。\n- 原生文字层：[assets/student_samples/native_text/slide058.txt](assets/student_samples/native_text/slide058.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[0, 0, 1120, 540]`。\n- 画面可见实得分：`null（未显示）`；分值范围：`未显示`。\n- 独立逐图复核状态：`image_preserved_bounded_transcription`；分数核验：cropped sample has no score panel or reliable score text。\n- 可见批注/标记/涂改：line under each handwriting row；红色逐点标记：`none_visible`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[0, 0, 1155, 547]`：whole sample is low-resolution photographed screen; every row contains unresolved characters。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide058_shape01.png](assets/student_samples/native_shape_refs/slide058_shape01.png)；仅作同一图像证据的辅助定位。\n\n学生层结论（Q19）：以上 1 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案（S7b4eece29632，独立主观参考答案层；角色已裁定，不作为逐点E1）：\n\n法律规定诉讼时效有助于督促当事人积极主张权利，推动纠纷解决，节约司法资源。赡养问题事关老年人的基本生存权利，成年子女对父母有赡养的义务。请求支付赡养费不适用诉讼时效的规定有助于保护老年人的合法权益，彰显公序良俗，体现人文关怀，构建和谐家庭。\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 57: ![细则/讲评 PPTX slide 57](assets/rubric/p-57.png)；文字层文件：`assets/pptx_text/slide057.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-DC-YIMO-Q21",
+   "exam_id": "BJ-2024-DC-YIMO",
+   "num": "21",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [原卷视觉核验候选题面]\n> 下列文字是由原卷页图核对后的可检索层；原图链接必须与文字同时保留。题内图片、表格、图表、边框、箭头和版面关系以页图为准。\n\n21.（7分）瓣瓣同心心相连，京畿大地起宏图。\n\n十年携手、十年并进，京津冀三地致力于提速“通勤圈”、优化“功能圈”、打造“产业圈”，现代化首都都市圈建设欣欣向荣、生机勃勃。\n\n➢ 提速“通勤圈”，“轨道上的京津冀”跑出加速度\n形成了多节点、网格状、全覆盖的综合交通网络体系，构建了京津冀区域内地级市半小时、一小时交通圈。\n\n➢ 优化“功能圈”，“一核两翼”格局日渐清晰\n抓住疏解非首都功能这个“牛鼻子”，北京发挥“一核”辐射带动作用，推动雄安新区和北京城市副中心“两翼”齐飞，形成错位联动发展格局。\n\n➢ 打造“产业圈”，“北京研发、津冀制造”模式加速形成\n在北京研发，在河北和天津进行成果转化，成为了经济发展新模式。京津冀联合绘制新能源、智能网联汽车等6条产业链图谱。\n\n结合材料，运用所学，阐述“三圈”联动如何促进现代化首都都市圈高质量发展。\n\n### [原卷页图证据]\n- 原卷第 10 页：![原卷第10页](assets/original/p010.png)；页面原图含题面、表格/图表/题内图片及页脚。\n\n### [幻灯片 71 原生文字层（逐字保留）]\n\n```text\n（1）通勤圈角度\n政府---公共服务/基础设施---资源要素流动---共享发展／资源优化配置\n坚持以人民为中心---促进三地人流物流/资源要素流动---资源优化配置\n（2）功能圈\n主次矛盾／两点论／整体部分等----结合材料意思---区域协调\n（3）产业圈\n创新发展/绿色发展/发展新兴产业---三地优势互补／发挥比较优势---促进产业升级／现化产业体系\n（4）三圈总说\n立足全局／整体／系统优化／规律／以人民为中心等---结合材料意思---资源优化配置/区域协调/产业升级／现化产业体系等\n（每一层2分，满分7分）\n\n细则：\n```\n- 幻灯片 72: ![细则/讲评 PPTX slide 72](assets/rubric/p-72.png)；文字层文件：`assets/pptx_text/slide072.txt`。\n\n### [幻灯片 72 原生文字层（逐字保留）]\n\n```text\n示例：\n坚持以人民为中心／新发展理念，发挥有为政府公共服务职能，完善交通基础设施，促进区域内资源要素流动，优化资源配置，促进共享发展，助推首都都市圈高质量发展；\n坚持系统优化的方法，既疏解非首都功能又发挥一核两翼的作用，促进区域协调发展，助推首都都市圈高质量发展；\n坚持创新绿色发展，发挥三地比较优势，促进产业优化升级，构建创新引领协调发展的现化化产业体系，助推首都都市圈高质量发展。\n```\n- 幻灯片 73: ![细则/讲评 PPTX slide 73](assets/rubric/p-73.png)；文字层文件：`assets/pptx_text/slide073.txt`。\n\n### [幻灯片 73 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n- 幻灯片 74: ![细则/讲评 PPTX slide 74](assets/rubric/p-74.png)；文字层文件：`assets/pptx_text/slide074.txt`。\n\n### [幻灯片 74 原生文字层]\n\n（该幻灯片没有可提取的文字层；完整视觉内容以渲染图保留。）\n\n### [Q21-S1：slide 73，实得分未显示]\n\n来源：`assets/student_samples/pptx_media/slide73_image53.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide073_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide73.png`。\n\n可辨手写转写：\n\n```text\n① 提速“通勤圈”，完善京津冀交通网络体系，提升人流、物流[uncertain]流动，促进资源[uncertain]配置，实现[uncertain]发展。\n\n② 优化“功能圈”，[uncertain]重点，发挥[uncertain]与重点[uncertain]；北京以[uncertain]首都功能[uncertain]，推动[uncertain]新区和[uncertain]城市副中心发展，促进区域[uncertain]。\n\n③ 打造“产业圈”，创新经济发展模式，三地充分发挥比较优势，促进[uncertain]产业链[uncertain]，推动[uncertain]。\n```\n\n画面未见可确认的红色实得分或右侧评分输入。底部提示文字可辨为“请在各题目的答题区域内作答，超出黑色矩形边框限定区域的答案无效”；该提示不是学生答案，已与正文分开记录。学生答案区存在下划线/行线，未见能安全识读的教师逐点红批。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image53.jpeg`；原图尺寸：`1218×914`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide73_image53.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide73.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide73.png)。\n- 原生文字层：[assets/student_samples/native_text/slide073.txt](assets/student_samples/native_text/slide073.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[50, 180, 1120, 750]`。\n- 画面可见实得分：`null（未显示）`；分值范围：`未显示`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：no score visible in the copied sample。\n- 可见批注/标记/涂改：handwritten underlines/answer lines; bottom system instruction；红色逐点标记：`none_visible`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[50, 180, 1120, 750]`：multiple words in all three points are unstable due to photographed screen raster。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide073_shape01.jpg](assets/student_samples/native_shape_refs/slide073_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n### [Q21-S2：slide 74，实得分未显示]\n\n来源：`assets/student_samples/pptx_media/slide74_image54.jpeg`；原生裁图副本：`assets/student_samples/native_shape_refs/slide074_shape01.jpg`；幻灯片渲染：`assets/student_samples/rendered_slides/slide74.png`。\n\n可辨手写转写：\n\n```text\n① 三圈联动关注首都圈发展的整体性，坚持全面看问题，通过发挥京津冀各部分在区域内的优势，资源优化配置，实现整体功能大于部分之和。\n\n② 三圈联动要抓住关键，同时坚持两点论与重点论，发挥[uncertain]；北京[uncertain]在全局/整体基础上，带动[uncertain]发展。\n\n③ 三圈联动构成的交通网络作为重要基础设施，降低了三地联通成本，促进资源优化配置。\n\n④ 三圈联动有利于科技创新成果[uncertain]交流/转化，推动产业间合作，促进[uncertain]发展。\n```\n\n画面未见可确认的实得分、红色评分数或右侧输入值。底部同样可见“请在各题目的答题区域内作答，超出黑色矩形边框限定区域的答案无效”提示；学生正文和系统提示分开保留。没有把标准答案的“通勤圈/功能圈/产业圈”三点强行补入学生文字。\n\n**样本图像、页位与坐标核验**\n- PPTX 内嵌媒体成员：`ppt/media/image54.jpeg`；原图尺寸：`1707×1280`；原图：[打开内嵌学生/批改图](assets/student_samples/pptx_media/slide74_image54.jpeg)。\n- 幻灯片渲染页：`assets/student_samples/rendered_slides/slide74.png`；尺寸：`1601×900`；[打开渲染页](assets/student_samples/rendered_slides/slide74.png)。\n- 原生文字层：[assets/student_samples/native_text/slide074.txt](assets/student_samples/native_text/slide074.txt)；状态：`empty`。\n- 学生答题框（原始内嵌媒体像素坐标）：`[40, 180, 1600, 1040]`。\n- 画面可见实得分：`null（未显示）`；分值范围：`未显示`。\n- 独立逐图复核状态：`pass_with_bounded_uncertainty`；分数核验：no score visible in the copied sample。\n- 可见批注/标记/涂改：handwritten underlines/answer lines; bottom system instruction；红色逐点标记：`none_visible`。\n- `[uncertain]` 坐标（原始内嵌媒体像素；不是渲染页坐标）：\n  - `[40, 180, 1600, 1040]`：second sample; point 2 and point 4 contain unresolved characters。\n- 原生嵌入形状/裁图副本：[assets/student_samples/native_shape_refs/slide074_shape01.jpg](assets/student_samples/native_shape_refs/slide074_shape01.jpg)；仅作同一图像证据的辅助定位。\n\n学生层结论（Q21）：以上 2 个样本均保留原始图像、页位、分数/无分数状态、批注/涂改和坐标边界；`[uncertain]` 不得被答案、细则或常识静默替换。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [S7答案与通用等级层（S7b4eece29632）]\n> 该来源为《思想政治参考答案及评分标准》PDF，一页横向扫描图中并列放置第1页和第2页内容。已独立裁定为混合载体：Q1—Q15提供独立答案键，Q16—Q21提供主观参考答案，Q16/Q21附通用等级区间；下列内容不等同于完整逐点评分细则。\n参考答案与通用等级描述（S7b4eece29632，独立主观参考答案＋通用等级层；角色已裁定，不作为逐点E1）：\n\n可从以人民为中心发展思想、系统优化、现代化产业体系等角度回答。\n\n等级水平｜等级描述｜分值\n水平4｜观点鲜明，能明确表达自己的见解；紧扣问题，综合运用所学知识展开论述；逻辑严密，条理清晰｜5～7分\n水平3｜观点比较明确，能表达自己的见解；能扣住问题展开论述，知识运用比较准确；逻辑性较强，有条理｜3～4分\n水平2｜观点不明确；论述不能集中指向问题，罗列知识；知识运用不正确；论述缺乏逻辑，条理性差｜1～2分\n水平1｜应答与试题无关；或重复试题内容；或没有应答｜0分\n\n- 答案PDF原页图：![参考答案及评分标准 PDF 原页](assets/answer/p001.png)",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [详细题级评分主载体（S4b2073bcc9e2）]\n> S4是本卷详细题级评分主载体。逐张渲染图像、原生文字层和嵌入图像均保存在本候选目录的 `assets/`。幻灯片中若含教学扩展、答案分析、批注、评分标记或学生答卷，均不与原卷题面混写。\n- 幻灯片 71: ![细则/讲评 PPTX slide 71](assets/rubric/p-71.png)；文字层文件：`assets/pptx_text/slide071.txt`。\n\n### [学生示例、教师批注、评分标记、实得分与有界逐图转写]\n\n> 学生层来源：同卷评分 PPTX S4b2073bcc9e2 的内嵌原始媒体；独立转写回执与坐标见 `evidence/student_transcription.md`、`evidence/student_inventory.json`、`evidence/student_verification.json`。原始内嵌图像是权威证据，渲染幻灯片用于页位/界面核对。\n> 转写原则：稳定可辨字符逐字记录；无法稳定辨认处保留 `[uncertain]`，并记录原始图像像素坐标。学生错误、遗漏、涂改、红/黑批注和画面分数不由参考答案补齐。该层是“图像权威＋有界转写”，不宣称全部手写字迹无歧义。",
+    "is_formal_E1": false,
+    "source": "评分材料候选/来源块(未确认为E1)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "已收整题",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-FS-YIMO-Q17",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "num": "17",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": null,
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": null
+   },
+   "rubric": {
+    "text": null,
+    "is_formal_E1": false,
+    "source": null
+   },
+   "has_bank_record": false,
+   "evidence_status": "待裁决-证据未核实 | evidence=汇编片段(assembly_blocks.csv)，原卷/正式评分载体尚未取得 | downgrade=assembly_only_unclassified：题号按北京卷题号区间判定题型（Q1-15选择题/Q16+主观题），未经classify.py九模块判定，全部模块列MAYBE，需人工/模型核实模块归属",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库questions.csv/bank.py无该qid独立记录（汇编候选片段，原卷/正式评分载体尚未取得）。本单元题面/答案/细则不可从题库原文重建，唯一可得信息见本记录的 evidence_status 字段（摘自 attribution.csv 的 evidence_detail/downgrade_notes，源头是 book-xuanbi-*.md 具名核实摘录）。"
+  },
+  {
+   "unit_id": "BJ-2024-FS-YIMO-Q18#2",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "num": "18",
+   "subq": "2",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": null,
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": null
+   },
+   "rubric": {
+    "text": null,
+    "is_formal_E1": false,
+    "source": null
+   },
+   "has_bank_record": false,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=book-xuanbi-1.md:307 “本轮主观E1新闭环7题…房山一模Q18(2)”；book-xuanbi-1.md:51 “房山一模Q18（2）的‘开源’释义在7个重复落位全部恢复四边框”（已在选必一正文多处落位） | 具名核实-Skill闭环记录（该题正文已在7个重复落位全部恢复四边框，确认已在选必一正文多处落位，不是候选状态） | book-xuanbi-1.md:307 本轮主观E1新闭环7题：2024丰台一模Q20、房山一模Q18(2)、西城二模Q17…; book-xuanbi-1.md:51 房山一模Q18（2）的'开源'释义在7个重复落位全部恢复四边框，整本真实表格由7张增至22张 | downgrade=book_confirmed_extra_qid：questions.csv/assembly_blocks.csv均无该题独立行，本行仅登记书稿具名核实的事实，不冒充分类器/汇编产物；已列入回传题库线_v3.json（补登questions.csv/matrix.csv）;skill_overrides覆盖为E1(不再是汇编候选默认待裁决)",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "已收第2问",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "本单元对应整题第2问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第2问单独给出结论/所需模块。 题库questions.csv/bank.py无该qid独立记录（汇编候选片段，原卷/正式评分载体尚未取得）。本单元题面/答案/细则不可从题库原文重建，唯一可得信息见本记录的 evidence_status 字段（摘自 attribution.csv 的 evidence_detail/downgrade_notes，源头是 book-xuanbi-*.md 具名核实摘录）。"
+  },
+  {
+   "unit_id": "BJ-2024-FS-YIMO-Q19",
+   "exam_id": "BJ-2024-FS-YIMO",
+   "num": "19",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": null,
+   "options_text": null,
+   "answer_key": {
+    "text": null,
+    "source": null
+   },
+   "rubric": {
+    "text": null,
+    "is_formal_E1": false,
+    "source": null
+   },
+   "has_bank_record": false,
+   "evidence_status": "待裁决-证据未核实 | evidence=汇编片段(assembly_blocks.csv)，原卷/正式评分载体尚未取得 | downgrade=assembly_only_unclassified：题号按北京卷题号区间判定题型（Q1-15选择题/Q16+主观题），未经classify.py九模块判定，全部模块列MAYBE，需人工/模型核实模块归属",
+   "book_status": {
+    "B2": "未收",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": "题库questions.csv/bank.py无该qid独立记录（汇编候选片段，原卷/正式评分载体尚未取得）。本单元题面/答案/细则不可从题库原文重建，唯一可得信息见本记录的 evidence_status 字段（摘自 attribution.csv 的 evidence_detail/downgrade_notes，源头是 book-xuanbi-*.md 具名核实摘录）。"
+  },
+  {
+   "unit_id": "BJ-2024-FT-ERMO-Q16",
+   "exam_id": "BJ-2024-FT-ERMO",
+   "num": "16",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·视觉核验候选）]\n\n16．（7分）某街道党工委聚焦居民急难愁盼问题，创新议事模式，激活社区治理新动能。\n\n### [“居民议事厅”（原卷 p005 虚线材料框）]\n\n“我们想增加绿地”“想给孩子建点儿童游乐设施”……为更好解决居民诉求，社区党组织领导居委会、物业服务企业、业委会、社区居民等通过居民议事厅进行多次意见征集，最终确定环境提升改造方案。方案实施后，社区环境得到显著改善。\n\n### [“社区合伙人”（原卷 p005 虚线材料框）]\n\n某小区出现水质发黄现象，物业常规治理收效甚微。社区党委在街道党工委的指导下，组织居委会、业主、物业公司、区水务局等六方责任主体，召开合伙人会议，制定了科学的解决方案。经过科学治理，社区水质得到有效改善。\n\n### [“红色联系卡”（原卷 p005 虚线材料框）]\n\n王奶奶通过社区发放的红色联系卡（各部门联系人电话卡片）与“包楼”干部取得联系，反映平时子女不在身边，年纪大了做饭不方便，希望社区帮助解决用餐问题。社区书记与“包楼”干部共同帮助老奶奶与老年餐桌服务单位取得联系，最终解决了后续就餐问题。\n\n结合材料，运用《政治与法治》知识，说明该街道是如何激活社区治理新动能的。\n\n原卷页面：[p005.png](assets/pages/p005.png)。三段材料框的标题、框线和并列关系以原页为准。\n\n### [修复记录]\n\n- 原题面文字和三框关系已按原卷 p005 保留；本题主要缺陷是 Q16 自身正式评分块缺失。\n- 本候选接入评分 DOCX P3–P11，并在 P11 结束处截断；不携带 Q17–Q21 的答案、拓展答案或等级赋分。\n- 本轮（c1·题库线转写/修补工位）新增：本文件此前没有“身份信息”块（question_id/exam_id/题号/题型/分值），与同卷已合入共享题库的其他题号格式不一致；已按原卷 p005 题头“16.（7分）”补齐身份信息块（题型：非选择题，分值：7分），并把过时的“候选状态：未并入共享题库”表述改为准确的转换记录说明。未改动题面、评分材料或既有修复记录。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [答案来源层级与学生证据]\n\n- 独立参考答案文件：缺源。上面的“参考答案／拓展答案／评分标准说明”均来自评分 DOCX，保持其正式评分材料来源角色。\n- 学生示例、教师批注、评分标记、实得分：`N/A_with_basis`。已打开来源只有原卷 PDF 与评分细则 DOCX，未提供学生答题卡或学生样卷。",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [评分材料（同卷正式材料·P3–P11；仅本题）]\n\n### [正式评分材料原文]\n\n**16结合材料 ，运用《政治与法治》知识，说明该街道是如何激活社区治理新动能的。（7分）**\n\n**参考答案：**\n\n该街道在党组织的领导下，坚持以人民为中心，创新协商议事模式，全心全意为居民服务。通过开展民主协商、民主管理、民主决策实践，多渠道倾听居民意见、多途径整合地区资源、多举措协调各方参与，形成了党建引领、多方共治、全民参与的基层多元共治格局，为群众排忧解难，共建和谐美丽社区，提升了基层治理效能。\n\n**【拓展答案】：**\n\n- 党总揽全局、协调各方替代在党组织的领导下；\n- 坚持全过程人民民主替代开展民主协商、民主管理、民主决策实践；\n- 一切为了人民、一切依靠人民、发展的成果有人民共享代替坚持以人民为中心。\n\n**评分标准说明：**\n\n本题7分，评分坚持采点采意相结合。“党组织领导”1分，“坚持以人民为中心”1分，“开展民主协商、民主管理、民主决策实践”2分（答出两点即得2分），“多渠道倾听居民意见、多途径整合地区资源、多举措协调各方参与”1分（表述意思达成即得1分），“形成了党建引领、多方共治、全民参与的基础多元共治格局”1分，“为群众排忧解难，共建和谐美丽社区，提升了基层治理效能”1分（表述扣题、有传导路径并升华即得1分）。\n\n> 来源保真警示：评分 DOCX 原文写作“基础多元共治格局”。这是已记录的疑似源文异常，本候选按原值保留，不静默改为“基层”。",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "未收",
+    "B3": "已收整题",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-FT-ERMO-Q17",
+   "exam_id": "BJ-2024-FT-ERMO",
+   "num": "17",
+   "subq": null,
+   "type": "主观题",
+   "grain": "整题",
+   "stem_full_text": "### [题目原文（原卷·视觉核验候选）]\n\n17．（8分）民法典守护碧水蓝天，保护生态环境。\n\n《中华人民共和国民法典》规定：“民事主体从事民事活动，应当有利于节约资源、保护生态环境。”“民事主体依法享有知识产权。”“因污染环境、破坏生态造成他人损害的，侵权人应当承担侵权责任。”\n\n### [案例一（原卷 p005 左侧材料框）]\n\n某公司发明专利技术从源头上解决长期污水污泥分离不彻底、处理工序复杂化等关键技术问题，首次提出了通过操控屏控制移动杆，实现过滤速度可控的农村污水分离技术重大突破，方法简单、易于操作，降低污水净化成本的同时，显著提高污水净化效率，延长装置的使用寿命，已在多地村庄生活污水治理项目中成功应用并推广。\n\n### [案例二（原卷 p005 右侧材料框）]\n\n甲公司在生产中，长期存在超标排放废水、废气等污染物损害环境公共利益的行为，周边居民的日常生活受到严重影响。乙环境研究所以甲公司存在长期连续超标排放污染物、构成环境民事侵权为由，提起环境民事公益诉讼。法院审理后判决甲公司立即停止侵权、消除危险、赔偿环境损失等。\n\n运用《法律与生活》知识，结合上述案例分析民法典的相关规定对保护生态环境的作用。\n\n原卷页面：[p005.png](assets/pages/p005.png)。两个案例框、法条引文和设问均为题面结构，不以连续 OCR 替代框线关系。\n\n### [修复记录]\n\n- 原题面法条误写为 `因污染环搅、破坏生态造成他人损害的`；本候选按原卷 p005 改为 `因污染环境、破坏生态造成他人损害的`。\n- 父 MD 的评分块从 P13 开始后继续吞入 Q18(1)–(3)、Q19、Q20、Q21；本候选只保留 P13–P19，在 Q17 评分标准结束处截断。\n- 本轮（c1·题库线转写/修补工位）新增：本文件此前没有“身份信息”块，与同卷已合入共享题库的其他题号格式不一致；已按原卷 p005 题头“17.（8分）”补齐身份信息块（题型：非选择题，分值：8分），并把过时的“候选状态：未并入共享题库”表述改为准确的转换记录说明。未改动题面、评分材料或既有修复记录。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [答案来源层级与学生证据]\n\n- 独立参考答案文件：缺源。上面的“参考答案／拓展答案／评分标准说明”均来自评分 DOCX，保持其正式评分材料来源角色。\n- 学生示例、教师批注、评分标记、实得分：`N/A_with_basis`。已打开来源只有原卷 PDF 与评分细则 DOCX，未提供学生答题卡或学生样卷。",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [评分材料（同卷正式材料·P13–P19；仅本题）]\n\n### [正式评分材料原文]\n\n**17.运用《法律与生活》知识，结合上述案例分析民法典的相关规定对保护生态环境的作用。（8分）**\n\n**参考答案：**\n\n民法典规定的绿色原则为生态环境保护提供了基本遵循。在上述案例中，民法典强调对知识产权的保护，能够鼓励技术创新，为生态环境保护提供技术支撑。依据民法典规定，甲公司污染、破坏环境应承担相应的侵权责任。民法典上述条款合理地确定了民事主体的权利义务，既能保护合法权益，又能惩罚违法行为，有助于平衡个人利益和公共利益，合理预防损害，维护良好的生态环境。\n\n**【拓展答案】：**\n\n增强环保意识、维护社会公平正义。\n\n**评分标准说明：**\n\n民法典规定的绿色原则为生态环境保护提供了基本遵循。（1分）在上述案例中，民法典强调对知识产权的保护，能够鼓励技术创新，为生态环境保护提供技术支撑。（2分）依据民法典规定，甲公司污染、破坏环境应承担相应的侵权责任。（1分）民法典上述条款合理地确定了民事主体的权利义务，既能保护合法权益，又能惩罚违法行为，有助于平衡个人利益和公共利益，合理预防损害，维护良好的生态环境。（4分）（权利义务、个人利益和公共利益、维护良好的生态环境三个点都写到就给4分。）",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "完整题-有E1 | evidence=E1 | detail=逐题已匹配正式评分材料",
+   "book_status": {
+    "B2": "已收整题",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "已收整题",
+    "MI": "未收",
+    "RE": "未收"
+   },
+   "parser_note": null
+  },
+  {
+   "unit_id": "BJ-2024-FT-ERMO-Q18#1",
+   "exam_id": "BJ-2024-FT-ERMO",
+   "num": "18",
+   "subq": "1",
+   "type": "主观题",
+   "grain": "小问",
+   "stem_full_text": "### [题目原文（原卷·视觉核验候选）]\n\n18．（19分）“冷资源”生成“热经济”，推动冰雪经济高质量发展。\n\n火热的冰雪经济激发了同学们探究的热情，同学们查阅资料如下：\n\n◇ 为推动冰雪经济发展，我国陆续出台《冰雪运动发展规划（2016—2025年）》《关于释放旅游消费潜力推动旅游业高质量发展的若干措施》等相关政策。\n\n◇ 依据相关报告显示，2022—2023冰雪季我国冰雪休闲旅游人数为3.12亿人次，冰雪休闲旅游收入为3490亿元；2023—2024冰雪季我国冰雪休闲旅游人数突破4亿人次，冰雪休闲旅游收入超过5000亿元。\n\n◇ 第七届雪博会共有来自9个国家27个省份近3000名嘉宾和参展商现场参会，冰雪装备、冰雪旅游、冰雪文化、冰雪体育、冰雪商贸等五大领域455家参展商参展，累计参展观众达到14.04万人次，现场交易额达2.83亿元，创历届新高。\n\n◇ 我国冰雪资源丰富，但由于地理气候等差异，目前国内比较好的室外场地往往局限于一地或者一个区域，难以实现全季运营。我国冰雪装备制造企业以中小企业为主，产业链不健全、行业标准亟须完善；研发人才不足、研发投入较少、核心技术欠缺，一些高端冰雪装备市场仍被国外品牌占据。\n\n围绕如何推动冰雪经济高质量发展，同学们结合以上材料进行探究。\n\n### [（1）]\n\n（1）结合材料，同学们构建了一个符合逻辑规则的三段论，请你补充完整。（5分）\n\n大前提：____________________________，\n\n小前提：____________________________，\n\n结论：____________________________可以推动冰雪经济高质量发展。\n\n### [（2）]\n\n（2）有同学认为，只要我们能够准确预测冰雪经济的发展前景，就能推动冰雪经济高质量发展。结合材料，运用科学思维对该观点进行评析。（6分）\n\n### [（3）]\n\n（3）经过探究，同学们从《经济与社会》角度，对如何利用“冷资源”撬动“热经济”形成以下共识：\n\n________________________________________________________________________________\n\n________________________________________________________________________________\n\n________________________________________________________________________________。（8分）\n\n原卷页面：[p006.png](assets/pages/p006.png)。四个菱形项目符号、段落顺序、三小问和答题横线均为题面结构；本候选将原 OCR 的 `•`、日期空格和引号空格按原页恢复。\n\n### [18(1)（P20–P31）]\n\n**18(1)结合材料，同学们构建了一个符合逻辑规则的三段论，请你补充完整。（5分）**\n\n**参考答案：**\n\n大前提：搭建对外交流合作平台推动了冰雪经济高质量发展，\n\n小前提：第七届雪博会是对外交流合作平台，\n\n结论：第七届雪博会可以推动冰雪经济高质量发展。\n\n**【拓展答案】：**符合题意和逻辑规则，言之有理，即可给分。\n\n**评分标准说明：**符合三段论的形式要件和内容真实，言之有理，即可给分；\n\n基本正确或准确，5分；\n\n略有瑕疵，4分；\n\n比较合理，3分\n\n大小前提倒置，给1-2分；\n\n不符合逻辑规则，0分\n\n### [18(2)（P33–P44）]\n\n**18(2)有同学认为，只要我们能够准确预测冰雪经济的发展前景，就能推动冰雪经济高质量发展。结合材料，运用科学思维对该观点进行评析。（6分）**\n\n**参考答案：**\n\n该观点强调要运用超前思维准确预测冰雪经济的发展前景，推动冰雪经济高质量发展。准确预测冰雪经济的发展前景是推动冰雪经济高质量发展的必要条件，但不是唯一条件。同时，还需要坚持辩证思维，既要看到冰雪经济发展的优势和机会，又要看到劣势和不足，具体问题具体分析，遵循冰雪产业发展规律，从当地实际情况出发推动冰雪经济高质量发展。因此，该观点是片面的。\n\n**【拓展答案】：**\n\n- 科学思维具有预见性；\n- 从充分条件假言判断的角度反向论证该观点的不合理之处；\n- 辩证思维的具体内容（联系、发展、矛盾；综合与分析；质量互变）\n- 创新思维的具体内容（除超前思维以外的发散与聚合、逆向等）\n\n**评分标准说明：**基本按照参考的思维逻辑给分，略有变通。\n\n亮明观点片面，1分；替代：不合理、不科学、不准确、错误等，根据后面论述适当给分；\n\n合理性1分，包括：超前思维、科学思维的预测性等\n\n不足之处1-2分，包括：看出了观点实际上为必要条件假言判断，给2分；只从口头语言或从充分条件假言判断去论述，给1分。没有论述不给分；\n\n其他角度论证，最多2分。特别提醒，除了超前思维以外的发散聚合、逆向、联想等创新思维；或者包含综合分析、质量互变的辩证思维；具体问题具体分析、尊重客观规律、一切从实际出发等有道理都可以，（分析+论述=2分）\n\n### [18(3)（P46–P60）]\n\n**18(3).经过探究，同学们从《经济与社会》角度，对如何利用“冷资源”撬动“热经济”形成以下共识:_____________________。（8分）**\n\n**参考答案：**\n\n利用“冷资源撬动“热经济”要坚持有效市场与有为政府相结合。充分发挥市场在资源配置中的决定性作用，以需求牵引供给，拉动冰雪产业发展，满足不同群体的消费需求；企业要面向市场，坚持创新发展，加大冰雪产业技术研发投入，提高竞争力。政府结合各地不同的自然禀赋，积极履行经济职能，制定冰雪产业发展规划，推动冰雪产业发展。此外，还要不断完善相关行业标准，构建完整的产业链，健全冰雪产业人木培养体系；加强对外合作与交流，充分利用国内国际两个市场两种资源，高冰雪资源的利用效率。\n\n**【拓展答案】：**\n\n- 政府宏观调控/具体写政府一种经济职能\n- 新发展理念（创新、绿色、开放）\n- 品牌能力建设/产业链韧性\n- 高水平对外开放/国内国际双循环/新发展格局/比较优势\n\n**评分标准说明：**\n\n**四个角度，每个角度两分**（评分 DOCX 原文此句为红色字体，属原作者对下方四角度赋分规则的视觉强调，本候选以加粗保留该强调，非本候选新增内容）\n\n市场：发挥市场在资源配置中的决定性作用1分+结合材料分析供给和需求关系/优化资 源配置1分\n\n政府：履行经济职能/宏观调控/具体写政府一种经济职能1分+结合材料说明政府制定冰雪产业规划/政策推动发展1分\n\n企业：创新1分+如何实现创新/创新作用（人才、技术、研发投入、产业链、品牌能力、竞争力）1分\n\n对外开放：高水平对外开放/国内国际双循环/新发展格局/国内国际两个市场两种资源/比较优势1分+材料如何加强对外合作与交流1分\n\n> 评分 DOCX 原文的 `人木培养体系`、`高冰雪资源的利用效率`及 `利用“冷资源撬动“热经济”` 引号不配对等疑似源文异常，按原值保留，不在本候选静默改正。\n\n### [修复记录]\n\n- 题面 OCR 修复：将四个材料项目符号恢复为原页 `◇`；将 `2022 -2023`、`2023-2024 ` 恢复为原页 `2022—2023`、`2023—2024`；去除题干末尾“撬动”前不属于原页的空格。\n- 评分材料由原 Q18 缺失候选改为按小问配对 P20–P60；本文件不携带 Q19–Q21 评分块。\n- 本轮（r1）新增：在“来源定位与边界”中补充说明 P32、P45 为评分 DOCX 原生空段落（已用 python-docx 独立解析 `word/document.xml` 核实两段均无 `<w:t>` 文字），明确这是源文件排版留白而非转写遗漏，避免下游读者误判为缺失。\n- 本轮（r2·修补工位）新增：独立复核（r1_verify new_defects）指出 18(3)评分标准说明首行“四个角度，每个角度两分”在评分 DOCX 中为红色字体强调，候选此前按纯文本转写、丢失强调标记。已直接解压 `细则.docx` 核对 `word/document.xml`，确认该句 run 带 `<w:color w:val=\"FF0000\"/>`，复核意见属实。按保真规则第1条（强调需保留）将该句改为加粗，并加括注说明原文为红色字体、非本候选新增内容。",
+   "options_text": null,
+   "answer_key": {
+    "text": "### [答案来源层级与学生证据]\n\n- 独立参考答案文件：缺源。上面的三个“参考答案”均来自评分 DOCX，保持正式评分材料来源角色。\n- 学生示例、教师批注、评分标记、实得分：`N/A_with_basis`。已打开来源只有原卷 PDF 与评分细则 DOCX，未提供学生答题卡或学生样卷。",
+    "source": "内附答案(来源载体内容，非独立参考答案)"
+   },
+   "rubric": {
+    "text": "### [评分材料（同卷正式材料·P20–P60；按小问独立配对）]",
+    "is_formal_E1": true,
+    "source": "正式评分材料原文(E1，确认)"
+   },
+   "has_bank_record": true,
+   "evidence_status": "待裁决-证据未核实 | evidence=待裁决-证据未核实候选 | detail=该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判",
+   "book_status": {
+    "B2": "已收第1问",
+    "B3": "未收",
+    "PH": "未收",
+    "CU": "未收",
+    "X1": "未收",
+    "X2": "未收",
+    "MI": "已收第1问",
+    "RE": "已收第1问"
+   },
+   "parser_note": "本单元对应整题第1问；以下题面为整题全文（含材料与全部小问设问），judge 时只需对第1问单独给出结论/所需模块。"
+  }
+ ]
+}

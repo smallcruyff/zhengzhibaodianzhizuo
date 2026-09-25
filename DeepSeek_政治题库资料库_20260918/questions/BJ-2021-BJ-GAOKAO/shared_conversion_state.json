@@ -1,0 +1,42 @@
+{
+  "exam_id": "BJ-2021-BJ-GAOKAO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "source_pages": {
+    "teacher": 12,
+    "formal_rubric": 7
+  },
+  "question_hashes": {
+    "BJ-2021-BJ-GAOKAO-Q1": "cf80a333eeb5c7a01c47a2f35fe607420d911fb8439a0756d7ab43594335fcf4",
+    "BJ-2021-BJ-GAOKAO-Q10": "d2ac6624533ce765d34966b81bd1c55e0e9bed1726afb1c04d55864ca64b63e5",
+    "BJ-2021-BJ-GAOKAO-Q11": "cf9425ac0054b003f41021fa50c6cf374b01deb508f6cd46fc12dc11858045d4",
+    "BJ-2021-BJ-GAOKAO-Q12": "e3c546c2f6bf004251da4e8f8d3ffb73cb6280eef60bae5236a135d2972ac64e",
+    "BJ-2021-BJ-GAOKAO-Q13": "68e11d3c86f8e211e488fe0ff1d4d7e530468062b9d75673bcc383de80cdbbbd",
+    "BJ-2021-BJ-GAOKAO-Q14": "44c6b897d5ee85f7269836776cd4cbde1edad31b52ccb47f2c0d54ab4e3b895f",
+    "BJ-2021-BJ-GAOKAO-Q15": "65a5cd9d684e070f691397686410aa07f5a930f30e266f81b043b390299b5c83",
+    "BJ-2021-BJ-GAOKAO-Q16": "c6182cfdc84d70e9defc01a584a93eccfcd941f74f846dcb76668e54a19349f6",
+    "BJ-2021-BJ-GAOKAO-Q17": "cc20d5b0eab0bbe135d15e64bcf217cb3fa352a38f5306baecc565ce1dc65a6c",
+    "BJ-2021-BJ-GAOKAO-Q18": "e81a90cc79293140bc9e9fe889e3b9c13cb806e01829c82c0098e7e6e368d0c3",
+    "BJ-2021-BJ-GAOKAO-Q19": "258a53ecf1267cf2e1fa5cf4c7f5279b1e22fabe6104ac7f2526d9cef5e85046",
+    "BJ-2021-BJ-GAOKAO-Q2": "84e8ddb1507c9ba00a98cf76cdc0e1ddfa1c935d366b2c95a80c8a1d82492a92",
+    "BJ-2021-BJ-GAOKAO-Q20": "8464c71b648bd5910416449a66b088ae1791e3a402a74c9a1e2bb1c8ffb6fb6b",
+    "BJ-2021-BJ-GAOKAO-Q21": "fdea714e6bb656bddd86a6bb10504172d0769c74559e67e5df824351351c8532",
+    "BJ-2021-BJ-GAOKAO-Q3": "836811f3d10a546bf67b6364c692cd1c954adea69bc3a0aaf6803150d09c4df1",
+    "BJ-2021-BJ-GAOKAO-Q4": "95ee9fc4f0603945c9e7426d6cc909fa55825a2e385d614099a98eb405cc596e",
+    "BJ-2021-BJ-GAOKAO-Q5": "a81bad045db6d030bcc1a820f1d0c84de0de1a6a2559195c336b83b9ea2b5cce",
+    "BJ-2021-BJ-GAOKAO-Q6": "de13b2fbb49a8935122d2f8b88e5d10005278374540fc533f82c7a3b9cfc301f",
+    "BJ-2021-BJ-GAOKAO-Q7": "938d7e96abbf21c754d4fc758a4f6fcc6f3a27ae3337b00bf86775a0936505fc",
+    "BJ-2021-BJ-GAOKAO-Q8": "834d5ac2fdadb9ab2b01e05fc1fe7007141edbeb0f33e5db710a37072a37c267",
+    "BJ-2021-BJ-GAOKAO-Q9": "9ba16789462fcc6c0126ef5dc6e4f09f68794c4c76956f915e8ddc1b77310c32"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "教师版p1-p10为试卷区、p11-p12为E3；不得与7页正式细则混层",
+    "原卷印刷共9页与当前教师版实际页数并列保留",
+    "无个人学生答卷/教师批注/实得分；汇总阅卷反馈保留"
+  ],
+  "historical_candidate_labels": "旧题级pending身份为候选形成记录；现共享状态以此文件为准"
+}

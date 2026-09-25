@@ -1,0 +1,13 @@
+﻿unit_id,qid,canonical_qid,exam_id_canonical,num,type,subq,grain,归属_PH,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2025-DC-ERMO-Q13,BJ-2025-DC-ERMO-Q13,BJ-2025-DC-ERMO-Q13,BJ-2025-DC-ERMO,13,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v3
+BJ-2024-DC-YIMO-Q15,BJ-2024-DC-YIMO-Q15,BJ-2024-DC-YIMO-Q15,BJ-2024-DC-YIMO,15,选择题,,整题,COLLECTED,PH;CU,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v3
+BJ-2024-FT-YIMO-Q8,BJ-2024-FT-YIMO-Q8,BJ-2024-FT-YIMO-Q8,BJ-2024-FT-YIMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v3
+BJ-2024-FT-ERMO-Q13,BJ-2024-FT-ERMO-Q13,BJ-2024-FT-ERMO-Q13,BJ-2024-FT-ERMO,13,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v3
+BJ-2024-XC-YIMO-Q10,BJ-2024-XC-YIMO-Q10,BJ-2024-XC-YIMO-Q10,BJ-2024-XC-YIMO,10,选择题,,整题,COLLECTED,PH;CU,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v3
+BJ-2024-XC-YIMO-Q12,BJ-2024-XC-YIMO-Q12,BJ-2024-XC-YIMO-Q12,BJ-2024-XC-YIMO,12,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v3
+BJ-2024-XC-ERMO-Q8,BJ-2024-XC-ERMO-Q8,BJ-2024-XC-ERMO-Q8,BJ-2024-XC-ERMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v3
+BJ-2025-FT-YIMO-Q16,BJ-2025-FT-YIMO-Q16,BJ-2025-FT-YIMO-Q16,BJ-2025-FT-YIMO,16,主观题,,整题,COLLECTED,PH,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v3
+BJ-2025-YQ-YIMO-Q8,BJ-2025-YQ-YIMO-Q8,BJ-2025-YQ-YIMO-Q8,BJ-2025-YQ-YIMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v3
+BJ-2025-FT-ERMO-Q14,BJ-2025-FT-ERMO-Q14,BJ-2025-FT-ERMO-Q14,BJ-2025-FT-ERMO,14,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v3
+BJ-2025-HD-ERMO-Q11,BJ-2025-HD-ERMO-Q11,BJ-2025-HD-ERMO-Q11,BJ-2025-HD-ERMO,11,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v3
+BJ-2026-CY-QIZHONG-Q14,BJ-2026-CY-QIZHONG-Q14,BJ-2026-CY-QIZHONG-Q14,BJ-2026-CY-QIZHONG,14,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v3

@@ -1,0 +1,27 @@
+{
+ "verdict": "PASS_WITH_ISSUES",
+ "issues": [
+  {
+   "severity": "major",
+   "desc": "同版未证明时，check 仍以 exit 0 表示无待改。fix5 把没有身份记录时的目录页码差异整体移进 toc_version_problems，这部分符合上轮 fix(b)。但 do_check 的退出码仍是 `1 if (pending or blocked_total) else 0`，没有计入 toc_version_problems。结果是：DOCX 目录与所给 PDF 有 30～32 处页码不符，check 却 exit 0；同一输入 repair --toc 则 exit 2。这与 fix5 刚为 keepNext 修掉的 check 0 / repair 2 口径不一致属于同一类问题，而且影响更大：现实中的中间稿（例如 目录定位/04.pdf）都没有身份记录，走的正是这条默认路径。主代理若只看退出码，会误以为目录无需处理。规格第四节写的是“check……有待改退出 1”。",
+   "evidence": "confirm.py cu：B3_04 配 目录定位/04_编号与考法计数.pdf 做 check，结果 exit=0，pending=0，blocked_note=null，toc_version_problems=[{identity:unrelated, align_ratio:0.995, reverse_align_ratio:0.9983, diff_count:30}]；同一对 repair --toc 结果 exit 2（C-GOLDEN 的 noflag 行）。confirm.py n2：B3_04 配 N2 插页 PDF 做 check，exit 0，diff_count 32。B3_52 配 N2 插页 PDF 做 check，exit 0。bx 用例 del120/del600/add120/add600 做 check，也全部 exit 0。代码见 layout_prepare.py 第772行。日志：/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_confirm/a1.log 和 a3.log。",
+   "fix": "check 在 toc_version_problems 非空时 exit 1，与 pending、blocked 同样处理；pending 计数保持不变，页码差异不并入可修待办。报告和 stdout 再加一个 toc_note，例如“有 N 处目录页码未经同版证明，repair --toc 将中止（除非有身份记录或 --allow-unbound-pdf）”。另外补回归用例：无记录且有页码差异时 check exit 1；B3_52 配同版 PDF 仍 exit 0。"
+  },
+  {
+   "severity": "minor",
+   "desc": "需要主代理决定：规格第四节必测②的原文命令（B3_04 repair --toc --toc-pdf 目录定位/04_编号与考法计数.pdf）现在按设计 exit 2，因为这份定位 PDF 没有身份记录。金标准只能在加 --allow-unbound-pdf 或补同版身份记录后成立。工具没有错，这是上轮 fix(a)(c) 的预期后果。但目录定位 PDF 的生成流程目前不写身份记录，所以正式流程里每次目录回填都要走降级开关。",
+   "evidence": "C-GOLDEN：不加开关时 exit 2、不写出；加 --allow-unbound-pdf 时 exit 0，输出与 B3_52 逐字节相同，stderr 有 WARN。C-MATCH：在临时目录补一份匹配的 同版身份.json（或 .review-manifest.json），不加开关 exit 0，输出也与 B3_52 逐字节相同。",
+   "fix": "二选一：修改规格中金标准②的命令，写明需加 --allow-unbound-pdf；或者让生成目录定位 PDF 的渲染步骤写入 同版身份.json。由主代理决定，不属于本工具范围。"
+  }
+ ],
+ "checked": [
+  "上轮 major（目录同版闸）已修好，改动在工具代码里。逐条复现原证据：① N2 插页错版 PDF 配 B3_04，repair 不加开关时 exit 2，不写 DOCX 也不写报告；check 把 32 处差异列入 toc_version_problems，pending=0。② 删 120 段、删 600 段、增 120 段、增 600 段，不加开关时全部 exit 2、不写出。③ 身份记录缺失（not_found），不加开关时 exit 2。④ docx_mismatch、pdf_mismatch 两种情况，加不加 --allow-unbound-pdf 都 exit 2、不写出。⑤ 第51批 PDF 配 04，exit 2（.review-manifest.json 判 docx_mismatch）。⑥ 截断的 PDF，repair exit 2，没有 traceback。",
+  "--allow-unbound-pdf 降级路径的实测结果与 fix5 回执的 known_limits 一致：删 600 段时反向对位率 94.77%，被拦下，exit 2；增 600 段时正向对位率 96.19%，被拦下，exit 2。删 120 段（反向 98.91%）和增 120 段（正向 98.82%）会被放行，exit 0。N2 插页错版加开关后同样放行，exit 0，写出的 32/32 个页码都与真实 B3_52 不一致，报告中 needs_rerender=false。这几种放行都有显式开关和理由文本，stderr 有 WARN，报告写 pdf_same_version_proven=false、identity=unrelated，属于有意设计的人工降级口子，不另报问题。",
+  "修复变体攻击：① 临时目录的身份记录与文件匹配时，不加开关 exit 0，输出与 B3_52 逐字节相同，identity=match；同一对文件做 check，exit 1，pending 30，toc_version_problems 为空，说明匹配路径计入可修待办。② 匹配记录改放在 .review-manifest.json，同样通过，输出逐字节相同。③ 保持文件名不变、把 PDF 换成 N2 版（SHA 不同）并加开关，判为 pdf_mismatch，exit 2。④ 身份记录只有 docx_sha256、没有 pdf 字段时判为 unrelated，exit 2。⑤ --allow-unbound-pdf 的理由为空串或全为空格时 exit 2，不写出。",
+  "minor（keepNext 长链闸退出码）已修好：N4 用例中 check exit 1，pending 0，blocked 列出 para 239；repair --keepnext exit 2，不写出。",
+  "minor（过时注释）已修好：plan_keepnext 函数体内已没有“两册配置尚未登记”“缺省即现行必修三的两个标签”这两句；缺省值 [] 与 bixiu3.json 第503行的登记一致。文件头第47、58行的“尚未登记”分别说的是 max_keep_next_chain 和 pdf_align_min，这两个字段确实没有登记，说法属实。行数 1153 超出 900 行目标，回执已如实说明，不再报。",
+  "金标准：B3_03 repair --numbering --method-counts --keepnext --expect-sha --health，exit 0，输出与 B3_04 逐字节相同。B3_04 repair --toc 加 --allow-unbound-pdf，exit 0，输出与 B3_52 逐字节相同；不加开关时 exit 2，见 issues[1]。B3_52 配同版 PDF 做 check：pending 0，toc_version_problems 为空，exit 0。",
+  "回归测试：run_tests_layout_prepare.py 与 测试/ 下的原件逐字节相同（cmp）。复制到 layout_prepare_confirm/tests/，用 PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 运行，47/47 通过，EXIT=0，日志在 tests/run.log。",
+  "纪律：snap_before.json 与 snap_after.json 差异为 0，覆盖 B3_52 及其 PDF、B3_03、B3_04、目录定位 PDF、B3_51 及其 PDF、B2_230 及其 PDF、layout_prepare.py、batch_health.py、docx_lib.py、profile_lib.py、bixiu2/3.json 的 SHA 和 mtime，以及各受保护目录和 Skill scripts/ 的目录列表。layout_prepare.py 的 SHA 为 634fd623…，与返修后版本一致。scripts/__pycache__ 仍只有原来 3 个 pyc。没有改工具代码，没有运行 collab.py，没有启动子代理，也没有使用会话管理工具。所有产物都在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/layout_prepare_confirm/ 下，包括 confirm.py、a1–a3.log、confirm_results_*.json 和 out/。"
+ ]
+}

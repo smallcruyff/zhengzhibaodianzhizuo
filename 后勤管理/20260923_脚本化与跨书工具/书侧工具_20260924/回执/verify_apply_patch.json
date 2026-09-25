@@ -1,0 +1,131 @@
+{
+ "verdict": "FAIL",
+ "issues": [
+  {
+   "severity": "blocker",
+   "desc": "replace_text 在单个 run 中间替换时，会把同一 run 里 old 后面的文字全部删掉。apply_replace_text 在非跨 run 分支只写 _set_run_text(first_r, before + new)，after 只在 cross_run 时回填。写后 postcondition 只查 new 是否在段内，而且被点名段落不参加 C14N 复核，所以会静默丢字并 exit 0。编写者的正例都是整段/整 run 替换（P001/P002）或恰好落在 run 边界（P003/P004），没有覆盖到这种情况。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C22 → B3_52 段 229 的单 run 教学段。old='党的领导'，new='党的领导（改）'，rc=0。实际结果是'（总体概括）坚持党的领导（改）'，预期是'…党的领导（改）、人民当家作主、依法治国有机统一，形成共建共治共享的基层治理格局。'，丢了 33 字。C15 中 O1 替换段中间后，O2 报'old 在段内未找到'，也是同一个缺陷造成的。",
+   "fix": "非跨 run 时用 first_t[:fa] + new + first_t[fb:]。有 new_format 时把 after 另拆一个同格式 run。postcondition 改为逐段比对：期望文字 = 原文按 old→new 替换一次，与 para_text 全等。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "diff 子命令的 --report 直接调用 Path(args.report).write_text，没经过 guard_write。它可以覆盖任意已存在文件，包括书稿 .docx、审阅入口和中央状态，也不看后缀、冻结册或是否已存在。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C01 → 在临时目录放 c01_victim.docx（内容'ORIGINAL-NOT-JSON'），运行 apply_patch.py diff --old B3_04 --new B3_52 --out cases/c01_patch.json --report cases/c01_victim.docx，rc=0，victim 被改写为'{\\n  \"tool\": \"apply_patch\"…'。对同一路径直接调用 dl.guard_write(…, kind='.json') 会抛'输出必须是 .json 文件'。代码位置：apply_patch.py cmd_diff 末尾 `Path(args.report).write_text(...)`。",
+   "fix": "diff 的 --report 改走 _write_report / guard_write(kind='.json', overwrite=False, inputs=[old,new,out])，并在写任何文件之前先完成全部路径守卫。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "核心金标准回归③按交付状态不通过。apply(B3_03, diff(B3_03,B3_04)) 在第 1 条就中止（题面区缺 source_zone），apply(B3_04, diff(B3_04,B3_52)) 也在第 1 条中止（复杂段），两条黄金链逐条可行率都是 0%。回执摘要把这写成'设计使然'，只报了压力测试的 62.1%，没有说明 0%。另外，给 diff 补丁统一加 source_zone/allow_complex 后文字流能逐段一致，但 04→52 的输出把 30 个目录超链接、30 个 PAGEREF 域和 210 个彩色 run 抹掉了。diff 只比文字，也漏掉了 03→04 的 284 处 keepNext 变化，所以无法用来核验外部回传'实际改了什么'。",
+   "evidence": "重跑编写者 run_tests_apply_patch.py（输出在 apply_patch_verify/rerun/），结果与回执一致：B03_to_B04 344 条，apply exit 2（D0001 zone=title）；B04_to_B52 30 条，apply exit 2（D0001 复杂段）；B51_to_B52 1652 条，exit 2。exp/flag_regress.py 给每条 op 加 source_zone=approved_edit、allow_complex=true 后：03→04 rc0，19861 段逐段相等，用时 58.7s；04→52 rc0，逐段相等；51→52 在 D0859 单元格唯一段中止。exp/struct_cmp.py 显示：B3_52 有 hyperlink 32、fldChar 96、PAGEREF 32、color 15303；04→52 回放输出只剩 hyperlink 2、fldChar 6、PAGEREF 2、color 15093。B3_03 keepNext 7832，B3_04 为 8116，而 diff 补丁里没有任何 set_keepnext。",
+   "fix": "diff 增加回放模式（如 --replay-trusted），生成的 op 自动带 source_zone='restore'/allow_complex 与 reason='diff 回放'。只有文字差异时优先生成最小 replace_text，保留域/超链接 run；再比对 pPr（keepNext、pStyle）和 run 格式，生成 set_keepnext/set_format，或至少在报告里列出格式差异数。回归断言补上结构计数（hyperlink/fldChar/color/keepNext）一致。"
+  },
+  {
+   "severity": "blocker",
+   "desc": "冻结册可以被绕过写出。冻结只看 --profile/补丁 book 所指配置的 frozen，不看输入稿本身属于哪一册；补丁 book 字段又优先于 detect_profile。隐藏开关 --allow-frozen-test 在真实 bixiu2 配置下也放行，这与规格'真实 bixiu2 配置下必须拒写'冲突，文件头声称'真实冻结册配置下永远拒绝'也与代码不符。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C04 → 输入 B2_230，op F1：C04 加 --profile bixiu3，rc=0，写出 c04_b2_as_bixiu3.docx；C05 补丁 book='bixiu3' 且不给 --profile，rc=0；C06 用 --profile bixiu2 --allow-frozen-test，rc=0。三份输出 SHA 都是 3e3da56d…。对照 C19：指向 B2 的符号链接、不给 book，detect_profile 能识别，rc=3，说明只有不声明书册时才拦得住。",
+   "fix": "写模式下对输入稿总是跑 detect_profile(docx)，命中任何 frozen 配置就退出 3，不管 --profile/book 写的是什么。补丁 book 与 --profile/detect 结果不一致时退出 2。删除 --allow-frozen-test，或只接受临时目录里的配置文件路径并校验该文件不在 profiles/ 下；不接受真实书册名 bixiu2。"
+  },
+  {
+   "severity": "major",
+   "desc": "题面零改写可以用插入绕过。区位只看锚点段本身：insert_before 例题块首个教学标签段（锚点 zone=teaching）时，新段落排在题面最后一段之后、标签之前。walk 会把它判为 source，不要求 source_zone，--health 也不报。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C12b → 锚点是段 15339（teaching），前一段 15338 为 source。插入'（2）结合材料，说明其中的道理。'（clone_from 上一段），不带 source_zone，apply --health rc=0。输出里新段 zone=source，样式'题目选项'。另见 C12：同样位置插入但沿用锚点样式时 zone=teaching，所以是否落进题面取决于样式，工具不核。",
+   "fix": "写后对输出重新跑 bh.walk，比对原稿与输出全部 source/title 段的文字序列。凡新增、删除或改动的题面段必须对应带 source_zone 的 op，否则整批中止。insert_before/after 的相邻段只要是 source/title，也要求 source_zone。"
+  },
+  {
+   "severity": "major",
+   "desc": "同段冲突检测只和该段上一条 op 比。三条以上 op 时，第 1 条与第 3 条重叠查不出，check 报全部 pending（exit 1）。apply 按顺序改 XML，后续 op 可能中止；更糟时会走 apply_replace_text 里的 already_applied 分支被静默跳过，报告仍标 ok。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C15 → B3_52 段 73（teaching），O1 old='央部署”'，O2 在段尾，O3 old='署”“全国' 与 O1 重叠。check rc=1，3 条 pending，未报冲突；apply rc=2（'op O2：old 在段内未找到'，叠加了单 run 截断缺陷），没有输出。代码 check_ops 中 touched[idx] 被覆盖为最后一条（`prior = touched.get(idx)` 只取一条）。",
+   "fix": "touched[idx] 保存区间列表，逐一比较。do_apply 里不再保留 already_applied 的静默 return：apply 阶段 old 找不到一律 Abort。"
+  },
+  {
+   "severity": "major",
+   "desc": "幂等④不成立：new 包含 old 时（补字、加书名号外的字），对输出再 check 仍然判 pending，再次 apply 会重复修改。编写者的幂等测试专门挑了不会触发的写法，回执没把这点列为限制。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C10 → op old='党委'，new='党委机关'（锚点 contains '地方党'）。首次 apply rc=0，对输出（parent 换成新 SHA）再 check 得 rc=1、pending=1、already_applied=0，再 apply rc=0。",
+   "fix": "already_applied 判定改为：段内 new 恰出现 1 次，且把 new 还原成 old 后的文字 old 恰出现 1 次，就判已应用，优先于'old 存在即 pending'。或让补丁带 expect_after（改后全段文字），用全段比对判定。"
+  },
+  {
+   "severity": "major",
+   "desc": "--health 的'新增 FAIL'按 (check, rule) 集合去重。输入已有同名规则的 FAIL 时，输出新增的同名 FAIL 会被吞掉，结果报 new_FAIL_count=0、exit 0。B3_52 已有 5 条 FAIL（2 条'栏目缺失或重复'、2 条来源腔、1 条目录），这几类新增都会被漏报。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C17 → 删掉另一例题块唯一的【细则】标签段，apply --health 的报告为 input_FAIL=5、output_FAIL=6、new_FAIL=[]、new_FAIL_count=0，rc=0。",
+   "fix": "按 (check, rule, where.example/para 文字指纹, label) 做多重集合差，或至少同时比较每条规则的计数。另外 health 抛异常时不能落到 exit 0（现在 except 分支只记 error）。"
+  },
+  {
+   "severity": "major",
+   "desc": "run 级操作会弄坏其他 run 子元素，带批注的段也被当成简单段。第一，_set_run_text 只改第一个 w:t，同一 run 有多个 w:t 时留下残字。第二，set_format/new_format 用 deepcopy 拆 run 时连 w:br 一起复制，多出换行。第三，COMPLEX_TAGS 不含 commentRangeStart/commentReference、footnoteReference、w:pict、w:object、m:oMath、w:ins/w:del、sectPr，replace_paragraph/delete_paragraph 会静默删掉用户批注等。B3_52 里暂时没有这些结构（0 处），但工具是跨书通用的，旧稿和其他册可能会有。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C16（在临时目录合成一份 B52 副本，向三段注入结构）→ 双 w:t 段 replace_text '基层党组织'→'基层党的组织'，rc=0，结果'基层党的组织党组织'。含 w:br 的 run 做 set_format '党委' 红色，rc=0，该段 br 从 1 变 2。带批注范围/引用的'党的位置' replace_paragraph，rc=0，commentReference 与 commentRange 都变成 0。",
+   "fix": "_set_run_text 清掉其余 w:t 并把文字并入第一个；拆 run 时只让首段保留非文字子元素（br/tab/fldChar/drawing 等），或遇到这类 run 直接 Abort。COMPLEX_TAGS 补上批注、脚注/尾注、pict/object、oMath、ins/del、sdt、pPr/sectPr。"
+  },
+  {
+   "severity": "major",
+   "desc": "insert 的 style 被直接写成 pStyle@w:val（styleId），不按 w:name 解析，也不核对是否存在。规格要求'样式名须存在'。本书 styleId 与名称不同（宝典正文=aff5），写出后 Word 会退回默认样式，bh.read_docx 却把 id 原样当名称，报成'宝典正文'，体检看不出来。clone_from 找不到时静默改用锚点段，多处命中时取第一段。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C14 → style='宝典正文'：pStyle_val='宝典正文'，不是真实 styleId，batch_health_style='宝典正文'。style='根本不存在的样式XYZ' 同样被接受。clone_from='根本不存在的定位串QQQ' 被接受并套用锚点样式 aff6。整批 rc=0。",
+   "fix": "用 bh.Styles 建立 name→styleId 映射，找不到就 Abort。clone_from 必须恰好命中 1 段，否则 Abort。"
+  },
+  {
+   "severity": "major",
+   "desc": "父稿 SHA 可以不给：补丁缺 parent_docx_sha256 时 open_docx 不做核对，check 和 apply 都照常进行并写出。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C08 → 补丁不含 parent_docx_sha256，check rc=1，apply rc=0，并写出 c08_out.docx。",
+   "fix": "check/apply 都把 parent_docx_sha256 设为必填（64 位小写十六进制），缺失时 exit 2。"
+  },
+  {
+   "severity": "major",
+   "desc": "规格禁止只凭段号定位，但 anchor 可以做到：contains 为空串时命中全书每一段，再由 index_hint 选出唯一一段。text='' 加 index_hint 也能定位任意空段。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C09 → anchor={\"contains\":\"\",\"index_hint\":10870}，check rc=1，报告 resolved index=10870。",
+   "fix": "text/contains 不得为空（归一后长度 ≥2）。index_hint 只能在候选数较少（比如 ≤5）且报告列出全部候选时生效。"
+  },
+  {
+   "severity": "major",
+   "desc": "check/apply 的 --report 与 diff 的 --out 以 overwrite=True 过守卫。构建/ 下已有的记录文件（同版身份.json、Codex 的 04_编号与考法计数.json）因此可以被覆盖，其他人（候选/Codex）的构建目录也允许写入。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C02（只调用 guard_write，不写文件）→ 同版身份.json 与 04_编号与考法计数.json 在 overwrite=False 时都被拒绝（'目标已存在，不覆盖'），overwrite=True 时都被接受。",
+   "fix": "报告与 diff 输出默认 overwrite=False，需要时显式加 --overwrite-report，且只允许覆盖本工具以前写的文件（比如核对 JSON 里 tool=='apply_patch'）。"
+  },
+  {
+   "severity": "major",
+   "desc": "冻结册只读 check 带 --report 时 exit 3。规格说冻结册可以跑只读检查，报告落在临时目录也应该允许，但 _write_report 把冻结 profile 传给 guard_write，导致报告被拒。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C04 中的 C07 → check --docx B2_230 --profile bixiu2 --report cases/c07_b2_check_report.json，rc=3，'必修二《经济与社会》 已冻结，拒绝写出'，报告没有写出。",
+   "fix": "报告守卫不传冻结判定（传 frozen=False 的 prof 副本），同时仍禁止写进冻结册目录（_frozen_hits 照旧生效）。"
+  },
+  {
+   "severity": "major",
+   "desc": "输出会留下半成品：apply 先写出 docx，之后 --report 被守卫拒绝时 exit 3，但候选 docx 已经留在磁盘上。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C03 → apply --out cases/c03_out.docx --report cases/c03_report.txt，rc=3（'输出必须是 .json 文件'），c03_out.docx 仍然存在。",
+   "fix": "写 docx 之前先对 --report 做 guard_write 预检，或者报告失败时删除刚写出的 docx。"
+  },
+  {
+   "severity": "major",
+   "desc": "报告与写后复核达不到规格。inputs 只有 SHA，没有路径。逐条结果只有 id/op/status/index/zone，缺样式、改前/改后文字和段落指纹。跨 run 只给布尔值 cross_run_format_uniform，不列被吞 run 的格式差异。写后 postcondition 在内存里做，不重开输出用 read_docx 复核；insert 和 set_format 没有 postcondition；也没有显式核对'段数变化=插入−删除'。",
+   "evidence": "rerun/pos_all_ops_apply_report.json 的键为 ['tool','version','mode','inputs','profile','ops','ops_extra','output','health']，inputs 为 {docx_sha256,patch_schema,patch_book}，ops[0] 为 {'id':'P001','op':'replace_text','status':'ok','index':10870,'zone':'outside'}。exp/red.py（C23）：跨黑/红 run 替换后，'为落'两个红字被并入黑色 run，报告只有 cross_run_format_uniform=False。",
+   "fix": "每条 op 记录 index/style/zone/before_text/after_text/before_sha/after_sha，跨 run 时列出被吞 run 的 rPr 摘要。写出后重开输出，用 open_docx 逐条核对（含 insert 文字与样式、set_format 颜色/加粗、段数差）。"
+  },
+  {
+   "severity": "minor",
+   "desc": "新文字过词表时各 run 分别检查，不查拼接后的整段；replace_text 也不查替换后的整段，所以跨 run 或跨边界拼出的禁用词能过 check。规格没有列 trailing_tag_regex、line_start_forbidden 等 bh 规则，但它们关系到'不跟来源分值'这条红线，目前只有加 --health 才能拦下。",
+   "evidence": "C13：runs=['地方党委（待','核）']，check rc=1（未中止），apply --health 新增 FAIL '工程标签:待核'。C24（cases/c24_score_patch.json）：插入以'（2024海淀一模·3分）'结尾的教学段，check rc=1；只有 apply --health 才新增 FAIL '条目末尾带试卷/题号'。",
+   "fix": "用拼接后的段文字（replace 后的整段、insert 的 runs 合并文字）过词表。apply 默认对改动段跑一次 bh.check_student_text 的等价判定，或者把 --health 设为默认。"
+  },
+  {
+   "severity": "minor",
+   "desc": "check 与 apply 结论不一致：同一单元格仅有的两段分别删除时，check 报 2 条 pending（exit 1），apply 阶段才因'单元格唯一段落'中止。缺 new 字段的 replace_text 也能过 check，到 apply 才抛 KeyError，错误信息只有\"中止：'new'\"。",
+   "evidence": "scripts/apply_patch_verify.py --out $SCRATCH/booktools/apply_patch_verify/cases --only C11,C21 → C11：apply rc=2，报'op E1：是所在表格单元格唯一段落'，没有输出（安全）。C21：check rc=1。",
+   "fix": "check 阶段模拟同一单元格内的删除计数，并按 op 类型校验必填字段，给出中文字段名。"
+  },
+  {
+   "severity": "minor",
+   "desc": "性能与规模：resolve_anchor 对每条 op 都遍历全书并重算 para_text，复杂度 O(ops×段)。344 条 op 用 58.7s，1652 条 136s。工具有 982 行，超过规格目标 900 行。编写者正例没有覆盖'带红色 run 的段'：P003/P004 的颜色是 1F3864/1F4E79，不是 C00000/FF0000。",
+   "evidence": "exp/flag_regress.py 计时。wc -l apply_patch.py = 982。exp 审计：各 op 目标段的颜色集合里没有 C00000。",
+   "fix": "预先算好 texts 列表和 norm 索引。补上红色 run 的正例。"
+  }
+ ],
+ "checked": [
+  "重跑编写者 run_tests_apply_patch.py（复制到 apply_patch_verify/rerun/ 运行），结果与回执 build_apply_patch.json 逐项一致，全部断言通过",
+  "回归③：用 diff 补丁加 source_zone/allow_complex 回放，03→04、04→52 文字流逐段相等，51→52 在 D0859 中止；逐项统计结构计数（hyperlink/fldChar/PAGEREF/color/keepNext）",
+  "25 个攻击用例（scripts/apply_patch_verify.py 的 C01–C22、C12b，另有 exp/red.py C23、C24）：越权写、覆盖、冻结册绕过（--profile/book/--allow-frozen-test/符号链接）、父稿 SHA、仅凭段号定位、单 run/跨 run/红色 run/表格单元格、题面区插入绕过、同段三 op 重叠、幂等、词表拼接、style/clone_from、health 漏报、半成品残留、合成稿 br/多 w:t/批注",
+  "正确拦截、已确认无问题的：父稿 SHA 错；锚点 0/多命中；old 不符；两 op 同段冲突；题面区 replace 未授权；工程标签；输出落审阅入口/必修二/Skill 目录；B2_230 在 --profile bixiu2 下 apply 退出 3；符号链接输入经 detect_profile 拒写；输出目录符号链接指向审阅入口时 guard 拒绝；跨黑/红 run 替换文字正确；同一单元格删空由 apply 阶段拦下",
+  "真实输入（B3_52、B3_03、B3_04、构建/同版身份.json、B2_230）测试前后 SHA 与 mtime 一致（snap_before/after.json 用 cmp 比对相同）；审阅入口里没有测试残留；scripts/__pycache__ 没有新增文件",
+  "只新增 scripts/apply_patch_verify.py，没有改工具或其他脚本，没有运行 collab.py；测试输出全部在 $SCRATCH/booktools/apply_patch_verify/ 下"
+ ],
+ "receipt": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/回执/verify_apply_patch.json",
+ "scratch": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/07ecc7d4-1283-4309-9858-715c562b9892/scratchpad/booktools/apply_patch_verify/",
+ "verify_script": "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/apply_patch_verify.py",
+ "reviewer_model": "claude-opus-5-5"
+}

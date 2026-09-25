@@ -1,0 +1,208 @@
+{
+  "exam_id": "BJ-2025-DC-ERMO",
+  "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "source_pages": {
+    "main_with_E3": 8,
+    "formal": 5
+  },
+  "question_hashes": {
+    "BJ-2025-DC-ERMO-Q1": "d56c2840c919ed014dfe5a2eeecc16059675a815fb97f8af9acbc18e401eeef6",
+    "BJ-2025-DC-ERMO-Q2": "460d3a784f7f705f5571fa4762cd40e773403d57fa5fa42059147f13df20af89",
+    "BJ-2025-DC-ERMO-Q3": "e96b35918397f2c65e121069a3124c2f949012b14484585fd1cb9037fc571a87",
+    "BJ-2025-DC-ERMO-Q4": "93c4ee2198e6723478a8af1976bcd4dde1a28f3e75ac097b116e6dd3db15a794",
+    "BJ-2025-DC-ERMO-Q5": "2d07665bfb6cb5ddc54e1ada198e09e2092f3bb27c6e2952539d7232c2ebd1ad",
+    "BJ-2025-DC-ERMO-Q6": "4a3198c39638f112cd2b82898e6606ed4c3319020bfd0fc28d29ef53a22605e3",
+    "BJ-2025-DC-ERMO-Q7": "7094ee1be40150a7cd7721f600ac6560201990814d2844e28e42d89dd0aaf4ed",
+    "BJ-2025-DC-ERMO-Q8": "5335a81acb2a3eed6b2ec01c10d6ab3be73fa20740d59303bef6334c0edf1fe5",
+    "BJ-2025-DC-ERMO-Q9": "89b80665fb5b657c6eb632e44039624242de0a3a7be3434e0e81bff861ad524f",
+    "BJ-2025-DC-ERMO-Q10": "db325e2c2beae84b0b930d62c7fe38bdffe562dca77875e0546dcf6123c03e4d",
+    "BJ-2025-DC-ERMO-Q11": "65bd9cefed40245ce5262a0d23f8c5fd48c9ff713289cb6eaafdd76226335af5",
+    "BJ-2025-DC-ERMO-Q12": "5932515d916ac11a3def97a211f8d5ddfd6757bfbf00b411d9cc33794c034579",
+    "BJ-2025-DC-ERMO-Q13": "860529c6d4ae7173c922e0e6a0820387345695679dcc1f8aa5226ecdf2f76ef1",
+    "BJ-2025-DC-ERMO-Q14": "b6cdb133453597dd4f67a3356cc8ca25d6570949373603b3e9341d995b3a2e2a",
+    "BJ-2025-DC-ERMO-Q15": "cc1c78f40f58b3fa04540e5c66761a927b2a9cb024db11e307c14a75b562bade",
+    "BJ-2025-DC-ERMO-Q16": "35a30d8f008691ea8c7e4d15d1066378af9b8b08dc485d90b0177aef3a657beb",
+    "BJ-2025-DC-ERMO-Q17": "7104802994312f4e3c867061e00c2380238c87a737d8ec37a0e0f04bbd2d4c10",
+    "BJ-2025-DC-ERMO-Q18": "cd71f81de03939dd104b53a3fcf271ade0f3d6468c1736c389aa87793205d1b0",
+    "BJ-2025-DC-ERMO-Q19": "191b359e9478047c9cfb8ef256a457eea7c86cfdfe8247358a9dd21662db6e45",
+    "BJ-2025-DC-ERMO-Q20": "40787eb56c2f7e75f4d22f55c7ed4829133c44f94b93e382d38162b429d648a1",
+    "BJ-2025-DC-ERMO-Q21": "f0ea5da8ffbe6a30a6a0bb93ed7defa674100ecee2b030ba461fc7c8dc787909"
+  },
+  "source_page_map": {
+    "main_exam": {
+      "p001": {
+        "role": "E0_and_frontmatter",
+        "questions": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4_start"
+        ]
+      },
+      "p002": {
+        "role": "E0",
+        "questions": [
+          "Q4_end",
+          "Q5",
+          "Q6",
+          "Q7",
+          "Q8",
+          "Q9_start"
+        ]
+      },
+      "p003": {
+        "role": "E0",
+        "questions": [
+          "Q9_end",
+          "Q10",
+          "Q11",
+          "Q12",
+          "Q13",
+          "Q14_start"
+        ]
+      },
+      "p004": {
+        "role": "E0_and_part2_heading",
+        "questions": [
+          "Q14_end",
+          "Q15",
+          "Q16",
+          "Q17"
+        ]
+      },
+      "p005": {
+        "role": "E0",
+        "questions": [
+          "Q18",
+          "Q19_start"
+        ]
+      },
+      "p006": {
+        "role": "E0",
+        "questions": [
+          "Q19_end",
+          "Q20",
+          "Q21"
+        ]
+      },
+      "p007": {
+        "role": "embedded_E3_not_independent",
+        "questions": [
+          "Q1-Q20"
+        ]
+      },
+      "p008": {
+        "role": "embedded_E3_and_level_descriptions_not_formal_E1",
+        "questions": [
+          "Q20",
+          "Q21"
+        ]
+      }
+    },
+    "formal_scoring": {
+      "p001": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q16"
+        ]
+      },
+      "p002": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q16_tail",
+          "Q17",
+          "Q18_1_start"
+        ]
+      },
+      "p003": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q18_1_tail",
+          "Q18_2",
+          "Q19_start"
+        ]
+      },
+      "p004": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q19_tail",
+          "Q20_start"
+        ]
+      },
+      "p005": {
+        "role": "formal_E1_and_aggregate_report",
+        "questions": [
+          "Q20_tail",
+          "Q21"
+        ]
+      }
+    }
+  },
+  "source_index": "source_support/source_index.json",
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件",
+    "aggregate_report_not_student_layer: true",
+    "embedded_exam_answers_not_E1: true",
+    "independent_answer_file: not_provided",
+    "student_original_answers_annotations_scores: source_not_provided"
+  ],
+  "primary_visual": [
+    "prior Q3/Q18/Q19/Q20 targeted source checks",
+    "fresh formal p5 matches printed 同求共济/同球共济 variants"
+  ],
+  "independent_chain": [
+    "all_13_pages_opened_and_question_repair_mapping",
+    "remaining_questions_visual_and_role_completion",
+    "legacy_materialization_integrity_read_only_do_not_rerun",
+    "current_shared_consolidated_signoff",
+    "current_Q18_metadata_acceptance",
+    "source_support 13 page independent review"
+  ],
+  "source_support_review_sha256": "71e6f304d318f82039f3d3f9b60e27b288eb0def4f6a4f64a19108b254fa3136",
+  "accepted_at": "2026-09-24T11:00:56.256411+00:00",
+  "source_conversion_accepted": true,
+  "controller_delta_history": [
+    {
+      "delta_id": "retro-batch2-bj-2025-dc-ermo-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "applied_at": "2026-09-24T10:11:07.014978+00:00",
+      "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-ERMO/retro-batch2-bj-2025-dc-ermo-20260924_merge.json",
+      "question_hashes_updated": {
+        "BJ-2025-DC-ERMO-Q16": "35a30d8f008691ea8c7e4d15d1066378af9b8b08dc485d90b0177aef3a657beb",
+        "BJ-2025-DC-ERMO-Q17": "7104802994312f4e3c867061e00c2380238c87a737d8ec37a0e0f04bbd2d4c10",
+        "BJ-2025-DC-ERMO-Q18": "cd71f81de03939dd104b53a3fcf271ade0f3d6468c1736c389aa87793205d1b0"
+      }
+    }
+  ],
+  "source_page_total": 13,
+  "source_roles": {},
+  "bounded_residual": [],
+  "review_receipts": {
+    "previous_acceptance": {},
+    "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/primary_review/BJ-2025-DC-ERMO.json",
+    "independent": [
+      "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/independent_review/verification.json"
+    ],
+    "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-ERMO/retro-batch2-bj-2025-dc-ermo-20260924_merge.json",
+    "prior_reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign/BJ-2025-DC-ERMO.json",
+    "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch2/reopen_for_resign_stagefix/BJ-2025-DC-ERMO.json",
+    "rounds": []
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2025-dc-ermo-state2-retro-batch2-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:31:31.755169+00:00"
+    },
+    {
+      "spec_id": "bj-2025-dc-ermo-state3-retro-batch2-status-fix-20260924",
+      "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+      "at": "2026-09-24T10:59:44.756571+00:00"
+    }
+  ]
+}

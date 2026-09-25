@@ -1,0 +1,864 @@
+{
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "controller_thread_id": "01a0c86a-d908-73d0-bdb7-6c3dc614589e",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 20,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2023-BJ-GAOKAO-Q1": "a3bf021b0438b33511cc428166da803e0e95b1c93114f5539404620b9adc0f15",
+    "BJ-2023-BJ-GAOKAO-Q10": "f033b935dc2a9981dc640b33d804ba3d7004d3e0c930f9d5c51fcb0f3e0aa0e6",
+    "BJ-2023-BJ-GAOKAO-Q11": "f8faa26c1f7cbdd5dfb1e020e6327b574012d72e16210c5b969534e3bdde3efc",
+    "BJ-2023-BJ-GAOKAO-Q12": "5c66ebe4876cdcfc092237ef7b6862833e143d5d1006b9ed236b8519968807b5",
+    "BJ-2023-BJ-GAOKAO-Q13": "2a32c2a260af8a727c3790efe9df262c077359bfd4c745efbb19f7f55030c7ed",
+    "BJ-2023-BJ-GAOKAO-Q14": "da70655885131a97c33a80edd9b0194f8f149380db956136cda6bf8128a492ce",
+    "BJ-2023-BJ-GAOKAO-Q15": "7109d4b9b7c61578738345679e72382f3f19f8ebbf4c0304f88104bed5dc7f12",
+    "BJ-2023-BJ-GAOKAO-Q16": "6b19823d7698a6350b3d4bc71847c809272d3899d49feb6c5d4c62aaad4cce78",
+    "BJ-2023-BJ-GAOKAO-Q17": "b406660df27f5f4b1f3890d73f82e8d4c817cb9b62e6c2fe17cc93b7e30aca99",
+    "BJ-2023-BJ-GAOKAO-Q18": "a18c8bad5af74f63d3663e987e973b369d9e5d3b6116dc6f0771fe4fccbaaa42",
+    "BJ-2023-BJ-GAOKAO-Q19": "a000f6db96db2cbbc0f7cd6699f3ab4e26282301d67790f83438c4bf157432b0",
+    "BJ-2023-BJ-GAOKAO-Q2": "69ae45f2dd9c8dd6f64e31dc5a2383793a869de7257b154701e4b949ae9ebd15",
+    "BJ-2023-BJ-GAOKAO-Q20": "ff32cdf2b21d50a6897e6cf4b8d0a0c80243261ba51b9ec596c635e8270b5232",
+    "BJ-2023-BJ-GAOKAO-Q3": "0f19a68a4ba501c16e006ff4e6989f7250baddfa12e39d0079f426da5e9559a9",
+    "BJ-2023-BJ-GAOKAO-Q4": "2cae5fb0f8c459cc0440cca2d5b89d7a019b6341b24dbb83b230ed52e8fd426c",
+    "BJ-2023-BJ-GAOKAO-Q5": "75cbef0f0d458edcc8ff6da23c36c6d8a8bfe9c10ebf7a096b28ee8f74c394bc",
+    "BJ-2023-BJ-GAOKAO-Q6": "094fddeb6c2a58d4c8c818b79131fdcec8faf0f509015a8259d447963bb52a30",
+    "BJ-2023-BJ-GAOKAO-Q7": "1d36e8404fb6d38efe8f9f52ba96ae9cddcaa09f04e2aec0a3d24eb2f818c9de",
+    "BJ-2023-BJ-GAOKAO-Q8": "8efa1969d70ee82b42b971f28b1fed0711bd68d701e35d0b11fa1c46ae437747",
+    "BJ-2023-BJ-GAOKAO-Q9": "3f61ed1bf27653a4ca75e9f389dbf163262051bc7ad13d2d35e25b2bb2a60273"
+  },
+  "source_page_map": {
+    "BJ-2023-BJ-GAOKAO-Q1": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q2": {
+      "paper": [
+        1
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q3": {
+      "paper": [
+        1,
+        2
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q4": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q5": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q6": {
+      "paper": [
+        2
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q7": {
+      "paper": [
+        2,
+        3
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q8": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q9": {
+      "paper": [
+        3
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q10": {
+      "paper": [
+        3,
+        4
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q11": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q12": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q13": {
+      "paper": [
+        4
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q14": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q15": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": []
+    },
+    "BJ-2023-BJ-GAOKAO-Q16": {
+      "paper": [
+        5
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": [
+        1
+      ]
+    },
+    "BJ-2023-BJ-GAOKAO-Q17": {
+      "paper": [
+        5,
+        6
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": [
+        1,
+        2
+      ]
+    },
+    "BJ-2023-BJ-GAOKAO-Q18": {
+      "paper": [
+        6
+      ],
+      "answer": [
+        8
+      ],
+      "rubric": [
+        2,
+        3
+      ]
+    },
+    "BJ-2023-BJ-GAOKAO-Q19": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        8,
+        9
+      ],
+      "rubric": [
+        3,
+        4
+      ]
+    },
+    "BJ-2023-BJ-GAOKAO-Q20": {
+      "paper": [
+        7
+      ],
+      "answer": [
+        9
+      ],
+      "rubric": [
+        4,
+        5
+      ]
+    }
+  },
+  "source_pages": {
+    "teacher": 9,
+    "formal_rubric": 5,
+    "auxiliary_lecture": 20
+  },
+  "source_roles": {
+    "Sbf0725189cee": {
+      "path": "/Users/wanglifei/Desktop/历年高考题及细则/2023北京高考真题政治（教师版）.pdf",
+      "pages": "p1-p7题面；p8-p9参考答案/E3",
+      "portable_rel_path": "历年高考题及细则/2023北京高考真题政治（教师版）.pdf"
+    },
+    "S957fa8d76c21": {
+      "path": "/Users/wanglifei/Desktop/历年高考题及细则/2023高考阅卷细则.pdf",
+      "pages": "p1-p5正式细则/E1，仅Q16-Q20",
+      "portable_rel_path": "历年高考题及细则/2023高考阅卷细则.pdf"
+    },
+    "Seed66a4c3a30": {
+      "path": "/Users/wanglifei/Desktop/历年高考题及细则/23北京高考.pdf",
+      "pages": "p1-p20辅助讲评；不升原卷或E1",
+      "portable_rel_path": "历年高考题及细则/23北京高考.pdf"
+    }
+  },
+  "primary_review_receipt": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-BJ-GAOKAO_v6_primary_review.json",
+    "sha256": "9e207b80a2842a49727e0c66d29f06080068a552e1350018482c6fa2622cb82c"
+  },
+  "auxiliary_coverage": {
+    "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-BJ-GAOKAO/auxiliary_coverage_v6_20260922/coverage.json",
+    "sha256": "beef15708397b41c8d9f96e7f543c904f3cc5f5ef67e97ccceee8f9250130c61",
+    "source_id": "Seed66a4c3a30",
+    "coverage": {
+      "schema_version": "auxiliary_page_to_readable_md_coverage.v1",
+      "exam_id": "BJ-2023-BJ-GAOKAO",
+      "source_id": "Seed66a4c3a30",
+      "source_role": "讲评课件/辅助材料；排除原卷和E1身份",
+      "source_sha256": "eed66a4c3a303a20eb5a8874b39c9bca4593655f5b7916f2e998608c453ea03c",
+      "page_count": 20,
+      "basis": {
+        "independent_34_page_review": {
+          "path": "verification/luna_cross_review_20260922/review.json",
+          "sha256": "035c680afe5537bd30013e6e43a3ab4e30c88adee45298364daa5fd98f0d0f0e",
+          "auxiliary_pages_opened": 20,
+          "all_sources_total_pages_opened": 34,
+          "source_pages_unopened": []
+        },
+        "recheck_reuse": {
+          "path": "verification/luna_cross_review_20260922/recheck.json",
+          "sha256": "e02f41a18f6804200676ee5027395fa1b27e4418549124bc8cf40fe1ee38c155",
+          "auxiliary_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "page_defects": [],
+          "source_sha_unchanged": true
+        },
+        "native_transcript": {
+          "path": "controller_ready_versions/BJ-2023-BJ-GAOKAO_visual_text_v6_20260922/candidates/sources/transcripts/Seed66a4c3a30.txt",
+          "sha256": "e44ea2fb20a31718ec0e99d0725ce738f50ff6007d42dd582a0ce5848bb5c36c",
+          "page_markers": 20,
+          "no_native_text_placeholders": 0
+        },
+        "contact_sheets": [
+          {
+            "pages": "1-4",
+            "path": "verification/contact_sheets/aux-1.jpg",
+            "sha256": "dab4e967a80b14ddcb1198426372887761cf30bcd9c612f120997762fe15e773"
+          },
+          {
+            "pages": "5-8",
+            "path": "verification/contact_sheets/aux-2.jpg",
+            "sha256": "91ba793a5f984ad60b370cf6759812e0745e6513f83fc1acd0eb8721c2f244b9"
+          },
+          {
+            "pages": "9-12",
+            "path": "verification/contact_sheets/aux-3.jpg",
+            "sha256": "183cafba0d7fa4a666e661ded9ef945b9f13d57baaa526bb1b3e922956fe6ea0"
+          },
+          {
+            "pages": "13-16",
+            "path": "verification/contact_sheets/aux-4.jpg",
+            "sha256": "e6f85295fb84825a914f8e174df226e019f924f64a5d1a4315ad08146cf1dc36"
+          },
+          {
+            "pages": "17-20",
+            "path": "verification/contact_sheets/aux-5.jpg",
+            "sha256": "4e27402087dcf8551669364e8f9216868dcf1b42e6fa0a01218fd18b7971faab"
+          }
+        ]
+      },
+      "page_map": [
+        {
+          "page": 1,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p001.png",
+          "native_lines": "1-3",
+          "visual_kind": "section_divider",
+          "readable_md_pointer": "native transcript PAGE 1; title only",
+          "question_pointer": "Q16"
+        },
+        {
+          "page": 2,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p002.png",
+          "native_lines": "4-22",
+          "visual_kind": "colored argument layout",
+          "readable_md_pointer": "Q16 lines 45-76; opposition/unity and score logic are explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q16.md"
+        },
+        {
+          "page": 3,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p003.png",
+          "native_lines": "23-40",
+          "visual_kind": "two-row knowledge/argument table",
+          "readable_md_pointer": "Q16 lines 46-68; distinction/contact row mapping is explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q16.md"
+        },
+        {
+          "page": 4,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p004.png",
+          "native_lines": "41-43",
+          "visual_kind": "section_divider",
+          "readable_md_pointer": "native transcript PAGE 4; title only",
+          "question_pointer": "Q17"
+        },
+        {
+          "page": 5,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p005.png",
+          "native_lines": "44-55",
+          "visual_kind": "colored scoring decomposition",
+          "readable_md_pointer": "Q17 lines 44-70; right/limitation/case logic is explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+        },
+        {
+          "page": 6,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p006.png",
+          "native_lines": "56-71",
+          "visual_kind": "text rubric",
+          "readable_md_pointer": "Q17 lines 55-70",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+        },
+        {
+          "page": 7,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p007.png",
+          "native_lines": "72-83",
+          "visual_kind": "text feedback",
+          "readable_md_pointer": "Q17 lines 71-83",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+        },
+        {
+          "page": 8,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p008.png",
+          "native_lines": "84-86",
+          "visual_kind": "section_divider",
+          "readable_md_pointer": "native transcript PAGE 8; title only",
+          "question_pointer": "Q18"
+        },
+        {
+          "page": 9,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p009.png",
+          "native_lines": "87-114",
+          "visual_kind": "colored relation/scoring blocks",
+          "readable_md_pointer": "Q18 lines 67-100 and auxiliary boundary lines 172-175; 人大作用关系完整",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+        },
+        {
+          "page": 10,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p010.png",
+          "native_lines": "115-140",
+          "visual_kind": "colored relation/scoring blocks",
+          "readable_md_pointer": "Q18 lines 90-100 and auxiliary boundary lines 172-175; 公共/个人利益关系完整",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+        },
+        {
+          "page": 11,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p011.png",
+          "native_lines": "141-170",
+          "visual_kind": "route text plus boxed analogy logic",
+          "readable_md_pointer": "Q18 lines 101-120 and auxiliary boundary lines 172-175; 路线、类比、交通/安全条件完整",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+        },
+        {
+          "page": 12,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p012.png",
+          "native_lines": "171-173",
+          "visual_kind": "section_divider",
+          "readable_md_pointer": "native transcript PAGE 12; title only",
+          "question_pointer": "Q19"
+        },
+        {
+          "page": 13,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p013.png",
+          "native_lines": "174-201",
+          "visual_kind": "four colored advantage-to-circulation chains",
+          "readable_md_pointer": "Q19 lines 60-81; market/human-resource advantage chains and endpoints are explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+        },
+        {
+          "page": 14,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p014.png",
+          "native_lines": "202-213",
+          "visual_kind": "text scoring rubric",
+          "readable_md_pointer": "Q19 lines 73-84",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+        },
+        {
+          "page": 15,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p015.png",
+          "native_lines": "214-217",
+          "visual_kind": "section_divider",
+          "readable_md_pointer": "native transcript PAGE 15; title only",
+          "question_pointer": "Q19(2)"
+        },
+        {
+          "page": 16,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p016.png",
+          "native_lines": "218-231",
+          "visual_kind": "three colored measure-to-endpoint chains",
+          "readable_md_pointer": "Q19 lines 85-97; trade/investment/innovation chains are explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+        },
+        {
+          "page": 17,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p017.png",
+          "native_lines": "232-241",
+          "visual_kind": "text scoring rubric",
+          "readable_md_pointer": "Q19 lines 89-97",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+        },
+        {
+          "page": 18,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p018.png",
+          "native_lines": "242-259",
+          "visual_kind": "three-node arrow diagram plus prompt",
+          "readable_md_pointer": "Q20 lines 56-66 and 78-84; 战略性条件→战略→现代化国家 and 自信自强→科教兴国→精神/技术/人才关系 are explicit",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+        },
+        {
+          "page": 19,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p019.png",
+          "native_lines": "260-277",
+          "visual_kind": "colored strategic argument blocks",
+          "readable_md_pointer": "Q20 lines 56-84",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+        },
+        {
+          "page": 20,
+          "page_asset": "assets/source_pages/auxiliary_lecture/p020.png",
+          "native_lines": "278-287",
+          "visual_kind": "colored multi-strategy examples",
+          "readable_md_pointer": "Q20 lines 78-84",
+          "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+        }
+      ],
+      "coverage_result": {
+        "pages_mapped": 20,
+        "divider_pages": [
+          1,
+          4,
+          8,
+          12,
+          15
+        ],
+        "structured_visual_pages": [
+          2,
+          3,
+          5,
+          9,
+          10,
+          11,
+          13,
+          16,
+          18,
+          19,
+          20
+        ],
+        "text_rubric_pages": [
+          6,
+          7,
+          14,
+          17
+        ],
+        "native_page_segments_complete": true,
+        "lecture_specific_visual_semantics_already_in_readable_md": true,
+        "new_content_gap_found": false,
+        "candidate_questions_modified": [],
+        "controller_ready_package_modified": false,
+        "shared_modified": []
+      }
+    }
+  },
+  "independent_chain": {
+    "primary_hold": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-BJ-GAOKAO_controller_hold.json",
+      "sha256": "efe4239ef12751d2bccf374014968930e6491e3ad94391320eef20318ccdb776"
+    },
+    "primary_review": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-BJ-GAOKAO_v6_primary_review.json",
+      "sha256": "9e207b80a2842a49727e0c66d29f06080068a552e1350018482c6fa2622cb82c"
+    },
+    "three_image_visual_delta_review": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-BJ-GAOKAO/versioned_visual_delta_v6_20260922/independent_review/review.json",
+      "sha256": "51a1fd92d79eaf267ca2791cb9253c14e68cfe731a08842253ef26f2ab652b1c"
+    },
+    "integrated_review": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready_versions/BJ-2023-BJ-GAOKAO_visual_text_v6_20260922/verification/independent_review.json",
+      "sha256": "b692cada9bc80f95dc5f361b7a6861b30955a40392d329e1bdc4952599befdeb"
+    },
+    "sol_signoff": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready_versions/BJ-2023-BJ-GAOKAO_visual_text_v6_20260922/sol_signoff.json",
+      "sha256": "3d81b60156528affcbefc1d338b2ee5a96128ecf0a175bcb2575f4295759f06c"
+    },
+    "auxiliary_coverage": {
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/BJ-2023-BJ-GAOKAO/auxiliary_coverage_v6_20260922/coverage.json",
+      "sha256": "beef15708397b41c8d9f96e7f543c904f3cc5f5ef67e97ccceee8f9250130c61",
+      "source_id": "Seed66a4c3a30",
+      "coverage": {
+        "schema_version": "auxiliary_page_to_readable_md_coverage.v1",
+        "exam_id": "BJ-2023-BJ-GAOKAO",
+        "source_id": "Seed66a4c3a30",
+        "source_role": "讲评课件/辅助材料；排除原卷和E1身份",
+        "source_sha256": "eed66a4c3a303a20eb5a8874b39c9bca4593655f5b7916f2e998608c453ea03c",
+        "page_count": 20,
+        "basis": {
+          "independent_34_page_review": {
+            "path": "verification/luna_cross_review_20260922/review.json",
+            "sha256": "035c680afe5537bd30013e6e43a3ab4e30c88adee45298364daa5fd98f0d0f0e",
+            "auxiliary_pages_opened": 20,
+            "all_sources_total_pages_opened": 34,
+            "source_pages_unopened": []
+          },
+          "recheck_reuse": {
+            "path": "verification/luna_cross_review_20260922/recheck.json",
+            "sha256": "e02f41a18f6804200676ee5027395fa1b27e4418549124bc8cf40fe1ee38c155",
+            "auxiliary_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20
+            ],
+            "page_defects": [],
+            "source_sha_unchanged": true
+          },
+          "native_transcript": {
+            "path": "controller_ready_versions/BJ-2023-BJ-GAOKAO_visual_text_v6_20260922/candidates/sources/transcripts/Seed66a4c3a30.txt",
+            "sha256": "e44ea2fb20a31718ec0e99d0725ce738f50ff6007d42dd582a0ce5848bb5c36c",
+            "page_markers": 20,
+            "no_native_text_placeholders": 0
+          },
+          "contact_sheets": [
+            {
+              "pages": "1-4",
+              "path": "verification/contact_sheets/aux-1.jpg",
+              "sha256": "dab4e967a80b14ddcb1198426372887761cf30bcd9c612f120997762fe15e773"
+            },
+            {
+              "pages": "5-8",
+              "path": "verification/contact_sheets/aux-2.jpg",
+              "sha256": "91ba793a5f984ad60b370cf6759812e0745e6513f83fc1acd0eb8721c2f244b9"
+            },
+            {
+              "pages": "9-12",
+              "path": "verification/contact_sheets/aux-3.jpg",
+              "sha256": "183cafba0d7fa4a666e661ded9ef945b9f13d57baaa526bb1b3e922956fe6ea0"
+            },
+            {
+              "pages": "13-16",
+              "path": "verification/contact_sheets/aux-4.jpg",
+              "sha256": "e6f85295fb84825a914f8e174df226e019f924f64a5d1a4315ad08146cf1dc36"
+            },
+            {
+              "pages": "17-20",
+              "path": "verification/contact_sheets/aux-5.jpg",
+              "sha256": "4e27402087dcf8551669364e8f9216868dcf1b42e6fa0a01218fd18b7971faab"
+            }
+          ]
+        },
+        "page_map": [
+          {
+            "page": 1,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p001.png",
+            "native_lines": "1-3",
+            "visual_kind": "section_divider",
+            "readable_md_pointer": "native transcript PAGE 1; title only",
+            "question_pointer": "Q16"
+          },
+          {
+            "page": 2,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p002.png",
+            "native_lines": "4-22",
+            "visual_kind": "colored argument layout",
+            "readable_md_pointer": "Q16 lines 45-76; opposition/unity and score logic are explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q16.md"
+          },
+          {
+            "page": 3,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p003.png",
+            "native_lines": "23-40",
+            "visual_kind": "two-row knowledge/argument table",
+            "readable_md_pointer": "Q16 lines 46-68; distinction/contact row mapping is explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q16.md"
+          },
+          {
+            "page": 4,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p004.png",
+            "native_lines": "41-43",
+            "visual_kind": "section_divider",
+            "readable_md_pointer": "native transcript PAGE 4; title only",
+            "question_pointer": "Q17"
+          },
+          {
+            "page": 5,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p005.png",
+            "native_lines": "44-55",
+            "visual_kind": "colored scoring decomposition",
+            "readable_md_pointer": "Q17 lines 44-70; right/limitation/case logic is explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+          },
+          {
+            "page": 6,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p006.png",
+            "native_lines": "56-71",
+            "visual_kind": "text rubric",
+            "readable_md_pointer": "Q17 lines 55-70",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+          },
+          {
+            "page": 7,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p007.png",
+            "native_lines": "72-83",
+            "visual_kind": "text feedback",
+            "readable_md_pointer": "Q17 lines 71-83",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q17.md"
+          },
+          {
+            "page": 8,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p008.png",
+            "native_lines": "84-86",
+            "visual_kind": "section_divider",
+            "readable_md_pointer": "native transcript PAGE 8; title only",
+            "question_pointer": "Q18"
+          },
+          {
+            "page": 9,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p009.png",
+            "native_lines": "87-114",
+            "visual_kind": "colored relation/scoring blocks",
+            "readable_md_pointer": "Q18 lines 67-100 and auxiliary boundary lines 172-175; 人大作用关系完整",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+          },
+          {
+            "page": 10,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p010.png",
+            "native_lines": "115-140",
+            "visual_kind": "colored relation/scoring blocks",
+            "readable_md_pointer": "Q18 lines 90-100 and auxiliary boundary lines 172-175; 公共/个人利益关系完整",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+          },
+          {
+            "page": 11,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p011.png",
+            "native_lines": "141-170",
+            "visual_kind": "route text plus boxed analogy logic",
+            "readable_md_pointer": "Q18 lines 101-120 and auxiliary boundary lines 172-175; 路线、类比、交通/安全条件完整",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q18.md"
+          },
+          {
+            "page": 12,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p012.png",
+            "native_lines": "171-173",
+            "visual_kind": "section_divider",
+            "readable_md_pointer": "native transcript PAGE 12; title only",
+            "question_pointer": "Q19"
+          },
+          {
+            "page": 13,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p013.png",
+            "native_lines": "174-201",
+            "visual_kind": "four colored advantage-to-circulation chains",
+            "readable_md_pointer": "Q19 lines 60-81; market/human-resource advantage chains and endpoints are explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+          },
+          {
+            "page": 14,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p014.png",
+            "native_lines": "202-213",
+            "visual_kind": "text scoring rubric",
+            "readable_md_pointer": "Q19 lines 73-84",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+          },
+          {
+            "page": 15,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p015.png",
+            "native_lines": "214-217",
+            "visual_kind": "section_divider",
+            "readable_md_pointer": "native transcript PAGE 15; title only",
+            "question_pointer": "Q19(2)"
+          },
+          {
+            "page": 16,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p016.png",
+            "native_lines": "218-231",
+            "visual_kind": "three colored measure-to-endpoint chains",
+            "readable_md_pointer": "Q19 lines 85-97; trade/investment/innovation chains are explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+          },
+          {
+            "page": 17,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p017.png",
+            "native_lines": "232-241",
+            "visual_kind": "text scoring rubric",
+            "readable_md_pointer": "Q19 lines 89-97",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q19.md"
+          },
+          {
+            "page": 18,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p018.png",
+            "native_lines": "242-259",
+            "visual_kind": "three-node arrow diagram plus prompt",
+            "readable_md_pointer": "Q20 lines 56-66 and 78-84; 战略性条件→战略→现代化国家 and 自信自强→科教兴国→精神/技术/人才关系 are explicit",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+          },
+          {
+            "page": 19,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p019.png",
+            "native_lines": "260-277",
+            "visual_kind": "colored strategic argument blocks",
+            "readable_md_pointer": "Q20 lines 56-84",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+          },
+          {
+            "page": 20,
+            "page_asset": "assets/source_pages/auxiliary_lecture/p020.png",
+            "native_lines": "278-287",
+            "visual_kind": "colored multi-strategy examples",
+            "readable_md_pointer": "Q20 lines 78-84",
+            "question_pointer": "BJ-2023-BJ-GAOKAO-Q20.md"
+          }
+        ],
+        "coverage_result": {
+          "pages_mapped": 20,
+          "divider_pages": [
+            1,
+            4,
+            8,
+            12,
+            15
+          ],
+          "structured_visual_pages": [
+            2,
+            3,
+            5,
+            9,
+            10,
+            11,
+            13,
+            16,
+            18,
+            19,
+            20
+          ],
+          "text_rubric_pages": [
+            6,
+            7,
+            14,
+            17
+          ],
+          "native_page_segments_complete": true,
+          "lecture_specific_visual_semantics_already_in_readable_md": true,
+          "new_content_gap_found": false,
+          "candidate_questions_modified": [],
+          "controller_ready_package_modified": false,
+          "shared_modified": []
+        }
+      }
+    }
+  },
+  "conversion_unresolved": [],
+  "resolved_legacy_notes": [
+    "generic_superseded: 候选题稿沿用的‘图像型细则低置信字形以原页优先’是历史通用提示；v6 active Q3/Q12/Q18 visual review and integrated mechanical review均通过，errors=[]，现有活动回执未登记具体未辨字符；原图仍是字形最终依据。依据：versioned_visual_delta_v6_20260922/independent_review/review.json（SHA-256 51a1fd92d79eaf267ca2791cb9253c14e68cfe731a08842253ef26f2ab652b1c）。"
+  ],
+  "source_limitations": [
+    "教师版p1-p7是题面，p8-p9是E3参考答案；正式细则5页只覆盖Q16-Q20",
+    "Seed66a4c3a30为20页讲评课件，完整转写/图页保留但不升原卷或E1",
+    "Q12四系列2010/2015/2020数值为按原图0—30、每5个百分点刻度的读图约值，允许约0.5个百分点误差；不作为印刷精确统计值或正式数据表。",
+    "无个人学生原答、教师批注或个人实得分；细则中的学生表现是汇总反馈"
+  ],
+  "accepted_at": "2026-09-22T14:24:56.725096+00:00",
+  "controller_acceptance_evidence": {
+    "primary": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-BJ-GAOKAO_v6_primary_review.json",
+      "sha256": "9e207b80a2842a49727e0c66d29f06080068a552e1350018482c6fa2622cb82c"
+    },
+    "independent": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/group_2020_2023/controller_ready_versions/BJ-2023-BJ-GAOKAO_visual_text_v6_20260922/verification/independent_review.json",
+      "sha256": "b692cada9bc80f95dc5f361b7a6861b30955a40392d329e1bdc4952599befdeb"
+    },
+    "postchecks": {
+      "path": "后勤管理/MD全库流水线_20260921/receipts/new_controller_20260922/BJ-2023-BJ-GAOKAO_v6_postchecks.json",
+      "sha256": "a23fd9299f0cbec3e05357d76fae4921e28f047ecb4656c0ffd0d19929ae773d"
+    }
+  }
+}

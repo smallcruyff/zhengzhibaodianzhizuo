@@ -1,0 +1,14 @@
+﻿unit_id,qid,exam_id_canonical,num,type,subq,grain,归属_PH,conflict_script_out,admission,evidence,evidence_detail,script_tier,rule_version
+BJ-2025-DC-ERMO-Q13,BJ-2025-DC-ERMO-Q13,BJ-2025-DC-ERMO,13,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v2
+BJ-2024-DC-YIMO-Q15,BJ-2024-DC-YIMO-Q15,BJ-2024-DC-YIMO,15,选择题,,整题,COLLECTED,PH;CU,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v2
+BJ-2024-FT-YIMO-Q8,BJ-2024-FT-YIMO-Q8,BJ-2024-FT-YIMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v2
+BJ-2024-FT-ERMO-Q13,BJ-2024-FT-ERMO-Q13,BJ-2024-FT-ERMO,13,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,倾向,2026-09-24-attribution-v2
+BJ-2024-XC-YIMO-Q10,BJ-2024-XC-YIMO-Q10,BJ-2024-XC-YIMO,10,选择题,,整题,COLLECTED,PH;CU,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v2
+BJ-2024-XC-YIMO-Q12,BJ-2024-XC-YIMO-Q12,BJ-2024-XC-YIMO,12,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,不明,2026-09-24-attribution-v2
+BJ-2024-XC-ERMO-Q8,BJ-2024-XC-ERMO-Q8,BJ-2024-XC-ERMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判（同时已有匹配参考答案，选择题按E3计，正式评分材料候选仍待核实）,倾向,2026-09-24-attribution-v2
+BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO-Q18,BJ-2025-FT-YIMO,18,选择题,,整题,COLLECTED,MI;B2;PH,身份错误-不计入分母,身份层标记:split_error_fake_choice_question,题库把该题登记为选择题（4个选项），但 units.jsonl 的 stem 实际是 “18.54~24 正常/24~28 超重/≥28 肥胖”——这是Q12题干里BMI分级表的尾部行随页面换行被误切成“Q18”，选项A-D的文字与Q13“下列选项中犯了与示例相同逻辑错误的是”一题的语境高度吻合，而题库里Q13的stem恰好缺选项（只到“第4页/共11页”截断）。可确认这是抽取阶段的切分错误，不是一道真实独立的第18题。该卷原卷“第二部分共6题”，但题库只登记了Q16/17/19/20/21五道主观题，真实的主观题“第18题”未被登记为任何 qid，书稿如引用“2025丰台一模Q18(1)”，指的是这道缺失的真实主观题，不是题库里的这个伪选择题。本表不猜测真实Q18内容，只标记该qid不计入选择题“照收”分母，并将“回补真实Q18、修正Q13选项归属”列入回传题库线清单，不直接改题库文件。,确定,2026-09-24-attribution-v2
+BJ-2025-FT-YIMO-Q16,BJ-2025-FT-YIMO-Q16,BJ-2025-FT-YIMO,16,主观题,,整题,COLLECTED,PH,待裁决-证据未核实,待裁决-证据未核实候选,该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,确定,2026-09-24-attribution-v2
+BJ-2025-YQ-YIMO-Q8,BJ-2025-YQ-YIMO-Q8,BJ-2025-YQ-YIMO,8,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2025-FT-ERMO-Q14,BJ-2025-FT-ERMO-Q14,BJ-2025-FT-ERMO,14,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2025-HD-ERMO-Q11,BJ-2025-HD-ERMO-Q11,BJ-2025-HD-ERMO,11,选择题,,整题,COLLECTED,PH,完整题-选择题照收,答案键来源未核实(候选未确认),该题正式评分材料候选存在候选/存在冲突，未确认匹配，不下判,不明,2026-09-24-attribution-v2
+BJ-2026-CY-QIZHONG-Q14,BJ-2026-CY-QIZHONG-Q14,BJ-2026-CY-QIZHONG,14,选择题,,整题,COLLECTED,PH,完整题-选择题照收,E3,逐题已匹配参考答案,倾向,2026-09-24-attribution-v2

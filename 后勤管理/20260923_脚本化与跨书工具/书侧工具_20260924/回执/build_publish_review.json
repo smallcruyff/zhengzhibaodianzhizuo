@@ -1,0 +1,52 @@
+{
+  "summary": "新增 publish_review.py：按 --profile 读取 paths/publish/naming/handoff 配置，把 publish_b49~52、promote_b52、必修二 publish230、R45 publish_batch 这些一次性发布脚本合成一个门控＋事务式写入的通用工具。默认 dry-run 只打印计划与七个门（frozen、ownership、acceptance、batch_monotonic、review_entry、same_version_identity、health）的结果；--apply 在全部门 PASS/WARN 后才做：备份中央状态/清单/先看这里 → 归档审阅入口现有登记文件 → 复制候选到工作区根与审阅入口 → 写新清单 → 更新先看这里 → 更新中央状态字段 → 写晋升回执；任一步失败按备份回滚、退出码2，不留半成品。全部写入目标经 realpath containment 核对落在配置声明的位置内；冻结册任何写模式立即退出3。真实数据 dry-run（bixiu3 batch52）证实：接管.json 现为 phase=offered（ownership 门 FAIL）、批次未递增（batch_monotonic 门 FAIL）、且发现真实审阅入口 00_必修三最新审查稿 里存在一个清单外文件 __verify_never_written__.json（review_entry 门 FAIL，附带识别出\"审阅入口已是此版\"）——这三项都是真实现状，不是工具的假阳性，已计入 needs_user_decision。沙盒事务、回滚、七类负例、幂等/重复发布检测均用真实 B3_51/B3_52 docx/pdf/验收JSON/同版身份.json 实测通过。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/publish_review.py（760行，新增，不改任何既有脚本）"
+  ],
+  "usage": "publish_review.py --profile <book_id或配置路径> --batch <N> --docx <候选.docx> --pdf <候选.pdf> --acceptance <验收JSON> --actor <claude:会话ID|codex:任务ID> [--note <说明.md>] [--label <归档用标签>] [--health] [--apply] [--report <out.json>] [--debug]；不带 --apply 是 dry-run，只打印计划和门结果，不写任何文件（--report 除外，且其路径要过 docx_lib.guard_write）。",
+  "tests": [
+    {"input": "sandbox1（真实B3_51为“现有版本”＋真实B3_52为候选）dry-run", "result": "7 个门全 PASS/INFO，exit 0", "seconds": 0.9},
+    {"input": "sandbox1 --apply（沙盒内真实写：归档B3_51、发布B3_52到沙盒审阅入口/工作区根、写新清单、更新先看这里、更新中央状态、写晋升回执）", "result": "exit 0，写后复核5项全过；.DS_Store 等 preserve 项原样保留", "seconds": 1.1},
+    {"input": "sandbox1 对同一批次再跑一次（幂等/重复发布探测）", "result": "acceptance/batch_monotonic/review_entry 三门 FAIL（“审阅入口已是此版”“批次号未递增”），exit != 0，不写任何文件", "seconds": 0.3},
+    {"input": "sandbox2 --apply，故障注入（review_history 目录临时 chmod 0500 使归档目录 mkdir 失败）", "result": "PermissionError 被捕获，按备份回滚中央状态/清单/先看这里，审阅入口文件集合与内容与写入前逐字节一致，exit 2", "seconds": 0.5},
+    {"input": "负例：冻结册配置 --apply", "result": "exit 3，未写任何文件", "seconds": 0.2},
+    {"input": "负例：冻结册配置 dry-run", "result": "frozen 门 FAIL，明说拒绝，exit 2", "seconds": 0.2},
+    {"input": "负例：--actor 与验收/接管.json 不符", "result": "ownership 与 acceptance 门 FAIL", "seconds": 0.2},
+    {"input": "负例：接管.json phase=offered", "result": "ownership 门 FAIL", "seconds": 0.2},
+    {"input": "负例：验收JSON candidate.docx_sha256 改错", "result": "acceptance 门 FAIL", "seconds": 0.2},
+    {"input": "负例：验收JSON candidate.pdf_pages 改错", "result": "acceptance 门 FAIL", "seconds": 0.2},
+    {"input": "负例：同版身份.json 的 pdf_pages 与验收 same_version_binding 不符", "result": "same_version_identity 门 FAIL", "seconds": 0.2},
+    {"input": "负例：审阅入口里放一个清单外、不在 publish.preserve 里的文件", "result": "review_entry 门 FAIL，点名文件", "seconds": 0.2},
+    {"input": "负例：--batch 小于等于中央状态当前批次", "result": "batch_monotonic 门 FAIL", "seconds": 0.2},
+    {"input": "真实数据 dry-run：--profile bixiu3 --batch 52 --docx/--pdf/--acceptance 用真实第52批文件、--actor 用验收里的真实 claude 会话ID", "result": "exit 2；ownership 门 FAIL（真实接管.json 现为 phase=offered）；batch_monotonic 门 FAIL（中央状态已是 batch52）；review_entry 门 FAIL（“审阅入口已是此版”，且发现真实 00_必修三最新审查稿 目录下有清单外文件 __verify_never_written__.json）；acceptance 与 same_version_identity 门 PASS。真实输入（docx/pdf/验收JSON/同版身份/接管.json/中央状态/审阅入口目录列表）测试前后 SHA/mtime 与目录列表逐一核对完全一致，未产生任何写入。", "seconds": 0.4},
+    {"input": "工具目录 __pycache__ 核对", "result": "测试前后均无 publish_review 相关 .pyc，无需清理", "seconds": 0.05}
+  ],
+  "replaces": [
+    "必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/publish_b52.py",
+    "必修三_最新Skill修订_20260913/协作/候选/Claude/第52批_意见修改_20260923/promote_b52.py",
+    "必修三_最新Skill修订_20260913/协作/候选/Claude/第51批_主体专题_20260923/publish_b51.py（未逐行核对，仅按规格描述对齐）",
+    "R45候选_Claude_20260915/构建/publish_batch.py（未逐行核对，仅按规格描述对齐）",
+    "必修二_Astra审核修订_20260913/核验/题肢归类230_20260915/publish230.py（未逐行核对；必修二现冻结，本工具对冻结册只做只读门检查，不提供必修二实际发布路径的回归验证）"
+  ],
+  "known_limits": [
+    "central_state 字段更新按 publish.central_state_fields 里固定的键名（working_head/working_head_sha256/working_head_bytes/previous_working_head/latest_batch/latest_render/latest_render_sha256/latest_render_pages/updated_at）合并写入；真实必修三当前状态.json 里其余高度定制的字段（rendered_input_pages、body_placements、active_revision_round、audit_xlsx 等，均由其他工具/人工流程产生）本工具原样保留、不生成、不删除，也不尝试同步。",
+    "naming.docx_stem / publish.archive_to / publish.central_state_backup 用简单的 {占位符} 模板渲染；只在沙盒里用 bixiu3 现有模板（仅含 {n}/{prev}/{stamp}）实测过。bixiu2 的 naming.docx_stem 用到 {rev}/{label}，本工具支持渲染这些占位符，但因必修二已冻结（写模式直接 exit 3），未做端到端的必修二模板回归；如以后必修二解冻或有其他册用更复杂的模板占位符，需要补测。",
+    "--note 未给时，先看这里.md 只写一段最小机器生成页（标题、更新时间、Word/PDF 链接、feedback_hint），不生成任何审阅说明正文——工具不做教学/编校判断，正文必须由主代理通过 --note 提供。",
+    "same_version_identity 门只做“找到就核对四个字段（docx_sha256/pdf_sha256/pdf_pages/status），不一致才 FAIL；找不到只 WARN”，没有像 batch_health 那样重新核验 PDF 与 DOCX 标题的落页对应关系（那是 batch_health/layout_prepare 的职责，本工具只信验收 JSON 与同版身份文件的记录）。",
+    "--health 门直接调用 bh.run_health(docx, pdf, profile=prof)，会比较慢（真实811页PDF体检未在本次测试中实跑，因为会读取 fitz/pypdf 全书解析，超出发布门本身要验证的范围；已用 sandbox 的 profile 跑过 run_health 的调用路径本身不报错，但未对“体检FAIL需在验收JSON accepted_health_fails里显式接受”这条分支做真实FAIL样本回归，因为手头两批验收JSON体检都是0FAIL）。",
+    "故障注入测试只覆盖了“归档目录所在父目录只读导致 mkdir 失败”这一种中途失败点；未对写清单/写中央状态/写晋升回执等更晚步骤分别做故障注入回归（代码路径上这些步骤都在同一个 try/except 里、复用同一套回滚逻辑，但没有逐步验证每一步失败都能精确回滚）。",
+    "工具不做符号链接特意构造的越权尝试测试（只测试了 realpath containment 的正常路径核对逻辑本身跑通，未构造真实 symlink 逃逸样例）。"
+  ],
+  "profile_fields_needed": [
+    "paths.review_manifest（现有 bixiu3.json 已有此字段；房 profile schema.md 未收录，建议登记）",
+    "paths.handoff（bixiu3.json 已有；bixiu2.json 没有顶层 paths.handoff，本工具对此退化为 aux_workspace/workspace + handoff.owner_file 拼路径，建议给 bixiu2 也补一个显式 paths.handoff 以消歧）",
+    "publish.central_state_fields（新字段，字段名到中央状态实际 key 的映射；代码给了默认值，两册当前状态.json 实测都能对上默认值，暂不改配置也可用）",
+    "publish.note_file / publish.manifest / publish.archive_to / publish.central_state_backup / publish.preserve（均已在 bixiu3.json / bixiu2.json 里存在，命名与本工具读取的键一致，无需新增）",
+    "render.identity_file（两册均已有）"
+  ],
+  "needs_user_decision": [
+    "真实 00_必修三最新审查稿 目录下发现一个不属于本工具写入、清单外的文件 __verify_never_written__.json（内容像是另一个正在并行开发的工具 layout_prepare.py 的体检/测试报告，日期为今天 02:25）。这违反规格“绝不在审阅入口写文件”的纪律，但产生它的不是本次 publish_review.py 的任何一次运行（本工具本次所有测试只在 $SCRATCH 沙盒里写过），只是在真实数据 dry-run 时被 review_entry 门如实检测出来并报告为待处理项。是否要清理该文件、以及是哪个工具/哪次运行写进去的，需要主代理核实，本次未做任何处理（未删除、未挪动）。",
+    "必修三真实 协作/接管.json 目前 phase=offered（不是 owned），真实 dry-run 因此在 ownership 门报 FAIL；这是当前真实协作状态，不是工具需要修的问题，仅供主代理确认是否符合预期。",
+    "真实中央状态 latest_batch 已是 batch52，与 00_必修三最新审查稿 现有已发布版本一致，因此对 --batch 52 的真实 dry-run 同时报 batch_monotonic 与 review_entry(\"已是此版\") FAIL；如果以后要用本工具发布真正的新一批（如第53批），预期这两项会自然转为 PASS，无需现在处理。"
+  ]
+}

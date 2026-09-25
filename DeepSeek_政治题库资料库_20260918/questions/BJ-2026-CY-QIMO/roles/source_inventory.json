@@ -1,0 +1,26 @@
+{
+  "exam_id": "BJ-2026-CY-QIMO",
+  "generated_at": "2026-09-22T08:35:09.092972+00:00",
+  "sources": [
+    {
+      "source_id": "Se1a49527cb4c",
+      "role": "原卷",
+      "absolute_path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+      "relative_path": "2026模拟题/2026各区期末和期中/2026朝阳期末/试卷/试卷.pdf",
+      "sha256": "e1a49527cb4c175f3de69c5cb429216b35938f336f1417fd9df9d955c3e98399",
+      "pages": 8,
+      "text_layer": "无可用文字层"
+    },
+    {
+      "source_id": "S487b2d15b3a3",
+      "role": "正式评分材料",
+      "absolute_path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf",
+      "relative_path": "2026模拟题/2026各区期末和期中/2026朝阳期末/细则/细则.pdf",
+      "sha256": "487b2d15b3a3ac2b14567989edfb4195dd3f776437ec0853a7bd39a5a700859a",
+      "pages": 4,
+      "text_layer": "扫描页；以视觉转写为准",
+      "title_observed": "北京市朝阳区2025-2026学年度第一学期期末质量监测 高三思想政治主观题阅卷细则"
+    }
+  ],
+  "input_scope": "manifest本卷、共享21MD、2026朝阳期末全目录；未检出独立答案、学生样卷或教师批注材料。"
+}

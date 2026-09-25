@@ -1,0 +1,78 @@
+{
+ "schema": "qpack-keymap/1",
+ "version": 2,
+ "updated_at": "2026-09-23",
+ "note": "书中题源写法→题库卷号的身份更正。通用规则是 BJ-年-区码-考次-Q题号；这里只登记有书面依据的例外。match 各字段须与解析结果完全相等（half 为 null 表示题源里没写上/下）；按顺序取第一条命中。candidates 表示有歧义，须靠书中题面与题库文字的探针区分，区分不了就列为 ambiguous。 school_year_corrections 逐卷改正 exams.csv 里过时的学年/学期登记，学年写法（“2022—2023学年第二学期海淀期中”）解析时先按它换算；exams.csv 与这里不一致的卷在学年写法下列为 ambiguous。",
+ "overrides": [
+  {
+   "id": "HD2023-QIZHONG-XIA",
+   "match": {
+    "year": "2023",
+    "region": "海淀",
+    "stage": "期中",
+    "half": "下"
+   },
+   "exam_id": "BJ-2023-HD-YIMO",
+   "why": "“2023海淀期中（下）”是海淀区2022—2023学年第二学期期中练习（2023.04），按海淀惯例为一模；原卷曾被错登在 QIZHONG 名下，题库已按身份核查重组。",
+   "basis": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#true_exams[0]（recommended_exam_id=BJ-2023-HD-YIMO）",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/restructure_receipt_183208.json",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/conversion_manifest.json#tasks[BJ-2023-HD-YIMO].current_stage（身份重组后已验收）"
+   ]
+  },
+  {
+   "id": "HD2023-QIZHONG-SHANG",
+   "match": {
+    "year": "2023",
+    "region": "海淀",
+    "stage": "期中",
+    "half": "上"
+   },
+   "exam_id": "BJ-2023-HD-QIZHONG",
+   "why": "“2023海淀期中（上）”是“2023北京海淀高三（上）期中政治”（2023.11，23题），题库卷号 BJ-2023-HD-QIZHONG。",
+   "basis": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#true_exams[2]（recommended_exam_id=BJ-2023-HD-QIZHONG）"
+   ]
+  },
+  {
+   "id": "HD2023-QIZHONG-NOHALF",
+   "match": {
+    "year": "2023",
+    "region": "海淀",
+    "stage": "期中",
+    "half": null
+   },
+   "candidates": [
+    "BJ-2023-HD-YIMO",
+    "BJ-2023-HD-QIZHONG"
+   ],
+   "why": "2023海淀有两场都叫“期中”的考试（2023.04第二学期期中练习＝一模；2023.11高三上期中），题源不写上/下时有歧义。",
+   "basis": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#true_exams"
+   ]
+  }
+ ],
+ "redirect_exams": {
+  "BJ-2023-HD-QIMO": {
+   "to": "BJ-2023-HD-ERMO",
+   "why": "BJ-2023-HD-QIMO 是重复登记（两份来源与 2023海淀二模即第二学期期末练习同 SHA），题库已撤销并入 BJ-2023-HD-ERMO；题号不变。",
+   "basis": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#duplicate_or_missing[0]",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/conversion_manifest.json#tasks[BJ-2023-HD-QIMO]（status=重复登记已撤销）"
+   ]
+  }
+ },
+ "school_year_corrections": {
+  "BJ-2023-HD-QIZHONG": {
+   "school_year": "2023-2024学年",
+   "semester": "一",
+   "exams_csv_school_year": "2022-2023学年",
+   "why": "BJ-2023-HD-QIZHONG 是“2023北京海淀高三（上）期中政治”（2023.11），属2023—2024学年第一学期；exams.csv 仍按旧登记写2022-2023学年。海淀2022—2023学年第二学期期中练习（2023.04）是一模，卷号 BJ-2023-HD-YIMO。",
+   "basis": [
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#true_exams[2]（2023.11，recommended_exam_id=BJ-2023-HD-QIZHONG）",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/HD2023_identity/identity_report.json#true_exams[0]（2023.04第二学期期中练习＝一模）",
+    "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/indexes/exams.csv#BJ-2023-HD-QIZHONG（school_year=2022-2023学年，未更新）"
+   ]
+  }
+ }
+}

@@ -1,0 +1,133 @@
+{
+ "exam_id": "BJ-2025-DC-QIMO",
+ "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+ "status": "accepted_for_all_available_sources",
+ "accepted": true,
+ "question_count": 21,
+ "score_total": 100,
+ "question_hashes": {
+  "BJ-2025-DC-QIMO-Q1": "df76e11b944a8d7d7cfb2b53dafda54eba5fcdaf180e311c56831786f645179e",
+  "BJ-2025-DC-QIMO-Q2": "902100d563da22ac42b18cad61187916f2cbf39d136e9bc4becf6bdb4c2b9010",
+  "BJ-2025-DC-QIMO-Q3": "5059e664dd85dfe326d38c6e488e998ce7c4edafa12e244d2ebbc662b6fa6c3c",
+  "BJ-2025-DC-QIMO-Q4": "93b49a49188a075291c64212365590c25ad22b36bb073117b02c259a0380dd5a",
+  "BJ-2025-DC-QIMO-Q5": "a30cc0feff8bbee00e5ef8b7c99a22cb4ad860ef5209a1a772ad785b49213a15",
+  "BJ-2025-DC-QIMO-Q6": "74567d06a21253c92be312fb4a11afcdf794a64ef2895130d7f5889490938026",
+  "BJ-2025-DC-QIMO-Q7": "fac8e4c5406b0ac6394936668d7da2f46b2824b05d6f8ec82675691f050897f7",
+  "BJ-2025-DC-QIMO-Q8": "2144c1d5d774f07c0800f01618b23f3ad688b0c1cd8f218e04e90b1d41f54aae",
+  "BJ-2025-DC-QIMO-Q9": "f02ae82d665dea5c6ae35c78b01deebec6408a7265f5100913cd517d98048227",
+  "BJ-2025-DC-QIMO-Q10": "7cbf4d5a50959e0d48c66144d7bf288a63d67ed7ebe601c7b69e9d6c16f16aaf",
+  "BJ-2025-DC-QIMO-Q11": "f28b017183048de91dbe9afccd04b9323f013da31f58fe7fd92f4d5f1f6abd00",
+  "BJ-2025-DC-QIMO-Q12": "45525a119d44557526c55bc553956e6c4790cca2f34fc94bb380ee73b1293a0a",
+  "BJ-2025-DC-QIMO-Q13": "884d8e0d6a79f019061fdfe6723ae9a20050386269ab04f666346b1e4375b723",
+  "BJ-2025-DC-QIMO-Q14": "94a889f4999f29d69e67c1c670935c180a36a3bb3cf2a1acac00450d4800e9de",
+  "BJ-2025-DC-QIMO-Q15": "5ff62b727b37db672548345b5f483462072b65691ea5e5ee57db2a7b1a09e41d",
+  "BJ-2025-DC-QIMO-Q16": "0fe8fb190014775c9765223e50eb4df27b9c223b92fa3c77ac8c4693f0799aca",
+  "BJ-2025-DC-QIMO-Q17": "2bf782f06f9d34cda1dd90547940390a9044df6a6f976f944b2a7d25012d80d0",
+  "BJ-2025-DC-QIMO-Q18": "94bcddde585c1e427cc796a13bd25d4b213d4bb0411b96c254e8d1d7d68645dc",
+  "BJ-2025-DC-QIMO-Q19": "e76be57688757177dc20efd5e26dd29cde6905cf5406b0fe19ec8b983e18e11c",
+  "BJ-2025-DC-QIMO-Q20": "ea56c2065e661c404f1198fb9322f3985c27b1a14be628bf8269c846917981dd",
+  "BJ-2025-DC-QIMO-Q21": "08d136d6fc82dce16fe8569a7dc7d2c9bc6e500d85dd2afb3f838bdf2d3a4915"
+ },
+ "source_pages": {
+  "paper": 20,
+  "rubric_1": 17,
+  "rubric_2": 34
+ },
+ "source_page_total": 71,
+ "source_roles": {
+  "paper": "S8eda36bd87db",
+  "rubric_1": "S5b78436dd863",
+  "rubric_2": "S26b117376526"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "N/A_with_basis：同卷目录及来源清单未提供独立参考答案文件；原卷内E3按来源层保留。"
+ ],
+ "bounded_residual": [
+  {
+   "qid": "BJ-2025-DC-QIMO-Q17",
+   "location": "补充评分PPTX s8 的静态渲染图",
+   "partial_reading": "当前环境下静态页图未显示中文正文；原始PPTX s8 XML保留文本运行“法律效益、生态效益、社会效益的同意”，同题正式评分PDF p6清晰显示对应E1评分文字。原始PPTX与页图均保留。",
+   "affects_answering": false,
+   "basis": "仅有该PPTX静态视觉层未显示中文的限制；E1正文由原始XML与同卷正式评分PDF p6交叉核对，不影响作答或评分。"
+  }
+ ],
+ "review_receipts": {
+  "rounds": [
+   "r1",
+   "r2",
+   "controller_primary_minor_r1"
+  ],
+  "chain_aggregate": "BJ-2025-DC-QIMO/r1_verify/aggregate/verification.json"
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "bj-2025-dc-qimo-state1",
+   "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+   "at": "2026-09-23T12:00:18.216035+00:00"
+  },
+  {
+   "spec_id": "bj-2025-dc-qimo-state2",
+   "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+   "at": "2026-09-23T12:03:11.214087+00:00"
+  }
+ ],
+ "source_conversion_accepted": true,
+ "accepted_at": "2026-09-23T12:06:04.878203+00:00",
+ "controller_delta_history": [
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q16",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.169433+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q16_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q16": "0fe8fb190014775c9765223e50eb4df27b9c223b92fa3c77ac8c4693f0799aca"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q17",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.221911+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q17_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q17": "2bf782f06f9d34cda1dd90547940390a9044df6a6f976f944b2a7d25012d80d0"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q18",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.276888+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q18_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q18": "94bcddde585c1e427cc796a13bd25d4b213d4bb0411b96c254e8d1d7d68645dc"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q19",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.330884+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q19_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q19": "e76be57688757177dc20efd5e26dd29cde6905cf5406b0fe19ec8b983e18e11c"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q20",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.389011+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q20_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q20": "ea56c2065e661c404f1198fb9322f3985c27b1a14be628bf8269c846917981dd"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2025_dc_qimo_q21",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:23.441874+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2025-DC-QIMO/g7_r2_bj_2025_dc_qimo_q21_merge.json",
+   "question_hashes_updated": {
+    "BJ-2025-DC-QIMO-Q21": "08d136d6fc82dce16fe8569a7dc7d2c9bc6e500d85dd2afb3f838bdf2d3a4915"
+   }
+  }
+ ]
+}

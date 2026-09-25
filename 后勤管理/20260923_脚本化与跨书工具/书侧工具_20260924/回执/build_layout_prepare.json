@@ -1,0 +1,44 @@
+{
+  "summary": "写出 scripts/layout_prepare.py（573 行），按 profiles/<book>.json 把例题/考法编号、考法“（N题）”标称题数、keepNext、目录缓存页码这四件事从 book_incremental.py（必修二）与 Codex final_layout_prepare.py（必修三）的一次性脚本合成一个通用 check/repair 工具。判定全部复用 batch_health 的 check_numbering/check_method_counts/check_keepnext/check_toc_docx/check_toc_pdf；写出走 docx_lib（父稿 SHA 核对、只改 word/document.xml、写后原子替换与复核、guard_write 输出守卫）。用必修三第52批工程链路做金标准回归：03→04（编号+考法计数+keepNext）与 04→52（目录回填30处）两步的输出都与真实交付文件 SHA256 逐字节相同；必修二冻结册 B2_230 只读 check 通过、写操作正确拒绝（退出3）；合成打乱恢复、六类负例（无操作点名/缺--toc-pdf/父稿SHA不符/落审阅入口/落冻结册/落受保护目录）全部按预期中止且不留输出；全部真实输入文件测试前后 SHA256+mtime 未变。发现 bh.check_numbering 是‘棘轮’式单点核对（用上一个标题的实际数字当基数），不能直接拿来做批量重排，repair 改用与 book_incremental.refresh()/Codex numbering_audit 一致的纯序数重排算法；发现必修三对【思维链条】【答案落点】两个标签行也要求 keepNext（bh 未覆盖的一条规则），补成新配置字段 pagination.keep_next_labels，默认值按必修三现状，验证后与真实 04 文件逐字节相同。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/layout_prepare.py"
+  ],
+  "usage": [
+    "python3 layout_prepare.py check --docx X.docx [--pdf 同版.pdf] [--profile bixiu3] [--report x.json]",
+    "python3 layout_prepare.py repair --docx X.docx --out Y.docx [--numbering] [--method-counts] [--keepnext] [--toc --toc-pdf P.pdf] [--profile bixiu3] [--expect-sha 父稿SHA] [--health] [--report y.json]",
+    "退出码：0 成功/check 无待改；1 check 有待改或 repair 写后体检新增 FAIL；2 输入配置错误/SHA不符/参数不全；3 拒绝写出（冻结册或受保护目录）"
+  ],
+  "tests": [
+    {"input": "B3_52 + 同版 PDF（构建/必修三政治与法治宝典_第52批_意见修改审阅稿.docx+.pdf）", "result": "check：仅 toc 门 1 FAIL（c50_h000/r45_h001 锚点不一致，profiles/bixiu3.json 的 _observed_b51 已记录的既有问题），与 bh.run_health 同门结果完全一致；numbering/method_counts/keepnext 均 0 待改", "seconds": 5.3},
+    {"input": "B2_230（冻结）+ 同版 PDF", "result": "check：0 待改，退出0；与 book_incremental.py inspect 的 71 个考法计数分类逐一核对全部相符（printed_count==unique_questions，无重复题键）；repair --numbering：拒绝，退出3，不留输出", "seconds": 5.7},
+    {"input": "B3_03 → repair --numbering --method-counts --keepnext（父稿SHA核对通过）", "result": "输出 SHA256 与真实 B3_04 完全相同（document.xml C14N 逐字节一致）；344 处编号回填、0 处考法计数（已一致）、284 处补 keepNext（【思维链条】【答案落点】标签行，靠新增 pagination.keep_next_labels 字段识别）；--health 复核 0 新增 FAIL", "seconds": 4.9},
+    {"input": "B3_04 → repair --toc --toc-pdf 目录定位/04_编号与考法计数.pdf（父稿SHA核对通过）", "result": "输出 SHA256 与真实 B3_52 完全相同；30 处目录页码回填，与规格描述的“目录回填30处”一致", "seconds": 3.9},
+    {"input": "B3_52 临时副本：合成打乱 3 处编号、2 处考法题数、去 1 处 keepNext", "result": "check 抓到 numbering FAIL=2（棘轮口径本就只报第一处断点）、method_counts FAIL=2、keepnext WARN=1；repair 用纯序数重排实际修了全部 3 处编号、2 处计数、1 处 keepNext；修复后与原始 B3_52 逐段文字流+keepNext 完全一致（bh.read_docx 语义比对 0 差异），--health 复核 0 新增 FAIL", "seconds": 8.6},
+    {"input": "负例：repair 不点名任何操作 / --toc 缺 --toc-pdf / --expect-sha 故意写错 / --out 落 00_必修三最新审查稿（审阅入口）", "result": "分别退出 2/2/2/3，均不留输出文件", "seconds": 0.6},
+    {"input": "合成最小 XML 片段：w:fldSimple 内 PAGEREF 缓存页码（bx2 hyperlink_static 一族写法）与 w:hyperlink 内缓存页码（bx3 pageref_in_hyperlink）", "result": "toc_page_nodes() 两种写法都定位到唯一缓存页码节点，取值正确", "seconds": 0.01},
+    {"input": "全部真实输入文件（B3_52/.pdf、B3_03、B3_04/.pdf、B2_230/.pdf）测试前后 SHA256+mtime", "result": "完全未变", "seconds": null}
+  ],
+  "replaces": [
+    "scripts/book_incremental.py（必修二 inspect/refresh/sync-pages）——保留作参考，未删除",
+    "Codex final_layout_prepare.py（必修三编号/考法计数/keepNext标签/目录回填）——保留作参考，未删除"
+  ],
+  "known_limits": [
+    "toc 的 hyperlink_static（必修二 toc.mode）写法只用合成的最小 XML 片段做过单测，没有对真实必修二数据跑过 repair --toc 回归——B2_230 是冻结册且 118MB，按规则要复制一份 frozen=false 的临时配置副本才能测写，考虑本轮 token/时间预算未做；toc_page_nodes() 的定位逻辑对 hyperlink 与 fldSimple 一视同仁，理论上覆盖两种写法，但没有必修二真实数据背书。",
+    "编号/考法计数的数字定位要求目标数字完整落在纯 w:t 节点范围内（不跨 w:tab/w:sym）；跨了会安全跳过并计入 blocked 列表，不会误改，但也不会自动处理——本轮真实数据未触发这条。",
+    "keepNext 链长防护（pagination.forbid_long_chains + 新增 pagination.max_keep_next_chain）只在“这一次要不要加”的判断上拦截，不会主动拆分已经存在的超长链；链长统计按整份文档线性数，不区分表格内外的 keepNext（简化处理，已在代码注释里注明）。",
+    "目录页码回填按 bh.check_toc_pdf 同一口径——直接拿同版 PDF 内部超链接落页跟目录缓存页码比，不做 footer.page_offset 印刷页脚偏移换算（现有两册的 toc 校验规则本来就是这么判 FAIL 的）。",
+    "toc_pdf_dests() 与 bh.check_toc_pdf() 的链接收集/匹配算法是同一套逻辑的薄封装（bh 只暴露 FAIL 发现项，不暴露每条目录条目该落哪一页），日后 bh.pdf_scan/check_toc_pdf 的匹配算法如有调整，这里需要同步改；已在文件头和函数注释里写明原因，不是随手复制。",
+    "只在必修二、必修三两本已登记 profile 的书上做过实测（规格里点名的金标准回归数据都是这两本）；哲学 R10、选必二 r22 等无正式配置的册子，本工具语义上应该同样能跑（配置从 profile 读，判定逻辑复用 bh），但本轮没有为它们生成 profile_probe 草案并实测，留给需要用到时再验证。",
+    "本轮由编写这一个 Claude 会话自测通过，没有另外发起一次独立的 Opus“对抗验证”会话复核（用户要求的“编写→对抗验证→按需返修”三步里，本次只完成了编写+自测，对抗验证这一步未做，见 needs_user_decision）。"
+  ],
+  "profile_fields_needed": [
+    {"field": "pagination.keep_next_labels", "default": ["【思维链条】", "【答案落点】"], "reason": "bh.check_keepnext 只覆盖例题/考法标题与材料小标题两类，不覆盖“整段就是这个标签本身的行也要 keepNext”这条必修三现行规则（Codex final_layout_prepare.py 的 label_audit 一直在做）；本工具按此默认值实现，用真实 03→04（284 处）验证完全吻合，需要主代理登记进 profiles/bixiu3.json（bixiu2 目前没有这两个标签，登记后是安全的 no-op）"},
+    {"field": "pagination.max_keep_next_chain", "default": 20, "reason": "配合已有的 pagination.forbid_long_chains：某次补 keepNext 会把连续 keepNext=true 的段落链撑到超过这个长度就跳过、报 blocked，不做成 786 段那种长链（bx3-r48 教训）；20 是本工具内的保守缺省值，两册都还没有跑到需要这条拦截的真实场景，具体数值需要主代理按两册实际版式确认"}
+  ],
+  "needs_user_decision": [
+    "pagination.keep_next_labels 与 pagination.max_keep_next_chain 是否现在就登记进 profiles/bixiu2.json、profiles/bixiu3.json（本工具按工作纪律没有改 profiles/，只在代码里给了缺省值并在这里报告）",
+    "必修二 toc.mode=hyperlink_static 的 --toc 回归只做了合成单测，没有用真实 B2_230 数据验证过——是否要为此专门搭一个“临时 frozen=false 配置副本 + 118MB 文件的临时目录写测试”，还是等必修二真正需要再排版时再验证",
+    "book_incremental.py 与 Codex final_layout_prepare.py 是否现在就退役，还是继续保留一段时间作交叉核对（本工具目前是在这两个脚本的基础上重新实现的，尚未经过独立会话的对抗验证）",
+    "本轮只做了编写+自测，还没有安排单独的 Opus 对抗验证会话——是否现在就安排，还是先继续做 apply_patch/publish_review/drill_tool 三个工具、最后一起验收"
+  ]
+}

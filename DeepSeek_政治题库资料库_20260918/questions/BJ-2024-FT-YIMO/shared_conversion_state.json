@@ -1,0 +1,118 @@
+{
+ "exam_id": "BJ-2024-FT-YIMO",
+ "controller_thread_id": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+ "status": "accepted_for_all_available_sources",
+ "accepted": true,
+ "question_count": 21,
+ "score_total": 100,
+ "question_hashes": {
+  "BJ-2024-FT-YIMO-Q1": "1b4278d168ae76a27a8673332cf34052b5842083e924d05408b51f1f3d82b29e",
+  "BJ-2024-FT-YIMO-Q2": "928b655a05d1716d89561505cefdd8c7c22af7e91753cc4e66ae90de9fd07601",
+  "BJ-2024-FT-YIMO-Q3": "f23dc174b4ad786358493add810598a50437ea83e54c314469a6e50322a65eb6",
+  "BJ-2024-FT-YIMO-Q4": "dd3f7d2793f302aa8e1fcaac8b8008f75d4057055a38e3028a443935c8078409",
+  "BJ-2024-FT-YIMO-Q5": "1261c2c4c189bb640b89d1fcbd38a355ef881e833888f5ccb4e65e9a52e3744e",
+  "BJ-2024-FT-YIMO-Q6": "d4420324a2bc7a5fb549b208d093c4feb448b422580bd1dd846b5321c0224b0d",
+  "BJ-2024-FT-YIMO-Q7": "1566541b67433e920d6441561510668659015e4afff3e027476b48baeff70d1c",
+  "BJ-2024-FT-YIMO-Q8": "2100f861e992c54d67d92260db958a0ff798d16a1cc5f16ec542ccc3aa9fee03",
+  "BJ-2024-FT-YIMO-Q9": "df4535ede90df0493a6239a189cc6c7fdf63c5e2c0f1db2724713131feead9bb",
+  "BJ-2024-FT-YIMO-Q10": "df11c04f0ec897711961c01ee74be1319b2c47056401e3f0db3f70593a1f82c2",
+  "BJ-2024-FT-YIMO-Q11": "beecd162d069e8f7ee049324d29f9d9c7c78fe089265608600a230d699cf0946",
+  "BJ-2024-FT-YIMO-Q12": "87d3385fbecbf071f2c58ad222b2a39304e6f89904fd47dae0aba2bfcd07f39b",
+  "BJ-2024-FT-YIMO-Q13": "fd12d4d123972854643b5f2f7049d8b2e99a46bdb5ed54c076897b5c80e919e8",
+  "BJ-2024-FT-YIMO-Q14": "020322787f654e9aa3e2892c0c4382981fa37f2bbcfe705c485fe03a1f97797f",
+  "BJ-2024-FT-YIMO-Q15": "5f5aabbeefaf4cf93931afcc2737e6192c055ba89bc3bb317326c880e83a1c2a",
+  "BJ-2024-FT-YIMO-Q16": "1f0d54e3a652999bee8cb5cda65f271b2c3d9a63facb934f5440fd9c0e2a12db",
+  "BJ-2024-FT-YIMO-Q17": "f17cfc5e09fceadd362a4285c4191b83db13009ed6ec2cedea6c85b1f974b94a",
+  "BJ-2024-FT-YIMO-Q18": "42de16926a37df8d65fbd9ca7690a404cc2f56ad1b288cf47de401933e5af4d0",
+  "BJ-2024-FT-YIMO-Q19": "6437a2da1b428258b5f0d77959201304a84d1c51877ae0204d0c75dc984110fa",
+  "BJ-2024-FT-YIMO-Q20": "996cb3267ec134b167616707f25023605c923c3f4007988b364eae6632ad045f",
+  "BJ-2024-FT-YIMO-Q21": "99e56c219805e63a8807cf8ab44e1ff683f28cf41dd918eed4f76a13caec1d81"
+ },
+ "source_pages": {
+  "paper": 8,
+  "answer": 9,
+  "rubric_docx_or_pptx_unpaged": 0
+ },
+ "source_page_total": 17,
+ "source_roles": {
+  "paper": "S4800d0b858f0",
+  "answer": "S5f5486bfc3ba",
+  "rubric": "S950d6b2d3cdd"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "E1（选择题Q1-Q15）: 沿用r1既有记录：评分DOCX从Q16开始，未含选择题级正式细则，本轮未改动、未新增来源。",
+  "学生示例/教师批注/实得分（全部21题）: 沿用r1既有记录：源集仅含原卷PDF、参考答案PDF、评分细则DOCX；未发现学生层材料。"
+ ],
+ "bounded_residual": [],
+ "review_receipts": {
+  "previous_acceptance": [
+   "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/batch_acceptance_receipts/claude-accept3b-20260922__BJ-2024-FT-YIMO.json"
+  ],
+  "primary": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/primary_review/BJ-2024-FT-YIMO.json",
+  "independent": [
+   "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/dispute_review2/verification.json"
+  ],
+  "merge": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-FT-YIMO/retro-batch1-bj-2024-ft-yimo-20260924_merge.json",
+  "reopen": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/retro_closeout_20260924/batch1/reopen_for_resign/BJ-2024-FT-YIMO.json",
+  "rounds": []
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "bj-2024-ft-yimo-state1",
+   "controller": "claude:13295440-b4bb-4013-b7bd-0daa95ed1858",
+   "at": "2026-09-23T01:28:42.385905+00:00"
+  },
+  {
+   "event": "reopen_accepted_exam_for_resign",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "at": "2026-09-24T05:06:47.202933-07:00",
+   "reason": "后续回溯题面修订已经合入；保留并暂挂旧验收签名，重新走标准全卷验收。"
+  },
+  {
+   "spec_id": "bj-2024-ft-yimo-state1-retro-batch1-resign-20260924-v1",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "at": "2026-09-24T12:09:30.582023+00:00"
+  }
+ ],
+ "source_conversion_accepted": true,
+ "controller_delta_history": [
+  {
+   "delta_id": "retro-batch1-bj-2024-ft-yimo-20260924",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T11:59:13.355977+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-FT-YIMO/retro-batch1-bj-2024-ft-yimo-20260924_merge.json",
+   "question_hashes_updated": {
+    "BJ-2024-FT-YIMO-Q2": "928b655a05d1716d89561505cefdd8c7c22af7e91753cc4e66ae90de9fd07601"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2024_ft_yimo_q19",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:22.593249+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-FT-YIMO/g7_r2_bj_2024_ft_yimo_q19_merge.json",
+   "question_hashes_updated": {
+    "BJ-2024-FT-YIMO-Q19": "6437a2da1b428258b5f0d77959201304a84d1c51877ae0204d0c75dc984110fa"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2024_ft_yimo_q20",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:22.653534+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-FT-YIMO/g7_r2_bj_2024_ft_yimo_q20_merge.json",
+   "question_hashes_updated": {
+    "BJ-2024-FT-YIMO-Q20": "996cb3267ec134b167616707f25023605c923c3f4007988b364eae6632ad045f"
+   }
+  },
+  {
+   "delta_id": "g7_r2_bj_2024_ft_yimo_q21",
+   "controller": "codex:01a0cff1-36ce-77e1-a013-5b10d6c6271c",
+   "applied_at": "2026-09-24T22:58:22.704101+00:00",
+   "receipt": "后勤管理/MD全库流水线_20260921/receipts/claude_bank_20260922/BJ-2024-FT-YIMO/g7_r2_bj_2024_ft_yimo_q21_merge.json",
+   "question_hashes_updated": {
+    "BJ-2024-FT-YIMO-Q21": "99e56c219805e63a8807cf8ab44e1ff683f28cf41dd918eed4f76a13caec1d81"
+   }
+  }
+ ],
+ "accepted_at": "2026-09-24T12:11:41.393803+00:00"
+}

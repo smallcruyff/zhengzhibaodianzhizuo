@@ -1,0 +1,59 @@
+{
+ "exam_id": "BJ-2025-FS-YIMO",
+ "controller_thread_id": "codex:01a0cfcf-0e5f-7673-ace9-f99d79908523",
+ "status": "postmerge_validation_pending",
+ "accepted": false,
+ "question_count": 20,
+ "score_total": 100,
+ "question_hashes": {
+  "BJ-2025-FS-YIMO-Q1": "5d01ec35b25df544ffb24fec77755ee584c47e7ceb74ba71ecdc8b2905154dd6",
+  "BJ-2025-FS-YIMO-Q2": "a615636dc174a3b6b19d4a98d80b5afdcb7960bd3d8a6d0cdc821945094a714b",
+  "BJ-2025-FS-YIMO-Q3": "09978e8a783c854e07cd4f95d4975d79e5964a37052724b3efc6de0b934a03a7",
+  "BJ-2025-FS-YIMO-Q4": "34a4468cd67858d14415303ba41a16f505293730153b77bcdf3ed37f882ea237",
+  "BJ-2025-FS-YIMO-Q5": "a8e20be2a3aa20cfde24f1445d2a8e12d85986dda440761a0926d1f8a30cee15",
+  "BJ-2025-FS-YIMO-Q6": "a2fb25b35ae258dc26c3d364070c918e33dd0b250d5dec6fb24d8a836e7023a7",
+  "BJ-2025-FS-YIMO-Q7": "cc7bc091f84c40f07e8890584e429e246dad09cfb804ede135db69404cc74a48",
+  "BJ-2025-FS-YIMO-Q8": "6fa575bed741cc44cc0a2dcaaf8b176a438e817a48409e581ff13371c2db6589",
+  "BJ-2025-FS-YIMO-Q9": "ef7a68ff2361b33dc4cbf6c3328db0629f21d675c18a606bd4730b8d6cda48a4",
+  "BJ-2025-FS-YIMO-Q10": "5fc619397154b51aff179ec33035a8cbbd0b5d0d75b2c1f02c2cecf71974bb72",
+  "BJ-2025-FS-YIMO-Q11": "acc7d5c0b7d1f7050fff7dd0bb3f62d4f8cd3707d2647ec709f5be80c3e46c41",
+  "BJ-2025-FS-YIMO-Q12": "4ce4c19e603e466b7b8e0856010ec054d5503756bab4ac50a0b268fada85c338",
+  "BJ-2025-FS-YIMO-Q13": "5f50963ce6f96556b81ee08c4ecd30cadcece461f8de56b3e54369bb26670a04",
+  "BJ-2025-FS-YIMO-Q14": "8819e341dfdc34d96c259648a4f66baa7f57be4aec04add0b6a0b606be2f61f6",
+  "BJ-2025-FS-YIMO-Q15": "18742eb1b3c65419e45ebc03383f35c660f3100a4fc8d5cc29dd690e69ac00a5",
+  "BJ-2025-FS-YIMO-Q16": "ba6e1df34aaa658aa5f4349b0d247982464b223b554a3b85a9e7a87edd2c3a14",
+  "BJ-2025-FS-YIMO-Q17": "0ecdc14e373245c40b98ebd8a378160ffebccdedc2c94999abe89933f2d64003",
+  "BJ-2025-FS-YIMO-Q18": "2776f9f2c01299dfd8004365cac5bf61bbf1d6eed3b223687f1029c91c43d26e",
+  "BJ-2025-FS-YIMO-Q19": "dfacafc9acd103b42fb8d19886e50254dd0467ab024d9ef65cd1224337dfb593",
+  "BJ-2025-FS-YIMO-Q20": "8262321be78f458596c2b9c55db47ab721dfd3ebe174c41ef45fec02e85831b1"
+ },
+ "source_pages": {
+  "paper": 16,
+  "rubric": 4
+ },
+ "source_page_total": 20,
+ "source_roles": {
+  "paper": "S3227fd51f202",
+  "rubric": "S17cdecfbd774"
+ },
+ "conversion_unresolved": [],
+ "source_limitations": [
+  "无独立参考答案文件",
+  "Q17题干提及水系图，但原卷p005本无地图；用户确认原题本来无图。E1 p002按题面文字中的党的领导、政府履职、协商民主、公民守法评分，不依赖地图信息。视觉层登记N/A_with_basis，不影响作答。"
+ ],
+ "bounded_residual": [],
+ "review_receipts": {
+  "rounds": [
+   "r1",
+   "r2",
+   "controller_q17_user_adjudication_currentparent_20260923"
+  ]
+ },
+ "controller_state_history": [
+  {
+   "spec_id": "bj-2025-fs-yimo-state1",
+   "controller": "codex:01a0cfcf-0e5f-7673-ace9-f99d79908523",
+   "at": "2026-09-23T20:01:00.431700+00:00"
+  }
+ ]
+}

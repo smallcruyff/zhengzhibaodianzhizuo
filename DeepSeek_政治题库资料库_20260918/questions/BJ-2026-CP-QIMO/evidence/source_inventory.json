@@ -1,0 +1,103 @@
+{
+  "status": "complete_with_declared_source_limits",
+  "exam_id": "BJ-2026-CP-QIMO",
+  "sources": [
+    {
+      "role": "教师版_题面及参考答案",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026昌平期末/2026北京昌平高三（上）期末政治（教师版）.docx",
+      "sha256": "e748323b3f419a877db5c83e85b15d10e5bc3d6656804485ecbec8f7c70fd29a",
+      "copied_to": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/sources/teacher.docx",
+      "rendered_pages": 10,
+      "opened_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source_id": "Se748323b3f41"
+    },
+    {
+      "role": "正式评分材料",
+      "path": "/Users/wanglifei/Desktop/2026模拟题/2026各区期末和期中/2026昌平期末/2026昌平政治期末细则(1).pdf",
+      "sha256": "ff41058b55ac2a7b2673ec2319619786bff87335a6c1d763faea128db0694191",
+      "copied_to": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/sources/scoring.pdf",
+      "rendered_pages": 3,
+      "opened_pages": [
+        1,
+        2,
+        3
+      ],
+      "source_id": "Sff41058b55ac"
+    },
+    {
+      "role": "复用清洗后教师版Markdown",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Se748323b3f41.full.md",
+      "sha256": "31fa21139d8fc168f350b1932e2e4cebc3ff733c277084316bd8ef79f0b44f56",
+      "read_only": true
+    },
+    {
+      "role": "复用清洗后评分Markdown",
+      "path": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/processed_markdown/Sff41058b55ac.full.md",
+      "sha256": "cc5b315eb80f30a3dda9aeea900ceb0450fb6be2735f3b4c6405b271cc78d0df",
+      "read_only": true
+    }
+  ],
+  "rendered": {
+    "teacher_render": {
+      "directory": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/teacher",
+      "pages": [
+        "page-1.png",
+        "page-2.png",
+        "page-3.png",
+        "page-4.png",
+        "page-5.png",
+        "page-6.png",
+        "page-7.png",
+        "page-8.png",
+        "page-9.png",
+        "page-10.png"
+      ],
+      "count": 10,
+      "sha256": {
+        "page-1.png": "32d7c84148a973e810ba2987dae48b383387da51513d28196c5a563334ae9a12",
+        "page-2.png": "0f46844703570f1e408110408bc14711d57790cc94eee52f3934218ddef6723a",
+        "page-3.png": "3b32ae2c2285eea86d59edfee963b1c0146648b8475dc79fad2edefb5d154eae",
+        "page-4.png": "b2f424bc70350488c5a727ccd5be3efd27d3abd90668031e83c2d8c5d8b254f5",
+        "page-5.png": "3325d6fbc502c1ea6d9765bde9e44af84e8d5e774a54e6043499aeb49692b962",
+        "page-6.png": "5fd026bdb53f9be96026f8661390c7a6155685ef5ba918ab66a60e2c4163fef3",
+        "page-7.png": "72a9715f94e7b8afb91b97ccf09980073f20415b5e8c78c07d5e96fa635777ff",
+        "page-8.png": "30b80543ecf370e928f78f113ff008c423b18f3fb006e4f650dc30bedb66f405",
+        "page-9.png": "abe24eddcb30b39becb76d912ccb4a8b16603b9d380907c936e222c4fe5d9f5e",
+        "page-10.png": "dfbdd36fa44ac7693033830cf3ebe1947dec9417886f5bd0de75ee72a19db4ab"
+      }
+    },
+    "rubric_render": {
+      "directory": "后勤管理/MD全库流水线_20260921/receipts/group_2026_a/BJ-2026-CP-QIMO/evidence/rendered/scoring",
+      "pages": [
+        "page-1.png",
+        "page-2.png",
+        "page-3.png"
+      ],
+      "count": 3,
+      "sha256": {
+        "page-1.png": "bd7d7339ec4e5f768fc3e088cd6afe76f7298bccbe60558dc5f27b44a6d0987d",
+        "page-2.png": "ac72d3b5d673243258fe9d46b5fe8cfe6484a5c5088d5a8d74e2f7f1d799151e",
+        "page-3.png": "780dcfbe7d1574176710e3484ba02c5fcc2e724b608cb4a8bca39c91ce852789"
+      }
+    }
+  },
+  "limits": [
+    "缺独立原卷文件",
+    "缺独立参考答案文件",
+    "缺学生答卷/批注/实得分页"
+  ],
+  "render_legibility": "教师版旧渲染快照（10页，本文件 rendered.teacher_render 所列 sha256 未变）在当前环境中正文中文部分显示为空/替代字形；本轮（Claude 转写/修补工位，2026-09-22）已用私有 fontconfig（必修三_第48批接续_WorkBuddy_20260918/构建/lo_profile/fontconfig/fonts.conf）重新渲染同一 DOCX，得到 16 页完全可读版本，逐页与旧渲染、原生 DOCX 段落/表格/媒体三方交叉核对，题面、选项、表格、图片内容一致，未发现因旧渲染缺字导致的转写遗漏或错误。评分PDF页图始终可读，未受此问题影响。",
+  "render_page_count_instability_note": "同一教师版 DOCX（sha256 e748323b3f419a877db5c83e85b15d10e5bc3d6656804485ecbec8f7c70fd29a）在不同渲染环境下曾分别产生 10 页（本文件旧渲染，字形缺失）、15 页（review/readable_teacher_render/，可读）、16 页（本轮 Claude 重渲染，可读）三种不同分页结果，证明该文件的分页随所用字体环境变化，不是稳定的绝对值；本卷各题 Markdown 中的“教师版题面页/答案页”页码沿用旧组 10 页快照编号（与本文件 rendered.teacher_render 的 10 张已哈希 PNG 一一对应，可复现追溯），仅供定位参考，不应被当作该 DOCX 唯一正确的页码。",
+  "r1_claude_rubric_text_layer_fix": "评分材料 PDF（sha256 ff41058b55ac2a7b2673ec2319619786bff87335a6c1d763faea128db0694191）的可复制文字层存在字体/cmap 缺陷：约34个常见汉字被错误编码为 Unicode Kangxi 部首补充区码位（如「⼀」代替「一」），视觉渲染仍为正常汉字。旧组抽取 sources/Sff41058b55ac_rubric_full.md 及各题 E1 小节时直接复制了这一错误文字层。本轮已对照评分 PDF 250dpi 原生渲染逐字核对修复，详见 `sources/Sff41058b55ac_rubric_full.md` 头部说明与各题 Q16–Q21 的 E1 小节脚注。中心资料库 processed_markdown/Sff41058b55ac.full.md（本文件下方 sources 列表中的“复用清洗后评分Markdown”）不在本工位写入范围内，仍保留原字符，留待主控决定是否同步刷新。"
+}

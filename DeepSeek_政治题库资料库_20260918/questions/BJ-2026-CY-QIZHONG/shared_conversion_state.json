@@ -1,0 +1,95 @@
+{
+  "exam_id": "BJ-2026-CY-QIZHONG",
+  "controller_thread_id": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+  "status": "accepted_for_all_available_sources",
+  "accepted": true,
+  "question_count": 21,
+  "score_total": 100,
+  "question_hashes": {
+    "BJ-2026-CY-QIZHONG-Q1": "168353f36cf827f7549d839b37f172629ab1559f82e648b0f4e8377759db8007",
+    "BJ-2026-CY-QIZHONG-Q2": "7adbd8c07c41d7fd8c5c6461588c0420f36d5e8d2392adef491d4153acc264a9",
+    "BJ-2026-CY-QIZHONG-Q3": "12e21e1cc497ede28b13d0d2d1ff3a8fc5a7b9543dcc3c60ff71e28106d22627",
+    "BJ-2026-CY-QIZHONG-Q4": "43b517179506977d5fae7aada22f2523ba40abb55d29bf0827efd196be1de661",
+    "BJ-2026-CY-QIZHONG-Q5": "d6b01fda857b99df9c1862607946e60da4661dd2b644d153bd613960c2135a1d",
+    "BJ-2026-CY-QIZHONG-Q6": "a00a3eb101c0c52a08e839e6cc33fad380eb9c684c874981130fd2564b24158e",
+    "BJ-2026-CY-QIZHONG-Q7": "a9abe678b006b298a7c3f683abd49c4f8d9f34401ae4cb02eb087d26dc8c351a",
+    "BJ-2026-CY-QIZHONG-Q8": "6677f1aa7f829c2d5d6949fbf16a9608ed7309867e0692fe89fde7fa8c1a303b",
+    "BJ-2026-CY-QIZHONG-Q9": "7b9eb3a3bf6ce6bae930e506cb5b2cef487e9d9169d5d8673bff897ff9cb2c41",
+    "BJ-2026-CY-QIZHONG-Q10": "2ca0770dccc4b652251259e71c26003ab21032bfc5e1d30d8cca7457967da885",
+    "BJ-2026-CY-QIZHONG-Q11": "bbfb5a80ff5c283dc7cbd91b48e1c78695725e78b78249b311e155deb58a02ba",
+    "BJ-2026-CY-QIZHONG-Q12": "802d6f006d4c9bcfa810dc94c309d9f3d5da4ab4ecffd3f31dd2e99355e857ba",
+    "BJ-2026-CY-QIZHONG-Q13": "35eeff6dbb7a1ccdadf870dfe6e939beb218cf87ec4a62d19b2ef54c6e716843",
+    "BJ-2026-CY-QIZHONG-Q14": "fcf06a58033d0dad660302d94c32be2c349ac4e60f17d5ea8a08346ccbbd695c",
+    "BJ-2026-CY-QIZHONG-Q15": "7a990cb34c642f1700dd23791b609845f481f601a2e6662df21ddce7d027c28e",
+    "BJ-2026-CY-QIZHONG-Q16": "b6fc57c0e05e981b1de3543534fea7c171d2be454eb667c50f52ad9e3054503f",
+    "BJ-2026-CY-QIZHONG-Q17": "d45298747179025154dd4d02035c69c8c6d47682d174929e96102f3ea7a0c283",
+    "BJ-2026-CY-QIZHONG-Q18": "e18677c5ef33ded9d60ef0d50450f9b3242bf2b801bf1bca8567e4b9ddc218e1",
+    "BJ-2026-CY-QIZHONG-Q19": "b84269c9482c60bc2d9e4735df3c51c36b4f8d66526420e49314be3373ed7438",
+    "BJ-2026-CY-QIZHONG-Q20": "0b41dc1b3f136c430b1ce9491a73c46ee4bc7b90199fa808b09cb70b00bae90f",
+    "BJ-2026-CY-QIZHONG-Q21": "5f0604de1e1bec1be6ee16822d3759d9f25c65973b939cc05d778db37cab5ebe"
+  },
+  "source_pages": {
+    "paper": 8,
+    "rubric_1_docx_or_pptx_unpaged": 0,
+    "rubric_2_docx_or_pptx_unpaged": 0
+  },
+  "source_page_total": 8,
+  "source_roles": {
+    "paper": "S5a53b5c6863d",
+    "rubric_1": "S885e694cf464",
+    "rubric_2": "S885e694cf464"
+  },
+  "conversion_unresolved": [],
+  "source_limitations": [
+    "无独立参考答案文件；原卷PDF第8页具名参考答案按E3保留。",
+    "Q1–Q15原DOCX无对应E1；PDF p8保留E3。",
+    "未提供学生原答/批注/实得分，不将E3或规则分值冒充学生层。",
+    "评分材料为DOCX，无固定原始页码；段落位置见Q21来源定位及sources/rubric_full.md。rubric_1_docx_or_pptx_unpaged=0、rubric_2_docx_or_pptx_unpaged=0仅为门禁数值，不代表物理页码。"
+  ],
+  "bounded_residual": [
+    {
+      "qid": "Q21",
+      "location": "原卷PDF p6，民族精神框右边界（U01）",
+      "partial_reading": "多线交汇处有疑似左向箭头头部，无法逐条归属到生产、销售或消费；原图保留在assets/S5a53b5c6863d/Q21-p6-diagram.png。",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "round": "r1 independent Luna/max B",
+      "basis": "正式E1 Q21(1)评分点对应民族精神对生产积极性/创造力等作用；未决箭头不改变设问要求或评分方向，确认边与E1已完整转写。"
+    },
+    {
+      "qid": "Q21",
+      "location": "原卷PDF p6，价值观框右边界（U02）",
+      "partial_reading": "可见疑似左向箭头头部，但不能逐条归属到具体目标线；保留原图与p6页位。",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "round": "r1 independent Luna/max B",
+      "basis": "正式E1 Q21(1)已完整记录人文因素、生产/市场行为/消费及经济支持文化等评分关系；不臆测反向边。"
+    },
+    {
+      "qid": "Q21",
+      "location": "原卷PDF p6，道德标准和水平框右边界（U03）",
+      "partial_reading": "可见疑似左向箭头头部，但不能逐条归属到具体目标线；保留原图与p6页位。",
+      "affects_answering": false,
+      "needs_web_source": false,
+      "round": "r1 independent Luna/max B",
+      "basis": "正式E1 Q21(1)已完整记录人文因素、生产/市场行为/消费及经济支持文化等评分关系；不臆测反向边。"
+    }
+  ],
+  "review_receipts": {
+    "rounds": [
+      "r1",
+      "r1_verify",
+      "review_r3",
+      "q21_edge_delta_review"
+    ]
+  },
+  "controller_state_history": [
+    {
+      "spec_id": "bj-2026-cy-qizhong-state1",
+      "controller": "codex:01a0cbfa-7dfb-7b82-b886-9b4101a90b29",
+      "at": "2026-09-23T09:57:58.149380+00:00"
+    }
+  ],
+  "source_conversion_accepted": true,
+  "accepted_at": "2026-09-23T10:00:12.717514+00:00"
+}

@@ -1,0 +1,1922 @@
+[
+ {
+  "label": null,
+  "v": {
+   "summary": "会话3bd4f1ab（本地时间PDT，09-22 12:26至09-23 14:04）覆盖第49批收尾、第50批、政府样稿十轮和第51批推广。每批主线程自己备料都很快：第50批3.5分钟，第51批推广2.4分钟，因为它只是把书稿或题单导出一遍。真正的备料是子代理各自回原件取细则，而且重复做：第51批推广的Extract阶段有44个代理，40.8分钟，工作流口径8.52M token（原始用量275.8M cache-read），2402次工具调用；325个抽取任务只对应193个不同题键，约40.6%是重复抽取。子代理同时最多只跑8个，Extract代理平均排队16.2分钟，写稿阶段因此推迟，第一个Draft在用户说“推广吧”后37.8分钟才开始。主线程等后台代理的空闲时间合计约303分钟：有通知收尾的等待264.2分钟，另39.0分钟是后台在跑、用户先来了消息；推广那一轮144.7分钟里主线程闲了139.2分钟。第50批的做法可作对照：先由脚本把19节切成txt，19个Fable代理一共只调用115次工具。按计划，下一步是第52批（按用户意见修改第51批七个新主体专题），然后是第53批（材料翻译、概念辨析进书，再做情境/考法/素养/能力/题型专题）。我做了一个只读原型evidence_packet.py：单个主体的证据包1.9—4.5秒建好，全书147道主观题读完题库7.1秒，缺失项单独列出。",
+   "numbers": [
+    {
+     "metric": "第50批：用户下令到写稿工作流启动",
+     "value": "3.5分钟（14:17:32→14:21:05）；输入/19个txt和清单.json在14:19:04由一次内联脚本写出",
+     "evidence": "会话jsonl第941—972行；目录 第50批_类型分类推广_20260922/输入/ 的mtime为14:19"
+    },
+    {
+     "metric": "政府样稿（第51批试点）：用户下令到骨架初稿、到配题细则回来",
+     "value": "骨架5.7分钟（20:19:01→20:24:43 首次Write 政府_主体专题小样.md），细则16.6分钟（20:35:38 代理a2df回报）；其间在20:20:57压缩上下文，压缩后主线程20:21:07—20:22:41连续约25次定位类调用，包括到自己的会话jsonl里grep路径",
+     "evidence": "timeline.tsv 20:19—20:35；subagents/agent-a2df61438f35e3c40.jsonl（Sonnet，63次工具，原始用量6.74M，其中cache-read 6.50M）"
+    },
+    {
+     "metric": "第51批推广：用户下令到第一个写稿代理开始",
+     "value": "37.8分钟（11:30:28“推广吧”→12:08:17 党Draft）；最后一个主体抽取完在12:13:38（43.2分钟）；主线程自己备料只有11:31:05这一次内联脚本（生成subj_qs.json）",
+     "evidence": "workflows/wf_153d2233-a7f.json workflowProgress 的 startedAt、durationMs"
+    },
+    {
+     "metric": "第51批推广工作流总量",
+     "value": "144.7分钟，126个代理，6271次工具调用；工作流口径27.84M token；原始API用量 cache-read 896.7M、cache-creation 24.95M、output 0.57M",
+     "evidence": "wf_153d2233-a7f.json 的 totalTokens/totalToolCalls；逐个解析 subagents/workflows/wf_153d2233-a7f/agent-*.jsonl 的 usage"
+    },
+    {
+     "metric": "推广Extract阶段",
+     "value": "44个代理，40.8分钟，8.52M token（原始 cache-read 275.8M），2402次工具调用：bank.py 422、grep 471、ls 331、find 130、读PNG 428",
+     "evidence": "workflowProgress 按阶段汇总；子代理jsonl逐条统计 tool_use"
+    },
+    {
+     "metric": "推广Extract重复抽取",
+     "value": "325个抽取任务、193个不同题键，132次（40.6%）重复；86个题被抽2—5次（如BJ-2025-CY-YIMO-Q18、BJ-2023-BJ-GAOKAO-Q20各5次）；72个原件文件被多个代理重复读取；85KB的政府样稿被18个代理各读一遍",
+     "evidence": "scratchpad/measure/prep_packet/rollout_extract_keys.json、rollout_extract_tools.txt"
+    },
+    {
+     "metric": "跨工作流重复抽取",
+     "value": "三次取证（政府穷尽抽取、政府关系取证、七主体推广抽取）合计155个题键，其中82个在两次以上的取证阶段中被抽过",
+     "evidence": "三个工作流子代理 StructuredOutput 中题键的正则统计"
+    },
+    {
+     "metric": "子代理并发上限与排队",
+     "value": "同时最多8个；Extract平均排队16.2分钟（最长34.9），Draft 11.9，Examples 9.2，Verify 12.8",
+     "evidence": "wf_153d2233-a7f.json 中 startedAt−queuedAt；主线程14:24:42原话“Fable代理同时只能跑8个”"
+    },
+    {
+     "metric": "主线程空等后台代理",
+     "value": "有通知收尾的等待12段，合计264.2分钟；后台在跑、但用户先发来消息的4段合计39.0分钟（含23:48用户问“在工作吗？”）；两类合计约303分钟",
+     "evidence": "timeline.tsv 中 stop_hook_summary 到下一条 task-notification 或人类消息的间隔；已剔除题库线和第49批中未收到通知的任务"
+    },
+    {
+     "metric": "推广期间主线程空闲",
+     "value": "144.7分钟里空闲139.2分钟（11:33:16—11:51:49 共18.6分钟，11:56:57—13:57:33 共120.6分钟）",
+     "evidence": "timeline.tsv 行3183—3386"
+    },
+    {
+     "metric": "额度中断",
+     "value": "15:15:03触发会话额度上限，18:14:17才恢复，停了179.2分钟；此前第50批两轮Fable约用380万子代理token",
+     "evidence": "timeline.tsv 行1070—1071；主线程18:18:48原话"
+    },
+    {
+     "metric": "主线程token",
+     "value": "544次请求，cache-read 285.0M，cache-creation 4.91M，output 0.72M；第50批阶段平均每次请求读约697K缓存，第51批推广阶段约836K，最大约965K",
+     "evidence": "会话jsonl中assistant usage按requestId去重，按阶段汇总"
+    },
+    {
+     "metric": "主线程Bash构成",
+     "value": "共414次Bash：内联python heredoc 239次（命令文本240K字符）；ls/grep/sed/cat等定位类123次（结果278K字符进入上下文）；内联读DOCX 50次；直接调用bank.py只有14次",
+     "evidence": "会话jsonl中tool_use的command正则分类（一条命令可同时归入多类）"
+    },
+    {
+     "metric": "本会话全部子代理原始用量",
+     "value": "199个代理转录，8226次请求，cache-read 1177.7M，cache-creation 33.9M，output 0.8M；取证类阶段（Find/Extract）占cache-read 440.9M（约37%）",
+     "evidence": "3bd4f1ab/subagents 下所有agent-*.jsonl"
+    },
+    {
+     "metric": "预先切好输入的效果（第50批对照）",
+     "value": "19个Fable代理只调用115次工具（平均约6次），1.81M token；推广Extract平均每个代理约55次工具、约194K token",
+     "evidence": "7106db47/workflows/wf_dd203c51-eda.json（Nodes阶段）对比 wf_153d2233-a7f Extract"
+    },
+    {
+     "metric": "需求中途变更造成的浪费",
+     "value": "政府专题两个工作流在用户中途改要求后被停：wf_feee59e0 0.88M、wf_fe53deec 0.48M；v2里的5个Draft代理报错",
+     "evidence": "workflows/wf_feee59e0-14e.json、wf_fe53deec-1fd.json（status=killed）；用户00:33、00:40两条消息"
+    },
+    {
+     "metric": "子代理自行渲染的页面图",
+     "value": "旧会话scratchpad里有1442张PNG，共989MB；题库本身已有questions目录PNG 3191张、evidence页图1749张",
+     "evidence": "find 3bd4f1ab-.../scratchpad -name '*.png'；在题库目录find计数"
+    },
+    {
+     "metric": "原型：书稿题名→题键",
+     "value": "375个主观例题块首轮解析出366个；9个“2023海淀期中（上/下）”暂按原样映射到BJ-2023-HD-QIZHONG，是否正确未核；去重后147道不同的题",
+     "evidence": "proto/title2key.py、proto/scan_get.py 对 专题小样/全书主观题抽取.json 的运行输出"
+    },
+    {
+     "metric": "原型：只读读取题库",
+     "value": "147道题 bank.py get --with-rubric 共7.1秒，输出634,861字符；按标题判断，137道有正式评分层，3道只有参考答案，7道都没有（粗判）",
+     "evidence": "proto/get_cache/*.md（147个）；scan_get.py 输出"
+    },
+    {
+     "metric": "原型：证据包耗时和去重",
+     "value": "人大：71个书内落位→38道题，1.9秒，讲义条目44条；政府：116→65，3.8秒，其中64道命中已有政府*.json抽取缓存；人民与公民：194→95，4.5秒；四权答题点：23→18，0.9秒；运行前后第51批DOCX的SHA都是83ba3711…，没有变化",
+     "evidence": "proto/out_*/packet.json；运行前后 shasum"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "取证由写稿代理自己回原件做，且按主体重复",
+     "cost": "推广Extract：40.8分钟，8.52M工作流token（275.8M原始cache-read），2402次工具调用；40.6%的抽取任务重复",
+     "evidence": "wf_153d2233-a7f Extract阶段；325个抽取任务对193个题键；bank.py 422次、ls+find 461次、grep 471次",
+     "root_cause": "工作流按主体切分任务，同一道题在党、人大、人民与公民等主体下分别被抽一遍；没有预先建好的题键→细则原文→页图路径包，每个代理都自己调bank.py、grep、渲染页面"
+    },
+    {
+     "name": "8个并发槽被抽取占满，写稿被推迟",
+     "cost": "第一个Draft晚开始约21分钟（党的抽取11:47:21就完成，Draft 12:08:17才开始）；Extract平均排队16.2分钟",
+     "evidence": "workflowProgress 中 queuedAt/startedAt；最多同时8个代理",
+     "root_cause": "44个抽取代理先进入队列，本可几秒完成的机械取证占用了模型并发槽"
+    },
+    {
+     "name": "主线程长时间空等",
+     "cost": "本会话约303分钟；推广那一轮139.2分钟",
+     "evidence": "timeline.tsv 各段空闲统计",
+     "root_cause": "后台工作流一旦启动，主线程就结束本轮等通知；没有规定这段时间预制下一批材料或逐个审已完成的主体"
+    },
+    {
+     "name": "证据分四次零散补取",
+     "cost": "政府样稿阶段先后做了细则抽取（12.3分钟）、关系取证（25.8分钟，4.03M）、穷尽抽取（26.9分钟，1.77M）、归类查漏；155个题键里82个被抽两次以上",
+     "evidence": "a2df代理、wf_8457ef18、wf_f8afd6bf、wf_e438430c 的时间窗",
+     "root_cause": "用户在样稿轮次里陆续提出“穷尽”“关系”“思维链条”等要求，每次都重新取证；第一次没有把全范围的原始细则一次备齐"
+    },
+    {
+     "name": "压缩上下文或新阶段开始后，主线程重新找路径",
+     "cost": "20:21—20:23约25次调用，其中一次到自己的会话jsonl里grep路径",
+     "evidence": "timeline.tsv 20:21:07—20:22:41",
+     "root_cause": "缺少本批“备料清单/manifest”，无法一眼看到题库、讲义、既有抽取在哪里"
+    },
+    {
+     "name": "主线程上下文太大，每次调用都很贵",
+     "cost": "每次请求读约700—900K缓存；239个内联python heredoc，123次定位类调用",
+     "evidence": "assistant usage统计；Bash分类统计",
+     "root_cause": "书稿抽取、题名→题键、主体筛题都在主线程临时写脚本，同一类抽取反复写（如18:57和19:50两次写DOCX抽取，00:26两次写题库对照）"
+    },
+    {
+     "name": "额度耗尽中断",
+     "cost": "179.2分钟停工",
+     "evidence": "15:15:03 “You've hit your session limit”",
+     "root_cause": "第50批用Fable跑19节分析加压缩，约380万token，把额度提前用完"
+    },
+    {
+     "name": "启动长工作流时需求尚未稳定",
+     "cost": "两个被停的工作流约1.36M token，另有5个Draft代理报错",
+     "evidence": "wf_feee59e0、wf_fe53deec 为killed；用户00:33、00:40又改要求",
+     "root_cause": "样稿还在逐轮修改时就启动多代理写作；机械备料和判断性写作没有分开"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "evidence_packet.py 证据包预制",
+     "kind": "script",
+     "what": "把“书稿例题块＋题库题级MD（含细则层、页图路径）＋既有抽取缓存＋讲义条目”一次汇成按题键去重的证据包，缺失项单独列出；由后台在主线程写本批时跑。",
+     "spec": "位置：母版 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/evidence_packet.py，用collab.py sync同步。原型已在 scratchpad/measure/prep_packet/proto/evidence_packet.py 跑通。\n命令：python3 evidence_packet.py --docx 父稿.docx --out 本批工程/输入/证据包/<选择器> 选择器 [--include-choice] [--cache GLOB]... [--teacher 班课原料_答题点术语总表.json] [--bank-coverage] [--alias alias.json]。\n选择器（互斥）：--subject 八主体之一（内置主体词表，可用--subject-rx覆盖）；--topic-regex RE（匹配例题全文）；--rubric-regex RE（只匹配【细则说明】和【答案落点】，材料翻译按答题点用）；--ask-regex RE（只匹配设问，如“设计|方案|建议|应如何”）；--keys 文件（每行一个题键或书内题名）。\n处理：\n① 父稿默认取 00_必修三最新审查稿/.review-manifest.json 里的docx，并核对SHA，不符时退出码2。\n② 用zipfile读document.xml，段落和表格都读；按样式1、21、HBMethod、31切块，记下部分、节点、考法、例题号、题名和四栏目；专题（第二部分）另标。\n③ 题名→题键：地区码 海淀HD、朝阳CY、东城DC、西城XC、丰台FT、石景山SJS、顺义SY、昌平CP、房山FS、门头沟MTG、延庆YQ、通州TZ，阶段码 一模YIMO、二模ERMO、期末QIMO、期中QIZHONG，高考写作BJ-年-BJ-GAOKAO；小问保留为sub；（上）（下）和其他特例查alias.json；在questions或questions_reused下找到文件才算解析成功。\n④ 按题键去重，每道题列出它在书中的全部落位。\n⑤ 每个题键只读调用 /usr/bin/python3 bank.py get KEY --with-rubric（cwd=题库scripts，只取stdout，超时60秒；禁止调用packet子命令），存为 q/KEY.bank.md。解析：正式评分层标题（含“正式评分”或“E1”且不含“候选”）、有无E3、候选层、学生层、needs_review、rubric_status、图像依赖页（逐条核对文件存在）、该卷 shared_conversion_state.json。\n⑥ --cache 指向的JSON里凡有key字段的记录，按题键挂到“旁证（未复核）”下，并记下来源文件。\n⑦ 讲义条目按主体或节点过滤后附上。\n⑧ 加--bank-coverage时，扫描题库中非选择题且文中出现《政治与法治》、又命中选择器的题，把书里没有的列入not_in_book_candidates（即09-23 00:26那段临时脚本的固化版）。\n输出：packet.json（机读，含run信息：父稿SHA、脚本版本、耗时）；packet.md（给代理读：每题一段，写题键、书内落位、设问、正式细则是否在库、需看的页图路径、缓存命中）；q/*.bank.md；missing.json，分类为 unparsed_title、no_question_file、no_exam_dir、alias_needed、no_formal_rubric_in_bank、ocr_or_needs_review_look_page、image_path_not_found、conversion_not_accepted、not_in_book_candidates。\n判定边界：选择器命中只算“候选”，是否给某主体或某答题点算分由模型判断；不提升证据等级；OCR候选层和未验收卷标“须看原页”。\n安全：--out 位于题库根目录下时拒绝运行（退出码2）；不写书稿和协作文件。\n退出码：0 正常；1 有缺失项（仍正常产出）；2 输入错误。\n性能：原型单主体1.9—4.5秒，全书147道题7.1秒。",
+     "expected_saving": "以推广Extract为基准（8.52M工作流token，275.8M原始cache-read，40.8分钟，2402次工具）：按题键去重可省约40%的任务；再参照第50批“预切输入后平均约6次工具/代理”，估计取证阶段token减少60%—75%，每次推广规模的批次省约5—6M工作流token，墙钟缩短约25—35分钟，写稿阶段不再排队等抽取。以上是估算。",
+     "risk": "主体词表会漏选或多选，要用--bank-coverage和人工补键兜底；bank.py的输出标题由题库线（Luna）维护，一旦改动，标志解析可能失效，所以保留原文、只宽松解析标题；“怎么写只用官方原话并看原页”仍然要求打开页图，页图读取不能全部省掉；旧缓存可能已被后续规则取代，只能当旁证；2023海淀期中（上/下）的映射未核。"
+    },
+    {
+     "name": "备料触发规则写入Skill",
+     "kind": "skill_rule",
+     "what": "规定何时后台预制证据包、子代理怎样使用证据包、抽取怎样按题键去重。",
+     "spec": "主条款写在 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/book-production-workflow.md「合批、增量和检查」一节，紧接batch_health.py那段之后，新增一段“备料与证据包预制”。另在SKILL.md取用表加一行指向scripts/evidence_packet.py，在AGENTS.md「代理与成本」加一句，并在user-requirements-ledger登记本次用户要求（“你多看看还有哪些工作可以用脚本来操作”）。条款内容：\nT1 用户一旦定下范围（如“这八个我觉得可以”“先做政府”“推广吧”），立即后台跑“整个范围”的证据包，不只跑当前样稿对象。\nT2 发布审阅稿、等用户审稿期间，后台跑下一批计划范围的证据包和页码→源稿映射。\nT3 启动多代理取证前必须先有证据包；抽取按题键分配，一题只抽一次，输出里按主体或答题点分列算分项，不按主体重复抽；抽取阶段代理数不超过并发上限8。\nT4 子代理提示词写明证据包路径，只对missing.json里列出的题回原件看页；不许自行渲染整卷页面到scratch。\nT5 父稿SHA变化或题库主清单更新时重跑（秒级）；证据包不代替逐题教学判断。",
+     "expected_saving": "主线程在压缩上下文后或新阶段开始时，不再需要约25次定位调用，也不用临时写抽取脚本；样稿阶段不再分四次零散取证。按每次调用读约0.8M缓存计算，一批约可省16—24M主线程cache-read（估算）。",
+     "risk": "规则要先由用户确认，再写入母版并sync；本任务只读，没有改Skill。另需与Codex的Luna工作流对齐同一套术语。"
+    },
+    {
+     "name": "harvest_extractions.py：把子代理的抽取结果固化为细则缓存",
+     "kind": "script",
+     "what": "从工作流子代理转录里收集已核过原件的StructuredOutput（题键×主体的算分表述、来源页、常见错误），存成可复用的缓存，供材料翻译、概念辨析和第52批修改直接引用。",
+     "spec": "输入：--transcripts '<项目>/<会话id>/subagents/workflows/*/agent-*.jsonl'（可多次指定），以及阶段白名单 Extract、Find、Classify（从同名.meta.json的workflowPhase读取）。处理：流式读取，找name=StructuredOutput的tool_use，取input中每条含key的记录；主体从meta的description（如extract:党:0-7）解析。输出JSONL，每行字段：key、title、subject、credited、items[layer,text,score_note]、source、source_nature、role、relations、names_in_material、errors_noted、agent_id、workflow、ts。按(key, subject)去重，保留最新一条，并记下冲突条数。放在本批工程/输入/细则抽取缓存.jsonl，或由接管方决定写进 协作/题源覆盖台账/。本会话可收集约472条（325+80+67），几秒完成。",
+     "expected_saving": "后续按答题点或概念重新取证时，可先用已核过原件的记录，只需补缺；避免再出现“155个题键里82个被抽两次以上”的情况。",
+     "risk": "缓存记录代表当时的规则，后来的用户纠正（如四权一串写）可能让旧结论失效，只能当旁证，引用前要按新规则复核；scratchpad会被清理，转录文件也不是正式存档，要尽快收集。"
+    },
+    {
+     "name": "page_source_map.py：PDF页码→源稿映射",
+     "kind": "script",
+     "what": "每次渲染后自动生成“页码→DOCX段落→源稿（专题小样md行号 / 定稿json键 / 例题题键）”索引，让用户“第N批＋PDF页码”的意见直接定位到源稿。",
+     "spec": "输入：--pdf 同版PDF --docx 同版DOCX [--md-dir 专题小样] [--insert-log 构建/02a_主体专题并入.json]。处理：用fitz逐页取文本，每页前3个标题或长段与DOCX段落模糊匹配（前30字归一化后比对）；DOCX段落再按insert_topics的并入记录或逐行比对md，映射到源文件和行号；例题段落给出题键。输出：构建/页码源稿映射.json，格式为[{page, paras:[{idx, style, head, source_file, line, key}]}]；页脚页码与物理页不一致的标出。只读，秒级到分钟级。",
+     "expected_saving": "第51批专题三约占两百多页，用户逐页提意见时，主线程不必每次重新搜索PDF和md；参照14:00那次临时fitz标题定位和政府十轮修改，每轮可少若干次定位调用。",
+     "risk": "同一句话在多处出现时会匹配到多个位置，要全部列出而不是只取一个；表格和图片页可能没有可匹配的文字。"
+    },
+    {
+     "name": "专题稿机检（batch_health加--md模式，或单独写topic_lint.py）",
+     "kind": "batch_health_check",
+     "what": "专题md并入书稿前做确定性检查，把政府十轮修改里能机械判断的用户规则变成门槛。",
+     "spec": "输入：一个或多个 专题小样/{主体}_主体专题小样.md。检查项：竖杠“｜”和“|”；禁用词（答题公式、套路、口诀、秒杀、模板、做法题、老师讲义、解题思路标签）；例N从1连续，正文“见例N”“（例N）”都能对上；每个例题块齐全（材料、设问、思维链条、答案落点、细则、学什么）；基本框架的上位、下位、效果每行一句；思维链条里不出现“①→”或步骤标签；每个例题标题能解析成题键且在evidence_packet的packet.json中有正式细则层，否则列出。输出JSON，接入batch_health.py现有的PASS/FAIL报告格式。",
+     "expected_saving": "推广Assemble阶段的7个代理用了46次Bash做自检，主线程13:57:53又复查一遍；这些可由一个秒级脚本代替，第52批每轮修改后可反复跑。",
+     "risk": "只覆盖机械层；像“病句”“结构性问题”（如履行职能里混入依法行政）仍需主代理判断。"
+    },
+    {
+     "name": "主线程等待期间的固定动作",
+     "kind": "procedure",
+     "what": "把约303分钟的空等换成预制和逐步审阅。",
+     "spec": "① 启动长工作流后，主线程先用run_in_background跑下一批的evidence_packet和page_source_map，再结束本轮。② 工作流按主体流水推进时，前面主体一完成（本次最早的政协Assemble在13:33:42完成），主线程就先审这一个主体的md，不必等全部结束。③ 样稿阶段用户还在逐轮改时，不启动多代理写作，只跑脚本备料（避免本次两次被停的约1.36M浪费）。④ 发布后等用户审稿期间，按计划预制第52批材料：八主体证据包、专题三的页码→源稿映射、政府十轮规则清单对七主体的机检结果。",
+     "expected_saving": "推广那类轮次原本空等139分钟，可把原计划要在下一批开头花的备料时间提前做完；具体能省多少，取决于用户审稿节奏，无法预先量化。",
+     "risk": "后台任务和主线程不能同时写同一文件；预制结果落在本批工程/输入，不写共享书稿和审阅入口。"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/timeline.tsv",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/rollout_extract_tools.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/rollout_extract_keys.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/evidence_packet.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/title2key.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/scan_get.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/scan_bank_status.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/sample_get.md",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/get_cache/（147个 BJ-*.md，bank.py get 的只读输出）",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/out_人大/packet.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/out_政府/packet.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/out_人民与公民/packet.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/prep_packet/proto/out_fourrights/packet.json"
+   ],
+   "open_questions": [
+    "标准备料清单（依据第50、51批实际取用）：①身份：接管.json的owner/phase、collab.py status、中央当前状态.json的working_head SHA、审阅入口.review-manifest.json的SHA；②用户本批原话与PDF页码，先登记到user-requirements-ledger；③规则：style-spec相关条目、book-bixiu-3-current对应段落、已认可的样板（如政府_主体专题小样.md）；④父稿切片：按节导出的txt（第50批的输入/）或全书主观题抽取/全文JSON，段落和表格都要读；⑤题单：选题→题键，去重，列出书内全部落位；⑥细则原文：bank.py get --with-rubric，正式评分层、页图路径、转换状态；⑦讲义：18_班课原料转写下的术语总表和真题红笔批注；⑧旁证：既有抽取JSON；⑨缺失项清单；⑩渲染后的页码→源稿映射。其中④—⑨都可以由evidence_packet.py在几秒内产出。",
+    "第51批之后的计划（依据ledger中SUBJECT-ROLLOUT、ROUND2-ORDER、ROUND2-TRANSLATE和第51批交接说明）。第52批：按用户对第51批的意见修改七个新主体专题。政府样稿当时用了约14条用户消息、保存了v1—v12共12个版本，才定型。所需材料：八主体证据包、专题三的页码→源稿映射、政府十轮规则清单对七主体的机检结果。第53批：材料翻译（每个答题点下，只收正式评分给该必修三答题点算分的真题材料说法，按本质分类）和概念辨析（只收教材和评分里真实存在的区分）进书；再做情境、考法、素养、能力、题型专题，重点是“设计方案”这类设问和“解决实际问题”这种能力；反推已由用户搁置（“先不管反推这类了”），外推不做。所需材料：第一部分19节常见表述答题点清单（第50批 定稿/*.json）、按答题点的--rubric-regex证据包、选择例题错项和附录二题肢判断A1/A2、细则里的“学生问题/常见错误”原文、按--ask-regex选出的设计方案类设问题单。",
+    "接管.json当前是phase=offered，已交给codex（updated_at 2026-09-23T21:04 UTC），所以第52批由Codex还是Claude来做尚未确定；证据包脚本和触发规则需要两边都适用。",
+    "2023海淀期中（上）/（下）在题库里只有一个BJ-2023-HD-QIZHONG（Q1—Q23）；上下两卷是否题号重叠、能否直接映射，未核，涉及9个书内题块。",
+    "会话额度按原始cache-read还是按工作流口径token计算，不确定，所以节省估算两种口径都给了；本报告中的节省数字都是估算，不是实测。",
+    "细则抽取缓存要不要放进共享的协作/题源覆盖台账，由接管方和用户决定；本任务是只读，所以没有写入。",
+    "用户转来的原问题（“PDF或Word转MD能不能也用脚本”）属于题库线：题库scripts下已有03_extract_pdf.py、04_extract_docx.py、05_extract_pptx.py、08_visual.py、09_split.py、10_pair.py等转换脚本，模型主要还在做视觉核对。那一线当前写权在Codex Luna，不在本次测量范围内，未评估。",
+    "第43—48批不在本会话3bd4f1ab里，所以没有测它们的备料时长；要测需另读3dbdec3a、f032ba69、3b729a0b等会话的jsonl。"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "必修三最贵的消耗不在\"写稿\"，而在两类本可由脚本承担的工作。一类是子代理的半确定性工作：逐页看图、回原件抽细则并逐字转抄、比对与复核、机械体检、题库核验。必修三子代理共约148.0M新增token（input+cache_creation+output），其中56%（82.4M）属于\"脚本出候选、模型复核\"，真正只能由模型完成的写稿、教研判断和手写转写占41%（60.2M）。另一类是主线程的机械动作：主线程每次调用要读约465K–524K token的上下文（3bd4f1ab共544次调用，cache_read 285M），它却用一次性内联Python做查题、查细则（约200次）、渲染/目录/像素比对（约109次）、查看DOCX的XML（约67次）、轮询工作流（约90次）、同步Skill（约44次），每一次都要付约0.5M的cache_read。一次性脚本同质化严重：发布脚本每批复制一份，三份各约545行，只差10–11行；第44批render44_1…8是8份12行的近似副本；Codex那边有约20份extract_N_blocks；相似度≥0.6的脚本聚成21簇，涉及62个脚本。用户问的PDF/Word转MD，底层抽取本来就是DeepSeek写的脚本（03_extract_pdf、04_extract_docx、05_extract_pptx等）；题库线花掉的29.8M新增token用在逐卷审校修补和复核上，其中文字保真、表格、链接和覆盖这几项约占修复缺陷数的46%（26+84+148/567，不含其中图题），可以改成脚本检出。排行第一的是看页前置筛查脚本：历史上约6,009次看页，按关键词粗分，88%的问题是文字或版面层面，脚本能直接检出。但整书终审100%逐页看图的规则不能用脚本替代，需要用户裁定阶段稿能否放宽。",
+   "numbers": [
+    {
+     "metric": "会话归属（已核实）",
+     "value": "3b729a0b=必修三第43–48批（09-15至09-21 UTC，主线程Fable 5.1，标题虽为“配置实测”，09-15T05:59起转入必修三）；3bd4f1ab=必修三第49–51批（Opus 5.5）；7106db47/62597da3/da6d7851/b8067562 是3bd4f1ab的前缀副本；13295440=题库线；f032ba69=必修二收尾，3dbdec3a是它的前缀副本",
+     "evidence": "各会话 custom-title.json 与人类消息首条；按 message.id 去重后，bx3_B 共544次调用，全部落在3bd4f1ab（542+2 synthetic），bx2 共237次，全部落在f032ba69（out/main_usage_dedup.json）"
+    },
+    {
+     "metric": "必修三子代理总量",
+     "value": "1,832份子代理jsonl；新增148.0M token（3b729a0b 100.85M，3bd4f1ab 34.95M，7106db47 12.01M，62597da3 0.23M）；cache_read约3.30B",
+     "evidence": "scan_sub.py 汇总 out/sub_*.jsonl（按每份jsonl内 message.id 去重后累加 usage）"
+    },
+    {
+     "metric": "必修三子代理按确定性划分",
+     "value": "必须模型60.2M（41%），半确定82.4M（56%），确定5.5M（4%）",
+     "evidence": "classify.py 按“工作流名/阶段”人工映射后聚合，out/category_agg.json；映射表见 classify.py 的 MAP"
+    },
+    {
+     "metric": "主线程每次调用的平均上下文",
+     "value": "必修三R43-48约465K，R49-51约524K，题库线约520K token/次",
+     "evidence": "cache_read÷去重调用数：165.1M/355、285.0M/544、190.5M/366（out/main_usage_dedup.json）"
+    },
+    {
+     "metric": "3bd4f1ab主线程工具调用",
+     "value": "Bash 414次，其中内联python 238段，代码共231,715字符；Bash结果共786,036字符进入上下文；Read 50次，其中40次是页面PNG",
+     "evidence": "out/main_3bd4f1ab.json 与 analyze_main.py 输出"
+    },
+    {
+     "metric": "3b729a0b主线程工具调用",
+     "value": "Bash 393次，其中内联python 175段，代码共234,951字符；另有build_r45.py运行58次、toc_pages.py 44次、render_pages.py 25次；主线程读PNG 56张",
+     "evidence": "analyze_main.py 输出（py_file_runs）"
+    },
+    {
+     "metric": "主线程重复动作（按描述正则首个命中计，属估算）",
+     "value": "查题/查细则/查材料：200次（R43-48 74次，R49-51 126次），估算cache_read约100M；渲染/目录/像素比对/拼页：109次，约54M；查看DOCX XML/样式：67次，约33M；工作流进度与结果：90次（含题库线18次），约44M；Skill规则登记与同步：44次，约22M",
+     "evidence": "out/main_patterns.json（估算方法：调用次数×该会话平均上下文）"
+    },
+    {
+     "metric": "逐页看图（必修三）",
+     "value": "278个Sonnet子代理，新增19.75M token，cache_read 229.4M；约6,009次看页（R45系列2,724页、bx3-pagecheck 5轮2,737页、第49批修订5共548页）；工作流墙钟合计约160.6分钟",
+     "evidence": "out/proposal_hist.json(P1)；各轮页数取自 构建/页面检查*/batch_*.json、bx3-pagecheck 工作流日志“看图 537/531/586/500/583 页”、09_逐页初检_Sonnet12份.json"
+    },
+    {
+     "metric": "每页看图成本差异",
+     "value": "bx3-pagecheck（每代理25页）约2.25K新增token/页；第49批修订5（要求一次一页、全分辨率、禁止缩略图）约7.1K/页",
+     "evidence": "6.16M/2,737页；第二次完整运行 wf_fdd910b9 为3.89M/548页"
+    },
+    {
+     "metric": "bx3-pagecheck发现的问题中脚本可检出的比例",
+     "value": "247条中约218条（88%）属文字或版面可检：后台词/细则原话81条、标题孤悬/分页66条、留白33条、标签24条、编号13条、颜色1条；需要看图的图片9条、表格8条，另有其他12条",
+     "evidence": "5次 bx3-pagecheck 的 wf_*.json result.severe/minor 按关键词粗分，存在误分"
+    },
+    {
+     "metric": "第49批修订5逐页初检结果",
+     "value": "548页只查出22条：17条 abnormal_blank（info，均判为设计允许），1条表格两端对齐（medium），2条来源列空白/教材名，1条图片说明",
+     "evidence": "第49批收尾_Claude_20260922/修订5/09_逐页初检_Sonnet12份.json"
+    },
+    {
+     "metric": "版面预筛原型（只读，第51批776页PDF）",
+     "value": "含正文图（面积>2%）61页，填充<55%的8页，末行疑似标题13页，文本span重叠6页，并集≤88页（约11%）；另发现p385/p423的“供参考”其实在题面材料里，说明文字检查必须带样式、在DOCX上做",
+     "evidence": "scratchpad/measure/script_mining/proto_layout.py 运行结果"
+    },
+    {
+     "metric": "抽细则/取题面类子代理",
+     "value": "147个，新增20.41M token，cache_read 631.7M，输出387K；其中第51批主体专题推广 Extract 阶段44个代理调用Bash 1,853次、输出175K（逐字转抄细则）",
+     "evidence": "out/proposal_hist.json(P2)；工作流 wf_153d2233 脚本规定 items 须“逐字抽出算给本主体的全部表述”"
+    },
+    {
+     "metric": "第47批质量体检",
+     "value": "130个代理，新增12.93M token，原始发现719条；归并后的高频模式中确定性可检的有：工程痕迹/来源外露25+19条，占位符⇓或（见图）7条，【答案落点】续行漏标签17+8条，全半角混用或多余空格9+17条，题数与分值统计矛盾3+8条",
+     "evidence": "3b729a0b/workflows/wf_9a2f3aab-714.json result.synthesis"
+    },
+    {
+     "metric": "题库线审校与复核",
+     "value": "161个代理，新增29.81M token，cache_read 1.37B；审题1,162次，看源页2,316页，修复缺陷567条（按首个命中关键词粗分：图/图表277条，链接/资产/格式148条，表格84条，缺漏文字26条，细则层12条，分值/题号7条，OCR错字1条，其他12条）",
+     "evidence": "out/proposal_hist.json(P10)；receipts/claude_bank_20260922/*/*/findings.json 汇总"
+    },
+    {
+     "metric": "题库源页类型",
+     "value": "129份PDF共1,576页：文字层626页、混合166页、扫描或空页784页；另有DOCX 91份",
+     "evidence": "DeepSeek_政治题库资料库_20260918/evidence/*/meta.json 的 page_classes"
+    },
+    {
+     "metric": "一次性脚本数量与同质度",
+     "value": "Claude候选29个.py，共4,370行；第44批格式返工自写38个（1,560行），另有341个vendored字体库文件；Codex候选180个（37,393行）。相似度≥0.6的聚成21簇，涉及62个脚本",
+     "evidence": "scripts_sim.py 输出与 out/scripts_inventory.json"
+    },
+    {
+     "metric": "发布与构建脚本逐批复制",
+     "value": "publish49_review_claude.py、publish_b50.py、publish_b51.py 各545–548行，两两只差10–11行；build_b50 与 build_b51_step1 只差5行；render_r5/b50/b51 只差3行；render44_1…8 共8份12行近似副本",
+     "evidence": "diff 计数（协作/候选/Claude/第49–51批目录、第44批格式返工/）"
+    },
+    {
+     "metric": "中止或失败的工作流",
+     "value": "11次，已消耗新增8.07M token（其中第49批修订5页审中止一次就用了3.74M）",
+     "evidence": "out/workflows.json 中 status≠completed 的记录"
+    },
+    {
+     "metric": "用户亲自抓到、本可由脚本检出的问题",
+     "value": "目录无页码（09-15T23:59 UTC），题肢“不选”（09-16T00:37），【编者校注】（09-16T02:04），知参表监被拆开写（09-23T02:27），“答题公式”字样（09-23T06:32），条目后跟试卷信息（09-15T20:04）",
+     "evidence": "各会话人类消息，out/main_*.json human_msgs"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "主线程用超大上下文做机械小事",
+     "cost": "3bd4f1ab 共544次调用、cache_read 285M；其中查题查细则126次、渲染/目录/像素49次、XML查看33次、Skill同步31次、进度查询24次，估算合计约136M cache_read。3b729a0b 另有约140M",
+     "evidence": "out/main_patterns.json；内联python 238段（231,715字符代码）；Bash结果786,036字符进入上下文",
+     "root_cause": "没有稳定的查询与流水线脚本，每次在主线程临时写python并把大段输出打印进上下文；上下文约0.5M，每多一次工具调用成本都很高"
+    },
+    {
+     "name": "逐页看图覆盖了本可由文字或版面检查发现的问题",
+     "cost": "必修三278个代理、新增19.75M token、约6,009次看页、约160分钟墙钟",
+     "evidence": "bx3-pagecheck 247条中约88%可由文字或版面检出；第49批修订5共548页，只有1条medium；每页成本7.1K对2.25K",
+     "root_cause": "没有版面预筛；提示词禁止缩略图、要求一次一页全分辨率；规则要求100%逐页看图（project-rules.md 第8条、视觉门4）"
+    },
+    {
+     "name": "模型逐字转抄细则，再由另一个模型逐字复核",
+     "cost": "抽取类147个代理、新增20.41M token（输出387K）；引文复核类94个代理、新增8.07M token",
+     "evidence": "wf_153d2233 的 Extract 阶段 schema 要求 items 逐字抽出；gov-sample-audit 的 verbatim 代理把PDF渲成图片后高倍看图逐字核对",
+     "root_cause": "细则文本没有预先分段编号，模型只能自己抄原文，脚本也就无法直接核对“是否逐字”"
+    },
+    {
+     "name": "机械体检交给130个Sonnet",
+     "cost": "新增12.93M token，墙钟120.7分钟（整个第47批体检工作流）",
+     "evidence": "调性工程痕迹镜头里全半角、标签续行、后台词、编号计数等模式；batch_health.py 迟至2026-09-23 13:59才建立",
+     "root_cause": "确定性规则没有编进脚本，而是写在提示词里让模型逐段通读"
+    },
+    {
+     "name": "一次性脚本逐批复制",
+     "cost": "21簇、62个近似脚本；发布脚本约545行，每批重写或复制一次",
+     "evidence": "scripts_sim.py；publish49/b50/b51 只差10–11行",
+     "root_cause": "脚本放在批次目录里而不在Skill的scripts/下，也没有按配置驱动的统一入口"
+    },
+    {
+     "name": "题库核验每卷都重新推导原生文字",
+     "cost": "161个代理、新增29.81M token、cache_read 1.37B",
+     "evidence": "567条修复中表格84条、链接/资产/格式148条、缺漏26条；源页中有626页是文字层",
+     "root_cause": "缺少文字层逐字差异、2b覆盖和链接的机械lint，工位要自己读原件逐项比"
+    },
+    {
+     "name": "整轮工作流中止或返工",
+     "cost": "11次，新增8.07M token",
+     "evidence": "out/workflows.json：r5-page-review 中止一次3.74M，gov-topic-chain 三个版本中两次被中止",
+     "root_cause": "需求在运行中改变，扇出前没有先试点1–2项；这部分主要是流程问题，不是脚本能解决的"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "TOP1 page_prescreen.py 看页前置筛查",
+     "kind": "script",
+     "what": "在逐页看图之前，先由脚本做版面与文字层检查，只把需要看的页交给视觉代理",
+     "spec": "位置：/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/page_prescreen.py（改母版后按用户规则登记台账并执行collab sync）。命令：/usr/bin/python3 page_prescreen.py --pdf 本批.pdf --docx 本批.docx [--changed 07_像素比对.json] [--base-pdf 上批.pdf] --out prescreen.json。用PyMuPDF逐页计算：fill=最后一个非页脚文本块底边/页高；content_images 用 get_image_info，面积>2%，并判断bbox是否越出版心；table_rules 统计绘制线段与矩形数，并判断表格是否触底续页；last_line_heading 判断本页最后一行是否等于DOCX中heading或标签段的文字；span_overlap 为同页文本span相交>30%；font_whitelist 检查span字体是否在宋、楷、黑、Times之外，在外即疑似缺字被替换；页脚连续性复用batch_health。文字类检查在DOCX上按样式跑（直接调用batch_health），再映射回页码。输出每页flags；needs_eyes = changed∩(图|表|任一flag) ∪ 所有flag页；fill<0.55且下一页首块是图、表或材料框时标design_allowed_candidate，但仍然列出。另给无图页生成4-up、150dpi拼页清单。退出码0/1。",
+     "expected_saving": "历史必修三看页新增19.75M token。若用户同意阶段稿只看needs_eyes（第51批原型为≤88/776页），可省约75–80%，即约15M token，每轮墙钟从约13分钟降到约3–4分钟。若保留100%看图，改为每代理25页中分辨率看图并附flag清单，也能把每页成本从7.1K降到约2.25K",
+     "risk": "整书终审和送印前的100%逐页看图（project-rules.md 第8条、视觉门4）不能由脚本替代；图片糊或放错、表格单元格内截断、页面密度等仍须看图。脚本只出候选，不能判PASS。PDF文字层会误报题面材料（第51批p385/p423的“供参考”），所以文字检查必须在DOCX上按样式做。是否放宽阶段稿看页范围须用户裁定"
+    },
+    {
+     "name": "TOP2 qpack.py 题面加细则分段取数包",
+     "kind": "script",
+     "what": "按题键批量取出题面、设问、分值和E1/E3，把细则切成带编号的片段；模型只回片段编号和分层，脚本再按原文逐字还原",
+     "spec": "位置：Skill的scripts/qpack.py。输入：--keys keys.txt，或 --from-book 全书主观题抽取.json --subject 政府 --aliases aliases.json（主体称呼别名表）。内部只调用 /Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/scripts/bank.py get <key> --with-rubric，严禁调用packet（它会写packets/）。2020–2025高考独立细则PDF用一次性建好的“题→细则页”表抽文字层。输出JSON：[{key,title,score,stem,prompts,e1:[{seg:'E1-3',text,score,alt,source_file,page}],e3:[...],source_nature,extraction_status,needs_page_view(candidate_ocr或乱码层),alias_hits:[{seg,alias}]}]。子命令 render --picks picks.json（模型只回{key,seg_ids,layer,group_hint}）按原文逐字输出供专题使用的文字，并附出处。结果写到调用方指定的scratch或候选目录。",
+     "expected_saving": "历史抽取类147个代理共20.41M新增token、输出387K。代理不必再在题库里摸索（第51批Extract阶段1,853次Bash），也不必逐字转抄，预计省40–60%，约8–12M；主线程约200次查题查细则可压到每批1–3次，估算省约100M cache_read",
+     "risk": "判断细则是否给本主体算分，以及地位/上位/下位/效果分层，属教研判断，必须保留给模型和主代理；OCR候选或乱码文字层必须看原页；别名表只是提示，材料里的称呼仍要模型确认；脚本只能原样复制，不得改写，以符合“怎么写只用官方原话”"
+    },
+    {
+     "name": "TOP3 bank_md_lint.py 题库转写机械核验（回答用户第一问）",
+     "kind": "script",
+     "what": "PDF/DOCX/PPTX转MD的底层抽取已经是脚本；再把核验层中确定性的部分脚本化：文字层逐字差异、2b覆盖、表格、链接、结构、轮次差异",
+     "spec": "位置：题库scripts/（写权属Codex Luna，须由该线主控实现或授权）。命令：/usr/bin/python3 bank_md_lint.py --exam BJ-XXXX --candidate receipts/.../cN/candidate --out receipts/.../cN/lint.json，只写receipts，BANK只读。检查项：(a) text_fidelity：对文字层PDF页（fitz get_text）、DOCX与PPTX的XML，与MD的题面/选项/设问做规范化逐字diff，列出页码和偏移；用CJK比例和替换字符识别乱码层，一律转交看图。(b) coverage_2b：每个源页或幻灯片的8-gram覆盖率≥0.9，否则列页。(c) tables：DOCX/PPTX原生表格自动生成Markdown表作候选；PDF页中直线多于N条而MD里没有表格的标出。(d) links：图片与MD链接都能解析，资产存在并记录SHA。(e) structure：题号连续，选择题A–D齐全，小问分值之和等于题分，E1/E3小节标签齐全。(f) round_diff：cN与cN-1做文件级和行级diff，取代Haiku的mechanical diff代理。输出路由：只有图（figure_objects.jsonl）、扫描页（page_classes为scan_or_empty）和不一致项交给模型。",
+     "expected_saving": "题库审校与复核历史上用了161个代理、新增29.81M token；表格、链接/资产、缺漏文字加起来约占缺陷数的46%（26+84+148/567，不含其中图题）。预计可省30–40%，约9–12M，Haiku机械diff代理可全部取消",
+     "risk": "共享题库和主清单的写权属于Codex Luna（BANK_ACTOR），本脚本不得写共享库；图的结构化转写、手写、扫描页仍须模型；文字层可能是乱码（如2026顺义一模），必须能识别出来并转交看图；工位说明里保真规则第6条（难辨字不猜）不能被脚本自动“修正”"
+    },
+    {
+     "name": "TOP4 batch_health.py 增项（书稿确定性lint）",
+     "kind": "script",
+     "what": "把第47批体检和用户纠错中的确定性模式编进现有体检脚本，替代“调性工程痕迹”镜头和其他镜头中的机械部分",
+     "spec": "在 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/batch_health.py 增加：① 扩充后台词：细则原话、正式细则、原细则、评分标准（非细则说明样式时）、教师版、参考答案（非题面时）、阅卷、编者校注、校注、样稿，判FAIL；② 占位符：⇓、（见图），以及材料段以“：”结尾而下一段是标签的，判FAIL；③ 【答案落点】续行②③缺标签或样式不符，判FAIL；④ 标签行或题号中全半角混用、CJK之间多余空格，判WARN；⑤ 同一句只出现知情权、参与权、表达权、监督权中的1–3个，判WARN（四权应一串写）；⑥ 题肢单练出现“不选”，判FAIL；⑦ 细则说明中各点分值之和与题目标注分值不符，判WARN；⑧ 同一题键出现在多节时列出；同节常见表述规范化后相似度>0.9，判WARN；⑨ 必修一、必修二、选必关键词观察表（中国式现代化、两步走、四大优势、最高理想、行政诉讼等），判WARN。输出沿用现有JSON和退出码。",
+     "expected_saving": "第47批体检130个代理共12.93M新增token；可替代一个完整镜头，外加四栏目、选择题肢镜头的机械部分，每次全书体检预计省约3–5M。另外可避免6类确定性问题再由用户亲自抓到（每次都要多一轮返工）",
+     "risk": "题面材料里的合法用词会误报，所以必须按样式豁免；必修一边界、合并同义、归类是否恰当仍属教研判断，WARN项只能提示，不能自动改稿"
+    },
+    {
+     "name": "TOP5 drill_check.py 选择题与题肢答案一致性",
+     "kind": "script",
+     "what": "由答案键推出“被选题肢=正确”，校验逐肢解析、单练标签、答案键来源是否一致；只把未被选的题肢交给模型，判它是“错误”还是“材料未体现”",
+     "spec": "位置：Skill的scripts/drill_check.py。输入：--docx 本批.docx [--bank]（调用bank.py get 取E3答案键，只读）。解析每个选择例题的①–④、A–D组合、【答案】字母、逐肢解析标签，以及附录单练每条的标签和来源列。检查：答案字母→组合→被选集合，被选题肢在解析与单练中必须标“正确”；未被选的输出“待判”清单；单练出现“不选”判FAIL；同一题肢在例题和单练中的标签必须一致；【答案】与题库E3不一致的列出；来源列空白判WARN（对应第49批修订5 p556/557的发现）。输出drill_check.json。",
+     "expected_saving": "历史题肢重建、判定复核、题肢边界、选择题边界、补核答案共65个代理，新增9.17M token；预计省30–50%，约3–4.5M，并从机制上杜绝“不选”这类错误",
+     "risk": "未被选题肢是知识性错误还是“正确但材料未体现”，以及必修一边界，都是教研判断，必须保留；教师版答案键可能来自OCR，不一致时须看原页"
+    },
+    {
+     "name": "TOP6 verbatim_check.py 引文逐字核对",
+     "kind": "script",
+     "what": "对专题稿和例题块中的引号引文、细则段和分值做脚本逐字核对，只有找不到的和OCR来源的才交模型看页",
+     "spec": "位置：Skill的scripts/verbatim_check.py。输入：--draft 专题.md或.docx --qpack qpack.json [--lecture 18_班课原料转写/逐页转写.json]。抽出所有“…”引文，以及细则段、答案落点中带“（N分）”的片段，按所属例题题键去E1、E3、题面、讲义文本中查找，结果分为exact、normalized（全半角、空白、标点变体）、fuzzy≥0.9、not_found四类，并核对分值与原文一致。输出verbatim.json。",
+     "expected_saving": "历史引文复核类94个代理共8.07M新增token；预计省50–70%，约4–5.5M；也可减少“引文不逐字→返工”这一轮",
+     "risk": "扫描件或乱码文字层（如2026丰台期末、2024东城一模）仍须看页；“归纳是否超出细则”（gov-sample-audit的claims部分）是教研判断，脚本不做"
+    },
+    {
+     "name": "TOP7 batch_pipeline.py 批次统一流水线",
+     "kind": "script",
+     "what": "用一个按配置驱动的脚本取代每批复制的build、render、toc、promote、publish脚本",
+     "spec": "位置：Skill的scripts/batch_pipeline.py，配置文件为批次目录下的batch.json：{batch,src_docx,final_name,prev_pdf,review_entry,render_env}。子命令：number（重新编号、考法计数）；toc（渲染→定位标题页→回填PAGEREF缓存→再渲染→用batch_health校验toc_vs_pdf）；render（LibreOfficeDev加私有fontconfig，即记忆中的render.sh路径）；pixdiff --base（输出变化页清单，支持位移诊断）；publish --dry-run或--apply（包装Codex的publish49_review.py参数契约，默认dry-run）；promote。只写候选目录；--apply必须检测到已存在的技术验收记录并核对父SHA，否则拒绝执行。",
+     "expected_saving": "主线程渲染/目录/像素类109次、发布/晋升约23次；预计能减掉60%的调用，估算省约35M cache_read；每批还省去重写或复制约500行发布脚本所需的输出token，并减少复制中的遗漏",
+     "risk": "publish和promote会改共享审阅入口，必须默认dry-run，由主代理在验收后手动--apply；collab.py的accept/offer/checkpoint不得自动化；不得破坏Codex发布脚本的只读约定"
+    },
+    {
+     "name": "TOP8 book_index.py 书稿结构索引与块提取",
+     "kind": "script",
+     "what": "每批一次性把DOCX导出为带节点、例题号、题键、栏目标签的JSONL，并提供按标题或题键抽块的功能，取代临时XML dump和Codex约20个extract_N_blocks脚本",
+     "spec": "位置：Skill的scripts/book_index.py。子命令：dump --docx X --out idx.jsonl，字段为{pid,style,text,h1,h2,h3,example_no,qkey（从例题标题解析题源）,label,in_table}，并记录源SHA；nodes --out dir/，按节输出“[样式] 文本”（替代all_nodes.txt和chunk_XX.txt）；chunks --max-chars 70000；extract --titles t.txt --out blocks.docx或.txt，保留样式和媒体，同名标题按出现顺序对应；find --qkey BJ-2025-..., 返回所有位置。",
+     "expected_saving": "主线程XML/样式查看67次（估算约33M cache_read）以及约33段临时dump脚本；子代理引用固定文件（all_nodes.txt被读193次）；每批预计少20–40次主线程调用",
+     "risk": "文本框、表格、图片等结构差异会导致漏段，须把表格单元格文字标出；块边界规则要与Codex现有做法一致；每份输出都要带源DOCX的SHA，防止读到旧版"
+    },
+    {
+     "name": "TOP9 apply_replacements.py 整段替换表校验与应用",
+     "kind": "script",
+     "what": "对“整段精确替换表”先做机械校验，再应用到候选副本，替代复核代理中的机械部分",
+     "spec": "位置：Skill的scripts/apply_replacements.py。输入：replacements.json [{old,new,reason,loc}]，--docx。校验：去掉“[样式] ”前缀后，old须与某一整段完全相同且只出现一次；默认不改题面原文样式段；new须通过batch_health的文字规则；多条替换之间不得链式冲突。输出逐条pass/fail；--apply --out candidate.docx 按段落替换并保留首run格式，其他zip成员保持字节不变，最后输出替换前后差异报告。按记忆中的做法，在安全网前后各跑一遍。",
+     "expected_saving": "历史第48批修正复核加第48批规则审定共159个代理，新增5.61M token；预计省约50%，约2.5–3M，并避免替换应用失败后的返工",
+     "risk": "新文本内容是否正确（材料补全是否保真、表述修正是否恰当）仍须模型和主代理判断；run级格式（加粗、颜色）可能丢失，必须做样式diff"
+    },
+    {
+     "name": "TOP10 wf_digest.py 工作流进度与结果摘要",
+     "kind": "script",
+     "what": "一次调用就能看清工作流各阶段完成、失败、中止情况以及结构化结果，取代主线程反复轮询和解析journal",
+     "spec": "位置：Skill的scripts/wf_digest.py，只读。命令：wf_digest.py --session <id> [--run wf_xxx] [--phase X] [--export out.json]。读取 ~/.claude/projects/-Users-wanglifei-Desktop-gpt-claude-----/<sid>/workflows/wf_*.json 以及 subagents/workflows/wf_*/agent-*.meta.json 和 .jsonl。输出一张表：每阶段done/failed/killed数量、token、verdict计数、失败label与最后一条错误；--export 把各label的StructuredOutput结果落盘，供后续脚本使用。等待时用Monitor的until循环，不要手动轮询。",
+     "expected_saving": "主线程进度与结果类调用90次（估算约44M cache_read，结果约129K字符）；预计省约70%",
+     "risk": "风险低；失败代理是否重跑由主代理决定，不得自动重试"
+    },
+    {
+     "name": "附加A skill_rule.py Skill规则登记与同步",
+     "kind": "script",
+     "what": "把“登记台账→编进对应规则文件→恢复只读→collab sync→校验三处副本SHA”合并为一次调用",
+     "spec": "命令：skill_rule.py add --ledger-text ... --file references/style-spec.md --section '## …' --rule-text ... [--memory memory/x.md]。流程：chmod u+w，追加台账条目（日期和编号），在指定章节下插入规则（按哈希幂等），恢复只读，执行 python3 Claude协作同步_20260914/collab.py sync，校验母版、.claude/skills、00_共同资料三处SHA，最后打印改了哪几处供回复用户。遇到人工修改冲突时中止并报告，不覆盖；不执行accept/offer/checkpoint。",
+     "expected_saving": "主线程Skill同步类44次（估算约22M cache_read），每条规则从2–3次调用降为1次",
+     "risk": "把用户要求提炼成规则文字仍由主代理负责；遇到冲突时必须停下，符合CLAUDE.md“不覆盖人工修改”"
+    },
+    {
+     "name": "附加B 看页与扇出流程规则",
+     "kind": "procedure",
+     "what": "看页一律先经page_prescreen；无flag页用拼页或中分辨率批量看（每代理约25页），只对flag区域放大；大规模扇出前先用1–2项试点",
+     "spec": "写进 book-production-workflow.md：阶段稿看页的输入是prescreen.json中的needs_eyes和拼页清单；视觉代理的提示词附上每页flag，删去“禁止缩略图”的一刀切要求，改为“无flag页可看150dpi拼页，flag页全分辨率”；工作流先跑1–2个样本，由主代理或用户认可后再扇出。",
+     "expected_saving": "每页成本约从7.1K降到约2.25K；中止或失败运行历史上浪费8.07M新增token，试点可避免其中大部分",
+     "risk": "须用户裁定阶段稿可以放宽；整书终审和送印前的100%逐页看图不变"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/scan_main.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/scan_sub.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/analyze_main.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/classify.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/scripts_sim.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/proto_layout.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/sub_3bd4f1ab_7106db47_3b729a0b_f032ba69_13295440_62597da3.jsonl",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/sub_prompts.jsonl",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/workflows.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/category_agg.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/category_detail.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/proposal_hist.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_patterns.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_usage_dedup.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_agg.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/scripts_inventory.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/bash_cats.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/README_numbers.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_3b729a0b.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_3bd4f1ab.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_13295440.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/script_mining/out/main_f032ba69.json"
+   ],
+   "open_questions": [
+    "阶段稿能否不再逐页100%看图，只看prescreen的needs_eyes加拼页？project-rules.md 第8条和视觉门4要求终审100%逐页看图，第49批修订5的提示词还禁止缩略图。能否放宽须用户裁定，这决定TOP1能省75–80%还是只省约30–60%",
+    "bank_md_lint.py 要改题库脚本目录，共享题库写权当前属于Codex Luna（BANK_ACTOR），应由该线主控实现，还是由Claude在receipts目录写候选、再交Luna审定？",
+    "新脚本放进Skill母版scripts/之前，是否按用户规则先登记台账并执行collab sync？与Codex的publish49_review.py契约如何对齐，需与Codex确认",
+    "token口径：本文“新增”=input+cache_creation+output，cache_read单列。主线程是Opus/Fable，子代理多为Sonnet，单价不同，而我没有核实各模型单价，所以没有换算成金额。工作流json的totalTokens与子代理jsonl汇总并不总是一致（如wf_769bec52为2.83M对13.26M），这里一律以jsonl汇总为准",
+    "分类有近似成分：子代理按“工作流/阶段”人工映射；页面问题和主线程Bash描述都按关键词首个命中粗分，存在误分；主线程单项成本是“调用次数×平均上下文”的估算，不是逐次实测",
+    "时区：jsonl的timestamp是UTC，文件mtime是本地PDT（UTC-7），文中时间均为UTC"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "同一道题的正式细则在各批之间被反复重新抽取，这是能用脚本消掉的最大一块浪费。第50—51批的主体专题会话（3bd4f1ab）一共调了1114次 `bank.py get --with-rubric`，只涉及172个题键，其中942次是重复取用。重复部分首读约2.9M token，之后随上下文被反复带入，约72M cache-read。第45—48批（09-14至09-19）在111份细则原件上有960次是别的子代理重读，另有74套卷的细则在两个时间段都读过。书中例题共592个落位、360个题键，全部能解析成题库题键；153个主观题键里有71个（按严格口径65个）的卷已验收、题级SHA与验收记录一致且有E1小节，可以直接复用题库MD，不必另建副本。其余要么题库未验收或只有候选层，要么没有E1，只能靠主代理看原页后登记。现有缓存都接不上题级：source_intake.py 只在必修二用过，必修三从未运行；外部证据副本240条来源文本全部标为未审；题源覆盖台账只到考卷级，而且09-15后没再更新；各批记录“是否看过原页”的字段写法五花八门，下一批无法判断哪些已核，只好重来。建议做 rubric_cache.py：以指针为主复用已验收的题库MD，看页记录分主代理和子代理两级，源文件SHA、题库MD的SHA或验收状态、用户裁定、题键映射任一变化即判过期；同时配一条Skill规则和一项体检检查。只读原型已跑通：全书592个落位0.28秒出结果。",
+   "numbers": [
+    {
+     "metric": "书中例题落位与唯一题键（第50/51批审阅稿 heading 3）",
+     "value": "592个落位（主观385、选择207）→360个唯一题键（主观153、选择207）；解析失败0",
+     "evidence": "scratchpad/measure/cache_reuse/book_key_map.json；status_b51.json（rubric_lookup_proto.py status 对第51批 docx，0.28秒）"
+    },
+    {
+     "metric": "题键能映射到题库的比例",
+     "value": "360/360能解析；359/360有题库题级MD（缺 BJ-2026-FS-YIMO-Q8）；333/360（92.5%）经5个材料片段中至少3个命中题库MD文字确认；14个零命中，多为待复核卷的MD没有题面",
+     "evidence": "book_key_map.json 的 text_probe_hits 字段；2023海淀期中（下）→BJ-2023-HD-YIMO 5/5命中（依据 receipts/claude_bank_20260922/HD2023_identity/identity_report.json）"
+    },
+    {
+     "metric": "同一主观题在书中的重复落位",
+     "value": "153个主观题键中103个落位≥2次，最多9次；93个落位带小问，共160种题键+小问组合",
+     "evidence": "book_key_map.json 的 placements per key：{1:50, 2:44, 3:25, 4:14, 5:10, 6:6, 7:3, 9:1}"
+    },
+    {
+     "metric": "可直接复用题库已验收题级MD的主观题键",
+     "value": "卷已验收的85个；其中卷已验收、MD的SHA等于 shared_conversion_state.question_hashes 且有E1小节的：原型口径71个（46%），严格口径65个，覆盖164/385个落位；另有30个只有候选评分块、43个有E1样式小节但卷未验收或无题级SHA、9个缺E1",
+     "evidence": "status_b51.json、book_key_e1.json；已验收但缺 state 题级SHA的卷：BJ-2023-DC-YIMO、BJ-2023-XC-ERMO、BJ-2026-XC-QIMO"
+    },
+    {
+     "metric": "题库总体验收状态",
+     "value": "85套：已验收50、待复核34、重复登记已撤销1；已验收卷共1051份题级MD",
+     "evidence": "后勤管理/MD全库流水线_20260921/conversion_manifest.json（updated_at 2026-09-23T13:34-07:00）"
+    },
+    {
+     "metric": "题库细则小节标题写法数",
+     "value": "已验收的1051份MD里，像细则的二级标题有66种写法（数字已归一）",
+     "evidence": "scratch 统计：“正式评分材料原文”281、“正式评分细则（EN）”176、“正式评分材料（EN）”168……"
+    },
+    {
+     "metric": "第50—51批：bank.py get 重复取用",
+     "value": "1114次调用、172个题键；942次重复（首取之后再取）；每个题键平均被5.8个子代理取用，中位4，最多23；书中主观题键中位5；80个题键被≥5个子代理取用，39个≥10",
+     "evidence": "session 3bd4f1ab 子代理记录（2026-09-23T03:23Z至20:57Z）；session_calls.jsonl"
+    },
+    {
+     "metric": "第50—51批重复取用的token代价",
+     "value": "全部 bank.py get 输出首读约3.41M token，之后随上下文带入约89.4M cache-read；其中重复取用约2.84M首读、71.9M带入",
+     "evidence": "carry.py；换算系数实测为每字符0.93 token（465对样本，中位0.932）"
+    },
+    {
+     "metric": "第50—51批重复取用集中在哪些阶段",
+     "value": "extract 341、verify 190、draft 105、examples 91、fix 80、check 45、find 44、classify 37；下游阶段合计约592次",
+     "evidence": "analyze_sessions 输出（按子代理 description 前缀分组）"
+    },
+    {
+     "metric": "不同主体之间重复抽同一题",
+     "value": "会话里被≥2个主体的 extract 子代理抽取的题键85个（2主体45、3主体22、4主体14、5主体4）；最终8个主体专题小样里带【细则】的题键77个，其中40个出现在≥2个主体",
+     "evidence": "第50批_类型分类推广_20260922/专题小样/*_主体专题小样.md；会话 3bd4f1ab 的 extract:<主体> 子代理"
+    },
+    {
+     "metric": "第50—51批会话子代理总用量（背景）",
+     "value": "208个子代理：cache-creation 34.2M、cache-read 1184M、output 9.45M；bank.py get 首读约占cache-creation的10%，带入约占cache-read的7.5%",
+     "evidence": "usage_3bd4f1ab.json（按 message id 去重）"
+    },
+    {
+     "metric": "第45—48批（PDT 09-14至09-19）重复整份读细则原件",
+     "value": "111份细则原件、1185次调用；960次是别的子代理重读同一文件，约0.77M字符（约0.72M token）；51份文件被≥5个子代理打开",
+     "evidence": "sessions 3b729a0b、f032ba69、3dbdec3a；per_rubric_file_sessions.json"
+    },
+    {
+     "metric": "跨批次重复读同一卷的细则",
+     "value": "74套卷在第45—48批和第50—51批都读过细则；第50—51批读的4.04M字符里有3.87M属于这74套",
+     "evidence": "analyze_sessions（按 PDT 日期分两个时段，去除重复会话副本后）"
+    },
+    {
+     "metric": "重复渲染细则原页",
+     "value": "对46份细则原件执行了543次渲染类命令；35份被≥2个子代理渲染（平均5.9个，最多16个）；能映射的43份中36份在题库已有页图（evidence/{sid}/pages 或 assets/{sid}/pages）",
+     "evidence": "session_calls.jsonl 中 pdftoppm/fitz/pdftocairo 等命令；题库 evidence 页图1749张、assets 页图1240张"
+    },
+    {
+     "metric": "第50—51批取用时卷是否已验收",
+     "value": "1114次里567次取自取用时已验收的卷，505次取自待复核卷，40次取自取用后才验收的卷",
+     "evidence": "用各卷 shared_conversion_state.accepted_at 与调用时间戳比对"
+    },
+    {
+     "metric": "主代理自己读细则原件或题库的次数",
+     "value": "2483次读细则类调用里主代理只有20次，其余是子代理（workflow-subagent/Opus 5.5 1431次，baodian-source-review/Sonnet 5 1031次）",
+     "evidence": "session_calls.jsonl（去重后）；说明“主代理已核原页”这一级目前记录极少"
+    },
+    {
+     "metric": "source_intake.py 使用情况",
+     "value": "必修三从未运行；只在必修二修订212用过：26个文件，第二次运行26/26全部命中缓存；缓存按整份文件SHA存文字，不分题，human_verified 恒为 false",
+     "evidence": "必修二_周六成品冲刺_20260910/工作稿/修订212_2023题源增补/2023题源清单.json 与 2023题源差分复查_缓存复用.json；缓存目录 …/修订212_2023题源增补/缓存"
+    },
+    {
+     "metric": "外部证据副本的核验状态",
+     "value": "来源文本240条：206条 text_extracted_not_reviewed、34条 not_extracted，content_reviewed_this_run 全为 False；18650个文件与 /Users/wanglifei/GaokaoPolitics/…/检查资料 按大小逐一比对一致（只抽查了2个文件的哈希）；00_协作入口.md 提到的“复制清单”未找到",
+     "evidence": "协作/外部证据副本/检查资料/来源文本/manifest.json；00_协作入口.md 第31行"
+    },
+    {
+     "metric": "题源覆盖台账是否可用",
+     "value": "91行，均为考卷级；最后修改2026-09-15 13:09；in_book_batch 只有14行有值（第45批新增）；没有题级或E1字段",
+     "evidence": "协作/题源覆盖台账/必修三_题源覆盖台账.csv"
+    },
+    {
+     "metric": "看原页标记字段不统一",
+     "value": "original_page_images 2648次、content_reviewed_this_run 696次、original_pages 357次、original_page_image 121次、original_pages_viewed 90次、opened_pages 49次、verified_by_image 16次、main_review 11次、formal_rubric_directly_read 2次；第50批政府专题：image_verified=True 71条（26题）、False 21条（15题）",
+     "evidence": "对 协作/ 下全部 *.json 做 grep；专题小样/政府_主体关系_配题原文.json、政府专题_配题原文.json"
+    },
+    {
+     "metric": "书中【细则说明】与题库E1的字面重合",
+     "value": "164个可复用落位的4字片段包含率中位0.26，p10为0.03，92个低于0.3",
+     "evidence": "书稿细则经过“表格写成文字、只留本主体相关”改写，字面比对不能当自动核验门槛"
+    },
+    {
+     "metric": "用户裁定与题库验收不一致的实例",
+     "value": "2024北京高考《试题分析(1).pdf》（sha e0d7d1a5…）：书线 REQ-20260922-CONCISE-2024RUBRIC 定为正式细则，题库却在2026-09-23T07:50Z验收该卷时把它定为第三方E2候选；BJ-2024-BJ-GAOKAO-Q17 的“正式评分材料原文”写着“未找到”",
+     "evidence": "references/source-inventory.md 第102行；questions/BJ-2024-BJ-GAOKAO/shared_conversion_state.json 与 Q17.md 第126—128、187—188行"
+    },
+    {
+     "metric": "只按制品文件统计的重复抽取（启发式，含同目录副本）",
+     "value": "153个主观题键都有带来源标记的细则抽取记录；每个题键平均出现在2.43个批次组，135个出现在≥2组、67个≥3组；每个题键涉及的文件中位9个",
+     "evidence": "artifact_rubric_records.json、per_key_source_extract.json（批次组：≤第44批 Codex、第45—48批 Claude、第49批 Codex、第50批 Claude 等）"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "主体专题工作流按阶段、按主体反复取整份题级MD",
+     "cost": "每批约942次重复 bank.py get；首读约2.84M token，另有约71.9M cache-read；E1约只占取回内容的27%",
+     "evidence": "session 3bd4f1ab：1114次调用/172个题键，重复集中在 extract/verify/draft/examples/fix 阶段；carry.py 与 tokratio.py 的测算",
+     "root_cause": "没有按题键共享的E1摘录；bank.py get --with-rubric 返回整份MD（题面、E3、学生层都在里面）；上游 extract 已产出的逐字引文和出处没有交给下游，下游各自重取"
+    },
+    {
+     "name": "整份细则原件被多个子代理重复导出（第45—48批）",
+     "cost": "960次重读，约0.77M字符（约0.72M token）；51份原件被≥5个子代理打开",
+     "evidence": "sessions 3b729a0b 与 f032ba69，PDT 09-14至09-19",
+     "root_cause": "没有题级切分，每个子代理都要导出整份 docx/pdf 再找自己的题；source_intake.py 只存整份文件文字，必修三也没用过"
+    },
+    {
+     "name": "跨批次重复读同一卷细则",
+     "cost": "74套卷在两个时间段都读过；第50—51批重读约3.87M字符",
+     "evidence": "analyze_sessions 两个时间段的比对；题源覆盖台账09-15后未更新",
+     "root_cause": "没有题级的“已抽取/已核”记录；覆盖台账只到考卷级，不记录细则摘录及其核验等级"
+    },
+    {
+     "name": "原页重复渲染，题库已有的页图没被利用",
+     "cost": "46份细则原件渲染543次；35份被≥2个子代理渲染；能映射的43份中36份在题库已有页图",
+     "evidence": "session_calls.jsonl 的渲染类命令；题库 evidence/assets 页图计数",
+     "root_cause": "子代理各自渲染到临时目录，没有按 源SHA+页码 统一的页图缓存，也不知道题库已有页图"
+    },
+    {
+     "name": "看原页结论无法跨批复用",
+     "cost": "下一批只能重看重核：书中153个主观题键里只有71个达到可复用等级，其余都要主代理看原页；第50批政府专题已有71条子代理看页结论，却没有被另外7个主体复用",
+     "evidence": "字段统计有9种以上写法；主代理自己读细则仅20次",
+     "root_cause": "没有统一的核验记录格式，也不区分主代理核过和子代理看过，结果只存在各专题的临时JSON里"
+    },
+    {
+     "name": "题库细则小节标题写法多样，脚本难以定位",
+     "cost": "脚本判定E1容易漏或误判，需要模型人工辨认；已验收卷里有12个主观题键的E1写在非标准标题下",
+     "evidence": "66种标题写法；例如 BJ-2024-DC-ERMO-Q18 标题为“来源角色：OFFICIAL_ANSWER_AND_SCO…”，BJ-2024-FT-ERMO-Q16 为“评分材料（同卷正式材料·P3–P11；仅本题）”",
+     "root_cause": "shared_conversion_state.json 只给题级SHA，没有机器可读的小节角色表（标题→E0/E1/E3/学生层、行号、小节SHA）"
+    },
+    {
+     "name": "用户裁定与题库角色判定分叉",
+     "cost": "影响2024北京高考各题：书线须按E1使用，题库默认读法却返回“未找到正式评分材料”，脚本如果直接信题库验收结论就会漏用正式细则",
+     "evidence": "REQ-20260922-CONCISE-2024RUBRIC；题库 BJ-2024-BJ-GAOKAO 于2026-09-23T07:50Z验收",
+     "root_cause": "书线的用户裁定没有以机器可读的形式叠加到取用层，也没有同步给题库线"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "rubric_cache.py：题键→细则摘录缓存与查询",
+     "kind": "script",
+     "what": "题库已验收的题级MD用指针复用，不另存副本；题库未验收、缺层或与用户裁定冲突的题，由主代理看原页后存一份转写；每次读取都实时判定等级和是否过期；提供一次性下发给工作流的摘录包和页图复用",
+     "spec": "【位置】脚本放 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/rubric_cache.py（母版，由 collab.py sync 分发）。数据目录默认 /Users/wanglifei/Desktop/gpt和claude共同的小窝/00_共同资料/题级细则缓存/（跨册通用；--root 可改到 必修三_最新Skill修订_20260913/协作/细则缓存/）。对题库只读：只读 questions/*/*.md、shared_conversion_state.json、后勤管理/MD全库流水线_20260921/conversion_manifest.json、indexes/source_manifest.csv、evidence|assets 页图；不 import bank.py（用 ast 读 ROLE_SECTION_ALIASES，并设 sys.dont_write_bytecode），不调用 bank.py packet。\n【数据文件】\n(1) entries.jsonl，追加写：schema=1；entry_id=sha1(key|subq|layer|text_sha256)[:16]；key（BJ-YYYY-区码-考次-Qn）；subq；layer（E1/E3/stem）；exam_id；provider（bank_md 或 cache_text）；bank{md_path, md_sha256, state_question_sha256, exam_status, accepted_at, heading, line_start, line_end, section_sha256, match_rule（alias/regex/manual）}；source{source_id, rel_path, sha256, loc（页/张/行）}；text_sha256；text_path（仅 cache_text 有，文件为 texts/<key>__<layer>__<sha12>.md，按内容寻址）；rulings_version；keymap_version；created_by；created_at；book_usage[{book, batch, title}]。\n(2) verifications.jsonl，追加写：entry_id、key、layer、by（root:<会话id> 或 subagent:<agent id>）、role（root/subagent）、at、evidence{page_png, page_png_sha256, source_sha256, page|slide, loc}、verdict（exact/corrected/mismatch）、corrected_text_path、note。\n(3) rulings.json：{version, rulings:[{req_id, at, scope{source_sha256|key|exam_id}, effect{role: E1/E2/E3/exclude}, quote}]}。首条登记 REQ-20260922-CONCISE-2024RUBRIC：sha e0d7d1a5… 的2024试题分析PDF按E1使用。\n(4) derived/<册>/<专题>/<key>.json：主体或专题筛过的细则摘录，字段 {parent_entry_id, parent_text_sha256, topic, rule_version（如 REQ-20260923-TOPIC-RUBRIC-SCOPE）, excerpt, by, at}。\n(5) renders/index.jsonl 与 renders/<source_sha16>/p<NNN>@<dpi>.png：优先返回题库已有的 evidence/{sid}/pages/pNNN.png 或 assets/{sid}/pages/pNNN.png，没有才渲染一次。\n(6) keymap.json：题源写法→题键的规则和版本，含“2023海淀期中（下）→BJ-2023-HD-YIMO、（上）→BJ-2023-HD-QIZHONG”（依据题库 HD2023 identity_report）。\n【等级】每次读取时计算，不信任文件里写的等级：\n- root_verified：有 role=root 的核验记录，其会话id等于 协作/接管.json 当前合稿负责人，页图存在且SHA一致，条目未过期。\n- bank_accepted：provider=bank_md，卷状态为已验收，md_sha256==state_question_sha256，小节存在且非空，且与用户裁定无冲突。\n- subagent_page_checked：只有子代理看页记录，输出时标注“子代理看过原页，主代理未核”。\n- candidate / machine_extracted：其余情况。\n按 REQ-20260922-OFFICIAL-WORDING，只有 root_verified 和 bank_accepted 可直接引用；其余必须带横幅“须主代理看原页：<页图路径>”输出，不得把机器提取冒充已核。\n【判定过期】任一条命中即 STALE，并写明原因：\n(a) 源文件SHA变（先比大小和修改时间，变了再算SHA）。\n(b) 题库MD的SHA变：按标题重新定位小节；小节SHA不变则自动刷新指针、保留等级；变了则判 STALE（bank_section_changed），旧核验作废。\n(c) 验收状态变（已验收↔待复核、题级SHA变、accepted_at 变）：重算等级。\n(d) rulings 版本升级且范围命中：判 STALE（ruling_changed），须主代理重新裁定。\n(e) keymap 版本变且该题键受影响：判 STALE（key_remap）。\n(f) derived 的 parent_text_sha 或 rule_version 变：只作废 derived，基础E1不动。\n(g) 页图SHA与记录不符：该条核验作废。\n【子命令】\n- resolve <题源|题键>... [--json]：输出题键和小问；无法解析时 exit 2。\n- get <题键|题源> [--layer E1|E3|stem] [--subq N] [--topic T --book 必修三] [--require quote|any] [--json]：exit 0 可引用；10 只有候选、机器或子代理层（附页图路径）；20 已过期（附原因）；30 缺该层（列出候选小节）。\n- packet --keys f | --book x.docx [--layer E1] [--with-stem] [--topic T] --out <scratch>/packet.md：每题只出一次，只含E1（加 --with-stem 才带题面），每题前面有等级横幅和 #key 锚点，只写到 --out。\n- status --book x.docx | --keys f [--by-exam] [--json out]：每题的等级、过期原因、落位次数和汇总；--by-exam 生成考卷级覆盖。\n- refresh [--dry-run]；seed --from-bank [--dry-run]。\n- import <json> --schema batch50-quotes|codex-b49-adjudication：导入的记录默认记为 subagent_page_checked。\n- record-verified <题键> --layer E1 --page <png|源#页> --by root:<id>|subagent:<id> [--text-file f.md] [--verdict …]：追加写核验记录。\n- render <源|source_id> --page N [--dpi 200]。\n- export-for-bank --out f.json：列出自存转写和与题库冲突的裁定，交题库线自行决定是否采纳。\n【已验证】只读原型 scratchpad/measure/cache_reuse/rubric_lookup_proto.py 已实现 resolve/get/status：第51批 docx 592个落位用时0.28秒；get 对 BJ-2026-CY-YIMO-Q21 返回 bank_accepted，给出标题、行73—95和小节SHA；对 BJ-2026-HD-YIMO-Q21 返回 candidate_only，exit 10。",
+     "expected_saving": "以第50—51批规模估算：重复取用从942次降到每个题键建包一次（172次）加各子代理读自己的切片。只取E1（约27%）后，首读从3.41M降到约0.9M token，带入的cache-read从约89M降到约24M；下游阶段改读上游引文，还能再少约592次取用。合计每批约省2.5M首读token、约65M cache-read，以及数百次工具调用。页图复用可省去大部分543次重复渲染（36/43份题库已有页图）。跨批次时，74套已读卷不再重读约3.9M字符。以上均为估算，实际视工作流是否改用摘录包而定。",
+     "risk": "题库MD在Luna续修中持续变动，指针会过期：已用SHA检查兜底，但过期后需要重新定位。标题靠正则判定会误判：应优先用题库别名，并向题库线申请机器可读的小节角色表。核验等级可能被冒用：root 等级要核对接管.json里的负责人且必须有页图证据。缓存放在跨册目录有写权冲突：只追加写，并按合稿权限制写入。缓存本身不能证明书稿【细则说明】改写得对：字面重合中位只有0.26，改写是否忠实仍需模型或主代理判断。"
+    },
+    {
+     "name": "细则取用走缓存（Skill规则）",
+     "kind": "skill_rule",
+     "what": "禁止子代理为取细则自行调用 bank.py get --with-rubric 或导出整份细则原件；统一由主代理先建摘录包，下游阶段直接用上游的逐字引文，看原页一律登记",
+     "spec": "写入 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/references/book-production-workflow.md 第34行附近（“来源按SHA缓存”条）和 SKILL 取用表，改完母版再 collab.py sync（本任务未执行）。条款：\n(1) 工作流开始时，主代理运行 rubric_cache.py status --book <本批docx> 和 packet --keys <本流程题键> --out <scratch>；子代理的提示词只给摘录包路径和自己负责的题键锚点。\n(2) 子代理只在 get 返回10/20/30且任务要求看原页时，才通过 rubric_cache.py render 取页图；看完用 record-verified --by subagent:<id> 登记。\n(3) verify/fix/draft/check/examples 等下游阶段读取上游产出的“逐字引文+出处（source_id、页、行）”，不重新取整份MD。\n(4) 只有主代理抽核后才能升为 root；成品引用只用 root_verified 或 bank_accepted（沿用 REQ-20260922-OFFICIAL-WORDING）。\n(5) 主体专题按题键只抽一次完整E1，再按主体生成 derived 摘录（沿用 REQ-20260923-TOPIC-RUBRIC-SCOPE），不按主体分别从原件重抽。",
+     "expected_saving": "同 rubric_cache.py 的估算；这条规则决定节省能否落地：第50—51批重复取用里约63%（592/942）出在下游阶段",
+     "risk": "子代理拿到的上下文变少，可能漏掉细则里的整体给分规则：摘录包必须带整题E1全文和整体给分规则，不能只给主体切片；遇到过期或候选层时，子代理仍须停下来报告"
+    },
+    {
+     "name": "batch_health.py 增加细则来源检查",
+     "kind": "batch_health_check",
+     "what": "每批体检输出每个例题落位的细则等级分布，列出过期、与裁定冲突和无法解析的题源，把需要主代理抽核的名单交给模型",
+     "spec": "在 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/batch_health.py 增加 --rubric-cache <数据目录> 选项，复用现有 example_blocks()/by_source() 和 TITLE_RE。对每个主观例题（heading 3“例题 N　题源”）用 keymap 解析题键和小问，调用 rubric_cache 的库函数（不起子进程）取等级。输出 rubric_levels{bank_accepted, root_verified, subagent_page_checked, candidate, machine_extracted, missing, stale}（按落位和按题键各计一次）。FAIL：存在无法解析的题源标题；或任一落位的题键为 stale 或 ruling_changed。WARN：列出 candidate/machine/missing 题键及落位标题。INFO：每个落位【细则说明】与缓存E1文字的4字片段包含率，列出最低10%供主代理抽看（不作门槛，因为实测中位只有0.26）。输入仍然只读；以第51批 docx 为基线，预期显示主观题71个 bank_accepted、30个 candidate、43个 machine、9个 missing。",
+     "expected_saving": "每批不必再派子代理全书复核“细则是否已核”；直接给出需要主代理看原页的题键名单（当前约82个主观题键），并且在题库更新导致过期时自动报警",
+     "risk": "题源标题写法变化会导致解析失败：由 FAIL 兜底并更新 keymap。等级统计全绿不代表内容已审：沿用 batch_health 的既有声明"
+    },
+    {
+     "name": "用户裁定叠加与题库线同步",
+     "kind": "procedure",
+     "what": "把书线的用户裁定（如2024试题分析定为E1）登记为机器可读的 rulings.json，由缓存在取用时叠加生效；冲突清单交题库线（Luna），书线不写题库",
+     "spec": "(1) 每条影响来源角色的用户要求，在登记台账（user-requirements-ledger.md）的同时写入 rulings.json：req_id、scope 为源SHA或题键、effect.role，并升版本号。\n(2) rubric_cache.py export-for-bank 输出 {ruling, bank_current_role, affected_keys, bank_md_path} 列表，放到 后勤管理/ 下供题库线读取；由用户或接管方决定是否转交，本线不改题库文件。\n(3) 同时向题库线提需求：在 shared_conversion_state.json 中增加 question_sections{key:[{heading, role(E0/E1/E3/student/structure), line_start, line_end, section_sha256}]}，以替代66种标题的正则判定。\n(4) 首个待办：BJ-2024-BJ-GAOKAO 全卷。书线按 REQ-20260922-CONCISE-2024RUBRIC 使用试题分析PDF作E1，题库2026-09-23T07:50Z的验收结论是E2候选。",
+     "expected_saving": "避免“题库说没有细则”导致正式细则被漏用或重新追源；例如2024高考17题这类用户已指出“为什么读取不到”的情况，可一次性由脚本拦截",
+     "risk": "两线判定长期不一致会引起混淆：缓存输出必须同时显示两种角色和依据，不得悄悄覆盖；题库线是否采纳不受本线控制"
+    },
+    {
+     "name": "用缓存导出取代手工题源覆盖台账，并把已有看页记录导入缓存",
+     "kind": "procedure",
+     "what": "题源覆盖台账改由 rubric_cache.py status --by-exam 生成；把第50批政府专题等已有带页证据的记录一次性导入缓存，避免重做",
+     "spec": "(1) 协作/题源覆盖台账/必修三_题源覆盖台账.csv 保留为历史；新增的考卷覆盖由 status --by-exam --json 生成，字段为 exam_id、题库状态、书中题键数、各等级计数、最后刷新时间，每批体检时顺带刷新。\n(2) import：来源一是 第50批_类型分类推广_20260922/专题小样/政府_主体关系_配题原文.json（official_quotes 中 image_verified=True 的71条、26题，loc 如“PDF第28页，表第1行”）和 政府专题_配题原文.json（verified_by_image=True 8条），导入为 subagent_page_checked；来源二是 Codex 第49批 并发调度/任务包/*/主线程校准裁决.json（formal_rubric_directly_read），写明主线程且给出页位置的，导入后提示主代理确认再升 root。\n(3) 默认不导入没有页证据的记录；外部证据副本/来源文本的240条只作 machine_extracted 参考（content_reviewed 全为 False）。",
+     "expected_saving": "已做过的看页核对不再重做：仅政府专题就有26个题键可直接进入 subagent 级，其他7个主体的配题可以直接复用；台账不必每批手工维护",
+     "risk": "历史记录格式各异（至少9种字段写法），导入器需要按来源各写一个适配器；导入的记录只到 subagent 级，不能当成 root"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/rubric_lookup_proto.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/keynorm.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/book_key_map.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/book_key_e1.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/status_b51.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/session_calls.jsonl",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/per_rubric_file_sessions.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/artifact_rubric_records.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/per_key_source_extract.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/usage_3bd4f1ab.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/usage_3b729a0b.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/scan_sessions.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/scan_artifacts.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/carry.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/tokratio.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/cache_reuse/srcmap.json"
+   ],
+   "open_questions": [
+    "缓存数据目录放 00_共同资料/题级细则缓存（跨册）还是 必修三 协作/细则缓存（本册）？需要用户或接管方决定，写权也要随之确定。",
+    "题库线（Luna）是否愿意在 shared_conversion_state.json 中提供机器可读的小节角色表（标题→角色、行号、小节SHA）？没有它，E1定位只能靠66种标题写法的正则。",
+    "2024北京高考《试题分析(1).pdf》：书线裁定为E1，题库验收定为E2候选，两线由谁、以什么形式对齐？",
+    "Codex 侧的会话记录（第36—44批、第49批）没有量化，只从制品文件间接统计；要补上需读取 ~/.codex 下的会话记录，本任务未读。",
+    "00_协作入口.md 第31行所说的外部证据副本“复制清单”没有找到；目前只按文件大小比对18650个文件一致，未做全量哈希校验。",
+    "制品文件层面的“重复抽取”统计依赖启发式（同一JSON对象或文本块里同时有题键、细则字段和来源标记），包含历史副本，只宜看量级；会话调用计数更可靠。",
+    "按小问取细则（93个落位、160种题键+小问组合）需要在E1小节内再切行范围；题库题级MD以大题为单位，切分规则要逐卷确认。",
+    "BJ-2026-FS-YIMO-Q8 在题库中没有题级MD；另外14个题键的MD没有题面（多在待复核卷），这些是否在Luna的待办范围内？"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "渲染本身不贵：一次全书流水线（编号、目录定位 PDF、目录回填、render_docx）在第49—51批用 58—104 秒。其中 render_docx 把 596—776 页全部转成 PNG，这一步占 33—60 秒，每套 371—499MB。现在磁盘上留着 10 套整书 PNG，共 3,872MB，而第50、51批主代理只看了 3—4 页。真正费钱的是看页：13 次整书或大范围看图工作流共耗 16,482,492 token、9,628 秒。第49批 Claude 用“同页号像素比对”，页号一错位就全算变化，结果开了 548＋387 页，耗 324 万 token。改成“正文区像素账本”后同一历史只需看 123＋7 页（含相邻 137＋12 页），能省约 85%。渲染缓存按 DOCX SHA 命中的机会在历史里几乎为零：打印了 SHA 的 24 次渲染里没有一次重复。它的主要价值是顺带去掉整书 PNG，以及防住重跑。改动页定位在第49→50批只能压到 543/616 页（第50批全书重排并改了例题编号），第50→51批能压到 203/776 页。在无错页的对照组上，它与 Codex 的像素真值完全一致（7 页和 12 页）。",
+   "numbers": [
+    {
+     "metric": "单次全书流水线耗时（第49—51批 render_*.py：02编号＋03目录定位PDF＋04目录回填＋05 render_docx）",
+     "value": "58—104 秒",
+     "evidence": "会话 3bd4f1ab jsonl 里 Bash 调用时长：第49批 60.1/61.5/58.1s，第50批 62.7/66.6s；第51批后台两次运行 20:58:18Z→20:59:52Z（94s）和 21:00:45Z→21:02:29Z（104s，含 insert_topics）。第51批 构建/render_run.log birth 13:58:18、mod 14:02:29"
+    },
+    {
+     "metric": "05全书渲染拆分：DOCX→PDF / PDF→整书 PNG",
+     "value": "PDF 6—7 秒；PNG 33—60 秒（占 05 步 85—90%，占整条流水线约 57—59%）",
+     "evidence": "第51批 构建/：04目录回填.json mod 14:01:21 → rendered/*.pdf 14:01:28 → 末张 page-679.png 14:02:28（776 张）。第50批：18:25:36→18:25:42→18:26:19。第49批 修订5：13:05:14→13:05:20→13:05:53"
+    },
+    {
+     "metric": "03目录定位PDF（第二次整书 LibreOffice 转换）与 04目录回填耗时",
+     "value": "03：6—9 秒；04：13—28 秒",
+     "evidence": "第51批 03目录定位PDF.log mod 14:00:53、目录定位/02_编号与考法计数.pdf 14:00:59、04目录回填.log 14:01:21。第50批 18:25:17/18:25:22/18:25:36"
+    },
+    {
+     "metric": "R45 线（第45—48批）每轮“构建＋两次渲染＋100dpi 转图”耗时",
+     "value": "45—96 秒（个别 266 秒，含等待）",
+     "evidence": "会话 3b729a0b 的 Bash 调用时长，例如 09-15T21:01:00Z 89s、21:19:46Z 85s、09-21T10:20:09Z 59s；命令内容为 build_r45.py→render.sh→toc_pages.py→render_pages.py"
+    },
+    {
+     "metric": "每批渲染次数",
+     "value": "第45批约4次、第46批5次、第47批5次、第48批10次（另有1次试渲染）、第49批 Codex 4次成功1次失败＋Claude 3次成功1次失败、第50批2次、第51批2次",
+     "evidence": "scan_render_shas.py 扫 3b729a0b 与 3bd4f1ab 会话（结果 render_shas.json）；Codex 侧看 最终整书排版与验收_20260922 下 rendered、rendered_r2、修订3、修订4 以及 修订2全书渲染.log 报的 26.904 路径不存在；Claude 第49批 20:04:16Z 调用报 CalledProcessError"
+    },
+    {
+     "metric": "输入 DOCX SHA 与此前某次完全相同的渲染次数",
+     "value": "0/24（能读到 SHA 的全书渲染）；另有 1 次局部重复：第49批 20:04:16Z 失败后，对未改动的 03c_重编号.docx 重跑了 03＋04（约 19 秒）",
+     "evidence": "render_shas.json 的 dup_first_sha 为空；8 份同版身份*.json 对应 8 个互不相同的 docx_sha256（render_index.json）；03c_重编号.docx birth=mod=13:04:07，而 03c_重编号.pdf birth 13:04:22、mod 13:05:01"
+    },
+    {
+     "metric": "每次渲染是否整书转图",
+     "value": "是。render_docx.py 每次无条件把全部页转成 PNG；磁盘上 10 套整书 PNG 共 3,872MB（371—499MB/套）",
+     "evidence": "render_docx.py 的 rasterize() 调 convert_from_path 且无页范围参数（26.904.11930 版第403—458行）；du -sm 各 rendered* 目录"
+    },
+    {
+     "metric": "第50、51批整书 PNG 实际被看的比例",
+     "value": "第50批 4/616，第51批 3/776（主代理另用 fitz 按 70dpi 现渲染）",
+     "evidence": "两批 构建/最终主代理技术验收.json 的 page_review.main_agent_viewed 分别为 [4,5,15,321]、[511,513,516]；3bd4f1ab 21:00:11Z 的命令里有 get_pixmap(dpi=70)"
+    },
+    {
+     "metric": "整书/大范围看图工作流总成本（Claude 侧）",
+     "value": "13 次（11 次完成、2 次 killed）：16,482,492 token，墙钟 9,628 秒",
+     "evidence": "~/.claude/projects/.../{3b729a0b,7106db47}/workflows/*.json 的 totalTokens 与 durationMs；页数：693、692、603、616、616、537、586、531、583、548、387(已开)"
+    },
+    {
+     "metric": "第48批 09-21 一小时内整书重看次数",
+     "value": "4 次（r48-v2 至 v5），每次 531—586 页、1,348,289—1,421,540 token",
+     "evidence": "workflows 时间戳 10:18、10:34、10:51、11:06（UTC），logs 中“看图 537/586/531/583 页”"
+    },
+    {
+     "metric": "每页看图 token",
+     "value": "100dpi（827×1170）约 2,144—2,677；render_docx 原图（1414×2000）约 3,099—3,984",
+     "evidence": "totalTokens/看图页数：1,348,289/537=2,511、1,483,533/692=2,144；第49批 1,698,160/548=3,099、1,542,005/387=3,984"
+    },
+    {
+     "metric": "第49批 Claude 实际看图页数与 token",
+     "value": "548＋387=935 页，3,240,165 token（第二次看了 387/519 页时被用户叫停）",
+     "evidence": "修订5/09_逐页初检_Sonnet12份.json（12 份）、12_v3复查_中止记录.json（opened 387）；wf_fdd910b9 1,698,160 token、wf_9339923e 1,542,005 token"
+    },
+    {
+     "metric": "同页号像素法 vs 对齐后正文区像素：第49批 v2→v3 需看页",
+     "value": "旧法 519 页待看；正文区哈希不在 v2 的仅 15 页（含±1 为 22 页）；签名对齐标出 14 页（含±1 为 19 页）",
+     "evidence": "11_v3待看页.json need_review=519；ledger_sim.json 的 vs_previous cl_v2→cl_v3=15；diff_C_v2_v3.json"
+    },
+    {
+     "metric": "对齐后错页的页是否逐像素相同（原看图分辨率 1414×2000，只遮页脚带 8%）",
+     "value": "v2→v3：581/582 对相同，其中 515 对页号不同；r4→v1：562/563 对相同，其中 514 对错页；Codex 最终→r2：325/325 对相同，其中 323 对错页",
+     "evidence": "png_body_equal.py 用各 rendered*/page-N.png 实测；唯一例外页 456 是 2 个字形的亚像素差（diff456.png）"
+    },
+    {
+     "metric": "看页账本试算（已看且正文区像素相同即继承）",
+     "value": "Codex r2：需看 270（含±1 为 320），实看 595；r3：7，实看 7；r4：6，实看 12；Claude v2：需看 123（含±1 为 137），实看 548；Claude v3：需看 7（含±1 为 12），实看 387",
+     "evidence": "ledger_sim.py→ledger_sim.json，看过的页取自 最终页检（590）、修订2逐页覆盖汇总（ALL_595）、修订3/逐页像素核验 changed_pages、修订4/主代理变化页目检、09_逐页初检、12_中止记录"
+    },
+    {
+     "metric": "账本法在第49批 Claude 看图上的 token 估算",
+     "value": "约 47 万（137×3,099＋12×3,984），实际 324 万，省约 277 万（85%）",
+     "evidence": "由上两条相乘得出，属估算，未实跑"
+    },
+    {
+     "metric": "改动页定位 page_diff.py 实测：第49批→第50批阶段审查稿",
+     "value": "新 616 页：未变 138、改文字 476、仅版式 2；含±1 需看 494 页，加像素复核后 543 页。改动页里含全新文字行的 129 页，只是挪位或改编号的 349 页。用时：只算签名 7.6—8.2 秒，加 100dpi 像素复核 15.0 秒",
+     "evidence": "diff_G_49_50.json、diff_49_50.json。原因是第50批“617个例题块正文与第49批逐字相同（只换位置与编号）”（第50批 构建/最终主代理技术验收.json）"
+    },
+    {
+     "metric": "page_diff.py 实测：第50批→第51批",
+     "value": "新 776 页：未变 586、改文字 190、需看 203 页（1-4,172-181,359-364,509-691）；含新文字 187 页；用时 20.5 秒",
+     "evidence": "diff_E_50_51.json；正文区哈希法同为 191 页（manifest_50_171/51_171）"
+    },
+    {
+     "metric": "page_diff.py 与 Codex 像素真值的一致性（无错页的对照组）",
+     "value": "r2→修订3：7 页 vs Codex 7 页；r2→修订4：12 页 vs Codex 12 页，页号完全一致",
+     "evidence": "diff_F1_r2_rev3.json、diff_F2_r2_rev4.json 对照 修订3/逐页像素核验.json、修订4/逐页像素核验.json 的 changed_pages"
+    },
+    {
+     "metric": "page_diff.py 其他历史对照",
+     "value": "Codex 最终→r2：270 标记/320 需看（Codex 当时看了 595）；r4→v1：33/49（当时 must_review 548）；r4→v2：122/135；第50批 v1→终版：56 页“仅版式”，是标题颜色 0→0x1F3864",
+     "evidence": "diff_A/B/B1/D_*.json。第50批 v1 与终版的 span 对比显示 color 0→2046052，灰度像素差低于 64，只有 RGB 或签名能测出"
+    },
+    {
+     "metric": "文字/样式签名相同但像素不同的页（亚像素位移）",
+     "value": "49→50：30dpi 灰度 53 页、100dpi RGB 39 页；逐字符对比最大位移约 0.11pt，字体和字符没有差异",
+     "evidence": "diff_G_49_50.json 的 pixel 字段；逐字符诊断见第615页 content stream diff（173.850 vs 173.853）"
+    },
+    {
+     "metric": "页清单（逐页正文区像素哈希＋文字签名）耗时",
+     "value": "776 页：100dpi 6.6 秒、171dpi 9.1 秒（8 进程）；596—616 页约 8—9 秒",
+     "evidence": "page_manifest.py 实测（manifest_51_100/171、manifest_49_171、manifest_50_171.json）"
+    },
+    {
+     "metric": "按需转图耗时",
+     "value": "171dpi 每页 0.146 秒（单线程含写盘）；100dpi 每页 0.038 秒",
+     "evidence": "fitz 在第51批 PDF 第510—539页实测"
+    },
+    {
+     "metric": "渲染缓存键的计算耗时",
+     "value": "0.03—0.05 秒（含 DOCX SHA256、render_docx.py SHA、fontconfig SHA、664 个字体文件的清单指纹）",
+     "evidence": "render_cache.py key/lookup 实测"
+    },
+    {
+     "metric": "渲染器路径漂移导致的失败",
+     "value": "2 次：Codex 09-22 11:13 本地时间、Claude 09-22 13:04 本地时间。bundle 在 26.904.11930 与 26.909.12148 之间来回换，09-22 18:58 本地时间又重装回 26.904",
+     "evidence": "修订2全书渲染.log“No such file”；documents/26.904.11930 目录 birth 09-22 18:58:14；第49/50批同版身份 renderer 为 26.909.12148，第51批为 26.904.11930"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "同页号像素比对：页一错位就把后面整书判为改动",
+     "cost": "第49批 Claude 多看了约 805 页（935 实看，账本法只需 130）、约 277 万 token、约 13 分钟工作流；Codex r2 多看了约 275—325 页",
+     "evidence": "08_像素比对_r4_最终.json must_review=548；10_像素比对_最终v3.json changed_vs_v2=529；修订2像素继承核验.json new_view_count=593（method 为 same index）。对齐后这些页 99.8% 逐像素相同（png_body_equal.py）",
+     "root_cause": "比对只按同一页号，不做序列对齐。页脚页码又被算进像素，错页后必然不同。workflow 第40行又写着“已看旧页的复用仍要求同页、完整像素完全一致”，脚本就不敢跨页号继承"
+    },
+    {
+     "name": "每个版本都整书转图、整书重看",
+     "cost": "第45—48批 9 次完成＋2 次 killed，合计约 1,265 万 token；第48批 09-21 一小时内重看 4 次，约 555 万 token",
+     "evidence": "workflows/*.json：bixiu3-pagecheck、bx3-pagecheck 的 args.pages/total 为 581—693，totalTokens 每次 1.35—1.64M",
+     "root_cause": "没有“已看页账本”，也没有改动页清单。每修一处就重渲，并把整书 PNG 目录交给 25 页一份的看图工作流（wf_pagecheck.js 按总页数切批）"
+    },
+    {
+     "name": "render_docx 无条件整书转 PNG",
+     "cost": "每次渲染 33—60 秒、371—499MB；现存 10 套共 3,872MB；第50、51批用到的不到 1%",
+     "evidence": "rendered* 目录 PNG 时间戳和 du；技术验收 main_agent_viewed 只有 3—4 页",
+     "root_cause": "用 render_docx.py 的 --emit_pdf 取 PDF，它的 rasterize() 总是先转全部 PNG，而且没有只出 PDF 的开关"
+    },
+    {
+     "name": "每轮两次整书 LibreOffice 转换，失败后整条重跑",
+     "cost": "每轮多一次 6—9 秒转换加 13—28 秒回填；第49批失败后对同一输入重跑一次（约 19 秒）",
+     "evidence": "render_b5x.py 的 03目录定位PDF 与 05全书渲染；3bd4f1ab 20:04:16Z（20.4 秒，失败）→20:04:55Z（58.1 秒，重跑全程）",
+     "root_cause": "没有步骤级缓存。03/04 的产物不按输入 SHA 记账，05 一失败，整个脚本从头再跑"
+    },
+    {
+     "name": "渲染器路径漂移",
+     "cost": "2 次失败加人工修路径（Codex、Claude 各 1 次）；换版本后缓存与同版身份不可比",
+     "evidence": "修订2全书渲染.log；3bd4f1ab 20:04:16Z CalledProcessError；documents/ 下只剩重装的 26.904.11930（09-22 18:58）",
+     "root_cause": "宿主会自动更新或回滚 bundle。脚本原先写死版本路径，现在改为 glob 取最新，但同版身份只记路径、不记内容哈希"
+    },
+    {
+     "name": "亚像素位移让“完全像素一致”产生假改动",
+     "cost": "49→50 有 39—53 页、r4→v1 有 4 页只因不到 0.11pt 的字形位移被判为改动",
+     "evidence": "diff_G_49_50.json、diff_B_r4_v1.json 的 pixel_diff_but_sig_equal；逐字符诊断显示没有字体或字符差异",
+     "root_cause": "LibreOffice 重排时浮点坐标有微小变化；按规则只能算“像素不同”"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "review_pages.py：看页计划＋看页账本",
+     "kind": "script",
+     "what": "每次渲染后自动算出这一版需要谁看哪几页：正文区像素哈希若已在账本里有 PASS 记录，就继承（允许页号不同）；其余页连同±1 相邻页列入需看清单，只给这些页导出 PNG。看完后回写账本。",
+     "spec": "放在 ~/.codex/skills/beijing-gaokao-politics/scripts/review_pages.py，由 collab.py sync 分发。账本按册放在 <本册>/协作/看页账本.jsonl，只追加。\n子命令 1，plan：\n  python3 review_pages.py plan --pdf 本批.pdf [--baseline 上批.pdf] --ledger 协作/看页账本.jsonl --dpi 100 --context 1 --out 构建/看页计划.json [--export-dir 构建/看页图]\n  处理：用 PyMuPDF 按 --dpi 逐页 RGB 渲染（8 进程），遮去页高 92% 以下的页脚带，对正文区像素取 sha1。同时算文字签名：去空白，去“— N —”页脚。\n  判定：body 哈希在账本中有 verdict=PASS 且 dpi 与 rasterizer 相同，算 inherited。否则算 need，再按 --baseline 用 page_delta 细分原因（new_text / moved_or_renumbered / layout_only / pixel_only）。need 的前后各 --context 页，若自身不是 need，标 why=context。\n  输出 JSON：{pdf, pdf_sha256, docx_sha256(从同版身份读), pages, dpi, footer_band:0.92, rasterizer:'PyMuPDF 1.26.5', inherited:{count, pages_ranges}, need:[{page, why, old_page|null}], need_ranges:'2-3,69,71-74', summary_line, seconds}。stdout 只打一行，例如“新596页：继承584；需看12（新文字0、挪位/编号7、相邻5）：2-4,68-75”。\n  --export-dir 只为 need 页写 page-N.png（100dpi 约 0.04 秒/页）。看图工作流只收这个目录。\n子命令 2，record：\n  python3 review_pages.py record --plan 构建/看页计划.json --pages 2-3,69 --verdict PASS|REVISE --reviewer claude:<会话id> [--issues 逐页初检.json]\n  每页追加一行 {body, text, dpi, rasterizer, pdf_sha256, page, verdict, issues, reviewer, at}。\n子命令 3，backfill：用现存旧 PDF（第49批阶段稿等）和旧逐页初检 JSON 回填账本，旧看图记录可以复用。\n退出码：0 正常；2 输入错误；3 dpi 或 rasterizer 与账本不一致（拒绝继承）。\n实测：清单计算 776 页 6.6—9.1 秒。按第49批历史试算，需看 123＋7 页，实际看了 548＋387 页。",
+     "expected_saving": "第49批这类修订轮省约 85% 看图 token（估算约 277 万 token）和约 10 分钟工作流。第48批那样一小时内 4 次整书重看，每次预计只需看改动附近几十页（中间 PDF 已被覆盖，无法实算）。每批省掉 33—60 秒整书转 PNG 和 371—499MB 磁盘。",
+     "risk": "(1) 与 workflow 第40行“同页、完整像素完全一致”的“同页”冲突，需用户同意改成“正文区像素完全一致，页脚页码除外，页号可不同”。(2) 继承的是当时看图者的漏检：Codex 对未变页的二次整书复看找出 153—154、242—243 表头分离，随后在修订3/4修复；Claude v2 复看在未变页找出 225（medium）和 368（low）。因此定稿送印前仍要整书看一遍（与“全书复查只在用户要求或定稿送印前”一致）。(3) 账本绑定 rasterizer 与 dpi，换引擎要重新回填。"
+    },
+    {
+     "name": "page_delta.py：两版 PDF 的改动页定位与分类",
+     "kind": "script",
+     "what": "给上批与本批两个 PDF，用“页签名”（文字去页脚＋span 字体/字号/颜色/flags＋行 bbox＋图片摘要＋矢量绘图摘要）做 difflib 序列对齐。输出新增、改文字、仅版式、删页、页号映射，再按“是否出现旧版任何位置都没有的文字行（数字已遮蔽）”把改动页分成“新文字”和“仅挪位/改编号”。可选对判为未变的配对页做 RGB 像素复核。",
+     "spec": "原型在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/page_diff.py，正式放 skill scripts/page_delta.py，供 review_pages.py 调用，也可单独用。\n命令：python3 page_delta.py 上批.pdf 本批.pdf [--context 1] [--pixel] [--dpi 100] [--json 构建/改动页.json]\n输出 JSON 字段：summary{new_pages, unchanged_aligned, changed_text, inserted, layout_only, deleted_old, flagged, review_with_context, flagged_with_new_text, flagged_moved_or_renumbered_only}、changed_text[]、inserted[]、layout_only[]、deleted_old[]、new_text_pages[]、moved_or_renumbered_only[]、novel_line_count{page:n}、review_pages[]、review_ranges、new_to_old{新页:旧页}、pixel{checked_pairs, pixel_diff_but_sig_equal[], dpi, seconds}、seconds。\nstdout 两三行，例如“新776页：未变586，改文字190…需看203页（含±1相邻）：1-4,172-181,359-364,509-691”和“其中含新文字187页…”。\n像素复核必须用 RGB：第50批标题颜色 0→0x1F3864 在灰度下差值低于 64 会被漏掉。\n实测每对 15—27 秒；无错页时与 Codex 像素真值一致（7 页、12 页）。\n另可接进 batch_health.py：加 --baseline-pdf 参数，在体检 JSON 里写入 page_delta.summary。",
+     "expected_saving": "“阶段稿先给初稿”时，主代理不必猜看哪页，直接看 new_text_pages 里的样页。第50→51批把 776 页缩到 203 页；第49批 v2→v3 从 519 页缩到 19 页。签名比对不需要整书转图。",
+     "risk": "(1) 只凭签名会漏掉不进签名的视觉变化（线宽、虚线、裁剪路径），所以验收模式必须带 --pixel 或走账本。(2) 严格像素下，亚像素位移会带来假改动（49→50 有 39 页）。(3) 全书重排、改编号（如第50批）时收益有限：616 页中仍有 543 页。(4) 新文字判定按行比较，换行位置一变也会算新文字，只适合做分流，不能当内容审稿结论。"
+    },
+    {
+     "name": "render_cached.py：渲染缓存＋只出 PDF",
+     "kind": "script",
+     "what": "包住各批 render_*.py 的 03/05 两次 LibreOffice 转换。键为 DOCX SHA256 加环境指纹，命中就直接复用已有 PDF 和页清单；未命中只出 PDF，不再整书转 PNG，渲染后自动跑页清单。",
+     "spec": "放 skill scripts/render_cached.py，原型为 scratchpad/measure/render/render_cache.py（key/index/lookup 已实测，run 只做 dry-run）。\n命令：python3 render_cached.py pdf --docx X.docx --outdir 构建/rendered --index <本册>/协作/渲染缓存索引.json [--fontconfig FC] [--manifest]\n环境指纹 env_sha256 = sha256(json{renderer_sha256: render_docx.py 内容哈希, libreoffice_version: LibreOfficeDev.app Info.plist 的 CFBundleVersion（现为 26.8.0.0.alpha0）, fontconfig_sha256（现为 208d8a75…）, font_dirs_sha256: fonts.conf 里各 <dir> 下字体文件的 路径|大小|mtime 清单哈希（现为 664 个文件）, params})。\n命中条件：index[docx_sha256] 有 env_sha256 相同的记录，且记录里的 PDF 仍存在、sha256 与记录一致。命中后写 同版身份.json（原字段，外加 cache_hit:true、env_sha256、source_identity），用时约 0.05 秒。\n未命中：import render_docx，只调 make_renderable_docx_copy 与 convert_to_pdf（保持现在的 PDF 生成路径），跳过 rasterize。随后调 page_manifest 写 构建/页清单.json（776 页约 9 秒），再把记录写入索引。\n03目录定位也走同一缓存：若 04 回填后 DOCX SHA 与 03 输入相同，05 直接命中。\nPDF SHA 每次都会变（CreationDate），只能作为结果记录，不能当键。",
+     "expected_saving": "每次渲染省 33—60 秒 PNG 和 371—499MB；可清理现存 3,872MB PNG。失败重跑、发布前复核时，相同输入的 03/04/05 命中后省 20—70 秒。历史上 DOCX SHA 相同的完整渲染为 0/24，缓存本身的时间收益不大，主要是防重跑和省转图。",
+     "risk": "(1) 只出 PDF 后，第一次必须用一次整书渲染证明它与 render_docx 全流程的 PDF 页清单逐页相同，这次渲染要放到下一批正式渲染里做，本任务没有做。(2) bundle 版本来回切（26.904↔26.909）时 renderer_sha 变化会导致未命中，这是保守行为；记忆里写“新旧版本同一 DOCX 逐像素相同”，但本次无法复核。(3) 字体目录指纹用 mtime，系统更新可能导致误失效，不会误命中。"
+    },
+    {
+     "name": "看页规则改写（Skill 规则）",
+     "kind": "skill_rule",
+     "what": "把 book-production-workflow.md 第40行的继承条件改成“正文区像素完全一致（遮页脚页码带），页号可不同，由 review_pages.py 判定”。同时写明三档看页：初稿档、验收档、送印档。",
+     "spec": "改 ~/.codex/skills/beijing-gaokao-politics/references/book-production-workflow.md 第40行，并登记 user-requirements-ledger.md 与 correction-log.md（需用户确认后再改）。\n三档：\n(1) 初稿档（用户说“先给初稿、不用复查”）：只跑 page_delta，主代理看 new_text_pages 中每个新专题的首页和含表格页，不开看图工作流。\n(2) 验收档：跑 review_pages plan，只看 need（含±1），看完 record。\n(3) 送印档：整书看一遍并回填账本。\n禁止：渲染后自动整书转图；把整书 PNG 目录交给看图工作流；同页号像素比对（08/10 那种写法）。\n看图分辨率默认 100dpi（约 2.1—2.7k token/页）；只有小字图表才用原图（约 3.1—4.0k token/页）。",
+     "expected_saving": "把第45—49批那种每版整书重看（每次 135—170 万 token）变成按改动计费。按第49批估算单批省 200 万 token 以上。",
+     "risk": "规则放宽要用户同意；继承旧漏检的风险要在送印档兜底。第49批 v2 复看在未变页找出 1 个 medium 问题，说明单遍看图召回率不是 100%。"
+    },
+    {
+     "name": "体检接入改动页摘要",
+     "kind": "batch_health_check",
+     "what": "batch_health.py 增加 --baseline-pdf 参数：只读调用 page_delta，把改动页数、新文字页数、需看页区间写进体检 JSON，并在发布说明里自动附上。",
+     "spec": "python3 batch_health.py --docx 本批.docx --pdf 本批.pdf --baseline 上批.docx --baseline-pdf 上批.pdf --out 体检.json → 体检.json 增加 page_delta:{summary, review_ranges, new_text_ranges}。不设 FAIL 门槛，只作提示；flagged 超过总页数 60% 时给 WARN“全书重排，改动页定位收益有限”（如第50批 543/616）。",
+     "expected_saving": "主代理不再手写像素比对小脚本（第49批写了 07/08/10/11 四个 JSON 的一次性代码），每批省数千 token 的临时代码和一次核对。",
+     "risk": "低；只读，不改输入。"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/page_diff.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/page_manifest.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/render_cache.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/ledger_sim.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/png_body_equal.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/page_lint.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/scan_sessions.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/scan_render_shas.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_G_49_50.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_E_50_51.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_C_v2_v3.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_B_r4_v1.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_B1_r4_v2.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_B2_r4_v3.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_A_codexfinal_r2.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_D_50v1_50.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_F1_r2_rev3.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/diff_F2_r2_rev4.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/ledger_sim.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/manifest_49_171.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/manifest_50_171.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/manifest_51_100.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/manifest_51_171.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/render_index.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/render_shas.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/scan_main.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/scan_3b72.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/lint_r2.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/render/lint_v2.json"
+   ],
+   "open_questions": [
+    "用户是否同意把“已看旧页复用要求同页、完整像素完全一致”（book-production-workflow.md 第40行）改为“正文区像素完全一致（页脚页码除外），页号可不同”？不改的话，账本法只能在不错页时生效，第49批这类情况仍要看约 500 页。",
+    "只出 PDF（跳过 rasterize）的路径是否与 render_docx 全流程 PDF 逐页一致？本任务禁止整书渲染，没有验证。需要在下一批正式渲染时顺带做一次页清单对照。",
+    "第45—48批中间版本的 PDF 和 PNG 已被覆盖，最终48只剩最终 PDF，所以 09-21 四次整书重看（每次约 135—142 万 token）能省多少无法实算。",
+    "Codex 侧的看图 token（最终页检 590 页、修订2页检 595 页）不在 Claude 会话记录里，本任务没有它的计量。",
+    "亚像素位移（不到 0.11pt）算不算“像素不同”？按现行严格规则算，49→50 因此多出 39 页。是否允许一个容差（例如 RGB 各通道差不超过 64 的像素不计）需要用户定夺。",
+    "版面机检原型 page_lint.py 召回率低：在 Codex r2 已知的 5 处版面问题里只抓到第34页，表头落页底、标题孤页底都没抓到。要替代看图还需要继续开发，暂不建议依赖。",
+    "renderer 在 26.904.11930 与 26.909.12148 之间切换时，记忆里写“逐像素相同”。本次两个 PDF 本来就来自不同 DOCX，无法复核；缓存键仍按内容哈希分开。"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "能，而且应该用。题库转换里凡是有原生文字的来源（DOCX、有可靠文字层的 PDF、PPTX 里的文字），脚本直接出的字，比模型转写还要忠实。13 份已验收卷的实测一致率：DOCX 97.8%，文字层 PDF 99.1%，PPTX 文字 88.2%（缺口基本是幻灯片里的图片）；选择题答案键 45 个全部一致。剩下的差异主要是模型自己加的注释、图片里的文字和格式习惯，另有少数我看过原页确认的模型错改。扫描页、矢量描边字、方正字体符号乱码页只能拿到 OCR 草稿，一致率 93%–98%（入/人、宣/宜、①②③④ 这类错），这部分仍要模型看图，但可以改成模型只对照原图出修改补丁。脚本顺带查出已验收卷的真实错误：2026 北京高考 Q10 的 D 项，读取器默认给出的“获得劳动报酬”，原卷是“取得劳动报酬”；2025 东城二模 Q16 参考答案漏了“仍”字。按“文字页脚本直出＋机器自检＋主控抽看一处、图和扫描页交模型”来分流，剩余 34 卷的模型调用估计能从约 1.39 万次降到约 4,100–6,800 次，纯电子版卷能省 80%–90%。题库写权属于 Luna，我的原型和测量结果只写在 scratchpad 里，没有碰书稿、协作文件和题库。",
+   "numbers": [
+    {
+     "metric": "题库线 Claude 会话实际 API 调用与 token（按 message.id 去重）",
+     "value": "11,010 次，1.603B token（缓存重读 1.564B 占 97.6%，输出 8.20M）；主线程 Opus 366 次/192.5M，子代理 177 个 jsonl（其中 15 个是 workflow journal），Sonnet 10,577 次、Haiku 50 次，合计 1.411B",
+     "evidence": "流式统计 /Users/wanglifei/.claude/projects/-Users-wanglifei-Desktop-gpt-claude-----/13295440-b4bb-4013-b7bd-0daa95ed1858.jsonl 与其 subagents/**；时间 2026-09-22T19:47Z–09-23T01:48Z；结果 scratchpad/measure/doc2md/session_stats.json"
+    },
+    {
+     "metric": "同一批日志不去重逐行累加的结果（用来解释“1.8万次/24.8亿”这个已知口径）",
+     "value": "assistant 行 21,202 行，逐行累加 3.196B token；两种口径都对不上 1.8 万次/24.8 亿",
+     "evidence": "同上脚本，逐行统计 usage；Claude Code 每个 content block 单独占一行，同一 message.id 的 usage 会重复记"
+    },
+    {
+     "metric": "子代理每次调用平均携带的上下文",
+     "value": "约 131.8k token/次",
+     "evidence": "(cache_read 1,373.7M + cache_create 29.05M)/10,644 次，session_stats.json agg.ALL"
+    },
+    {
+     "metric": "子代理看图与裁图次数",
+     "value": "Read 图片 3,111 次，裁图/PIL 命令 1,700 次，渲染命令 151 次；Bash 共 6,025 次，Read 共 4,529 次",
+     "evidence": "逐条分类子代理 tool_use，session_stats.py 与后续分类脚本"
+    },
+    {
+     "metric": "Claude 线验收卷的单卷模型成本（16 卷能按描述归到具体卷）",
+     "value": "合计 6,558 次，平均 410 次/卷，中位 395.5；平均 52.0M token/卷；来源每页或每张幻灯片约被打开看图 5.9 次",
+     "evidence": "子代理 meta.json 描述里的卷号归并；来源页数取自 per_exam_units.json"
+    },
+    {
+     "metric": "一份纯 DOCX 卷（BJ-2024-XC-ERMO，3 个 docx）",
+     "value": "模型：7 个代理，394 次调用，51.1M token，看图 126 次。脚本：0.09 秒，逐字一致 98.89%，答案键 30/30，19 题连续，总分 100",
+     "evidence": "session_stats 按卷汇总；scratchpad/measure/md/BJ-2024-XC-ERMO/compare.json 与 selfcheck.json"
+    },
+    {
+     "metric": "历次改稿与复核轮次",
+     "value": "76 卷共 1,172 个轮次目录，平均 15.4 个/卷，中位 16，最多 35（BJ-2025-HD-QIMO）",
+     "evidence": "/Users/wanglifei/Desktop/gpt和claude共同的小窝/后勤管理/MD全库流水线_20260921/receipts/*/<exam_id>/ 子目录计数"
+    },
+    {
+     "metric": "在范围内 PDF 的逐页分类（131 份 1,596 页，PyMuPDF）",
+     "value": "文字层可靠 711 页＋文字加图 94 页，共 805 页（50.4%）；iOS Quartz 生成的扫描加 OCR 文字层 94 页（5.9%）；无文字层扫描 578 页（36.2%）；方正 PDFGenerator 把字转成矢量描边 71 页（4.4%）；方正/Aspose 符号乱码页 28 页（1.8%，中文正确，数字、标点、圈码错映射）；空白 20 页。按文件分：文字型 63，扫描型 42，混合 26",
+     "evidence": "scratchpad/measure/doc2md/pdf_classify.py → pdf_summary.json、pdf_pages.jsonl。先按透明度剔除低于 0.5 的水印“内部资料，严禁外传”，再判图片覆盖面积、矢量描边、ASCII 符号比例"
+    },
+    {
+     "metric": "84 个有效卷的来源单位（同卷内去重）",
+     "value": "PDF 1,569 页（文字 779，OCR 层 94，扫描类 696）；PPTX 884 张（文字 483，含图 401）；DOCX 约 405 页（图 243 张，11 个含浮动文本框或 VML 形状）；doc/rtf 旧格式 11 份；PPTX 打不开 1 份",
+     "evidence": "scratchpad/measure/doc2md/per_exam_units.json；DOCX 页数按 lastRenderedPageBreak 估算，偏低"
+    },
+    {
+     "metric": "剩余 34 卷（待复核）的来源单位",
+     "value": "PDF 718 页（文字 326，扫描类 390，OCR 层 2）；PPTX 376 张（文字 214，含图 162）；DOCX 129 页（图 82，浮动 4）；旧 doc 8 份。其中 10 卷是纯电子版（没有扫描页和图片幻灯片）",
+     "evidence": "per_exam_units.json，按 manifest 状态不是“已验收”筛选"
+    },
+    {
+     "metric": "脚本直出与已验收题 MD 的逐字一致率（按页型，13 份已验收卷）",
+     "value": "DOCX 97.8%（37,814 字）；文字层 PDF 99.1%（52,890 字）；文字加图页 99.2%（1,276 字）；iOS OCR 层 99.3%（5,098 字）；矢量描边字＋现有 Vision OCR 97.8%（6,997 字）；扫描页＋现有 Vision OCR 95.6%（19,432 字；CY-QIMO 97.1%，FT-YIMO 93.2%）；PPTX 原生文字 88.2%（13,287 字；DC-YIMO 98.4%，FT-YIMO 85.1%，缺口是 34 张学生答卷和细则图片）",
+     "evidence": "scratchpad/measure/doc2md/trial_summary.json 与各卷 compare.json。算法：只取已验收 MD 的题面、E1、E3 段，去空白后 6-gram 定位加 SequenceMatcher；已经扣除模型自写的说明行和答案键复述行（答案键另做语义核对）"
+    },
+    {
+     "metric": "三份主试算卷",
+     "value": "DOCX（2024 西城二模）98.89%，拆题 100%；文字层 PDF（2025 东城二模）99.72%，拆题 96.7%；扫描 PDF（2026 朝阳期末）97.14%，拆题 93.4%。三卷都拆出 21 题或 19 题且连续，总分解析为 100",
+     "evidence": "scratchpad/measure/md/{BJ-2024-XC-ERMO,BJ-2025-DC-ERMO,BJ-2026-CY-QIMO}/compare.json、selfcheck.json"
+    },
+    {
+     "metric": "选择题答案键语义核对",
+     "value": "45/45 一致（XC-ERMO 30 个，CY-ERMO 2023 15 个）",
+     "evidence": "compare.py 的 answer_key 计数"
+    },
+    {
+     "metric": "反向覆盖：脚本输出的字有多少在已验收 MD 里",
+     "value": "92.7%–98.9%；其余是卷首说明、答案键原始行、OCR 分页符，没有发现脚本凭空多出的内容",
+     "evidence": "对 6 卷逐行反查，结果见本次运行输出"
+    },
+    {
+     "metric": "脚本运行耗时",
+     "value": "13 卷共 32.7 秒（含扫描页和图的渲染），约 2.5 秒/卷",
+     "evidence": "time 实测"
+    },
+    {
+     "metric": "已验收题 MD 的篇幅",
+     "value": "13 卷已验收题 MD 共 648,699 个非空白字符，其中能对上原件的逐字内容 132,877 字（20.5%，是下限）；脚本版题 MD 339,984 字，约为已验收版的 52%",
+     "evidence": "对 questions/<卷>/*-Q*.md 与 scratchpad/measure/md/<卷>/*-Q*.md 计数"
+    },
+    {
+     "metric": "标题格式漂移",
+     "value": "题库题 MD 里有 404 种不同的“##”标题，题面段标题 72 种；bank.py 读取器要为此维护别名表（828 行）",
+     "evidence": "grep 统计 questions/*/*-Q*.md；scripts/bank.py 的 STEM_SECTIONS 与 ROLE_SECTION_ALIASES"
+    },
+    {
+     "metric": "脚本复查出的已验收卷错误（我亲自看原页裁图确认）",
+     "value": "4 处：①2026 北京高考 Q10 D 项默认题面段写“获得劳动报酬”，原卷 p4 是“取得”；②2025 东城二模 Q16 原卷内嵌参考答案漏“仍”；③2025 东城二模 Q18 细则讲评把“主体，做法，作用”改成顿号；④2025 东城二模 Q17 标着“视觉复核，不静默规范化”的主题面段把原卷印的“輸送/仙远地区/网上立電/随中办”改成了“输送/偏远地区/网上立案”（原样变体另有一节保留）",
+     "evidence": "裁图：scratchpad/measure/doc2md/crop_gk26_取得_4_0.png、crop_dc_q16.png、crop_dc_rub1.png、crop_dc_p4a.png、crop_dc_p4b.png；bank.py get BJ-2026-BJ-GAOKAO-Q10 输出第 36 行"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "电子版来源的正文也由模型重新转写，然后再多轮复核",
+     "cost": "一份纯 DOCX 卷要 394 次调用、51.1M token、看图 126 次（BJ-2024-XC-ERMO），而脚本 0.09 秒就能得到 98.9% 一致的正文。Claude 线平均 410 次/卷，每页或每张幻灯片被打开约 5.9 次",
+     "evidence": "session_stats.json 按卷汇总；md/BJ-2024-XC-ERMO/compare.json",
+     "root_cause": "现有流程里内容的产出和核对全靠模型（交接文件 §5 的 A→B→C→D 四个工位），脚本只管合并、验收和记账。早期的 03/04 抽取脚本输出不可信，没人再用"
+    },
+    {
+     "name": "早期抽取脚本的缺陷让“脚本产物”失去信任",
+     "cost": "后来所有卷都退回模型逐页核对，模型成本见上一条",
+     "evidence": "04_extract_docx.py 没有处理 numPr 自动编号（grep 不到 numPr、lvlText），也没区分 mc:Choice 和 mc:Fallback，结果文本框重复：evidence/S0dbd7271f7bf/native_text/raw.md 里“党的十八大报告提出”出现 2 次，原型只出 1 次。03_extract_pdf.py 用 pdftotext -layout 整页抽取，表格和双栏会交错，工位说明因此专门写了“表格必须是真表格”的硬标准",
+     "root_cause": "抽取和切题从来没有和已验收结果做过逐字比对，也没有页型分流，所以没人知道哪些页可以直接用"
+    },
+    {
+     "name": "上下文膨胀：每次调用都要重读整段对话",
+     "cost": "子代理平均每次约 131.8k 上下文；缓存重读 1.564B，占总 token 的 97.6%",
+     "evidence": "session_stats.json",
+     "root_cause": "一个代理在同一上下文里连续看几十张图、读长 MD 和 JSON。看图 3,111 次、裁图 1,700 次，都是一次一张、一次一个工具调用"
+    },
+    {
+     "name": "返修与复核轮次多",
+     "cost": "平均 15.4 个轮次目录/卷，最多 35 个",
+     "evidence": "receipts/*/<exam_id>/ 计数",
+     "root_cause": "模型整卷重写，改动面大，复核方只能整卷对照；模型还会自己引入静默规范化（输送/偏远、漏“仍”、获得/取得），又得再开一轮。没有一条确定性基线可以做 diff"
+    },
+    {
+     "name": "题 MD 格式漂移和元数据过多",
+     "cost": "标题 404 种，读取器要维护别名表；已验收题 MD 里逐字原文只占约 20.5%，以后宝典读取也要多付 token",
+     "evidence": "questions/*/*-Q*.md 统计；scripts/bank.py 的别名表",
+     "root_cause": "每个模型工位按自己的习惯写小节名和说明，没有统一的生成器"
+    },
+    {
+     "name": "扫描、矢量描边、符号乱码页确实需要看图",
+     "cost": "剩余 34 卷里有 390 页扫描类，84 卷合计 696 页；现有 Vision OCR 草稿一致率 93%–98%，一卷 21 题约 300 多个错字",
+     "evidence": "compare.json 的 scan_no_text 与 vector_outlined_text 两类；CY-QIMO 的差异样例有 入/人、舆/奥、宣/宜、为/沟，FT-YIMO 的 OCR 丢了 ①②③④ 选项行",
+     "root_cause": "没有独立的第二套高精度 OCR；Vision 对圈码和形近字不稳"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "doc2md.py：确定性转换生成题级候选",
+     "kind": "script",
+     "what": "把一卷所有来源按页型分流：原生文字页由脚本直接生成题级 MD；不能直出的部分列进 residual.jsonl 交给模型。原型已跑通 13 卷。",
+     "spec": "位置：交给 Luna 采纳时放 DeepSeek_政治题库资料库_20260918/scripts/doc2md.py；原型在 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/doc2md.py。\n命令：/usr/bin/python3 doc2md.py <EXAM_ID> --out <隔离候选目录>，默认写 receipts/<actor>/<EXAM>/s1/candidate/，绝不直接写 BANK；可选 --ocr-dir（默认 evidence/<sid>/visual_transcript）和 --render-dpi 110。\n输入：conversion_manifest.json 里 tasks[].sources 的 role、rel_path、format、source_id；原件根目录 00_共同资料/原材料（找不到时退回 Desktop）；source_manifest.csv 用于核对 sha256。\n各格式处理规则：\n(1) DOCX：按 body 顺序解析 document.xml；用 numbering.xml 和 styles.xml 算出自动编号（decimal、upperLetter、decimalEnclosedCircle、chineseCounting 等）；AlternateContent 只取 Choice；文本框单独成块，锚点在正文前面就排到前面；w:sym 映射；OMML 转成 $线性文本$；run 格式保留为 <u>、<mark>、<span data-color>、<sup>、<sub>、<em class=\"dot\">、**加粗**；表格有 gridSpan 或 vMerge 就输出 HTML 表，否则 GFM 表；嵌图原样导出到 assets；删除修订记为〔修订删除:…〕。\n(2) 文字层 PDF：用 get_text(dict)，丢掉 alpha<128 的水印；按页宽检测双栏；页眉页脚按跨页重复行加页码正则去掉；分段规则是遇到题号、选项、小问、①–⑳、“材料一”、缩进、上一行以句末标点结尾且没排满就断开；先拆开同一行里的 A–D 选项，再删掉中文旁边的排版空格；find_tables 转成表格；嵌图面积超过页面 1%、矢量簇超过 2% 的裁图进 residual；在 3 页以上重复出现的同一张图算装饰，只记一次。待补：着重号在文字层里是单独一段“．．．”，位置略低于基线，要识别后转成 <em class=\"dot\">。\n(3) PPTX：按从上到下、从左到右的顺序遍历形状（含组合形状）；表格和备注单列；隐藏页做标记；图片导出后进 residual。\n(4) doc/rtf：先用私有 fontconfig 的 soffice 转成 docx，再走 DOCX 路径。\n(5) 扫描、矢量描边、符号乱码、iOS OCR 层页：只放 OCR 草稿，每段加〔OCR候选〕，保留整页图，整页进 residual。\n切题规则：原卷按 1..N 顺序号切（用“期望号”约束；OCR 把题号后的点认成“：”或“，”时，只在恰好等于下一题号时接受）；细则和答案里的“16．”“18（1）”按升序切，最多允许跳 2 号；答案键行“1．B 2．D …”和题号/答案表都能解析，也要能从原卷或教师版末尾的答案附页里解析。\n输出题 MD 统一用读取器已认的一套标题：# QID；## 身份信息（题号、题型、分值、原卷页、来源 sid 和角色）；## 读取指引（机器可读）；## 题目原文（原卷·native，读取优先），扫描卷经模型补丁后改用“（原卷·视觉核校转写）”；### 图表对象，每张图写 ![](assets/…) 和〔待转写:R-xxx〕；## 正式评分材料（E1）；## 参考答案（E3）；## 讲评来源块（含答案与解析，不得当作题面）；## 学生示例、教师批注与实得分；## 机器自检。另出 00_exam_front_matter.md、sources/<sid>.full.md（逐页或逐张）、assets/<sid>/…，以及和 apply_question_delta.py 兼容的 delta.json（items 含 target、parent_sha256、candidate、candidate_sha256）。\n自检写进 selfcheck.json，任一硬失败就不交主控：①题号 1..N 连续，题数等于 manifest 的 question_index_count；②卷首“共N题每题M分”加各题“（N分）”加小问分值，合计为 100；③每道选择题恰有 A–D 四个选项，题肢①–④齐全；④每道选择题都有答案键，字母属于 A–D，E1 和 E3 各自来源；⑤每个 E1/E3 主观题块都能落到存在的题号；⑥每个来源页或幻灯片至少映射到一道题或卷首，覆盖率 100%；⑦来源 sha256 与 source_manifest 一致；⑧assets 链接全部有效；⑨凡属非直出页型的内容一律不许标成 final。\nresidual.jsonl 每行格式：{id, exam_id, qid|null, source_id, role, page|slide, kind: figure|vector_frame|scan_page|ocr_layer_page|picture_slide|docx_image|floating_textbox|garbled_symbols|table_complex|answer_key_missing|split_uncertain|source_typo_candidate, bbox, crop_path, context_before, context_after, draft_text, task: transcribe_figure|proofread_patch|check_order|adjudicate, affects_answering:null}。",
+     "expected_saving": "文字页的转写和逐字复核基本不再需要模型。按剩余 34 卷估算，模型调用约从 13,940 次（按 Claude 线平均 410 次/卷外推）降到 4,100–6,800 次（省 51%–71%，按每个模型项 4 次调用算约省 65%）；纯电子版卷省 80%–90%（例如 XC-ERMO 约 394 次降到约 60 次）。每次调用的上下文也会变小，token 节省应比调用次数更多，这一点没有实测。以后读题库，题 MD 篇幅约为现在的 52%。",
+     "risk": "复杂版面的阅读顺序可能出错（双栏 A3、浮动文本框，XC-ERMO Q16 就是一例），图和题的归属也可能归错，所以这两类一律进 residual 让模型看一眼。文字层可能照印了原件的错字，只能照录并标“（原文如此）”，禁止改正。原型的细则切题在教师版和 iOS OCR 细则上还不稳：BJ-2022 拆题 50.5%，自检会报出来。manifest 规则要求转写者和复核者是不同代理，需要主控裁定“脚本加模型复核”是否算满足。"
+    },
+    {
+     "name": "页型分流规则（写进 Skill 与工位说明）",
+     "kind": "skill_rule",
+     "what": "规定每类页由谁负责、验收标准是什么，把“每页都由模型转写并复核”改成按页型分流。",
+     "spec": "doc2md 的 page_class 决定路径：\n A 类，脚本直出（text_reliable、text_plus_figure 里的文字、DOCX 正文、PPTX 文本框和表格）：机器自检全过，主控每卷随机抽看一处复杂页对照原图，即可验收这部分文字；复核工位不再逐字重核这类页。\n B 类，模型只看局部（嵌图、矢量框线簇、DOCX 图片、浮动文本框顺序、复杂表格）：按图的硬标准 2a 结构化转写，写回〔待转写:R-xxx〕的位置。\n C 类，模型对照 OCR 草稿逐页校对（scan_no_text、vector_outlined_text、symbol_garbled、ocr_layer_over_scan）：只输出补丁（见“补丁模式”），不整页重写。\n D 类，模型全文转写（PPTX 图片页、学生手写样卷、照片）。\n以下实测一致率写进规则，作为分流依据：DOCX 97.8%、文字层 PDF 99.1%、iOS OCR 层 99.3%、Vision OCR 95.6%–97.8%。\n另立硬规则：A 类文字只能用带原页裁图证据的补丁修改，禁止“视觉读法”改写文字层；遇到繁体字或形近怪字（例如 輸、電、仙远）标“（原文如此）”候选，交主控看图裁定。",
+     "expected_saving": "剩余 34 卷里 669/1,223 个来源单位（54.7%）、全库 1,667/2,858（58.3%）不再需要模型转写和逐字复核。",
+     "risk": "iOS OCR 层（2020–2025 高考 E1）一致率虽有 99.3%，毕竟仍是 OCR，而且 E1 很关键，所以归 C 类。页型分类器要保留对“文字层等于印刷字形”的抽检，例如每卷渲染 1 页做 OCR 反查。"
+    },
+    {
+     "name": "补丁模式：模型只出修改补丁，由脚本应用",
+     "kind": "procedure",
+     "what": "模型的所有改动都以“锚点加旧文加新文加证据”的 JSON 补丁提交；复核工位只核补丁和 residual 项，不再整卷对照。",
+     "spec": "模型输出 patches.json，格式为 [{residual_id|null, qid, action: replace|insert|figure_transcript|confirm, anchor: 当前文件中唯一的原句片段, old, new, evidence: {source_id, page, bbox, crop_path}, affects_answering: true|false}]。\napply_patches.py <候选目录> patches.json [--apply] 的规则：锚点在目标文件里不唯一就拒绝；一处改动超过 30 字、又不是图转写的，标 needs_controller；自动生成机械 diff 回执；应用后重跑 doc2md 自检。\n复核工位 B 只看三样：每条补丁对应的裁图、每个 residual 项、随机 1 页 A 类页。输出 verification.json 时逐条写 pass 或 fail。只有题面、选项、设问、分值、答案、E1、E3、学生原答的错误算 major，才触发返修，返修也只针对这些补丁。",
+     "expected_saving": "输出 token 从“整题全文”降到“改动几个字”；复核面从整卷缩到补丁加 residual。现在平均 15.4 个轮次/卷，按估计可降到 2–3 轮（尚未实测）。",
+     "risk": "补丁锚点可能不唯一，需要带前后文。模型也可能漏报应改的地方，所以 C 类页要求逐页有 confirm 记录，防止跳页。"
+    },
+    {
+     "name": "已验收卷回溯体检：bank_retro_audit.py",
+     "kind": "batch_health_check",
+     "what": "对 50 份已验收卷的电子版来源重跑 doc2md，和题库现有题 MD 做逐字比对，列出模型引入的偏差交主控裁定。全程只读，token 成本接近零。",
+     "spec": "命令：/usr/bin/python3 bank_retro_audit.py [--exam E…] --out <scratch目录>。\n做法：调用 doc2md 到临时目录，再用 compare.py 的算法：按章节只取题面、E1、E3 段；6-gram 定位后用 SequenceMatcher 对齐；答案键单独做语义核对；按类剔除模型说明行。\n只报 A 类页上长度不超过 6 字的替换、插入、删除，输出 retro_audit.jsonl，每行 {exam, qid, section, accepted_text, script_text, page, crop_path}，并为每条自动裁图；同时标出 bank.py get 默认返回的是哪一节。\n先处理的 4 例（我已看原图确认）：BJ-2026-BJ-GAOKAO-Q10（获得→取得）、BJ-2025-DC-ERMO-Q16（漏“仍”）、Q18（逗号→顿号）、Q17（输送/偏远/立案与原卷不符）。\n放在 DeepSeek_政治题库资料库_20260918/scripts/，由 Luna 决定是否采纳；修正仍走 controller_multi_fix.py。",
+     "expected_saving": "用脚本代替模型对已验收卷做复验：一卷约 2 秒，只有差异项才要模型或主控看，每卷通常 0–10 处。",
+     "risk": "已验收 MD 格式很杂，比较器会误报：BJ-2024-CY-ERMO 取到 0 字，有的卷把模型加的行号、<mark>、[空栏] 当成差异。所以只报短差异并附裁图，由人裁定，不能自动改。"
+    },
+    {
+     "name": "裁图拼版 crop_sheet.py",
+     "kind": "script",
+     "what": "把一卷 residual 的裁图按编号拼成 1–3 张拼版图，模型一次调用就能看 12 张左右，不再一张图一次 Read。",
+     "spec": "命令：/usr/bin/python3 crop_sheet.py <候选目录>/residual.jsonl --per-sheet 12 --width 1600 --out <目录>。\n做法：每格左上角印 residual id，格内放裁图；原图长边小于 400px 时按原始像素放大；手写或微字项不进拼版，单独出高分辨率图。\n输出 sheet_01.png…，另出 sheet_index.json 记录 id 与格子位置的对应。\n工位说明写明：先看拼版，只对拿不准的项再开单图。",
+     "expected_saving": "Claude 线子代理看图 3,111 次、裁图 1,700 次，改用拼版后单卷看图调用估计能降到原来的 1/5 到 1/10（未实测）。",
+     "risk": "拼版会缩小图片，微字可能看不清，所以必须保留单图复看的出口。"
+    },
+    {
+     "name": "OCR 路由与乱码页混合修复",
+     "kind": "script",
+     "what": "扫描类页只对缺 OCR 的页补跑 OCR；方正符号乱码页的中文取文字层，数字、标点、圈码取 OCR；形近字表自动标疑。",
+     "spec": "ocr_route.py <EXAM>：查 evidence/<sid>/visual_transcript，缺哪页就用 ocr-vision 在 300dpi 下补跑哪页（输出写到候选目录，不写题库）。\n对 symbol_garbled_text_layer 页：按行把文字层和 OCR 对齐，文字层里的汉字一律采用，ASCII 符号 !\"#$%&*+ 所在位置改用 OCR 结果，两者不一致就进 residual 的 garbled_symbols。\n形近字表：入/人、舆/奥、宣/宜、为/沟、治/洽、自/白、于/子、干、未/末等，取自 CY-QIMO 差异样例；命中就在 draft 里标〔疑:字〕，供 C 类校对时重点看。\n涉及 28 页乱码和 71 页矢量描边字。",
+     "expected_saving": "C 类校对时模型集中看标疑处；乱码页大部分汉字可以直接采用。",
+     "risk": "iOS OCR 层和 macOS Vision 可能同源，错误相关，不能当作两套独立 OCR 投票；本任务只抽样，没有批量跑 OCR。"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/doc2md.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/compare.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/pdf_classify.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/pdf_summary.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/pdf_pages.jsonl",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/session_stats.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/session_stats.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/per_exam_units.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/trial_summary.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/crop_gk26_取得_4_0.png",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/crop_dc_q16.png",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/crop_dc_rub1.png",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/crop_dc_p4a.png",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/doc2md/crop_dc_p4b.png",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/md/ (14 卷脚本直出结果：BJ-2024-XC-ERMO、BJ-2025-DC-ERMO、BJ-2026-CY-QIMO、BJ-2022-BJ-GAOKAO、BJ-2023-DC-YIMO、BJ-2026-FT-YIMO、BJ-2025-DC-YIMO、BJ-2026-BJ-GAOKAO、BJ-2023-CY-ERMO、BJ-2024-HD-YIMO、BJ-2026-CY-YIMO、BJ-2023-XC-ERMO、BJ-2026-CY-ERMO、BJ-2024-CY-ERMO；每卷含题MD、sources/*.full.md、assets/、residual.jsonl、selfcheck.json、compare.json)"
+   ],
+   "open_questions": [
+    "已知的“约 1.8 万次调用、24.8 亿 token”对不上：按 message.id 去重是 11,010 次、1.603B；不去重逐行累加是 21,202 行、3.196B。那个数字可能出自别的会话或别的口径，需要知道原始算法才能核对。",
+    "Luna/Codex 这边的真实成本没有测：我没读 Codex 会话日志。剩余 34 卷的节省是按 Claude 线平均 410 次/卷外推的；拼版、补丁模式的每项调用数（3–6 次）是估计，不是实测。",
+    "manifest 规则要求 transcription_and_review_must_be_different_agents。“脚本直出、模型复核 residual 并抽检 A 类页”算不算满足，需要主控 Luna 或用户裁定。",
+    "已验收卷里 4 处偏差是我看原页确认的（2026 北京高考 Q10 获得→取得；2025 东城二模 Q16 漏“仍”、Q18 逗号改顿号、Q17 输送/偏远/立案与原卷不符）。题库写权在 Luna，我没有修改，请交她走 controller_multi_fix.py 处理，并考虑对 50 份已验收卷跑一遍回溯体检。",
+    "比较器对部分已验收卷格式适配不好（BJ-2024-CY-ERMO 取到 0 字；2026 北京高考、FT-YIMO 等有大量未定位行），这几卷的一致率只能参考；可信度最高的是三份主试算卷，再加 BJ-2022 高考和 2023 东城一模。",
+    "原型还有已知缺口：着重号“．．．”、原卷末尾嵌入的答案键、教师版和 iOS OCR 细则的切题（BJ-2022 拆题 50.5%）、图与题的归属、浮动文本框顺序、doc/rtf 转换、打不开的那份 PPTX（D-002/D-003 需重打包）。交 Luna 前需要补齐，并在 10 卷纯电子版上做一次小批验证。",
+    "DOCX 页数按 lastRenderedPageBreak 估算，偏低（例如 2024 顺义二模 manifest 记 9+2 页，估算只有 6），会影响按页计的单位统计，但不影响按图片计的模型工作量。"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "第43—51批用户一共提了78条修改意见。26%（20条）脚本可以直接查出，31%（24条）可部分机检，68%（53条）当时已有规则或加一条规则就能提前拦住；有21条属于同类问题被指出第二次以上，其中6次用户明说过“之前说过”或“skill里写了”。反复返工最多的是四类：工程痕迹和评分套话（6次）、答案或表述越出本标题（6次）、类型分类不够本质（5次）、专题不穷尽（4次）。最晚才发现的是机器一秒能数清、人眼却要逐页找的问题：第48批构建脚本对全书做了“细则→评分标准”的正则替换，把题面《实施细则》改成《实施评分标准》，第51批还剩3段；第48批整段误蓝95个run、材料小标题keepNext丢了62处；第51批仍有10页表格里的楷体回退成ArialUnicodeMS；Codex第49批到最终排版才查出63处答案带分。第45—51批逐页看图一共跑了13轮（286个Sonnet代理），多数发现是正则能查的文字层问题和一个已裁定的原卷空框；第49批按“同页同像素”规则派出548页复看，实际内容变化只有34页。现有batch_health.py在已发布的第51批上有3个门FAIL，但都是结构没跟上造成的误报；真正的缺漏（2个政府例题缺【细则】，780行教学列表借用了“题目选项”样式）它却看不到。",
+   "numbers": [
+    {
+     "metric": "用户修改意见条数（第43—51批，含样稿轮）",
+     "value": "共78条：43批3、44批12、45批7、46批1、47批5、48批5、49批13（样稿R1–R3共8条，发布后5条）、50批11、51批政府样稿21",
+     "evidence": "逐条表 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/feedback_items.json；来源：Codex会话01a09e09（09-14T05:41Z“字体，大小，颜色，排版，一点都没改。skill里没写吗？”）、01a0c595（样稿三轮）；Claude会话3b729a0b（15条用户消息）、3bd4f1ab（36条，含7106db47/62597da3/da6d7851/b8067562分叉历史）"
+    },
+    {
+     "metric": "意见分类",
+     "value": "结构/专题17、工程痕迹/调性8、证据/细则取用8、版式7、分类7、写法/逻辑7、内容归属/标题交集6、完整性/穷尽5、内容准确4、流程3、命名/用词3、图片1、去重1、其他1",
+     "evidence": "feedback_items.py 的统计输出"
+    },
+    {
+     "metric": "可机检比例",
+     "value": "完全可机检20条（26%），部分可机检24条（31%），不可机检34条（44%）；上游规则可拦53条（68%）；被标为重复或规则已有的21条",
+     "evidence": "feedback_items.json 的 machine/upstream/repeat 字段；“规则已有”6处：09-14 字体、09-15 题肢判断与选择题入正文、09-15 试卷信息、09-21 21:33 等级套话（“我之前应该说过，但你还是没记住”）、09-23 07:16 细则只留相关（“我们之前说过”）"
+    },
+    {
+     "metric": "整书渲染次数（每批）",
+     "value": "43批：Word原生导出5次（原生核验1–5）＋9份候选DOCX；44批：7次（原生1–5、7、8）；45批≥4次；46批5次；47批≥4次；48批约11次；49批存留21份不同的整书PDF（Codex 15、Claude 6）；50批2次；51批1次（目录定位＋终版各一份PDF）。LibreOffice单次约45–90秒",
+     "evidence": "按SHA去重的清单 fullrenders.tsv；会话3b729a0b中耗时≥40秒的render调用见 tool_durations.py 输出（如09-21T10:02–11:07Z的6次）；3bd4f1ab 中 render_b50/b51 各60–67秒。输出文件会被覆盖，存留数只是下限"
+    },
+    {
+     "metric": "候选/修订版本数",
+     "value": "43批：候选1–9＋原生核验1–5＋Word保存；49批：样稿修订1–3（1、2撤回），全书推广累计头11次晋升（574→1892项，11个提升前备份目录），终版r1–r4，Claude修订5 v1/v2/v3；政府主体专题：v1–v12＋终版共13版",
+     "evidence": "必修三_最新Skill修订_20260913 根目录文件列表；协作/候选/Codex/第49批_单题样稿_20260921/全书推广_20260921/构建/续接20260922/提升*前备份；第50批工程/专题小样/政府_主体专题小样_v1..v12.md（修改时间 09-22 21:52 至 09-23 11:26 PDT）"
+    },
+    {
+     "metric": "逐页看图成本（Claude，45—51批）",
+     "value": "13轮工作流、286个代理、220.8M cache read、3.2M输出，占子代理总cache read的6.8%；48批5轮全书（616/587/586/581/583页，共2953页次，132个代理）；49批收尾2轮26个代理86.1M cache read，其中一轮被中止",
+     "evidence": "workflows_usage_v2.json（按消息id取最大值去重）；3b729a0b/workflows/*.json 的 args.total 与 tag"
+    },
+    {
+     "metric": "页检重复报告",
+     "value": "“云端+院落夜话”流程图末框空白（45批首轮已裁定为原卷留空）在9次完成的全书页检中每次都被重报；48批5轮页检分别报“评分标准/参考答案原话”13、11、2、29、27次，成稿仍有90段含“评分标准”",
+     "evidence": "3b729a0b/workflows 中 pagecheck 各轮 result 的正则计数；retro 统计中“评分标准”段数：47批0→48批90→49批40→50批22→51批23"
+    },
+    {
+     "metric": "位移页复看浪费",
+     "value": "49批修订5：相对r4变化547页，其中513页只是整体位移、正文完全相同，真正内容变化34页，按规则仍派548页；文本哈希估计r4→v1实际变化33页，v2→终版14页；Codex终版r1→r2派14份Luna看593页，文本实际变化269页，r2→r3、r3→r4各只变6页",
+     "evidence": "协作/候选/Claude/第49批收尾_Claude_20260922/修订5/07_像素比对_r4_r5.json（shift1_body_identical_info_only 513，content_changed 34），08_像素比对_r4_最终.json（must_review 548）；pagediff.py 输出"
+    },
+    {
+     "metric": "细则→评分标准误伤题面",
+     "value": "48批9段（题目材料3、题目选项1、分析过程3、答案落点1、细则说明1），49/50批各4段，51批仍3段（题目材料1段“④构建与国家法律配套的地方实施评分标准”，分析过程2段）",
+     "evidence": "R45候选_Claude_20260915/构建/build_r45.py 第784—808行：_TPL2 含 `(?<!【)细则(?!说明】)`→'评分标准'，对全部段落的全部w:t执行；retro 扫描 r'实施评分标准|评分标准》'"
+    },
+    {
+     "metric": "教学正文误蓝",
+     "value": "43批63个run（答案落点1F4E79）；44—47批0；48批95个run（【答案落点】【细则说明】标签和正文在同一个run里一起着蓝）；49—51批0",
+     "evidence": "retro.json 的“教学正文彩色run”项、health_ext.py 的明细；用户09-21T20:24Z“很多分析部分的正文全部用了蓝色”"
+    },
+    {
+     "metric": "扩展词表回扫命中（FAIL级）",
+     "value": "45批287、46批152（用户09-15已指出后，细则原话29、本节点34、固定分值50、阅卷细则16仍在）、48批8、49批7、50批6、51批5（专题一“等级量表题”2、“不逐点计分”1、“整体挂钩”1、“待定”1）；现有词表在45批只能拦下约123处",
+     "evidence": "ext_44_45.json 到 ext_50_51.json 的 D_words_fail 项"
+    },
+    {
+     "metric": "材料小标题缺keepNext",
+     "value": "43批11、44—47批0、48批62、49—51批4",
+     "evidence": "retro.json“材料小标题无keepNext”；修订5 说明“47处材料小标题补上与下段同页”"
+    },
+    {
+     "metric": "PDF中文字体回退",
+     "value": "Codex O1_05 同一候选：lo_candidate 438页，93.69%字符落在TimesNewRomanPSMT（CJK缺失）；fontqa_candidate 567页，ArialUnicodeMS占20.63%。已发布51批仍有10页整段汉字用ArialUnicodeMS/HiraMaruPro（p21 323字，p47/110/147/187/261/365各267字），这些段落在表格内，run字体直写“楷体”",
+     "evidence": "全书推广_20260921/并发调度/任务包/证据就绪续包/O1_05_2024丰台二模16/返修技术验收/{lo_candidate,fontqa_candidate}/*.pdf 的 span 字体统计；第51批阶段审查稿.pdf；Codex交接写“旧CJK缺失的33页QA已作废”"
+    },
+    {
+     "metric": "渲染器版本漂移",
+     "value": "documents bundle 从26.909.22227（09-15）到26.909.12148（49、50批）再到26.904.11930（51批，也是目前唯一存在的版本）；09-22T20:04Z 在Claude会话里因路径消失报CalledProcessError",
+     "evidence": "各批 同版身份.json 的 renderer 字段；ls ~/.codex/plugins/cache/openai-primary-runtime/documents/"
+    },
+    {
+     "metric": "batch_health 在已发布51批上的结果",
+     "value": "3个门FAIL：四栏目（【思维链条】527≠385，因142道专题例题）、考法标称（8个主体名用了“具体考法”样式）、4处末尾带试卷。真实异常没报：政府例2用【评分标准（北京一栏，3分）】、政府例22用【答案】代替【细则】、法院与检察院例11有2个【细则】；专题三780行教学列表借用“题目选项”样式，被当作题面跳过检查（其中10行末尾带试卷/分值）",
+     "evidence": "health_51.json；health_ext.py 的 F_topic_examples 输出；51批14:01 PDT发布，体检脚本13:59生成，本批未跑体检（3bd4f1ab 中没有 batch_health 调用）"
+    },
+    {
+     "metric": "政府样稿返工",
+     "value": "13版、11条用户消息共21项意见、约13.6小时；v1–v3含“答题公式”1–2处及“长什么样”“头上”“说明”，正是用户06:08/06:32Z要删的词；v9“做法题”5处，用户15:10Z指出后v10改成“是如何”6处；主线程196条消息、84.3M cache read，子代理81个、287.4M cache read、2.51M输出，2个工作流因用户中途提新意见被kill",
+     "evidence": "专题小样/政府_主体专题小样_v*.md 的grep计数；3bd4f1ab 分阶段用量；workflows_usage_v2.json 中 gov-* 各行"
+    },
+    {
+     "metric": "子代理总用量（Claude，45—51批，不含题库）",
+     "value": "1824个代理、53.6M输出、3264M cache read、144.6M cache write；48批最高（1188个代理、29.8M输出、928M cache read）；51批七主体推广127个代理、6.94M输出、896.7M cache read，其中Extract阶段占cache read的31%（275.8M）",
+     "evidence": "workflows_usage_v2.json；wf_153d2233-a7f 按 meta.workflowPhase 分组"
+    },
+    {
+     "metric": "Codex第49批用量（主线程＋直属子线程）",
+     "value": "主线程01a0c595：231.0M输入/0.59M输出；01a0c7aa：275.0M/0.49M；直属子线程68＋47个，1530.6M＋2645.6M输入、5.7M＋8.1M输出；其他同期根线程（01a0c78f/01a0c78d/01a0c86a）按代理名属于题库线，未计入",
+     "evidence": "~/.codex/sessions/2026/09/21/rollout-…01a0c7aa…jsonl 与 archived_sessions/rollout-…01a0c595…jsonl 的末条 token_count；子线程按 session_meta.session_id 归根"
+    },
+    {
+     "metric": "一次性脚本数",
+     "value": "必修三工程共267个.py：Codex第49批目录181个，第44批格式返工38个（render44_1–8、refine44×8、pixels44_5–8），各Claude批次6–11个",
+     "evidence": "find 必修三_最新Skill修订_20260913 -name '*.py'（排除vendor和外部证据副本）"
+    },
+    {
+     "metric": "选择题答案与逐肢判定一致性（DOCX原型）",
+     "value": "46批：186道一致，4处标记，其中2023海淀期中（上）第8题答案B、逐肢推出A，正是47批一次性脚本才发现的选项转录错误；47批和51批只剩1处（2023东城二模第9题，反向设问，属误报）",
+     "evidence": "choice_check.py 输出；R45交接说明“发现1道选项转录错误（2023海淀期中（上）8）”"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "用户在当调性/工程痕迹质检员",
+     "cost": "8条调性意见里6条是重复；45批机器可拦287处、46批152处，都要用户先看到再说；政府样稿有4项是同类词（说明、幼稚文字、答题公式、竖杠）",
+     "evidence": "09-15T20:04Z 来源/出处/uncertain → 46批只清了出处30、来源：14，细则原话29、本节点34、固定分值50留到47批；09-21T21:33Z“我之前应该说过，但你还是没记住”；09-23T06:08/06:32Z 说明、答题公式（书里48—50批就有1处）",
+     "root_cause": "修正只改用户引用的那一句或做同义替换，没有把问题类抽成可计数的模式；batch_health 09-23 才建，词表只覆盖约一半的历史词"
+    },
+    {
+     "name": "构建安全网的全局替换误伤题面",
+     "cost": "题面和解析9段失真，4批无人发现；48批5轮页检反复报“评分标准”，成稿仍有90段",
+     "evidence": "build_r45.py 第788行 `(?<!【)细则(?!说明】)`→'评分标准'，对所有段落执行；51批题目材料“地方实施评分标准”",
+     "root_cause": "正则替换没有样式白名单，也没有题面零改写的基线比对"
+    },
+    {
+     "name": "全书逐页看图重复，且主要在找机器可查的问题",
+     "cost": "13轮、286个代理、220.8M cache read；48批5轮共2953页次；49批派548页，真正变化34页",
+     "evidence": "页检结果里“留白/图占位/颜色/孤行/后台用语”占多数（R45各轮分类：留白98、图占位57、颜色26、孤行15）；已知的原卷空框9轮全部重报；07_像素比对_r4_r5.json",
+     "root_cause": "book-production-workflow 规定“已看旧页复用须同页、完整像素一致”，页码一位移就整本重看；页检提示词没有已接受项白名单；文字层检查没有交给脚本"
+    },
+    {
+     "name": "样稿迭代轮次多",
+     "cost": "政府主体专题13版、21项意见、约13.6小时，主线程84.3M加子代理287.4M cache read；49批样稿3版（2版撤回）；2个工作流因中途新意见被kill",
+     "evidence": "专题小样/政府_主体专题小样_v1..v12.md；Codex会话01a0c595中20:46、21:33、21:50Z三轮意见；gov-topic-chain-and-coverage 与 gov-topic-chain-natural 状态为 killed",
+     "root_cause": "发样稿前没有对照用户历史否决清单做自检；分类没有做“互换测试”；词表门不能扫 md 小样"
+    },
+    {
+     "name": "渲染环境和字体回退很晚才发现",
+     "cost": "O1_05 为一个题包渲染3次整书，页数438与567不一致；33页QA作废；已发布49—51批仍有10页汉字回退",
+     "evidence": "O1_05 lo_candidate 93.69% 字符为 TimesNewRomanPSMT，fontqa 20.63% 为 ArialUnicodeMS；51批p21等10页，表格run字体为“楷体”；renderer 三个版本",
+     "root_cause": "没有PDF字体门；fontconfig 未覆盖中文族名“楷体”；渲染器路径随宿主更新变化，没有登记并与基线比较"
+    },
+    {
+     "name": "重建类批次把已修好的问题带回来",
+     "cost": "48批误蓝0→95、keepNext缺失0→62、评分标准0→90、题面误伤0→9、答题公式0→1，之后靠用户第49批意见和Codex两轮颜色修复候选（第八组673/第九组793）收拾",
+     "evidence": "retro.json；health_ext.py 在47→48的 H_ratchet_new_nonzero 输出8项",
+     "root_cause": "没有“上批为0、本批>0即FAIL”的回退棘轮；体检只比四个指标"
+    },
+    {
+     "name": "体检脚本跟不上书的结构",
+     "cost": "51批3个门FAIL都是误报，真正的缺漏却看不到；51批发布前没跑体检",
+     "evidence": "health_51.json；专题例题标题是“例N”，不匹配 TITLE_RE；主体名用了具体考法样式；780行教学列表用题目选项样式；48批“其他例题（1题）”误报",
+     "root_cause": "门的识别规则写死在第一部分结构上；新专题上线时没有同步更新脚本；总是红的门会被忽略"
+    },
+    {
+     "name": "证据和原料的取用很晚才发现",
+     "cost": "用户4次提醒：22道选择题“无答案”其实本地都有；班课讲义没参考；2024高考17细则判错载体；2025高考21细则的状态在两个平台前后不一",
+     "evidence": "R45交接“22道本地无官方答案”，47批“全部在本地教师版/参考答案表/公开答案镜像核到”；09-15T23:58Z 班课讲义；REQ-20260922-CONCISE-2024RUBRIC；REQ-BX3-20260922-GK25Q21-RESTORE",
+     "root_cause": "细则载体只按文件名关键词判定（缺“试题分析”）；下“无答案”结论前没有脚本化检索教师版答案表"
+    },
+    {
+     "name": "Codex第49批全书推广流程过重",
+     "cost": "1892项操作、11次晋升、终版4轮整书渲染；主线程加直属子线程约4.68B输入、14.9M输出；63处答案带分与42处继承误蓝要到后期才发现，还有多次QA作废",
+     "evidence": "交接历史 20260922_114814_5b8335bd.json 的 note（“625组节选漏末栏作废”“高考印分专项修订1误删2024Q17的8分”“所谓细则分分重字…撤回视读误判”）；Codex rollout 的 token_count",
+     "root_cause": "题包级改动用整书渲染来验收；答案带分、颜色这类机械检查没有前移到每组合入时"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "题面零改写与替换误伤门",
+     "kind": "batch_health_check",
+     "what": "题面样式段落只要被编校替换改动，或出现替换误伤词，就FAIL",
+     "spec": "在 batch_health.py 新增 check_source_fidelity(paras, base_paras)，门名“题面零改写”。(a) 不带基线也执行：全书任意段落匹配 COLLATERAL=re.compile(r'实施评分标准|评分标准》|《[^》]{0,12}评分标准[^》]{0,6}》|评分标准办法') 即FAIL，列出样式和前60字。(b) 带 --baseline 时：取样式为'题目材料'、'题目设问'的段落，以及样式为'题目选项'且 re.match(r'^([A-D][\\.．、]|[①-⑨])', text) 的段落，去空白后与基线同类段落集合比较。不在集合里的段落，用 difflib.get_close_matches(cutoff=0.85) 找基线最近段，取 SequenceMatcher 中 replace/insert 的新片段。片段含 TEACH_TOKENS=['评分标准','这里不展开','这一角度','作答应扣住','这里只讲','在下一节讲','这一点没有单独的分'] 之一即FAIL；其余近似改字列入 source_edits 作WARN，要求与本批精确替换表或原题核对清单对账。原型 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/health_ext.py 的 check_source 与 COLLATERAL 可以直接搬过去。实测命中：47→48批9处，48→49批4处，50→51批3处。",
+     "expected_saving": "这类错误至今4批没有人发现。接入后在构建当次就能拦下，省掉一次“用户指出→全书排查→重渲→改动页复看”的循环，也防止题面失真进入送印稿",
+     "risk": "原题恢复类批次（如49批近似改字368处）会产生大量WARN，所以只对替换词FAIL，其余只列表"
+    },
+    {
+     "name": "教学正文误蓝门",
+     "kind": "batch_health_check",
+     "what": "答案落点、细则说明、分析过程、题面正文里不允许出现蓝色正文",
+     "spec": "移植 Codex 的 协作/候选/Codex/第49批_单题样稿_20260921/全书推广_20260921/构建/续接20260922/题干颜色审计/audit_font_colors.py 的颜色继承解析（run rPr→rStyle→pStyle→docDefaults）。对样式为 {'答案落点','细则说明','分析过程','题目材料','题目设问'} 且不在A2表格内的每个run：有效颜色属于 BLUE={'1F4E79','1F3864','17365D','0070C0','2F5496','002060'}，去掉 run 开头 r'^\\s*【[^】]+】\\s*' 后仍含汉字，就记一次 leak。'宝典正文'中以'▪'开头的分组小标题、前5段封面行豁免。分析过程里 C00000/008000 只允许出现在含'（错误）''（正确）''纠正：'的段落。leak>0 即FAIL，按“样式:颜色”计数并列前20例。门名“教学正文无误蓝”。",
+     "expected_saving": "48批在构建当次就会FAIL，可省掉49批样稿首轮的颜色意见，以及Codex后续两轮题干颜色修复候选（第八组673、第九组793）",
+     "risk": "标签颜色改版时要同步BLUE集合；不解析样式继承会漏报，所以必须移植继承解析"
+    },
+    {
+     "name": "PDF中文字体回退门和渲染环境登记",
+     "kind": "batch_health_check",
+     "what": "统计PDF里汉字实际用了什么字体，出现回退就拦；同时登记渲染器版本",
+     "spec": "在 check_pdf 中，对每页 page.get_text('dict') 的每个 span，统计 U+4E00–U+9FFF 字符数，按字体名分组（先去掉子集前缀 ^[A-Z]{6}\\+）。预期字体 EXPECTED=re.compile(r'^(STSongti-SC|STKaitiSC)')，可用 --cjk-fonts 覆盖。输出：非预期字体的汉字数和比例，以及回退页码和字数前10。FAIL 条件二选一：有汉字落在拉丁字体（TimesNewRoman*、Cambria*、Calibri*、DejaVu*、LinuxLibertine*、NotoSansLisu*）；或任一页回退汉字≥50。同时读取 PDF 同目录上一级的 同版身份.json，把 renderer 与 fontconfig_sha256 写进报告；与 --baseline 的值不同就WARN“渲染环境已变，像素复用失效”。原型见 health_ext.py 的 pdf_fonts()。",
+     "expected_saving": "首次渲染1秒就能发现字体环境问题，不必在错字体的PDF上逐页看图（O1_05渲染3次、O4_02渲染2次，另有33页QA作废）。现有51批这10页楷体回退也能立刻定位",
+     "risk": "①✧＋等符号本来就走回退字体，所以只统计汉字；阈值要按册调整"
+    },
+    {
+     "name": "学生正文词表扩展，并覆盖借用样式的教学行",
+     "kind": "batch_health_check",
+     "what": "把历次用户点名和自审发现的后台话语全部收进词表，同时不再跳过借用题面样式的教学行",
+     "spec": "ENGINEERING_WORDS 增加以下各组。编校口吻：['本落位','本处不展开','由其他标题承接','正式采分点','其余角度略','本节点略','此处只写','此处略','这一节略','属其他模块']。来源腔：['细则原话','参考答案原句','教师版','讲评课件','阅卷细则','原细则','评分标准“','参考答案“']。等级套话：['固定分值','整题评分档次','评分档次','等级评分','不逐点计分','等级量表题','整体挂钩']。工程标签：['［图','待主代理插入','待定']，外加正则 r'（补\\d*）'。浮夸幼稚：['秒杀','长什么样','别算到']。另在宝典正文加正则 r'^说明[：:]'。只提示不拦的WARN组：['（跨模块）','本册','万能','评分标准']。范围改为：样式为'题目选项'但 not re.match(r'^([A-D][\\.．、]|[①-⑨])') 且不在表格内的段落，按教学行检查，并单独输出 borrowed_option_style 计数。",
+     "expected_saving": "用户6次指出的同类调性问题里，45、46批和政府样稿v1–v3那几次可以由机器先拦下。按回扫，45批可拦287处，46批152处",
+     "risk": "‘评分标准’‘（跨模块）’是否允许要用户决定，所以先放WARN；词表过宽可能误拦细则原文里的引用"
+    },
+    {
+     "name": "答案落点不标分、链行、标题keepNext",
+     "kind": "batch_health_check",
+     "what": "把Codex最终排版才修的几项机械问题前移到每次构建",
+     "spec": "(1) 样式为'答案落点'且 re.search(r'[（(]\\s*\\d+\\s*分\\s*[)）]') 即FAIL。(2) 段落 re.match(r'^链[：:]') 即FAIL（2026-09-21 已撤销链行）。(3) 样式为'题目材料'且 re.fullmatch(r'(材料[一二三四五六七八九十]+|资料卡|【[^】]{2,10}】)[：:]?') 的段落，以及样式为 heading 3、具体考法 的段落，若 pPr 与样式链都没有 w:keepNext 即FAIL。原型见 health_ext.py 的 E_answer_with_score 与 E_chain_lines，以及 retro_scan.py 的 keepnext 解析。",
+     "expected_saving": "可省掉一次终版“答案去分与分页”修订。Codex当时为此整书重渲并重新做目录定位",
+     "risk": "keepNext 过多会造成大块留白，所以只判小标题行"
+    },
+    {
+     "name": "专题例题结构识别，并修正现有门的误报",
+     "kind": "batch_health_check",
+     "what": "让体检认识第二轮主体专题的格式，消除误报，并查出专题例题的缺栏",
+     "spec": "(1) METHOD_RE 放宽为 r'^(考法\\d+|其他例题)[　 ]?.*?（(\\d+)题）\\s*$'。(2) 在 heading 2 含“主体专题”的区段内，不匹配 METHOD_RE 的'具体考法'段记为主体标题，不进 method_counts。(3) heading 3 匹配 r'^例(\\d+)[　 ]' 的算专题例题：块内【设问】【思维链条】【答案落点】【细则】必须各恰好1个，【材料】或题目材料段至少1个；同一主体内编号从1连续。(4) 四栏目门改为只统计 TITLE_RE（例题/选择例题）块内的标签，不再用全书标签总数比。原型见 health_ext.py 的 F_topic_examples，在51批报出3处异常。",
+     "expected_saving": "门恢复为“全绿才算过”，每批省一次人工解释假FAIL；专题推广的缺栏在合成时就能看到",
+     "risk": "专题格式再改时，正则要同步更新"
+    },
+    {
+     "name": "回退棘轮",
+     "kind": "batch_health_check",
+     "what": "上一批为0的问题计数，本批一旦大于0就FAIL",
+     "spec": "带 --baseline 时，对 student_text.by_rule、教学误蓝、题面误伤、答案带分、链行、keepNext 缺失、四权部分写、借用样式违规等全部计数器逐项比较：基线=0 且本批>0，FAIL“回退”；基线>0 且本批增加，WARN。门名“无回退”。原型见 health_ext.py 的 H_ratchet_new_nonzero（47→48 报8项）。",
+     "expected_saving": "重建类批次跑一次就能看清全部回退面，不再依赖用户或下一个代理去发现",
+     "risk": "基线本身有问题时棘轮帮不上，必须和绝对门一起用"
+    },
+    {
+     "name": "选择题答案与逐肢判断一致",
+     "kind": "batch_health_check",
+     "what": "在成稿DOCX上直接核对【答案】字母与逐肢“正确”判定推出的组合是否一致",
+     "spec": "遍历 heading 3 匹配 r'^选择例题\\s*\\d+' 的块。答案取 r'^【答案】\\s*([A-D])'。选项组合在题目材料/题目选项样式中取 r'([A-D])[\\.．、]\\s*([①②③④⑤⑥]{2,4})'。逐肢判定取样式为'分析过程'且匹配 r'^([①-⑥]|[A-D])[^（]{0,120}（(正确|错误|不选)）\\s*$' 的段落。用判为“正确”的题肢拼出组合，反查选项字母，与答案不同即FAIL。设问含 r'不正确|错误的是|不符合|不能|不属于' 时改用“错误”肢反推。无法解析的列为WARN。原型见 /private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/choice_check.py。",
+     "expected_saving": "可取代每批的一次性 check_choice_consistency.py（它读中间JSON，查不了成稿）。46批就能提前查出2023海淀期中（上）第8题的选项转录错误",
+     "risk": "个别题逐肢写法不规范会解析失败，只列WARN、不拦"
+    },
+    {
+     "name": "四权一串写与设问题型对照（提示级）",
+     "kind": "batch_health_check",
+     "what": "把用户两次指出的判断类问题做成提示清单，交主代理裁决",
+     "spec": "(a) 非题面段含'知情权''参与权''表达权'之一，但四项不全，就WARN；只出现'监督权'的不报。(b) 同一例题块中，设问含 r'是如何|如何体现|怎样体现'，而思维链条写“做法题”或自报类型不含“如何”，WARN；设问含 r'谈谈(你的)?(认识|理解)'，而链条里没有“是什么”“为什么”“怎么做”，WARN。输出块标题和前40字。",
+     "expected_saving": "用户逐条指出，改为脚本列清单。回扫49/50批有48段四权部分写、51批58段；政府样稿v9有5处“做法题”",
+     "risk": "分析过程在评析错肢时只提一项可能是合理的，所以只提示"
+    },
+    {
+     "name": "位移感知的页面复用脚本",
+     "kind": "script",
+     "what": "只让页检代理看正文真正变了的页，不再因为页码整体位移而整本重看",
+     "spec": "新建 scripts/page_reuse.py，参数：--old 已审PDF(可多个) --new 新PDF [--reviewed 已审页清单.json] --out need_review.json。用 fitz 以72dpi渲染每页，去掉页脚带（页高底部8%，或按“— N —”文本的bbox裁），对正文区像素算 sha1；辅助指纹用去页脚后的文本 md5。新页的正文像素哈希等于任一已审旧页，就判为可复用并记录对应旧页号；否则列入 need_review，前后各加1页。渲染器或fontconfig的SHA与旧PDF不同时，全部判为需看。同时把 book-production-workflow.md「合批、增量和检查」里“已看旧页的复用仍要求同页、完整像素完全一致”改为“正文区（去页脚）像素完全一致即可跨页位复用；页码连续由体检页脚门单独核；渲染环境变化时复用全部失效”。原型见 pagediff.py（文本哈希版）。",
+     "expected_saving": "每轮页检量减少50%–94%：49批548页降到约34页（当时花了86.1M cache read）；48批5轮2953页次也可按变化页缩小",
+     "risk": "只改颜色或字体时文本哈希不变，所以主判据必须是像素哈希；渲染器一变就要整体失效"
+    },
+    {
+     "name": "页检已知接受项白名单，文字层检查移交脚本",
+     "kind": "procedure",
+     "what": "页检代理不再重报已裁定的原卷现象，也不再用眼睛找文字层问题",
+     "spec": "每册建 协作/页检已知接受项.json，每条含页内容指纹（正文像素sha1或题源键）、描述和裁定人，例如“2026西城一模19(2) 云端+院落夜话 流程图末框原卷留空”，页检提示词附带该文件并要求不得重报。从页检提示词中删去“后台用语、评分标准原话、占位符、正文颜色”等文字层项目，改由 batch_health 负责；页检只看裁切、重叠、缺字、表格断裂、图片清晰度、孤行和留白。写入 book-production-workflow.md「合批、增量和检查」。",
+     "expected_saving": "页检噪声至少减一半；9轮重复报告和5轮评分标准报告可以省掉，主代理的裁决时间也随之下降",
+     "risk": "白名单必须带指纹，原卷页一旦改动就自动失效"
+    },
+    {
+     "name": "批量替换必须限定样式",
+     "kind": "skill_rule",
+     "what": "任何正则安全网或同义替换都不得碰题面",
+     "spec": "写入 references/style-spec.md「微修实现约束」和 references/book-production-workflow.md「在最小层级修错」：“正则安全网、同义替换、模板句替换只作用于教学样式白名单（答案落点、细则说明、分析过程中不属于题肢原文的段落、宝典正文、考法说明）；题目材料、题目设问、题目选项及表格内原题一律不进替换循环；替换目标词自动加入 batch_health 的误伤词表；替换后必须带 --baseline 跑‘题面零改写’门。”证据：build_r45.py 第784—808行对 out 中全部 w:t 执行 _TPL/_TPL2。",
+     "expected_saving": "从根上防止题面被改。本次误伤延续了4批，涉及9段",
+     "risk": "低；只是限制作用范围"
+    },
+    {
+     "name": "用户点名一类问题，同回合进脚本并全书清零",
+     "kind": "skill_rule",
+     "what": "把“同类缺陷排查全范围”从口头要求变成必须留下脚本痕迹的动作",
+     "spec": "写入 references/book-production-workflow.md「合批、增量和检查」，并同步到 AGENTS 修正机制：“用户指出一处措辞、格式或颜色问题时：①抽象成可计数的模式（词、正则、样式加颜色）；②同回合加进 batch_health.py 或其词表文件；③全书计数并修到0，在回复中报告‘命中→修正→剩余’；④禁止只改用户引用的那一句，也禁止把它同义替换成另一种后台词（如把‘细则原话’换成‘评分标准’）。”",
+     "expected_saving": "同类问题第二次出现的情况基本可以杜绝。历史上用户对这类问题重复说过6次",
+     "risk": "词表会越来越长，需要给每个词记下来源REQ，便于日后清理"
+    },
+    {
+     "name": "样稿发出前自检",
+     "kind": "procedure",
+     "what": "单题或单主体样稿发给用户前，先按机器规则和用户历史否决清单自查一遍",
+     "spec": "在 references/active/book-bixiu-3-current.md 新增一节“样稿发出前自检”。(1) 样稿是DOCX就跑 batch_health；是md小样就用同一词表加 --md 模式按行扫描，内容包括：WORDS 各组、含'｜'的行、以'说明'开头的行、标题里的“长什么样”或“材料里的‘X’”。(2) 派一个Opus审稿代理，拿“历史否决清单”逐条对照并报告命中。清单由脚本从 user-requirements-ledger.md 2026-09-15 以来的必修三条目中抽取含“不要/删/去掉/不能/别/只需要”的句子。(3) 主代理修完再发。",
+     "expected_saving": "预计每个主体专题的样稿能少3–5轮。政府样稿这一轮用了13版，主线程84.3M加子代理287.4M cache read",
+     "risk": "清单太长会让代理机械套用，所以只收禁止型条目"
+    },
+    {
+     "name": "类型分类自检规则",
+     "kind": "skill_rule",
+     "what": "分类要写明区分维度，并通过互换测试和教材层级测试",
+     "spec": "写入 references/style-spec.md「必修三总括答题点与按材料结构的类型分类（2026-09-22）」：“每个类型写一句区分维度（例如三方是否同做一件事、前后还是并列、材料明写还是需提炼），兄弟类必须在同一维度上取值不同；把两个类名互换后仍说得通，就说明没有分开；上位与下位、地位与宗旨与职能的归属按教材层级核对（依法行政不放在履行职能下；以人民为中心属于宗旨，不叫地位）；提交用户前由另一个代理做互换测试和层级测试，列出可疑的类对。”",
+     "expected_saving": "用户5次指出的分类问题中，部分可以在样稿前自查掉",
+     "risk": "最终仍要靠人判断；自检只能减少明显的错误"
+    },
+    {
+     "name": "细则载体按内容识别，“无答案”结论前先脚本检索",
+     "kind": "script",
+     "what": "不再凭文件名把含正式细则的文件判成教研候选，也不再凭人工印象宣布选择题没有答案",
+     "spec": "扩展 scripts/source_intake.py，新增 classify_carrier(path)：文件名不在E1关键词表内、但含“试题分析”“命题分析”“质量分析”等时，标为“需内容判定”；抽取文本（PDF用fitz，DOCX用python-docx，PPTX用python-pptx），统计 r'（\\d+分）|\\d+分|给分|赋分|评分|等级|水平|阅卷' 与题号 r'第?\\s*(1[6-9]|2[0-2])\\s*题'；同一题号附近评分词≥3，就标为候选E1交主代理读原页。新增 scripts/find_choice_answers.py：按卷目录列出含“教师版/答案/参考答案/解析”的文件，用正则 r'(\\d{1,2})\\s*[\\.．、]?\\s*([A-D])' 以及“1-5 ABCDA”式连写抽答案表，输出每题答案和来源页；规定下“无答案”结论前必须先跑。另在 source-inventory.md「文件名与资料标签识别」加一行：“名称里没有评分字样的‘试题分析’类文件按内容判定，不能只凭文件名降为教研候选。”",
+     "expected_saving": "可省掉用户这类提醒（本轮2次：22道选择题答案、2024高考17细则），以及随之而来的补收、重建和渲染",
+     "risk": "只读题源，不写题库目录的 packets/；题库线的写权仍归Luna"
+    },
+    {
+     "name": "batch_health 默认输出位置改为安全位置",
+     "kind": "script",
+     "what": "体检不再把 .体检.json 默认写到书稿DOCX旁边",
+     "spec": "删除 batch_health.py 第283行 `out = Path(a.out) if a.out else Path(a.docx).with_suffix('.体检.json')` 的默认行为：不给 --out 时写到当前工作目录或 $TMPDIR，并打印路径；DOCX 位于 00_必修三最新审查稿 或 必修三_人工审查历史 之下时，拒绝写同目录。同时把 renderer、fontconfig 身份写进报告头。",
+     "expected_saving": "避免只读体检时误写审阅入口或历史归档",
+     "risk": "低"
+    },
+    {
+     "name": "专题抽取改读已验收的题库逐题MD",
+     "kind": "procedure",
+     "what": "第二轮专题的Extract阶段不再每个主体都回原件重抽细则",
+     "spec": "题库线验收后才执行（写权属Luna，只用已验收且登记了SHA的逐题MD）。用脚本按题键从 DeepSeek_政治题库资料库 读取题面和细则MD，按主体关键词表预筛段落，生成每个主体的证据包JSON（题键、题面段、细则段、原页码、MD SHA）；代理只判断“这句算不算本主体”。未验收的卷仍然回原件。“怎么写”部分按规则仍须核对原页。写入 references/active/book-bixiu-3-current.md 第二轮主体专题一节。",
+     "expected_saving": "subject-topics-rollout 的Extract阶段占896.7M cache read的31%（275.8M）。政府样稿另外为逐题回原件跑了 gov-relations-evidence（145.7M）和 gov-practice-exhaustive（61.7M）",
+     "risk": "题库MD的转写错误会带进宝典；所以只用已验收卷，细则仍要看原页"
+    }
+   ],
+   "files_written": [
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/health_ext.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_44_45.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_45_46.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_46_47.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_47_48.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_48_49.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_49_50.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ext_50_51.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/retro_scan.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/retro.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/choice_check.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/pagediff.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/feedback_items.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/feedback_items.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/health_48.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/health_50.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/health_51.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/scan_wf2.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/workflows_usage_v2.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/workflows_usage.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/workflows_usage_dedup.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/scan_wf.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/scan_sessions.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/sessions/",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/scan_codex.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/codex/",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/codex49_files.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/tool_durations.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/main_usage.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/pdf_inventory.tsv",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/fullrenders.tsv",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/notes/",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/bottleneck_bx3/ledger_tail.md"
+   ],
+   "open_questions": [
+    "第一部分还有147个例题标题带“（跨模块）”，51批专题正文里又出现14处。第48批自审把它列为工程痕迹，但用户从未表态，要不要保留？",
+    "51批专题三有98段行文里引用了试卷题号，另有58行“同类：…”，与2026-09-15“条目后不跟试卷信息”是否冲突？获批的政府样稿里这类引用较少（36处题号、3行同类），其余主体的推广稿多得多（人民与公民分别为119、20、20）",
+    "51批仍有23段含“评分标准”（宝典正文11、细则说明7），要不要算后台用语？页检代理曾把它当泄漏报过5轮",
+    "政府例22（2024东城一模第18题第（2）问）用【答案】代替【细则】，这道题是否有同题E1？没有的话，按规则不应作例题",
+    "51批专题一仍有“等级量表题”“不逐点计分”“整体挂钩”（段落10753、10755、10777），是否违反 REQ-BX3-20260921-R49-SAMPLE-R3 删除等级评分说明的要求？",
+    "45—48批的渲染次数是从会话里耗时≥40秒的render命令推算的。输出PDF会被覆盖，存留文件数只是下限；43/44批的Codex主线程没有逐条扫描，渲染数只按存留文件计",
+    "Codex同期根线程01a0c60e（285个sol线程，代理名为verify_2026_bj_gaokao_…等）按名字推断属于题库线，未计入第49批用量；归属不完全确定",
+    "feedback_items.json 中“可机检/上游可拦”的标注是主代理式的人工判断，不是机器结论，数字有主观成分",
+    "workflows_usage.json 与 workflows_usage_dedup.json 是早期统计（前者按行重复计数，后者只取首行导致输出偏低），以 workflows_usage_v2.json（按消息id取最大值）为准"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "summary": "用量画像脚本已写好：/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/usage_profile.py。它只读、流式处理，跨文件按 message.id 去重，读完 7.8GB 会话约 30 秒。我拿 13295440 会话里 Claude Code 自己记的 cost-state 核对：脚本估算 $488.08，cost-state 记 $488.65；写缓存两边都是 30.69M，读缓存只差 0.4%。\n\n全部 Claude 会话合计约 5.7 万次唯一调用，读缓存 5.76B，占总 token 的 95.5%。按美元估算约 $2.9K，其中必修三约 $2.1K，占 72%；题库线约 $0.5K，占 17%。\n\n两条线的钱主要都花在工作流子代理上：必修三占 84%，题库线占 85%。大头是上下文复读。子代理每次调用都要把整段上下文再读一遍，平均 86K 到 134K；读进来的页图 PNG（必修三 1.35 万张，题库 3.1K 张）和整份 MD/JSON 会被后面的调用反复读入。\n\n另一大块是本来可以交给脚本的确定性活仍由模型代理在做：第48批的 r47 质量体检跑了 1944 次 grep/检查命令，约 $117；第51批专题推广的 Extract 阶段跑了 422 次 bank.py 和 714 次浏览命令，约 $121；思维链改写和复核阶段用 python -c 数字数约 1.2K 次。\n\n主线程每次调用平均上下文约 510K。Fable 主线程 328 次调用约 $237；缓存重建 129 次约 $105；主线程 sleep 轮询 40 次，共等了 4.4 小时。时间主要耗在工作流代理运行上，必修三 38 次工作流合计墙钟 24.5 小时；脚本本身耗时很小，渲染 121 次一共才 40 分钟。\n\n题库转 MD 这件事，244 个源文件里有 85 个 docx/doc/rtf 和 29 个 pptx 本身就是文本；130 个 PDF 抽了 19 个，约一半有文字层。所以大部分可以先用脚本抽取，模型只看没有文字层的页和图。",
+   "numbers": [
+    {
+     "metric": "全部 Claude 会话（09-14 至 09-23，PDT）总量",
+     "value": "唯一 API 调用 57,097 次；读缓存 5.76B（占总 token 95.5%）；新 token（输入+写缓存+输出）271.8M；估算约 $2,942；跳过跨文件/同消息重复记录 59,546 条",
+     "evidence": "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/all/usage_profile_all.txt 第 3-8 行（14:48 PDT 运行）"
+    },
+    {
+     "metric": "脚本准确性校验（13295440 题库会话）",
+     "value": "估算 $488.08，cost-state 记 $488.65；写缓存 30.69M 对 30.69M；读缓存 1564.2M 对 1571.0M；输出 8.40M 对 8.52M",
+     "evidence": "all/usage_profile_all.json 中 by_session 与 cost_state 两个字段；cost-state 来自 13295440-b4bb-4013-b7bd-0daa95ed1858.jsonl"
+    },
+    {
+     "metric": "输出 token 的口径问题（重要）",
+     "value": "同一消息的第一条记录里 output_tokens 只是流式开头的值，合计只有 5.9M；取同消息各条记录的最大值后为 68.9M。另有 1,044 次（1.8%）没有最终 usage，按字数估算，因此输出是下限",
+     "evidence": "抽查 150 个工作流代理文件：5,291 条多记录消息中输入侧 0 条不一致，输出侧 5,208 条不一致；报告头部“输出口径”一行"
+    },
+    {
+     "metric": "必修三总量",
+     "value": "40,917 次调用；新 token 211.6M；读缓存 3.74B；约 $2,125。工作流代理 $1,769（83.7%），主线程 $334（15.7%），普通子代理 $13（0.6%）",
+     "evidence": "bx3/usage_profile_bx3.txt 与 bx3/usage_profile_bx3.json 中 by_line_kind（参数 --line 必修三）"
+    },
+    {
+     "metric": "必修三按批次（估算美元；主线程占比/子代理+工作流占比）",
+     "value": "第44批：$44，读缓存 71M，32/68%。第45批：$352，读缓存 809M，新 33.5M，16/84%。第46批：$76，37/63%。第47批：$82，32/68%。第48批：$754，读缓存 997M，新 96.2M，15/85%。第49批：$75，30/70%。第50批：$376，读缓存 617M，15/85%。第51批：$354，读缓存 769M，4/96%。另有第52批 $13（3bd4f1ab 仍在进行，数字还在增长）",
+     "evidence": "bx3/usage_profile_bx3.json 中 by_line_batch 与 by_line_batch_kind；批次由每个人类回合里的“第N批/最终N/RN候选”标记确定"
+    },
+    {
+     "metric": "必修三每批最贵的工作流",
+     "value": "第45批：bixiu3-produce $184、bixiu3-understand $120。第48批：bx3-r47-audit $160、bx3-siweiliantiao $149、banke-bx3-transcribe $127、bx3-r48-fix $86。第50批：gov-relations-evidence $62、bx3-b50-type-analysis $59（Fable）。第51批：subject-topics-rollout $413",
+     "evidence": "bx3/usage_profile_bx3.json 中 workflow_runs"
+    },
+    {
+     "metric": "题库线（Claude 侧）总量",
+     "value": "11,054 次调用；新 token 39.7M；读缓存 1.59B（占 97.6%）；约 $496。工作流代理 $421（85%），主线程 $66（13%），子代理 $9（2%）",
+     "evidence": "bank/usage_profile_bank.txt（参数 --line 题库线）"
+    },
+    {
+     "metric": "题库线按阶段",
+     "value": "bank-exam-audit-fix-verify 各阶段：AuditFix $204（3,995 次调用，平均上下文 180K）、Verify $104、Repair $27、Reverify $21；bank-exam-extra-round Fix $20",
+     "evidence": "bank/usage_profile_bank.txt 的“按工作流·阶段”段"
+    },
+    {
+     "metric": "哪类子代理最费",
+     "value": "必修三：baodian-source-review（Sonnet）$1,125（53%）；未指定 agentType、继承主模型的 workflow-subagent $656（31%），其中 Opus5.5 $548，Fable $108（仅 207 次调用）。题库线：baodian-source-review $426（86%）",
+     "evidence": "bx3/usage_profile_bx3.txt 的“工作流代理 × 模型 × 代理类型”段；bank 报告同名段"
+    },
+    {
+     "metric": "读页图（Read 图片.png）",
+     "value": "必修三 13,468 次，直接约 24.3M token，其后被反复读入约 562M；题库线 3,077 次，直接约 7.0M，其后被反复读入约 360M（约占该线读缓存的 23%）",
+     "evidence": "两份报告的“Read 按类型”段；图片 token 按宽×高/700 估算（在本项目 964 张图上回归得到中位数 690）"
+    },
+    {
+     "metric": "主线程上下文与模型",
+     "value": "必修三主线程平均每次调用上下文 510K；Fable 主线程 328 次调用约 $237（约 $0.72/次），Opus5.5 主线程 528 次约 $95；必修二 Fable 主线程约 $171",
+     "evidence": "all/usage_profile_all.txt 的“前 15 个最费的环节”第 1、3、5 项及“均上下文”列"
+    },
+    {
+     "metric": "缓存重建与轮询（必修三）",
+     "value": "缓存重建 129 次，写缓存 19.7M，约 $105。最大几次：09-23 13:57 3bd4f1ab 主线程写缓存 818K；09-22 18:18 62597da3 写缓存 730K；09-21 03:01 3b729a0b（Fable）写缓存 681K。主线程 sleep 等待 40 次，共 4.4h；sleep/TaskOutput 之后的调用 43 次，平均上下文 627K，约 $28",
+     "evidence": "bx3/usage_profile_bx3.txt 的“单次 API 调用最贵 TOP10”与“轮询”行"
+    },
+    {
+     "metric": "续接会话整段复制",
+     "value": "7106db47 → 62597da3 → da6d7851 → b8067562 → 3bd4f1ab 这条链，每个新文件都完整复制前一个（26.7–49.7MB）；3dbdec3a 是 f032ba69 的分叉子集。cost-state 在这条链里累加：62597da3 记 $208，其中约 $191 属于 7106db47",
+     "evidence": "message.id 重叠计数：3bd4f1ab 与 7106db47 重叠 221 条，与 b8067562 重叠 267 条等；all 报告“会话判定”段"
+    },
+    {
+     "metric": "必修三 Bash 耗时（前台）",
+     "value": "等待 43 次共 4.4h；渲染 121 次共 39.6min；浏览 8,249 次共 33.7min；提取转换 3,689 次共 17.5min；PDF 转图 1,123 次共 12.2min；检查 3,029 次共 11.9min。最长的 10 条都是主线程 sleep 540 秒，出现在 09-15 03:14 至 04:38 以及 13:37 至 15:18",
+     "evidence": "bx3/usage_profile_bx3.txt 的“Bash 按类型”与“Bash 最耗时 TOP10”"
+    },
+    {
+     "metric": "题库线 Bash 耗时",
+     "value": "PDF 转图 133 次共 5.3min；浏览 2,184 次共 4.3min；图片裁剪 1,442 次共 3.6min；最长一条是 09-22 13:36 的 find，耗时 2.0min",
+     "evidence": "bank/usage_profile_bank.txt"
+    },
+    {
+     "metric": "时间结构（必修三）",
+     "value": "44 个人类回合的主线程墙钟共 35.6h，其中模型生成约 3.0h；38 次工作流、1,585 个代理，墙钟合计 24.5h。最长的几次：banke-bx3-transcribe 3.7h、bixiu3-understand 2.9h、bixiu3-produce 2.5h、subject-topics-rollout 2.4h",
+     "evidence": "bx3/usage_profile_bx3.json 中 timing_by_line_s 与 workflow_runs.duration_s"
+    },
+    {
+     "metric": "必修三单次最贵动作 TOP10",
+     "value": "1. 09-23 13:57 subject-topics-rollout（126 代理，2.4h）$413；2. 09-15 04:46 bixiu3-produce（65 代理）$184；3. 09-16 00:22 bx3-r47-audit（263 代理）$160；4. 09-19 10:24 bx3-siweiliantiao（173 代理，50min）$149；5. 09-15 20:45 banke-bx3-transcribe（144 代理，3.7h）$127；6. 09-15 02:09 bixiu3-understand $120；7. 09-16 04:28 bx3-r48-fix $86；8. 09-22 22:17 gov-relations-evidence $62；9. 09-22 14:53 bx3-b50-type-analysis（Fable）$59；10. 09-14 23:38 主线程回合“把所有主体所能做的事情全面总结” $50",
+     "evidence": "bx3/usage_profile_bx3.txt 的“单次最贵动作 TOP10”（时间为 PDT）"
+    },
+    {
+     "metric": "题库线单次最贵动作 TOP10",
+     "value": "bank-exam-audit-fix-verify 各次运行：09-22 14:10 wf_209d9692 $85、15:07 wf_b9623615 $84、13:53 wf_bd2021a7 $72、14:58 wf_8f102425 $48、14:59 wf_9b53cc18 $46；主线程接管回合 09-22 12:47 $39；13:51 wf_cf5567d5 $22；主线程“token用量过大”回合 18:21 $17；extra-round 14:37 $17；bank-lean-pipeline 18:43 $15",
+     "evidence": "bank/usage_profile_bank.txt"
+    },
+    {
+     "metric": "工作流界面显示的 token 远低于真实用量",
+     "value": "工作流 json 里的 totalTokens 不含读缓存。例如 subject-topics-rollout 显示 27.8M，实际总 token 928.6M（读缓存 896.7M）；实际与显示之比为 11.5 到 70 倍",
+     "evidence": "3bd4f1ab-82ef-482b-9938-ae3c518113e0/workflows/wf_153d2233-a7f.json 等，与 all/usage_profile_all.json 中 workflow_runs 对比"
+    },
+    {
+     "metric": "确定性工作由模型代理完成的例子",
+     "value": "bx3-r47-audit 质量体检：Bash·检查 1,944 次，Read·txt 378 次，130 个代理，$117。subject-topics-rollout Extract：浏览 714 次、bank.py 422 次、数据查看 291 次、页图 428 张，$121。bx3-siweiliantiao 改写与复核：python -c 数字数 701+481 次，读 JSON 350 次。banke 复核：页图 2,172 张、PIL 裁剪 1,654 次，$92（是转写阶段 $34 的 2.7 倍）",
+     "evidence": "bx3/usage_profile_bx3.txt 的“前 8 个环节的工具构成”段"
+    },
+    {
+     "metric": "题库线返工",
+     "value": "Claude 侧 15 次题库工作流共处理 30 套不同试卷，但按套累计是 69 次；BJ-2026-BJ-GAOKAO、BJ-2024-SJS-YIMO、BJ-2024-BJ-GAOKAO、BJ-2023-HD-ERMO、BJ-2025-FT-ERMO 各处理 4 次",
+     "evidence": "13295440-b4bb-4013-b7bd-0daa95ed1858/workflows/wf_*.json 的 args.exam_id 计数"
+    },
+    {
+     "metric": "题库源文件构成（可否脚本转 MD）",
+     "value": "去重后 244 个源文件：PDF 130 个（1,604 页），docx 74、doc 10、rtf 1，pptx 29（884 张幻灯片）。PDF 随机抽 20 个、找到 19 个：约 10 个有完整文字层，5 个为纯扫描，其余为混合或只有页眉文字。8 份班课讲义 PDF 文字层很少（手写为主），仍需要看图",
+     "evidence": "只读 后勤管理/MD全库流水线_20260921/conversion_manifest.json 的 tasks[].sources；用 fitz get_text 抽样前 6 页，未做 OCR"
+    },
+    {
+     "metric": "会话判定（每个会话的线和依据）",
+     "value": "3b729a0b：必修三（前 2 个回合是配置实测，判为“其他”；之后接手必修三，工作目录在 R45候选，第44–48批，约 $1,309）。f032ba69：必修二（首条“codex额度用尽…必修二…最后一步”，修订227–230，约 $268）。3dbdec3a：f032ba69 的分叉副本，没有新调用。7106db47：必修三（首条“两个任务…必修三…题库”，实际工作在第49批收尾/修订5，第50批；2 个回合误判为必修二，约 $2；合计约 $190）。13295440：题库线（首条“你是题库线主代理”，工作目录 receipts/claude_bank_20260922，约 $488）。62597da3、da6d7851、b8067562：必修三第50批的续接副本，新增调用分别为 57、6、6 次。3bd4f1ab：必修三第50–51批（工作目录 第50批_类型分类推广/专题小样，约 $612，仍在进行；3 个回合被关键词误归题库线，约 $5）。ec1d196a：其他（让 computer use 定时在 Codex 里点“继续目标”）。d6caf4c4、bf450d67：其他（流程优化与本次测量，已用 --line-map 人工覆盖）",
+     "evidence": "all/usage_profile_all.txt 的“会话判定”段，给出文件首条、关键词分、cwd、回合线与判据；人类原话摘录在 scratchpad/measure/usage/human_msgs.txt"
+    },
+    {
+     "metric": "Codex 抽样（按文件名日期 09-21 至 09-23、首行 cwd 含 gpt6 或 gpt和claude 过滤）",
+     "value": "09-21 22:50 的 gpt-6-astra 根会话（606.7MB，必修三“推广房山一模修改”）：1,176 次调用，缓存输入 275.0M，新 4.5M，输出 0.56M。09-23 13:24 的 Luna 题库总控：149 次，缓存 33.1M。3 个 Luna 子线程各 47–59 次，缓存 8.5–12.7M，大量 OCR、PDF 转图和图片裁剪",
+     "evidence": "codex/usage_profile_codex.json；按 token_usage_record 的 response_id 去重，与最后一次累计 token_count 基本吻合"
+    },
+    {
+     "metric": "脚本性能",
+     "value": "7.8GB 会话（2,141 个子代理文件）约 26–30 秒读完，峰值内存约 330MB；606MB 的 Codex rollout 约 4 秒",
+     "evidence": "scratchpad/measure/usage/all_time.log（/usr/bin/time -l 的输出）"
+    }
+   ],
+   "bottlenecks": [
+    {
+     "name": "工作流代理的上下文复读（读缓存）",
+     "cost": "必修三工作流代理约 $1,769（占该线 84%），题库线约 $421（85%）。全部读缓存 5.76B token，折算约占加权成本的 44%（必修三）和 66%（题库线）",
+     "evidence": "必修三工作流代理 39,430 次调用，平均上下文 86K；题库线工作流代理平均 134K，AuditFix 阶段 180K，subject-topics-rollout Fix 阶段 251K。被反复读入最多的单条结果：09-15 02:45 bixiu3-produce 一次 25.1K 的 Read，其后又被读了 189 次，累计 4.7M",
+     "root_cause": "每个代理在一个上下文里连做几十上百次小的工具调用，每次都把之前读入的整页图片、整份 MD/JSON 和命令输出重读一遍；代理的任务颗粒太粗，又没有控制上下文大小"
+    },
+    {
+     "name": "用看页图（PNG）作为主要检查和转写手段",
+     "cost": "必修三 13,468 张页图，直接约 24.3M token，其后约 562M 被反复读入；题库线 3,077 张，直接约 7.0M，其后约 360M（约占该线读缓存 23%，约 $90）。banke 复核 $92，逐页检查类工作流 12 次共约 $85，r5 页面复核 2 次共 $39",
+     "evidence": "Read 按类型：图片.png；banke-bx3-transcribe 复核阶段页图 2,172 张加 PIL 裁剪 1,654 次；bank AuditFix 页图 1,114 张，Verify 958 张",
+     "root_cause": "源文件里本来有的文字层、docx/pptx 的结构化文本没有先用脚本抽出来；版式问题没有先用 PDF 几何信息做预筛；复核阶段又把整页重看一遍，而不是只看差异或可疑区域"
+    },
+    {
+     "name": "确定性的检查、检索和计数交给模型代理做",
+     "cost": "bx3-r47-audit 约 $160/次（263 代理，2.0h）；subject-topics-rollout 的 Extract 与 Examples 两个阶段约 $217；siweiliantiao 的 python -c 数字数约 1.2K 次（直接 token 小，但每次都让代理多一轮调用和上下文增长）",
+     "evidence": "质量体检阶段 Bash·检查 1,944 次、Read·txt 378 次；专题 Extract 阶段浏览 714 次、bank.py 422 次、数据查看 291 次；全部 Bash 里浏览 11,233 次，其结果估计有 14.0M token，其后约 574M 被反复读入",
+     "root_cause": "检查规则（后台词、标签齐全、题肢颜色、字数等）和取材检索（按主体找题、找细则原话）没有沉淀成一次性脚本，每个代理各自用 grep/python 重做一遍；batch_health.py 直到 09-23 13:59 才出现"
+    },
+    {
+     "name": "主线程上下文太大、模型太贵，加上缓存重建和 sleep 轮询",
+     "cost": "必修三主线程约 $334，其中 Fable 约 $237（328 次调用）；缓存重建 129 次约 $105；sleep 轮询后的调用 43 次约 $28，主线程 sleep 空等 4.4h",
+     "evidence": "主线程平均上下文 510K；续接或额度恢复后整段重写缓存 681K 到 818K（09-21 03:01、09-22 18:18、09-23 08:11/11:12/13:57）；09-15 03:14 至 04:38 连续 sleep 540 秒",
+     "root_cause": "长会话一直“继续”下去不压缩，续接会话复制全部历史；主线程用 Fable 做编排；等待后台工作流时用前台 sleep 加再次推理，而不是等完成通知"
+    },
+    {
+     "name": "返工与重复复核",
+     "cost": "题库线 30 套试卷累计处理 69 次（约 2.3 倍）；必修三几次复核阶段的花费不低于生产阶段（banke 复核 $92 对转写 $34；siweiliantiao 复核 $74 对改写 $75；bank Verify+Reverify $125 对 AuditFix $204）；逐页检查在第45、46、47、48批共跑了 12 次",
+     "evidence": "13295440 workflows/wf_*.json 的 exam_id 计数；bx3 报告“按工作流·阶段”段；workflow_runs 中 bixiu3-pagecheck、bx3-pagecheck 的运行记录",
+     "root_cause": "没有稳定的机器验收门槛，复核轮次靠人工和模型判断反复加轮；复核拿到的是全量材料，而不是上一轮的差异"
+    }
+   ],
+   "proposals": [
+    {
+     "name": "源文件确定性转 MD（source_to_md.py）",
+     "kind": "script",
+     "what": "先用脚本把题库源文件中文本原生的部分抽成逐题 MD 草稿，并标出哪些页必须看图，模型只处理这些页",
+     "spec": "放在 后勤管理/MD全库流水线_20260921/tools/source_to_md.py（由题库线写权人 Luna 采纳；本次只提规格）。输入：--manifest conversion_manifest.json --exam BJ-xxxx --out <receipts/…/draft 或 scratch>，默认不写 questions/ 和 packets/。处理：docx/doc/rtf 用 python-docx（doc 先用 textutil 或 soffice 转 docx）保留段落、表格和编号；pptx 用 python-pptx 抽取文本框、表格和备注；PDF 用 fitz 逐页 get_text('dict')，页文字数≥200 且图片覆盖率<30% 判为“文字页”，否则判为“需看图页”并导出 150dpi 的 PNG，按图片块再导出裁剪图。题号切分用正则（^\\d+[．.、]、（\\d+）、第\\d+题）。输出：draft/<exam>/Qn.md、need_visual.json（页号、原因、裁剪图路径）、extract_report.json（每页字数、图片数、判定）。验收：与已验收的 50 卷现有 MD 按题号比对相似度，作为回归测试",
+     "expected_saving": "题库线看页图的成本约 $90（Claude 侧）。按源文件构成估算（85 个 docx/doc/rtf、29 个 pptx 和约一半 PDF 有文字层），同等规模的一轮大约可以少看 40–60% 的页，省 $40–60；再加上少读整份 MD、少跑浏览命令，估计题库线整体省 10–25%，并缩短每卷的墙钟时间",
+     "risk": "扫描件、手写和公式图片仍要看图；docx 里的文本框和脚注可能漏抽，需要用已验收卷做回归；题号切分出错会让一题拆开或两题合并，必须由模型抽检"
+    },
+    {
+     "name": "把质量体检规则并进 batch_health.py",
+     "kind": "batch_health_check",
+     "what": "把 r47 质量体检里由代理手工 grep 的规则变成确定性检查，只把命中的节点交给模型复核",
+     "spec": "扩展 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/batch_health.py，新增 --rules audit，输出 JSON：{node_id, rule, excerpt, severity}。规则包括：后台词（来源、页码、待核、供参考、uncertain、idx、细则原话、本节点、教师版、待插入、文字转录如下、正式设问、给定数据）；【思维链条】后必须跟以“链：”开头的一行；【答案落点】和【细则说明】必须齐全；题肢判断只出现正确或错误（按“不选”规则）；同一页没有重复的例题标题；思维链字数上下限（取代约 1.2K 次 python -c 数字数）；常见表述与所属一级标题一致（按关键词表粗筛）。再写一个 wf 模板：Workflow 只对命中的节点派 Sonnet 复核，每个代理只拿一个节点的片段",
+     "expected_saving": "一次全书质量体检从约 $160、2.0h 降到脚本约 1 分钟，加上约 20% 节点的模型复核，约 $20–40；每次全书体检省 $100–130",
+     "risk": "规则会漏掉语义层面的问题（例如常见表述放错标题），仍需要模型抽检；规则表要随用户新要求同步更新（台账），否则会误报或漏报"
+    },
+    {
+     "name": "专题取材包（topic_packet.py，只读题库）",
+     "kind": "script",
+     "what": "专题推广前先用一个脚本把每个主体或考点的全部相关题目、细则原话和页图裁剪路径打成包，代理直接读包，不再各自跑几百次检索",
+     "spec": "放在技能 scripts/topic_packet.py。输入：--bank /Users/…/DeepSeek_政治题库资料库_20260918 --topic 党|人大|政府|人民与公民… --keywords <词表 JSON> --out <候选目录或 scratch>，只读题库，不写 packets/。处理：按 questions/*/Qn.md 的设问、材料和细则全文匹配关键词与主体词；输出 packet_<topic>.json（exam_id、题号、设问、材料摘要≤300 字、细则里与该主体相关的原句、讲评 PPT 原句路径、官方写法与我们归纳的分栏、页图裁剪路径），附 coverage.json（命中题数和未命中候选），用于证明取材已穷尽。Workflow 的 Extract/Examples 阶段只传 packet 路径和题号子集",
+     "expected_saving": "subject-topics-rollout 的 Extract 与 Examples 两个阶段约 $217；约 1.7K 次浏览/bank.py/数据查看命令和 717 张页图大多可以换成读一个包。估计省 40–60%，每轮 $90–130，时长也能从 2.4h 明显缩短",
+     "risk": "关键词匹配可能漏掉只靠情境、没有点名主体的题，需要 coverage.json 加模型补查；包内容必须是原文摘录，不能改写，才符合“只用官方原话”的规则"
+    },
+    {
+     "name": "PDF 版式预筛（page_prescreen.py）",
+     "kind": "script",
+     "what": "逐页看图检查之前，先用 PDF 的几何和文字信息筛出可疑页，只有这些页交给视觉检查",
+     "spec": "放在技能 scripts/page_prescreen.py，输入渲染好的 PDF，只读。用 fitz 逐页计算：文字块覆盖的页高比例（<55% 且不是章末，判为半页空白）、页面最后一个块是否为标题样式（标题孤悬页尾）、是否有文字块与图片框相交或越出页边、页码是否连续、后台词、【思维链条】是否紧跟“链：”行。输出 flagged_pages.json 和对应的 PNG 列表；bx3-pagecheck 工作流改为只读 flagged 页，外加每 50 页随机抽 1 页",
+     "expected_saving": "一次全书逐页检查约 $9、11–15 分钟；如果只看约 15% 的页，每次约 $1–2、3 分钟。观测期内 12 次检查加 2 次 r5 页面复核约 $124，大约可省 $80–100",
+     "risk": "颜色类问题（错误题肢红字、纠正绿字）和图片内容问题几何信息看不出来，需要保留抽样看图；阈值要用第48批已知问题页校准"
+    },
+    {
+     "name": "工作流代理编写规则",
+     "kind": "skill_rule",
+     "what": "写进 Skill 的 workflow 编写规范，控制子代理的模型和上下文",
+     "spec": "在 references/book-production-workflow.md 加规则：①每个 agent() 必须显式写 agentType，默认用 baodian-source-review（Sonnet）；只有用户点名的“教学判断/分类思考”阶段才用 Opus5.5，禁止继承 Fable。②每个代理只处理一个节点或一卷，传片段、裁剪图和预计算包，不传整本 txt/json。③页图只读裁剪图或 flagged 页，同一张图不在同一代理里重复读。④复核阶段只拿上一轮的差异（diff JSON），不重看全量。⑤代理用 StructuredOutput 收尾，工具调用超过 60 次时拆分。⑥在工作流注释里写明预计调用次数和模型",
+     "expected_saving": "workflow-subagent 继承 Opus5.5 的部分 $548 改用 Sonnet，按单价比 2.65 对 2.0 约省 $135；继承 Fable 的部分 $108 改用 Sonnet 约省 $84。如果代理平均上下文减半，读缓存相应减少，必修三工作流部分估计再省 15–25%（$250–400/同等规模）",
+     "risk": "用户明确要求“调用最好的模型”的思考类任务降级可能影响质量，需要保留例外；拆得太细会增加每个代理的固定开销（系统提示约 7K–40K token）"
+    },
+    {
+     "name": "主线程节流规程",
+     "kind": "procedure",
+     "what": "主线程只做编排和教学判断，保持上下文小、模型便宜、不空转",
+     "spec": "写进 00_协作入口.md 或 Skill 的主线程规程：①主线程默认用 Opus5.5 medium，不用 Fable（用户 09-23 已提出）。②等待后台工作流时不用前台 sleep，发起后结束本轮，靠完成通知唤醒；确实需要轮询时间隔≥10 分钟且只读状态文件。③单个会话上下文超过约 300K，或额度恢复、隔夜之后，先写 checkpoint 或交接文件，再开新会话接手，不要在 700K 以上的上下文上“继续”（每次续接约写缓存 700–800K）。④大文件只让脚本读，主线程只读摘要（≤2K token）",
+     "expected_saving": "Fable 主线程 $237 改用 Opus 约 $68，省约 $170；缓存重建 $105 中大部分可以避免；轮询 $28 和 4.4h 空等基本可以省掉；主线程平均上下文从 510K 降到约 150K，主线程读缓存可以减少约 70%",
+     "risk": "频繁换会话可能丢掉隐性上下文，需要交接文件写全，未决事项、用户新要求和父 SHA 都要写进去；通知机制不可靠时会漏掉完成事件"
+    },
+    {
+     "name": "每批结束跑一次用量体检",
+     "kind": "batch_health_check",
+     "what": "把 usage_profile.py 列入每批收尾步骤，按阈值报警",
+     "spec": "命令：python3 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/usage_profile.py ~/.claude/projects/-Users-wanglifei-Desktop-gpt-claude----- --line 必修三 --since <本批开始> --out <scratch>/usage --tag _b<N> --quiet；Codex 侧加 --codex-scan ~/.codex/sessions --codex-dates <日期> --codex-sample 6。主代理只读 txt 中“前 15 个最费的环节”和“单次最贵动作”（约 2K token）。报警阈值（后续可加 --alarms 参数实现）：出现继承 Fable 的 workflow-subagent；单个代理读 PNG 超过 40 张；单次写缓存超过 300K；主线程 sleep 超过 3 次；复核阶段花费超过生产阶段",
+     "expected_saving": "脚本 30 秒，模型只花约 2K token；它的作用是让上面几条规则可以量化验证",
+     "risk": "美元单价是从 cost-state 反推的（Opus5.5 约 ±10%，Fable 只有一个快照）；批次归属靠关键词，偶有误判，需要时用 --line-map 人工覆盖"
+    }
+   ],
+   "files_written": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/usage_profile.py",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/all/usage_profile_all.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/all/usage_profile_all.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bx3/usage_profile_bx3.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bx3/usage_profile_bx3.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bank/usage_profile_bank.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bank/usage_profile_bank.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bx3_since22/usage_profile_bx3_0922.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/bx3_since22/usage_profile_bx3_0922.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/codex/usage_profile_codex.json",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/codex/usage_profile_codex.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/human_msgs.txt",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/cost_states.jsonl",
+    "/private/tmp/claude-501/-Users-wanglifei-Desktop-gpt-claude-----/bf450d67-a650-441b-9b69-41f5207feba6/scratchpad/measure/usage/all_time.log"
+   ],
+   "open_questions": [
+    "美元单价是从 cost-state 反推的：sonnet-5 精确吻合（每百万 token：输入 2、写缓存 2.5、读缓存 0.2、输出 10 美元）；opus-5-5 只有 2 个快照（折算 2.55 和 2.78 美元/百万加权当量，取 2.65）；fable-5-1 只有 7106db47 一个快照（9.21）。订阅额度是否按 API 价比计算读缓存不清楚，所以“额度占比”可能和美元占比不同。",
+    "约 1,044 次调用（1.8%）没有最终 usage，输出按字数估算；思考 token 在这些记录里看不到，输出是下限。另外 3b729a0b（Fable 为主，约 $1,309）没有带数据的 cost-state，无法独立核对。",
+    "线和批次的归属是启发式的：7106db47 有 2 个回合被判为必修二（约 $2），3bd4f1ab 有 3 个回合被判为题库线（约 $5）；d6caf4c4 和 bf450d67 是用 --line-map 人工覆盖为“其他”的；“第52批”来自仍在进行的 3bd4f1ab。第44批和第45批的分界只能靠文字提及，第一个回合可能偏向旧批号。",
+    "“其后被反复读入”（报告里叫滞留成本）是估算：文本按 ASCII 0.5、非 ASCII 1.0 token/字符，图片按 700 像素/token，系数是在本项目会话上用 usage 增量回归得到的，没有逐次精确归因；仅供排序。",
+    "Codex 侧只抽样解析了 6 个 rollout（按日期和 cwd 过滤）。现在题库线主力在 Codex Luna，Claude 侧的 $496 不代表题库线全部花费；Codex exec 的耗时是整批 exec 的耗时，也没有换算成美元。是否需要把 Codex 全量（09-21 到 09-23 共约 60 个相关文件）也跑一遍？",
+    "PDF 文字层只抽了 19 个文件、每个前 6 页；要确定多少 PDF 可以完全用脚本转 MD，需要对 130 个 PDF 做全量文字层普查（只读、不 OCR，脚本约 1 分钟）。题库目录写权在 Luna，这件事和 source_to_md.py 是否由 Luna 线采纳，需要用户决定。",
+    "3bd4f1ab 在测量期间仍在写入（最后记录 14:44 PDT），必修三第51批和第52批的数字会继续增长；所有时间都按本机时区 PDT 统计，如需按北京时间统计可加 --tz Asia/Shanghai 重跑。"
+   ]
+  }
+ },
+ {
+  "label": null,
+  "v": {
+   "contradictions": [
+    "【输出token口径】prefetch 报第51批推广（wf_153d2233）output 0.57M、3bd4f1ab 全部子代理 output 0.8M；rework 报 6.94M，cache 报 9.45M。我按 message.id 重算：wf_153d2233 首条记录的 output 合计 0.573M，同消息多条记录取最大值是 6.940M；3bd4f1ab 全部子代理首条 0.81M，取最大值 9.83M。所以 prefetch 用的是首条记录（流式开头的值），偏低约 12 倍。mine 的 scan_sub.py 第38—41行也只取首条，它的“新增 148.0M”和“必须模型41%/半确定56%/确定4%”这组比例都少算了输出，写稿类的份额被压低了。",
+    "【第49批修订5改动页】rework 说“相对r4真正变化34页，按规则仍派548页，可降到约34页（省94%）”；render 说“v2 需看123页（含相邻137页），实看548页”。核对原文件：07_像素比对_r4_r5.json（12:49，对应 v1，596页）content_changed=34；08_像素比对_r4_最终.json（12:54，对应 v2，597页）must_review=548；wf_fdd910b9 实际派的页是 2,3,52—597，共548页，看的是 v2；diff_B1_r4_v2.json 显示 r4→v2 改文字122页、含相邻135页。rework 把 v1 的34页和 v2 的548页混在一起比，94% 不成立，正确口径约省75%。",
+    "【第48批页检页数】rework 写 616/587/586/581/583（合计2953页次），mine 写 500/537/586/531/583（合计2737）。在 3b729a0b/workflows 里核对：前一组是 args.total（整书页数），后一组是结果里的“看图N页”（实际看过的页数）。render 的13次清单把两种口径混着用（如 616、616、537）。",
+    "【页检工作流完成数】render 说“13次（11次完成、2次killed）”。实测是10次完成、3次killed（wf_d9e5ecca、wf_57c96fd6、wf_9339923e）。totalTokens 合计 16,482,492、时长合计 9,628 秒，与 render 一致。",
+    "【每页看图成本三套口径】同一个 wf_fdd910b9：render 按工作流 totalTokens 算出 3,099/页（1.70M）；mine 按 input+写缓存+首条输出算出 7.1K/页（3.89M）；jsonl 实测为读缓存 47.49M、写缓存 3.88M、输出 0.154M，折合每页读缓存约 8.7万。所以 render 的“省约277万 token（85%）”和 mine 的“省约15M”都不是按真实用量算的，不能相加，也不能直接和 usage 的美元数字放在一起比。",
+    "【最大浪费的排名不一致】mine 按“新增token”把看页预筛排第一；cache/prefetch 认为最大的是细则重复抽取；usage 认为是上下文复读。换成读缓存口径比较：第51批推广的 Extract 一个阶段就有 275.8M，高于45—51批13轮页检合计的 220.8—229.4M。排名主要取决于选了哪种口径。",
+    "【2023海淀期中（上/下）映射】prefetch 把9个题块都按原样映射到 BJ-2023-HD-QIZHONG，写的是“是否正确未核”。cache 依据题库身份报告，认为（下）应为 BJ-2023-HD-YIMO。我读了 receipts/claude_bank_20260922/HD2023_identity/identity_report.json：第二学期期中练习（2023.04）确实是 BJ-2023-HD-YIMO，而原卷被错登在 QIZHONG 名下。prefetch 的 evidence_packet 会为（下）卷的题取到错卷的细则。",
+    "【书中主观题规模】cache 以第51批 DOCX 为准：主观385个落位、153个题键（batch_health 实跑也是“主观例题385｜选择例题207”）。prefetch 用 专题小样/全书主观题抽取.json：375个题块、147道题。两者统计的对象不同，没有对齐。E1 可用性也对不上：cache 分为71可复用、43类E1未验收、30只有候选、9缺失；prefetch 按标题粗判为137/147有正式评分层。",
+    "【PDF文字层占比】md 用自写分类器：131份1,596页中文字页805页（50.4%）；mine 用题库 evidence/*/meta.json：129份1,576页中文字层626页、混合166页；usage 只抽了19份。三个分类器不同，md 算出的“54.7%/58.3%单位可免模型”对分类结果很敏感。",
+    "【会话归属】usage 把 3bd4f1ab 记为第50—51批约$612，另记 7106db47 约$190；mine 和 prefetch 把 3bd4f1ab 记为第49—51批，并说 544 次调用全在 3bd4f1ab。实测 7106db47 的221个唯一 message.id 全部包含在 3bd4f1ab 里（前缀副本；3bd4f1ab 现为644个，仍在增长）。两种归属约定都说得通，但按会话列的金额和次数不能相互对照。",
+    "【题库会话次数与输出】usage 11,054次，md 11,010次。实测 13295440 单会话为11,010次；usage 多出的44次应来自其他会话里被判为题库线的回合。输出：md 8.20M（实测取最大值为 8.196M），usage 8.40M（为缺 usage 的记录估了字数），cost-state 记 8.52M，三者口径不同。",
+    "【记忆里的历史数字】memory/bank-line-luna-handoff.md 记题库线“约18k次调用、24.8亿token”，这正是当初交给 Luna 的理由。实测去重后是11,010次、1.603B；不去重逐行累加是21,202行、3.196B，两种都对不上。当时报给用户的数字很可能是重复计数的结果。",
+    "【看页比例与规则】mine 说“阶段稿只看needs_eyes约≤88/776页”，render 说初稿档只看新专题首页和含表格页；rework 说“页检噪声至少减一半”。三者的范围和依据各不相同，而且都没有说明与 project-rules §8“检查全部受影响页与相邻页”怎么衔接。",
+    "【小项不一致】政府样稿的用户消息，rework 写11条，prefetch 写约14条；推广代理数写成126或127（目录里有127个jsonl）；bx3-r47-audit，usage 归第48批，mine 叫“第47批质量体检”；“评分标准”段数，rework 写23，我实扫第51批 DOCX 是24段（按样式 aff5:11、affb:7、aff9:4、aff6:1、affa:1）。",
+    "【时区混用】mine 全用 UTC，usage/prefetch 用 PDT，rework 两种混用（如“09-21T21:33Z”和“13:59 PDT”），同一事件在不同报告里时间差7小时。"
+   ],
+   "spot_checks": [
+    {
+     "claim": "usage：全部 Claude 会话约5.7万次唯一调用，读缓存5.76B，占95.5%，新token 271.8M；输出取首条是5.9M，取最大值是68.9M",
+     "verdict": "基本属实（数字随会话增长略有变化）",
+     "evidence": "用 scratchpad/measure/audit/alltok.py 流式读取2,225个jsonl（15秒），当前结果：57,632次，读缓存5.842B（95.52%），新token 273.9M，输出首条6.05M、最大值69.27M。比 usage 14:48 的数字略高，差额来自 3bd4f1ab 和本会话之后的新增。"
+    },
+    {
+     "claim": "题库会话13295440：11,010次调用，读缓存1,564.2M，写缓存30.69M，cost-state $488.65",
+     "verdict": "属实",
+     "evidence": "audit/tok.py：178个文件，11,010次唯一调用；读缓存1,564,230,599；写缓存30,693,968；输出首条1.28M、最大值8.196M；主线程366次，读缓存190.48M。主会话 jsonl 最后一条 cost-state 为 totalCostUSD 488.6526。模型：sonnet-5 10,577次，opus-5-5 359次，haiku 50次，synthetic 24次。"
+    },
+    {
+     "claim": "第51批推广 wf_153d2233 的输出：prefetch 说0.57M，rework 说6.94M",
+     "verdict": "rework 正确，prefetch 用错了口径",
+     "evidence": "3bd4f1ab/subagents/workflows/wf_153d2233-a7f/ 下127个jsonl，5,795次调用：首条输出0.573M，最大值6.940M；读缓存896.7M，写缓存24.95M。"
+    },
+    {
+     "claim": "md：脚本直出与已验收MD的一致率为 DOCX 97.8%、文字层PDF 99.1%、PPTX 88.2%，答案键45/45",
+     "verdict": "数字能复现，但口径偏乐观",
+     "evidence": "doc2md/trial_summary.json 的 agg：docx 36,983/37,814、text_reliable 52,414/52,890、pptx 11,715/13,287、answer_key 45/45。但另有“unlocated”9,013字（占6.2%）按0命中计，而标题里的分页型比率把它排除了；全部计入后13卷总体是91.1%。单卷最低 BJ-2026-FT-YIMO 70.8%、BJ-2026-BJ-GAOKAO 79.7%；拆题率 CY-YIMO 43.9%、FT-YIMO 46.8%、BJ-2022 50.5%；2卷自检未过，4卷总分不是100（45/91/92/45）。另外比率只衡量“已验收内容在脚本输出里能找到多少”，是召回口径。"
+    },
+    {
+     "claim": "md：2026北京高考Q10 D项在已验收MD的默认题面写“获得劳动报酬”，原卷是“取得”",
+     "verdict": "属实（独立核实）",
+     "evidence": "我用 fitz 读原卷 00_共同资料/原材料/历年高考题及细则/2026年…试题.pdf，第4页文字层是“取得劳动报酬”，自己渲染的裁图 audit/gk26_p4_check.png 也显示“取得”。题库 questions/BJ-2026-BJ-GAOKAO/BJ-2026-BJ-GAOKAO-Q10.md 的读取指引把“题面（Luna/max独立复核通过，verified）”列为采用小节，其第37行写的是“获得”；native 小节（第46行）写的是“取得”。md 的 crop_dc_p4a/b.png 我也看了，原卷确实印着“輸送/仙远地区/网上立電”（这两张没有重新渲染）。"
+    },
+    {
+     "claim": "rework：第49批修订5真正变化34页，却派了548页；render：v2需看123页（含相邻137页）",
+     "verdict": "render 正确，rework 把 v1 和 v2 混了",
+     "evidence": "修订5/07_像素比对_r4_r5.json（12:49，同版身份_v1为596页）content_changed=34；08_像素比对_r4_最终.json（12:54，同版身份_v2为597页）must_review=548；7106db47/workflows/wf_fdd910b9 的 args.pages 为2,3,52—597；render/diff_B1_r4_v2.json 显示 changed_text=122、review_with_context=135。"
+    },
+    {
+     "claim": "cache：3bd4f1ab 调用 bank.py get --with-rubric 共1,114次，涉及172个题键，其中942次重复",
+     "verdict": "基本属实（误差约2%）",
+     "evidence": "audit/bankget.py 按 tool_use id 去重，截至 20:58Z：带 --with-rubric 的1,096次（所有 get 共1,218次，其中83次用变量传键），字面题键170个，重复提及974次。"
+    },
+    {
+     "claim": "rework：现有 batch_health.py 在第51批上有3个门FAIL；第51批仍有3段“实施评分标准”误伤；batch_health 默认把结果写到 DOCX 旁边",
+     "verdict": "属实",
+     "evidence": "我带 --out 到 audit/health51_audit.json 运行，以 PYTHONDONTWRITEBYTECODE 只读执行，运行前后 DOCX 的 SHA 都是 83ba371131ee…。结果是 FAIL 四栏目、FAIL 考法标称、FAIL 工程痕迹（4处条目末尾带试卷/分值）。用正则扫 document.xml，命中3段“实施评分标准”（样式 aff6 一段、aff9 两段）。batch_health.py 第283行：不给 --out 时写 Path(a.docx).with_suffix('.体检.json')。build_r45.py 第788行 _TPL2 确有 (?<!【)细则(?!说明】)→'评分标准'，第808行对全部 w:t 执行替换。"
+    }
+   ],
+   "missing": [
+    "Codex/Luna 这一侧的真实成本没有测。题库转MD线现在由 Codex Luna 负责，剩余34卷也由她做；usage 只抽了3个 Luna 子线程（每个47—59次调用）。md 的“13,940次降到4,100—6,800次”是用 Claude 时期平均410次/卷外推的，不能代表 Luna 现在每卷的成本。",
+    "Luna 交接文件已有“精简模式”，没有人纳入分析。后勤管理/MD全库流水线_20260921/controller_transition_20260922/luna_handoff_20260922.md 第4节（09-22 18:46）已经要求：子代理先用原生文字层（DOCX/PPTX XML、PDF文字层、sources/transcripts）比对，只对图、表、扫描页开原图；复核只核改动diff加图表加结构；只有major才返修一轮。md 的补丁模式、页型分流和 mine 的 bank_md_lint 与此大量重叠。md 的410次/卷基线来自精简模式之前（按描述能归到具体卷的 Claude 题库代理几乎都跑在 18:46 之前），所以节省比例会被重复计算。",
+    "题库现有脚本和产物没有评估复用还是替换：scripts/03_extract_pdf.py、04_extract_docx.py、05_extract_pptx.py、08_visual.py、09_split.py、10_pair.py、12_verify.py，以及 evidence/*/native_text/raw.md 和 sources/transcripts/*.json。md 只指出了 04 的 numPr 和 mc:Fallback 两个缺陷，就提议重写一个 doc2md.py。",
+    "已验收题库MD的错误率没有量化。md 抽的13卷里，有2卷查出4处错误，其中一处在标着“Luna/max独立复核通过，verified”的默认小节里。cache、prefetch、mine、usage 的取材包都把已验收MD当可信输入，却没有一个先估算50卷已验收卷的错误面。",
+    "cost-state 里有 thinkingTokens（例如13295440中 opus 为132,529），可以用来核对思考token；各分析都写“思考token看不到”，没有用上这个来源。",
+    "记忆 memory/bank-line-luna-handoff.md 里的“18k次、24.8亿token”与实测（11,010次、1.603B）不符，这个数字当初被用来说明为何交接给 Luna，需要主代理更正并告知用户。",
+    "测量期间数据仍在变化：3bd4f1ab 还在写入（主会话唯一 id 从544增到644）；题库在 14:26—14:29 合入了 BJ-2025-HD-YIMO（validation/12_machine_check.json 在 14:26:56 被 12_verify.py 刷新）；manifest 的 updated_at 是 13:34。“已验收50/待复核34”等数字都只是快照。",
+    "上下文压缩和会话续接的成本没有系统测：只有 prefetch 提到一次（20:20:57）压缩，之后约25次定位调用；usage 只统计了缓存重建129次。",
+    "流程违规：usage 分析把 usage_profile.py 写进了 Skill 母版 /Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/（创建于 14:20，修改于 14:48 PDT），而不是写到 scratch，违反本任务“中间产物只写 scratch”的硬约束。14:50:38 的一次 collab 同步又把它发布到 .claude/skills/beijing-gaokao-politics/scripts/ 和 00_共同资料/规则/beijing-gaokao-politics/scripts/，并登记进 Claude协作同步_20260914/发布清单.json（sha dd099fa1…），而用户要求台账里没有对应登记。是否保留须用户决定，我没有改动。",
+    "审阅入口 00_必修三最新审查稿/ 里残留一个第42批的 Word 锁文件（~$三政治与法治宝典_R31续修_第42批_当前工作稿.docx），与省token无关，只作卫生提示。"
+   ],
+   "proposal_issues": [
+    "【重叠：看页减量】usage 的 page_prescreen、mine TOP1 的 page_prescreen 加附加B、rework 的 page_reuse 加白名单、render 的 review_pages、page_delta、看页规则改写和 batch_health --baseline-pdf，是同一件事的4套方案，参数互相冲突：rework 用72dpi、遮去页脚8%；render 用100dpi RGB、遮去92%以下；mine 用原图1414×2000做相等比较。应合并成一个脚本、一个账本，节省也不能相加（usage 说$80—100、rework 说50—94%、render 说85%、mine 说75—80%，是同一笔钱）。",
+    "【违反规则：放宽看页门槛】book-production-workflow.md 第40行原文是“已看旧页的复用仍要求同页、完整像素完全一致；不降低门槛以省token”。render 和 rework 都提议改成“正文区像素一致、页号可不同”，rework 还要用72dpi哈希，低于看图分辨率。这属于明文禁止为省token而降低的门槛，只能由用户裁定。render 的“初稿档只看新专题首页和含表格页”与 project-rules.md §8“检查全部受影响页与相邻页”冲突。用户09-22说过“以后可以不用复查，先给我看初稿”（见修订5/最终主代理技术验收.json），应先作为限定于阶段稿的条目登记进台账，不能由代理自己推断放宽。",
+    "【违反规则：机检替代视觉】rework 提议“页检提示词删去后台用语、颜色等文字层项目，改由 batch_health 负责”，mine 提议“阶段稿只看needs_eyes”。project-rules.md §236 规定“机器命中、PDF可渲染、代理通读或抽样复核均不得互相替代”，§219 规定终审须100%逐页查PNG。而且 batch_health 当前在第51批上有3个误报FAIL，还漏掉专题例题缺栏，现在就让它替代视觉检查为时过早。",
+    "【与现行规则冲突：链行】usage 的 batch_health 规则要求“【思维链条】后必须跟以‘链：’开头的一行”，page_prescreen 也查链行。现行 style-spec.md 第83、128行和台账第280/283行写明用户已删除末尾“链：”行；rework 的提案反而把链行判为FAIL。usage 这两条必须删掉，否则会把已撤销的规则重新引入。",
+    "【与现行规则冲突：“不选”】usage 规则“题肢判断只出现正确或错误”适用于全部解析；按台账和记忆，“不选”在单练中禁止，但解析里用于“材料未体现”是允许的。应只在单练里拦截，这正是 rework 和 mine 的做法。",
+    "【重叠：取材/细则包】usage 的 topic_packet、rework 的“专题抽取改读题库MD”、cache 的 rubric_cache 全套、prefetch 的 evidence_packet 加 harvest 加 page_source_map、mine 的 qpack 加 verbatim_check，是5套取材方案，应合并为一个“题键解析→包→等级”工具。各家的节省（usage $90—130、cache 65M 读缓存、prefetch 5—6M、mine 8—12M 加 100M）是同一笔，不能相加。",
+    "【冒充已核验的风险】cache 规定 bank_accepted 可直接引用。字面上符合 REQ-20260922-OFFICIAL-WORDING（只要求未验收的看原页），但记忆写的是“并看原页”，而且我已核实已验收卷的 verified 默认小节有错（2026高考Q10把“取得”写成“获得”；2025东城二模Q16/Q17/Q18也有问题），2024高考细则的角色认定也和用户裁定冲突。在 md 的回溯体检跑完、主代理抽核之前，bank_accepted 不应自动当作可引用。",
+    "【冒充已核验】prefetch 的 harvest_extractions 把子代理的 StructuredOutput 称为“已核过原件的记录”并建议优先复用。这是子代理或机器层的结果，应标成 subagent 级（cache 的等级方案），不得直接引用，也不得升为已核。",
+    "【映射错误】prefetch 的 evidence_packet 把2023海淀期中（下）映射到 QIZHONG，按 identity_report 应是 BJ-2023-HD-YIMO，会给这些题取错卷的细则。上线前必须先用 cache 的 keymap。",
+    "【脚本冒充归纳】usage 的 topic_packet 输出“材料摘要≤300字”和“官方写法与我们归纳的分栏”。脚本只能截取原文，不能生成归纳；截断处要明确标注，否则容易被误当原文引用。",
+    "【设计冲突】mine 的 verbatim_check 抽“答案落点中带（N分）的片段”去核对，但现行要求是答案不标分（修订5技术验收写“答案无标分”，rework 的门也把答案带分判FAIL）。书中【细则说明】经过改写，cache 实测与E1的4字片段包含率中位数只有0.26，逐字核对大多会报 not_found，“省50—70%”站不住。",
+    "【规则缺口】mine 的 drill_check 用“被选题肢=正确”反推，没有处理“选错误的一项”这类反向设问，会误报FAIL；rework 的 choice_check 已经处理了，应合并。",
+    "【与待裁定事项冲突】mine TOP4 把“评分标准”（非细则说明样式时）判为FAIL，而 rework 把它列为待用户裁定的开放问题（第51批仍有约24段）。mine 对“四权只出现1—3个”一律WARN，会把单独出现的“监督权”也报出来；style-spec 第111行明确“人大监督权与公民监督权”是真实区分，rework 对此做了豁免。",
+    "【扩大误伤风险】rework 的“用户点名一类问题，同回合修到全书为0”，与造成“细则→评分标准”误伤的全局替换是同一种机制。必须同时执行它自己提出的“批量替换限定样式”；含义有歧义的词（评分标准、跨模块）要先由用户裁定，也不能违反“不自行强行做概念区分”。",
+    "【教学判断进规则】rework 的“类型分类自检规则”写进了具体内容裁定（依法行政不放在履行职能下，以人民为中心属于宗旨）。这些要能追溯到用户原话或台账条目，才能写进 style-spec；代理的互换测试只能提示，不能替代用户裁定。",
+    "【模型规则冲突】usage 规定“默认Sonnet，只有用户点名的阶段才用Opus”，与记忆“深度子代理用Opus”以及 book-production-workflow 中“答题点归纳需要调用最好的模型”冲突。“主线程默认Opus medium”应写成用户偏好；按 CLAUDE.md，主模型保持用户所选，不能由Skill强制。",
+    "【等待策略冲突，且夸大节省】usage 说“结束本轮靠通知唤醒，4.4h空等基本可省”，mine 建议用 Monitor 的 until 循环，prefetch 则显示结束本轮后仍空闲约303分钟。结束本轮只省token，不省墙钟时间；真正能省时间的是 prefetch 的“等待期间预制下一批材料”。",
+    "【写权】md 的 doc2md、retro_audit、ocr_route，mine 的 bank_md_lint，usage 的 source_to_md，都要放进题库 scripts/ 或 receipts/。按交接文件，写入需要 BANK_ACTOR 等于 state.json 的 shared_writer（Luna），只能由 Luna 采纳，Claude 不能直接写。md 的A类方案（脚本直出，机器自检后主控每卷只抽一处即算验收）与 manifest 的 transcription_and_review_must_be_different_agents 及精简模式“主控亲自抽查”存在张力，须 Luna 或用户裁定，否则就是把机器提取当作已核验。",
+    "【共享目录写入】cache 把缓存数据放在 00_共同资料/题级细则缓存，这在 collab 同步的目标树之下；export-for-bank 还要写进 后勤管理/。两处都要用户确定写权和目录；rulings.json 只能登记用户已明确的裁定。",
+    "【自动化边界】mine 的 batch_pipeline 带 publish/promote --apply，skill_rule.py 会自动 chmod、改Skill并执行 collab sync。默认必须是 dry-run，而且 --apply 前须主代理验收并核对父SHA。刚发生的 usage_profile.py 未经登记就被发布到两处副本，说明同步这一步已经有失控的先例。",
+    "【先修体检的默认输出】batch_health.py 第283行不给 --out 时会把 .体检.json 写到 DOCX 旁边。usage 的“每批收尾体检”和 mine TOP4 的命令都没有强制 --out，若直接对 00_必修三最新审查稿 运行，就会写进审阅入口。rework 的“默认输出改到安全位置”应排在所有体检扩展之前。"
+   ]
+  }
+ }
+]

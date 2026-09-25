@@ -1,0 +1,361 @@
+{
+  "schema_version": "native_xml_asset_manifest.v1",
+  "source": "candidates/sources/东城期末.pptx",
+  "source_sha256": "26b1173765262a2f34fc48932fa71fb8f6c77085cdc57aa27a5b597eb3caa2ec",
+  "slide_count": 34,
+  "overlay_heavy_slides": [
+    2,
+    4,
+    8,
+    11,
+    13,
+    14,
+    21,
+    24,
+    28,
+    29
+  ],
+  "native_text_transcription": "candidates/native_xml/东城期末_slides_native_text.md",
+  "slides": [
+    {
+      "slide": 1,
+      "role": "Q18_context_prompt",
+      "source_xml": "ppt/slides/slide1.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-01.xml",
+      "xml_sha256": "ac58c33f8cb0455a3656ab0d9716c8daae37ac855d12a12e4c3f97fa0def8e25",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 2,
+      "role": "Q18_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide2.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-02.xml",
+      "xml_sha256": "c2b3f7818ed8ce0fd67db475c0105b67d5dcd7a6a1ecacd9a0a6cb64c91cb5c0",
+      "native_text_sha256": "1c3ac6807526b03b0b6957823bdb7f4b683c594baf1c5201e46ac951acba9aca",
+      "native_text_chars": 194,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 3,
+      "role": "Q18_context_prompt",
+      "source_xml": "ppt/slides/slide3.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-03.xml",
+      "xml_sha256": "f92874dd335544f32890638ffd092446c46a7f08c704dc674a86371addba90c0",
+      "native_text_sha256": "2fc2214619f780dea04fb8882f0a2a31fc78036b7e8b9cfd18df7f4d7778b087",
+      "native_text_chars": 112,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 4,
+      "role": "Q18_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide4.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-04.xml",
+      "xml_sha256": "e3dc5eb2efe0c936fa18067c8e0c56344fb6548e5adf7f0992255c8ce4ae553d",
+      "native_text_sha256": "1ebfa5f435828d938a62c7ec248dbf0c66f3b2dd71699b758d11661342b256ab",
+      "native_text_chars": 328,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 5,
+      "role": "Q18_student_sample_label_满分试卷",
+      "source_xml": "ppt/slides/slide5.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-05.xml",
+      "xml_sha256": "dba2ce162c07f951f54c4c3048ee380d2bc4d4c45109b5ffa14334f84f67ed8a",
+      "native_text_sha256": "5897b0e7e7acd32d8ea021ff993272254e602593b9ded3c1fa649c88c68c922e",
+      "native_text_chars": 4,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 6,
+      "role": "Q18_context_scoring_commentary_partially_unreadable",
+      "source_xml": "ppt/slides/slide6.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-06.xml",
+      "xml_sha256": "9306ec0833442b1d9b60a18dde118d837ec133123dd4e4d474b772601795e904",
+      "native_text_sha256": "d228be75e4f087046d324e12ea95aaa3209c18b074dff61bbac3c049f1c4be29",
+      "native_text_chars": 95,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 7,
+      "role": "Q17_context_prompt",
+      "source_xml": "ppt/slides/slide7.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-07.xml",
+      "xml_sha256": "d128dbd0bbbd53225ab93f47d588361a0a88a0e5f43ee4261279b118377ad763",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 8,
+      "role": "Q17_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide8.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-08.xml",
+      "xml_sha256": "96f8b1fdf9f63684b231d6850c1e90dc4ecfae9b5b9db0a2d1133a6827ebfa53",
+      "native_text_sha256": "31b179ccbebe43a649ea9860455f46d3c6fb6009aa53f46796f0327d1ac430f0",
+      "native_text_chars": 255,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 9,
+      "role": "Q17_student_sample_label_优秀试卷",
+      "source_xml": "ppt/slides/slide9.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-09.xml",
+      "xml_sha256": "b02eaa66206abbe2b08e85e8b23b7ef31b9a9f8b37af679c7709176697b7c3b0",
+      "native_text_sha256": "7c5853f7258950e78f1f61e0310891c21057e4a05dc9dfd672139aac4c948d0a",
+      "native_text_chars": 5,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 10,
+      "role": "Q19_context_prompt",
+      "source_xml": "ppt/slides/slide10.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-10.xml",
+      "xml_sha256": "24ac506a71bcecac2ae3fe572a9713a3080bbfe9a4d53a237badc0988c23fbb2",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 11,
+      "role": "Q19_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide11.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-11.xml",
+      "xml_sha256": "2c1297a85568e8f61d4976943571ff130aa46a812395a29f1bb4a68db5c543a7",
+      "native_text_sha256": "03399ae8388781f1d4318b3187088bc4bbfc1773ba4133cfba31329ff70b3b48",
+      "native_text_chars": 289,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 12,
+      "role": "Q19_context_teaching_warning",
+      "source_xml": "ppt/slides/slide12.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-12.xml",
+      "xml_sha256": "0312b7f657c53273c4a3889c7eb4dd23e9cf561a8a18ec834a42cd490ad1dcb6",
+      "native_text_sha256": "5977220b8af8e77243010cc4893c962b74863b3f3f4b127b61ec266c11658dad",
+      "native_text_chars": 155,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 13,
+      "role": "Q19_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide13.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-13.xml",
+      "xml_sha256": "026364f58571fd65275b29bac7f7d3b23139a0db40704cf8ac5d19114877c492",
+      "native_text_sha256": "d32682849c95e0bb7a275748b243a7c33592f3f1e9bc77d5612f69465e267506",
+      "native_text_chars": 225,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 14,
+      "role": "Q19_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide14.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-14.xml",
+      "xml_sha256": "60516023709918958ea9277ab5476ee8f3966ef1d09c3b42caa4844e2153cc08",
+      "native_text_sha256": "d38a1e61b5294836ee3f2432a91cb53fd295773fa8302546d40e6a9743b3f99b",
+      "native_text_chars": 343,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 15,
+      "role": "Q19_context_teaching_warning",
+      "source_xml": "ppt/slides/slide15.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-15.xml",
+      "xml_sha256": "f85564b677a4c006f384d2a47241d750153e4648c87c78fde6bfadfc9a05091f",
+      "native_text_sha256": "31d58836c30492ec01cc789dea8c3553edfbfffeb57ec720d9a314d483f88dcd",
+      "native_text_chars": 410,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 16,
+      "role": "Q16_context_prompt",
+      "source_xml": "ppt/slides/slide16.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-16.xml",
+      "xml_sha256": "b7574293634de08d5dd0da3bc896d5c19949b8a90586d1c74943b73beb27e977",
+      "native_text_sha256": "c4fe7b9dbbdbdcdc4cfb3a8ddd10b92a695770bdf8831457f072914ff2973ad5",
+      "native_text_chars": 73,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 17,
+      "role": "Q16_context_textbook_reference",
+      "source_xml": "ppt/slides/slide17.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-17.xml",
+      "xml_sha256": "5d0a81770de0881aac9745a5958c70501ff5044e889c6d84617c940bea677c7c",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 18,
+      "role": "Q16_context_textbook_reference",
+      "source_xml": "ppt/slides/slide18.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-18.xml",
+      "xml_sha256": "04bf964eee7012f183f933ded6abf6ffd0542b0096a7855ac37f7aa263d36641",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 19,
+      "role": "Q16_context_textbook_reference",
+      "source_xml": "ppt/slides/slide19.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-19.xml",
+      "xml_sha256": "a709f03aca887b79753b0530c960afecc0d821990716483df72574c39d8ef7f4",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 20,
+      "role": "Q16_context_textbook_reference",
+      "source_xml": "ppt/slides/slide20.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-20.xml",
+      "xml_sha256": "26a1643dcbaf49cac81c8b6bfd333200c18240da9ee3e579c4a5d417572153af",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 21,
+      "role": "Q16_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide21.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-21.xml",
+      "xml_sha256": "82f523f2f90edcfba0633edf7194fb5c60f8306164aab9b04aca4e4ffc610b3b",
+      "native_text_sha256": "a574f4490af2874b1ca391938e026e1f553d7628475550908a9c4897485df8fa",
+      "native_text_chars": 379,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 22,
+      "role": "Q16_context_teacher_explanation",
+      "source_xml": "ppt/slides/slide22.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-22.xml",
+      "xml_sha256": "f9d763081910af7f023ce90b047ba3efeb810e0262e9ee8f0842198fa8ca0261",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 23,
+      "role": "Q20_context_prompt",
+      "source_xml": "ppt/slides/slide23.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-23.xml",
+      "xml_sha256": "9435df1bf53c6c3092418f0a7c632cce5d529aaa37e672149394b2c75a0dc87e",
+      "native_text_sha256": "96335cc62f462f5371c2918df4df980fefeb8db32718604214cfe04f1d9c26e3",
+      "native_text_chars": 22,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 24,
+      "role": "Q20_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide24.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-24.xml",
+      "xml_sha256": "f9fdd0dc9307a11327b2466e24c1dcfde44fe7849512db51b564318af44adb97",
+      "native_text_sha256": "653126e1b27dc76cd42415fe800f56a36f03b7e51a922896cee3e9be7dbc7149",
+      "native_text_chars": 354,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 25,
+      "role": "Q20_student_sample",
+      "source_xml": "ppt/slides/slide25.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-25.xml",
+      "xml_sha256": "d5728b02f474792e614192913a3cac165391387f5c45d47ac8dac0b99a73b2f1",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 26,
+      "role": "Q20_context_teaching_warning",
+      "source_xml": "ppt/slides/slide26.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-26.xml",
+      "xml_sha256": "a98f043d7a4c9a71c183eda6df833648a6716df51fede9e540f8619a4ac85c06",
+      "native_text_sha256": "fc0a7b5f9a8ef86f28db1fac5a99985fa3ee07adb7f48dd99437be753dfd32c8",
+      "native_text_chars": 130,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 27,
+      "role": "Q21_context_prompt",
+      "source_xml": "ppt/slides/slide27.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-27.xml",
+      "xml_sha256": "25a2c02b3e1ceaee64e00b82db62ba5e7a08aa359bf228be4a3c6cdc70fce234",
+      "native_text_sha256": "d91126f00c8fa183f784d01eef67e48d56fb9c21f121622144f9c9b7af25c46d",
+      "native_text_chars": 81,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 28,
+      "role": "Q21_E1_formal_scoring",
+      "source_xml": "ppt/slides/slide28.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-28.xml",
+      "xml_sha256": "4394dfc2172e04f076af939bece76f337f4d139076dc01e87f673b30f0384300",
+      "native_text_sha256": "f838e74e3197027951fdbf41c66f273d0504012213a5861c7c6529ba34edd88d",
+      "native_text_chars": 316,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 29,
+      "role": "Q21_E1_level_scoring",
+      "source_xml": "ppt/slides/slide29.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-29.xml",
+      "xml_sha256": "19a76586cb9819428263bb11873748e9481468d782a0f47ec37c1600c598ee5a",
+      "native_text_sha256": "1301413c0ab0364b756383b8fb791713141ddd0dd347cb858316ee943b2a5c48",
+      "native_text_chars": 165,
+      "visual_limitation": "overlay-heavy: retain both native XML text and original PNG; visual masking/coverage limits remain bounded."
+    },
+    {
+      "slide": 30,
+      "role": "Q21_student_sample",
+      "source_xml": "ppt/slides/slide30.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-30.xml",
+      "xml_sha256": "928fb5b75fcd27c5b159d2915da6a37a9cfa3445444ae267fa359ec8616a3cc3",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 31,
+      "role": "blank",
+      "source_xml": "ppt/slides/slide31.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-31.xml",
+      "xml_sha256": "9b570a50bc545e82e9ab7638587f676cc3381d78d1c49a5d91454b3a295b375e",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 32,
+      "role": "blank",
+      "source_xml": "ppt/slides/slide32.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-32.xml",
+      "xml_sha256": "9b570a50bc545e82e9ab7638587f676cc3381d78d1c49a5d91454b3a295b375e",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 33,
+      "role": "blank",
+      "source_xml": "ppt/slides/slide33.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-33.xml",
+      "xml_sha256": "9b570a50bc545e82e9ab7638587f676cc3381d78d1c49a5d91454b3a295b375e",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    },
+    {
+      "slide": 34,
+      "role": "blank",
+      "source_xml": "ppt/slides/slide34.xml",
+      "materialized_xml": "candidates/native_xml/slides/s-34.xml",
+      "xml_sha256": "9b570a50bc545e82e9ab7638587f676cc3381d78d1c49a5d91454b3a295b375e",
+      "native_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_text_chars": 0,
+      "visual_limitation": "PNG render retained; no overlay-heavy limitation flagged in this verification."
+    }
+  ]
+}

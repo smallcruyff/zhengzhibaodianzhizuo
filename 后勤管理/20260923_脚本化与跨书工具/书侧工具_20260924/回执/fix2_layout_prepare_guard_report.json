@@ -1,0 +1,20 @@
+{
+  "summary": "只修 reverify_layout_prepare.json 的第一条 blocker（--report 守卫越权写）。guard_report 改为一律走 docx_lib.guard_write(kind='.json')，只保留两点差异：传入去掉 frozen 的配置副本（冻结册 check 仍能把报告写进临时目录，冻结册目录仍由 _frozen_hits 拒绝）；目标已存在时只允许覆盖本工具自己的报告。reverify 里的其余问题（write_report 失败时 DOCX 留盘、N2 自洽错版 PDF 等）本次没有动。",
+  "root_cause": "fix_layout_prepare 那一轮新写的 guard_report 自成一套，只拦冻结册目录、与输入同一文件、已存在且不是本工具报告这三种情况，受保护根和“只许 …/构建/ 或临时目录”这两条规则都丢了。02:25:18 返修者复跑 attack_copy.py t8：bh._unsafe_out 判了拒绝，于是按脚本逻辑去跑 CLI（check --report 符号链接→00_必修三最新审查稿/__verify_never_written__.json），新 guard_report 放行，真实写进了审阅入口。fix_layout_prepare.json 把 t8 写成“测试脚本字段名问题、风险未扩大”，这个说法不对。",
+  "files": [
+    "/Users/wanglifei/.codex/skills/beijing-gaokao-politics/scripts/layout_prepare.py（母版，SHA df654270… → b9479cee…；只改 guard_report 一个函数）",
+    "后勤管理/20260923_脚本化与跨书工具/书侧工具_20260924/测试/run_tests_layout_prepare.py（新增回归#8a/#8b/#8c，文件头说明要复制到 scratch 下运行）"
+  ],
+  "tests": [
+    {"input": "run_tests_layout_prepare.py 全量（复制到本会话 scratch 运行）", "result": "29/29 通过（原 26 条＋新增 3 条），真实输入 SHA256+mtime 未变"},
+    {"input": "回归#8a 守卫矩阵（只调用守卫、不写）", "result": "审阅入口新文件、.review-manifest.json、已存在的越界报告、B3工作区根、协作/、人工审查历史、中央状态目录、Skill scripts、项目根、B2冻结工作区全部 Abort(3)；临时目录与 第52批/构建/ 放行"},
+    {"input": "回归#8b 冻结册 bixiu2 check 的 --report 落临时目录", "result": "放行"},
+    {"input": "回归#8c CLI：check 直写审阅入口 / 经目录符号链接 / 经悬空文件符号链接；repair 经悬空文件符号链接", "result": "全部 exit 3；repair 不留 DOCX；审阅入口目录列表测试前后一致"},
+    {"input": "反证：用未发布的旧版（.claude/skills 里的发布副本）只在进程内调用 guard_report", "result": "审阅入口、越界报告覆盖、项目根均 ALLOWED，说明新测试能抓住旧漏洞（没有跑旧版 CLI，避免真实写入）"},
+    {"input": "00_必修三最新审查稿 全部文件 SHA256 与 ls -la@ 测试前后对比", "result": "完全一致"}
+  ],
+  "not_done": [
+    "未运行 collab.py sync：母版里还有未验收的 apply_patch.py 改动和未发布的 drill_tool.py、publish_review.py，现在同步会把这些一并发出去。.claude/skills 与 00_共同资料 里的 layout_prepare.py 仍是旧守卫，等本线下次整体发布时一起带出。",
+    "00_必修三最新审查稿/__verify_never_written__.json（SHA 3df11878…，2424 字节）是否删除，等用户确认后再处理。"
+  ]
+}
