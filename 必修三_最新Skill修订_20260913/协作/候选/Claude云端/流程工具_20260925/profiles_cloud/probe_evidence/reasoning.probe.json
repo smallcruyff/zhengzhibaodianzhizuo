@@ -1,0 +1,510 @@
+{
+ "tool": "profile_probe.py",
+ "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/推理/选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx",
+ "book_id": "reasoning",
+ "book_identity": {
+  "book": "reasoning",
+  "by": "书名段/文件名",
+  "title_hits": {
+   "reasoning": [
+    "推理宝典",
+    "选必三推理"
+   ]
+  },
+  "body_hits": {},
+  "title_zone": [
+   "2026 北京高考政治选必三推理宝典",
+   "飞哥正志讲堂",
+   "选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20"
+  ],
+  "resolved": "reasoning",
+  "resolved_by": "书名段/文件名"
+ },
+ "census": {
+  "tool": "profile_probe.py",
+  "paragraphs": 5556,
+  "tables": 30,
+  "sections": 1,
+  "media": 25,
+  "style_use": [
+   [
+    "QuestionText",
+    2742
+   ],
+   [
+    "BodyText",
+    1821
+   ],
+   [
+    "ExampleTitle",
+    480
+   ],
+   [
+    "(默认)",
+    277
+   ],
+   [
+    "NodeIntro",
+    95
+   ],
+   [
+    "NoteText",
+    47
+   ],
+   [
+    "Subgroup",
+    38
+   ],
+   [
+    "TOC2",
+    19
+   ],
+   [
+    "H2Custom",
+    19
+   ],
+   [
+    "H1Custom",
+    9
+   ],
+   [
+    "TOC1",
+    9
+   ]
+  ],
+  "labels": [
+   [
+    "【题目】",
+    480
+   ],
+   [
+    "【答案】",
+    289
+   ],
+   [
+    "【错项解析】",
+    145
+   ],
+   [
+    "【逐项解析】",
+    144
+   ],
+   [
+    "【推理规则和过程】",
+    47
+   ],
+   [
+    "【答案落点】",
+    47
+   ],
+   [
+    "【细则说明】",
+    47
+   ],
+   [
+    "【触发词速查】",
+    19
+   ],
+   [
+    "【考法分类·主观题】",
+    19
+   ],
+   [
+    "【考法分类·选择题】",
+    19
+   ],
+   [
+    "【错项信号】",
+    19
+   ],
+   [
+    "【推理规则】",
+    19
+   ],
+   [
+    "【案件事实】",
+    1
+   ],
+   [
+    "【便利支付】",
+    1
+   ],
+   [
+    "【学习理论】",
+    1
+   ],
+   [
+    "【参与实践】",
+    1
+   ],
+   [
+    "【盐碱地有望变良田】",
+    1
+   ]
+  ],
+  "h3_count": 480,
+  "keepNext_direct": [
+   [
+    "QuestionText",
+    1788
+   ],
+   [
+    "BodyText",
+    1075
+   ],
+   [
+    "ExampleTitle",
+    480
+   ],
+   [
+    "(默认)",
+    195
+   ],
+   [
+    "NodeIntro",
+    95
+   ],
+   [
+    "NoteText",
+    43
+   ],
+   [
+    "Subgroup",
+    38
+   ],
+   [
+    "TOC2",
+    19
+   ],
+   [
+    "H2Custom",
+    19
+   ],
+   [
+    "H1Custom",
+    9
+   ],
+   [
+    "TOC1",
+    9
+   ]
+  ],
+  "keepNext_total": 3770,
+  "pageBreakBefore": [
+   [
+    "H1Custom",
+    9
+   ],
+   [
+    "(默认)",
+    1
+   ]
+  ],
+  "fields": [],
+  "footers": {
+   "word/footer1.xml": {
+    "text": "—  —",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer3.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header3.xml": {
+    "text": "",
+    "fields": []
+   }
+  },
+  "title_pg": false,
+  "default_style": "Normal"
+ },
+ "evidence": {
+  "styles.h1": {
+   "H1Custom": 9
+  },
+  "styles.h2": {
+   "H2Custom": 19
+  },
+  "example_titles": [
+   {
+    "family": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$",
+    "kind": "subjective",
+    "style": "ExampleTitle",
+    "count": 192,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^A1-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+    "kind": "drill_card_a1",
+    "style": "ExampleTitle",
+    "count": 144,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^A2-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+    "kind": "drill_card_a2",
+    "style": "ExampleTitle",
+    "count": 144,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   }
+  ],
+  "styles.group_heading": {
+   "Subgroup": 38
+  },
+  "example_kind_by_labels": {
+   "title_kind": "subjective",
+   "with_答案落点": 47,
+   "without": 145,
+   "choice_markers": [
+    "【答案】",
+    "【错项解析】"
+   ]
+  },
+  "column_schemas": {
+   "P1|subjective": {
+    "blocks": 47,
+    "label_block_freq": {
+     "【题目】": 47,
+     "【推理规则和过程】": 47,
+     "【答案落点】": 47,
+     "【细则说明】": 47
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "P1|choice": {
+    "blocks": 145,
+    "label_block_freq": {
+     "【题目】": 145,
+     "【答案】": 145,
+     "【错项解析】": 145
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "A1|drill_card_a1": {
+    "blocks": 144,
+    "label_block_freq": {
+     "【题目】": 144
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "A2|drill_card_a2": {
+    "blocks": 144,
+    "label_block_freq": {
+     "【题目】": 144,
+     "【答案】": 144,
+     "【逐项解析】": 144
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   }
+  },
+  "source_labels_outside_blocks": {},
+  "trailing_leadins": {},
+  "numbering": {
+   "P1": {
+    "reset_after": {
+     "h2": 19,
+     "h1": 8,
+     "group": 19
+    },
+    "no_reset_after": {
+     "h2": 14,
+     "h1": 4,
+     "group": 19
+    }
+   },
+   "A1": {
+    "reset_after": {
+     "h2": 1,
+     "h1": 1,
+     "group": 1
+    },
+    "no_reset_after": {}
+   },
+   "A2": {
+    "reset_after": {
+     "h2": 1,
+     "h1": 1,
+     "group": 1
+    },
+    "no_reset_after": {}
+   }
+  },
+  "styles.zones": {
+   "source": {
+    "QuestionText": 2004,
+    "BodyText": 469
+   },
+   "teaching": {
+    "BodyText": 1029,
+    "QuestionText": 535
+   },
+   "rubric": {
+    "NoteText": 47
+   }
+  },
+  "toc": {
+   "entries": 28,
+   "with_anchor": 28,
+   "with_pageref": 0,
+   "entry_styles": {
+    "TOC1": 9,
+    "TOC2": 19
+   },
+   "dedicated_styles": [
+    "TOC1",
+    "TOC2"
+   ],
+   "sample": [
+    "前言\t2",
+    "一、明确概念\t4",
+    "01　定义\t4"
+   ]
+  },
+  "footer": {
+   "footer_parts": {
+    "word/footer1.xml": {
+     "text": "—  —",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer2.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer3.xml": {
+     "text": "",
+     "fields": []
+    }
+   },
+   "sections": 1,
+   "title_pg": false
+  },
+  "pagination": {
+   "keepNext_direct_by_style": {
+    "QuestionText": 1788,
+    "BodyText": 1075,
+    "ExampleTitle": 480,
+    "Normal": 195,
+    "NodeIntro": 95,
+    "NoteText": 43,
+    "Subgroup": 38,
+    "TOC2": 19,
+    "H2Custom": 19,
+    "H1Custom": 9
+   },
+   "pageBreakBefore_by_style": {
+    "H1Custom": 9,
+    "Normal": 1
+   }
+  },
+  "numbering.per_kind": {
+   "per_kind_consistent": 466,
+   "mixed_consistent": 480
+  }
+ },
+ "needs_confirm": {
+  "example_kind_by_labels": "需人工确认：“subjective”写法的标题下有 145 块带 ['【答案】', '【错项解析】']、无【答案落点】，草案按栏目把它们改判为选择题（47 块保持主观题）；本册题型划分需确认",
+  "structure.parts[P1].numbering_reset": "需人工确认：看不出编号在哪一级标题处重新起算（可能全部分连续编号）",
+  "numbering.per_kind": "需人工确认：编号按“主观、选择混编”吻合 480 处、按题型分开吻合 466 处，草案设 per_kind=false；是否为本册既定编号规则需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill": "需人工确认：单练为题卡形式（部分 ['A1', 'A2']），A1/A2 闭环口径需按本册规则另定",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'H1Custom': 9, 'Normal': 1}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 reasoning（书名段/文件名）取为“选必三推理”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 reasoning 的班课讲义（关键词 ['选必三推理']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 reasoning 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "needs_confirm_count": 34,
+ "needs_confirm_by_kind": {
+  "结构推断存疑": 8,
+  "人工登记（样稿推不出）": 26
+ },
+ "first_pass": {
+  "blocks": 480,
+  "by_part_kind": {
+   "P1|subjective": 47,
+   "P1|choice": 145,
+   "A1|drill_card_a1": 144,
+   "A2|drill_card_a2": 144
+  },
+  "walk_stats": {
+   "outside_paras": 3,
+   "toc_paras": 28,
+   "node_level_paras": 95
+  },
+  "drill_rows_seen": 0
+ },
+ "seconds_probe": 2.41,
+ "self_check": {
+  "blocks": 480,
+  "by_part_kind": {
+   "A1|drill_card_a1": 144,
+   "A2|drill_card_a2": 144,
+   "P1|choice": 145,
+   "P1|subjective": 47
+  },
+  "by_kind": {
+   "subjective": 47,
+   "choice": 145,
+   "drill_card_a1": 144,
+   "drill_card_a2": 144
+  },
+  "blocks_missing_label": 0,
+  "blocks_repeated_label": 0,
+  "blocks_missing_inline": 0,
+  "keys_parsed": 480,
+  "drill_items": 0,
+  "drill_by_side": {},
+  "drill_src_empty": 0,
+  "missing_by_label": {},
+  "missing_blocks": [],
+  "seconds": 0.58,
+  "note": "自检只说明草案能切出题块、机械层口径自洽，不代表内容已审；栏目缺失是候选，题型与部分划分仍需人工确认"
+ }
+}

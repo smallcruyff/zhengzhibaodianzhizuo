@@ -1,0 +1,698 @@
+{
+ "tool": "profile_probe.py",
+ "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/选必二/选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx",
+ "book_id": "xuanbi2",
+ "book_identity": {
+  "book": "xuanbi2",
+  "by": "书名段/文件名",
+  "title_hits": {
+   "xuanbi2": [
+    "选必二",
+    "法律与生活",
+    "法律宝典"
+   ]
+  },
+  "body_hits": {},
+  "title_zone": [
+   "2027 北京高考政治选必二法律宝典",
+   "六年真题·三年模拟 全案例全法理",
+   "飞哥正志讲堂｜法律宝典 v15.0",
+   "选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22"
+  ],
+  "resolved": "xuanbi2",
+  "resolved_by": "书名段/文件名"
+ },
+ "census": {
+  "tool": "profile_probe.py",
+  "paragraphs": 7928,
+  "tables": 147,
+  "sections": 3,
+  "media": 8,
+  "style_use": [
+   [
+    "Handbook Body",
+    4809
+   ],
+   [
+    "Handbook Body Compact",
+    1224
+   ],
+   [
+    "(默认)",
+    975
+   ],
+   [
+    "Example Title",
+    477
+   ],
+   [
+    "Index Line",
+    292
+   ],
+   [
+    "heading 3",
+    42
+   ],
+   [
+    "Normal",
+    29
+   ],
+   [
+    "Section Lead",
+    22
+   ],
+   [
+    "TOC Entry 2",
+    21
+   ],
+   [
+    "heading 2",
+    21
+   ],
+   [
+    "heading 1",
+    8
+   ],
+   [
+    "TOC Entry 1",
+    8
+   ]
+  ],
+  "labels": [
+   [
+    "【题目】",
+    478
+   ],
+   [
+    "【错肢分析】",
+    374
+   ],
+   [
+    "【答案】",
+    374
+   ],
+   [
+    "【法理依据和案例分析】",
+    249
+   ],
+   [
+    "【答案落点】",
+    249
+   ],
+   [
+    "【细则说明】",
+    249
+   ],
+   [
+    "【解析】",
+    145
+   ],
+   [
+    "【知识要点】",
+    21
+   ],
+   [
+    "【触发词速查】",
+    21
+   ],
+   [
+    "【基本案情】",
+    20
+   ],
+   [
+    "【裁判结果】",
+    13
+   ],
+   [
+    "【资料卡】",
+    7
+   ],
+   [
+    "【案情简介】",
+    5
+   ],
+   [
+    "【法院判决】",
+    4
+   ],
+   [
+    "【法条参考】",
+    4
+   ],
+   [
+    "【庭审记录】",
+    4
+   ],
+   [
+    "【旁听收获】",
+    4
+   ],
+   [
+    "【案情回放】",
+    3
+   ],
+   [
+    "【判决结果】",
+    3
+   ],
+   [
+    "【民法典物权编】",
+    3
+   ],
+   [
+    "【风险呈现】",
+    3
+   ],
+   [
+    "【司法推动】",
+    3
+   ],
+   [
+    "【治理见效】",
+    3
+   ],
+   [
+    "【资料包】",
+    3
+   ],
+   [
+    "【处理结果】",
+    3
+   ],
+   [
+    "【案件1】",
+    3
+   ],
+   [
+    "【案件2】",
+    3
+   ],
+   [
+    "【案情介绍】",
+    3
+   ],
+   [
+    "【模拟庭审】",
+    3
+   ],
+   [
+    "【案件事实】",
+    2
+   ],
+   [
+    "【法律依据】",
+    2
+   ],
+   [
+    "【调解过程及结果】",
+    2
+   ],
+   [
+    "【法条链接】",
+    2
+   ],
+   [
+    "【调研活动】",
+    1
+   ],
+   [
+    "【代表之声】",
+    1
+   ]
+  ],
+  "h3_count": 42,
+  "keepNext_direct": [
+   [
+    "Handbook Body",
+    4449
+   ],
+   [
+    "Handbook Body Compact",
+    1068
+   ],
+   [
+    "Example Title",
+    477
+   ],
+   [
+    "Index Line",
+    292
+   ],
+   [
+    "heading 3",
+    42
+   ],
+   [
+    "Section Lead",
+    22
+   ],
+   [
+    "TOC Entry 2",
+    21
+   ],
+   [
+    "heading 2",
+    21
+   ],
+   [
+    "heading 1",
+    8
+   ],
+   [
+    "TOC Entry 1",
+    8
+   ]
+  ],
+  "keepNext_total": 6408,
+  "pageBreakBefore": [
+   [
+    "Section Lead",
+    1
+   ]
+  ],
+  "fields": [],
+  "footers": {
+   "word/footer1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer2.xml": {
+    "text": "0",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer3.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer4.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer5.xml": {
+    "text": "0",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer6.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer7.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer8.xml": {
+    "text": "472",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer9.xml": {
+    "text": "472",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/header1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header3.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header4.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header5.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header6.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header7.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header8.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header9.xml": {
+    "text": "",
+    "fields": []
+   }
+  },
+  "title_pg": true,
+  "default_style": "Normal"
+ },
+ "evidence": {
+  "styles.h1": {
+   "heading 1": 8
+  },
+  "styles.h2": {
+   "heading 2": 21
+  },
+  "example_titles": [
+   {
+    "family": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$",
+    "kind": "subjective",
+    "style": "Example Title",
+    "count": 247,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^选择题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$",
+    "kind": "choice",
+    "style": "Example Title",
+    "count": 228,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^(?P<prefix>[一-龥]{1,5})\\s*(?P<num>\\d+)[\\s　]+(?P<src>20\\d\\d.+)$",
+    "kind": "other",
+    "style": "Example Title",
+    "count": 2,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^A1-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+    "kind": "drill_card_a1",
+    "style": "Index Line",
+    "count": 146,
+    "label_follow_rate": 0.014,
+    "accepted": true
+   },
+   {
+    "family": "^A2-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+    "kind": "drill_card_a2",
+    "style": "Index Line",
+    "count": 146,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   }
+  ],
+  "styles.group_heading": {
+   "heading 3": 42
+  },
+  "column_schemas": {
+   "P1|subjective": {
+    "blocks": 247,
+    "label_block_freq": {
+     "【题目】": 247,
+     "【法理依据和案例分析】": 247,
+     "【答案落点】": 247,
+     "【细则说明】": 247
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "P1|choice": {
+    "blocks": 228,
+    "label_block_freq": {
+     "【题目】": 228,
+     "【错肢分析】": 228,
+     "【答案】": 228
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "P1|other_例外题": {
+    "blocks": 2,
+    "note": "题块少于3个，不推栏目模式"
+   },
+   "APPX1|drill_card_a1": {
+    "blocks": 146,
+    "label_block_freq": {},
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "APPX2|drill_card_a2": {
+    "blocks": 146,
+    "label_block_freq": {
+     "【错肢分析】": 146,
+     "【答案】": 146,
+     "【解析】": 123
+    },
+    "label_inline_only_blocks": {
+     "【解析】": 22
+    },
+    "repeat_blocks": {}
+   }
+  },
+  "source_labels_outside_blocks": {},
+  "trailing_leadins": {
+   "Section Lead": {
+    "in_block": 1,
+    "outside": 21,
+    "trailing": 1,
+    "examples": [
+     {
+      "block": "B0475",
+      "p": 6280,
+      "text": "书末细则例外题"
+     }
+    ]
+   }
+  },
+  "numbering": {
+   "P1": {
+    "reset_after": {
+     "h2": 44,
+     "group": 44,
+     "h1": 10
+    },
+    "no_reset_after": {}
+   },
+   "APPX1": {
+    "reset_after": {
+     "h2": 1,
+     "group": 1,
+     "h1": 1
+    },
+    "no_reset_after": {}
+   },
+   "APPX2": {
+    "reset_after": {
+     "h2": 1,
+     "group": 1,
+     "h1": 1
+    },
+    "no_reset_after": {}
+   }
+  },
+  "styles.zones": {
+   "source": {
+    "Handbook Body": 3123,
+    "Handbook Body Compact": 907
+   },
+   "teaching": {
+    "Handbook Body": 1339,
+    "Handbook Body Compact": 307,
+    "Section Lead": 1
+   },
+   "rubric": {
+    "Handbook Body": 249
+   }
+  },
+  "toc": {
+   "entries": 29,
+   "with_anchor": 29,
+   "with_pageref": 0,
+   "entry_styles": {
+    "TOC Entry 1": 8,
+    "TOC Entry 2": 21
+   },
+   "dedicated_styles": [
+    "TOC Entry 1",
+    "TOC Entry 2"
+   ],
+   "sample": [
+    "前言\t2",
+    "一、贯穿层：民法基本原则与判案通则\t4",
+    "01　平等原则\t4"
+   ]
+  },
+  "footer": {
+   "footer_parts": {
+    "word/footer1.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer2.xml": {
+     "text": "0",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer3.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer4.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer5.xml": {
+     "text": "0",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer6.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer7.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer8.xml": {
+     "text": "472",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer9.xml": {
+     "text": "472",
+     "fields": [
+      "PAGE"
+     ]
+    }
+   },
+   "sections": 3,
+   "title_pg": true
+  },
+  "pagination": {
+   "keepNext_direct_by_style": {
+    "Handbook Body": 4449,
+    "Handbook Body Compact": 1068,
+    "Example Title": 477,
+    "Index Line": 292,
+    "heading 3": 42,
+    "Section Lead": 22,
+    "TOC Entry 2": 21,
+    "heading 2": 21,
+    "heading 1": 8,
+    "TOC Entry 1": 8
+   },
+   "pageBreakBefore_by_style": {
+    "Section Lead": 1
+   }
+  },
+  "numbering.per_kind": {
+   "per_kind_consistent": 768,
+   "mixed_consistent": 745
+  }
+ },
+ "needs_confirm": {
+  "example_titles[other_例外题]": "需人工确认：兜底识别到“例外题 N”写法 2 处，题型归属需确认",
+  "structure.parts[P1].schema.other_例外题": "需人工确认：该部分“other_例外题”只有 2 个题块，栏目模式无法统计",
+  "column_schemas.appx2_drill_card_a2.labels_inline": "需人工确认：【解析】 在 22/146 块里写在行中（紧跟句末标点，如“【答案】 D。【解析】 …”）；草案设 labels_inline=true 计入栏目，本册是否允许这种写法需确认",
+  "structure.block_end[Section Lead]": "需人工确认：样式“Section Lead”共 22 段，21 段在题块外，题块内 1 段都是块末短引导行（如 B0475 末尾“书末细则例外题”），草案设为题块边界；也可能是分组/考法行，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认；本稿首节设了首页不同",
+  "footer.continuous": "需人工确认：本稿有 3 节，页码是否连续需对照 PDF",
+  "drill": "需人工确认：单练为题卡形式（部分 ['APPX1', 'APPX2']），A1/A2 闭环口径需按本册规则另定",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'Section Lead': 1}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 xuanbi2（书名段/文件名）取为“选必二”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 xuanbi2 的班课讲义（关键词 ['选必二']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 xuanbi2 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内没有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "needs_confirm_count": 36,
+ "needs_confirm_by_kind": {
+  "结构推断存疑": 10,
+  "人工登记（样稿推不出）": 26
+ },
+ "first_pass": {
+  "blocks": 769,
+  "by_part_kind": {
+   "P1|subjective": 247,
+   "P1|choice": 228,
+   "P1|other_例外题": 2,
+   "APPX1|drill_card_a1": 146,
+   "APPX2|drill_card_a2": 146
+  },
+  "walk_stats": {
+   "outside_paras": 104,
+   "toc_paras": 29
+  },
+  "drill_rows_seen": 0
+ },
+ "seconds_probe": 3.05,
+ "self_check": {
+  "blocks": 769,
+  "by_part_kind": {
+   "APPX1|drill_card_a1": 146,
+   "APPX2|drill_card_a2": 146,
+   "P1|choice": 228,
+   "P1|other_例外题": 2,
+   "P1|subjective": 247
+  },
+  "by_kind": {
+   "subjective": 247,
+   "choice": 228,
+   "other_例外题": 2,
+   "drill_card_a1": 146,
+   "drill_card_a2": 146
+  },
+  "blocks_missing_label": 1,
+  "blocks_repeated_label": 0,
+  "blocks_missing_inline": 0,
+  "keys_parsed": 769,
+  "drill_items": 0,
+  "drill_by_side": {},
+  "drill_src_empty": 0,
+  "missing_by_label": {
+   "【解析】": 1
+  },
+  "missing_blocks": [
+   {
+    "id": "B0710",
+    "title": "A2-087｜2024朝阳一模 第11题",
+    "missing": [
+     "【解析】"
+    ]
+   }
+  ],
+  "seconds": 0.93,
+  "note": "自检只说明草案能切出题块、机械层口径自洽，不代表内容已审；栏目缺失是候选，题型与部分划分仍需人工确认"
+ }
+}

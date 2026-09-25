@@ -1,0 +1,576 @@
+{
+ "tool": "profile_probe.py",
+ "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/文化/2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx",
+ "book_id": "culture",
+ "book_identity": {
+  "book": "culture",
+  "by": "书名段/文件名",
+  "title_hits": {
+   "culture": [
+    "文化宝典"
+   ]
+  },
+  "body_hits": {},
+  "title_zone": [
+   "2026 北京高考政治文化宝典",
+   "三年真题模拟·原题材料·满分作答",
+   "飞哥正志讲堂",
+   "2026北京高考政治文化宝典_v6.30_校订稿_20260908"
+  ],
+  "resolved": "culture",
+  "resolved_by": "书名段/文件名"
+ },
+ "census": {
+  "tool": "profile_probe.py",
+  "paragraphs": 2775,
+  "tables": 19,
+  "sections": 1,
+  "media": 32,
+  "style_use": [
+   [
+    "错肢训练",
+    842
+   ],
+   [
+    "AppendixQuestion",
+    672
+   ],
+   [
+    "题目材料",
+    365
+   ],
+   [
+    "错肢纠正",
+    197
+   ],
+   [
+    "宝典正文",
+    110
+   ],
+   [
+    "细则说明",
+    79
+   ],
+   [
+    "答案落点",
+    78
+   ],
+   [
+    "分析过程",
+    73
+   ],
+   [
+    "题目设问",
+    72
+   ],
+   [
+    "heading 3",
+    70
+   ],
+   [
+    "AppendixAngle",
+    70
+   ],
+   [
+    "heading 2",
+    39
+   ],
+   [
+    "触发词速查",
+    35
+   ],
+   [
+    "题目选项",
+    35
+   ],
+   [
+    "错肢分组",
+    14
+   ],
+   [
+    "heading 1",
+    12
+   ],
+   [
+    "AppendixYear",
+    7
+   ],
+   [
+    "(默认)",
+    2
+   ],
+   [
+    "CoverKicker",
+    1
+   ],
+   [
+    "CoverTitle",
+    1
+   ],
+   [
+    "CoverSubtitle",
+    1
+   ]
+  ],
+  "labels": [
+   [
+    "【原题材料】",
+    72
+   ],
+   [
+    "【设问】",
+    72
+   ],
+   [
+    "【为什么能想到】",
+    70
+   ],
+   [
+    "【答案落点】",
+    70
+   ],
+   [
+    "【细则说明】",
+    70
+   ],
+   [
+    "【触发词速查】",
+    35
+   ],
+   [
+    "【知识落点】",
+    35
+   ],
+   [
+    "【文化的载体】",
+    2
+   ],
+   [
+    "【中华文化的特点】",
+    2
+   ],
+   [
+    "【文化的作用（引·教·服·推）】",
+    2
+   ],
+   [
+    "【文化交流与传播】",
+    2
+   ],
+   [
+    "【文化继承与发展】",
+    2
+   ],
+   [
+    "【文化自信】",
+    2
+   ],
+   [
+    "【中华民族精神】",
+    2
+   ],
+   [
+    "【说明】",
+    2
+   ],
+   [
+    "【参考答案（不作固定采分点）】",
+    2
+   ],
+   [
+    "【全国乡村文化振兴在行动】",
+    1
+   ],
+   [
+    "【主题】",
+    1
+   ],
+   [
+    "【研学目标】",
+    1
+   ],
+   [
+    "【行动框架】",
+    1
+   ],
+   [
+    "【人见人爱的兔儿爷】",
+    1
+   ],
+   [
+    "【兔儿爷一杆旗的由来】",
+    1
+   ],
+   [
+    "【兔儿爷的衍生形象】",
+    1
+   ],
+   [
+    "【因势利导千年安澜】",
+    1
+   ],
+   [
+    "【珍水万世永续守护】",
+    1
+   ],
+   [
+    "【使用提醒】",
+    1
+   ],
+   [
+    "【非遗技艺：体验指尖艺术魅力】",
+    1
+   ],
+   [
+    "【非遗习俗：祈佑乡村物阜民丰】",
+    1
+   ],
+   [
+    "【非遗美食：品味舌尖上的非遗】",
+    1
+   ],
+   [
+    "【非遗展馆：品读百年匠心传承】",
+    1
+   ]
+  ],
+  "h3_count": 742,
+  "keepNext_direct": [
+   [
+    "AppendixQuestion",
+    672
+   ],
+   [
+    "题目材料",
+    249
+   ],
+   [
+    "错肢训练",
+    197
+   ],
+   [
+    "细则说明",
+    79
+   ],
+   [
+    "答案落点",
+    78
+   ],
+   [
+    "分析过程",
+    73
+   ],
+   [
+    "题目设问",
+    72
+   ],
+   [
+    "heading 3",
+    70
+   ],
+   [
+    "heading 2",
+    39
+   ],
+   [
+    "宝典正文",
+    38
+   ],
+   [
+    "触发词速查",
+    35
+   ],
+   [
+    "题目选项",
+    35
+   ],
+   [
+    "错肢分组",
+    14
+   ],
+   [
+    "heading 1",
+    8
+   ],
+   [
+    "AppendixYear",
+    7
+   ]
+  ],
+  "keepNext_total": 1666,
+  "pageBreakBefore": [],
+  "fields": [],
+  "footers": {
+   "word/footer1.xml": {
+    "text": "— 1 —",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/header1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header3.xml": {
+    "text": "",
+    "fields": []
+   }
+  },
+  "title_pg": false,
+  "default_style": "Normal"
+ },
+ "evidence": {
+  "styles.h1": {
+   "heading 1": 12
+  },
+  "styles.h2": {
+   "heading 2": 39
+  },
+  "example_titles": [
+   {
+    "family": "^(?P<src>20\\d\\d\\s*(?:[—\\-–]\\s*20\\d\\d\\s*学年)?\\s*年?\\s*\\S{0,8}?(?:一模|二模|期末|期中|高考|适应性)\\s*第\\s*\\d.*)$",
+    "kind": "subjective",
+    "style": "heading 3",
+    "count": 70,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   },
+   {
+    "family": "^(?P<src>20\\d\\d\\s*(?:[—\\-–]\\s*20\\d\\d\\s*学年)?\\s*年?\\s*\\S{0,8}?(?:一模|二模|期末|期中|高考|适应性)\\s*第\\s*\\d.*)$",
+    "kind": "subjective",
+    "style": "AppendixQuestion",
+    "count": 672,
+    "label_follow_rate": 0.018,
+    "accepted": false
+   }
+  ],
+  "styles.group_heading": {
+   "AppendixQuestion": 672,
+   "AppendixYear": 7
+  },
+  "column_schemas": {
+   "P1|subjective": {
+    "blocks": 70,
+    "label_block_freq": {
+     "【原题材料】": 70,
+     "【设问】": 70,
+     "【为什么能想到】": 70,
+     "【答案落点】": 70,
+     "【细则说明】": 70
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   }
+  },
+  "source_labels_outside_blocks": {
+   "APPX3": {
+    "count": 4,
+    "examples": [
+     {
+      "p": 2766,
+      "label": "【原题材料】",
+      "under_heading": "2024年顺义二模第16题第（1）问"
+     },
+     {
+      "p": 2767,
+      "label": "【设问】",
+      "under_heading": "2024年顺义二模第16题第（1）问"
+     },
+     {
+      "p": 2772,
+      "label": "【原题材料】",
+      "under_heading": "2026年石景山期末第18题第（1）问"
+     }
+    ]
+   }
+  },
+  "trailing_leadins": {
+   "宝典正文": {
+    "in_block": 9,
+    "outside": 100,
+    "trailing": 9,
+    "examples": [
+     {
+      "block": "B0001",
+      "p": 79,
+      "text": "文化载体：用文化关系拆解观点"
+     },
+     {
+      "block": "B0004",
+      "p": 104,
+      "text": "文化载体：沿材料因果链解释文化价值"
+     },
+     {
+      "block": "B0006",
+      "p": 124,
+      "text": "文化载体：把材料动作转成文化建设路径"
+     }
+    ]
+   }
+  },
+  "numbering": {},
+  "styles.zones": {
+   "source": {
+    "题目材料": 211,
+    "题目设问": 70
+   },
+   "teaching": {
+    "答案落点": 76,
+    "分析过程": 73,
+    "题目材料": 7
+   },
+   "rubric": {
+    "细则说明": 76,
+    "宝典正文": 9
+   }
+  },
+  "toc": {
+   "entries": 48,
+   "with_anchor": 48,
+   "with_pageref": 0,
+   "entry_styles": {
+    "宝典正文": 48
+   },
+   "dedicated_styles": [],
+   "sample": [
+    "前言\t2",
+    "一、文化的载体\t5",
+    "01　文化是社会实践的产物\t5"
+   ]
+  },
+  "footer": {
+   "footer_parts": {
+    "word/footer1.xml": {
+     "text": "— 1 —",
+     "fields": [
+      "PAGE"
+     ]
+    }
+   },
+   "sections": 1,
+   "title_pg": false
+  },
+  "drill": {
+   "h1": "附录二　文化题肢单练",
+   "table_blank_cells": 0,
+   "table_answer_values": {},
+   "paragraph_items": 842,
+   "layout": "paragraph",
+   "item_styles": {
+    "错肢训练": 842
+   },
+   "source_line_styles": {
+    "AppendixQuestion": 602
+   },
+   "h2": [
+    "A1　题肢单练（打印）",
+    "A2　题肢单练（答案与订正）"
+   ],
+   "colors": {
+    "333333": 785,
+    "C00000": 127,
+    "008000": 127
+   }
+  },
+  "pagination": {
+   "keepNext_direct_by_style": {
+    "AppendixQuestion": 672,
+    "题目材料": 249,
+    "错肢训练": 197,
+    "细则说明": 79,
+    "答案落点": 78,
+    "分析过程": 73,
+    "题目设问": 72,
+    "heading 3": 70,
+    "heading 2": 39,
+    "宝典正文": 38
+   },
+   "pageBreakBefore_by_style": {}
+  },
+  "numbering.per_kind": {
+   "per_kind_consistent": 0,
+   "mixed_consistent": 0
+  }
+ },
+ "needs_confirm": {
+  "structure.parts[APPX3]": "需人工确认：该部分有 4 个题面类栏目段（【原题材料】等）却切出 0 个题块；题目标题可能用了二级标题等未进草案的样式，如“2024年顺义二模第16题第（1）问”",
+  "structure.block_end[宝典正文]": "需人工确认：样式“宝典正文”共 109 段，100 段在题块外，题块内 9 段都是块末短引导行（如 B0001 末尾“文化载体：用文化关系拆解观点”），草案设为题块边界；也可能是分组/考法行，需确认",
+  "toc.styles": "需人工确认：目录条目用的是正文样式（无专用目录样式），体检时按超链接识别还是改样式，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill.alternation": "需人工确认：正误交替规则只登记在必修二，本册是否推广由用户定",
+  "drill.layout": "需人工确认：段落式单练（错肢训练/错肢纠正），正误由红色与纠正段表示，block_index 只取条目不判正误；条目前有题源行，按 source_styles 取为条目来源",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 culture（书名段/文件名）取为“必修四文化”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 culture 的班课讲义（关键词 ['必修四文化', '文化']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 culture 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面（稿内有封面样式 ['CoverKicker', 'CoverTitle', 'CoverSubtitle']）",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "needs_confirm_count": 35,
+ "needs_confirm_by_kind": {
+  "结构推断存疑": 9,
+  "人工登记（样稿推不出）": 26
+ },
+ "first_pass": {
+  "blocks": 70,
+  "by_part_kind": {
+   "P1|subjective": 70
+  },
+  "walk_stats": {
+   "outside_paras": 217,
+   "node_level_paras": 35
+  },
+  "drill_rows_seen": 842
+ },
+ "seconds_probe": 3.21,
+ "self_check": {
+  "blocks": 70,
+  "by_part_kind": {
+   "P1|subjective": 70
+  },
+  "by_kind": {
+   "subjective": 70
+  },
+  "blocks_missing_label": 0,
+  "blocks_repeated_label": 0,
+  "blocks_missing_inline": 0,
+  "keys_parsed": 70,
+  "drill_items": 842,
+  "drill_by_side": {
+   "A1": 421,
+   "A2": 421
+  },
+  "drill_src_empty": 0,
+  "missing_by_label": {},
+  "missing_blocks": [],
+  "seconds": 0.33,
+  "note": "自检只说明草案能切出题块、机械层口径自洽，不代表内容已审；栏目缺失是候选，题型与部分划分仍需人工确认"
+ }
+}

@@ -1,0 +1,622 @@
+{
+ "tool": "profile_probe.py",
+ "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/哲学/哲学宝典_修订稿_R10_漏节点与附录补全及触发词修正版_20260908.docx",
+ "book_id": "philosophy",
+ "book_identity": {
+  "book": "philosophy",
+  "by": "书名段/文件名",
+  "title_hits": {
+   "philosophy": [
+    "哲学宝典"
+   ]
+  },
+  "body_hits": {},
+  "title_zone": [
+   "2026 北京高考政治哲学宝典",
+   "历年真题·北京模拟｜原题与细则修订稿",
+   "修订稿 R10　漏节点与附录补全及触发词修正",
+   "哲学宝典_修订稿_R10_漏节点与附录补全及触发词修正版_20260908"
+  ],
+  "resolved": "philosophy",
+  "resolved_by": "书名段/文件名"
+ },
+ "census": {
+  "tool": "profile_probe.py",
+  "paragraphs": 14873,
+  "tables": 23,
+  "sections": 1,
+  "media": 134,
+  "style_use": [
+   [
+    "(默认)",
+    4522
+   ],
+   [
+    "题目选项",
+    2847
+   ],
+   [
+    "错肢训练",
+    1292
+   ],
+   [
+    "heading 3",
+    1119
+   ],
+   [
+    "题目设问",
+    1119
+   ],
+   [
+    "分析过程",
+    1119
+   ],
+   [
+    "答案落点",
+    1119
+   ],
+   [
+    "细则说明",
+    554
+   ],
+   [
+    "错肢纠正",
+    387
+   ],
+   [
+    "宝典正文",
+    348
+   ],
+   [
+    "题目材料",
+    247
+   ],
+   [
+    "触发词速查",
+    69
+   ],
+   [
+    "考法分类",
+    68
+   ],
+   [
+    "heading 2",
+    37
+   ],
+   [
+    "错肢分组",
+    18
+   ],
+   [
+    "heading 1",
+    8
+   ]
+  ],
+  "labels": [
+   [
+    "【材料原文】",
+    1119
+   ],
+   [
+    "【设问】",
+    1119
+   ],
+   [
+    "【错肢分析】",
+    565
+   ],
+   [
+    "【答案与错项】",
+    565
+   ],
+   [
+    "【为什么能想到】",
+    554
+   ],
+   [
+    "【答案落点】",
+    554
+   ],
+   [
+    "【细则说明】",
+    554
+   ],
+   [
+    "【触发词速查】",
+    35
+   ],
+   [
+    "【考法分类·主观题】",
+    34
+   ],
+   [
+    "【错项信号】",
+    34
+   ],
+   [
+    "【考法分类·选择题】",
+    33
+   ],
+   [
+    "【一以贯之】",
+    12
+   ],
+   [
+    "【实干诠释信念】",
+    7
+   ],
+   [
+    "【实干贵在品质】",
+    7
+   ],
+   [
+    "【实干优在方法】",
+    7
+   ],
+   [
+    "【实干铸就结果】",
+    7
+   ],
+   [
+    "【事实与观点】",
+    7
+   ],
+   [
+    "【理论强党】",
+    7
+   ],
+   [
+    "【系统推进】",
+    5
+   ],
+   [
+    "【循法而行】",
+    5
+   ],
+   [
+    "【主题】",
+    4
+   ],
+   [
+    "【研学目标】",
+    4
+   ],
+   [
+    "【行动框架】",
+    4
+   ],
+   [
+    "【因势利导千年安澜】",
+    3
+   ],
+   [
+    "【珍水万世永续守护】",
+    3
+   ],
+   [
+    "【全国乡村文化振兴在行动】",
+    3
+   ],
+   [
+    "【时代价值】",
+    2
+   ],
+   [
+    "【独特优势】",
+    2
+   ],
+   [
+    "【中国智慧】",
+    2
+   ],
+   [
+    "【人见人爱的兔儿爷】",
+    2
+   ],
+   [
+    "【兔儿爷一杆旗的由来】",
+    2
+   ],
+   [
+    "【兔儿爷的衍生形象】",
+    2
+   ],
+   [
+    "【唯物论】",
+    2
+   ],
+   [
+    "【辩证法】",
+    2
+   ],
+   [
+    "【认识论】",
+    2
+   ],
+   [
+    "【历史唯物主义】",
+    2
+   ],
+   [
+    "【价值观 / 人生观】",
+    2
+   ],
+   [
+    "【跨模块题肢补录】",
+    2
+   ],
+   [
+    "【全库终审补录】",
+    2
+   ],
+   [
+    "【学生视角复核补录】",
+    2
+   ],
+   [
+    "【考法分类·主观题与选择题】",
+    1
+   ],
+   [
+    "【发展建议】",
+    1
+   ],
+   [
+    "【项目背景】",
+    1
+   ],
+   [
+    "【研究方法】",
+    1
+   ]
+  ],
+  "h3_count": 1119,
+  "keepNext_direct": [
+   [
+    "(默认)",
+    1198
+   ],
+   [
+    "heading 3",
+    1119
+   ],
+   [
+    "宝典正文",
+    267
+   ],
+   [
+    "题目材料",
+    247
+   ],
+   [
+    "考法分类",
+    68
+   ],
+   [
+    "heading 2",
+    37
+   ],
+   [
+    "触发词速查",
+    34
+   ],
+   [
+    "heading 1",
+    8
+   ]
+  ],
+  "keepNext_total": 2978,
+  "pageBreakBefore": [
+   [
+    "题目材料",
+    38
+   ],
+   [
+    "(默认)",
+    3
+   ],
+   [
+    "宝典正文",
+    1
+   ]
+  ],
+  "fields": [],
+  "footers": {
+   "word/footer1.xml": {
+    "text": "— 1 —",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer3.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header3.xml": {
+    "text": "",
+    "fields": []
+   }
+  },
+  "title_pg": false,
+  "default_style": "Normal"
+ },
+ "evidence": {
+  "styles.h1": {
+   "heading 1": 8
+  },
+  "styles.h2": {
+   "heading 2": 37
+  },
+  "example_titles": [
+   {
+    "family": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$",
+    "kind": "subjective",
+    "style": "heading 3",
+    "count": 1119,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   }
+  ],
+  "styles.group_heading": {},
+  "example_kind_by_labels": {
+   "title_kind": "subjective",
+   "with_答案落点": 554,
+   "without": 565,
+   "choice_markers": [
+    "【错肢分析】",
+    "【答案与错项】"
+   ]
+  },
+  "column_schemas": {
+   "P1|subjective": {
+    "blocks": 554,
+    "label_block_freq": {
+     "【材料原文】": 554,
+     "【设问】": 554,
+     "【为什么能想到】": 554,
+     "【答案落点】": 554,
+     "【细则说明】": 554
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "P1|choice": {
+    "blocks": 565,
+    "label_block_freq": {
+     "【材料原文】": 565,
+     "【设问】": 565,
+     "【错肢分析】": 565,
+     "【答案与错项】": 565
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   }
+  },
+  "source_labels_outside_blocks": {},
+  "trailing_leadins": {
+   "宝典正文": {
+    "in_block": 199,
+    "outside": 147,
+    "trailing": 196,
+    "examples": [
+     {
+      "block": "B0003",
+      "p": 104,
+      "text": "其他例题（不单独设考法）"
+     },
+     {
+      "block": "B0013",
+      "p": 238,
+      "text": "说艺术形象能脱离现实（共4题）"
+     },
+     {
+      "block": "B0017",
+      "p": 282,
+      "text": "其他例题（不单独设考法）"
+     }
+    ]
+   }
+  },
+  "numbering": {
+   "P1": {
+    "reset_after": {
+     "h1": 5,
+     "h2": 35
+    },
+    "no_reset_after": {
+     "h1": 5,
+     "h2": 34
+    }
+   }
+  },
+  "styles.zones": {
+   "source": {
+    "Normal": 3972,
+    "题目选项": 2637,
+    "题目设问": 1119
+   },
+   "teaching": {
+    "分析过程": 1119,
+    "答案落点": 1119,
+    "Normal": 219,
+    "宝典正文": 99,
+    "错肢分组": 2
+   },
+   "rubric": {
+    "细则说明": 554,
+    "宝典正文": 100
+   }
+  },
+  "toc": {
+   "entries": 44,
+   "with_anchor": 44,
+   "with_pageref": 0,
+   "entry_styles": {
+    "宝典正文": 44
+   },
+   "dedicated_styles": [],
+   "sample": [
+    "前言\t2",
+    "一、唯物论\t5",
+    "01　物质决定意识\t5"
+   ]
+  },
+  "footer": {
+   "footer_parts": {
+    "word/footer1.xml": {
+     "text": "— 1 —",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer2.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer3.xml": {
+     "text": "",
+     "fields": []
+    }
+   },
+   "sections": 1,
+   "title_pg": false
+  },
+  "drill": {
+   "h1": "附录　哲学题肢单练",
+   "table_blank_cells": 0,
+   "table_answer_values": {},
+   "paragraph_items": 1292,
+   "layout": "paragraph",
+   "item_styles": {
+    "错肢训练": 1292
+   },
+   "source_line_styles": {},
+   "h2": [
+    "A1　题肢单练（打印）",
+    "A2　题肢单练（答案）"
+   ],
+   "colors": {
+    "008000": 362,
+    "C00000": 360,
+    "000000": 339,
+    "2D2D2D": 4
+   }
+  },
+  "pagination": {
+   "keepNext_direct_by_style": {
+    "Normal": 1198,
+    "heading 3": 1119,
+    "宝典正文": 267,
+    "题目材料": 247,
+    "考法分类": 68,
+    "heading 2": 37,
+    "触发词速查": 34,
+    "heading 1": 8
+   },
+   "pageBreakBefore_by_style": {
+    "宝典正文": 1,
+    "题目材料": 38,
+    "Normal": 3
+   }
+  },
+  "numbering.per_kind": {
+   "per_kind_consistent": 1084,
+   "mixed_consistent": 1119
+  }
+ },
+ "needs_confirm": {
+  "example_kind_by_labels": "需人工确认：“subjective”写法的标题下有 565 块带 ['【错肢分析】', '【答案与错项】']、无【答案落点】，草案按栏目把它们改判为选择题（554 块保持主观题）；本册题型划分需确认",
+  "structure.block_end[宝典正文]": "需人工确认：样式“宝典正文”有 196 段形如“……（共N题）/其他例题……”的考法/分组行落在题块末尾（如 B0003 末尾“其他例题（不单独设考法）”），草案按行文模式设为题块边界；也可改登记为考法样式，需确认",
+  "structure.parts[P1].numbering_reset": "需人工确认：看不出编号在哪一级标题处重新起算（可能全部分连续编号）",
+  "numbering.per_kind": "需人工确认：编号按“主观、选择混编”吻合 1119 处、按题型分开吻合 1084 处，草案设 per_kind=false；是否为本册既定编号规则需确认",
+  "toc.styles": "需人工确认：目录条目用的是正文样式（无专用目录样式），体检时按超链接识别还是改样式，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill.alternation": "需人工确认：正误交替规则只登记在必修二，本册是否推广由用户定",
+  "drill.layout": "需人工确认：段落式单练（错肢训练/错肢纠正），正误由红色与纠正段表示，block_index 只取条目不判正误；条目不带题源，--key/--src 选不到题肢",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'宝典正文': 1, '题目材料': 38, 'Normal': 3}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 philosophy（书名段/文件名）取为“必修四哲学”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：哲学宝典_修订稿_R10_漏节点与附录补全及触发词修正版_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 philosophy 的班课讲义（关键词 ['必修四哲学', '哲学']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 philosophy 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "styles.source": "需人工确认：题面/教学区有大量默认样式“Normal”段落，不能据样式判断分区，体检应按结构分区",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "needs_confirm_count": 38,
+ "needs_confirm_by_kind": {
+  "结构推断存疑": 12,
+  "人工登记（样稿推不出）": 26
+ },
+ "first_pass": {
+  "blocks": 1119,
+  "by_part_kind": {
+   "P1|subjective": 554,
+   "P1|choice": 565
+  },
+  "walk_stats": {
+   "outside_paras": 360,
+   "node_level_paras": 137
+  },
+  "drill_rows_seen": 1292
+ },
+ "seconds_probe": 6.22,
+ "self_check": {
+  "blocks": 1119,
+  "by_part_kind": {
+   "P1|choice": 565,
+   "P1|subjective": 554
+  },
+  "by_kind": {
+   "subjective": 554,
+   "choice": 565
+  },
+  "blocks_missing_label": 0,
+  "blocks_repeated_label": 0,
+  "blocks_missing_inline": 0,
+  "keys_parsed": 1119,
+  "drill_items": 1292,
+  "drill_by_side": {
+   "A1": 646,
+   "A2": 646
+  },
+  "drill_src_empty": 1292,
+  "missing_by_label": {},
+  "missing_blocks": [],
+  "seconds": 1.76,
+  "note": "自检只说明草案能切出题块、机械层口径自洽，不代表内容已审；栏目缺失是候选，题型与部分划分仍需人工确认"
+ }
+}

@@ -1,0 +1,454 @@
+{
+ "schema": "baodian-book-profile/0.1",
+ "book_id": "culture",
+ "title": "2026 北京高考政治文化宝典",
+ "collab_key": "必修四文化",
+ "frozen": false,
+ "rule_refs": {
+  "book": "references/book-culture.md",
+  "active": "references/active/book-culture-current.md",
+  "style": null
+ },
+ "paths": {
+  "root": "/home/user/zhengzhibaodianzhizuo",
+  "workspace": "其他书工作头/文化",
+  "central_state": null,
+  "review_entry": null,
+  "review_manifest": null,
+  "review_history": null,
+  "candidate_dir_pattern": null,
+  "build_subdir": "构建",
+  "handoff": null
+ },
+ "naming": {
+  "batch_label": null,
+  "docx_stem": null,
+  "feedback_hint": null
+ },
+ "sources": {
+  "roots": [
+   "00_共同资料/原材料/2023模拟题",
+   "00_共同资料/原材料/2024模拟题",
+   "00_共同资料/原材料/2025模拟题",
+   "00_共同资料/原材料/2026模拟题",
+   "00_共同资料/原材料/历年高考题及细则"
+  ],
+  "banke": [],
+  "banke_priority": "老师手写答题点/术语原样进正文、排最前",
+  "bank": {
+   "root": "DeepSeek_政治题库资料库_20260918",
+   "module_hint": "哲学与文化"
+  },
+  "answer_only_choice_only": true,
+  "no_e1_exceptions": null,
+  "stem_module_guard": null
+ },
+ "styles": {
+  "_note": "按 w:name 匹配；由 profile_probe 按使用量与结构推断",
+  "h1": [
+   "heading 1"
+  ],
+  "h2": [
+   "heading 2"
+  ],
+  "example_title": [
+   "heading 3"
+  ],
+  "group_heading": [
+   "AppendixQuestion",
+   "AppendixYear"
+  ],
+  "method": [],
+  "method_desc": [],
+  "category_line": [],
+  "trigger_box": [
+   "触发词速查"
+  ],
+  "toc": [],
+  "source": [
+   "题目材料",
+   "题目设问"
+  ],
+  "teaching": [
+   "答案落点",
+   "分析过程",
+   "题目材料"
+  ],
+  "rubric": [
+   "细则说明",
+   "宝典正文"
+  ],
+  "drill_group": [
+   "错肢分组"
+  ]
+ },
+ "structure": {
+  "framework": null,
+  "parts": [
+   {
+    "id": "FRONT",
+    "match": "^(\\(前置\\)|前言|目录)$",
+    "schema": {},
+    "_h1": [
+     "前言",
+     "目录"
+    ]
+   },
+   {
+    "id": "P1",
+    "match": "^[一二三四五六七]、",
+    "schema": {
+     "subjective": "p1_subjective"
+    },
+    "_h1": [
+     "一、文化的载体",
+     "二、中华文化的特点",
+     "三、文化的作用（引·教·服·推）",
+     "四、横向：文化交流与传播",
+     "五、纵向：文化继承与发展",
+     "六、文化自信"
+    ]
+   },
+   {
+    "id": "APPX1",
+    "match": "^附录一",
+    "schema": {},
+    "_h1": [
+     "附录一　题目反向索引"
+    ]
+   },
+   {
+    "id": "APPX2",
+    "match": "^附录二",
+    "drill": true,
+    "_h1": [
+     "附录二　文化题肢单练"
+    ]
+   },
+   {
+    "id": "APPX3",
+    "match": "^附录三",
+    "schema": {},
+    "_h1": [
+     "附录三　细则例外题"
+    ]
+   }
+  ],
+  "block_end": [
+   {
+    "styles": [
+     "宝典正文"
+    ],
+    "regex": "^(?!【)[^。！？!?；;]{1,30}$",
+    "_note": "profile_probe 推断：此样式多在题块外，题块内只出现在块末、紧挨下一题标题"
+   }
+  ]
+ },
+ "example_titles": [
+  {
+   "kind": "subjective",
+   "regex": "^(?P<src>20\\d\\d\\s*(?:[—\\-–]\\s*20\\d\\d\\s*学年)?\\s*年?\\s*\\S{0,8}?(?:一模|二模|期末|期中|高考|适应性)\\s*第\\s*\\d.*)$",
+   "numbered": false
+  }
+ ],
+ "title_format": {
+  "sep": " ",
+  "example": "2020 年北京高考第 16（1）题",
+  "cross_module_suffix": null
+ },
+ "column_schemas": {
+  "p1_subjective": {
+   "labels": [
+    "【原题材料】",
+    "【设问】",
+    "【为什么能想到】",
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "mode": "each_once"
+  }
+ },
+ "section_labels": [
+  "【触发词速查】",
+  "【知识落点】",
+  "【说明】",
+  "【参考答案（不作固定采分点）】"
+ ],
+ "labels_rules": {
+  "rubric_labels": [
+   "【细则说明】"
+  ],
+  "source_labels": [
+   "【原题材料】",
+   "【设问】"
+  ]
+ },
+ "numbering": {
+  "per_kind": true,
+  "scope_default": "h2",
+  "unnumbered_kinds": [
+   "subjective"
+  ]
+ },
+ "method_count": {},
+ "student_text": {
+  "forbidden_words_book": [],
+  "allow_contexts": {},
+  "trailing_tag_exempt_styles": [
+   "heading 1",
+   "heading 2",
+   "宝典正文",
+   "细则说明"
+  ],
+  "_common_note": "通用禁用词、词组、误伤模式等在 _house.json；这里只写本册增补"
+ },
+ "drill": {
+  "layout": "paragraph",
+  "item_regex": "^(\\d+(?:（补\\d+）)?)[、.．]\\s*(.*)$",
+  "a2_allowed": [
+   "正确",
+   "错误"
+  ],
+  "correction_marker": "纠正：",
+  "colors": {
+   "error_run": "C00000",
+   "correction": "008000"
+  },
+  "a1_forbid": [
+   "答案",
+   "提示",
+   "本题设问",
+   "不选原因"
+  ],
+  "intro_forbidden": [
+   "不选",
+   "本题设问"
+  ],
+  "part": "APPX2",
+  "a1_heading": "A1　题肢单练（打印）",
+  "a2_heading": "A2　题肢单练（答案与订正）",
+  "group_style": "错肢分组",
+  "source_styles": [
+   "AppendixQuestion"
+  ],
+  "alternation": {
+   "required": false
+  },
+  "each_table_has_both": false
+ },
+ "toc": {
+  "mode": "hyperlink_static",
+  "styles": [],
+  "entries_expected": 48,
+  "page_from": "pdf_link_destination",
+  "entry_by": "hyperlink_anchor"
+ },
+ "footer": {
+  "regex": "—\\s*(\\d+)\\s*—",
+  "exempt_pages": [],
+  "page_offset": 0,
+  "continuous": true
+ },
+ "cover_preface": {
+  "cover": null,
+  "preface": null
+ },
+ "typography": {
+  "_note": "style 级观测值；运行级格式可能覆盖，改字体前须同时扫运行级",
+  "h1": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 18.0,
+   "bold": true,
+   "color": "17365D",
+   "_style": "heading 1"
+  },
+  "h2": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 15.0,
+   "bold": true,
+   "color": "1F4E79",
+   "_style": "heading 2"
+  },
+  "example_title": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 11.5,
+   "bold": true,
+   "color": "23395D",
+   "_style": "heading 3"
+  },
+  "material": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "333333",
+   "_style": "题目材料"
+  },
+  "stem_teaching": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "111111",
+   "_style": "答案落点"
+  },
+  "rubric": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 9.5,
+   "color": "555555",
+   "_style": "细则说明"
+  }
+ },
+ "pagination": {
+  "keep_next": null,
+  "keep_next_label_regex": "^(材料|资料卡?|案例|情境|链接|背景|阅读)[一二三四五六七八九十0-9]+|^【[^】]{1,12}】$",
+  "keep_next_target_style": "题目材料",
+  "forbid_long_chains": true,
+  "forced_breaks_only": null,
+  "blank_threshold_ratio": 0.33
+ },
+ "render": {
+  "engine": "libreoffice_bundled",
+  "soffice": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/MacOS/soffice",
+  "renderer_glob": "~/.codex/plugins/cache/openai-primary-runtime/documents/*/skills/documents/render_docx.py",
+  "renderer_pick": "latest_and_record_version",
+  "path_prepend": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override",
+  "png_dpi": 120,
+  "lo_profile": "<build_dir>/lo_profile",
+  "identity_file": "同版身份.json",
+  "record": [
+   "docx_sha256",
+   "pdf_sha256",
+   "pdf_pages",
+   "png_count",
+   "renderer_path",
+   "renderer_version",
+   "soffice_version",
+   "fontconfig_sha256",
+   "embedded_fonts"
+  ],
+  "fontconfig": {
+   "template": "house",
+   "dirs_extra": [],
+   "aliases": {},
+   "historical_file": null,
+   "historical_sha256_prefix": null
+  },
+  "font_embed_audit": true
+ },
+ "pixel": {
+  "policy": "same_page_full_pixels",
+  "allow_content_addressed_map": true,
+  "inherit_unchanged_without_ledger": true,
+  "subpixel_tolerance_pt": 0.2,
+  "_ruling": "用户2026-09-23裁定：与上一版正文一样的页（同页或错位仅页码/页脚不同、亚像素位移在容差内）阶段稿不重看；定稿/送印终审用 page_delta --final，仍须旧页实看记录",
+  "report_body_only_equal": false
+ },
+ "publish": {
+  "entry": null,
+  "note_file": "先看这里.md",
+  "manifest": ".review-manifest.json",
+  "archive_to": null,
+  "preserve": [
+   ".DS_Store",
+   "~$*",
+   "单题样稿"
+  ],
+  "dry_run_default": true,
+  "require_root_approval": true
+ },
+ "handoff": {
+  "collab_book": "必修四文化",
+  "owner_file": "协作/接管.json",
+  "checkpoint_fields": [
+   "working_head",
+   "sha256",
+   "pending",
+   "next_action",
+   "background_tasks"
+  ]
+ },
+ "pdf_fonts": {
+  "expected_cjk_regex": null,
+  "_note": "本册 PDF 嵌入中文字体的预期；_house.json 缺省 ^(STSongti|STKaiti)"
+ },
+ "_needs_confirm": {
+  "structure.parts[APPX3]": "需人工确认：该部分有 4 个题面类栏目段（【原题材料】等）却切出 0 个题块；题目标题可能用了二级标题等未进草案的样式，如“2024年顺义二模第16题第（1）问”",
+  "structure.block_end[宝典正文]": "需人工确认：样式“宝典正文”共 109 段，100 段在题块外，题块内 9 段都是块末短引导行（如 B0001 末尾“文化载体：用文化关系拆解观点”），草案设为题块边界；也可能是分组/考法行，需确认",
+  "toc.styles": "需人工确认：目录条目用的是正文样式（无专用目录样式），体检时按超链接识别还是改样式，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill.alternation": "需人工确认：正误交替规则只登记在必修二，本册是否推广由用户定",
+  "drill.layout": "需人工确认：段落式单练（错肢训练/错肢纠正），正误由红色与纠正段表示，block_index 只取条目不判正误；条目前有题源行，按 source_styles 取为条目来源",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 culture（书名段/文件名）取为“必修四文化”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 culture 的班课讲义（关键词 ['必修四文化', '文化']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 culture 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面（稿内有封面样式 ['CoverKicker', 'CoverTitle', 'CoverSubtitle']）",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "_probe": {
+  "tool": "profile_probe.py",
+  "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/文化/2026北京高考政治文化宝典_v6.30_校订稿_20260908.docx",
+  "docx_sha256": "3655ff48b9b89451b3de05e88fb51b2c72dabd4cc3034ecb532132c97615d7bf",
+  "template": "bixiu3",
+  "generated": "2026-09-25 05:17:22",
+  "book_identity": {
+   "book": "culture",
+   "by": "书名段/文件名",
+   "title_hits": {
+    "culture": [
+     "文化宝典"
+    ]
+   },
+   "body_hits": {},
+   "title_zone": [
+    "2026 北京高考政治文化宝典",
+    "三年真题模拟·原题材料·满分作答",
+    "飞哥正志讲堂",
+    "2026北京高考政治文化宝典_v6.30_校订稿_20260908"
+   ],
+   "resolved": "culture",
+   "resolved_by": "书名段/文件名"
+  },
+  "registered_profile": null,
+  "calibration_only": false,
+  "note": "草案：推断字段附证据见 .probe.json；_needs_confirm 里的字段须人工确认后才能登记进 profiles/"
+ },
+ "output_guard": {
+  "protected_roots": [
+   "~/GaokaoPolitics",
+   "~/.codex/skills",
+   "~/.claude/skills",
+   "~/Desktop",
+   "/home/user/zhengzhibaodianzhizuo"
+  ],
+  "allowed_subpath_regex": "/协作/候选/[^/]+/[^/]+/构建/体检(/|$)",
+  "_note": "各书册 paths.root 与本 Skill 目录自动受保护；受保护目录内只允许写到“…/协作/候选/<谁>/<批次>/构建/体检/”，系统临时目录放行；另外不得等于输入、不覆盖非体检报告、不写到有 .docx/.pdf 的目录"
+ },
+ "_cloud_note": "云端测试用配置副本（2026-09-25）：paths.root 改为仓库根，output_guard.protected_roots 追加仓库根。不登记、不回写 Skill。 本册配置为 profile_probe 自动草案，未经人工确认（_needs_confirm 字段待定）。"
+}

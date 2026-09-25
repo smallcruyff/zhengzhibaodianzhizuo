@@ -1,0 +1,580 @@
+{
+ "tool": "profile_probe.py",
+ "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/思维/选必三思维宝典_v6.20_丰台补题分页修订工作稿_20260908.docx",
+ "book_id": "mind",
+ "book_identity": {
+  "book": "mind",
+  "by": "书名段/文件名",
+  "title_hits": {
+   "mind": [
+    "思维宝典",
+    "选必三思维"
+   ]
+  },
+  "body_hits": {},
+  "title_zone": [
+   "2026 北京高考政治选必三思维宝典",
+   "六年真题·三年模拟 全触发全链条",
+   "飞哥正志讲堂｜思维宝典 v6.20",
+   "选必三思维宝典_v6.20_丰台补题分页修订工作稿_20260908"
+  ],
+  "resolved": "mind",
+  "resolved_by": "书名段/文件名"
+ },
+ "census": {
+  "tool": "profile_probe.py",
+  "paragraphs": 2807,
+  "tables": 19,
+  "sections": 1,
+  "media": 17,
+  "style_use": [
+   [
+    "错肢训练",
+    488
+   ],
+   [
+    "题目设问",
+    454
+   ],
+   [
+    "题目选项",
+    349
+   ],
+   [
+    "题目材料",
+    335
+   ],
+   [
+    "(默认)",
+    256
+   ],
+   [
+    "heading 3",
+    174
+   ],
+   [
+    "分析过程",
+    174
+   ],
+   [
+    "答案落点",
+    174
+   ],
+   [
+    "错肢纠正",
+    145
+   ],
+   [
+    "细则说明",
+    113
+   ],
+   [
+    "考法分类",
+    39
+   ],
+   [
+    "宝典正文",
+    35
+   ],
+   [
+    "heading 2",
+    24
+   ],
+   [
+    "触发词速查",
+    22
+   ],
+   [
+    "错肢分组",
+    14
+   ],
+   [
+    "heading 1",
+    9
+   ],
+   [
+    "Normal",
+    2
+   ]
+  ],
+  "labels": [
+   [
+    "【材料原文】",
+    113
+   ],
+   [
+    "【材料解读+分析】",
+    113
+   ],
+   [
+    "【答案落点】",
+    113
+   ],
+   [
+    "【细则说明】",
+    113
+   ],
+   [
+    "【题目】",
+    61
+   ],
+   [
+    "【错肢分析】",
+    61
+   ],
+   [
+    "【答案与错项】",
+    61
+   ],
+   [
+    "【触发词速查】",
+    22
+   ],
+   [
+    "【考法分类·选择题】",
+    20
+   ],
+   [
+    "【考法分类·主观题】",
+    19
+   ],
+   [
+    "【市场调研】",
+    4
+   ],
+   [
+    "【“减配”实验】",
+    4
+   ],
+   [
+    "【上市前测试】",
+    4
+   ],
+   [
+    "【记忆】",
+    3
+   ],
+   [
+    "【两难】",
+    3
+   ],
+   [
+    "【共生】",
+    3
+   ],
+   [
+    "【项目背景】",
+    3
+   ],
+   [
+    "【发展建议】",
+    3
+   ],
+   [
+    "【缘起】",
+    2
+   ],
+   [
+    "【探索】",
+    2
+   ],
+   [
+    "【展望】",
+    2
+   ],
+   [
+    "【思维的基本形态】",
+    2
+   ],
+   [
+    "【科学思维】",
+    2
+   ],
+   [
+    "【辩证思维】",
+    2
+   ],
+   [
+    "【创新思维】",
+    2
+   ],
+   [
+    "【形式逻辑与推理（跨册）】",
+    2
+   ],
+   [
+    "【必修四哲学（跨册）】",
+    2
+   ],
+   [
+    "【其他模块与语境辨析】",
+    2
+   ],
+   [
+    "【非遗技艺：体验指尖艺术魅力】",
+    1
+   ],
+   [
+    "【非遗习俗：祈佑乡村物阜民丰】",
+    1
+   ],
+   [
+    "【非遗美食：品味舌尖上的非遗】",
+    1
+   ],
+   [
+    "【非遗展馆：品读百年匠心传承】",
+    1
+   ],
+   [
+    "【学习理论】",
+    1
+   ],
+   [
+    "【参与实践】",
+    1
+   ]
+  ],
+  "h3_count": 174,
+  "keepNext_direct": [
+   [
+    "题目材料",
+    335
+   ],
+   [
+    "题目选项",
+    312
+   ],
+   [
+    "错肢训练",
+    272
+   ],
+   [
+    "题目设问",
+    184
+   ],
+   [
+    "heading 3",
+    174
+   ],
+   [
+    "错肢纠正",
+    57
+   ],
+   [
+    "分析过程",
+    32
+   ],
+   [
+    "答案落点",
+    32
+   ],
+   [
+    "heading 2",
+    24
+   ],
+   [
+    "触发词速查",
+    22
+   ],
+   [
+    "错肢分组",
+    14
+   ],
+   [
+    "(默认)",
+    12
+   ],
+   [
+    "heading 1",
+    9
+   ],
+   [
+    "细则说明",
+    9
+   ]
+  ],
+  "keepNext_total": 1488,
+  "pageBreakBefore": [
+   [
+    "heading 2",
+    1
+   ]
+  ],
+  "fields": [
+   [
+    "PAGEREF",
+    32
+   ]
+  ],
+  "footers": {
+   "word/footer1.xml": {
+    "text": "— 1 —",
+    "fields": [
+     "PAGE"
+    ]
+   },
+   "word/footer2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/footer3.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header1.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header2.xml": {
+    "text": "",
+    "fields": []
+   },
+   "word/header3.xml": {
+    "text": "",
+    "fields": []
+   }
+  },
+  "title_pg": false,
+  "default_style": "Normal"
+ },
+ "evidence": {
+  "styles.h1": {
+   "heading 1": 9
+  },
+  "styles.h2": {
+   "heading 2": 24
+  },
+  "example_titles": [
+   {
+    "family": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$",
+    "kind": "subjective",
+    "style": "heading 3",
+    "count": 174,
+    "label_follow_rate": 1.0,
+    "accepted": true
+   }
+  ],
+  "styles.group_heading": {},
+  "example_kind_by_labels": {
+   "title_kind": "subjective",
+   "with_答案落点": 113,
+   "without": 61,
+   "choice_markers": [
+    "【错肢分析】",
+    "【答案与错项】"
+   ]
+  },
+  "column_schemas": {
+   "P1|choice": {
+    "blocks": 61,
+    "label_block_freq": {
+     "【题目】": 61,
+     "【错肢分析】": 61,
+     "【答案与错项】": 61
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   },
+   "P1|subjective": {
+    "blocks": 113,
+    "label_block_freq": {
+     "【材料原文】": 113,
+     "【材料解读+分析】": 113,
+     "【答案落点】": 113,
+     "【细则说明】": 113
+    },
+    "label_inline_only_blocks": {},
+    "repeat_blocks": {}
+   }
+  },
+  "source_labels_outside_blocks": {},
+  "trailing_leadins": {},
+  "numbering": {
+   "P1": {
+    "reset_after": {
+     "h1": 4,
+     "h2": 22
+    },
+    "no_reset_after": {
+     "h1": 3,
+     "h2": 17
+    }
+   }
+  },
+  "styles.zones": {
+   "source": {
+    "题目设问": 381,
+    "题目选项": 349,
+    "题目材料": 182
+   },
+   "teaching": {
+    "分析过程": 174,
+    "答案落点": 174,
+    "题目设问": 66
+   },
+   "rubric": {
+    "细则说明": 113
+   }
+  },
+  "toc": {
+   "entries": 32,
+   "with_anchor": 32,
+   "with_pageref": 0,
+   "entry_styles": {
+    "宝典正文": 32
+   },
+   "dedicated_styles": [],
+   "sample": [
+    "前言\t2",
+    "一、思维的基本形态\t4",
+    "01　思维的一般特征：间接性、概括性、能动性\t4"
+   ]
+  },
+  "footer": {
+   "footer_parts": {
+    "word/footer1.xml": {
+     "text": "— 1 —",
+     "fields": [
+      "PAGE"
+     ]
+    },
+    "word/footer2.xml": {
+     "text": "",
+     "fields": []
+    },
+    "word/footer3.xml": {
+     "text": "",
+     "fields": []
+    }
+   },
+   "sections": 1,
+   "title_pg": false
+  },
+  "drill": {
+   "h1": "附录　思维题肢单练",
+   "table_blank_cells": 0,
+   "table_answer_values": {},
+   "paragraph_items": 488,
+   "layout": "paragraph",
+   "item_styles": {
+    "错肢训练": 488
+   },
+   "source_line_styles": {},
+   "h2": [
+    "A1　题肢单练（打印）",
+    "A2　题肢单练（答案）"
+   ],
+   "colors": {
+    "333333": 327,
+    "000000": 103,
+    "C00000": 101,
+    "008000": 101,
+    "8B5E34": 14,
+    "1F4E79": 2
+   }
+  },
+  "pagination": {
+   "keepNext_direct_by_style": {
+    "题目材料": 335,
+    "题目选项": 312,
+    "错肢训练": 272,
+    "题目设问": 184,
+    "heading 3": 174,
+    "错肢纠正": 57,
+    "分析过程": 32,
+    "答案落点": 32,
+    "heading 2": 24,
+    "触发词速查": 22
+   },
+   "pageBreakBefore_by_style": {
+    "heading 2": 1
+   }
+  },
+  "numbering.per_kind": {
+   "per_kind_consistent": 157,
+   "mixed_consistent": 174
+  }
+ },
+ "needs_confirm": {
+  "example_kind_by_labels": "需人工确认：“subjective”写法的标题下有 61 块带 ['【错肢分析】', '【答案与错项】']、无【答案落点】，草案按栏目把它们改判为选择题（113 块保持主观题）；本册题型划分需确认",
+  "structure.parts[P1].numbering_reset": "需人工确认：看不出编号在哪一级标题处重新起算（可能全部分连续编号）",
+  "numbering.per_kind": "需人工确认：编号按“主观、选择混编”吻合 174 处、按题型分开吻合 157 处，草案设 per_kind=false；是否为本册既定编号规则需确认",
+  "toc.styles": "需人工确认：目录条目用的是正文样式（无专用目录样式），体检时按超链接识别还是改样式，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill.alternation": "需人工确认：正误交替规则只登记在必修二，本册是否推广由用户定",
+  "drill.layout": "需人工确认：段落式单练（错肢训练/错肢纠正），正误由红色与纠正段表示，block_index 只取条目不判正误；条目不带题源，--key/--src 选不到题肢",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'heading 2': 1}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 mind（书名段/文件名）取为“选必三思维”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：选必三思维宝典_v6.20_丰台补题分页修订工作稿_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 mind 的班课讲义（关键词 ['选必三思维']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 mind 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "needs_confirm_count": 36,
+ "needs_confirm_by_kind": {
+  "结构推断存疑": 10,
+  "人工登记（样稿推不出）": 26
+ },
+ "first_pass": {
+  "blocks": 174,
+  "by_part_kind": {
+   "P1|choice": 61,
+   "P1|subjective": 113
+  },
+  "walk_stats": {
+   "outside_paras": 36,
+   "node_level_paras": 61
+  },
+  "drill_rows_seen": 488
+ },
+ "seconds_probe": 2.21,
+ "self_check": {
+  "blocks": 174,
+  "by_part_kind": {
+   "P1|choice": 61,
+   "P1|subjective": 113
+  },
+  "by_kind": {
+   "choice": 61,
+   "subjective": 113
+  },
+  "blocks_missing_label": 0,
+  "blocks_repeated_label": 0,
+  "blocks_missing_inline": 0,
+  "keys_parsed": 174,
+  "drill_items": 488,
+  "drill_by_side": {
+   "A1": 244,
+   "A2": 244
+  },
+  "drill_src_empty": 488,
+  "missing_by_label": {},
+  "missing_blocks": [],
+  "seconds": 0.32,
+  "note": "自检只说明草案能切出题块、机械层口径自洽，不代表内容已审；栏目缺失是候选，题型与部分划分仍需人工确认"
+ }
+}

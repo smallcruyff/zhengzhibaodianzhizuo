@@ -1,0 +1,456 @@
+{
+ "schema": "baodian-book-profile/0.1",
+ "book_id": "reasoning",
+ "title": "2026 北京高考政治选必三推理宝典",
+ "collab_key": "选必三推理",
+ "frozen": false,
+ "rule_refs": {
+  "book": "references/book-reasoning.md",
+  "active": null,
+  "style": null
+ },
+ "paths": {
+  "root": "/home/user/zhengzhibaodianzhizuo",
+  "workspace": "其他书工作头/推理",
+  "central_state": null,
+  "review_entry": null,
+  "review_manifest": null,
+  "review_history": null,
+  "candidate_dir_pattern": null,
+  "build_subdir": "构建",
+  "handoff": null
+ },
+ "naming": {
+  "batch_label": null,
+  "docx_stem": null,
+  "feedback_hint": null
+ },
+ "sources": {
+  "roots": [
+   "00_共同资料/原材料/2023模拟题",
+   "00_共同资料/原材料/2024模拟题",
+   "00_共同资料/原材料/2025模拟题",
+   "00_共同资料/原材料/2026模拟题",
+   "00_共同资料/原材料/历年高考题及细则"
+  ],
+  "banke": [],
+  "banke_priority": "老师手写答题点/术语原样进正文、排最前",
+  "bank": {
+   "root": "DeepSeek_政治题库资料库_20260918",
+   "module_hint": "逻辑与思维"
+  },
+  "answer_only_choice_only": true,
+  "no_e1_exceptions": null,
+  "stem_module_guard": null
+ },
+ "styles": {
+  "_note": "按 w:name 匹配；由 profile_probe 按使用量与结构推断",
+  "h1": [
+   "H1Custom"
+  ],
+  "h2": [
+   "H2Custom"
+  ],
+  "example_title": [
+   "ExampleTitle"
+  ],
+  "group_heading": [
+   "Subgroup"
+  ],
+  "method": [],
+  "method_desc": [],
+  "category_line": [],
+  "trigger_box": [
+   "NodeIntro"
+  ],
+  "toc": [
+   "TOC1",
+   "TOC2"
+  ],
+  "source": [
+   "QuestionText",
+   "BodyText"
+  ],
+  "teaching": [
+   "BodyText",
+   "QuestionText"
+  ],
+  "rubric": [
+   "NoteText"
+  ],
+  "drill_group": []
+ },
+ "structure": {
+  "framework": null,
+  "parts": [
+   {
+    "id": "FRONT",
+    "match": "^(\\(前置\\)|前言)$",
+    "schema": {},
+    "_h1": [
+     "前言"
+    ]
+   },
+   {
+    "id": "P1",
+    "match": "^[一二三四五六]、",
+    "schema": {
+     "subjective": "p1_subjective",
+     "choice": "p1_choice"
+    },
+    "_h1": [
+     "一、明确概念",
+     "二、正确运用判断",
+     "三、遵循逻辑规律",
+     "四、演绎推理",
+     "五、归纳与类比",
+     "六、综合论证"
+    ]
+   },
+   {
+    "id": "A1",
+    "match": "^A1",
+    "schema": {
+     "drill_card_a1": "a1_drill_card_a1"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ],
+    "_h1": [
+     "A1　题肢单练（打印）"
+    ]
+   },
+   {
+    "id": "A2",
+    "match": "^A2",
+    "schema": {
+     "drill_card_a2": "a2_drill_card_a2"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ],
+    "_h1": [
+     "A2　题肢单练（答案与逐项解析）"
+    ]
+   }
+  ],
+  "block_end": []
+ },
+ "example_titles": [
+  {
+   "kind": "subjective",
+   "regex": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  },
+  {
+   "kind": "drill_card_a1",
+   "regex": "^A1-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$"
+  },
+  {
+   "kind": "drill_card_a2",
+   "regex": "^A2-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$"
+  }
+ ],
+ "title_format": {
+  "sep": "　",
+  "example": "例题 1　2024西城一模第19题第（2）问",
+  "cross_module_suffix": null
+ },
+ "column_schemas": {
+  "p1_subjective": {
+   "labels": [
+    "【题目】",
+    "【推理规则和过程】",
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "mode": "each_once"
+  },
+  "p1_choice": {
+   "labels": [
+    "【题目】",
+    "【答案】",
+    "【错项解析】"
+   ],
+   "mode": "each_once"
+  },
+  "a1_drill_card_a1": {
+   "labels": [
+    "【题目】"
+   ],
+   "mode": "each_once"
+  },
+  "a2_drill_card_a2": {
+   "labels": [
+    "【题目】",
+    "【答案】",
+    "【逐项解析】"
+   ],
+   "mode": "each_once"
+  }
+ },
+ "section_labels": [
+  "【触发词速查】",
+  "【考法分类·主观题】",
+  "【考法分类·选择题】",
+  "【错项信号】",
+  "【推理规则】"
+ ],
+ "labels_rules": {
+  "rubric_labels": [
+   "【细则说明】"
+  ],
+  "source_labels": [
+   "【题目】"
+  ]
+ },
+ "numbering": {
+  "per_kind": false,
+  "scope_default": "h2"
+ },
+ "method_count": {},
+ "student_text": {
+  "forbidden_words_book": [],
+  "allow_contexts": {},
+  "trailing_tag_exempt_styles": [
+   "H1Custom",
+   "H2Custom",
+   "NoteText"
+  ],
+  "_common_note": "通用禁用词、词组、误伤模式等在 _house.json；这里只写本册增补"
+ },
+ "example_kind_by_labels": {
+  "choice": [
+   "【答案】",
+   "【错项解析】"
+  ],
+  "_apply_to": [
+   "subjective"
+  ]
+ },
+ "drill": {
+  "layout": "cards",
+  "part": [
+   "A1",
+   "A2"
+  ],
+  "_note": "A1/A2 以整题卡片呈现（题卡标题作例题块索引），不是逐肢三列表"
+ },
+ "toc": {
+  "mode": "hyperlink_static",
+  "styles": [
+   "TOC1",
+   "TOC2"
+  ],
+  "entries_expected": 28,
+  "page_from": "pdf_link_destination"
+ },
+ "footer": {
+  "regex": "—\\s*(\\d+)\\s*—",
+  "exempt_pages": [],
+  "page_offset": 0,
+  "continuous": true
+ },
+ "cover_preface": {
+  "cover": null,
+  "preface": null
+ },
+ "typography": {
+  "_note": "style 级观测值；运行级格式可能覆盖，改字体前须同时扫运行级",
+  "h1": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 18.0,
+   "bold": true,
+   "color": "FFFFFF",
+   "_style": "H1Custom"
+  },
+  "h2": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 15.0,
+   "bold": true,
+   "color": "1F4E79",
+   "_style": "H2Custom"
+  },
+  "example_title": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 11.5,
+   "bold": true,
+   "color": "23395D",
+   "_style": "ExampleTitle"
+  },
+  "material": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "000000",
+   "_style": "QuestionText"
+  },
+  "stem_teaching": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Source Han Sans SC",
+   "pt": 11.0,
+   "color": "111111",
+   "_style": "BodyText"
+  },
+  "rubric": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 9.5,
+   "color": "595959",
+   "_style": "NoteText"
+  }
+ },
+ "pagination": {
+  "keep_next": null,
+  "keep_next_label_regex": "^(材料|资料卡?|案例|情境|链接|背景|阅读)[一二三四五六七八九十0-9]+|^【[^】]{1,12}】$",
+  "keep_next_target_style": "QuestionText",
+  "forbid_long_chains": true,
+  "forced_breaks_only": null,
+  "blank_threshold_ratio": 0.33
+ },
+ "render": {
+  "engine": "libreoffice_bundled",
+  "soffice": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/MacOS/soffice",
+  "renderer_glob": "~/.codex/plugins/cache/openai-primary-runtime/documents/*/skills/documents/render_docx.py",
+  "renderer_pick": "latest_and_record_version",
+  "path_prepend": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override",
+  "png_dpi": 120,
+  "lo_profile": "<build_dir>/lo_profile",
+  "identity_file": "同版身份.json",
+  "record": [
+   "docx_sha256",
+   "pdf_sha256",
+   "pdf_pages",
+   "png_count",
+   "renderer_path",
+   "renderer_version",
+   "soffice_version",
+   "fontconfig_sha256",
+   "embedded_fonts"
+  ],
+  "fontconfig": {
+   "template": "house",
+   "dirs_extra": [],
+   "aliases": {},
+   "historical_file": null,
+   "historical_sha256_prefix": null
+  },
+  "font_embed_audit": true
+ },
+ "pixel": {
+  "policy": "same_page_full_pixels",
+  "allow_content_addressed_map": true,
+  "inherit_unchanged_without_ledger": true,
+  "subpixel_tolerance_pt": 0.2,
+  "_ruling": "用户2026-09-23裁定：与上一版正文一样的页（同页或错位仅页码/页脚不同、亚像素位移在容差内）阶段稿不重看；定稿/送印终审用 page_delta --final，仍须旧页实看记录",
+  "report_body_only_equal": false
+ },
+ "publish": {
+  "entry": null,
+  "note_file": "先看这里.md",
+  "manifest": ".review-manifest.json",
+  "archive_to": null,
+  "preserve": [
+   ".DS_Store",
+   "~$*",
+   "单题样稿"
+  ],
+  "dry_run_default": true,
+  "require_root_approval": true
+ },
+ "handoff": {
+  "collab_book": "选必三推理",
+  "owner_file": "协作/接管.json",
+  "checkpoint_fields": [
+   "working_head",
+   "sha256",
+   "pending",
+   "next_action",
+   "background_tasks"
+  ]
+ },
+ "pdf_fonts": {
+  "expected_cjk_regex": null,
+  "_note": "本册 PDF 嵌入中文字体的预期；_house.json 缺省 ^(STSongti|STKaiti)"
+ },
+ "_needs_confirm": {
+  "example_kind_by_labels": "需人工确认：“subjective”写法的标题下有 145 块带 ['【答案】', '【错项解析】']、无【答案落点】，草案按栏目把它们改判为选择题（47 块保持主观题）；本册题型划分需确认",
+  "structure.parts[P1].numbering_reset": "需人工确认：看不出编号在哪一级标题处重新起算（可能全部分连续编号）",
+  "numbering.per_kind": "需人工确认：编号按“主观、选择混编”吻合 480 处、按题型分开吻合 466 处，草案设 per_kind=false；是否为本册既定编号规则需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认",
+  "drill": "需人工确认：单练为题卡形式（部分 ['A1', 'A2']），A1/A2 闭环口径需按本册规则另定",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'H1Custom': 9, 'Normal': 1}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 reasoning（书名段/文件名）取为“选必三推理”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 reasoning 的班课讲义（关键词 ['选必三推理']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 reasoning 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "_probe": {
+  "tool": "profile_probe.py",
+  "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/推理/选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20260908.docx",
+  "docx_sha256": "026c205c7a1cae22924cb75127ca180e272c4dc51972781c995b52370b6c5797",
+  "template": "bixiu3",
+  "generated": "2026-09-25 05:17:18",
+  "book_identity": {
+   "book": "reasoning",
+   "by": "书名段/文件名",
+   "title_hits": {
+    "reasoning": [
+     "推理宝典",
+     "选必三推理"
+    ]
+   },
+   "body_hits": {},
+   "title_zone": [
+    "2026 北京高考政治选必三推理宝典",
+    "飞哥正志讲堂",
+    "选必三_逻辑与思维_推理宝典_v7.50_主观原图与评分替代条件修订工作稿_20"
+   ],
+   "resolved": "reasoning",
+   "resolved_by": "书名段/文件名"
+  },
+  "registered_profile": null,
+  "calibration_only": false,
+  "note": "草案：推断字段附证据见 .probe.json；_needs_confirm 里的字段须人工确认后才能登记进 profiles/"
+ },
+ "output_guard": {
+  "protected_roots": [
+   "~/GaokaoPolitics",
+   "~/.codex/skills",
+   "~/.claude/skills",
+   "~/Desktop",
+   "/home/user/zhengzhibaodianzhizuo"
+  ],
+  "allowed_subpath_regex": "/协作/候选/[^/]+/[^/]+/构建/体检(/|$)",
+  "_note": "各书册 paths.root 与本 Skill 目录自动受保护；受保护目录内只允许写到“…/协作/候选/<谁>/<批次>/构建/体检/”，系统临时目录放行；另外不得等于输入、不覆盖非体检报告、不写到有 .docx/.pdf 的目录"
+ },
+ "_cloud_note": "云端测试用配置副本（2026-09-25）：paths.root 改为仓库根，output_guard.protected_roots 追加仓库根。不登记、不回写 Skill。 本册配置为 profile_probe 自动草案，未经人工确认（_needs_confirm 字段待定）。"
+}

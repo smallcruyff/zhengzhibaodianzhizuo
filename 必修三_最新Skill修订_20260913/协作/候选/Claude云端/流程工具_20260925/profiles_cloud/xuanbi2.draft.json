@@ -1,0 +1,479 @@
+{
+ "schema": "baodian-book-profile/0.1",
+ "book_id": "xuanbi2",
+ "title": "2027 北京高考政治选必二法律宝典",
+ "collab_key": "选必二",
+ "frozen": false,
+ "rule_refs": {
+  "book": "references/book-xuanbi-2.md",
+  "active": "references/active/book-xuanbi-2-current.md",
+  "style": null
+ },
+ "paths": {
+  "root": "/home/user/zhengzhibaodianzhizuo",
+  "workspace": "其他书工作头/选必二",
+  "central_state": null,
+  "review_entry": null,
+  "review_manifest": null,
+  "review_history": null,
+  "candidate_dir_pattern": null,
+  "build_subdir": "构建",
+  "handoff": null
+ },
+ "naming": {
+  "batch_label": null,
+  "docx_stem": null,
+  "feedback_hint": null
+ },
+ "sources": {
+  "roots": [
+   "00_共同资料/原材料/2023模拟题",
+   "00_共同资料/原材料/2024模拟题",
+   "00_共同资料/原材料/2025模拟题",
+   "00_共同资料/原材料/2026模拟题",
+   "00_共同资料/原材料/历年高考题及细则"
+  ],
+  "banke": [],
+  "banke_priority": "老师手写答题点/术语原样进正文、排最前",
+  "bank": {
+   "root": "DeepSeek_政治题库资料库_20260918",
+   "module_hint": "法律与生活"
+  },
+  "answer_only_choice_only": true,
+  "no_e1_exceptions": null,
+  "stem_module_guard": null
+ },
+ "styles": {
+  "_note": "按 w:name 匹配；由 profile_probe 按使用量与结构推断",
+  "h1": [
+   "heading 1"
+  ],
+  "h2": [
+   "heading 2"
+  ],
+  "example_title": [
+   "Example Title"
+  ],
+  "group_heading": [
+   "heading 3"
+  ],
+  "method": [],
+  "method_desc": [],
+  "category_line": [],
+  "trigger_box": [],
+  "toc": [
+   "TOC Entry 1",
+   "TOC Entry 2"
+  ],
+  "source": [
+   "Handbook Body",
+   "Handbook Body Compact"
+  ],
+  "teaching": [
+   "Handbook Body",
+   "Handbook Body Compact"
+  ],
+  "rubric": [
+   "Handbook Body"
+  ],
+  "drill_group": []
+ },
+ "structure": {
+  "framework": null,
+  "parts": [
+   {
+    "id": "FRONT",
+    "match": "^(\\(前置\\)|目录)$",
+    "schema": {},
+    "_h1": [
+     "目录"
+    ]
+   },
+   {
+    "id": "P1",
+    "match": "^[一二三四]、",
+    "schema": {
+     "subjective": "p1_subjective",
+     "choice": "p1_choice"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ],
+    "_h1": [
+     "一、贯穿层：民法基本原则与判案通则",
+     "二、环层①：主体、行为效力与权利归属",
+     "三、环层②：实体权利义务与民事责任",
+     "四、环层③④：程序救济与公共治理"
+    ]
+   },
+   {
+    "id": "APPX1",
+    "match": "^附录一",
+    "schema": {
+     "drill_card_a1": "appx1_drill_card_a1"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ],
+    "_h1": [
+     "附录一　A1 错肢单练（打印版）"
+    ]
+   },
+   {
+    "id": "APPX2",
+    "match": "^附录二",
+    "schema": {
+     "drill_card_a2": "appx2_drill_card_a2"
+    },
+    "numbering_reset": [
+     "h2",
+     "group_heading"
+    ],
+    "_h1": [
+     "附录二　A2 错肢订正（答案版）"
+    ]
+   },
+   {
+    "id": "APPX3",
+    "match": "^附录三",
+    "schema": {},
+    "_h1": [
+     "附录三　考场最后检查表"
+    ]
+   }
+  ],
+  "block_end": [
+   {
+    "styles": [
+     "Section Lead"
+    ],
+    "regex": "^(?!【)[^。！？!?；;]{1,30}$",
+    "_note": "profile_probe 推断：此样式多在题块外，题块内只出现在块末、紧挨下一题标题"
+   }
+  ]
+ },
+ "example_titles": [
+  {
+   "kind": "choice",
+   "regex": "^选择题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  },
+  {
+   "kind": "subjective",
+   "regex": "^例题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  },
+  {
+   "kind": "drill_card_a1",
+   "regex": "^A1-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+   "styles": [
+    "Index Line"
+   ]
+  },
+  {
+   "kind": "drill_card_a2",
+   "regex": "^A2-(?P<num>\\d+)[\\s｜|]+(?P<src>.+)$",
+   "styles": [
+    "Index Line"
+   ]
+  },
+  {
+   "kind": "other_例外题",
+   "regex": "^例外题\\s*(?P<num>\\d+)[\\s　]+(?P<src>.+)$"
+  }
+ ],
+ "title_format": {
+  "sep": "　",
+  "example": "例题 1　2026房山二模 第17题：涉外争端解决机制",
+  "cross_module_suffix": null
+ },
+ "column_schemas": {
+  "p1_subjective": {
+   "labels": [
+    "【题目】",
+    "【法理依据和案例分析】",
+    "【答案落点】",
+    "【细则说明】"
+   ],
+   "mode": "each_once"
+  },
+  "p1_choice": {
+   "labels": [
+    "【题目】",
+    "【错肢分析】",
+    "【答案】"
+   ],
+   "mode": "each_once"
+  },
+  "appx1_drill_card_a1": {
+   "labels": [],
+   "mode": "each_once"
+  },
+  "appx2_drill_card_a2": {
+   "labels": [
+    "【错肢分析】",
+    "【答案】",
+    "【解析】"
+   ],
+   "mode": "each_once",
+   "labels_inline": true
+  }
+ },
+ "section_labels": [
+  "【知识要点】",
+  "【触发词速查】"
+ ],
+ "labels_rules": {
+  "rubric_labels": [
+   "【细则说明】"
+  ],
+  "source_labels": [
+   "【题目】"
+  ]
+ },
+ "numbering": {
+  "per_kind": true,
+  "scope_default": "h2"
+ },
+ "method_count": {},
+ "student_text": {
+  "forbidden_words_book": [],
+  "allow_contexts": {},
+  "trailing_tag_exempt_styles": [
+   "Handbook Body",
+   "heading 1",
+   "heading 2"
+  ],
+  "_common_note": "通用禁用词、词组、误伤模式等在 _house.json；这里只写本册增补"
+ },
+ "drill": {
+  "layout": "cards",
+  "part": [
+   "APPX1",
+   "APPX2"
+  ],
+  "_note": "A1/A2 以整题卡片呈现（题卡标题作例题块索引），不是逐肢三列表"
+ },
+ "toc": {
+  "mode": "hyperlink_static",
+  "styles": [
+   "TOC Entry 1",
+   "TOC Entry 2"
+  ],
+  "entries_expected": 29,
+  "page_from": "pdf_link_destination"
+ },
+ "footer": {
+  "regex": "^\\s*(\\d+)\\s*$",
+  "exempt_pages": [
+   1
+  ],
+  "page_offset": 0,
+  "continuous": true
+ },
+ "cover_preface": {
+  "cover": null,
+  "preface": null
+ },
+ "typography": {
+  "_note": "style 级观测值；运行级格式可能覆盖，改字体前须同时扫运行级",
+  "h1": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 18.0,
+   "bold": true,
+   "color": "17365D",
+   "_style": "heading 1"
+  },
+  "h2": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 15.0,
+   "bold": true,
+   "color": "1F4E79",
+   "_style": "heading 2"
+  },
+  "example_title": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 11.5,
+   "bold": true,
+   "color": "23395D",
+   "_style": "Example Title"
+  },
+  "material": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "222222",
+   "_style": "Handbook Body"
+  },
+  "stem_teaching": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "222222",
+   "_style": "Handbook Body"
+  },
+  "rubric": {
+   "ea": "Source Han Sans SC",
+   "ascii": "Times New Roman",
+   "pt": 10.5,
+   "color": "222222",
+   "_style": "Handbook Body"
+  }
+ },
+ "pagination": {
+  "keep_next": null,
+  "keep_next_label_regex": "^(材料|资料卡?|案例|情境|链接|背景|阅读)[一二三四五六七八九十0-9]+|^【[^】]{1,12}】$",
+  "keep_next_target_style": "Handbook Body",
+  "forbid_long_chains": true,
+  "forced_breaks_only": null,
+  "blank_threshold_ratio": 0.33
+ },
+ "render": {
+  "engine": "libreoffice_bundled",
+  "soffice": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/MacOS/soffice",
+  "renderer_glob": "~/.codex/plugins/cache/openai-primary-runtime/documents/*/skills/documents/render_docx.py",
+  "renderer_pick": "latest_and_record_version",
+  "path_prepend": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override",
+  "png_dpi": 120,
+  "lo_profile": "<build_dir>/lo_profile",
+  "identity_file": "同版身份.json",
+  "record": [
+   "docx_sha256",
+   "pdf_sha256",
+   "pdf_pages",
+   "png_count",
+   "renderer_path",
+   "renderer_version",
+   "soffice_version",
+   "fontconfig_sha256",
+   "embedded_fonts"
+  ],
+  "fontconfig": {
+   "template": "house",
+   "dirs_extra": [],
+   "aliases": {},
+   "historical_file": null,
+   "historical_sha256_prefix": null
+  },
+  "font_embed_audit": true
+ },
+ "pixel": {
+  "policy": "same_page_full_pixels",
+  "allow_content_addressed_map": true,
+  "inherit_unchanged_without_ledger": true,
+  "subpixel_tolerance_pt": 0.2,
+  "_ruling": "用户2026-09-23裁定：与上一版正文一样的页（同页或错位仅页码/页脚不同、亚像素位移在容差内）阶段稿不重看；定稿/送印终审用 page_delta --final，仍须旧页实看记录",
+  "report_body_only_equal": false
+ },
+ "publish": {
+  "entry": null,
+  "note_file": "先看这里.md",
+  "manifest": ".review-manifest.json",
+  "archive_to": null,
+  "preserve": [
+   ".DS_Store",
+   "~$*",
+   "单题样稿"
+  ],
+  "dry_run_default": true,
+  "require_root_approval": true
+ },
+ "handoff": {
+  "collab_book": "选必二",
+  "owner_file": "协作/接管.json",
+  "checkpoint_fields": [
+   "working_head",
+   "sha256",
+   "pending",
+   "next_action",
+   "background_tasks"
+  ]
+ },
+ "pdf_fonts": {
+  "expected_cjk_regex": null,
+  "_note": "本册 PDF 嵌入中文字体的预期；_house.json 缺省 ^(STSongti|STKaiti)"
+ },
+ "_needs_confirm": {
+  "example_titles[other_例外题]": "需人工确认：兜底识别到“例外题 N”写法 2 处，题型归属需确认",
+  "structure.parts[P1].schema.other_例外题": "需人工确认：该部分“other_例外题”只有 2 个题块，栏目模式无法统计",
+  "column_schemas.appx2_drill_card_a2.labels_inline": "需人工确认：【解析】 在 22/146 块里写在行中（紧跟句末标点，如“【答案】 D。【解析】 …”）；草案设 labels_inline=true 计入栏目，本册是否允许这种写法需确认",
+  "structure.block_end[Section Lead]": "需人工确认：样式“Section Lead”共 22 段，21 段在题块外，题块内 1 段都是块末短引导行（如 B0475 末尾“书末细则例外题”），草案设为题块边界；也可能是分组/考法行，需确认",
+  "toc.toc_pdf_pages": "需人工确认：目录在 PDF 第几页需对照同版 PDF 确认",
+  "footer.exempt_pages": "需人工确认：封面是否显示页码属用户规则（必修二豁免第1页、必修三未豁免），需确认；本稿首节设了首页不同",
+  "footer.continuous": "需人工确认：本稿有 3 节，页码是否连续需对照 PDF",
+  "drill": "需人工确认：单练为题卡形式（部分 ['APPX1', 'APPX2']），A1/A2 闭环口径需按本册规则另定",
+  "pagination.keep_next": "需人工确认：本册与标题/材料小标题的 keepNext 口径需按本册排版规则确认",
+  "pagination.forced_breaks_only": "需人工确认：本稿强制分页出现在样式 {'Section Lead': 1}，哪些是允许的强制分页需确认",
+  "title": "需人工确认：书名取自封面首段，需按本册正式书名确认",
+  "collab_key": "需人工确认：按书册 xuanbi2（书名段/文件名）取为“选必二”，需与 collab books.json 对齐",
+  "rule_refs": "需人工确认：规则文件按书册取；style-spec 锚点需人工指定",
+  "paths.workspace": "需人工确认：取自样稿所在目录；本册真实工作头未核定（books.json 标“未核定真实工作头”）",
+  "paths.central_state": "需人工确认：中央状态文件未找到",
+  "paths.review_entry": "需人工确认：本册审阅入口尚未设立",
+  "paths.review_manifest": "需人工确认：随审阅入口定",
+  "paths.review_history": "需人工确认：随审阅入口定",
+  "paths.candidate_dir_pattern": "需人工确认：候选目录命名需按协作规则定",
+  "paths.handoff": "需人工确认：协作/接管.json 位置需定",
+  "naming": "需人工确认：批次与文件命名需按本册习惯定（样稿文件名：选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx）",
+  "sources.banke": "需人工确认：宝典制作原料里没找到 xuanbi2 的班课讲义（关键词 ['选必二']）；班课是最高优先级原料，需用户提供或确认本册没有",
+  "sources.bank.module_hint": "需人工确认：题库模块提示按书册 xuanbi2 取",
+  "sources.no_e1_exceptions": "需人工确认：无 E1 例外名单是本册证据裁定，不能从样稿推",
+  "sources.stem_module_guard": "需人工确认：设问限定他册的过滤名单需主代理定",
+  "structure.framework": "需人工确认：本册框架描述需人工写",
+  "structure.parts": "需人工确认：部分按一级标题前缀自动归并（连续“一、二、……”并为一部分），部分名与边界需确认",
+  "method_count": "需人工确认：没有带（N题）的考法标题；本册是否标题数需确认",
+  "student_text.forbidden_words_book": "需人工确认：本册专属禁用词需按本册规则登记",
+  "cover_preface.cover": "需人工确认：封面由用户手工处理还是用稿内封面",
+  "cover_preface.preface": "需人工确认：稿内没有“前言”一级标题；前言保留与否属用户规则",
+  "render.fontconfig": "需人工确认：本册 fontconfig（字体目录与别名）需按本册字体环境确认；沿用了必修三的渲染器配置",
+  "publish.entry": "需人工确认：发布入口随审阅入口定",
+  "publish.archive_to": "需人工确认：归档目录随审阅历史目录定",
+  "handoff.collab_book": "需人工确认：协作册名需与 collab books.json 对齐",
+  "pdf_fonts.expected_cjk_regex": "需人工确认：本册 PDF 嵌入中文字体预期需对照同版 PDF 与本册 fontconfig 确认"
+ },
+ "_probe": {
+  "tool": "profile_probe.py",
+  "docx": "/home/user/zhengzhibaodianzhizuo/其他书工作头/选必二/选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22.docx",
+  "docx_sha256": "7579086d6b1a1d91294321022c01fe9240769e9056d5fefdcc5f81a1849a448d",
+  "template": "bixiu3",
+  "generated": "2026-09-25 05:17:32",
+  "book_identity": {
+   "book": "xuanbi2",
+   "by": "书名段/文件名",
+   "title_hits": {
+    "xuanbi2": [
+     "选必二",
+     "法律与生活",
+     "法律宝典"
+    ]
+   },
+   "body_hits": {},
+   "title_zone": [
+    "2027 北京高考政治选必二法律宝典",
+    "六年真题·三年模拟 全案例全法理",
+    "飞哥正志讲堂｜法律宝典 v15.0",
+    "选必二法律与生活宝典_v15.0_出版校订稿_20260908_r22"
+   ],
+   "resolved": "xuanbi2",
+   "resolved_by": "书名段/文件名"
+  },
+  "registered_profile": null,
+  "calibration_only": false,
+  "note": "草案：推断字段附证据见 .probe.json；_needs_confirm 里的字段须人工确认后才能登记进 profiles/"
+ },
+ "output_guard": {
+  "protected_roots": [
+   "~/GaokaoPolitics",
+   "~/.codex/skills",
+   "~/.claude/skills",
+   "~/Desktop",
+   "/home/user/zhengzhibaodianzhizuo"
+  ],
+  "allowed_subpath_regex": "/协作/候选/[^/]+/[^/]+/构建/体检(/|$)",
+  "_note": "各书册 paths.root 与本 Skill 目录自动受保护；受保护目录内只允许写到“…/协作/候选/<谁>/<批次>/构建/体检/”，系统临时目录放行；另外不得等于输入、不覆盖非体检报告、不写到有 .docx/.pdf 的目录"
+ },
+ "_cloud_note": "云端测试用配置副本（2026-09-25）：paths.root 改为仓库根，output_guard.protected_roots 追加仓库根。不登记、不回写 Skill。 本册配置为 profile_probe 自动草案，未经人工确认（_needs_confirm 字段待定）。"
+}
