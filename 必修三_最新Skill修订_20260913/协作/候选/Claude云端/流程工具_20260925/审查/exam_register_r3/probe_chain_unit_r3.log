@@ -1,0 +1,25 @@
+{
+ "kind": "blocked_conflict",
+ "rename_plan": [
+  {
+   "old": "BJ-2025-XX",
+   "new": null,
+   "reason": "BJ-2025-XX 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+  },
+  {
+   "old": "BJ-2024-XX",
+   "new": "BJ-2025-XX",
+   "reason": "自身届别证据与登记号不符，且目标号也被占用，需先腾出目标号"
+  }
+ ],
+ "redirects": [
+  {
+   "old": "BJ-2024-XX",
+   "new": "BJ-2025-XX",
+   "after_step": 2
+  }
+ ],
+ "reused_ids": [],
+ "note": "占用链存在无法机械判定的真实冲突（见 rename_plan 最后一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2024-XX，也不给出重定向表。"
+}
+kind blocked_conflict | redirects non-empty while note says 不给出重定向表: True

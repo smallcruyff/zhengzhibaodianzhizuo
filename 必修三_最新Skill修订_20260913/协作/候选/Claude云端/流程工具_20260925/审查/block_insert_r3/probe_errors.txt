@@ -1,0 +1,11 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+docx不存在: rc=2 traceback=False stderr="o such file or directory: '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r3/work/nope.docx'" stdout=''
+插入单顶层是数组: rc=2 traceback=False stderr="错误：'list' object has no attribute 'get'" stdout=''
+inserts元素不是对象: rc=2 traceback=False stderr="错误：'str' object has no attribute 'get'" stdout=''
+runs元素不是对象: rc=2 traceback=False stderr="错误：'str' object has no attribute 'get'" stdout=''
+width_cm是字符串: rc=2 traceback=False stderr="错误：type str doesn't define __round__ method" stdout='warning: The `fitz` API is deprecated and will be removed in future. Use `import'
+anchor不是对象: rc=2 traceback=False stderr='中止：anchor 必须且只能给 after_block/before_block/method_end 之一' stdout=''
+runs里未知键: rc=1 traceback=False stderr='' stdout='{"media_images": 0, "media_tables": 0, "needs_local_check": 0, "anchor_converted'
+title不是字符串: rc=2 traceback=False stderr="错误：'int' object has no attribute 'strip'" stdout=''
+like是数组: rc=2 traceback=False stderr="错误：'in <string>' requires string as left operand, not list" stdout=''
+SHA不符: rc=2 traceback=False stderr='父稿不符：父稿 SHA 不符：期望 ffffffffffffffff…，实际 c007d7198422050c…（err_parent.docx）' stdout=''

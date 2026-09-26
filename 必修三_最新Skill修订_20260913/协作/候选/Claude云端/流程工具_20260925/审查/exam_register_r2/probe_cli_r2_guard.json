@@ -1,0 +1,334 @@
+[
+ {
+  "case": "G1 临时区（输入也在临时区）",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--stage",
+   "期中",
+   "--report",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g1.json",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g1.json",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 11,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 11/22 题（占比 0.5）"
+   ],
+   "fingerprint_coverage": null
+  },
+  "target_written": true
+ },
+ {
+  "case": "G1b 临时区（输入也在临时区，不给 profile）",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--stage",
+   "期中",
+   "--report",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g1b.json"
+  ],
+  "exit": 1,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g1b.json",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 11,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 11/22 题（占比 0.5）"
+   ],
+   "fingerprint_coverage": null
+  },
+  "target_written": true
+ },
+ {
+  "case": "G2 候选 构建/（输入在临时区）",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--stage",
+   "期中",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g2.json",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "报告已写：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g2.json",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 11,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 11/22 题（占比 0.5）"
+   ],
+   "fingerprint_coverage": null
+  },
+  "target_written": true
+ },
+ {
+  "case": "G3 符号链接目录→题库",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/link_to_bank/g3.json"
+  ],
+  "exit": 3,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G4 原材料目录 无profile",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/g4.json"
+  ],
+  "exit": 3,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G5 后勤管理 无profile",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/后勤管理/g5.json"
+  ],
+  "exit": 3,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G6 云端/ 无profile",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/云端/g6.json"
+  ],
+  "exit": 3,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G7 候选目录根（非构建）",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/g7.json",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 3,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G8 ../ 逃逸",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/../../../../g8.json",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 3,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G9 .txt 后缀",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g9.txt",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 3,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：输出必须是 .json 文件：g9.txt",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G10 audit 冻结册 --report",
+  "args": [
+   "audit",
+   "--limit",
+   "1",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu2_frozen_test.json",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g10.json"
+  ],
+  "exit": 3,
+  "sec": 3.1,
+  "traceback_in_stderr": false,
+  "stderr": "拒绝写出：必修二《经济与社会》 已冻结，拒绝写出：2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝）",
+  "out": "",
+  "target_written": false
+ },
+ {
+  "case": "G11 audit --limit 2 --report 构建",
+  "args": [
+   "audit",
+   "--limit",
+   "2",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json",
+   "--report",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g11.json"
+  ],
+  "exit": 0,
+  "sec": 3.1,
+  "traceback_in_stderr": false,
+  "stderr": "报告已写：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register_r2probe/g11.json",
+  "out": "{\n \"exams_scanned\": 2,\n \"id_year_mismatches\": 0,\n \"has_duplicate_or_reuse\": 0,\n \"conflicts\": 0,\n \"needs_local\": 0,\n \"weak_only\": 0,\n \"retired\": 0,\n \"low_fingerprint_coverage\": 0,\n \"verified_by_A\": 2,\n \"verified_by_B\": 0\n}\n届别不符： 无\n重复/复用： 无\n弱证据（未取得原件/题库文字层佐证）： 无\n已撤销登记： 无\n",
+  "target_written": true
+ },
+ {
+  "case": "G12 --exam-dir 在临时区 → 报告写临时区另一子目录",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/examdir/新卷_HDQZ25",
+   "--stage",
+   "期中",
+   "--report",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g12.json",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 3.3,
+  "traceback_in_stderr": false,
+  "stderr": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/out/g12.json",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true
+    },
+    {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 22/22 题（占比 1.0）",
+    "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 22/22 题（占比 1.0）"
+   ],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 21,
+     "fallback_low_confidence": 1
+    }
+   }
+  },
+  "target_written": true
+ }
+]

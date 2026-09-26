@@ -1,0 +1,4 @@
+source grid sum 9742 src tblW {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}w': '0', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}type': 'auto'}
+例题 2　2026昌平期末第17题 -> tblW {'w': '5000', 'type': 'pct'} gridCol_sum 5000 tcW[:2] [('870', 'dxa'), ('4130', 'dxa')] layout None
+例题 33　2026海淀期中第18题 -> tblW {'w': '0', 'type': 'auto'} gridCol_sum 9742 tcW[:2] [('1696', 'dxa'), ('8046', 'dxa')] layout None
+例题 3　2024朝阳二模第18题 -> tblW {'w': '9298', 'type': 'dxa'} gridCol_sum 9298 tcW[:2] [('1619', 'dxa'), ('7679', 'dxa')] layout fixed

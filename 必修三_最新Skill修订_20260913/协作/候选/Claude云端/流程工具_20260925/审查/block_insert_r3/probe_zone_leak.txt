@@ -1,0 +1,5 @@
+leak rc= 2 out_exists= False stderr= 中止：写后复核不通过，已删除输出：restore 豁免的段落写后未落在 source/title 区，且新文字命中禁用词表
+   wordlist_leak= [{'id': 'Z1', 'index': 166, 'zone': 'teaching', 'hit': '工程标签:TODO', 'text': '从材料选知识：此处 TODO 待核，本落位。'}]
+clean rc= 0 out_exists= True stderr= 
+   wordlist_leak= None
+   para 166 zone teaching 从材料选知识：居民议事会拓宽了参与渠道。

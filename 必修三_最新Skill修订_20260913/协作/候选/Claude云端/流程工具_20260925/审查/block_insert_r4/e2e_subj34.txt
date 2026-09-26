@@ -1,0 +1,19 @@
+rc 0 {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r4/work/subj34_out.docx", "sha256": "e918b9a8b9f91ac832a50f3cc12341cffb1d8b2 
+fallbacks []
+health new_FAIL 0 []
+text flow same: True
+   839 heading 3->heading 3 font Kaiti SC->Kaiti SC ind None->None '例题 34\u30002025房山一模第17题'
+   840 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '【题目】17.阅读材料，回答问题。'  <<DIFF
+   841 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '一条河的变迁，成为城市更新的一张名片。'  <<DIFF
+   842 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '在某区的水系图上，一条曾经湮没于历史中的河道，如'  <<DIFF
+   843 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '★打破部门壁垒，确立由区委统筹、政府主导、公众参'  <<DIFF
+   844 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '★80万平方米的水岸空间，明确75%要用于公共休'  <<DIFF
+   845 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '★投入资金用于河道清淤、污水治理、生态修复等，并'  <<DIFF
+   846 题目材料->题目设问 font Kaiti SC->Songti SC ind None->None '★对于向河道偷排污水、破坏河道设施等违法行为进行'  <<DIFF
+   847 题目材料->题目设问 font Songti SC->Songti SC ind None->None '结合材料，运用《政治与法治》知识，分析该河变迁的'  <<DIFF
+   848 分析过程->分析过程 font Songti SC->Songti SC ind None->None '【思维链条】'
+   849 分析过程->分析过程 font Songti SC->Songti SC ind None->None '从材料选知识：“由区委统筹”“打破部门壁垒”锁定'
+   850 分析过程->分析过程 font Songti SC->Songti SC ind None->None '从设问定层次：“分析该河变迁的密码”要按主体、做'  <<DIFF
+   851 答案落点->答案落点 font Songti SC->Songti SC ind None->None '【答案落点】'
+   852 答案落点->答案落点 font Songti SC->Songti SC ind None->None '①区委发挥总揽全局、协调各方的领导核心作用，打破'
+   853 细则说明->细则说明 font Songti SC->Songti SC ind None->None '【细则说明】 区委发挥总揽全局、协调各方的领导核'  <<DIFF

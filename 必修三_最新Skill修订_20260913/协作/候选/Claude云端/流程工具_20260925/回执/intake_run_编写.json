@@ -1,0 +1,103 @@
+{
+ "tool": "intake_run",
+ "version": "1.0.0",
+ "stage": "编写",
+ "generated_at": "2026-09-25",
+ "actor": "claude-cloud:session_019EZRqQF2ofe8wnU3UjEgvv",
+ "summary": "新卷入书总控清单：对“一批新卷 × 各本书”跑九步流程（source_intake/exam_register/doc2md-bank_compile/模块归属判定/该收清单+placement_suggest/教学内容改动单/题肢准入/block_insert/layout-health-publish预检）各自的完成状态判定，给出下一条该跑的完整命令。只读——不改题库、书稿、协作登记、Skill、归属表，不运行 collab.py；唯一写出是自己的 --report/--md 与 init 生成的清单骨架/workdir 子目录，均过 guard_write 同款守卫。判定全部基于真实产物：题库 questions/ 目录与 shared_conversion_state.json、归属表 attribution_ruled.csv 的 归属_<书代码> 列、block_index.build_index()/select() 对当前稿的实查、以及姊妹工具（exam_register.py/placement_suggest.py）和既有 Skill 工具（source_intake/bank_compile/qpack/check_drill_admission/layout_prepare/batch_health/publish_review）写出的报告文件。用真实5张卷（BJ-2023/2024-HD-QIZHONG、BJ-2024-CY-QIZHONG、BJ-2026-CY/HD-QIZHONG）×8本书（必修三+六本草案配置+必修二SKIP）验证：已知的届别/重复登记问题在第2步正确报 BLOCKED、已知的归属判定和部分已插入题在第4/8步正确报 DONE；另在沙盒里用真实 exam_register/placement_suggest/check_drill_admission 依次产出证据，逐步推进第2/5/6/7步状态并验证“下一条命令”指针相应前移，第8步在题确实未插入时如实保持 TODO，不冒充完成。",
+ "files": [
+  {
+   "path": "intake_run.py",
+   "lines": 827,
+   "sha256": "697dffeda8f2c7b046a227c19a54f6e8cc1c395c51a4fdceb2d41ffc84234ef3"
+  },
+  {
+   "path": "run_tests_intake_run.py",
+   "lines": 475,
+   "sha256": "2cb9e2c686184e37cbd8c9b39fc3d34a476d938c939739ffd2e3d9078795911c"
+  }
+ ],
+ "line_budget_note": "827 行，未超规格“九、精简”≤900 行的目标。",
+ "usage": [
+  "python3 intake_run.py init --out 构建/入书_2026批次/清单.json --batch 2026批次 --exam-id BJ-2026-HD-QIZHONG --book bixiu3 --book philosophy --workdir 构建/入书_2026批次/",
+  "python3 intake_run.py status --manifest 构建/入书_2026批次/清单.json --report 构建/入书_2026批次/状态.json --md 构建/入书_2026批次/状态.md",
+  "云端必须在清单 profiles.<书> 里显式给 profiles_cloud/<书>.json（Skill 母版 profiles/ 里的 配置是 Mac 路径，guard_write/paths.root 认不出仓库根）；--bank/--attribution-csv 可显式覆盖，默认按仓库根推 DeepSeek_政治题库资料库_20260918 与 后勤管理/…/归属表_v1/attribution_ruled.csv",
+  "清单格式 schema=baodian_intake_v1：{batch, exams:[{exam_id}或{files,claimed_id}], books, profiles:{书→配置路径}, workdir}；书名取自固定 8 个（bixiu2/bixiu3/philosophy/culture/xuanbi1/xuanbi2/mind/reasoning），bixiu2 一律 SKIP、可不给 profiles.bixiu2"
+ ],
+ "tests": [
+  {
+   "input": "组1：normalize_qid/load_attribution 去重/load_manifest 4正4负校验（直接 import，不起子进程）",
+   "result": "PASS：#N→(N) 归一化正确；attribution_ruled.csv 里 exam_id_raw==exam_id_canonical 的卷（如 BJ-2023-HD-QIZHONG）不再被重复计入两次（修前 24 行会变 48 行，已现场发现并修复此 bug）；schema错/exams空/书名未知/缺profile 四种负例全部精确抛 InputError",
+   "seconds": 0.1
+  },
+  {
+   "input": "组2：init 子命令——生成清单骨架+9个workdir子目录；重跑拒绝覆盖；workdir落受保护目录时不留半成品（清单骨架也不写）",
+   "result": "PASS：3/3",
+   "seconds": 0.5
+  },
+  {
+   "input": "组3：真实数据——5张已知卷×8本书（40组合）status；已知事实核对：5卷均已在题库(第1步DONE)、归属判定均已做(第4步DONE)、必修三当前稿已能查到部分应收题(第8步非全TODO)；再真实跑 exam_register.py check --exam-id 落5份报告，重跑后第2步：前三张(HD-QIZHONG 2023/2024、CY-QIZHONG 2024)精确报 BLOCKED，后两张(2026批)精确报 DONE，且与目标书无关(同卷在7本非bixiu2书上BLOCKED一致)",
+   "result": "PASS：12/12，与已知事实完全对照",
+   "seconds": 61.0
+  },
+  {
+   "input": "组4：沙盒推进——BJ-2026-CY-QIZHONG×bixiu3(唯一IN题Q9)，从空workdir开始，依次真实跑 exam_register→placement_suggest→（合成approved_by插入单）→check_drill_admission→layout_prepare+batch_health，每步后重跑 status",
+   "result": "PASS：13/13，next_action 指针依次 [2]→[5]→[6]→[7]→[8] 前移；第8步在Q9确未插入时如实保持TODO，不假装完成；第9步云端证据(layout 0待改+health)齐全后仍报TODO(需publish dry-run)，从不假报DONE",
+   "seconds": 30.0
+  },
+  {
+   "input": "组5：负例——清单非法JSON/书名未知/配置找不到→退出2；--report/--md 落受保护目录(后勤管理/、审阅入口00_必修三最新审查稿/)→退出3且未写出",
+   "result": "PASS：5/5",
+   "seconds": 0.3
+  },
+  {
+   "input": "组6：对真实5卷×7书状态表里出现的 next_command，逐类(exam_register/bank_compile/placement_suggest/qpack/block_insert/layout_prepare)各取一条真实起子进程验证——非 argparse usage 错误即算“已被目标脚本接受”（域内失败如目录不存在/文件不存在/题库路径问题不算解析失败）",
+   "result": "PASS：6/6；顺带发现并修复 block_insert 那条命令里占位符 <06_insert 改动单> 含空格、被 shlex 切成两个 token 导致 argparse 报 unrecognized arguments 的真实 bug",
+   "seconds": 6.0
+  }
+ ],
+ "tests_totals": {
+  "total": 54,
+  "failed": 0,
+  "note": "run_tests_intake_run.py 单次运行合计 54 条记录，全部 PASS，用时约 106 秒（含baseline_guard前后各3次、组3/4的多次真实子进程调用）；上表按验收组归并展示，逐条明细见 run_tests_intake_run.py 输出与 构建/intake_run/test_results.json。"
+ },
+ "vermin": {
+  "intake_run.py": "Minimum required versions: 3.7；Incompatible versions: 2.x（兼容 3.9，未用 match/X|Y 注解/zip(strict=)/括号式多 with 等 3.10+ 语法）",
+  "run_tests_intake_run.py": "同上，Minimum required versions: 3.7"
+ },
+ "vermin_ok": true,
+ "baseline_guard": {
+  "before": {
+   "files": 3468,
+   "changed": 0,
+   "removed": 0,
+   "added": 0,
+   "skill_pycache": []
+  },
+  "after": {
+   "files": 3468,
+   "changed": 0,
+   "removed": 0,
+   "added": 0,
+   "skill_pycache": []
+  },
+  "note": "运行 python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json（测试前后各一次，另外 run_tests_intake_run.py 自身也在组3/组4前后各跑一次，共4次），均 0 变化、Skill 下无 __pycache__（intake_run.py/run_tests_intake_run.py 均在文件头设 sys.dont_write_bytecode=True，子进程调用姊妹工具/Skill脚本一律加 -B）。本工具自身及测试写出全部落在系统临时目录（/tmp/claude-0/…/scratchpad/intake_run_test_scratch/，环境不同则退回 tempfile.gettempdir()）或候选目录 构建/intake_run/，不写题库/书稿/协作/归属表/Skill 任何真实文件。"
+ },
+ "replaces": "此前“这批新卷到哪一步了、下一步该跑什么”全靠人工翻各工具的报告目录、或模型凭记忆猜测进度（容易漏看某本书某一步、或建议的命令行参数不全/路径不对）。现在改为脚本对每个真实产物位置逐条核实（题库目录、shared_conversion_state.json、归属表列、block_index 查题键、各工具自己的 --report），一次跑出 卷×书×九步 的完整状态表和可直接复制执行的下一条命令，模型/主代理不用再手工核对进度或拼命令行。",
+ "known_limits": [
+  "第3步（bank_compile）判定只看 questions/<id>/ 目录存在+逐题MD数+shared_conversion_state.accepted 三项文件层证据，不实际调用 bank_compile.py check 复核 G1-G11 门禁细节（那样每卷都要跑一次较重的检查，且云端精简题库的 bank_compile.py 依赖的“转换主清单”在本环境下对已确认存在于 questions/ 的卷仍会报“不在转换主清单或 questions/ 里”——测试组6已发现这个环境差异，未深究是精简题库缺哪份清单文件所致，如实记录，不代为绕过）；报了 DONE 后仍建议按next_command 跑一次 bank_compile.py check 复核。",
+  "第6步（教学内容改动单）next_command 用 qpack.py get 取材，但 qpack.py get 不接受 --profile/--bank，其默认题库路径解析在本云端环境下会退回本地 Mac 路径（测试组6已发现并如实记录，属 qpack.py 自身的环境相关缺口，不在本工具改动范围——不修改 SK 已有脚本）；模型实际取材时需在 SK 环境下核实 qpack.py 的题库路径解析是否已支持云端仓库根，或改用 --keys-file 批量模式。",
+  "第7步（题肢准入）复用既有 check_drill_admission.py 的 candidates/decisions/report 三元组作为“已裁决”的判据（status=='pass'），但候选/裁决文件本身如何从新卷选择题的错项自动切出候选清单，仍是模型的活，本工具不提供该切分逻辑，只检查判据文件是否已存在且通过。",
+  "第8步“应收题”取 归属_<书代码> 属于 {IN, COLLECTED} 的题；COLLECTED 表示已通过孪生/别名题并入书中、不需要再插一次——这一假设建立在归属表 v4 README 的说明上，未在本工具里重新验证COLLECTED 判定本身是否可靠（那是归属表流水线自己的职责）。",
+  "第9步只检查 09_layout/09_health/09_publish 三份报告是否已产出、layout 报告的 pending/blocked_count/toc_version_problems 是否全 0，不深入解析 batch_health 报告里的 FAIL 明细（真实必修三当前稿本身已有 5 处既存 FAIL，与是否插入新题无关，本工具不判断这些 FAIL 是否“新增”——如需要新增FAIL判定，应比对 batch_health 的 --baseline 上一批 输出，这属于 batch_health/publish_review 自己的职责，intake_run 只确认报告已产出）。云端最高只报 NEEDS_LOCAL，从不报 DONE（CLAUDE.md：定稿渲染与页码一律回本地做）。",
+  "current_docx_for_book() 对必修三按 central_state.working_head 的文件名在仓库里定位当前稿；对六本无 central_state 的草案书要求 workspace 目录下恰好一份 .docx，多于一份时报 NEEDS_LOCAL（需本地指定），没有实现更复杂的“取最新 mtime”之类猜测——避免猜错稿子。",
+  "clai/files 模式（原件尚未登记 exam_id、只给文件路径）的第1步判据是“workdir 下已有覆盖这些文件路径的 source_intake 报告”，按绝对路径字符串精确匹配；文件被移动/改名后重新跑一次source_intake 即可，不做基于内容哈希的宽松匹配（source_intake.py 自己的报告里其实有 sha256，可以做得更宽松，留作后续改进，已如实标注不做）。",
+  "next_command 里涉及真实文件路径列表时用空格 join（如 --files a.pdf b.docx），若路径本身含空格会被 shlex 切错——这是本工具和它引用的姊妹工具共同的既有写法（source_intake.py 等既有工具的用法示例也是如此），未额外加引号转义，测试用的真实文件名都不含空格，未触发。"
+ ],
+ "profile_fields_needed": [],
+ "needs_user_decision": [
+  "第3步在云端环境下 bank_compile.py check --exam 报“不在转换主清单或 questions/ 里”（即使questions/<id>/ 目录确实存在）——需要本地主代理确认精简题库是否缺失某份“转换主清单”文件，还是 bank_compile.py 的默认路径解析本身需要一个云端专用参数；在此之前第3步的 DONE 判定只能停留在“文件层证据”（目录+MD数+accepted），不能等价于 bank_compile 门禁全绿。",
+  "第6/7步的产物格式（baodian_insert_v1 改动单当“教学内容改动单”、check_drill_admission 的candidates/decisions 三元组当“题肢准入决定”）是本工具按现有 SK 工具反推出的约定，不是设计稿里写明的正式格式——请本地主代理确认这两个复用是否合适，或者是否需要另建专门的“教学内容改动单”/“题肢候选清单”格式与生成脚本（那属于设计稿第6/7步本该有、但本任务未要求新建的工具）。",
+  "workdir 下的目录约定（01_source_intake/02_exam_register/03_bank_compile/05_placement/06_insert/07_drill/09_layout/09_health/09_publish，按书细分的放 <书>/ 子目录）是本工具自定义的——此前没有任何脚本规定过这套目录结构，需要主代理确认是否登记进 profile 或规则文档，成为以后跑这四个新工具时的共同约定。"
+ ]
+}

@@ -1,0 +1,304 @@
+{
+ "tool": "exam_register",
+ "round": "r2",
+ "reviewer": "claude-cloud 审查子代理（Opus，非负责人）",
+ "date": "2026-09-25",
+ "reviewed_files": {
+  "exam_register.py": {
+   "lines": 1374,
+   "sha256": "55bce4b7ed9dc9755ed33bd8b21f168efd6bc02561679efc3c1a1c6117373e32",
+   "note": "与回执 返修_r1 files 段一致"
+  },
+  "run_tests_exam_register.py": {
+   "lines": 492,
+   "sha256": "004f55afe5e1a06a14d73840475962c061a2ed7c295c184a65956a1aedf0c43b",
+   "note": "与回执一致"
+  },
+  "回执/exam_register_返修_r1.json": {
+   "sha256": "d57eda29fb89b8a553c294075f6c69ff44cddf0d0c4f7df490c0a4ec6af73798"
+  },
+  "回执/exam_register_编写.json": {
+   "sha256": "bb449fe9e080b31295ed181b11cdddd97c78d8cb38b5f675985e44e8b892aa8f"
+  }
+ },
+ "verdict": "FAIL",
+ "verdict_reason": "没有 blocker。规格验收 1—5 按字面实跑都成立；r1 的 B2、M1、M2、M6、M7、M8、M9 已修好；B1、M3、M5 只修了一部分。另有 7 个 major，最要紧的是 M-A：改号链不检查占用卷自己的卷号对不对，就把它并入与它重复的另一张卷。结果是：只要一张新卷（包括规格点名要识别的高二卷）推出的建议号落在 BJ-2025-HD-QIZHONG 上，工具就建议把正确卷号 BJ-2025-HD-QIZHONG 并入错号 BJ-2024-HD-QIZHONG，并输出 2025→2024 的重定向，方向正好与 ledger 相反。其余 major：重定向表缺少本卷自己的旧→新条目；题库 OCR 串题被报成“复用”，回执也称之为“真实复用”；低覆盖卷只复用 1 题就被判为重复登记；有文字层但卷首无日期时，单凭文件名定届别；--exam-dir 不读该卷 README；2 条回归测试不可能失败，回执“修前失败”的说法没有依据。",
+ "r1_followup": [
+  {
+   "id": "B1",
+   "status": "部分修复",
+   "evidence": "check --exam-id BJ-2023-HD-QIZHONG → rename_plan=[BJ-2024-HD-QIZHONG retire_into BJ-2025-HD-QIZHONG；本卷→BJ-2024-HD-QIZHONG]，顺序与 ledger 一致（1a 实跑 PASS，PYTHONHASHSEED=5 复跑一致）；BJ-2024-HD-QIZHONG → chain_kind=already_registered，r1 的同义反复已消除。但 retire 的方向判断有误（见 M-A），redirects 缺本卷旧号（见 M-B）。"
+  },
+  {
+   "id": "B2",
+   "status": "已修复",
+   "evidence": "试卷.pdf 单独输入，在 PYTHONHASHSEED 11/23/97（测试 4b）和 1/42/777（本审查）下结果一致，两张都是 duplicate_registration 21/21；加上 细则.docx（规格用法）后两张都是 21/22 duplicate_registration，标签不再对调。"
+  },
+  {
+   "id": "M1",
+   "status": "已修复",
+   "evidence": "s2/s3/s4 合成件表现正确（6a–6d）；audit 全库 A 证据的 snippet 里没有一条落在题干（检索“习近平|总书记|会议|发布|开幕|召开”，结果为 0）；BJ-2026-CY-QIZHONG 的 A 证据改为卷首网站标题。残留问题见 minor m3、m5。"
+  },
+  {
+   "id": "M2",
+   "status": "已修复",
+   "evidence": "r1 s1_nodate → NEEDS_LOCAL，退出 1；s5_fullwidth → 2025 OK，退出 0；audit 中 BJ-2024-CY-YIMO（“２０２４<PUA>４”）、BJ-2026-SY-YIMO 均按 A 证据判为 OK。"
+  },
+  {
+   "id": "M3",
+   "status": "部分修复",
+   "evidence": "无文字层 PDF（文件名含 2024.11）→ NEEDS_LOCAL，不给建议号（5d）。但原件有文字层、卷首没有日期时，仍只凭文件名定届别并给出建议号和改号链（见 M-E）。"
+  },
+  {
+   "id": "M4",
+   "status": "已修复（测试侧未跟上）",
+   "evidence": "summary 已有 weak_only=14、needs_local=14、verified_by_A=51、verified_by_B=5；audit 在有 weak_only 时退出 1。r1 修复建议要求“2a 断言 cohort_status∈{OK}”，这一条没做，而且 2a 查的是一个不存在的键（见 M-G）。本审查逐一核对 7 张对照卷，全部为 OK，并且有 A 或 B 证据。"
+  },
+  {
+   "id": "M5",
+   "status": "部分修复",
+   "evidence": "覆盖率实测 1677/1758=95.4%（回执写 1682/95.7%/76，实际缺 81 题）；低覆盖卷写入 issue 并在 summary 汇总（5 张）。但回执所称“真实正例”（2022~2024 高考 Q8/Q9/Q13）实为题库 OCR 串题（见 M-C）；10 对参考复用对里 9 对不报是正确行为（参考对来自后一卷讲评/细则节引用的旧高考题，题面层没有重叠），但回执说“仍未检出的一对”，与实际不符（见 m13）。"
+  },
+  {
+   "id": "M6",
+   "status": "已修复（测试 4e 无效）",
+   "evidence": "r1 s11（复用题在第 4433 字）→ shared_or_reused 1/37，已检出；9 题中 1 题复用 → 1/9 复用；切题失败时降级。测试 4e 的复用点在第 2359 字，仍在旧版 4000 字窗口内，修复前也能通过（见 M-G）。另有同类误判换了路径出现：低覆盖卷的分母问题（见 M-D）。"
+  },
+  {
+   "id": "M7",
+   "status": "已修复",
+   "evidence": "--exam-dir 指向题库内本卷目录 → 退出 0，issues=[]；再加 --claimed-id BJ-2027 也不会与自身比对。"
+  },
+  {
+   "id": "M8",
+   "status": "已修复（略过严）",
+   "evidence": "不传 --profile 时，--report 写到 原材料/后勤管理/云端/题库 一律退出 3；经 /tmp 下指向题库的符号链接写出也退出 3；“构建/../../../../x.json”逃逸退出 3；非 .json 退出 3；冻结册 check/audit 带 --report 退出 3，只读运行退出 0。过严的情形见 m8。"
+  },
+  {
+   "id": "M9",
+   "status": "基本修复",
+   "evidence": "报告 inputs 含 exams_csv_sha256、exam_files_csv_sha256，--files 模式含 files_sha256；check 模式有 summary；thresholds 齐全。exam-id 模式实际读取的原件、README 和逐题 MD 没有 SHA（见 m11）。"
+  }
+ ],
+ "tests_rerun": {
+  "command": "cd C; python3 -B run_tests_exam_register.py",
+  "result": "合计 40 条，失败 0 条，用时 219.7s，退出码 0（复现回执的 40/40）",
+  "log": "审查/exam_register_r2/rerun_tests.log",
+  "caveat": "40 条全过不等于 40 条都有效：2a 的“届别不符”断言查的是 stdout 里不存在的键 id_mismatch，已知错号卷放进去也会通过（probe_test_validity.py 实证）；4e 的复用点在第 2359 字，旧版读 4000 字也能检出；2b 的“真实正例”其实是串题。另有 32/40 条记录不打印用时。"
+ },
+ "baseline_guard": {
+  "command": "python3 -B tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": "测试脚本内前后各跑一次，全部探针跑完后又单独跑一次：files=3468，changed/removed/added 均为空，skill_pycache=[]，退出 0",
+  "log": "审查/exam_register_r2/baseline_guard_after_probes.log",
+  "sk_pycache": "find .claude -name __pycache__ 为空；候选目录下也没有 __pycache__（本审查全程用 -B 运行）"
+ },
+ "vermin": "vermin -t=3.9- --no-tips --eval-annotations --violations exam_register.py run_tests_exam_register.py → 无违规，Minimum required 3.7，退出 0",
+ "blockers": [],
+ "majors": [
+  {
+   "id": "M-A",
+   "title": "改号链方向错误：占用卷自己的卷号正确、只是与另一张错号卷互为重复时，工具建议把正确卷号并入错号，并生成“正确号→错号”的重定向",
+   "detail": "build_rename_chain（L733-740）遇到占用卷与任何一张卷判为 duplicate_registration 时，直接 terminal=retire into 对方，不看占用卷自己的 id_mismatch，也不看对方卷号的届别是否正确。1a 能通过，是因为占用卷 BJ-2024-HD-QIZHONG 本身错号；换成正确占用者 BJ-2025-HD-QIZHONG，方向就反了。凡是新卷推出的建议号落在 BJ-2025-HD-QIZHONG 上、又不是那张卷本身的情形，都会中招：规格点名的高二卷（2023—2024 学年高二 → 届别 2025）、真实的另一张同届卷、只凭文件名推出 2025 的卷（M-E）。工具给出的建议是把 BJ-2025-HD-QIZHONG 撤销并入 BJ-2024-HD-QIZHONG，再把 2025 号让给新卷；重定向表写 BJ-2025-HD-QIZHONG→BJ-2024-HD-QIZHONG，与 ledger（2024→2025）正好相反。题库负责人照此执行，正确卷号会被让给另一张卷，引用 2025 的书稿标签会被重定向到错号。",
+   "evidence": "cd C; python3 -B exam_register.py check --files 审查/exam_register_r2/synth/r1_new_hd_2025_qizhong.docx --region 海淀 --stage 期中 --profile profiles_cloud/bixiu3.json → cohort 2025 OK，duplicates=[]，chain_kind=chain，rename_plan=[{old:BJ-2025-HD-QIZHONG, retire_into:BJ-2024-HD-QIZHONG, reason:与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销…}, {old:null, new:BJ-2025-HD-QIZHONG}]，redirects=[{old:BJ-2025-HD-QIZHONG, new:BJ-2024-HD-QIZHONG}]。换成 r2_grade2_hd.docx（真高二卷，grade2=true）和 2024.11海淀高三期中试卷.docx，输出完全相同。记录见 审查/exam_register_r2/probe_cli_r2_logic.json 的 L1/L2/L3。",
+   "fix_hint": "retire 前先判定两张互为重复的卷里哪一张卷号正确：只有占用卷自身 id_mismatch，且对方的届别与对方卷号一致时，才 retire 占用卷 into 对方；占用卷卷号正确时，终止为 blocked_conflict（“建议号已由同届同区同阶段的正确登记占用，本卷若确为另一场考试（如高二卷），卷号体系需人工定”），不给 redirects。测试补一条：新卷建议号 = BJ-2025-HD-QIZHONG、内容不同 → 断言 chain_kind≠chain，且 redirects 里没有 BJ-2025-HD-QIZHONG 作 old。"
+  },
+  {
+   "id": "M-B",
+   "title": "“旧→新重定向表草案”不完整：缺本卷自身的旧号→新号，也不提示 BJ-2024-HD-QIZHONG 改完后会被另一张卷复用（ledger 要避免的“同一卷号前后指不同的卷”）；测试 1a 把这个不完整的表断言为正确",
+   "detail": "exam-id 模式下本卷旧号已知（exam_id_hint），rename_plan 最后一步却写 old=None，redirects 只有 [{BJ-2024-HD-QIZHONG→BJ-2025-HD-QIZHONG}]，没有 BJ-2023-HD-QIZHONG→BJ-2024-HD-QIZHONG。ledger 说必修三有 9 处“2023海淀期中”要改成 2024，这些旧引用在表里查不到去处。按计划执行第 2 步后，BJ-2024-HD-QIZHONG 变成 2023.11 那张卷的有效卷号，但表里仍把它指向 BJ-2025-HD-QIZHONG，正是 ledger 所说的“同一卷号前后指不同的卷”。工具对此没有任何提示。",
+   "evidence": "cd C; python3 -B exam_register.py check --exam-id BJ-2023-HD-QIZHONG --profile profiles_cloud/bixiu3.json → redirects=[{'old':'BJ-2024-HD-QIZHONG','new':'BJ-2025-HD-QIZHONG'}]，rename_plan[1]={'old': None, 'new':'BJ-2024-HD-QIZHONG',…}。run_tests L145-150 把这两者作为精确期望断言。",
+   "fix_hint": "exam-id 模式下最后一步 old 填 exam_id_hint，redirects 追加本卷旧→新；某个卷号在 redirects 里既作 old 又作 new 时，给条目加 effective_after_step，或另列 reused_ids，并在 note 中写明“BJ-2024-HD-QIZHONG 第 1 步后作废、第 2 步后指向原 2023.11 卷，重定向须按步骤/时间点生效”。1a 的断言随之更新。"
+  },
+  {
+   "id": "M-C",
+   "title": "题库 OCR 串题被报成“复用”：低置信 OCR 节（题库标注“回原页对照前不得采用”）混入了往年对照例题；配对里不带 basis，使用者无法分辨；回执称其为“真实复用”，测试 2b 把它当作“真实正例”",
+   "detail": "返修把 fallback_low_confidence（OCR 候选节）纳入指纹。containment 的分母取两者中较小的集合，一段多页 OCR 文本里只要夹着别卷某题，就能对该题得到接近 1 的分数。BJ-2024-BJ-GAOKAO 的 Q8/Q9/Q13 用的正是这种节。该卷 README 第 2 节写明，这份“试题分析”PPT 扫描件“在多处插入往年（2021/2022/2023年）同类题型对照例题”。Q9 的 OCR 节长 2331 字，含 “<<<OCR p017>>> 23年 二道逻辑题 6. 画好一幅植物博物画… 7. 2023年4月…火星…”。所以 2022~2024 高考 Q8/Q9/Q13（0.68/1.0/0.67）和新冒出来的 2023~2024 高考（Q6、Q7 → 2024-Q9，0.92/0.62，两道不同的题同时命中同一题）都是 OCR 串题，不是“少数题复用”。工具输出 shared_or_reused_questions，使用者会得出“2024 高考复用了 2022 高考 3 题”这种错误结论。回执 summary 写“能查出此前完全检不出的真实复用对”，2b 测试名为“真实正例”。按 r1 原文，这一对本来就是“串题”。",
+   "evidence": "审查/exam_register_r2/probe_reuse_pairs_r2.py：BJ-2022-BJ-GAOKAO~BJ-2024-BJ-GAOKAO top=[(1.0,Q9,bank_alias,Q9,fallback_low_confidence),(0.682,Q8,…,fallback_low_confidence),(0.674,Q13,…,fallback_low_confidence)]。用工具的 extract_stem_from_md 抽 BJ-2024-BJ-GAOKAO-Q9，题面依次含“OCR 候选存在真实错字与串行…不得采用”“<<<OCR p017.ocr.txt>>>”“23年 二道逻辑题”，以及 2023 高考 Q6、Q7 原文。questions/BJ-2024-BJ-GAOKAO/README.md 第 2 节写有“往年（2021/2022/2023年）同类题型对照例题”。audit 报告 BJ-2023-BJ-GAOKAO 的 duplicates pairs=[(Q6→Q9,0.9237),(Q7→Q9,0.6176)]，pairs 里没有 basis 字段。",
+   "fix_hint": "pairs 里记录双方的 basis。任一方为 fallback_low_confidence 时，单列 kind='needs_verification_low_confidence'（或加 possible_cross_contamination=true），不计入 shared_or_reused/duplicate_registration 的正式计数。多道候选题命中对方同一题时，提示可能串题。回执撤回“真实复用”的说法。2b 改为断言该对被标成“低置信/疑似串题”，另找一个真实复用正例（或用合成件“期末卷原样复用某高考题”，r1 的 s10/s11 即可）。"
+  },
+  {
+   "id": "M-D",
+   "title": "查重分母只算抽得出题面的题：低覆盖卷只复用 1 题就被判 duplicate_registration 1/1，且 fraction_reliable=true（与 r1 M6 同类的“复用判成重复登记”，换了一条路径出现）",
+   "detail": "scan_duplicates 的 total=len(questions)，只计有指纹的题。exam-id 和 --exam-dir 模式下覆盖率可能很低（题库里 BJ-2025-CY-YIMO 为 1/21，另有 4 张卷低于 0.7），这时 1 题复用就成了“占比 1.0”。低覆盖的 issue 虽然另外写了，kind 仍是 duplicate_registration，fraction_reliable 仍为 true，自相矛盾。M-A 的 retire 逻辑又只看 kind，这样的误判还会被带进改号链。",
+   "evidence": "按 审查/exam_register_r2/setup_examdir_probes.sh 复制 BJ-2025-CY-YIMO 到临时区，仅把 Q18（全卷唯一抽得出题面的一题）换成 BJ-2026-HD-QIZHONG-Q17 的 MD；python3 -B exam_register.py check --exam-dir <临时区>/新卷_CYYIMO --region 朝阳 --stage 一模 --profile profiles_cloud/bixiu3.json → duplicates=[{BJ-2026-HD-QIZHONG, duplicate_registration, matched 1, total 1, fraction_reliable True}]，同时 fingerprint_coverage={total 21, found 1}。",
+   "fix_hint": "分母用 fingerprint_coverage.total（卷内全部题数），或者在覆盖率低于 MIN_FINGERPRINT_COVERAGE 时令 fraction_reliable=False，并按 M6 的做法降级。build_rename_chain 只认 fraction_reliable=True 的 duplicate_registration。"
+  },
+  {
+   "id": "M-E",
+   "title": "r1 M3 只修了一半：原件有文字层、卷首没有日期时，仍只凭文件名定届别，并照常生成建议卷号和改号链",
+   "detail": "check_one L909 只在 no_raw_text 时把 WEAK_ONLY 改判为 NEEDS_LOCAL。原件有文字层但卷首不含学年或日期（真实原卷常见，如“北京市海淀区高三思想政治期中练习”），D 级文件名证据就单独决定 cohort_year，照常给出 suggested_id 并展开改号链，还会叠加触发 M-A 的反向建议。规格原文：目录名/文件名“最弱，只作旁证，不能单独定届别”。exams.csv（C 级）在 exam-id 模式下单独定届别，尚有“弱证据”标签兜底；--files 模式下纯文件名定届别，属于规格明令禁止的情形。",
+   "evidence": "cd C; python3 -B exam_register.py check --files 审查/exam_register_r2/synth/2024.11海淀高三期中试卷.docx --region 海淀 --stage 期中 --profile profiles_cloud/bixiu3.json → cohort_year 2025，cohort_status WEAK_ONLY，suggestion BJ-2025-HD-QIZHONG（占用），chain_kind=chain，rename_plan 为 M-A 的反向计划；evidence 里 A/B 为空，只有 D 级“路径/文件名：…2024.11…”。",
+   "fix_hint": "可用证据只有 D 级时，一律 cohort_year=None、status=NEEDS_LOCAL，D 只放在 hint 里，不生成建议号，不展开改号链。只有 C 级时（exam-id）保留 WEAK_ONLY，但也不展开改号链。测试补“有文字层无日期 + 文件名含日期”一例。"
+  },
+  {
+   "id": "M-F",
+   "title": "--exam-dir 模式不读该卷目录的 README.md（B 级证据缺失），README 写明学年的卷被判为 NEEDS_LOCAL，还给出不实提示“题库无可查文字证据，需本地看图”",
+   "detail": "Tier B 的 README 只在 exam_id_hint 分支读取（L866-873）。--exam-dir 分支只读逐题 MD 的“身份…”小节，而这些小节里没有学年或日期。no_bank_text 的判定也只看 exam_id_hint，于是提示语说题库无可查文字证据。规格 B 层列明“题库该卷 README.md、sources/transcriptions/*.md、逐题 MD 里的卷首说明”，而 --exam-dir 正是“刚产出的逐题 MD”这条主用法。同一份内容，用 --exam-id 跑是 2026 OK，用 --exam-dir 跑是 NEEDS_LOCAL；错号副本 BJ-2024-HD-QIZHONG 在 --exam-dir 下也查不出届别不符。",
+   "evidence": "setup_examdir_probes.sh 后：check --exam-dir <临时区>/examdir/新卷_HDQIMO --region 海淀 --stage 期末 → cohort null，NEEDS_LOCAL，issues[0]='原件无文字层且题库无可查文字证据，需本地看图核实届别'（README 首行为“海淀区 2025-2026 学年高三第一学期期末练习”；同内容 --exam-id BJ-2026-HD-QIMO → OK 2026）。check --exam-dir <临时区>/examdir/BJ-2024-HD-QIZHONG → NEEDS_LOCAL，没有 id_mismatch（--exam-id 下为 2025 且报不符）。记录见 probe_cli_r2_examdir.json。",
+   "fix_hint": "--exam-dir 分支读 md_dir/README.md 做 B 层（与 exam-id 同口径），能找到 sources/transcriptions/*.md 时也读；no_bank_text 改为按实际读到的 README 判定。测试补一条“题库外副本 + README 有学年 → OK”。"
+  },
+  {
+   "id": "M-G",
+   "title": "回归测试有 2 条修复前也会通过，回执“每条均修前失败、修后通过”没有依据（引用的 verify.log 不存在）",
+   "detail": "(1) 2a 用 d.get('id_mismatch') 判“误报届别不符”，但 cmd_check 的 stdout JSON 没有 id_mismatch 键，断言恒为真；r1 M4 要求的“cohort_status∈{OK}”也没加。(2) 4e 名为“复用题在第 N 字之后（远超旧版 4000 字上限）”，实际 N=2359，仍在旧版 4000 字窗口内，与 r1 的 s10（2231 字，旧版能检出）同一类，修复前同样能通过。(3) run_tests 文件头称“修前失败、修后通过见 审查/exam_register_返修_r1_verify.log 里 git stash 前后各跑一次的对照记录”，仓库根和 /tmp/claude-0 下都找不到这个文件，这些文件也没有 git 历史。本审查另行核实了实际行为：7 张对照卷全部 OK 且有 A/B 证据；r1 s11（4433 字）现在能检出。所以验收本身成立，问题出在测试有效性和回执措辞。",
+   "evidence": "审查/exam_register_r2/probe_test_validity.py：把已知错号卷 BJ-2023-HD-QIZHONG、BJ-2024-CY-QIZHONG 按 2a 原样判定 → 'stdout keys 含 id_mismatch? False'，2a 判定 PASS。rerun_tests.log 第 17 行：'4e M6 正例：复用题在第 2359 字之后（远超旧版 4000 字上限）仍能检出'。在仓库根和 /tmp/claude-0 下 find -name '*返修_r1_verify*' 均无结果。",
+   "fix_hint": "2a 断言 cohort_status=='OK'、cohort_year==卷号年份，并从 issues 里查“不符”字样（或让 stdout 输出 id_mismatch）；4e 让复用题落在第 4500 字之后（例如把 filler_long[:20] 改为 [:45]，或直接用 r1 的 s11）；回执删掉 verify.log 引用，或补上真实的对照记录。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "m1",
+   "title": "行数 1374，超出 900 行目标约 53%",
+   "detail": "回执已说明原因。M-C/M-D/M-E 的修法大多是改判定条件，不需要新增大段代码。"
+  },
+  {
+   "id": "m2",
+   "title": "原始 DOCX 仍用 python-docx 直读，没走 docx_lib；回执说“走 docx_lib 要伪造 expect_sha256”，与事实不符",
+   "detail": "docx_lib.open_docx(path, expect_sha256=None) 的 SHA 参数本来可选。python-docx 的 paragraphs 不含表格和文本框，卷首放在表格里的原卷会漏掉 A 证据。共同约定 3 要求“读写 DOCX 底层一律用 docx_lib”。"
+  },
+  {
+   "id": "m3",
+   "title": "B 层 README 窗口是“前 1000 字的叙述”而不是卷首说明节；A/B 冲突不报 CONFLICT",
+   "detail": "BJ-2023-HD-QIZHONG 的 B 证据里有一条“2022—2023学年”，出自 README 叙述另一张卷（“卷首原文是‘海淀区2022—2023学年第二学期期中练习…2023.04’”），被当成本卷证据；文件头 docstring 写“README.md 全文”，实际只读前 1000 字。规格写“来源冲突列全部证据标 CONFLICT”，工具在 A 层有证据时直接采信 A，A/B 不一致不写 issue（本例 A 正确，结论没受影响）。建议 B 层读 README 的“卷身份/卷首说明”节，A/B 不一致时至少写一条 issue。"
+  },
+  {
+   "id": "m4",
+   "title": "14 张 WEAK_ONLY 里有 13 张卷首其实写着年份，工具不认",
+   "detail": "“2024届高三”“2023届高三下学期一模”（届别的直接写法）、“2025 北京房山高三一模”一类一模/二模网站标题（3—6 月考，年份就是届别），以及“2025 北京东城高三(上)期末”一类期末标题，都没有规则处理（probe_weak_headers.py）。所以 ledger“全部期末卷无误”在 13 张在册期末卷中只有 7 张能独立核实（3 张 WEAK_ONLY、3 张 NEEDS_LOCAL）。建议增加“YYYY届”→届别=YYYY；一模/二模/高考的网站标题→年份即届别；期末的网站标题作弱证据。"
+  },
+  {
+   "id": "m5",
+   "title": "卷首截到第一个行首题号，日期排在“考生须知 1．…”之后的卷会被截掉",
+   "detail": "r7_header_date_after_notice.docx → NEEDS_LOCAL（本应为 2025）。截断点可以跳过紧跟在“考生须知/注意事项”之后的编号，或改为截到“第一部分/一、”。"
+  },
+  {
+   "id": "m6",
+   "title": "匹配计数不是一一配对",
+   "detail": "audit 中 BJ-2025-HD-QIZHONG vs BJ-2024-HD-QIZHONG 报 22/22，而对方只有 21 题（Q25 是 Q16 材料的 OCR 碎片，也命中 2024-Q16，多对一）；--files 遇到考生须知编号时，真 Q1–Q4 并成一段，整卷复印报 19/19。建议对每张对手卷做一对一配对（按分数贪心即可），并报告对手卷题数。"
+  },
+  {
+   "id": "m7",
+   "title": "DUP_EXAM_FRACTION=0.5 用 >=，恰好一半就判 duplicate_registration",
+   "detail": "11/22 复用 → duplicate_registration（L8）。规格写的是“大部分题与同一张已有卷相同”，应当用 >0.5，或把阈值调高。"
+  },
+  {
+   "id": "m8",
+   "title": "补充守卫过严：允许的位置（临时区、候选 构建/）只因输入文件在同一目录就被拒，提示还自相矛盾",
+   "detail": "--files 临时区/synth/x.docx --report 临时区/synth/sub/r.json → 退出 3；--files C/构建/p/in.docx --report C/构建/p/r.json → 退出 3，提示“落在受保护目录 …/构建/p 内（只允许 …/构建/ 之下或系统临时目录）”。建议输入所在目录只防“覆盖输入本身”，不当作受保护根。"
+  },
+  {
+   "id": "m9",
+   "title": "CLI 边角",
+   "detail": "--profile 路径不存在 → 报“内部错误：[Errno 2]…”，应归为输入错误；--raw-root 不存在 → 静默降级为 NEEDS_LOCAL 并提示“原件无文字层”，退出 1，应为输入错误、退出 2；--exam-dir 空目录 → NEEDS_LOCAL，应报输入错误；audit --limit -1 → 静默跑 84 张；exam-dir 模式不校验 --stage/--region（'春季'/'火星' 也照跑）；规格把 --stage 列为可选，工具没有从卷首推断阶段就直接拒绝。"
+  },
+  {
+   "id": "m10",
+   "title": "改号链终止语不准",
+   "detail": "占用卷为已撤销登记（BJ-2023-HD-QIMO）时，仍报“真实冲突”，不提已撤销、不应复用；占用卷本身 NEEDS_LOCAL 时，也写“自身届别证据与登记号一致”（其实没有证据）。复现：synth/r8_hd_2023_qimo_new.docx --region 海淀 --stage 期末。"
+  },
+  {
+   "id": "m11",
+   "title": "报告 inputs 的 SHA 不全，也没有独立的 profile 字段",
+   "detail": "exam-id 模式实际读取的原件（raw_files）、README、逐题 MD，以及 --exam-dir 下的 MD，都没有 SHA；profile 只是 inputs 里的一个路径字符串，没有 book_id 和文件 SHA。"
+  },
+  {
+   "id": "m12",
+   "title": "测试纪律",
+   "detail": "32/40 条记录不打印用时（回执 m7 称“每条 PASS 都带 Ns”）；REPO_ROOT 和 SCRATCH 硬编码为云端 /home/user 与写作会话的临时区，拷回本地不能直接重跑；bank_question_stem 在进程内 import exam_register，又没设 dont_write_bytecode，不加 -B 运行时会在工具所在目录写出 __pycache__/exam_register.cpython-311.pyc。临时区模拟 SK 实测会产生该文件；工具装进 SK 后，就是 SK 下的 __pycache__。"
+  },
+  {
+   "id": "m13",
+   "title": "回执数字与说法不准",
+   "detail": "覆盖率写 1682/1758=95.7%、缺 76 题，实测为 1677/95.4%、缺 81 题；称参考复用对“仍未检出的一对”，实际 10 对里 9 对未报（不报是对的：这 9 对的重叠都在后一卷的讲评/细则/教学建议节，是引用旧高考题，不在题面，见 probe_reuse_fullmd.py）；把 BJ-2024-BJ-GAOKAO~BJ-2026-HD-QIZHONG 解释为“题材/情境复用”，实际是 2026-HD-QIZHONG Q8 的“讲评来源块”引用了 2024 高考 Q18 的答案原文。"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "1a BJ-2023-HD-QIZHONG→届别2024、建议BJ-2024-HD-QIZHONG、报被占用与链式改号顺序",
+   "met": true,
+   "evidence": "A 证据来自教师版 docx 卷首“2023.11”；占用；rename_plan 顺序为先把 BJ-2024-HD-QIZHONG 并入 BJ-2025，再把本卷改为 BJ-2024，与 ledger 一致。redirects 不完整（M-B）；改号链在其他输入下方向会错（M-A）。"
+  },
+  {
+   "criterion": "1b BJ-2024-HD-QIZHONG→届别2025、与BJ-2025-HD-QIZHONG重复登记、配对题数对照20",
+   "met": true,
+   "evidence": "B 证据来自 README“2024—2025学年…2024.11”；duplicate_registration 21/21，逐题 Qn↔Qn 与 exam_identity.json 的 21 对 dup_alias_qid_pairs 完全一致（参考表的 20 按其备注扣除了 Q25 碎片）；chain_kind=already_registered。"
+  },
+  {
+   "criterion": "1c BJ-2024-CY-QIZHONG→届别2025、建议BJ-2025-CY-QIZHONG",
+   "met": true,
+   "evidence": "A 证据来自原卷“2024 ~ 2025 学年”“2024. 11”；建议号未占用。"
+  },
+  {
+   "criterion": "2 对照组届别无误、不误报重复；shared_or_reused 各对只报复用、不报重复登记",
+   "met": true,
+   "evidence": "本审查从 audit 报告逐一核对 7 张对照卷：全部 OK，且有 A 或 B 证据（CY/HD-QIZHONG 为卷首网站标题或日期，XC-QIMO 为 README 学年，XC-YIMO/CY-ERMO 为日期，两张高考为年份），没有 duplicate_registration。参考复用对无一被报成重复登记。但测试 2a 的届别断言恒真（M-G）；唯一被报成“复用”的一对是串题（M-C）。"
+  },
+  {
+   "criterion": "3 audit 全库列出全部届别不符与重复登记，与 ledger 对照，多报逐条说明",
+   "met": true,
+   "evidence": "届别不符恰为 3 张已知卷，重复登记恰为 HD 期中这一对，CONFLICT=0，retired=1；2026 两张期中卷由 A 证据核实。附带风险：13 张在册期末卷只有 7 张能独立核实，另有 3 张 WEAK_ONLY、3 张 NEEDS_LOCAL，都已计入 summary 并退出 1（m4）；3 条高考“复用”是串题（M-C）。"
+  },
+  {
+   "criterion": "4 --files 把 BJ-2025-HD-QIZHONG 原卷当新卷→届别2025、拦截为重复、说明两张怎么报；合成新卷不报重复并给建议卷号",
+   "met": true,
+   "evidence": "只给试卷.pdf 时两张都是 21/21 duplicate_registration，加细则.docx 后都是 21/22，只给试卷时换 3 个种子（测试 4b）、加细则时换 3 个种子（本审查），结果都一致；chain_kind=already_registered，提示“BJ-2025-HD-QIZHONG 已登记为同一场考试”。合成新卷 → 2027、无重复、BJ-2027-HD-QIZHONG 未占用；真卷改掉 18/22 题面 → 只报复用 4/22，给出建议号。另外，内容全新但建议号落在 BJ-2025-HD-QIZHONG 上的卷，会得到反向改号建议（M-A）。"
+  },
+  {
+   "criterion": "5 负例：卷号格式错/文件不存在→2；无文字层PDF→需本地；--report 落受保护目录→3",
+   "met": true,
+   "evidence": "格式错→2、GAOKAO 配非 BJ 区县→2、文件不存在→2、无文字层 PDF（含文件名带日期）→NEEDS_LOCAL 退出 1；书稿/题库/Skill/原材料/后勤管理/云端/符号链接/../ 逃逸→3（带或不带 profile 都一样）。"
+  },
+  {
+   "criterion": "共同约定：vermin 3.9 兼容、SK 无 __pycache__、真实文件不变",
+   "met": true,
+   "evidence": "vermin 无违规（最低 3.7）；baseline_guard files=3468，0 变化，skill_pycache=[]；测试进程内 import 在不加 -B 时会在工具所在目录留下 pyc（m12）。"
+  },
+  {
+   "criterion": "共同约定：退出码、中文提示无 traceback",
+   "met": true,
+   "evidence": "N1–N14 负例都没有 traceback（--debug 时才打印）；退出码基本符合约定，小偏差见 m9。"
+  },
+  {
+   "criterion": "共同约定：--report 字段（inputs 路径+SHA、profile、summary）、guard_write",
+   "met": true,
+   "evidence": "有 guard_write(kind='.json') 和补充守卫；冻结册写出→3，只读→0；check/audit 都有 summary；主要索引和 --files 有 SHA。缺失项见 m11，过严见 m8。"
+  },
+  {
+   "criterion": "共同约定：复用 bh/block_index/docx_lib/qpack，不另写识别逻辑；行数≤900",
+   "met": false,
+   "evidence": "区县/阶段表复用 block_index，题面小节复用 qpack.split_md/guide_fields/adopted_stem_heading/classify；原始 DOCX 仍用 python-docx 直读（m2）；1374 行，超出目标（m1）。"
+  }
+ ],
+ "adversarial_cases_run": [
+  "L1 内容全新、届别 2025 的海淀期中卷 → 反向改号：把 BJ-2025-HD-QIZHONG 并入 BJ-2024（M-A）",
+  "L2 真高二卷（2023—2024 学年高二）→ 2025，grade2=true，同样得到反向改号（M-A）",
+  "L3 有文字层无日期、文件名含 2024.11 → WEAK_ONLY 2025，给出建议号和反向链（M-E、M-A）",
+  "L4 试卷.pdf+细则.docx → 两张都是 21/22 duplicate_registration（B2 已修）",
+  "L5 r1 s11 复用题在第 4433 字 → 检出 1/37（M6 已修）",
+  "L6 考生须知编号 + 22 题整卷复印 → 19/19 duplicate_registration（m6）",
+  "L7 真卷只保留 4/22 题面 → shared 4/22，建议号 BJ-2027（验收 4 的“改掉大部分题面”）",
+  "L8 11/22 复用 → duplicate_registration（m7）",
+  "L9 日期在考生须知之后 → NEEDS_LOCAL（m5）",
+  "L10/L11 r1 s1 无日期 → NEEDS_LOCAL 退出 1；s5 全角+PUA → 2025 退出 0（M2 已修）",
+  "L12 r1 s8 HD-YIMO 文字版 → duplicate_registration 15/15（M5 已修）",
+  "L13 BJ-2025-HD-QIZHONG → 22/22，多对一（m6）；L14 exam-id 另给 --claimed-id，结果正常",
+  "E1/E3 --exam-dir 题库外副本 → 不读 README，报 NEEDS_LOCAL 并提示“题库无可查文字证据”（M-F）；E2 副本 → 两张 dup + already_registered",
+  "D1 低覆盖卷（1/21）只复用 1 题 → duplicate_registration 1/1（M-D）",
+  "R8 新卷建议号撞上已撤销的 BJ-2023-HD-QIMO → 报“真实冲突”，不提已撤销（m10）",
+  "PYTHONHASHSEED 1/42/777（试卷+细则）、5（1a）→ 结果一致",
+  "N1–N14：profile 不存在→2（报“内部错误”）、冻结册只读→0、exam-dir 指向文件→2、exam-dir 空目录→1（m9）、files 给目录→2、audit --limit -1→84 张（m9）、claimed-id 乱写→写 issue 后继续、ASM/小写卷号→2、--debug 放在子命令后打印 traceback、伪 docx→2、exam-dir 非法 stage/region 照跑（m9）、bank 不存在→2、raw-root 不存在→1（m9）",
+  "G1–G14：临时区/候选 构建/ 放行；符号链接指向题库、原材料、后勤管理、云端/、候选根目录、../ 逃逸、.txt、冻结册 audit 一律→3；输入与报告同目录时临时区和 构建/ 也被拒→3（m8）",
+  "2a 有效性：已知错号卷按 2a 原样判定也 PASS（M-G）",
+  "进程内 import exam_register（与 run_tests.bank_question_stem 相同）→ 工具所在目录生成 __pycache__（m12）"
+ ],
+ "probe_artifacts": "审查/exam_register_r2/：rerun_tests.log、baseline_guard_after_probes.log、make_synth_r2.py、probe_cli_r2.py（分组 logic/examdir/neg/guard，结果在 probe_cli_r2_<组>.json）、probe_test_validity.py、probe_reuse_pairs_r2.py、probe_reuse_fullmd.py、probe_weak_headers.py、setup_examdir_probes.sh、synth/*.docx（合成件副本）。探针运行时读写的是本会话临时区 scratchpad/review_exam_register_r2/；G2/G11 的正例报告曾写到 构建/exam_register_r2probe/，记录后已删除。重跑 run_tests 会按其设计刷新 构建/exam_register/test_*.json。本地复现时把脚本里的 S、R 改成本机路径。",
+ "priority_for_fix": [
+  "M-A",
+  "M-E",
+  "M-C",
+  "M-D",
+  "M-B",
+  "M-F",
+  "M-G"
+ ]
+}

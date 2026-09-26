@@ -1,0 +1,1153 @@
+{
+ "N1_real_hd2023_yimo_decimal_table": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": 2023,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2023-HD-YIMO",
+   "occupied": true,
+   "occupant": {
+    "exam_id": "BJ-2023-HD-YIMO",
+    "occupied": true
+   }
+  },
+  "chain_kind": "blocked_conflict",
+  "rename_plan": [
+   {
+    "old": "BJ-2023-HD-YIMO",
+    "new": null,
+    "reason": "BJ-2023-HD-YIMO 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+   }
+  ],
+  "redirects": [],
+  "reused_ids": [],
+  "duplicates": [
+   {
+    "exam_id": "BJ-2023-HD-YIMO",
+    "kind": "shared_or_reused_questions",
+    "matched": 20,
+    "total": 21,
+    "fraction_reliable": false,
+    "low_confidence_count": 0
+   }
+  ],
+  "fingerprint_coverage": null,
+  "issues": [
+   "建议卷号 BJ-2023-HD-YIMO 已被占用",
+   "原件题号切分失败或不可靠（可能中途漏题号、块长度异常），只能整卷粗略比对：下面的 duplicates 一律降级为 shared_or_reused_questions，不据此判定 duplicate_registration，需人工核实占比",
+   "shared_or_reused_questions：与 BJ-2023-HD-YIMO 匹配 20/21 题（占比 0.9524）",
+   "占用链存在无法机械判定的真实冲突（见 rename_plan 第一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2023-HD-YIMO，也不给出重定向表。"
+  ]
+ },
+ "N2_real_cy2026_ermo_teacher_decimal_table": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": 2026,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2026-CY-ERMO",
+   "occupied": true,
+   "occupant": {
+    "exam_id": "BJ-2026-CY-ERMO",
+    "occupied": true
+   }
+  },
+  "chain_kind": "blocked_conflict",
+  "rename_plan": [
+   {
+    "old": "BJ-2026-CY-ERMO",
+    "new": null,
+    "reason": "BJ-2026-CY-ERMO 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+   }
+  ],
+  "redirects": [],
+  "reused_ids": [],
+  "duplicates": [
+   {
+    "exam_id": "BJ-2026-CY-ERMO",
+    "kind": "needs_verification_low_confidence",
+    "matched": 0,
+    "total": 21,
+    "fraction_reliable": false,
+    "low_confidence_count": 20
+   }
+  ],
+  "fingerprint_coverage": null,
+  "issues": [
+   "建议卷号 BJ-2026-CY-ERMO 已被占用",
+   "原件题号切分失败或不可靠（可能中途漏题号、块长度异常），只能整卷粗略比对：下面的 duplicates 一律降级为 shared_or_reused_questions，不据此判定 duplicate_registration，需人工核实占比",
+   "疑似串题/低置信匹配：BJ-2026-CY-ERMO（20 处命中全部来自题库标注“回原页对照前不得采用”的 OCR 候选/含答案等低置信小节，可能是该小节混入了往年对照例题，不计入正式的复用/重复登记判定，需回原页核实，见 M-C）",
+   "占用链存在无法机械判定的真实冲突（见 rename_plan 第一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2026-CY-ERMO，也不给出重定向表。"
+  ]
+ },
+ "N3_examid_correct_hd2025_already_registered_as": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": "BJ-2025-HD-QIZHONG",
+  "cohort_year": 2025,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2025-HD-QIZHONG",
+   "occupied": false,
+   "occupant": null,
+   "already_registered_as": "BJ-2024-HD-QIZHONG"
+  },
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [
+   {
+    "exam_id": "BJ-2024-HD-QIZHONG",
+    "kind": "duplicate_registration",
+    "matched": 21,
+    "total": 22,
+    "fraction_reliable": true,
+    "low_confidence_count": 0
+   }
+  ],
+  "fingerprint_coverage": {
+   "total": 22,
+   "found": 22,
+   "ratio": 1.0,
+   "by_basis": {
+    "bank_guide": 21,
+    "fallback_low_confidence": 1
+   }
+  },
+  "issues": [
+   "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 21/22 题（占比 0.9545）",
+   "与 BJ-2024-HD-QIZHONG 比对时有 1 处候选题命中了已被更高分候选题占用的同一道对手题，已按一对一贪心匹配只取分数更高的那对，未重复计数（m6）"
+  ]
+ },
+ "N4_files_hd25_already_registered_as": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": 2025,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2025-HD-QIZHONG",
+   "occupied": true,
+   "occupant": {
+    "exam_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true
+   },
+   "already_registered_as": "BJ-2024-HD-QIZHONG"
+  },
+  "chain_kind": "already_registered",
+  "rename_plan": [],
+  "redirects": [],
+  "reused_ids": [],
+  "duplicates": [
+   {
+    "exam_id": "BJ-2024-HD-QIZHONG",
+    "kind": "duplicate_registration",
+    "matched": 21,
+    "total": 21,
+    "fraction_reliable": true,
+    "low_confidence_count": 0
+   },
+   {
+    "exam_id": "BJ-2025-HD-QIZHONG",
+    "kind": "duplicate_registration",
+    "matched": 21,
+    "total": 21,
+    "fraction_reliable": true,
+    "low_confidence_count": 0
+   }
+  ],
+  "fingerprint_coverage": null,
+  "issues": [
+   "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+   "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 21/21 题（占比 1.0）",
+   "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 21/21 题（占比 1.0）",
+   "BJ-2025-HD-QIZHONG 已登记为同一场考试（题面匹配 21/21 题），不应再注册新卷号；如需登记请先核实与 BJ-2025-HD-QIZHONG 是否确为同一场考试，而不是直接改号顶替它。"
+  ]
+ },
+ "N5_examdir_nonstandard_qfile_names": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": null,
+  "cohort_status": "NEEDS_LOCAL",
+  "suggestion": null,
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [],
+  "fingerprint_coverage": {
+   "total": 0,
+   "found": 0,
+   "ratio": 1.0,
+   "by_basis": {}
+  },
+  "issues": [
+   "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+  ]
+ },
+ "N5b_examdir_standard_names_control": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": null,
+  "cohort_status": "NEEDS_LOCAL",
+  "suggestion": null,
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [
+   {
+    "exam_id": "BJ-2024-HD-QIZHONG",
+    "kind": "duplicate_registration",
+    "matched": 21,
+    "total": 21,
+    "fraction_reliable": true,
+    "low_confidence_count": 0
+   },
+   {
+    "exam_id": "BJ-2025-HD-QIZHONG",
+    "kind": "duplicate_registration",
+    "matched": 21,
+    "total": 21,
+    "fraction_reliable": true,
+    "low_confidence_count": 0
+   }
+  ],
+  "fingerprint_coverage": {
+   "total": 21,
+   "found": 21,
+   "ratio": 1.0,
+   "by_basis": {
+    "bank_alias": 21
+   }
+  },
+  "issues": [
+   "原件无文字层且题库无可查文字证据，需本地看图核实届别",
+   "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 21/21 题（占比 1.0）",
+   "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 21/21 题（占比 1.0）"
+  ]
+ },
+ "N6_examdir_only_front_matter": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": 2026,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2026-CY-QIMO",
+   "occupied": true,
+   "occupant": {
+    "exam_id": "BJ-2026-CY-QIMO",
+    "occupied": true
+   }
+  },
+  "chain_kind": "blocked_conflict",
+  "rename_plan": [
+   {
+    "old": "BJ-2026-CY-QIMO",
+    "new": null,
+    "reason": "BJ-2026-CY-QIMO 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+   }
+  ],
+  "redirects": [],
+  "reused_ids": [],
+  "duplicates": [],
+  "fingerprint_coverage": {
+   "total": 0,
+   "found": 0,
+   "ratio": 1.0,
+   "by_basis": {}
+  },
+  "issues": [
+   "建议卷号 BJ-2026-CY-QIMO 已被占用",
+   "占用链存在无法机械判定的真实冲突（见 rename_plan 第一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2026-CY-QIMO，也不给出重定向表。"
+  ]
+ },
+ "N7_files_all_chunks_short": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": null,
+  "cohort_status": "NEEDS_LOCAL",
+  "suggestion": null,
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [],
+  "fingerprint_coverage": null,
+  "issues": [
+   "原件无文字层且题库无可查文字证据，需本地看图核实届别",
+   "原件均无可用文字层（或乱码文字层无法识别为中文），未能对原件做任何查重，重复登记/复用需本地核实"
+  ]
+ },
+ "N8_frozen_profile_readonly": {
+  "exit": 0,
+  "stderr": "",
+  "has_json": true
+ },
+ "N10_scanned_examid_exit_and_text": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": "BJ-2026-HD-YIMO",
+  "cohort_year": null,
+  "cohort_status": "NEEDS_LOCAL",
+  "suggestion": null,
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [],
+  "fingerprint_coverage": {
+   "total": 21,
+   "found": 16,
+   "ratio": 0.7619,
+   "by_basis": {
+    "fallback_low_confidence": 16
+   }
+  },
+  "issues": [
+   "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+  ]
+ },
+ "N11_examid_bj2023_hd_qizhong": {
+  "exit": 1,
+  "stderr": "",
+  "exam_id": "BJ-2023-HD-QIZHONG",
+  "cohort_year": 2024,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2024-HD-QIZHONG",
+   "occupied": true,
+   "occupant": {
+    "exam_id": "BJ-2024-HD-QIZHONG",
+    "occupied": true
+   }
+  },
+  "chain_kind": "chain",
+  "rename_plan": [
+   {
+    "old": "BJ-2024-HD-QIZHONG",
+    "retire_into": "BJ-2025-HD-QIZHONG",
+    "reason": "与 BJ-2025-HD-QIZHONG 判定为重复登记（21/21 题匹配，BJ-2024-HD-QIZHONG 自身登记号也确实与证据不符），应并入/撤销，不再单独占用卷号"
+   },
+   {
+    "old": "BJ-2023-HD-QIZHONG",
+    "new": "BJ-2024-HD-QIZHONG",
+    "reason": "上述步骤腾出 BJ-2024-HD-QIZHONG 后，本卷（现卷号 BJ-2023-HD-QIZHONG）改为该号"
+   }
+  ],
+  "redirects": [
+   {
+    "old": "BJ-2024-HD-QIZHONG",
+    "new": "BJ-2025-HD-QIZHONG",
+    "after_step": 1
+   },
+   {
+    "old": "BJ-2023-HD-QIZHONG",
+    "new": "BJ-2024-HD-QIZHONG",
+    "after_step": 2
+   }
+  ],
+  "reused_ids": [
+   "BJ-2024-HD-QIZHONG"
+  ],
+  "duplicates": [],
+  "fingerprint_coverage": {
+   "total": 23,
+   "found": 23,
+   "ratio": 1.0,
+   "by_basis": {
+    "bank_alias": 23
+   }
+  },
+  "issues": [
+   "登记号年份（2023）与证据推算届别（2024）不符",
+   "建议卷号 BJ-2024-HD-QIZHONG 已被占用",
+   "BJ-2024-HD-QIZHONG 已被占用，改号顺序建议：1. BJ-2024-HD-QIZHONG→BJ-2025-HD-QIZHONG（与 BJ-2025-HD-QIZHONG 判定为重复登记（21/21 题匹配，BJ-2024-HD-QIZHONG 自身登记号也确实与证据不符），应并入/撤销，不再单独占用卷号）；2. BJ-2023-HD-QIZHONG→BJ-2024-HD-QIZHONG（上述步骤腾出 BJ-2024-HD-QIZHONG 后，本卷（现卷号 BJ-2023-HD-QIZHONG）改为该号）；注意：BJ-2024-HD-QIZHONG 在本计划中既作为“旧号”被重定向出去，又被后续步骤重新指派给另一场考试——同一卷号在执行完不同步骤后指向不同的考试，引用它的旧材料要按rename_plan 的步骤顺序（对照 redirects 的 after_step）逐条改，不能把 redirects 当一次性替换表来批量替换。"
+  ]
+ },
+ "N12_decimal_table_synthetic_dup": {
+  "no_table": {
+   "exit": 1,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true,
+     "low_confidence_count": 0
+    }
+   ],
+   "chain_kind": null,
+   "suggestion": {
+    "suggested_id": "BJ-2027-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null,
+    "already_registered_as": "BJ-2026-HD-QIZHONG"
+   },
+   "issues": [
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 22/22 题（占比 1.0）"
+   ]
+  },
+  "with_table_line": {
+   "exit": 1,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "shared_or_reused_questions",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": false,
+     "low_confidence_count": 0
+    }
+   ],
+   "chain_kind": null,
+   "suggestion": {
+    "suggested_id": "BJ-2027-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "issues": [
+    "原件题号切分失败或不可靠（可能中途漏题号、块长度异常），只能整卷粗略比对：下面的 duplicates 一律降级为 shared_or_reused_questions，不据此判定 duplicate_registration，需人工核实占比",
+    "shared_or_reused_questions：与 BJ-2026-HD-QIZHONG 匹配 22/22 题（占比 1.0）"
+   ]
+  }
+ },
+ "N13_debug_positions": {
+  "debug_before": {
+   "exit": 2,
+   "tb": true
+  },
+  "no_debug": {
+   "exit": 2,
+   "tb": false,
+   "stderr": "输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'BJ-NOPE'\n"
+  },
+  "bad_bank": {
+   "exit": 2,
+   "tb": false,
+   "stderr": "输入/参数错误：题库根不存在：/no/such\n"
+  }
+ },
+ "N9_guard_variants": {
+  "traversal_构建_to_回执": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "candidate_root": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "txt_suffix_in_构建": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：输出必须是 .json 文件：r4_probe.txt\n"
+  },
+  "raw_root": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "other_book_dir": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "cloud_dir": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "symlink_to_skill_noprofile": {
+   "exit": 3,
+   "wrote": false,
+   "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  "scratch_ok": {
+   "exit": 0,
+   "wrote": true,
+   "keys": [
+    "generated_at",
+    "inputs",
+    "items",
+    "mode",
+    "summary",
+    "thresholds",
+    "tool",
+    "version"
+   ],
+   "inputs": {
+    "bank": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918",
+    "raw_root": "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料",
+    "profile": "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json",
+    "exams_csv_sha256": "8c3452f07ddaa91f3cbb48623737e66b9644415cc3a44706eda43bd10cf2552f",
+    "exam_files_csv_sha256": "cf300fec94aa0caa155adb23db4c4952805288217ec72ce7194f034b68818159",
+    "profile_sha256": "398e76441509a554627969b7d53ab6a63d924d8bb14832b080b23ab1e0781749",
+    "profile_book_id": "bixiu3"
+   },
+   "thresholds": {
+    "ngram_n": 10,
+    "dup_question_sim": 0.55,
+    "dup_exam_fraction": 0.5,
+    "min_text_len": 60,
+    "min_stem_len": 40,
+    "header_window": 1000,
+    "min_fingerprint_coverage": 0.7
+   }
+  },
+  "missing_parent": {
+   "exit": 3,
+   "stderr": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r4/no_such_dir\n",
+   "dir_created": false
+  }
+ },
+ "N14_audit_report": {
+  "exit": 1,
+  "summary": {
+   "exams_scanned": 85,
+   "id_year_mismatches": 3,
+   "has_duplicate_or_reuse": 2,
+   "conflicts": 0,
+   "needs_local": 11,
+   "weak_only": 11,
+   "retired": 1,
+   "low_fingerprint_coverage": 5,
+   "verified_by_A": 53,
+   "verified_by_B": 9,
+   "needs_verification_low_confidence_only": 3
+  },
+  "by_status": {
+   "OK": [
+    63,
+    null
+   ],
+   "NEEDS_LOCAL": [
+    11,
+    [
+     "BJ-2023-DC-YIMO",
+     "BJ-2024-DC-ERMO",
+     "BJ-2024-DC-YIMO",
+     "BJ-2025-HD-ERMO",
+     "BJ-2026-FS-YIMO",
+     "BJ-2026-FT-QIMO",
+     "BJ-2026-FT-YIMO",
+     "BJ-2026-HD-YIMO",
+     "BJ-2026-SJS-QIMO",
+     "BJ-2026-SY-ERMO",
+     "BJ-2026-TZ-YIMO"
+    ]
+   ],
+   "WEAK_ONLY": [
+    11,
+    [
+     "BJ-2024-SJS-YIMO",
+     "BJ-2025-DC-QIMO",
+     "BJ-2025-FS-YIMO",
+     "BJ-2025-SJS-YIMO",
+     "BJ-2025-SY-YIMO",
+     "BJ-2025-YQ-YIMO",
+     "BJ-2026-CP-ERMO",
+     "BJ-2026-CP-QIMO",
+     "BJ-2026-DC-QIMO",
+     "BJ-2026-HD-ERMO",
+     "BJ-2026-SJS-YIMO"
+    ]
+   ]
+  },
+  "nl_wo_detail": {
+   "BJ-2023-DC-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2023,
+    "raw": [
+     [
+      "北京市东城区2022-2023学年度第二学期高三综合练习（一）思想政治试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2023，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2024-DC-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2024,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2024，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2024-DC-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2024,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2024，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2024-SJS-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.docx",
+      true,
+      0.732
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2025-DC-QIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7444
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2025-FS-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7583
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2025-HD-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2025,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2025，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2025-SJS-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7115
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2025-SY-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.752
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2025-YQ-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7398
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2026-CP-ERMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "2026北京昌平高三二模政治（教师版）.docx",
+      true,
+      0.7993
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2026-CP-QIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "2026北京昌平高三（上）期末政治（教师版）.docx",
+      true,
+      0.8097
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2026-DC-QIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7402
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号",
+     "题面指纹覆盖率偏低（11/21=0.5238，低于 0.7）：部分题抽不出题面，分母改用覆盖率的 total（M-D），查重结果仍可能漏检，见 duplicates_skipped_no_stem"
+    ]
+   },
+   "BJ-2026-FS-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2026-FT-QIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）",
+     "题面指纹覆盖率偏低（13/21=0.619，低于 0.7）：部分题抽不出题面，分母改用覆盖率的 total（M-D），查重结果仍可能漏检，见 duplicates_skipped_no_stem"
+    ]
+   },
+   "BJ-2026-FT-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2026-HD-ERMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "2026北京海淀高三二模政治（教师版）.docx",
+      true,
+      0.8009
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2026-HD-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "试卷.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2026-SJS-QIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "答案及评分参考.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2026-SJS-YIMO": {
+    "status": "WEAK_ONLY",
+    "weak_hint": null,
+    "raw": [
+     [
+      "试卷.pdf",
+      true,
+      0.7393
+     ]
+    ],
+    "issues": [
+     "仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号"
+    ]
+   },
+   "BJ-2026-SY-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "26顺义二模(1).pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   },
+   "BJ-2026-TZ-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "weak_hint": 2026,
+    "raw": [
+     [
+      "2026北京通州高三一模政治.pdf",
+      false,
+      0.0
+     ]
+    ],
+    "issues": [
+     "原件无可用文字层，仅 exams.csv（已知会错）显示届别可能为 2026，需本地看图核实届别，不据此生成建议卷号（M-K）"
+    ]
+   }
+  },
+  "r3_13_now": {
+   "BJ-2023-DC-ERMO": {
+    "status": "OK",
+    "cohort": 2023,
+    "AB_evidence": [
+     [
+      "B",
+      "school_year",
+      "2022—2023 学年",
+      "exam_front_matter.md"
+     ],
+     [
+      "B",
+      "exam_date",
+      "2023.5\n",
+      "exam_front_matter.md"
+     ]
+    ]
+   },
+   "BJ-2023-DC-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2024-DC-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2024-DC-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2025-HD-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-CY-QIMO": {
+    "status": "OK",
+    "cohort": 2026,
+    "AB_evidence": [
+     [
+      "B",
+      "school_year",
+      "2025~2026学年",
+      "00_exam_front_matter.md"
+     ],
+     [
+      "B",
+      "exam_date",
+      "2026.1\n",
+      "00_exam_front_matter.md"
+     ]
+    ]
+   },
+   "BJ-2026-FS-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-FT-QIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-FT-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-HD-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-SJS-QIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-SY-ERMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   },
+   "BJ-2026-TZ-YIMO": {
+    "status": "NEEDS_LOCAL",
+    "cohort": null,
+    "AB_evidence": []
+   }
+  }
+ },
+ "N7b_files_readable_but_all_chunks_short": {
+  "exit": 0,
+  "stderr": "",
+  "exam_id": null,
+  "cohort_year": 2027,
+  "cohort_status": "OK",
+  "suggestion": {
+   "suggested_id": "BJ-2027-HD-QIZHONG",
+   "occupied": false,
+   "occupant": null
+  },
+  "chain_kind": null,
+  "rename_plan": null,
+  "redirects": null,
+  "reused_ids": null,
+  "duplicates": [],
+  "fingerprint_coverage": null,
+  "issues": []
+ },
+ "N5c_examdir_nonstandard_names_with_readme_exit0": {
+  "nonstandard_Qn": {
+   "exit": 0,
+   "stderr": "",
+   "exam_id": null,
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "suggestion": {
+    "suggested_id": "BJ-2025-CY-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "reused_ids": null,
+   "duplicates": [],
+   "fingerprint_coverage": {
+    "total": 0,
+    "found": 0,
+    "ratio": 1.0,
+    "by_basis": {}
+   },
+   "issues": []
+  },
+  "standard": {
+   "exit": 1,
+   "stderr": "",
+   "exam_id": null,
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "suggestion": {
+    "suggested_id": "BJ-2025-CY-QIZHONG",
+    "occupied": false,
+    "occupant": null,
+    "already_registered_as": "BJ-2024-CY-QIZHONG"
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "reused_ids": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-CY-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 20,
+     "total": 20,
+     "fraction_reliable": true,
+     "low_confidence_count": 0
+    }
+   ],
+   "fingerprint_coverage": {
+    "total": 20,
+    "found": 20,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 20
+    }
+   },
+   "issues": [
+    "duplicate_registration：与 BJ-2024-CY-QIZHONG 匹配 20/20 题（占比 1.0）"
+   ]
+  }
+ },
+ "N15_reregister_ocr_stem_exams": {
+  "HD-ERMO-2026": {
+   "exit": 1,
+   "stderr": "",
+   "exam_id": null,
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "reused_ids": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-ERMO",
+     "kind": "needs_verification_low_confidence",
+     "matched": 0,
+     "total": 21,
+     "fraction_reliable": false,
+     "low_confidence_count": 21
+    }
+   ],
+   "fingerprint_coverage": null,
+   "issues": [
+    "原件与题库均未给出可用的届别信号（无日期/学年写法），需本地核实",
+    "疑似串题/低置信匹配：BJ-2026-HD-ERMO（21 处命中全部来自题库标注“回原页对照前不得采用”的 OCR 候选/含答案等低置信小节，可能是该小节混入了往年对照例题，不计入正式的复用/重复登记判定，需回原页核实，见 M-C）"
+   ]
+  },
+  "XC-ERMO-2026": {
+   "exit": 1,
+   "stderr": "",
+   "exam_id": null,
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggestion": {
+    "suggested_id": "BJ-2026-XC-ERMO",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2026-XC-ERMO",
+     "occupied": true
+    }
+   },
+   "chain_kind": "blocked_conflict",
+   "rename_plan": [
+    {
+     "old": "BJ-2026-XC-ERMO",
+     "new": null,
+     "reason": "BJ-2026-XC-ERMO 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+    }
+   ],
+   "redirects": [],
+   "reused_ids": [],
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-XC-ERMO",
+     "kind": "needs_verification_low_confidence",
+     "matched": 0,
+     "total": 20,
+     "fraction_reliable": false,
+     "low_confidence_count": 20
+    }
+   ],
+   "fingerprint_coverage": null,
+   "issues": [
+    "建议卷号 BJ-2026-XC-ERMO 已被占用",
+    "疑似串题/低置信匹配：BJ-2026-XC-ERMO（20 处命中全部来自题库标注“回原页对照前不得采用”的 OCR 候选/含答案等低置信小节，可能是该小节混入了往年对照例题，不计入正式的复用/重复登记判定，需回原页核实，见 M-C）",
+    "占用链存在无法机械判定的真实冲突（见 rename_plan 第一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2026-XC-ERMO，也不给出重定向表。"
+   ]
+  },
+  "GAOKAO-2024": {
+   "exit": 1,
+   "stderr": "",
+   "exam_id": null,
+   "cohort_year": 2024,
+   "cohort_status": "OK",
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "reused_ids": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-BJ-GAOKAO",
+     "kind": "needs_verification_low_confidence",
+     "matched": 0,
+     "total": 21,
+     "fraction_reliable": false,
+     "low_confidence_count": 21
+    }
+   ],
+   "fingerprint_coverage": null,
+   "issues": [
+    "疑似串题/低置信匹配：BJ-2024-BJ-GAOKAO（21 处命中全部来自题库标注“回原页对照前不得采用”的 OCR 候选/含答案等低置信小节，可能是该小节混入了往年对照例题，不计入正式的复用/重复登记判定，需回原页核实，见 M-C）",
+    "与 BJ-2024-BJ-GAOKAO 比对时有 1 处候选题命中了已被更高分候选题占用的同一道对手题，已按一对一贪心匹配只取分数更高的那对，未重复计数（m6）"
+   ]
+  }
+ }
+}

@@ -1,0 +1,159 @@
+[
+ {
+  "case": "E1 题库外副本 BJ-2026-HD-QIMO(README 有学年)",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/examdir/新卷_HDQIMO",
+   "--region",
+   "海淀",
+   "--stage",
+   "期末",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.3,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIMO",
+     "kind": "duplicate_registration",
+     "matched": 21,
+     "total": 21,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别",
+    "duplicate_registration：与 BJ-2026-HD-QIMO 匹配 21/21 题（占比 1.0）"
+   ],
+   "fingerprint_coverage": {
+    "total": 21,
+    "found": 21,
+    "ratio": 1.0,
+    "by_basis": {
+     "fallback_regex": 21
+    }
+   }
+  }
+ },
+ {
+  "case": "E2 题库外副本 BJ-2025-HD-QIZHONG(整卷)",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/examdir/新卷_HDQZ25",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 3.1,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "already_registered",
+   "rename_plan": [],
+   "redirects": [],
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true
+    },
+    {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+    "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 22/22 题（占比 1.0）",
+    "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 22/22 题（占比 1.0）",
+    "BJ-2025-HD-QIZHONG 已登记为同一场考试（题面匹配 22/22 题），不应再注册新卷号；如需登记请先核实与 BJ-2025-HD-QIZHONG 是否确为同一场考试，而不是直接改号顶替它。"
+   ],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 21,
+     "fallback_low_confidence": 1
+    }
+   }
+  }
+ },
+ {
+  "case": "E3 题库外副本 BJ-2024-HD-QIZHONG 目录名即卷号",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/examdir/BJ-2024-HD-QIZHONG",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 21,
+     "total": 21,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别",
+    "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 21/21 题（占比 1.0）"
+   ],
+   "fingerprint_coverage": {
+    "total": 21,
+    "found": 21,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_alias": 21
+    }
+   }
+  }
+ }
+]

@@ -1,0 +1,85 @@
+## real_docx_table.py（B3 漏收候选 BJ-2023-HD-QIZHONG-Q18(1)，原件 教师版.docx 第5表）
+{
+ "rc": 0,
+ "stderr": "",
+ "stdout": "{\"out\": \"/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r2/work/real_docx_tbl_out_renumbered.docx\", \"sha256\": \"391ff315b2464737fb8f4376b1bf75b2d487164144445c5215d120e3aad4393e\"}\n",
+ "health": {
+  "input_FAIL": 5,
+  "output_FAIL": 5,
+  "new_FAIL_count": 0
+ },
+ "new_FAIL": [],
+ "bic": [
+  {
+   "id": "X1",
+   "title": "例题 91　2024海淀期中第18(1)题",
+   "found_blocks": 1,
+   "schema": "subj4",
+   "missing": [],
+   "media_count": 0,
+   "tables_count": 1,
+   "media_expect": 0,
+   "tables_expect": 1,
+   "media_match": true,
+   "tables_match": true
+  }
+ ],
+ "fallbacks": [
+  []
+ ],
+ "renumber_ok": true
+}
+NEW TABLE {
+ "tblPr": "<w:tblPr xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\" xmlns:cx2=\"http://schemas.microsoft.com/office/drawing/2015/10/21/chartex\" xmlns:cx3=\"http://schemas.microsoft.com/office/drawing/2016/5/9/chartex\" xmlns:cx4=\"http://schemas.microsoft.com/office/drawing/2016/5/10/chartex\" xmlns:cx5=\"http://schemas.microsoft.com/office/drawing/2016/5/11/chartex\" xmlns:cx6=\"http://schemas.microsoft.com/office/drawing/2016/5/12/chartex\" xmlns:cx7=\"http://schemas.microsoft.com/office/drawing/2016/5/13/chartex\" xmlns:cx8=\"http://schemas.microsoft.com/office/drawing/2",
+ "cells": [
+  {
+   "text": "政策聚焦",
+   "pPr": "<w:pPr xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\" xm",
+   "rPr": "<w:rPr xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\" xm"
+  },
+  {
+   "text": "政策措施",
+
+## tbl_fmt.py 新表
+tblPr: <w:tblPr><w:tblStyle w:val="af0"/><w:tblW w:w="0" w:type="auto"/><w:tblBorders><w:top w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:left w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:bottom w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:right w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:insideH w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:insideV w:val="single" w:sz="6" w:space="0" w:color="333333"/></w:tblBorders><w:tblCellMar><w:top w:w="80" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="80" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar><w:tblLayout w:type="fixed"/><w:tblLook w:val="04A0" w:firstRow="1" w
+tblGrid: <w:tblGrid><w:gridCol w:w="1696"/><w:gridCol w:w="8046"/></w:tblGrid>
+ tcPr: <w:tcPr><w:tcW w:w="1696" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 政策聚焦
+ tcPr: <w:tcPr><w:tcW w:w="8046" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 政策措施
+ tcPr: <w:tcPr><w:tcW w:w="1696" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 优化营商环境
+ tcPr: <w:tcPr><w:tcW w:w="8046" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:ind w:firstLineChars="200" w:firstLine="420"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:cs="宋体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 在国家发展改革
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 委内部
+ tcPr: <w:tcPr><w:tcW w:w="1696" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 加强要素支持
+ tcPr: <w:tcPr><w:tcW w:w="8046" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:spacing w:line="360" w:lineRule="auto"/><w:ind w:firstLineChars="200" w:firstLine="420"/><w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:rFonts w:ascii="楷体" w:eastAsia="楷体" w:hAnsi="楷体" w:hint="eastAsia"/></w:rPr> | 对月销售额10万元以下（含本数
+## tbl_fmt.py 样板表 B0003
+tblPr: <w:tblPr><w:tblW w:w="9298" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:left w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:bottom w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:right w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:insideH w:val="single" w:sz="6" w:space="0" w:color="333333"/><w:insideV w:val="single" w:sz="6" w:space="0" w:color="333333"/></w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="80" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="80" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstCol
+tblGrid: <w:tblGrid><w:gridCol w:w="464"/><w:gridCol w:w="1580"/><w:gridCol w:w="7254"/></w:tblGrid>
+ tcPr: <w:tcPr><w:tcW w:w="464" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="center"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:b/></w:rPr> | 
+ tcPr: <w:tcPr><w:tcW w:w="1580" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="center"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr: <w:rPr><w:b/></w:rPr> | 主要阶段
+ tcPr: <w:tcPr><w:tcW w:w="464" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="both"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr:  | 一
+ tcPr: <w:tcPr><w:tcW w:w="1580" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepNext/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="both"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr:  | 起草准备
+ tcPr: <w:tcPr><w:tcW w:w="464" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="both"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr:  | 二
+ tcPr: <w:tcPr><w:tcW w:w="1580" w:type="dxa"/></w:tcPr>
+  pPr: <w:pPr><w:pStyle w:val="aff6"/><w:keepNext/><w:keepLines/><w:ind w:firstLine="0"/><w:jc w:val="both"/><w:rPr><w:rFonts w:hint="default"/></w:rPr></w:pPr>
+  rPr:  | 征求意见

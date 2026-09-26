@@ -1,0 +1,154 @@
+[
+ {
+  "case": "A1 --attribution-csv 不存在",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a1.json\n",
+  "seconds": 0.2,
+  "note": "step4=NEEDS_MODEL reason=BJ-2026-CY-QIZHONG 未出现在归属表（attribution_ruled.csv），需先走归属表流水线（新题切片 → 模型判定 → 并入 rul"
+ },
+ {
+  "case": "A2 --bank 不存在",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a2.json\n",
+  "seconds": 2.1,
+  "note": "steps=['TODO', 'TODO', 'TODO', 'DONE', 'TODO', 'NEEDS_MODEL', 'NEEDS_MODEL', 'TODO', 'TODO']"
+ },
+ {
+  "case": "A3 重跑写同一 --report",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a1.json\n",
+  "seconds": 2.0,
+  "note": ""
+ },
+ {
+  "case": "A4 --md 受保护、--report 合法",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a4.json\n拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n",
+  "seconds": 2.0,
+  "note": "report_left_behind=True md_exists=False"
+ },
+ {
+  "case": "A5 --report == 清单",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出与输入是同一个文件（m_a1.json）\n",
+  "seconds": 2.1,
+  "note": ""
+ },
+ {
+  "case": "A6 --report 经符号链接落到 后勤管理/",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n",
+  "seconds": 2.1,
+  "note": "written=False"
+ },
+ {
+  "case": "A7 --report 后缀 .txt",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出必须是 .json 文件：a7.txt\n",
+  "seconds": 1.9,
+  "note": "written=False"
+ },
+ {
+  "case": "A8 --report 落 Skill 目录",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n",
+  "seconds": 2.0,
+  "note": "written=False"
+ },
+ {
+  "case": "A9 --report 落 C/审查/（构建/之外）",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（云端补充守卫；只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n",
+  "seconds": 1.9,
+  "note": "written=False"
+ },
+ {
+  "case": "A10 exam_id 非法（../indexes、not-an-exam）",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a10.json\n",
+  "seconds": 0.2,
+  "note": "steps=[['DONE', 'TODO', 'TODO', 'NEEDS_MODEL', 'NEEDS_MODEL', 'NEEDS_MODEL', 'NEEDS_MODEL', 'DONE', 'TODO'], ['TODO', 'TODO', 'TODO', 'NEEDS_MODEL', 'NEEDS_MODEL', 'NEEDS_MODEL', 'NEEDS_MODEL', 'DONE', 'TODO']]"
+ },
+ {
+  "case": "A11 exam_id=123（非字符串）",
+  "rc": 2,
+  "stdout_tail": "",
+  "stderr_tail": "内部错误：unsupported operand type(s) for /: 'PosixPath' and 'int'\n",
+  "seconds": 0.2,
+  "note": "traceback_in_stderr=False"
+ },
+ {
+  "case": "A12 books 重复",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a12.json\n",
+  "seconds": 1.9,
+  "note": "combos=2"
+ },
+ {
+  "case": "A13 配置 JSON 损坏",
+  "rc": 2,
+  "stdout_tail": "",
+  "stderr_tail": "输入/参数错误：配置找不到或无法加载：profiles.bixiu3='/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/bad_profile.json'（JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)）\n",
+  "seconds": 0.2,
+  "note": "traceback_in_stderr=False"
+ },
+ {
+  "case": "A14 bixiu3 书名 + 冻结册配置（只读应可跑）",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a14.json\n",
+  "seconds": 0.2,
+  "note": ""
+ },
+ {
+  "case": "A15 files 模式",
+  "rc": 1,
+  "stdout_tail": "",
+  "stderr_tail": "报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/a15.json\n",
+  "seconds": 0.2,
+  "note": "rows=[[[\"TODO\", \"python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/source_intake.py /home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/不存在的卷.pdf \"], [\"TODO\", \"python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/exam_register.py check --files /home/user/zhengzhibaodianzhizuo/00_\"], [\"BLOCKED\", \"\"]], [[\"TODO\", \"python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/source_intake.py /home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/x.pdf --ca\"], [\"BLOCKED\", \"\"], [\"BLOCKED\", \"\"]]]"
+ },
+ {
+  "case": "A16 init --book 未知书名",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/init_a16\n",
+  "seconds": 0.2,
+  "note": "manifest_written=False"
+ },
+ {
+  "case": "A17 init --workdir 在仓库外（非临时目录）",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/init_a17\n",
+  "seconds": 0.2,
+  "note": "created=False"
+ },
+ {
+  "case": "A18 init --out 父目录不存在",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/no/such/dir\n",
+  "seconds": 0.2,
+  "note": "traceback_in_stderr=False"
+ },
+ {
+  "case": "A19 init 目录骨架",
+  "rc": 3,
+  "stdout_tail": "",
+  "stderr_tail": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/adv/init_a19\n",
+  "seconds": 0.2,
+  "note": "dirs=[]"
+ }
+]

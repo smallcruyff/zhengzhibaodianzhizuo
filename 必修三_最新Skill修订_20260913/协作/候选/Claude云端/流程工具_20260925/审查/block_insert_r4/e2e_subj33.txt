@@ -1,0 +1,13 @@
+rc 0 {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r4/work/subj33_out.docx", "sha256": "01d891a13c9528eaf3f7fddc90e2c625f86840d 
+fallbacks [{"role": "table", "reason": "样板题块无表格，回退到全书第 1 个表格"}]
+health new_FAIL 0 []
+text flow same: True
+   824 heading 3->heading 3 font Kaiti SC->Kaiti SC ind None->None '例题 33\u30002026海淀期中第18题'
+   825 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '【题目】 18．（8分）人民城市人民建，人民城市'  <<DIFF
+   832 题目设问->题目设问 font Songti SC->Songti SC ind None->None '运用《政治与法治》知识，阐释上述城市践行人民城市'
+   833 分析过程->分析过程 font Songti SC->Songti SC ind None->None '【思维链条】'
+   834 分析过程->分析过程 font Songti SC->Songti SC ind None->None '从材料选知识：上海“在街区建立党组织、设街区党支'
+   835 分析过程->分析过程 font Songti SC->Songti SC ind None->None '从设问定层次：“阐释……实践”要求辨明主体，按“'  <<DIFF
+   836 答案落点->答案落点 font Songti SC->Songti SC ind None->None '【答案落点】'
+   837 答案落点->答案落点 font Songti SC->Songti SC ind None->None '①中国共产党是最高政治领导力量，坚持党的全面领导'
+   838 细则说明->细则说明 font Songti SC->Songti SC ind None->None '【细则说明】 写出中国共产党是最高政治领导力量、'  <<DIFF

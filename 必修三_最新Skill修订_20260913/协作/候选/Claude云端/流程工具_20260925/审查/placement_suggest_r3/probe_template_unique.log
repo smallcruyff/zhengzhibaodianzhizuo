@@ -1,0 +1,10 @@
+blocks 746 blocks whose title is not unique (substring): 50
+queries 343 candidates 1029 most_similar_block title NOT unique: 22 of which rank1: 8
+   ('BJ-2023-DC-YIMO-Q20', 2, 'B0618', '例15\u30002024东城二模第18题第（2）问（6分）', 2)
+   ('BJ-2023-HD-ERMO-Q20', 2, 'B0374', '例题 1\u30002026房山一模第20题（跨模块）', 2)
+   ('BJ-2024-BJ-GAOKAO-Q21', 1, 'B0033', '例题 21\u30002026朝阳一模第21题（跨模块）', 3)
+   ('BJ-2024-CY-YIMO-Q18', 1, 'B0609', '例6\u30002026房山一模第18题第（2）问（8分）', 2)
+   ('BJ-2024-HD-ERMO-Q18', 1, 'B0595', '例13\u30002025朝阳一模第18题（8分）', 2)
+   ('BJ-2024-HD-ERMO-Q21', 3, 'B0033', '例题 21\u30002026朝阳一模第21题（跨模块）', 3)
+candidate keys: ['part', 'h1', 'h2', 'node', 'method', 'label', 'score', 'n_blocks_in_group', 'top_contrib_terms', 'most_similar_block', 'insert_after', 'sample_slice', 'sample_slice_truncated']
+any template_block field: False

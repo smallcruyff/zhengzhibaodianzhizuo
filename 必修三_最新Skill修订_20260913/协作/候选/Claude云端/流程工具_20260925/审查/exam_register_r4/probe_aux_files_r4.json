@@ -1,0 +1,2056 @@
+[
+ {
+  "exam_id": "BJ-2023-FT-YIMO",
+  "role": "教师版",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/丰台.docx",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-FT-YIMO",
+    "duplicate_registration",
+    19,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-CY-YIMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/朝阳/2023-3-朝阳一模高三政治答案.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-CY-YIMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/朝阳/2023-3-朝阳一模高三政治试题.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-CY-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-HD-YIMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/海淀/2022-2023年第二学期高三政治期中试题(3).pdf",
+  "fp_chunks": 21,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2023-HD-YIMO",
+    "shared_or_reused_questions",
+    20,
+    21,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-HD-YIMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/海淀/海淀区2022-2023学年第二学期期练中习高三思想政治参考答案(4).pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-XC-YIMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模答案.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-XC-YIMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-XC-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-XC-YIMO",
+  "role": "评分材料",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区一模/西城/西城细则-高三政治一模3-30(1).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-FT-ERMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二试卷.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-FT-ERMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√丰台/丰台高三政治练习二（答案）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-CY-ERMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√朝阳/202305朝阳高三2模政治答案.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-CY-ERMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√朝阳/202305朝阳高三2模政治试题.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-CY-ERMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-HD-ERMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√海淀/海淀区2022-2023学年第二学期期末练习高三思想政治(1).pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-HD-ERMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-XC-ERMO",
+  "role": "评分材料",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√西城/细则-高三政治二模5-10(2).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-XC-ERMO",
+  "role": "参考答案",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√西城/西城-高三政治二模答案-定(2).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-XC-ERMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√西城/西城-高三政治二模试卷-定(2).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2023-XC-ERMO",
+    "shared_or_reused_questions",
+    1,
+    1,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-HD-QIZHONG",
+  "role": "教师版",
+  "rel": "2023模拟题/2023各区模拟题(1)/期末和期中/2023北京海淀高三（上）期中政治（教师版）.docx",
+  "fp_chunks": 23,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-HD-QIZHONG",
+    "duplicate_registration",
+    23,
+    23,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-CY-YIMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024朝阳一模/细则/补充材料/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-CY-YIMO",
+  "role": "原卷",
+  "rel": "2024模拟题/2024朝阳一模/试卷/试卷.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-CY-YIMO",
+    "shared_or_reused_questions",
+    1,
+    1,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-CY-ERMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024朝阳二模/细则/细则.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-CY-ERMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024朝阳二模/细则/补充材料/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-CY-ERMO",
+  "role": "原卷",
+  "rel": "2024模拟题/2024朝阳二模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-CY-ERMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-CY-QIZHONG",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024朝阳期中/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-CY-QIZHONG",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024朝阳期中/细则/补充材料/2024.11期中政治朝阳评标2.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-CY-QIZHONG",
+  "role": "原卷",
+  "rel": "2024模拟题/2024朝阳期中/试卷/补充材料/202411朝阳高三政治 期中1试题(1).pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-CY-QIZHONG",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-CY-QIZHONG",
+  "role": "原卷",
+  "rel": "2024模拟题/2024朝阳期中/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-CY-QIZHONG",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-HD-YIMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024海淀一模/细则/细则.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-HD-YIMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/2024海淀一模/细则/补充材料/一模政治-答案.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-HD-YIMO",
+  "role": "原卷",
+  "rel": "2024模拟题/2024海淀一模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-HD-YIMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-HD-QIZHONG",
+  "role": "评分材料",
+  "rel": "2024模拟题/2024海淀期中/细则/细则.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-HD-QIZHONG",
+    "shared_or_reused_questions",
+    1,
+    3,
+    false
+   ],
+   [
+    "BJ-2025-HD-QIZHONG",
+    "shared_or_reused_questions",
+    1,
+    3,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/16题/16题二模阅卷总结.docx",
+  "fp_chunks": 3,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/17题/17(1).docx",
+  "fp_chunks": 1,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/17题/17-2.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/18题/18(1).docx",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/18题/18（2）.docx",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/19题/19（1）.docx",
+  "fp_chunks": 1,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/19题/19（2）.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2024模拟题/东城二模/细则/分题细则/阅卷总结/21题/21.docx",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-FT-YIMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/丰台一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-FT-YIMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/丰台一模/试卷/补充材料/2024北京丰台高三一模政治试题及答案.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-FT-YIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-FT-YIMO",
+  "role": "原卷",
+  "rel": "2024模拟题/丰台一模/试卷/试卷.pdf",
+  "fp_chunks": 3,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-FT-YIMO",
+    "duplicate_registration",
+    3,
+    3,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-FT-ERMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/丰台二模/细则/细则.docx",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-HD-ERMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/海淀二模/细则/细则.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-HD-ERMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/海淀二模/细则/补充材料/高三二模：政治答案(2).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-HD-ERMO",
+  "role": "原卷",
+  "rel": "2024模拟题/海淀二模/试卷/补充材料/高三二模：政治试题（以PDF为准）(1).docx",
+  "fp_chunks": 10,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-HD-ERMO",
+    "shared_or_reused_questions",
+    10,
+    10,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-HD-ERMO",
+  "role": "原卷",
+  "rel": "2024模拟题/海淀二模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-HD-ERMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-SJS-YIMO",
+  "role": "原卷",
+  "rel": "2024模拟题/石景山一模/试卷/试卷.docx",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-SJS-YIMO",
+    "duplicate_registration",
+    19,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-XC-YIMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/西城一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-XC-YIMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/西城一模/细则/补充材料/2024.4高三统一测试思想政治答案.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-XC-YIMO",
+  "role": "原卷",
+  "rel": "2024模拟题/西城一模/试卷/试卷.docx",
+  "fp_chunks": 4,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-XC-YIMO",
+    "shared_or_reused_questions",
+    4,
+    4,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-DC-ERMO",
+  "role": "讲评",
+  "rel": "2024模拟题/西城二模/其他材料/西城东城二模选择题讲评.pdf",
+  "fp_chunks": 3,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-XC-ERMO",
+  "role": "评分材料",
+  "rel": "2024模拟题/西城二模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-XC-ERMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/西城二模/细则/补充材料/高三模拟测试思想政治答案.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-XC-ERMO",
+  "role": "原卷",
+  "rel": "2024模拟题/西城二模/试卷/试卷.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-XC-ERMO",
+    "shared_or_reused_questions",
+    1,
+    1,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-DC-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025东城一模/细则/细则.pdf",
+  "fp_chunks": 4,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-DC-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025东城一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-DC-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-FT-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025丰台一模/细则/细则.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025丰台一模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-FT-YIMO",
+    "duplicate_registration",
+    19,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-YQ-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025延庆一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-YQ-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025延庆一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-YQ-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-FS-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025房山一模/细则/细则.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FS-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025房山一模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-FS-YIMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-CY-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025朝阳一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-CY-YIMO",
+    "shared_or_reused_questions",
+    1,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025海淀一模/细则/细则.docx",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-HD-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025海淀一模/试卷/补充材料/EDU_1500334100000021014_61af1789-0742-472d-86cd-e6cb420b0ecb.pdf",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2025-HD-YIMO",
+    "shared_or_reused_questions",
+    2,
+    2,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025海淀一模/试卷/试卷.pdf",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-HD-YIMO",
+    "duplicate_registration",
+    17,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-SJS-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025石景山一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-SJS-YIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-XC-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025西城一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-XC-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025西城一模/试卷/试卷.pdf",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-XC-YIMO",
+    "duplicate_registration",
+    22,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-MTG-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025门头沟一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-MTG-YIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-SY-YIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区一模/2025顺义一模/细则/细则.docx",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-SY-YIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区一模/2025顺义一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-SY-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区二模/2025东城二模/细则/细则.pdf",
+  "fp_chunks": 5,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-DC-ERMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区二模/2025东城二模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-DC-ERMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/16.(2).docx",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/17题.docx",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/18题 .docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/19.(1).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/19.(2).docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2023-BJ-GAOKAO",
+    "shared_or_reused_questions",
+    1,
+    3,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/20题.docx",
+  "fp_chunks": 4,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "评分细则_分题切片",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/21题.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-FT-ERMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区二模/2025丰台二模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-FT-ERMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-CP-ERMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区二模/2025昌平二模/试卷/试卷.pdf",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-CP-ERMO",
+    "duplicate_registration",
+    20,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-CY-ERMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区二模/2025朝阳二模/细则/细则.docx",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-CY-ERMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区二模/2025朝阳二模/试卷/试卷.pdf",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-CY-ERMO",
+    "duplicate_registration",
+    22,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-ERMO",
+  "role": "讲评",
+  "rel": "2025模拟题/2025各区二模/2025海淀二模/其他材料/2025届二模考试讲评0510.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2025-HD-ERMO",
+    "shared_or_reused_questions",
+    1,
+    1,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-ERMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区二模/2025海淀二模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-HD-ERMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区二模/2025海淀二模/细则/补充材料/2025年海淀二模评标实录.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-XC-ERMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区二模/2025西城二模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-XC-ERMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区二模/2025西城二模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-XC-ERMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-DC-QIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区期末/2025东城期末/细则/细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-DC-QIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025东城期末/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-DC-QIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-FT-QIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025丰台期末/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-FT-QIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-CY-QIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025朝阳期末/试卷/试卷.pdf",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-CY-QIMO",
+    "duplicate_registration",
+    22,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-QIZHONG",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区期末/2025海淀期中/细则/细则.docx",
+  "fp_chunks": 6,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-HD-QIZHONG",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025海淀期中/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2024-HD-QIZHONG",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ],
+   [
+    "BJ-2025-HD-QIZHONG",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-HD-QIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025海淀期末/试卷/试卷.docx",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-HD-QIMO",
+    "duplicate_registration",
+    15,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-XC-QIMO",
+  "role": "评分材料",
+  "rel": "2025模拟题/2025各区期末/2025西城期末/细则/细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-XC-QIMO",
+  "role": "原卷",
+  "rel": "2025模拟题/2025各区期末/2025西城期末/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-XC-QIMO",
+    "duplicate_registration",
+    15,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-DC-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026东城一模/细则/补充材料/26东城一模细则.pdf",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2026-DC-YIMO",
+    "shared_or_reused_questions",
+    1,
+    2,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-DC-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026东城一模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-DC-YIMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-YQ-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026延庆一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-YQ-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026延庆一模/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-YQ-YIMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-FS-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026房山一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026朝阳一模/细则/细则.docx",
+  "fp_chunks": 4,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026朝阳一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-CY-YIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-HD-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026海淀一模/细则/细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-SJS-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026石景山一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-SJS-YIMO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-XC-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026西城一模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-XC-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026西城一模/试卷/试卷.docx",
+  "fp_chunks": 11,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2026-XC-YIMO",
+    "shared_or_reused_questions",
+    11,
+    11,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-TZ-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026通州一模/细则/26 通州一模评标.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-MTG-YIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区一模/2026门头沟一模/细则/细则.docx",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-MTG-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026门头沟一模/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-MTG-YIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-SY-YIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区一模/2026顺义一模/试卷/试卷.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/16.pdf",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/17题评标.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/18题阅卷细则(5.9).pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/20题（1+2）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/26年东城二模20（3）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/东城二模 19题阅卷细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/细则/二模21题细则模版.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026东城二模/试卷/2026北京东城高三二模政治（教师版）.docx",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-FT-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026丰台二模/试卷/2026北京丰台高三二模政治（教师版）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-FS-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026房山二模/细则/26房山评标(2).docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-FS-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026房山二模/细则/26房山评标.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-FS-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026房山二模/试卷/2026北京房山高三二模政治（教师版）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CP-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026昌平二模/2026北京昌平高三二模政治（教师版）.docx",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-CP-ERMO",
+    "duplicate_registration",
+    21,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-CP-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026昌平二模/2026年北京市昌平区二模评分标准-学生版(1)(1).pdf",
+  "fp_chunks": 7,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-ERMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区二模/2026朝阳二模/细则/202605朝阳高三政治二模阅卷细则(1).docx",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026朝阳二模/试卷/2026北京朝阳高三二模政治（教师版）.docx",
+  "fp_chunks": 21,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-HD-ERMO",
+  "role": "讲评",
+  "rel": "2026模拟题/2026各区二模/2026海淀二模/细则/26海淀高三政治二模讲评.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-HD-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026海淀二模/试卷/2026北京海淀高三二模政治（教师版）.docx",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-SJS-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026石景山二模/试卷/2026北京石景山高三二模政治（教师版）.docx",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-SJS-ERMO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-XC-ERMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区二模/2026西城二模/试卷/2026北京西城高三二模政治（教师版）.docx",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-DC-QIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区期末和期中/2026东城期末/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-DC-QIMO",
+    "duplicate_registration",
+    11,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-FT-QIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区期末和期中/2026丰台期末/细则/细则.pdf",
+  "fp_chunks": 6,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-HD-ERMO",
+    "shared_or_reused_questions",
+    1,
+    6,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-CP-QIMO",
+  "role": "教师版",
+  "rel": "2026模拟题/2026各区期末和期中/2026昌平期末/2026北京昌平高三（上）期末政治（教师版）.docx",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-CP-QIMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-CP-QIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区期末和期中/2026昌平期末/2026昌平政治期末细则(1).pdf",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-QIZHONG",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区期末和期中/2026朝阳期中/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-QIZHONG",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区期末和期中/2026朝阳期中/细则/补充材料/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-CY-QIZHONG",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区期末和期中/2026朝阳期中/试卷/试卷.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-CY-QIZHONG",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-HD-QIZHONG",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx",
+  "fp_chunks": 22,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-HD-QIZHONG",
+    "duplicate_registration",
+    22,
+    22,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-HD-QIMO",
+  "role": "评分材料",
+  "rel": "2026模拟题/2026各区期末和期中/2026海淀期末/细则/细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-HD-QIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区期末和期中/2026海淀期末/试卷/试卷.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-XC-QIMO",
+  "role": "混合载体",
+  "rel": "2026模拟题/2026各区期末和期中/2026西城期末/细则/补充材料/高三思想政治参考答案.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-XC-QIMO",
+  "role": "混合载体",
+  "rel": "2026模拟题/2026各区期末和期中/2026西城期末/试卷/2026北京西城高三上期末政治教师版.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-TZ-QIMO",
+  "role": "原卷",
+  "rel": "2026模拟题/2026各区期末和期中/2026通州期末/试卷/试卷.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-TZ-QIMO",
+    "duplicate_registration",
+    13,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-SJS-QIMO",
+  "role": "混合载体",
+  "rel": "2026模拟题/只有答案没有细则的/2026石景山期末/其他材料/答案及评分参考.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2020北京政治高考.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2020-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2020北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2020-BJ-GAOKAO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2021-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2021北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2021-BJ-GAOKAO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2021-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2021高考政治主观试题细则汇总（内部资料请勿外传）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2022-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2022北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2022-BJ-GAOKAO",
+    "duplicate_registration",
+    20,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2022-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2022年北京高考阅卷标准.pdf",
+  "fp_chunks": 2,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.16.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.17.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.18(3).pdf",
+  "fp_chunks": 3,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.18（1）（2）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.19(1).pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.19（2）.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "分题切片_待定",
+  "rel": "历年高考题及细则/2023.20.pdf",
+  "fp_chunks": 4,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2023北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 20,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-BJ-GAOKAO",
+    "duplicate_registration",
+    20,
+    20,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2023高考阅卷细则.pdf",
+  "fp_chunks": 3,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2024北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-BJ-GAOKAO",
+  "role": "试题分析材料",
+  "rel": "历年高考题及细则/2024年北京市高考政治试题分析(1).pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2025北京细则.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2025-BJ-GAOKAO",
+    "shared_or_reused_questions",
+    1,
+    1,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2025-BJ-GAOKAO",
+  "role": "教师版",
+  "rel": "历年高考题及细则/2025北京高考真题政治（教师版）.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2025-BJ-GAOKAO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2026-BJ-GAOKAO",
+  "role": "评分材料",
+  "rel": "历年高考题及细则/2026北京高考政治细则.docx",
+  "fp_chunks": 4,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-BJ-GAOKAO",
+  "role": "参考答案",
+  "rel": "历年高考题及细则/2026年普通高中学业水平等级性考试（思想政治）参考答案.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2026-BJ-GAOKAO",
+  "role": "原卷",
+  "rel": "历年高考题及细则/2026年普通高中学业水平等级性考试（思想政治）试题.pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2026-BJ-GAOKAO",
+    "duplicate_registration",
+    19,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2023-BJ-GAOKAO",
+  "role": "原卷",
+  "rel": "历年高考题及细则/23北京高考.pdf",
+  "fp_chunks": 4,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2023-BJ-GAOKAO",
+    "shared_or_reused_questions",
+    1,
+    4,
+    false
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2025班课选必二法律第一轮 法律框架.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课必修三第一轮 政治与法治.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课必修三第二轮 政治与法治习题课.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课必修二第一轮 五四三二一 .pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课选必一第一轮 六要素 .pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课选必三思维第一轮 思维框架.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/2026班课选必三推理第一轮 推理类型.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/制作宝典宪法.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/必修二 终极版秘籍.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/选必三思维宝典初稿-飞哥正志讲堂.pdf",
+  "fp_chunks": 2,
+  "reliable": true,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-XXXX-UNK-UNK",
+  "role": "未知",
+  "rel": "宝典制作原料/选必二6.8急救包-飞哥正志讲堂.pdf",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2023-HD-ERMO",
+  "role": "原卷",
+  "rel": "2023模拟题/2023各区模拟题(1)/各区二模/√海淀/海淀区2022-2023学年第二学期期末练习高三思想政治(1).pdf",
+  "fp_chunks": 21,
+  "reliable": true,
+  "hits": [
+   [
+    "BJ-2023-HD-ERMO",
+    "duplicate_registration",
+    21,
+    21,
+    true
+   ]
+  ]
+ },
+ {
+  "exam_id": "BJ-2024-SY-ERMO",
+  "role": "参考答案",
+  "rel": "2024模拟题/顺义思政二模/细则/细则.docx",
+  "fp_chunks": 1,
+  "reliable": false,
+  "hits": []
+ },
+ {
+  "exam_id": "BJ-2024-SY-ERMO",
+  "role": "原卷",
+  "rel": "2024模拟题/顺义思政二模/试卷/试卷.docx",
+  "fp_chunks": 5,
+  "reliable": false,
+  "hits": [
+   [
+    "BJ-2024-SY-ERMO",
+    "shared_or_reused_questions",
+    5,
+    5,
+    false
+   ]
+  ]
+ }
+]

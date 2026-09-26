@@ -1,0 +1,364 @@
+{
+ "stats": {
+  "subj_other_n": 1813,
+  "subj_last_n": 489,
+  "subj_other_diff": 321,
+  "subj_other_diff_runs": 190,
+  "subj_other_diff_ppr": 38,
+  "choice_other_n": 1328,
+  "choice_last_n": 207,
+  "choice_last_diff": 207,
+  "choice_last_diff_ppr": 207,
+  "subj_last_diff": 23,
+  "subj_last_diff_runs": 23,
+  "subj_other_diff_ppr+runs": 93,
+  "choice_other_diff": 98,
+  "choice_other_diff_ppr": 98
+ },
+ "examples": {
+  "subj_other": [
+   {
+    "i": 129,
+    "block": "例题 4　2026朝阳一模第21题（跨模块）",
+    "text": "【题目】 21.法与时转则治，治与世宜则有功。",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 19)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 18)))"
+   },
+   {
+    "i": 163,
+    "block": "例题 6　2026丰台二模第17题",
+    "text": "面对超大城市治理中人口密集、场域复杂、需求多元等治理挑战，在北京市委的领",
+    "orig": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 58),))",
+    "new": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 58),))"
+   },
+   {
+    "i": 340,
+    "block": "例题 1　2026海淀一模第21题（跨模块）",
+    "text": "【题目】 21.（10分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 9)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 8)))"
+   },
+   {
+    "i": 366,
+    "block": "例题 3　2026延庆一模第20题（跨模块）",
+    "text": "【题目】 20.（9分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((True, False, False, None, 'Kaiti SC', '21'), 6), ((False, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((True, False, False, None, 'Kaiti SC', '21'), 7)))"
+   },
+   {
+    "i": 367,
+    "block": "例题 3　2026延庆一模第20题（跨模块）",
+    "text": "党的二十届四中全会深入分析国际国内形势，对“十五五”时期经济社会发展作出",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '000000', 'Kaiti SC', '21'), 11), ((False, False, False, None, 'Kaiti SC', '21'), 90)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '000000', 'Kaiti SC', '21'), 11), ((True, False, False, None, 'Kaiti SC', '21'), 90)))"
+   },
+   {
+    "i": 368,
+    "block": "例题 3　2026延庆一模第20题（跨模块）",
+    "text": "实现社会主义现代化是一个阶梯式递进、不断发展进步的历史过程，需要不懈努力",
+    "orig": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 239),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 239),))"
+   },
+   {
+    "i": 377,
+    "block": "例题 4　2026朝阳二模第21题（跨模块）",
+    "text": "【题目】 21．（9分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((True, False, False, None, 'Kaiti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 4)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((True, False, False, None, 'Kaiti SC', '21'), 7)))"
+   },
+   {
+    "i": 398,
+    "block": "例题 5　2026丰台期末第22题（跨模块）",
+    "text": "【题目】 22．（9分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 8)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 7)))"
+   },
+   {
+    "i": 458,
+    "block": "例题 9　2026丰台二模第22题（跨模块）",
+    "text": "【题目】 22.（9分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 8)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 7)))"
+   },
+   {
+    "i": 478,
+    "block": "例题 10　2026东城期末第21题（跨模块）",
+    "text": "【题目】 21.区域，大国经略发展格局的主要依托。",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 21)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 20)))"
+   },
+   {
+    "i": 490,
+    "block": "例题 11　2026朝阳期末第21题（跨模块）",
+    "text": "【题目】 21．（8分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 8)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((False, False, False, None, 'Kaiti SC', '21'), 7)))"
+   },
+   {
+    "i": 506,
+    "block": "例题 12　2026顺义一模第17题",
+    "text": "【题目】 17．（7分）",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((True, False, False, '000000', 'Kaiti SC', '21'), 8)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((True, False, False, '000000', 'Kaiti SC', '21'), 7)))"
+   }
+  ],
+  "choice_last": [
+   {
+    "i": 252,
+    "block": "选择例题 1　2026朝阳一模第9题",
+    "text": "C．②③　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1503,
+    "block": "选择例题 1　2026西城一模第4题",
+    "text": "C．②③　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1525,
+    "block": "选择例题 2　2024顺义二模第9题",
+    "text": "C．②③　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1544,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "C．②③　　D．②④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1724,
+    "block": "选择例题 1　2026通州期末第1题",
+    "text": "C．②④　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1742,
+    "block": "选择例题 2　2025海淀一模第1题",
+    "text": "C．②④　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1760,
+    "block": "选择例题 3　2024丰台二模第2题",
+    "text": "C．②③　　D．②④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1873,
+    "block": "选择例题 1　2026房山一模第8题",
+    "text": "D．党员干部要依法执政，完善公共服务，提高人民生活品质",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 27),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 27),))"
+   },
+   {
+    "i": 1895,
+    "block": "选择例题 2　2026海淀一模第8题",
+    "text": "C．②③　　D．②④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1913,
+    "block": "选择例题 3　2026西城一模第3题",
+    "text": "C．②③　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1931,
+    "block": "选择例题 4　2026通州一模第15题",
+    "text": "C．②③　　D．②④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1949,
+    "block": "选择例题 5　2026石景山二模第9题",
+    "text": "C．②③　　D．③④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   }
+  ],
+  "subj_last": [
+   {
+    "i": 525,
+    "block": "例题 13　2025丰台一模第21题（跨模块）",
+    "text": "综合运用所学，撰写一篇时评短文。题目：中国以确定的___________",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 94), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 98),))"
+   },
+   {
+    "i": 870,
+    "block": "例题 36　2024东城二模第18(1)题",
+    "text": "（1）结合材料，运用《政治与法治》知识，说明“四治联动”如何推动新时代和",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 41), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 48),))"
+   },
+   {
+    "i": 1235,
+    "block": "例题 62　2024顺义二模第20(2)题（跨模块）",
+    "text": "（2）结合材料，综合运用所学，谈谈对实现中华民族伟大复兴需要“不断谱写马",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 51), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 58),))"
+   },
+   {
+    "i": 2406,
+    "block": "例题 7　2024东城二模第18(1)题",
+    "text": "（1）结合材料，运用《政治与法治》知识，说明“四治联动”如何推动新时代和",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 41), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 48),))"
+   },
+   {
+    "i": 3729,
+    "block": "例题 6　2025西城期末第16(2)题",
+    "text": "【题目】16．（2）为继续推动文物建筑的保护利用，西城区政府发布了新的文",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 71), ((False, False, False, None, 'Songti SC', '21'), 2), ((False, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 75)))"
+   },
+   {
+    "i": 4842,
+    "block": "例题 4　2025丰台二模第17题",
+    "text": "【题目】 建设法治政府，打造北京样本。以下是北京市2024年法治政府建设",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((True, False, False, None, 'Kaiti SC', '21'), 52), ((True, False, False, None, 'Songti SC', '21'), 1), ((True, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((True, False, False, None, 'Kaiti SC', '21'), 54)))"
+   },
+   {
+    "i": 5019,
+    "block": "例题 15　2024朝阳一模第18(1)题",
+    "text": "（1）《北京国际科技创新中心建设条例》于2024年3月1日起施行。结合材",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 65), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 72),))"
+   },
+   {
+    "i": 8014,
+    "block": "例题 1　2025西城期末第16(2)题",
+    "text": "【题目】16．（2）为继续推动文物建筑的保护利用，西城区政府发布了新的文",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 71), ((False, False, False, None, 'Songti SC', '21'), 2), ((False, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 75)))"
+   },
+   {
+    "i": 8168,
+    "block": "例题 11　2025丰台二模第17题",
+    "text": "【题目】 建设法治政府，打造北京样本。以下是北京市2024年法治政府建设",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((True, False, False, None, 'Kaiti SC', '21'), 52), ((True, False, False, None, 'Songti SC', '21'), 1), ((True, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 5), ((True, False, False, None, 'Kaiti SC', '21'), 54)))"
+   },
+   {
+    "i": 8227,
+    "block": "例题 15　2024海淀一模第17题第（3）问",
+    "text": "（3）结合材料三，运用《政治与法治》知识，谈谈海淀区是如何当好高质量发展",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 38), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 45),))"
+   },
+   {
+    "i": 8448,
+    "block": "例题 29　2024朝阳一模第18(1)题",
+    "text": "（1）《北京国际科技创新中心建设条例》于2024年3月1日起施行。结合材",
+    "orig": "(('aff7', 'both', False, None, None, None, None, None, None), (((True, False, False, None, 'Songti SC', '21'), 3), ((False, False, False, None, 'Songti SC', '21'), 65), ((True, False, False, None, 'Songti SC', '21'), 4)))",
+    "new": "(('aff7', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 72),))"
+   },
+   {
+    "i": 8649,
+    "block": "例题 41　2024东城二模第18(2)题",
+    "text": "【题目】18．（2）某校同学正在草拟共建和谐劳动关系建议书，请你运用相关",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 57), ((False, False, False, None, 'Songti SC', '21'), 2), ((False, False, False, None, 'Kaiti SC', '21'), 2)))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, '1F4E79', 'Songti SC', '21'), 4), ((False, False, False, None, 'Kaiti SC', '21'), 61)))"
+   }
+  ],
+  "choice_other": [
+   {
+    "i": 1519,
+    "block": "选择例题 2　2024顺义二模第9题",
+    "text": "据此，下列说法正确的是",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))",
+    "new": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))"
+   },
+   {
+    "i": 1539,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "①成为世界各国政党共同面临的时代课题",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 18),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 18),))"
+   },
+   {
+    "i": 1540,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "②彰显了新时代中国共产党对党情国情发展变化的深刻把握",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 26),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 26),))"
+   },
+   {
+    "i": 1541,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "③是中国共产党团结带领人民迈上新征程的中心任务",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 23),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 23),))"
+   },
+   {
+    "i": 1542,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "④必须坚持党中央权威和集中统一领导不动摇",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 20),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 20),))"
+   },
+   {
+    "i": 1543,
+    "block": "选择例题 3　2023东城一模第5题",
+    "text": "A．①③　　B．①④",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 10),))"
+   },
+   {
+    "i": 1889,
+    "block": "选择例题 2　2026海淀一模第8题",
+    "text": "对上述论述解读正确的是",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))",
+    "new": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))"
+   },
+   {
+    "i": 1964,
+    "block": "选择例题 6　2024西城一模第3题",
+    "text": "C．学以益才，砺以致刃",
+    "orig": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))",
+    "new": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 11),))"
+   },
+   {
+    "i": 2174,
+    "block": "选择例题 1　2025丰台一模第5题",
+    "text": "①助推服务群众精准化和社会治理精细化，完善了基层群众自治制度",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))"
+   },
+   {
+    "i": 2175,
+    "block": "选择例题 1　2025丰台一模第5题",
+    "text": "②以有序运行的方式推进基层治理法治化，落实了依法治国基本方略",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))"
+   },
+   {
+    "i": 2176,
+    "block": "选择例题 1　2025丰台一模第5题",
+    "text": "③为居民参与社会生活搭建新平台，体现了以人民为中心的发展思想",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))"
+   },
+   {
+    "i": 2177,
+    "block": "选择例题 1　2025丰台一模第5题",
+    "text": "④由社区党组织管理和实施，充分发挥了基层党组织的战斗堡垒作用",
+    "orig": "(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))",
+    "new": "(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Songti SC', '21'), 30),))"
+   }
+  ]
+ }
+}

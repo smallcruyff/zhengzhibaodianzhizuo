@@ -1,0 +1,447 @@
+[
+ {
+  "id": "A01",
+  "desc": "--params 非法 JSON → 2，中文、非“内部错误”英文",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "内部错误：Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+  "stdout_head": "",
+  "seconds": 1.9
+ },
+ {
+  "id": "A02",
+  "desc": "--params 文件不存在 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "内部错误：[Errno 2] No such file or directory: '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/nope.json'",
+  "stdout_head": "",
+  "seconds": 1.76
+ },
+ {
+  "id": "A03",
+  "desc": "--params agg_mix 为字符串 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "内部错误：can't multiply sequence by non-int of type 'float'",
+  "stdout_head": "",
+  "seconds": 3.65
+ },
+ {
+  "id": "A04",
+  "desc": "--params ngram_sizes=[] → 应报错或 flag（全零信号）",
+  "exit": 1,
+  "expect": [
+   1,
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": true,\n \"summary\": [\n  {\n   \"source\": \"BJ-2020-BJ-GAOKAO-Q1\",\n   \"top\": \"P1｜一、三统一：党的领导、人民当家作主、依法治国的有机统一｜节点选择区（书内挂在“考法4　补出型：材料没写三者",
+  "seconds": 2.06
+ },
+ {
+  "id": "A05",
+  "desc": "冻结配置 + --format md --out 合法路径 → 3，且不落盘",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：必修二《经济与社会》 已冻结，拒绝写出：2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝）",
+  "stdout_head": "",
+  "seconds": 0.18
+ },
+ {
+  "id": "A06",
+  "desc": "冻结配置只读（不写）→ 0/1 可跑",
+  "exit": 0,
+  "expect": [
+   0,
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2020-BJ-GAOKAO-Q1\",\n   \"top\": \"R1｜08　二基：民族区域自治制度｜节点选择区（书内挂在“考法1　补出型：成就在前，制度自己补出（1题）”名下",
+  "seconds": 3.22
+ },
+ {
+  "id": "A07",
+  "desc": "--report 落 Skill 目录 → 3",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "stdout_head": "",
+  "seconds": 0.16
+ },
+ {
+  "id": "A08",
+  "desc": "--report 落题库目录 → 3",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "stdout_head": "",
+  "seconds": 0.16
+ },
+ {
+  "id": "A09",
+  "desc": "--report 经临时目录符号链接绕进书稿工作区 → 3",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+  "stdout_head": "",
+  "seconds": 0.19
+ },
+ {
+  "id": "A10",
+  "desc": "--report 父目录不存在 → 3",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/no_dir",
+  "stdout_head": "",
+  "seconds": 0.18
+ },
+ {
+  "id": "A11",
+  "desc": "--report 后缀不是 .json → 3",
+  "exit": 3,
+  "expect": [
+   3
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "拒绝写出：输出必须是 .json 文件：x.txt",
+  "stdout_head": "",
+  "seconds": 0.18
+ },
+ {
+  "id": "A12",
+  "desc": "--report 目标已存在 → 3 且原文件不被覆盖",
+  "exit": 3,
+  "ok": true,
+  "stderr": "拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/exists.json"
+ },
+ {
+  "id": "A13",
+  "desc": "--docx 是目录 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--docx 文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv",
+  "stdout_head": "",
+  "seconds": 0.16
+ },
+ {
+  "id": "A14",
+  "desc": "--docx 是 PDF → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--docx 不是有效的 .docx（zip）文件：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.pdf",
+  "stdout_head": "",
+  "seconds": 0.16
+ },
+ {
+  "id": "A15",
+  "desc": "配置缺 parts → 2，中文",
+  "exit": 0,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2020-BJ-GAOKAO-Q1\",\n   \"top\": \"P1｜08　二基：民族区域自治制度｜节点选择区（书内挂在“考法1　补出型：成就在前，制度自己补出（1题）”名下",
+  "seconds": 3.43
+ },
+ {
+  "id": "A16",
+  "desc": "配置缺 styles → 2（或 0 题块→2）",
+  "exit": 0,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2020-BJ-GAOKAO-Q1\",\n   \"top\": null,\n   \"flags\": []\n  }\n ]\n}\n",
+  "seconds": 1.73
+ },
+ {
+  "id": "A17",
+  "desc": "--profile 是垃圾文件 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--profile 加载失败（/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/bad.json）：JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+  "stdout_head": "",
+  "seconds": 0.16
+ },
+ {
+  "id": "A18",
+  "desc": "--keys-file 只有注释/空行 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：未给任何新题输入：至少给一个 --key / --keys-file / --md / --text",
+  "stdout_head": "",
+  "seconds": 1.87
+ },
+ {
+  "id": "A19",
+  "desc": "--keys-file 第2行坏题键 → 整批 2，--report 不落盘",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：题库没有这个题键的 MD：BJ-2099-NOSUCH-YIMO-Q1（找的路径：/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2099-NOSUCH-YIMO/BJ-2099-NOSUCH-YIMO-Q1.md）（来自 --keys-file 第 'BJ-2099-NOSUCH-YIMO-Q1' 行）",
+  "stdout_head": "",
+  "seconds": 1.88
+ },
+ {
+  "id": "A20",
+  "desc": "--md 指向卷 README（非逐题 MD）→ 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：MD:README.md：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题）在本 MD 的二级/三级标题里也未命中，需人工核对该 MD 格式",
+  "stdout_head": "",
+  "seconds": 1.75
+ },
+ {
+  "id": "A21",
+  "desc": "--text 空文件 → 2（或 flag 1）",
+  "exit": 1,
+  "expect": [
+   1,
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": true,\n \"summary\": [\n  {\n   \"source\": \"TEXT:empty.txt\",\n   \"top\": \"P1｜一、三统一：党的领导、人民当家作主、依法治国的有机统一｜考法1　接力型：三方前后接力，做成一件事（3题）\",\n   \"",
+  "seconds": 3.52
+ },
+ {
+  "id": "A22",
+  "desc": "--key 两层小问 Q21(1)(2) → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--key 格式不像题库题键（应形如 BJ-2026-HD-YIMO-Q17，可带 (1)/（1）或 #1）：'BJ-2024-DC-ERMO-Q21(1)(2)'",
+  "stdout_head": "",
+  "seconds": 1.73
+ },
+ {
+  "id": "A23",
+  "desc": "--key 带 NUL/空格 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--key 格式不像题库题键（应形如 BJ-2026-HD-YIMO-Q17，可带 (1)/（1）或 #1）：'BJ 2024'",
+  "stdout_head": "",
+  "seconds": 1.75
+ },
+ {
+  "id": "A24",
+  "desc": "--bank 不存在 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：题库没有这个题键的 MD：BJ-2020-BJ-GAOKAO-Q1（找的路径：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/nobank/questions/BJ-2020-BJ-GAOKAO/BJ-2020-BJ-GAOKAO-Q1.md）",
+  "stdout_head": "",
+  "seconds": 1.75
+ },
+ {
+  "id": "A25",
+  "desc": "题库“采用题面小节: 无”的题键 → 2",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：BJ-2025-CY-YIMO-Q8：题库读取指引标注“采用题面小节：无”——题库本身没有可用题面，如实报错，不猜",
+  "stdout_head": "",
+  "seconds": 1.74
+ },
+ {
+  "id": "A26",
+  "desc": "2026石景山期末（题面节名“原题转录”）→ 2（工具认不出题面）",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：BJ-2026-SJS-QIMO-Q18：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题）在本 MD 的二级/三级标题里也未命中，需人工核对该 MD 格式",
+  "stdout_head": "",
+  "seconds": 1.85
+ },
+ {
+  "id": "A27",
+  "desc": "--md 已在本书的题（BJ-2024-DC-ERMO-Q21）→ 应 1（已落位 flag）",
+  "exit": 0,
+  "expect": [
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"MD:BJ-2024-DC-ERMO-Q21.md\",\n   \"top\": \"P1｜01　党总体：党的全面领导｜考法6　一体型：党领导人民一起干成事（14题）\",\n   \"fla",
+  "seconds": 3.49
+ },
+ {
+  "id": "A28",
+  "desc": "题库只有 E3（参考答案（E3；不得视为正式评分细则））的主观题 BJ-2023-FT-ERMO-Q17 → 应 1（无细则不收）",
+  "exit": 0,
+  "expect": [
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2023-FT-ERMO-Q17\",\n   \"top\": \"TOPIC｜专题一　主体专题：主体能做什么｜人民与公民\",\n   \"flags\": []\n  }\n ]\n}\n",
+  "seconds": 3.47
+ },
+ {
+  "id": "A29",
+  "desc": "E1_candidate_pending 的主观题 BJ-2025-BJ-GAOKAO-Q18 → 应 1（无细则不收）",
+  "exit": 0,
+  "expect": [
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2025-BJ-GAOKAO-Q18\",\n   \"top\": \"TOPIC｜专题一　主体专题：主体能做什么｜企业、平台与社会组织\",\n   \"flags\": []\n  }\n",
+  "seconds": 3.55
+ },
+ {
+  "id": "A30",
+  "desc": "正文写“没有为本题提供…正式评分槽…按E3保留”的 BJ-2023-DC-ERMO-Q18 → 应 1",
+  "exit": 0,
+  "expect": [
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": false,
+  "stderr": "",
+  "stdout_head": "{\n \"n_queries\": 1,\n \"any_flag\": false,\n \"summary\": [\n  {\n   \"source\": \"BJ-2023-DC-ERMO-Q18\",\n   \"top\": \"P1｜一、三统一：党的领导、人民当家作主、依法治国的有机统一｜考法2　一体型：一个动作同时体现三者（1题）\",\n",
+  "seconds": 3.43
+ },
+ {
+  "id": "A31",
+  "desc": "--debug 下异常才出 traceback（非 debug 无）：--docx 不是 zip",
+  "exit": 2,
+  "expect": [
+   2
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "输入/参数错误：--docx 不是有效的 .docx（zip）文件：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r2/adv/bad.json",
+  "stdout_head": "",
+  "seconds": 0.18
+ },
+ {
+  "id": "A32",
+  "desc": "哲学草案配置 + 哲学书 + 题库题键 --format md",
+  "exit": 0,
+  "expect": [
+   0,
+   1
+  ],
+  "traceback": false,
+  "left_files": [],
+  "ok": true,
+  "stderr": "",
+  "stdout_head": "# 新题插入位置建议（2026 北京高考政治哲学宝典）\n\n## BJ-2024-HD-YIMO-Q17（subjective）\n- 题库题型字段：非选择题\n1. **P1｜10　整体与部分｜（无考法名）**（分 2.5132，组内 17 题，一级 二、辩证法／二级 10　整体与部分）\n   - 最像题块：例题 1　20",
+  "seconds": 3.91
+ }
+]

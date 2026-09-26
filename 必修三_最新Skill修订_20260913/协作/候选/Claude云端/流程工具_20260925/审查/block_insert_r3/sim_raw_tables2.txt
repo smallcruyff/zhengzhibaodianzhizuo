@@ -1,0 +1,18 @@
+{'floating_left': 43, 'NESTED_COLLIDE': 4}
+== floating_left 43
+    2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模答案.docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '130'}
+    2023模拟题/2023各区模拟题(1)/各区一模/西城/西城-高三政治一模答案.docx#t2 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '80'}
+    2023模拟题/2023各区模拟题(1)/各区二模/√西城/细则-高三政治二模5-10(2).docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '46'}
+    2023模拟题/2023各区模拟题(1)/各区二模/√西城/西城-高三政治二模答案-定(2).docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '46'}
+    2023模拟题/2023各区模拟题(1)/期末和期中/2023北京海淀高三（上）期中政治（教师版）.docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'right', 'tblpY': '334'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修2 .docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '117'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修2 .docx#t3 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'right', 'tblpY': '241'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修4.docx#t1 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'right', 'tblpY': '119'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修4.docx#t3 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '117'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修4.docx#t4 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'right', 'tblpY': '9'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编必修4.docx#t7 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpY': '97'}
+    2024模拟题/202404各区一模试题分类（按模块）/2024届各区一模试题分类汇编选必1.docx#t4 tblpPr={'leftFromText': '180', 'rightFromText': '180', 'vertAnchor': 'text', 'horzAnchor': 'margin', 'tblpXSpec': 'center', 'tblpY': '117'}
+== NESTED_COLLIDE 4
+    2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/17题.docx#t1 tblStyle=6 src=('table', 'Table Grid') -> book=('paragraph', 'heading 6')
+    2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/18题 .docx#t1 tblStyle=5 src=('table', 'Normal Table') -> book=('paragraph', 'heading 5')
+    2025模拟题/2025各区二模/2025丰台二模/细则/分题细则/2025丰台二模评标细则/2025丰台二模评标细则/20题.docx#t1 tblStyle=5 src=('table', 'Normal Table') -> book=('paragraph', 'heading 5')

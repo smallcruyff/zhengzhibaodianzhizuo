@@ -1,0 +1,5 @@
+replace_fails: rc=2 leftovers=[] | 错误：模拟：原子替换失败
+dup_member: rc=2 leftovers=[] | 中止：新增成员与已有成员重名：['word/document.xml']
+verify_raises: rc=2 leftovers=[] | 中止：写后复核执行异常，已删除输出：模拟：写后复核异常
+postcondition_missing_column: rc=2 leftovers=[] | 中止：写后复核不通过，已删除输出：N1：block_index 认出的题块缺少栏目：['【答案落点】']
+control: rc=0 leftovers=['control.docx'] | 

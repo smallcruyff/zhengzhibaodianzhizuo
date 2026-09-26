@@ -1,0 +1,18 @@
+题块总数 746 {'进入评测池': 703, 'MD存在但解析失败:guide_无': 42, '题库无MD': 1}
+  guide_无 17 ['BJ-2025-CY-YIMO-Q11', 'BJ-2025-CY-YIMO-Q21', 'BJ-2025-CY-YIMO-Q8', 'BJ-2025-CY-YIMO-Q9', 'BJ-2025-HD-QIMO-Q22', 'BJ-2025-XC-QIMO-Q16', 'BJ-2025-XC-QIMO-Q19', 'BJ-2025-XC-QIMO-Q21', 'BJ-2026-DC-ERMO-Q17', 'BJ-2026-DC-QIMO-Q19', 'BJ-2026-DC-QIMO-Q21', 'BJ-2026-FT-QIMO-Q7', 'BJ-2026-HD-YIMO-Q21', 'BJ-2026-SY-YIMO-Q17', 'BJ-2026-SY-YIMO-Q21', 'BJ-2026-TZ-QIMO-Q17', 'BJ-2026-TZ-QIMO-Q21']
+
+kind_mismatch 明细：
+  ('B0010', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 10\u30002025朝阳一模第18题')
+  ('B0056', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 44\u30002025朝阳一模第18题')
+  ('B0178', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 21\u30002025朝阳一模第18题')
+  ('B0208', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 9\u30002025朝阳一模第18题')
+  ('B0349', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 1\u30002025朝阳一模第18题')
+  ('B0386', 'BJ-2026-XC-YIMO-Q16', 'subjective', 'choice', '选择题', True, '例题 12\u30002026西城一模第16题（跨模块）')
+  ('B0443', 'BJ-2026-XC-YIMO-Q16', 'subjective', 'choice', '选择题', True, '例题 25\u30002026西城一模第16题（跨模块）')
+  ('B0455', 'BJ-2025-CY-YIMO-Q18', 'subjective', 'choice', '选择题', True, '例题 37\u30002025朝阳一模第18题')
+  ('B0595', 'BJ-2025-CY-YIMO-Q18', 'topic', 'choice', '选择题', True, '例13\u30002025朝阳一模第18题（8分）')
+  ('B0674', 'BJ-2025-CY-YIMO-Q18', 'topic', 'choice', '选择题', True, '例3\u30002025朝阳一模第18题（8分）')
+  ('B0695', 'BJ-2025-CY-YIMO-Q18', 'topic', 'choice', '选择题', True, '例13\u30002025朝阳一模第18题（8分）')
+  ('B0721', 'BJ-2025-CY-YIMO-Q18', 'topic', 'choice', '选择题', True, '例15\u30002025朝阳一模第18题（8分）')
+  ('B0746', 'BJ-2026-XC-YIMO-Q16', 'topic_case', 'choice', '选择题', True, '【变式二】 2026年西城一模第16题')
+合计 13 ；其中 MD 题型字段缺失/含糊（工具靠启发式判型）: 0

@@ -1,0 +1,4 @@
+LOO total 709: hit1 79 hit3 183
+  kind-mismatched queries 40: of which counted hit1 1 hit3 2
+  true group unreachable (all its blocks excluded / other kind) 46
+  with kind forced to book kind: hit1 81 hit3 185

@@ -1,0 +1,28 @@
+工具：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py
+父稿：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx（期望 SHA c007d7198422050c…，实际 c007d7198422050c…）
+[PASS] T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16 (42.88s) 
+[PASS] T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18 (42.89s) 
+[PASS] T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19 (42.36s) 
+[PASS] T2a_金标回归_带图_B0005_删后重插 (55.84s) 
+[PASS] T2b_金标回归_带表_B0003_删后重插 (51.95s) 
+[PASS] T3a_负例_父稿SHA错 (2.72s) 
+[PASS] T3b_负例_锚点0命中 (2.88s) 
+[PASS] T3c_负例_锚点多命中 (2.99s) 
+[PASS] T3d_负例_样板题块找不到 (2.88s) 
+[PASS] T3e_负例_原件里找不到指定图 (2.8s) 
+[PASS] T3f_负例_原件里找不到指定表 (3.04s) 
+[PASS] T3g_负例_图片文件损坏 (3.0s) 
+[PASS] T3h_负例_输出落到书稿目录 (2.9s) 
+[PASS] T3i_负例_输出落到Skill目录 (2.79s) 
+[PASS] T3j_负例_输出落到题库目录 (2.77s) 
+[PASS] T3k_负例_冻结册配置 (0.21s) 
+[PASS] T4a_其他书_哲学_check (3.38s) 
+[PASS] T4b_其他书_哲学_apply最小写入 (12.67s) 
+
+合计：18 条，PASS 18，FAIL 0
+详情：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/test_results.json
+
+real	4m41.310s
+user	4m24.724s
+sys	0m13.962s
+exit=0

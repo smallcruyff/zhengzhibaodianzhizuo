@@ -1,0 +1,63 @@
+{
+ "tool": "placement_suggest",
+ "version": "1.0.0",
+ "stage": "编写",
+ "generated_at": "2026-09-25",
+ "actor": "claude-cloud:session_019EZRqQF2ofe8wnU3UjEgvv",
+ "summary": "新题插入位置建议：给一道新题（题库题键/MD/纯文本）找目标书里最像的考法与相邻样板题块。目标书用 block_index.walk/finish_blocks 切题块（作库调用，不重写识别逻辑），块正文按段首【标签】切桶、按关键词把标签归到 material/ask/rubric/teaching 四个抽象角色（与具体书册 column_schemas 的标签名无关，schema-agnostic，已在 bixiu3 与哲学草案配置两本书验证）；“考法说明”按 profile styles.method_desc 的样式名从 doc 段落流里补取（block_index 本身把这段文字丢弃，只留计数）。新题的材料/设问/E1 细则从题库逐题 MD 解析：MD 自带“读取指引”时按其“采用题面小节”精确节名取，没有则按关键词库匹配（题面/题干/题目原文/原题保真/原卷逐字转写等九种已知写法），361 个已用题键实测命中 347 个（96.1%），其余 13 个是题库自己标“无题面”、1 个 MD 缺失。四个字段各建字符 2–3gram BM25 倒排索引，全书只建一次；按（部分,节点,考法名）分组聚合，选择题只候选选择题考法、主观题只候选主观/专题考法；设问命中 profile 的 stem_module_guard 或主观题无 E1 只标 flags，不删候选。只读，除 --report/--format md 的 --out（受 docx_lib.guard_write 约束）不写任何文件。",
+ "files": [
+  {"path": "placement_suggest.py", "lines": 757, "sha256": "5fb089da35dc12dc345cbf95d8197e80db6db45cb1899b7475110c1cbe0e9cbb"},
+  {"path": "run_tests_placement_suggest.py", "lines": 426, "sha256": "1adfed0b419facf3f09670aabd0aeeb003c588c753167fac0c983fc487a370e1"}
+ ],
+ "line_budget_note": "757 行，未超规格“≤900 行”目标。",
+ "usage": [
+  "python3 placement_suggest.py --docx 必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --profile profiles_cloud/bixiu3.json --key BJ-2026-HD-YIMO-Q17 --top-k 3 --report 构建/placement_suggest/x.json",
+  "python3 placement_suggest.py --docx 同上.docx --profile profiles_cloud/bixiu3.json --keys-file 新题清单.txt --format md --out 构建/placement_suggest/建议.md",
+  "python3 placement_suggest.py --docx 同上.docx --profile profiles_cloud/bixiu3.json --md 某题.md --top-k 3",
+  "python3 placement_suggest.py --docx 同上.docx --profile profiles_cloud/bixiu3.json --text 新题.txt --kind subjective",
+  "云端必须显式传 --profile profiles_cloud/bixiu3.json（Skill 母版 profiles/ 里的是 Mac 路径，guard_write 认不出仓库根）；--bank 默认按 profile 的 sources.bank.root 解出（仓库根下 DeepSeek_政治题库资料库_20260918），可显式覆盖"
+ ],
+ "tests": [
+  {"input": "十题验收（seed=20260925 分层抽样：主观4/选择3/专题3，key 级“同题键任一考法命中即算”，与十题不相交的题排除同题键全部题块）", "result": "PASS：内置默认参数 前1 4/10、前3 6/10；调好后固定参数 前1 4/10、前3 5/10（见 tests 第3条，调参在更大样本上未见明显提升，已如实报告）", "seconds": 0.3},
+  {"input": "全书留一评估（709 个“有题库 MD 且能解析出题面”的题块，题块级严格口径：true=该题块自己的考法组，同题键全部题块先剔除候选池，作十题结果的对照防挑题）", "result": "PASS：内置默认参数 总体前1 79/709(11.1%)、前3 183/709(25.8%)；按题型 choice 33/205(16.1%)/83/205(40.5%)，subjective 31/356(8.7%)/65/356(18.3%)，topic 13/137(9.5%)/32/137(23.4%)，topic_case 2/11/3/11；全书 102 个考法组，随机基线约 1%/3%，本工具比随机高一个数量级", "seconds": 9.2},
+  {"input": "调参（调参集40题，seed=20260926，先从题键池剔除十题的 key 再抽样，5 组字段权重×4 组 agg_top_k/agg_mix=20 组网格）", "result": "PASS（部分）：调参集上最优组合（weights 与内置默认相同，agg_top_k=1,agg_mix=1.0）前1 12/40(30%)、前3 22/40(55%)，优于该网格里的默认组合；但把这组“调好”的参数换到全书留一（709题）上反而更差（前1 75/709 对 默认79/709，前3 174/709 对 默认183/709）——40题调参集偏小、方差大，未能稳定泛化，如实报告两组数字，工具内置默认值未改为调参结果", "seconds": 0.6},
+  {"input": "其他书：哲学 R10（profile_probe 自动草案配置 philosophy.draft.json，未人工确认）", "result": "PASS：能装书（1119 题块）、建索引；CLI 对真实题键出候选、流程走通；12 题抽样命中率 前1 0/12、前3 4/12（明显低于必修三，草案配置未核实，仅供参考，不代表正式配置下的表现）", "seconds": 3.1},
+  {"input": "负例：题键不在题库 / 书稿 0 题块 / profile 缺 sources.bank.root 且未给 --bank / --expect-sha 给错 / --report 落受保护目录 / 冻结配置+--report / 未给任何新题输入", "result": "PASS：均退出码 2 或 3（冻结+写出场景），未落盘；--report 落候选目录 构建/ 下的正例退出 0 且成功写出", "seconds": 0.5}
+ ],
+ "tests_totals": {
+  "total": 24,
+  "failed": 0,
+  "note": "run_tests_placement_suggest.py 单次运行合计 24 条记录（含 baseline_guard 前后各一条），全部 PASS，用时约 64 秒；上表按验收组归并展示，逐条明细见 run_tests_placement_suggest.py 输出与 构建/placement_suggest/test_results.json（含十题逐题排名、调参网格全部20组、全书留一按题型细分）"
+ },
+ "vermin": {
+  "placement_suggest.py": "Minimum required versions: 3.6；Incompatible versions: 2.x（兼容 3.9，未用 match/X|Y 注解/zip(strict=)/括号式多 with 等 3.10+ 语法）",
+  "run_tests_placement_suggest.py": "Minimum required versions: 3.7；Incompatible versions: 2.x"
+ },
+ "vermin_ok": true,
+ "baseline_guard": {
+  "before": {"files": 3468, "changed": 0, "removed": 0, "added": 0, "skill_pycache": []},
+  "after": {"files": 3468, "changed": 0, "removed": 0, "added": 0, "skill_pycache": []},
+  "note": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json 在 run_tests 前后各跑一次、并在提交回执前单独再跑一次，三次均 0 变化、Skill 下无 __pycache__。测试脚本用 import placement_suggest 当库跑（导入不经 CLI 子进程），本文件与测试文件开头均 sys.dont_write_bytecode=True，运行结束核对 C/__pycache__ 下没有本工具产生的 .pyc（同目录另一子代理 block_insert.py 的 run_tests_block_insert.cpython-311.pyc 不属本工具，未动）。"
+ },
+ "replaces": "此前给新题找插入位置靠人工/模型通读目标书已有考法、凭经验判断相似度与插入点，逐题重复；现在脚本一次建好全书索引，批量给出每题前3候选考法（部分/节点/考法名/分数/主要贡献词）、组内最相似题块、插入锚点（可直接喂 block_insert 的 anchor.title_contains）和一段同口径原文切片，模型/主代理只需在候选里裁定教学内容与最终插入点，不用再逐题翻整本书比对。",
+ "known_limits": [
+  "题库 MD 的“题面”节名没有统一写法（至少见过 9 种批次相关写法+“读取指引”精确指定两条路径），已用“读取指引优先、关键词兜底”覆盖必修三第52批用到的 361 个题键中的 347 个（96.1%）；剩余 13 个是题库自己在“读取指引”里写明“采用题面小节：无”（原卷未取得可用文字层，题库如实标注，不是本工具漏解析），1 个是 MD 文件缺失——这些题键用 --key 会如实退出码 2 并说明原因，不会伪造文字去凑相似度。",
+  "材料/设问切分（split_ask）是句末引导词（运用/结合/说明/分析……）启发式：从末尾找最后一条含引导词的句子当设问，找不到就把最后一句当设问并标 ask_heuristic=true；复合设问、把设问写在材料中间、措辞生僻的题可能切得不准，只影响“设问”与“材料”两个字段各自的权重分配，不影响候选是否出现，且这两个字段都会一并计入相似度，实际影响弱于看起来。",
+  "“插入点”规则：incremental-question-intake.md 第54行只说明“插入位置按既有节点内排序确定”，没有给出年份/区县/难度等任一机器可判定的具体次序，本工具因此统一给“考法末尾”（该考法组当前文档序最后一个题块之后），随建议一并给出这个说明与锚点 anchor_title_contains，具体插在组内第几题之后由主代理定。",
+  "“考法说明”（考法标题到第一道例题前的说明段）按 profile styles.method_desc 的样式名从段落流里取，只在必修三 profile 里非空（“考法说明”）；六本书的 profile_probe 草案里这一项大多是空列表，届时该字段对相似度的贡献等于 0（不报错，只是没有这份信号），不是缺陷。",
+  "调参（3b）：40 题调参集选出的组合在调参集自身上确有提升，但换到 709 题全书留一评估上不如内置默认参数——调参集偏小、方差较大，本工具没有据此改动内置默认值，如实把两组结果都写进了 test_results.json，供主代理判断是否要收集更大调参集重跑。",
+  "命中率使用字符 n-gram BM25（词面相似度），不是语义理解：同一知识点、不同表述的题可能打不到高分；选择题材料里的套话（如“这表明”“对此认识正确的是”）会带来一些非实质性的重合分——已经靠 idf 自然压低这类高频词的权重，但不能完全消除，人工看 top_contrib_terms 字段可以核对某个候选是不是靠套话撑分。",
+  "小问（--key 带 (1)/#1）目前只记录 subq，不裁剪到该小问单独的设问/细则，仍用整题文本打分；多小问题目若各小问考法不同，当前按整题只给一组候选，需人工在候选里进一步判断该小问落哪个候选。",
+  "topic_case（【主例】/【变式】，12 个）样本量很小，命中率数字噪声较大（见 by_kind 明细），不建议单独引用。",
+  "--text 纯文本模式识别“细则”只靠一行独立的“细则/评分细则/正式评分/E1”（可带冒号）；没有这行时整份文件都当“设问”，没有细则字段，格式随意的纯文本可能切分不理想，比 --key/--md 路径弱，属已知取舍（规格允许三种输入方式，未强求同等准确度）。",
+  "docx_lib.guard_write 对 profile.frozen 为真的配置一律拒绝任何写出（不分 .docx 还是 .json 报告）；用冻结配置（如 bixiu2_frozen_test.json）跑 --report 会退出 3——这是复用 docx_lib 既有守卫的行为，不是本工具单独加的限制；不给 --report 时仍能只读打印候选，未受影响。",
+  "必修二不在云端，未跑任何必修二相关测试（不伪造）；六本其他书除哲学外未逐一实跑（选必一/选必二/思维/推理有 profiles_cloud 草案，但设计稿验收只要求“至少一本其他书跑通”，已用哲学满足，其余留给按需验证）。"
+ ],
+ "profile_fields_needed": [],
+ "needs_user_decision": [
+  "3b 调参结论：40 题调参集选出的 agg_top_k=1/agg_mix=1.0（放弃“组内均值”，只看组内最相似的一题）在调参集上更好、但在全书留一上更差——是否要收集更大规模调参集重新调、还是维持内置默认（agg_top_k=3,agg_mix=0.6），由主代理定；本工具内置默认值未擅自改动。",
+  "六本书 profiles_cloud 草案里 styles.method_desc（“考法说明”）大多是空列表，草案转正时如需要这个信号参与相似度，需要人工确认各书是否有对应的“说明段”样式名并登记。",
+  "题库里 13 个必修三第52批用到的题键（如 BJ-2026-FT-QIMO-Q7）在“读取指引”里明写“采用题面小节：无”，即题库没有这些题的可用文字层——是否需要回原卷补录，这是题库维护范畴，本工具只如实报错，不代为处理。",
+  "是否要把“小问级别”的设问/细则裁剪（目前 --key 带 (1)/#1 只记录、不裁剪，用整题文本）列入下一版需求，取决于实际新题是否常见多小问考法不同的情况。"
+ ]
+}

@@ -1,0 +1,667 @@
+[
+ {
+  "case": "L1 新高三卷(届别2025海淀期中,题面全新)→建议号被正确登记卷占用",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r1_new_hd_2025_qizhong.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 3.1,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "chain",
+   "rename_plan": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "retire_into": "BJ-2024-HD-QIZHONG",
+     "reason": "与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号"
+    },
+    {
+     "old": null,
+     "new": "BJ-2025-HD-QIZHONG",
+     "reason": "上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号"
+    }
+   ],
+   "redirects": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "new": "BJ-2024-HD-QIZHONG"
+    }
+   ],
+   "duplicates": [],
+   "issues": [
+    "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+    "BJ-2025-HD-QIZHONG 已被占用，改号顺序建议：1. BJ-2025-HD-QIZHONG→BJ-2024-HD-QIZHONG（与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号）；2. 本卷 → BJ-2025-HD-QIZHONG（上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L2 真高二卷(2023—2024学年高二)→届别2025",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r2_grade2_hd.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 3.2,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": true,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "chain",
+   "rename_plan": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "retire_into": "BJ-2024-HD-QIZHONG",
+     "reason": "与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号"
+    },
+    {
+     "old": null,
+     "new": "BJ-2025-HD-QIZHONG",
+     "reason": "上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号"
+    }
+   ],
+   "redirects": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "new": "BJ-2024-HD-QIZHONG"
+    }
+   ],
+   "duplicates": [],
+   "issues": [
+    "证据窗口内出现“高二”且未见“高三”，届别已按学年末年+1 处理，请复核是否确为高二卷",
+    "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+    "BJ-2025-HD-QIZHONG 已被占用，改号顺序建议：1. BJ-2025-HD-QIZHONG→BJ-2024-HD-QIZHONG（与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号）；2. 本卷 → BJ-2025-HD-QIZHONG（上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L3 有文字层无日期,文件名含2024.11",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/2024.11海淀高三期中试卷.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.8,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "WEAK_ONLY",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "chain",
+   "rename_plan": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "retire_into": "BJ-2024-HD-QIZHONG",
+     "reason": "与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号"
+    },
+    {
+     "old": null,
+     "new": "BJ-2025-HD-QIZHONG",
+     "reason": "上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号"
+    }
+   ],
+   "redirects": [
+    {
+     "old": "BJ-2025-HD-QIZHONG",
+     "new": "BJ-2024-HD-QIZHONG"
+    }
+   ],
+   "duplicates": [],
+   "issues": [
+    "仅有弱证据（exams.csv/目录名）支持届别，未取得原件或题库文字层佐证",
+    "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+    "BJ-2025-HD-QIZHONG 已被占用，改号顺序建议：1. BJ-2025-HD-QIZHONG→BJ-2024-HD-QIZHONG（与 BJ-2024-HD-QIZHONG 判定为重复登记（22/22 题匹配），应并入/撤销，不再单独占用卷号）；2. 本卷 → BJ-2025-HD-QIZHONG（上述步骤腾出 BJ-2025-HD-QIZHONG 后，本卷改为该号）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L4 试卷.pdf+细则.docx(规格用法)",
+  "args": [
+   "check",
+   "--files",
+   "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/2025模拟题/2025各区期末/2025海淀期中/试卷/试卷.pdf",
+   "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/2025模拟题/2025各区期末/2025海淀期中/细则/细则.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 3.5,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "already_registered",
+   "rename_plan": [],
+   "redirects": [],
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 21,
+     "total": 22,
+     "fraction_reliable": true
+    },
+    {
+     "exam_id": "BJ-2025-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 21,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "建议卷号 BJ-2025-HD-QIZHONG 已被占用",
+    "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 21/22 题（占比 0.9545）",
+    "duplicate_registration：与 BJ-2025-HD-QIZHONG 匹配 21/22 题（占比 0.9545）",
+    "BJ-2025-HD-QIZHONG 已登记为同一场考试（题面匹配 21/22 题），不应再注册新卷号；如需登记请先核实与 BJ-2025-HD-QIZHONG 是否确为同一场考试，而不是直接改号顶替它。"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L5 r1 s11 复用题在第4433字",
+  "args": [
+   "check",
+   "--files",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/审查/exam_register_r1/synth/s11_reuse_after_4000_chars.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期末",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2027-HD-QIMO",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2025-BJ-GAOKAO",
+     "kind": "shared_or_reused_questions",
+     "matched": 1,
+     "total": 37,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "shared_or_reused_questions：与 BJ-2025-BJ-GAOKAO 匹配 1/37 题（占比 0.027）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L6 考生须知编号+22题整卷复印",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r4_notice_numbered_copy_of_2026hd.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2026-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "already_registered",
+   "rename_plan": [],
+   "redirects": [],
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 19,
+     "total": 19,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "建议卷号 BJ-2026-HD-QIZHONG 已被占用",
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 19/19 题（占比 1.0）",
+    "BJ-2026-HD-QIZHONG 已登记为同一场考试（题面匹配 19/19 题），不应再注册新卷号；如需登记请先核实与 BJ-2026-HD-QIZHONG 是否确为同一场考试，而不是直接改号顶替它。"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L7 真卷改掉大部分题面(4/22保留)",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r5_mostly_rewritten_2026hd.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.3,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2027-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "shared_or_reused_questions",
+     "matched": 4,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "shared_or_reused_questions：与 BJ-2026-HD-QIZHONG 匹配 4/22 题（占比 0.1818）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L8 半数复用11/22",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2027-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 11,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 11/22 题（占比 0.5）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L9 须知在前、日期在须知之后",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r7_header_date_after_notice.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [
+    "原件与题库均未给出可用的届别信号（无日期/学年写法），需本地核实"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L10 r1 s1 无日期",
+  "args": [
+   "check",
+   "--files",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/审查/exam_register_r1/synth/s1_nodate.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.6,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [
+    "原件与题库均未给出可用的届别信号（无日期/学年写法），需本地核实"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L11 r1 s5 全角+PUA",
+  "args": [
+   "check",
+   "--files",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/审查/exam_register_r1/synth/s5_fullwidth.docx",
+   "--region",
+   "朝阳",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 0,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-CY-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L12 r1 s8 HD-YIMO 文字版新卷",
+  "args": [
+   "check",
+   "--files",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/审查/exam_register_r1/synth/s8_hd_yimo_text_copy.docx",
+   "--region",
+   "海淀",
+   "--stage",
+   "一模",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2026-HD-YIMO",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2026-HD-YIMO",
+     "occupied": true
+    }
+   },
+   "chain_kind": "already_registered",
+   "rename_plan": [],
+   "redirects": [],
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-YIMO",
+     "kind": "duplicate_registration",
+     "matched": 15,
+     "total": 15,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "建议卷号 BJ-2026-HD-YIMO 已被占用",
+    "duplicate_registration：与 BJ-2026-HD-YIMO 匹配 15/15 题（占比 1.0）",
+    "BJ-2026-HD-YIMO 已登记为同一场考试（题面匹配 15/15 题），不应再注册新卷号；如需登记请先核实与 BJ-2026-HD-YIMO 是否确为同一场考试，而不是直接改号顶替它。"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "L13 exam-id BJ-2025-HD-QIZHONG",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2025-HD-QIZHONG",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.9,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2025-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2024-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 22,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2024-HD-QIZHONG 匹配 22/22 题（占比 1.0）"
+   ],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 21,
+     "fallback_low_confidence": 1
+    }
+   }
+  }
+ },
+ {
+  "case": "L14 exam-id BJ-2023-HD-QIZHONG --claimed-id BJ-2024-HD-QIZHONG",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2023-HD-QIZHONG",
+   "--claimed-id",
+   "BJ-2024-HD-QIZHONG",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 10.7,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2024,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2024-HD-QIZHONG",
+    "occupied": true,
+    "occupant": {
+     "exam_id": "BJ-2024-HD-QIZHONG",
+     "occupied": true
+    }
+   },
+   "chain_kind": "chain",
+   "rename_plan": [
+    {
+     "old": "BJ-2024-HD-QIZHONG",
+     "retire_into": "BJ-2025-HD-QIZHONG",
+     "reason": "与 BJ-2025-HD-QIZHONG 判定为重复登记（21/21 题匹配），应并入/撤销，不再单独占用卷号"
+    },
+    {
+     "old": null,
+     "new": "BJ-2024-HD-QIZHONG",
+     "reason": "上述步骤腾出 BJ-2024-HD-QIZHONG 后，本卷改为该号"
+    }
+   ],
+   "redirects": [
+    {
+     "old": "BJ-2024-HD-QIZHONG",
+     "new": "BJ-2025-HD-QIZHONG"
+    }
+   ],
+   "duplicates": [],
+   "issues": [
+    "建议卷号 BJ-2024-HD-QIZHONG 已被占用",
+    "BJ-2024-HD-QIZHONG 已被占用，改号顺序建议：1. BJ-2024-HD-QIZHONG→BJ-2025-HD-QIZHONG（与 BJ-2025-HD-QIZHONG 判定为重复登记（21/21 题匹配），应并入/撤销，不再单独占用卷号）；2. 本卷 → BJ-2024-HD-QIZHONG（上述步骤腾出 BJ-2024-HD-QIZHONG 后，本卷改为该号）"
+   ],
+   "fingerprint_coverage": {
+    "total": 23,
+    "found": 23,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_alias": 23
+    }
+   }
+  }
+ }
+]

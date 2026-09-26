@@ -1,0 +1,16 @@
+exit 1 questions_in_paper 20
+{
+ "duplicates": [
+  {
+   "exam_id": "BJ-2025-BJ-GAOKAO",
+   "kind": "duplicate_registration",
+   "matched": 2,
+   "total": 3,
+   "fraction_reliable": true,
+   "low_confidence_count": 0
+  }
+ ],
+ "issues": [
+  "duplicate_registration：与 BJ-2025-BJ-GAOKAO 匹配 2/3 题（占比 0.6667）"
+ ]
+}

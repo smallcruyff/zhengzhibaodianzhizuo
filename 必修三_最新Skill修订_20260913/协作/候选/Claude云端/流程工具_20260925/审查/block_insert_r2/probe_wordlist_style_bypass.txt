@@ -1,0 +1,61 @@
+## adv_wordlist.py
+{
+ "style_override_bypass_restore": {
+  "rc": 1,
+  "stderr": "",
+  "out_exists": true,
+  "landed_style": "分析过程",
+  "text": "从材料选知识：此处待核，TODO 占位，本落位示例。",
+  "new_FAIL": [
+   [
+    "columns",
+    "栏目缺失或重复",
+    null
+   ],
+   [
+    "columns",
+    "栏目缺失或重复",
+    null
+   ],
+   [
+    "numbering",
+    "例题编号不连续",
+    "例题 93　2099审查探针卷第1题"
+   ],
+   [
+    "numbering",
+    "例题编号不连续",
+    "例题 4　2026朝阳一模第21题（跨模块）"
+   ],
+   [
+    "method_counts",
+    "考法标称题数与实际例题数不符",
+    "考法1　接力型：三方前后接力，做成一件事（3题）"
+   ],
+   [
+    "student_text",
+    "工程标签:TODO",
+    "从材料选知识：此处待核，TODO 占位，本落位示例。"
+   ],
+   [
+    "student_text",
+    "工程标签:待核",
+    "从材料选知识：此处待核，TODO 占位，本落位示例。"
+   ],
+   [
+    "student_text",
+    "编校口吻:本落位",
+    "从材料选知识：此处待核，TODO 占位，本落位示例。"
+   ]
+  ]
+ },
+ "style_override_bypass_restore_nohealth": {
+  "rc": 0,
+  "out_exists": true,
+  "stderr": ""
+ },
+ "control_teaching_role": {
+  "rc": 2,
+  "stderr": "中止：X1.content[1]：新文字命中禁用词表 工程标签:TODO"
+ }
+}

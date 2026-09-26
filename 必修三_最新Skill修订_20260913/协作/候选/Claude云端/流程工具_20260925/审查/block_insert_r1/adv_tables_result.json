@@ -1,0 +1,146 @@
+{
+ "dc_teacher_tbl4": {
+  "rc": 0,
+  "stdout": "{\"out\": \"/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r1/probe/adv_out/dc_teacher_tbl4_out.docx\", \"sha256\": \"8a27e14a5072a0df08c1359fd37700b0a130a43aa08d6dab45252b05d7cd01d6\"}\n",
+  "stderr": "",
+  "out_exists": true,
+  "new_docPr_dups": {},
+  "hyperlinks_out": [],
+  "hyperlinks_parent": 0,
+  "new_anchors": 0,
+  "vml_imagedata_rids": [],
+  "dangling": [],
+  "python_docx": "ok",
+  "verify": {
+   "python_docx_open": "ok"
+  },
+  "bic": [
+   {
+    "id": "X1",
+    "title": "例题 95　2026东城二模第99题",
+    "found_blocks": 1,
+    "schema": "subj4",
+    "missing": [
+     "【思维链条】",
+     "【答案落点】",
+     "【细则说明】"
+    ],
+    "media_count": 2,
+    "tables_count": 1,
+    "media_expect": 0,
+    "tables_expect": 1,
+    "media_match": false,
+    "tables_match": true
+   }
+  ]
+ },
+ "hyperlink_21": {
+  "rc": 0,
+  "stdout": "{\"out\": \"/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r1/probe/adv_out/hyperlink_21_out.docx\", \"sha256\": \"beb7b96d03dc1aa5790372a2727209222b56a8ee8bfffad86dacadf04f75e578\"}\n",
+  "stderr": "",
+  "out_exists": true,
+  "new_docPr_dups": {},
+  "hyperlinks_out": [
+   [
+    "rId7",
+    [
+     "endnotes",
+     "endnotes.xml",
+     null
+    ]
+   ],
+   [
+    "rId8",
+    [
+     "image",
+     "media/image1.png",
+     null
+    ]
+   ],
+   [
+    "rId9",
+    [
+     "image",
+     "media/image2.svg",
+     null
+    ]
+   ],
+   [
+    "rId10",
+    [
+     "image",
+     "media/image3.jpg",
+     null
+    ]
+   ]
+  ],
+  "hyperlinks_parent": 0,
+  "new_anchors": 0,
+  "vml_imagedata_rids": [],
+  "dangling": [],
+  "python_docx": "ok",
+  "verify": {
+   "python_docx_open": "ok"
+  },
+  "bic": [
+   {
+    "id": "X1",
+    "title": "例题 95　2026东城二模第99题",
+    "found_blocks": 1,
+    "schema": "subj4",
+    "missing": [
+     "【思维链条】",
+     "【答案落点】",
+     "【细则说明】"
+    ],
+    "media_count": 3,
+    "tables_count": 1,
+    "media_expect": 0,
+    "tables_expect": 1,
+    "media_match": false,
+    "tables_match": true
+   }
+  ]
+ },
+ "cp_teacher_tbl1": {
+  "rc": 0,
+  "stdout": "{\"out\": \"/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r1/probe/adv_out/cp_teacher_tbl1_out.docx\", \"sha256\": \"ed65ff9ac47c774a49256bbf656cace4549eb5f3d14d54bb02884bb73942f17e\"}\n",
+  "stderr": "",
+  "out_exists": true,
+  "new_docPr_dups": {},
+  "hyperlinks_out": [],
+  "hyperlinks_parent": 0,
+  "new_anchors": 0,
+  "vml_imagedata_rids": [],
+  "dangling": [],
+  "python_docx": "ok",
+  "verify": {
+   "python_docx_open": "ok"
+  },
+  "bic": [
+   {
+    "id": "X1",
+    "title": "例题 95　2026东城二模第99题",
+    "found_blocks": 1,
+    "schema": "subj4",
+    "missing": [
+     "【思维链条】",
+     "【答案落点】",
+     "【细则说明】"
+    ],
+    "media_count": 4,
+    "tables_count": 1,
+    "media_expect": 0,
+    "tables_expect": 1,
+    "media_match": false,
+    "tables_match": true
+   }
+  ]
+ },
+ "dc16_pict": {
+  "rc": 2,
+  "stdout": "",
+  "stderr": "中止：内部错误：新段落身份换算失败（应 77 段，换算出 61 段），拒绝继续写出\n",
+  "out_exists": false
+ }
+}

@@ -1,0 +1,181 @@
+## gold_fontdiff.py（金标回归：测试比对器忽略的 eastAsia 字体差异）
+{
+ "img": {
+  "n_paras": 13,
+  "eastAsia_font_diffs": [
+   {
+    "offset": 6,
+    "text": "结合材料，运用《政治与法治》知识，说明北",
+    "orig_font": [
+     [
+      "Songti SC",
+      35
+     ]
+    ],
+    "new_font": [
+     [
+      null,
+      35
+     ]
+    ]
+   },
+   {
+    "offset": 9,
+    "text": "从设问定层次：“说明如何”按主体、做法、",
+    "orig_font": [
+     [
+      "Songti SC",
+      7
+     ],
+     [
+      "Songti SC",
+      67
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      74
+     ]
+    ]
+   },
+   {
+    "offset": 11,
+    "text": "④（综合概括）市委统筹、居民共商共议和执",
+    "orig_font": [
+     [
+      "Songti SC",
+      7
+     ],
+     [
+      "Songti SC",
+      46
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      53
+     ]
+    ]
+   },
+   {
+    "offset": 12,
+    "text": "【细则说明】 综合概括写出坚持党的领导、",
+    "orig_font": [
+     [
+      "Songti SC",
+      6
+     ],
+     [
+      "Songti SC",
+      1
+     ],
+     [
+      "Songti SC",
+      97
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      7
+     ],
+     [
+      "Songti SC",
+      97
+     ]
+    ]
+   }
+  ]
+ },
+ "tbl": {
+  "n_paras": 35,
+  "eastAsia_font_diffs": [
+   {
+    "offset": 28,
+    "text": "结合材料，运用《政治与法治》知识，说明《",
+    "orig_font": [
+     [
+      "Songti SC",
+      46
+     ]
+    ],
+    "new_font": [
+     [
+      null,
+      46
+     ]
+    ]
+   },
+   {
+    "offset": 31,
+    "text": "从设问定层次：“如何体现”把形成过程中的",
+    "orig_font": [
+     [
+      "Songti SC",
+      7
+     ],
+     [
+      "Songti SC",
+      57
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      64
+     ]
+    ]
+   },
+   {
+    "offset": 33,
+    "text": "④（总述）政府工作报告形成过程把党的主张",
+    "orig_font": [
+     [
+      "Songti SC",
+      5
+     ],
+     [
+      "Songti SC",
+      54
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      59
+     ]
+    ]
+   },
+   {
+    "offset": 34,
+    "text": "【细则说明】 政府工作报告形成过程把党的",
+    "orig_font": [
+     [
+      "Songti SC",
+      6
+     ],
+     [
+      "Songti SC",
+      1
+     ],
+     [
+      "Songti SC",
+      57
+     ]
+    ],
+    "new_font": [
+     [
+      "Songti SC",
+      7
+     ],
+     [
+      "Songti SC",
+      57
+     ]
+    ]
+   }
+  ]
+ }
+}

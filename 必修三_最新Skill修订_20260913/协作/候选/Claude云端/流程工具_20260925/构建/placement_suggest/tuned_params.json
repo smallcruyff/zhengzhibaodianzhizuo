@@ -1,0 +1,281 @@
+{
+ "tuned_on_n_keys": 40,
+ "grid": [
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.6
+   },
+   "agg_top_k": 1,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 20,
+   "score": 38
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.6
+   },
+   "agg_top_k": 3,
+   "agg_mix": 0.6,
+   "hit1": 10,
+   "hit3": 21,
+   "score": 41
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.6
+   },
+   "agg_top_k": 3,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 20,
+   "score": 38
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.6
+   },
+   "agg_top_k": 5,
+   "agg_mix": 0.5,
+   "hit1": 7,
+   "hit3": 23,
+   "score": 37
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.0,
+    "rubric": 1.0,
+    "method": 1.0
+   },
+   "agg_top_k": 1,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 20,
+   "score": 38
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.0,
+    "rubric": 1.0,
+    "method": 1.0
+   },
+   "agg_top_k": 3,
+   "agg_mix": 0.6,
+   "hit1": 9,
+   "hit3": 21,
+   "score": 39
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.0,
+    "rubric": 1.0,
+    "method": 1.0
+   },
+   "agg_top_k": 3,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 20,
+   "score": 38
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.0,
+    "rubric": 1.0,
+    "method": 1.0
+   },
+   "agg_top_k": 5,
+   "agg_mix": 0.5,
+   "hit1": 10,
+   "hit3": 20,
+   "score": 40
+  },
+  {
+   "weights": {
+    "material": 0.6,
+    "ask": 2.2,
+    "rubric": 1.0,
+    "method": 0.4
+   },
+   "agg_top_k": 1,
+   "agg_mix": 1.0,
+   "hit1": 11,
+   "hit3": 21,
+   "score": 43
+  },
+  {
+   "weights": {
+    "material": 0.6,
+    "ask": 2.2,
+    "rubric": 1.0,
+    "method": 0.4
+   },
+   "agg_top_k": 3,
+   "agg_mix": 0.6,
+   "hit1": 11,
+   "hit3": 22,
+   "score": 44
+  },
+  {
+   "weights": {
+    "material": 0.6,
+    "ask": 2.2,
+    "rubric": 1.0,
+    "method": 0.4
+   },
+   "agg_top_k": 3,
+   "agg_mix": 1.0,
+   "hit1": 11,
+   "hit3": 21,
+   "score": 43
+  },
+  {
+   "weights": {
+    "material": 0.6,
+    "ask": 2.2,
+    "rubric": 1.0,
+    "method": 0.4
+   },
+   "agg_top_k": 5,
+   "agg_mix": 0.5,
+   "hit1": 11,
+   "hit3": 22,
+   "score": 44
+  },
+  {
+   "weights": {
+    "material": 1.2,
+    "ask": 1.4,
+    "rubric": 1.8,
+    "method": 0.3
+   },
+   "agg_top_k": 1,
+   "agg_mix": 1.0,
+   "hit1": 8,
+   "hit3": 19,
+   "score": 35
+  },
+  {
+   "weights": {
+    "material": 1.2,
+    "ask": 1.4,
+    "rubric": 1.8,
+    "method": 0.3
+   },
+   "agg_top_k": 3,
+   "agg_mix": 0.6,
+   "hit1": 10,
+   "hit3": 20,
+   "score": 40
+  },
+  {
+   "weights": {
+    "material": 1.2,
+    "ask": 1.4,
+    "rubric": 1.8,
+    "method": 0.3
+   },
+   "agg_top_k": 3,
+   "agg_mix": 1.0,
+   "hit1": 8,
+   "hit3": 19,
+   "score": 35
+  },
+  {
+   "weights": {
+    "material": 1.2,
+    "ask": 1.4,
+    "rubric": 1.8,
+    "method": 0.3
+   },
+   "agg_top_k": 5,
+   "agg_mix": 0.5,
+   "hit1": 10,
+   "hit3": 18,
+   "score": 38
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.0
+   },
+   "agg_top_k": 1,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 17,
+   "score": 35
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.0
+   },
+   "agg_top_k": 3,
+   "agg_mix": 0.6,
+   "hit1": 11,
+   "hit3": 17,
+   "score": 39
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.0
+   },
+   "agg_top_k": 3,
+   "agg_mix": 1.0,
+   "hit1": 9,
+   "hit3": 17,
+   "score": 35
+  },
+  {
+   "weights": {
+    "material": 1.0,
+    "ask": 1.8,
+    "rubric": 1.3,
+    "method": 0.0
+   },
+   "agg_top_k": 5,
+   "agg_mix": 0.5,
+   "hit1": 9,
+   "hit3": 16,
+   "score": 34
+  }
+ ],
+ "chosen": {
+  "weights": {
+   "material": 0.6,
+   "ask": 2.2,
+   "rubric": 1.0,
+   "method": 0.4
+  },
+  "agg_top_k": 3,
+  "agg_mix": 0.6,
+  "bm25_k1": 1.5,
+  "bm25_b": 0.75,
+  "ngram_sizes": [
+   2,
+   3
+  ]
+ }
+}

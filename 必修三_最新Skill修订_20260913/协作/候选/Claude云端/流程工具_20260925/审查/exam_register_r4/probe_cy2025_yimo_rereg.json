@@ -1,0 +1,42 @@
+{
+ "exam_id": null,
+ "cohort_year": 2025,
+ "cohort_status": "OK",
+ "grade2": false,
+ "suggestion": {
+  "suggested_id": "BJ-2025-CY-YIMO",
+  "occupied": true,
+  "occupant": {
+   "exam_id": "BJ-2025-CY-YIMO",
+   "occupied": true
+  }
+ },
+ "chain_kind": "blocked_conflict",
+ "rename_plan": [
+  {
+   "old": "BJ-2025-CY-YIMO",
+   "new": null,
+   "reason": "BJ-2025-CY-YIMO 自身届别证据与登记号一致，且未发现与其他卷可靠的重复登记，可能是同一卷号被两场不同考试各自认领的真实冲突，需人工判定。"
+  }
+ ],
+ "redirects": [],
+ "reused_ids": [],
+ "id_mismatch": null,
+ "duplicates": [
+  {
+   "exam_id": "BJ-2025-CY-YIMO",
+   "kind": "shared_or_reused_questions",
+   "matched": 1,
+   "total": 21,
+   "fraction_reliable": true,
+   "low_confidence_count": 0
+  }
+ ],
+ "fingerprint_coverage": null,
+ "retired": null,
+ "issues": [
+  "建议卷号 BJ-2025-CY-YIMO 已被占用",
+  "shared_or_reused_questions：与 BJ-2025-CY-YIMO 匹配 1/21 题（占比 0.0476）",
+  "占用链存在无法机械判定的真实冲突（见 rename_plan 第一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷改到 BJ-2025-CY-YIMO，也不给出重定向表。"
+ ]
+}

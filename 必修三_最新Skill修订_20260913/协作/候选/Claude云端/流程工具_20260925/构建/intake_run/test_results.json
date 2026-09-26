@@ -1,0 +1,523 @@
+{
+ "total": 86,
+ "failed": 0,
+ "seconds": 142.4,
+ "results": [
+  {
+   "test": "baseline_guard（真实输入未变，全部测试前）",
+   "ok": true,
+   "detail": "",
+   "seconds": 4.992244482040405
+  },
+  {
+   "test": "1a normalize_qid：#N → (N)",
+   "ok": true,
+   "detail": "BJ-2023-HD-QIZHONG-Q18(1)",
+   "seconds": null
+  },
+  {
+   "test": "1b normalize_qid：无小问原样返回",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "1c load_attribution 去重：exam_id_raw==exam_id_canonical 的卷不重复计入（BJ-2023-HD-QIZHONG 在 attribution_ruled.csv 里恰好 24 行——Q1..Q17、Q19..Q23 各1行+Q18 拆 #1/#2 共2行，且 unit_id 不重复——修前曾因 raw/canonical 都命中同一 key 被 append 两次，会变成48行）",
+   "ok": true,
+   "detail": "len=24 unique=24",
+   "seconds": null
+  },
+  {
+   "test": "1d load_attribution 返回 attribution_ruled.csv 的 sha256",
+   "ok": true,
+   "detail": "19e3760f4a670efd",
+   "seconds": null
+  },
+  {
+   "test": "1e-0 load_manifest 负例（期望含“schema 不是 baodian_intake_v1”）",
+   "ok": true,
+   "detail": "清单 schema 不是 baodian_intake_v1（实际：'x'）",
+   "seconds": null
+  },
+  {
+   "test": "1e-1 load_manifest 负例（期望含“exams”）",
+   "ok": true,
+   "detail": "exams 必须是非空数组",
+   "seconds": null
+  },
+  {
+   "test": "1e-2 load_manifest 负例（期望含“书名未知”）",
+   "ok": true,
+   "detail": "书名未知：'no_such_book'（已知书名：bixiu3, philosophy, culture, xuanbi1, xuanbi2, mind, reasoning, bixiu2）",
+   "seconds": null
+  },
+  {
+   "test": "1e-3 load_manifest 负例（期望含“profiles.bixiu3”）",
+   "ok": true,
+   "detail": "缺少 profiles.bixiu3（配置路径）",
+   "seconds": null
+  },
+  {
+   "test": "1e-4 load_manifest 负例（期望含“格式不对”）",
+   "ok": true,
+   "detail": "exams[0].exam_id 格式不对（应如 BJ-2026-HD-QIZHONG）：'X'",
+   "seconds": null
+  },
+  {
+   "test": "1e-5 load_manifest 负例（期望含“重复”）",
+   "ok": true,
+   "detail": "exams 里重复：'BJ-2026-CY-QIZHONG'（m7：同一卷只列一次，避免状态表重复行）",
+   "seconds": null
+  },
+  {
+   "test": "1e-6 load_manifest 负例（期望含“books 有重复”）",
+   "ok": true,
+   "detail": "books 有重复（m7）",
+   "seconds": null
+  },
+  {
+   "test": "1f load_manifest 正例：bixiu2 不要求 profiles.bixiu2",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "1g 归并前：BJ-2024-HD-QIZHONG 原始行数（本卷+别名）",
+   "ok": true,
+   "detail": "len=48",
+   "seconds": null
+  },
+  {
+   "test": "1h 归并后：unit_id 不重复共25组，只有未合并的 Q25#1/#2 保留 BJ-2025-HD-QIZHONG-* 前缀",
+   "ok": true,
+   "detail": "n=25 意外别名=[]",
+   "seconds": null
+  },
+  {
+   "test": "1i alias_map：BJ-2025-HD-QIZHONG-Q18 → BJ-2024-HD-QIZHONG-Q18",
+   "ok": true,
+   "detail": "BJ-2024-HD-QIZHONG-Q18",
+   "seconds": null
+  },
+  {
+   "test": "1j 归并：COLLECTED 优先于 MAYBE/IN（任一侧已在书里就算在书里）",
+   "ok": true,
+   "detail": "COLLECTED",
+   "seconds": null
+  },
+  {
+   "test": "1k 归并：身份错误的 Q25#1/#2（canonical_qid 指向自己）不与旁的题混进同一组",
+   "ok": true,
+   "detail": "['BJ-2025-HD-QIZHONG-Q25#1', 'BJ-2025-HD-QIZHONG-Q25#2']",
+   "seconds": null
+  },
+  {
+   "test": "1l M4 回归：BJ-2026-HD-QIZHONG-Q22#2×bixiu3（admission=待裁决，各书清单_v4=不收-无E1）不进“该收”清单",
+   "ok": true,
+   "detail": "[{'unit_id': 'BJ-2026-HD-QIZHONG-Q22#2', 'basis': '各书清单_v4/B3_漏收候选.csv 类别=不收-无E1'}]",
+   "seconds": null
+  },
+  {
+   "test": "1m M3 回归：_default_bank_root 取 profile.paths.root + sources.bank.root，不依赖 REPO_ROOT",
+   "ok": true,
+   "detail": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/my_bank",
+   "seconds": null
+  },
+  {
+   "test": "1n M3 回归：_default_attribution_csv 取 profile.paths.root",
+   "ok": true,
+   "detail": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/后勤管理/20260923_脚本化与跨书工具/完整性调查_20260924/归属表_v1/attribution_ruled.csv",
+   "seconds": null
+  },
+  {
+   "test": "1o M5 回归：_house_guard_profile 带出 _house.json 的 output_guard.protected_roots",
+   "ok": true,
+   "detail": "{'protected_roots': ['~/GaokaoPolitics', '~/.codex/skills', '~/.claude/skills', '~/Desktop'], 'allowed_subpath_regex': '/协作/候选/[^/]+/[^/]+/构建/体检(/|$)', '_note': '各书册 paths.root 与本 Skill 目录自动受保护；受保护目录内只允许写到“…/协作/候选/<谁>/<批次>/构建/体检/”，系统临时目录放行；另外不得等于输入、不覆盖非体检报告、不写到有 .docx/.pdf 的目录'}",
+   "seconds": null
+  },
+  {
+   "test": "1p M5 回归：guard_write(house_prof) 拒绝写到 /root/.claude/skills 下（旧版 prof=None 会放行）",
+   "ok": true,
+   "detail": "落在受保护目录 /root/.claude/skills 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）",
+   "seconds": null
+  },
+  {
+   "test": "1q M5 回归：_check_workdir_allowed 拒绝仓库外任意路径（/root/.claude/skills/x_workdir）",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "1q M5 回归：_check_workdir_allowed 拒绝仓库外任意路径（/home/user/some_other_place/x）",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "2a init：清单骨架 + workdir 子目录（M6：05/06/07 按 book 建，09_health 不在 workdir 下）",
+   "ok": true,
+   "detail": "exit=0 err=清单骨架已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/init1/manifest.json\nworkdir 子目录已建：/tmp/claude-0/-home-user-zhengzhibaodian all_dirs=True no_health_dir=True",
+   "seconds": 0.24068856239318848
+  },
+  {
+   "test": "2b init 重跑（目标已存在）→ 拒绝覆盖，退出3",
+   "ok": true,
+   "detail": "exit=3",
+   "seconds": null
+  },
+  {
+   "test": "2c init：workdir 落受保护目录 → 拒绝，退出3，且不留下清单骨架（约定4：不留半成品）",
+   "ok": true,
+   "detail": "exit=3 out_exists=False workdir_exists=False",
+   "seconds": null
+  },
+  {
+   "test": "2d M5 回归：workdir 在仓库外、不在任何受保护根内 → 也拒绝，不再“不在仓库根内就放行”",
+   "ok": true,
+   "detail": "exit=3 created=False",
+   "seconds": null
+  },
+  {
+   "test": "2e m7 回归：init --book 未知书名 → 退出2，不写出",
+   "ok": true,
+   "detail": "exit=2",
+   "seconds": null
+  },
+  {
+   "test": "2f m7 回归：init --exam-id 格式不对 → 退出2，不写出",
+   "ok": true,
+   "detail": "exit=2",
+   "seconds": null
+  },
+  {
+   "test": "3a status 真实5卷×8书（40组合）成功跑完，退出码1（有待处理）",
+   "ok": true,
+   "detail": "exit=1 err=报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/real_report_stage0.json",
+   "seconds": 7.569148778915405
+  },
+  {
+   "test": "3a-summary",
+   "ok": true,
+   "detail": "combos=40 pending=35",
+   "seconds": null
+  },
+  {
+   "test": "3b bixiu2 五行全部 9 步 SKIP（冻结且不在云端）",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "3c 已知事实：5 张卷均已在题库 questions/ 下 → 第1步 source_intake DONE",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "3d 已知事实：5 张卷×7书归属判定均已完成 → 第4步全部 DONE",
+   "ok": true,
+   "detail": "[]",
+   "seconds": null
+  },
+  {
+   "test": "3e M7 回归：BJ-2024-HD-QIZHONG×bixiu3 第8步 found 里能具体查到 Q7、Q18（不是空断言）",
+   "ok": true,
+   "detail": "found=['BJ-2024-HD-QIZHONG-Q10', 'BJ-2024-HD-QIZHONG-Q11', 'BJ-2024-HD-QIZHONG-Q18', 'BJ-2024-HD-QIZHONG-Q19', 'BJ-2024-HD-QIZHONG-Q21#1', 'BJ-2024-HD-QIZHONG-Q7', 'BJ-2024-HD-QIZHONG-Q8', 'BJ-2024-HD-QIZHONG-Q9']",
+   "seconds": null
+  },
+  {
+   "test": "3e2 M1 回归：BJ-2024-HD-QIZHONG×bixiu3 第8步 missing 恰好是 {Q12, Q21(2)} 两道（孪生归并后），不含任何 BJ-2025-HD-QIZHONG-* 别名",
+   "ok": true,
+   "detail": "missing=['BJ-2024-HD-QIZHONG-Q12', 'BJ-2024-HD-QIZHONG-Q21#2']",
+   "seconds": null
+  },
+  {
+   "test": "3e3 M4 回归：BJ-2026-HD-QIZHONG-Q22#2 不出现在第5步待落位、第8步应收清单里（admission=待裁决，各书清单_v4=不收-无E1）",
+   "ok": true,
+   "detail": "in_s5=False in_s8=False s5_excluded=[{'unit_id': 'BJ-2026-HD-QIZHONG-Q22#2', 'basis': '各书清单_v4/B3_漏收候选.csv 类别=不收-无E1'}]",
+   "seconds": null
+  },
+  {
+   "test": "3f exam_register 真实登记检查：BJ-2023-HD-QIZHONG（intake_run 第2步要读的真实证据）",
+   "ok": true,
+   "detail": "exit=1",
+   "seconds": 11.91179633140564
+  },
+  {
+   "test": "3f exam_register 真实登记检查：BJ-2024-HD-QIZHONG（intake_run 第2步要读的真实证据）",
+   "ok": true,
+   "detail": "exit=1",
+   "seconds": 11.514267683029175
+  },
+  {
+   "test": "3f exam_register 真实登记检查：BJ-2024-CY-QIZHONG（intake_run 第2步要读的真实证据）",
+   "ok": true,
+   "detail": "exit=1",
+   "seconds": 5.263636589050293
+  },
+  {
+   "test": "3f exam_register 真实登记检查：BJ-2026-CY-QIZHONG（intake_run 第2步要读的真实证据）",
+   "ok": true,
+   "detail": "exit=0",
+   "seconds": 3.21911358833313
+  },
+  {
+   "test": "3f exam_register 真实登记检查：BJ-2026-HD-QIZHONG（intake_run 第2步要读的真实证据）",
+   "ok": true,
+   "detail": "exit=0",
+   "seconds": 2.5882699489593506
+  },
+  {
+   "test": "3g status 重跑（有真实登记结果）成功",
+   "ok": true,
+   "detail": "exit=1",
+   "seconds": 7.408182621002197
+  },
+  {
+   "test": "3h 已知事实：BJ-2023/2024-HD-QIZHONG、BJ-2024-CY-QIZHONG 第2步 BLOCKED（届别/重复登记）",
+   "ok": true,
+   "detail": "['BJ-2023-HD-QIZHONG', 'BJ-2024-HD-QIZHONG', 'BJ-2024-CY-QIZHONG']",
+   "seconds": null
+  },
+  {
+   "test": "3i 已知事实：BJ-2026-CY/HD-QIZHONG 第2步 DONE（登记检查通过）",
+   "ok": true,
+   "detail": "['BJ-2026-CY-QIZHONG', 'BJ-2026-HD-QIZHONG']",
+   "seconds": null
+  },
+  {
+   "test": "3j 第2步状态与目标书无关：BLOCKED 的卷在全部7本书上都是 BLOCKED",
+   "ok": true,
+   "detail": "",
+   "seconds": null
+  },
+  {
+   "test": "3k M2 回归：不在归属表的新卷（BJ-2023-HD-QIMO）第4步非DONE时，第8步报 NEEDS_MODEL（不是 DONE）",
+   "ok": true,
+   "detail": "s4=NEEDS_MODEL s8=NEEDS_MODEL s8_reason=归属判定未完成，无法确定应收题范围（见第4步）——M2：不假装“应收题为空”",
+   "seconds": 0.25767970085144043
+  },
+  {
+   "test": "baseline_guard（真实输入未变，组3真实数据测试后）",
+   "ok": true,
+   "detail": "",
+   "seconds": 5.124596118927002
+  },
+  {
+   "test": "4a 阶段0（空 workdir）：1/3/4=DONE，2/5=TODO，6/7=NEEDS_MODEL，8=TODO，next=[2]",
+   "ok": true,
+   "detail": "{1: 'DONE', 2: 'TODO', 3: 'DONE', 4: 'DONE', 5: 'TODO', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}",
+   "seconds": 2.1555323600769043
+  },
+  {
+   "test": "4b 真实跑 exam_register（阶段1输入）",
+   "ok": true,
+   "detail": "exit=0",
+   "seconds": 3.19661545753479
+  },
+  {
+   "test": "4c 阶段1：登记检查报告出现后，第2步 TODO→DONE，next 前进到 [5]（3/4 本就已 DONE）",
+   "ok": true,
+   "detail": "{1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'TODO', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'} next={'step': 5, 'status': 'TODO', 'reason': \"1 道 IN 题尚无插入位置建议：['BJ-2026-CY-QIZHONG-Q9']\", 'command': 'python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/placement_suggest.py --docx /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --profile /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json --key BJ-2026-CY-QIZHONG-Q9 --top-k 3 --report /tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_sandbox/05_placement/bixiu3/BJ-2026-CY-QIZHONG.json'}",
+   "seconds": 2.1355650424957275
+  },
+  {
+   "test": "4d 真实跑 placement_suggest（阶段2输入）",
+   "ok": true,
+   "detail": "exit=0",
+   "seconds": 4.017413377761841
+  },
+  {
+   "test": "4e 阶段2：placement 报告出现后，第5步 TODO→DONE，next 前进到 [6]",
+   "ok": true,
+   "detail": "{1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}",
+   "seconds": 2.2265408039093018
+  },
+  {
+   "test": "4f 阶段3：approved_by 非空的 baodian_insert_v1 改动单出现后，第6步 NEEDS_MODEL→DONE，next 前进到 [7]",
+   "ok": true,
+   "detail": "{1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'DONE', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}",
+   "seconds": 2.1430797576904297
+  },
+  {
+   "test": "4f2 M7 回归：第6步落地的插入单真的能通过 block_insert.py check（不是会被拒收的合成单子）",
+   "ok": true,
+   "detail": "exit=1 err= out={\"media_images\": 0, \"media_tables\": 0, \"needs_local_check\": 0, \"anchor_converted\": 0, \"fallbacks\": 1, \"total\": 1, \"pending\": 1}\n",
+   "seconds": 3.33250093460083
+  },
+  {
+   "test": "4g 真实跑 check_drill_admission（阶段4输入，既有 SK 工具）",
+   "ok": true,
+   "detail": "exit=0 err=",
+   "seconds": 0.048254966735839844
+  },
+  {
+   "test": "4h 阶段4：check_drill_admission status=pass 报告出现后，第7步 NEEDS_MODEL→DONE，next 前进到 [8]（第8步保持 TODO——Q9 确实尚未在书中，不假装完成，见 4i）",
+   "ok": true,
+   "detail": "{1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'DONE', 7: 'DONE', 8: 'TODO', 9: 'TODO'}",
+   "seconds": 2.067734956741333
+  },
+  {
+   "test": "4i 第8步如实保持 TODO：Q9 真的不在 bixiu3 当前稿（block_index 查不到），未被前面几步的完成误判为 DONE",
+   "ok": true,
+   "detail": "{'missing': ['BJ-2026-CY-QIZHONG-Q9'], 'drill_only': [], 'found': [], 'docx': '/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx', 'need_insert': ['BJ-2026-CY-QIZHONG-Q9']}",
+   "seconds": null
+  },
+  {
+   "test": "4i2 M7 回归：真实跑 block_insert.py apply（写到书稿副本，不碰 BOOK3 本身）",
+   "ok": true,
+   "detail": "exit=0 err=",
+   "seconds": 18.119620323181152
+  },
+  {
+   "test": "4i3 M7 回归：指向 apply 后的书稿副本重跑 status，第8步 TODO→DONE（Q9 真的被 block_index 认出）",
+   "ok": true,
+   "detail": "{'step': 8, 'name': 'block_insert 插入整道题', 'status': 'DONE', 'reason': '1 道应收题（IN/COLLECTED，孪生归并+准入过滤后）均已在 bixiu3 当前稿中题块本身命中（block_index 核对，不含仅题肢单练命中）', 'evidence': {'docx': '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/block_insert_apply/book_copy/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx', 'found': ['BJ-2026-CY-QIZHONG-Q9']}, 'next_command': None}",
+   "seconds": 2.0075266361236572
+  },
+  {
+   "test": "4i4 对照：apply 之前对真实 BOOK3 的快照第8步是 TODO，证明 4i3 的 DONE 确实来自副本改动",
+   "ok": true,
+   "detail": "{'step': 8, 'name': 'block_insert 插入整道题', 'status': 'TODO', 'reason': \"1/1 应收题尚未在 bixiu3 当前稿中：['BJ-2026-CY-QIZHONG-Q9']\", 'evidence': {'missing': ['BJ-2026-CY-QIZHONG-Q9'], 'drill_only': [], 'found': [], 'docx': '/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx', 'need_insert': ['BJ-2026-CY-QIZHONG-Q9']}, 'next_command': 'python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py check --docx /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --insert /tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_sandbox/06_insert/bixiu3/BJ-2026-CY-QIZHONG.json --profile /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json'}",
+   "seconds": null
+  },
+  {
+   "test": "4o 真实跑 layout_prepare check（第9步部分证据）",
+   "ok": true,
+   "detail": "exit=0",
+   "seconds": 2.4725067615509033
+  },
+  {
+   "test": "4p 真实跑 batch_health（第9步部分证据）",
+   "ok": true,
+   "detail": "exit=1",
+   "seconds": 2.442664861679077
+  },
+  {
+   "test": "4q 阶段6：layout(0待改)+health 报告都出现后，第9步仍 TODO，下一条命令指向 publish_review dry-run（尚缺 publish 预检报告）——云端从不把第9步报 DONE，最多到 NEEDS_LOCAL（见组3/组5其它证据）",
+   "ok": true,
+   "detail": "{'step': 9, 'name': 'layout/health/publish 预检', 'status': 'TODO', 'reason': 'layout/health 已具备，尚未跑 publish_review dry-run 预检', 'evidence': {}, 'next_command': 'python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/publish_review.py --profile /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json --batch <批次号> --docx /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --pdf <候选PDF> --acceptance <验收.json> --actor <actor> --report /tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_sandbox/09_publish/bixiu3.json'}",
+   "seconds": 2.0120787620544434
+  },
+  {
+   "test": "4r m5 回归：不给 --local-final（云端默认）时，第9步证据齐全也最高只到 NEEDS_LOCAL",
+   "ok": true,
+   "detail": "NEEDS_LOCAL",
+   "seconds": null
+  },
+  {
+   "test": "4s m5 回归：--local-final 但 publish 报告仍是 dry-run（未 --apply）→ 仍 NEEDS_LOCAL，不报 DONE",
+   "ok": true,
+   "detail": "NEEDS_LOCAL",
+   "seconds": null
+  },
+  {
+   "test": "4t m5 回归：--local-final 且已 --apply 但 gates_pass=False → 仍 NEEDS_LOCAL，不报 DONE",
+   "ok": true,
+   "detail": "NEEDS_LOCAL",
+   "seconds": null
+  },
+  {
+   "test": "4u m5 回归：--local-final 且 --apply 成功、gates_pass=True → 报 DONE（第9步终于能到 DONE）",
+   "ok": true,
+   "detail": "DONE",
+   "seconds": null
+  },
+  {
+   "test": "baseline_guard（真实输入未变，组4沙盒测试后）",
+   "ok": true,
+   "detail": "",
+   "seconds": 4.888065338134766
+  },
+  {
+   "test": "5a 清单不是合法 JSON → 退出2",
+   "ok": true,
+   "detail": "exit=2",
+   "seconds": null
+  },
+  {
+   "test": "5b 书名未知 → 退出2",
+   "ok": true,
+   "detail": "exit=2 err=输入/参数错误：exams[0].exam_id 格式不对（应如 BJ-2026-HD-QIZHONG）：'X'",
+   "seconds": null
+  },
+  {
+   "test": "5c 配置文件找不到 → 退出2",
+   "ok": true,
+   "detail": "exit=2 err=输入/参数错误：exams[0].exam_id 格式不对（应如 BJ-2026-HD-QIZHONG）：'X'",
+   "seconds": null
+  },
+  {
+   "test": "5d --report 落受保护目录 → 退出3，且未写出",
+   "ok": true,
+   "detail": "exit=3 exists=False",
+   "seconds": null
+  },
+  {
+   "test": "5e --md 落受保护目录（审阅入口） → 退出3，且未写出",
+   "ok": true,
+   "detail": "exit=3 exists=False",
+   "seconds": null
+  },
+  {
+   "test": "5f m3 回归：同一个 --report 路径重跑两次都能写（覆盖自己旧报告），不是退出3",
+   "ok": true,
+   "detail": "run1_exit=1 run2_exit=1 err2=报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/m3_rerun_report.json",
+   "seconds": null
+  },
+  {
+   "test": "5g m3 回归：--md 落受保护目录被拒时，--report 不会先落盘留半成品（约定4原子性）",
+   "ok": true,
+   "detail": "exit=3 report_exists=False md_exists=False",
+   "seconds": null
+  },
+  {
+   "test": "5h m3 回归：--report 目标已存在但不是 intake_run 自己的报告 → 拒绝覆盖，退出3，原内容不变",
+   "ok": true,
+   "detail": "exit=3 kept=True",
+   "seconds": null
+  },
+  {
+   "test": "6-init M6 回归：组6改用真实 init 搭 workdir（不是测试自己手建目录，避免把 init 的 bug 藏起来）",
+   "ok": true,
+   "detail": "exit=0 err=清单骨架已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/init_cmdcheck/manifest.json\nworkdir 子目录已建：/tmp/claude-0/-home-user-zhengzh",
+   "seconds": 0.18297839164733887
+  },
+  {
+   "test": "6-step2 M6 回归：照抄命令实跑，不因“拒绝写出/目录不存在”失败：python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/exam_re...",
+   "ok": true,
+   "detail": "rc=0 err=报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/init_cmdcheck/入书_cmdcheck/02_exam_register/BJ-2026-HD-QIZHONG.json\n",
+   "seconds": 2.6828556060791016
+  },
+  {
+   "test": "6-step3 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/ba...",
+   "ok": true,
+   "detail": "rc=2 ",
+   "seconds": 0.1805737018585205
+  },
+  {
+   "test": "6-step9 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/la...",
+   "ok": true,
+   "detail": "rc=0 ",
+   "seconds": 2.3216028213500977
+  },
+  {
+   "test": "6-step8-placeholder m6 回归：第8步命令不该含 <书册配置> 占位符",
+   "ok": true,
+   "detail": "第8步本次未出现（已 DONE/其它）",
+   "seconds": null
+  },
+  {
+   "test": "6-step9-health M6 回归：batch_health --out 路径（/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/init_cmdcheck/入书_cmdcheck/09_health/bixiu3.json）过它自己的输出守卫",
+   "ok": true,
+   "detail": "reason=None",
+   "seconds": null
+  },
+  {
+   "test": "baseline_guard（真实输入未变，全部测试后）",
+   "ok": true,
+   "detail": "",
+   "seconds": 4.888282299041748
+  }
+ ]
+}

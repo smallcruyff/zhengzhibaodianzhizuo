@@ -1,0 +1,36 @@
+choice_last:firstLine 0->None 206
+choice_last:keepNext False->True 1
+choice_last_n 207
+choice_other:keepNext False->True 59
+choice_other:keepNext True->False 39
+choice_other_n 1328
+subj_last_n 489
+subj_other:firstLine 0->None 30
+subj_other:firstLine None->0 76
+subj_other:ind_left 234->None 9
+subj_other:ind_left None->0 4
+subj_other:jc both->center 4
+subj_other:keepNext False->True 68
+subj_other:keepNext True->False 42
+subj_other:sp_after None->0 4
+subj_other:sp_before None->0 4
+subj_other:sp_line None->240 4
+subj_other_n 1813
+== subj_other
+   (163, '例题 6\u30002026丰台二模第17题', '面对超大城市治理中人口密集、场域复杂、需求多元等治理', None, '0')
+   (368, '例题 3\u30002026延庆一模第20题（跨模块）', '实现社会主义现代化是一个阶梯式递进、不断发展进步的历', None, '0')
+   (795, '例题 31\u30002026丰台二模第17题', '面对超大城市治理中人口密集、场域复杂、需求多元等治理', None, '0')
+   (857, '例题 35\u30002024丰台一模第16题', '新时代新征程上，用好“四下基层”这一重要抓手，为社会', None, '0')
+   (900, '例题 38\u30002024海淀期中第18题', '东城区前门街道草厂地区有一个远近闻名的“小院议事厅”', '0', None)
+   (943, '例题 41\u30002026东城一模第17题', '北京市人才工作局面向青年开展专项调研，梳理就业创业、', None, '0')
+   (945, '例题 41\u30002026东城一模第17题', '上海市人大通过“十五五”规划，首次写入打造24小时“', None, '0')
+   (947, '例题 41\u30002026东城一模第17题', '北京、上海、重庆等地分别落实“青创十条”、扩容“青年', None, '0')
+== choice_last
+   (252, '选择例题 1\u30002026朝阳一模第9题', 'C．②③\u3000\u3000D．③④', '0', None)
+   (1503, '选择例题 1\u30002026西城一模第4题', 'C．②③\u3000\u3000D．③④', '0', None)
+   (1525, '选择例题 2\u30002024顺义二模第9题', 'C．②③\u3000\u3000D．③④', '0', None)
+   (1544, '选择例题 3\u30002023东城一模第5题', 'C．②③\u3000\u3000D．②④', '0', None)
+   (1724, '选择例题 1\u30002026通州期末第1题', 'C．②④\u3000\u3000D．③④', '0', None)
+   (1742, '选择例题 2\u30002025海淀一模第1题', 'C．②④\u3000\u3000D．③④', '0', None)
+   (1760, '选择例题 3\u30002024丰台二模第2题', 'C．②③\u3000\u3000D．②④', '0', None)
+   (1873, '选择例题 1\u30002026房山一模第8题', 'D．党员干部要依法执政，完善公共服务，提高人民生活品', '0', None)

@@ -1,0 +1,3 @@
+构建/baseline_20260925.json rc= 3 unchanged= True 拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/baseline_20260925.json
+构建/placement_suggest/test_M7_report.json rc= 3 unchanged= True 拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/placement_suggest/test_M7_report.json
+构建/exam_register/test_audit_full.json rc= 3 unchanged= True 拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register/test_audit_full.json

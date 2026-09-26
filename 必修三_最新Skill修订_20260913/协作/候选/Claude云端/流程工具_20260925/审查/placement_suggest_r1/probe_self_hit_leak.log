@@ -1,0 +1,5 @@
+evaluated 709
+('B0102', 'BJ-2025-HD-YIMO-Q1', 0.84, 'B0598', 'BJ-2025-HD-YIMO-Q19', '例16\u30002025海淀一模第19题（7分）')
+('B0253', 'BJ-2026-BJ-GAOKAO-Q18', 0.52, 'B0737', 'BJ-2022-BJ-GAOKAO-Q18', '【主例】 2022年北京高考第18题第（2）问 与 2026年北京高考第18题第')
+('B0408', 'BJ-2026-SY-ERMO-Q8', 0.5, 'B0375', 'BJ-2026-FT-YIMO-Q17', '例题 1\u30002026丰台一模第17题')
+blocks whose question text is >=50% contained in a NON-excluded block: 5

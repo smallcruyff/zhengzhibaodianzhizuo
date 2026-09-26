@@ -1,0 +1,7 @@
+{
+ "('choice', 'claims_unique', 'bi_unique')": 207,
+ "('subjective', 'claims_unique', 'bi_unique')": 535,
+ "('subjective', 'claims_not_unique', 'bi_not_unique')": 4
+}
+mismatch(template_unique vs block_insert 实际命中数): 0 []
+把 candidates[*].template_block 原样放进 block_insert 插入单：Abort: I001.template_block：出现未知字段 ['id', 'kind', 'template_unique', 'title']（写错字段名会被静默忽略——比如把 "like" 拼成 "lik"，回退到默认匹配还照样能跑，只是不是作者想要的那段——见 R2-m9 修复；允许的字段：['title_contains']）

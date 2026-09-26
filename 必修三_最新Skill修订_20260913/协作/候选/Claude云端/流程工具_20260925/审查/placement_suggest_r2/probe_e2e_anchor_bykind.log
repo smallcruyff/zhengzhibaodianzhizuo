@@ -1,0 +1,9 @@
+(query_kind, anchor.kind, claimed_unique, resolved, lands_after_claimed_block)= ('choice', 'after_block', True, True, True) 20
+(query_kind, anchor.kind, claimed_unique, resolved, lands_after_claimed_block)= ('subjective', 'after_block', True, True, True) 92
+(query_kind, anchor.kind, claimed_unique, resolved, lands_after_claimed_block)= ('subjective', 'method_end', False, False, False) 1
+(query_kind, anchor.kind, claimed_unique, resolved, lands_after_claimed_block)= ('subjective', 'method_end', True, True, False) 3
+(query_kind, anchor.kind, claimed_unique, resolved, lands_after_claimed_block)= ('subjective', 'method_end', True, True, True) 6
+problem groups: 3
+  {'query_kind': 'subjective', 'label': 'P1｜03\u3000党员：先锋模范作用｜考法2\u3000补出型：材料没点党员作用，自己补（2题）', 'anchor': {'method_end': {'method_contains': '考法2\u3000补出型：材料没点党员作用，自己补（2题）', 'node_contains': '03\u3000党员：先锋模范作用'}}, 'claimed_unique': True, 'resolved_ok': True, 'claimed_insert_after': ('B0107', '例题 4\u30002024海淀期中第19题', 'subjective'), 'block_insert_resolves_to': ('B0115', '选择例题 8\u30002023海淀期中（上）第7题', 'choice'), 'err': None}
+  {'query_kind': 'subjective', 'label': 'P1｜06\u3000人大代表｜考法3\u3000补出型：只写代表做事，身份要补（3题）', 'anchor': {'method_end': {'method_contains': '考法3\u3000补出型：只写代表做事，身份要补（3题）', 'node_contains': '06\u3000人大代表'}}, 'claimed_unique': True, 'resolved_ok': True, 'claimed_insert_after': ('B0302', '例题 9\u30002023海淀期中（下）第16题', 'subjective'), 'block_insert_resolves_to': ('B0309', '选择例题 7\u30002023朝阳一模第12题', 'choice'), 'err': None}
+  {'query_kind': 'subjective', 'label': 'P1｜03\u3000司法：公正司法｜考法6\u3000一环型：司法只是法治链条一环（6题）', 'anchor': {'method_end': {'method_contains': '考法6\u3000一环型：司法只是法治链条一环（6题）', 'node_contains': '03\u3000司法：公正司法'}}, 'claimed_unique': True, 'resolved_ok': True, 'claimed_insert_after': ('B0512', '例题 23\u30002024朝阳一模第18(1)题', 'subjective'), 'block_insert_resolves_to': ('B0547', '选择例题 35\u30002023海淀期中（下）第13题（跨模块）', 'choice'), 'err': None}

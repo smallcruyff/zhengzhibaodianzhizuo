@@ -1,0 +1,23 @@
+## adv_rels.py
+{
+ "hl_only": {
+  "rc": 2,
+  "stdout": "",
+  "stderr": "中止：写后复核不通过，已删除输出：部分 r:embed/r:id 在 rels 里找不到关系",
+  "out_exists": false,
+  "reason": "写后复核不通过：部分 r:embed/r:id 在 rels 里找不到关系",
+  "verify": [
+   "rId87"
+  ],
+  "check_rc": 1
+ },
+ "vml_tbl": {
+  "rc": 2,
+  "stdout": "",
+  "stderr": "中止：写后复核执行异常，已删除输出：'docpr_id'",
+  "out_exists": false,
+  "reason": "写后复核执行异常：'docpr_id'",
+  "verify": null,
+  "check_rc": 1
+ }
+}

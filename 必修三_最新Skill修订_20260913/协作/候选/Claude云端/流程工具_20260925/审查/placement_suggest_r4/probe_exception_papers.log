@@ -1,0 +1,26 @@
+BJ-2026-BJ-GAOKAO-Q16 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2026-BJ-GAOKAO-Q17 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2026-BJ-GAOKAO-Q18 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2026-BJ-GAOKAO-Q19 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2026-BJ-GAOKAO-Q20 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2026-BJ-GAOKAO-Q21 e1_present= True exception_hit= True e1_header= 正式评分材料原文
+BJ-2024-SY-ERMO-Q16 e1_present= False exception_hit= True e1_header= 正式评分边界
+BJ-2024-SY-ERMO-Q17 e1_present= False exception_hit= True e1_header= 正式评分边界
+BJ-2024-SY-ERMO-Q18 e1_present= False exception_hit= True e1_header= 正式评分边界
+BJ-2024-SY-ERMO-Q19 e1_present= False exception_hit= True e1_header= 正式评分边界
+BJ-2024-SY-ERMO-Q20 e1_present= False exception_hit= True e1_header= 正式评分边界
+BJ-2026-SJS-QIMO-Q16 e1_present= False exception_hit= True e1_header= None
+BJ-2026-SJS-QIMO-Q17 e1_present= False exception_hit= True e1_header= None
+BJ-2026-SJS-QIMO-Q18 e1_present= False exception_hit= True e1_header= None
+BJ-2026-SJS-QIMO-Q19 e1_present= False exception_hit= True e1_header= None
+BJ-2026-SJS-QIMO-Q20 e1_present= False exception_hit= True e1_header= None
+== BJ-2026-BJ-GAOKAO-Q16 exit=0
+## BJ-2026-BJ-GAOKAO-Q16（subjective）
+1. **TOPIC｜专题一　主体专题：主体能做什么｜人民与公民**（分 2.7441，组内 24 题，一级 第二部分　专题／二级 专题一　主体专题：主体能做什么）
+== BJ-2026-BJ-GAOKAO-Q19 exit=0
+## BJ-2026-BJ-GAOKAO-Q19（subjective）
+1. **P1｜01　立法：科学立法、民主立法、依法立法｜考法4　演进型：法在变，答与时俱进（7题）**（分 3.0263，组内 7 题，一级 四、依法治国：法治角�
+== BJ-2026-BJ-GAOKAO-Q20 exit=1
+## BJ-2026-BJ-GAOKAO-Q20（subjective）
+- 注意：设问含跨模块限定“《当代国际政治与经济》”（命中句：结合材料，运用《当代国际政治与经济》知识，分析我国软法影响全球数据治理的原
+1. **P1｜04　以人民为中心的发展思想｜考法5　反推型：从口号或成效反推为了谁（11题）**（分 2.0506，组内 11 题，一级 三、人民当家作主／二级 04　以

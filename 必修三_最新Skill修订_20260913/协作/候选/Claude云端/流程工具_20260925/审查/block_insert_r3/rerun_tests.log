@@ -1,0 +1,70 @@
+工具：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py
+父稿：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx（期望 SHA c007d7198422050c…，实际 c007d7198422050c…）
+[PASS] baseline_guard_测试前 (4.95s) 
+[PASS] T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16 (45.64s) 
+[PASS] T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18 (46.25s) 
+[PASS] T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19 (45.68s) 
+[PASS] T2_img_金标回归_before_block还原原位_整篇比对 (34.32s) 
+[PASS] T2_tbl_金标回归_before_block还原原位_整篇比对 (33.06s) 
+[PASS] T3a_负例_父稿SHA错 (2.75s) 
+[PASS] T3b_负例_锚点0命中 (2.99s) 
+[PASS] T3c_负例_锚点多命中 (2.82s) 
+[PASS] T3d_负例_样板题块找不到 (2.93s) 
+[PASS] T3e_负例_原件里找不到指定图 (3.13s) 
+[PASS] T3f_负例_原件里找不到指定表 (3.03s) 
+[PASS] T3g_负例_图片文件损坏 (3.04s) 
+[PASS] T3h_负例_输出落到书稿目录 (2.83s) 
+[PASS] T3i_负例_输出落到Skill目录 (2.96s) 
+[PASS] T3j_负例_输出落到题库目录 (2.99s) 
+[PASS] T3k_负例_冻结册配置 (0.21s) 
+[PASS] T3l_负例_method_end命中多个考法分组 (2.87s) 
+[PASS] T3m_负例_标题命中禁用词表 (2.94s) 
+[PASS] T3n_负例_表格rows命中禁用词表 (2.81s) 
+[PASS] T3o_负例_输出落到审阅入口 (2.89s) 
+[PASS] T3p_负例_输出与输入是同一个文件 (2.97s) 
+[PASS] T3q_正例_冻结册check模式可以跑 (2.86s) 
+[PASS] T4a_其他书_哲学_check (3.38s) 
+[PASS] T4b_其他书_哲学_apply最小写入 (12.54s) 
+[PASS] m15_其他书哲学apply_health如实记录新增FAIL (0.0s) 
+[PASS] B2_M1_表格超链接图片关系重建_真实原件 (17.75s) 
+[PASS] M1_表内docPr去重_真实原件 (19.22s) 
+[PASS] m1_表格含文本框安全中止 (3.01s) 
+[PASS] m3_同锚点多条insert顺序保持 (23.02s) 
+[PASS] m2_renumber失败退出码不再是0 (20.01s) 
+注意：--health 执行异常，未能确认体检结果：m5 复现用：模拟 --health 内部异常
+{"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m5health_out.docx", "sha256": "3da98d0eddf1686bdd975c9afc9dc7274f4a595820face79d7bf4cce67750861"}
+[PASS] m5_health异常不再静默退出0 (16.8s) 
+中止：写后复核不通过，已删除输出：N1：block_index 认出的图片数 1 与插入单预期 0 不符
+[PASS] M2_block_index写后复核硬失败_人工造媒体数不符 (16.32s) 
+[PASS] m12a_apply缺省--profile被argparse拒绝 (0.32s) 
+[PASS] m12b_profile指向本环境不存在的root被拒绝 (0.23s) 
+[PASS] R2_B1_sanitize_table_styles按名字映射不按styleId (0.01s) 
+[PASS] R2_M4_真实DOCX原件带表新题_BJ-2023-HD-QIZHONG-Q18 (44.98s) 
+[PASS] R2_M1_词表豁免被style覆盖绕过_role=source配教学桶样式必须中止 (2.94s) 
+[PASS] R2_M1_控制组_role=teaching配桶内样式应正常通过 (17.28s) 
+[PASS] R2_M2_栏目缺失写后复核硬失败 (17.07s) 
+[PASS] R2_M3_report不覆盖已批准补丁 (2.9s) 
+[PASS] R2_M3_report不覆盖插入单本身 (2.84s) 
+[PASS] R2_M3_report不覆盖不相干json (2.7s) 
+[PASS] R2_M3_report可覆盖自己以前的同类报告 (2.75s) 
+[PASS] R2_M3_report原子写出_写失败不破坏旧内容 (0.0s) 
+注意：--render-check 转换失败（source file could not be loaded1），仅供参考，不阻断写出
+{"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/r2m3render_out.docx", "sha256": "b90deb6665262598c04e1f3b50d7e0a39d4c7dab161074a381ae3827993f5124"}
+[PASS] R2_m3_render_check转换失败退出码提到1 (16.6s) 
+[PASS] R2_m9_插入单未知字段被拒绝 (0.2s) 
+[PASS] R2_m9_插入单book字段与profile不一致被拒绝 (0.21s) 
+[PASS] R2_m10_renumber_next_command路径带空格可原样往返 (21.07s) 
+[PASS] R2_m6_插入单文件不存在_中文提示无traceback (0.2s) 
+[PASS] R2_m6_插入单JSON损坏_中文提示无traceback (0.22s) 
+[PASS] R2_m6_配置名不存在_中文提示无traceback (0.21s) 
+[PASS] R2_m1_只有外部关系无新图片时也要写rels (2.12s) 
+[PASS] R2_m16_source_cache进程内多次调用不串味且句柄关闭 (4.72s) 
+[PASS] baseline_guard_测试后 (4.76s) 
+
+合计：55 条，PASS 55，FAIL 0
+详情：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/test_results.json
+
+real	8m54.772s
+user	8m19.906s
+sys	0m29.620s
+EXIT=0

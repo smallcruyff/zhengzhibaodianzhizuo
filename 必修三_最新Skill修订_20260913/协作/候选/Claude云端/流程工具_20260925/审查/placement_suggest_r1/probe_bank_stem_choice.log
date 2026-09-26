@@ -1,0 +1,8 @@
+bank MDs 1838
+Counter({'ok': 1688, 'via_keyword': 895, 'via_guide': 793, 'parse_fail': 150, 'guide_says_none_but_used_keyword_stem': 20})
+103 教师版题面来源（含答案，须回原卷核实） BJ-2024-BJ-GAOKAO-Q1.md
+22 题面（不含内附答案、分析、详解） BJ-2023-FT-YIMO-Q1.md
+22 题目原文（原卷 native；未以答案/细则反推） BJ-2025-CY-ERMO-Q1.md
+21 E0教师版有界题面（不含答案/解析） BJ-2025-BJ-GAOKAO-Q1.md
+20 讲评来源块（含答案与解析，不得当作题面） BJ-2025-CY-YIMO-Q1.md
+[('NONE:讲评来源块（含答案与解析，不得当作题面）', 'BJ-2025-CY-YIMO-Q1.md')]

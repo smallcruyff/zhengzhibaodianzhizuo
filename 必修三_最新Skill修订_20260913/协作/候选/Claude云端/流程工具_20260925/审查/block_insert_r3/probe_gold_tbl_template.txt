@@ -1,0 +1,22 @@
+=== template block 例题 4　2026朝阳一模第21题（跨模块） n_hits 1
+  r0 c0 p0 jc=both keepNext=True runs(len,bold)=[(4, False)] text='夯基固本'
+  r0 c0 p1 jc=both keepNext=False runs(len,bold)=[(73, False)] text='生态环境法典是我国第二部以“法典”命名的'
+  r1 c0 p0 jc=both keepNext=True runs(len,bold)=[(4, False)] text='着眼长远'
+  r1 c0 p1 jc=both keepNext=False runs(len,bold)=[(118, False)] text='生态环境法典将“绿色低碳发展”单独设立一'
+  r2 c0 p0 jc=both keepNext=True runs(len,bold)=[(4, False)] text='民生为大'
+  r2 c0 p1 jc=both keepNext=False runs(len,bold)=[(93, False)] text='生态环境法典推动解决百姓“家门口”的环境'
+  _template_row_fmt(row0): ppr jc= both  rpr= <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/offi
+=== template block 例题 3　2024朝阳二模第18题 n_hits 1
+  r0 c0 p0 jc=center keepNext=False runs(len,bold)=[(0, True)] text=''
+  r0 c1 p0 jc=center keepNext=False runs(len,bold)=[(4, True)] text='主要阶段'
+  r0 c2 p0 jc=center keepNext=False runs(len,bold)=[(4, True)] text='工作内容'
+  r1 c0 p0 jc=both keepNext=False runs(len,bold)=[(1, False)] text='一'
+  r1 c1 p0 jc=both keepNext=True runs(len,bold)=[(4, False)] text='起草准备'
+  r1 c1 p1 jc=both keepNext=False runs(len,bold)=[(5, False)] text='形成讨论稿'
+  r1 c2 p0 jc=both keepNext=False runs(len,bold)=[(73, False)] text='✧ 《政府工作报告》起草组认真学习习近平'
+  r2 c0 p0 jc=both keepNext=False runs(len,bold)=[(1, False)] text='二'
+  r2 c1 p0 jc=both keepNext=True runs(len,bold)=[(4, False)] text='征求意见'
+  r2 c1 p1 jc=both keepNext=False runs(len,bold)=[(4, False)] text='修改完善'
+  r2 c2 p0 jc=both keepNext=False runs(len,bold)=[(40, False)] text='✧ 国务院常务会议讨论修改报告初稿，形成'
+  r2 c2 p1 jc=both keepNext=False runs(len,bold)=[(30, False)] text='✧ 根据中共中央政治局常委会议意见进行修'
+  _template_row_fmt(row0): ppr jc= center  rpr= <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/offi

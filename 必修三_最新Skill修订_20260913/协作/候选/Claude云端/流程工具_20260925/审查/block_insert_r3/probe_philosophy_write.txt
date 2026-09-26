@@ -1,0 +1,7 @@
+rc= 1 out_exists= True
+stdout {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r3/work/ph_out.docx", "sha256": "3809b04a5521d91ee15c26be39d0aa86b1b73f3f6e36116741d201ece29378e1"}
+stderr 
+block_index_check [{"id": "PH1", "title": "例题 2　2026年东城二模第16题（复制）", "found_blocks": 1, "schema": "p1_subjective", "missing": [], "media_count": 1, "tables_count": 0, "media_expect": 1, "tables_expect": 0, "media_match": true, "tables_match": true}]
+health {"input_FAIL": 35, "output_FAIL": 36, "new_FAIL_count": 1}
+  NEW FAIL numbering 例题编号不连续 例题 2　2025年东城二模第16题
+fallbacks [[]]

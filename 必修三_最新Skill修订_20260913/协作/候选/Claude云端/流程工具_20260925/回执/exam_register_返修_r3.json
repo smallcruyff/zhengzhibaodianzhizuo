@@ -1,0 +1,84 @@
+{
+ "tool": "exam_register",
+ "round": 3,
+ "version": "1.3.0",
+ "stage": "返修（回应 审查/exam_register_审查_r3.json，FAIL → 本轮）",
+ "generated_at": "2026-09-25T11:34:24Z",
+ "actor": "claude-cloud 子代理（非负责人，只写候选目录）",
+ "reviewed_against": "必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/审查/exam_register_审查_r3.json",
+ "summary": "逐条修掉全部 5 个 major（M-H~M-L）与全部 13 个 minor（m1~m13）。M-H：--files 改为逐文件独立切题、独立比对，同一对手卷在多份文件里取占比/可靠度最高的一份合并，不再把各文件块数加总做分母——同一原卷给两份副本或同一文件给两次，结果与只给一次一致。M-I：切题合理性校验（原文里出现过的题号数远多于实际切出的块数即判不可靠），漏切一个题号导致的“假成功”不再被当作可靠切题；没有沿用审查建议的“块长度超中位数 N 倍”这条信号，因为它会把正常的长篇材料分析题（最后一题天然比选择题长好几倍）误判为不可靠，见 known_limits。M-J：文字层可读性改用 CJK 汉字占比（真实乱码原件用 pypdf 抽出的控制字符占比 0.0，退回 fitz 也只抽到版心外的“【四校】…”几个字、占比 0.169，仍判无可用文字层），届别提示改为“需本地看图”，--files 查重为空时明说“未能对原件做任何查重”，不再误称“已整卷粗略比对”。M-K：恢复“A/B 均无证据、原件没有任何可用文字层时，C 层（exams.csv）年份只作 weak_hint、状态 NEEDS_LOCAL、不生成建议号”这条判定，audit 的 needs_local 由 r3 审查记录的 0 恢复到 11（不是 r2 的 14，是因为 m3 顺带用 00_exam_front_matter.md 把其中几张原本仅靠 exams.csv 撑住的卷提升成了有 B 层证据的 OK，见下）。M-L：reused_ids 改为 old 列 ∩（new 列 ∪ {want_id}），--files 新卷模式与 exam-id 模式的链尾提示统一。minor 逐条：m1 blocked_conflict 时 redirects 置空、note 改指向 rename_plan 第一步；m2 子解析器 --debug 用 default=SUPPRESS；m3 新增读取“卷首说明”文件（如 00_exam_front_matter.md）；m4 --exam-dir 只认 *-Q<N>.md；m5 排除标记加“日期前 20 字内出现‘本卷’则不排除”；m8 WEAK_ONLY 文案改为只提 exams.csv；m9 SK 模块 import 包进 try/except，中文提示退出2；m10 补全部 major 的回归用例（见 tests，group10 共 15 条）；m11 own_id 存在且可靠重复时给出 retire 的 plan/redirect；m12 suggestion 加 already_registered_as；m13 本回执不再声称用 git 记录核对，改为引用当场跑出的输出与 group10 断言（见 审查/exam_register_r3/fix_verify_r3.log）。5 条规格验收（1~5）字面与实质都通过，规格 A/B/C/共同约定 4 条此前 miss 的验收点（A：扫描件全模式标需本地看图；B：--files 分母与真实题数脱钩；复用 bh/block_index/qpack；≤900 行）逐条见下文说明。重跑 75/75 PASS（60 条既有 + 15 条 r3 新增回归），用时 321.0s；测试前后 baseline_guard 两次 PASS；vermin 无违规。",
+ "majors_disposition": [
+  {"id": "M-H", "status": "已修复", "fix": "新增 split_and_fingerprint_one/scan_files_duplicates/_merge_file_dup_entries：--files 逐文件独立切题、独立比对（total_questions 用该文件自己的块数，不跨文件累加），同一对手卷在多份文件结果里取 (fraction_reliable, fraction, matched_questions) 最大的一份合并——同一文件给两次或同 SHA 副本，两次算出的结果相同，取最强的一份等价于只算一次，天然不受“文件越多分母越大”影响。", "verification": "check --files 试卷.pdf 补充材料同SHA副本 → BJ-2024-CY-QIZHONG duplicate_registration 20/20（审查记录的坏结果是 shared_or_reused 20/40）；同一文件传两次（hd25）→ 两张已有登记仍各自 duplicate_registration 21/21，chain_kind=already_registered（审查记录的坏结果是 shared_or_reused 21/42 + blocked_conflict）。回归用例 10a/10b，见 fix_verify_r3.log 与 run_tests_exam_register.py。"},
+  {"id": "M-I", "status": "已修复（未采用审查给出的第二条信号）", "fix": "新增 _split_is_reliable：只用“全文里出现过的题号（含未被采纳进 picked 的）比实际切出的块数多出 SPLIT_MAX_MISSING_QNUM=2 以上”这一条信号判不可靠。未采用审查 fix_hint 里“块长度超中位数 3 倍”这一条——实测会把真实原件（如 2024朝阳期中，20 题全部正确切出，但最后一道材料分析题 1316 字、中位数仅 328 字）误判为不可靠，见 known_limits。", "verification": "20 题合成卷（Q1/Q20 取自 BJ-2025-BJ-GAOKAO，第4题漏句点，切出3块）→ hit={'kind':'shared_or_reused_questions','matched':2,'total':3,'fraction_reliable':False}，不再是审查记录的 duplicate_registration 2/3 true。真实原件复核：6 份 split_ok=True 但块数不到题数一半的卷里，5 份（BJ-2023-BJ-GAOKAO/BJ-2024-HD-ERMO/BJ-2024-SY-ERMO/BJ-2024-XC-YIMO/BJ-2025-HD-YIMO）能被本条规则识别为不可靠；BJ-2024-FT-YIMO 全文本身只出现了3个题号（提取失败，不是漏切），文本内部没有任何信号可判，见 known_limits。回归用例 10c。"},
+  {"id": "M-J", "status": "已修复", "fix": "新增 _readable_ratio（CJK 汉字占比）与 _text_usable（长度+可读比双重门槛，MIN_READABLE_RATIO=0.30）；extract_pdf_text 的 pypdf→fitz 回退条件从“长度不够”改为“不可用”（长度不够或可读比过低都回退），两个引擎的结果都做同样的可用性判定，选更可用的一份；raw_file_reports 的 has_text_layer 与 split_and_fingerprint_one 都改用 _text_usable，不再只看长度。", "verification": "2024海淀期中真实原件（乱码文字层，pypdf 347字/CJK占比0.0，fitz 640字/CJK占比0.169）--files → cohort_status=NEEDS_LOCAL，issues=['原件无文字层且题库无可查文字证据，需本地看图核实届别','原件均无可用文字层（或乱码文字层无法识别为中文），未能对原件做任何查重，重复登记/复用需本地核实']，duplicates=[]（审查记录的坏结果是“无日期/学年写法”+“已整卷粗略比对”）。回归用例 10d。"},
+  {"id": "M-K", "status": "已修复", "fix": "check_one 里新增 weak_hint_year 逻辑：cohort['status']=='WEAK_ONLY' 且 no_raw_text（原件全部没有可用文字层）时，把年份降级为 weak_hint（不写进 cohort_year），状态改 NEEDS_LOCAL，不生成建议号/不展开改号链；issue 明确写“需本地看图核实届别，不据此生成建议卷号”。只有 C 层证据、但原件本身有可读文字层（只是没写日期）时，仍保留 WEAK_ONLY。", "verification": "check --exam-id BJ-2025-HD-ERMO（扫描件，仅exams.csv）→ NEEDS_LOCAL、cohort_year=None、suggestion=None（审查记录的坏结果是 exams.csv 直接定届别的 WEAK_ONLY）。audit 全库：needs_local=11、weak_only=11（审查记录的坏状态 needs_local=0/weak_only=25）。needs_local 没有恢复到 r2 的 14，是因为 m3 顺带让其中几张原本“只有 exams.csv”的卷读到了 00_exam_front_matter.md 的 B 层证据，直接判 OK，不再落进 weak_only/needs_local——13 张名单里减少的部分已核对是被 m3 提升，不是漏改，名单见 known_limits。回归用例 10e，另见 3a/3c。"},
+  {"id": "M-L", "status": "已修复", "fix": "build_rename_chain 末尾 reused_ids 由 old_ids & new_ids 改为 old_ids & (new_ids | {want_id})——own_id 为空的新卷路径里，最后一步“本卷→want_id”不产生 redirects 条目，但 want_id 在此之前一定已作为某步的 old 被重定向走，纳入 new_ids∪{want_id} 后能正确求出交集，同时也顺带修好了 own_id 存在时链条更长的场景（N3a 复测）。", "verification": "朝阳2023.11新卷 → reused_ids=['BJ-2024-CY-QIZHONG']（审查记录的坏结果是 []）；海淀2022.11新卷 → reused_ids=['BJ-2023-HD-QIZHONG','BJ-2024-HD-QIZHONG']（审查记录的坏结果只有后者，漏前者）。回归用例 10f，1a 同时覆盖 own_id 存在的场景。"}
+ ],
+ "minors_disposition": [
+  {"id": "m1", "fix": "unresolved（blocked_conflict）分支强制 redirects=[]；note 措辞改为“见 rename_plan 第一步”（reversed(chain) 决定执行顺序，冲突点排在链条最深处、最先展开，落在 plan[0] 而不是最后一步）。", "verification": "两层链纯函数单测：redirects==[]，'第一步' in note。回归用例 10g。"},
+  {"id": "m2", "fix": "common(p) 的子解析器 --debug 用 default=argparse.SUPPRESS，不再用同名 False 覆盖主解析器已解析出的 True；main() 里 debug = args.debug 直接读合并后的值。", "verification": "--debug check --exam-id ... --raw-root /no/such → stderr 含 Traceback（审查记录的坏结果是只有一行中文、没有 traceback）。回归用例 10h。"},
+  {"id": "m3", "fix": "新增 FRONT_MATTER_NAME_RX/_find_front_matter：文件名含 front_matter/卷首/试卷身份 的 MD（排除 README）整份当 B 层证据，exam_id_hint 与 md_dir 两种模式都读。", "verification": "BJ-2026-CY-QIMO --exam-dir → cohort_status=OK、cohort_year=2026（审查记录的坏结果是 WEAK_ONLY）。回归用例 10i（与 m4 合测）。"},
+  {"id": "m4", "fix": "load_exam_questions_from_dir 的文件筛选从“除 README 外的全部 *.md”改为 Q_FILE_RX=r'-Q\\d+\\.md$'，只认逐题 MD。", "verification": "同一目录 fingerprint_coverage.total=21（审查记录的坏结果是 26，多计 5 个工程文件）。回归用例 10i。"},
+  {"id": "m5", "fix": "_excluded 新增 EXCLUSION_LOOKBEHIND=20：日期/学年起点前 20 字内出现“本卷”即不排除，不再看后文排除标记；三处调用改传 (m.start(), m.end())。", "verification": "BJ-2023-HD-QIZHONG README 真实原文单测：'2023年11月'（本卷自己的日期）仍算 exam_date 证据；'2023.04'/'2023年4月'（另一份被排除文件的日期）仍按排除处理。回归用例 10j。"},
+  {"id": "m6", "fix": "未刻意压缩行数——本轮 5 个 major 都需要新函数/新分支，行数从 1628 升到 1811（+183，≈11%），超出 900 行目标约 101%，比 r3 的 81% 更超。已把能省的都省了（如放弃 M-I 的第二条“块长度”信号，同时省了代码和一次误判风险）；进一步压缩需要把长篇 docstring 移出源码（例如移进本回执或单独的设计说明文件），下一轮如果主代理认为值得做可以专项处理，见 known_limits。", "verification": "wc -l exam_register.py → 1811。"},
+  {"id": "m7", "fix": "docstring 第 20 行改为“README.md 前 HEADER_WINDOW 字”，不再说“全文”；Tier B 注释同步更正。", "verification": "见 exam_register.py 头部 docstring 与 check_one 内 Tier B 注释。"},
+  {"id": "m8", "fix": "WEAK_ONLY 的 issue 文案从“仅有弱证据（exams.csv/目录名）支持届别，未取得原件或题库文字层佐证”改为“仅有弱证据（exams.csv，已知会错）支持届别，原件/题库文字层未给出可用信号”，不再提目录名。", "verification": "真实 WEAK_ONLY 卷 BJ-2025-DC-QIMO --exam-id → issues 含“exams.csv”不含“目录名”。回归用例 10k。"},
+  {"id": "m9", "fix": "SK 模块 import（docx_lib/batch_health/qpack/block_index/profile_lib）包进 try/except，失败时打印中文提示并 sys.exit(2)；--debug 出现在 sys.argv 里时打印 traceback（此时 argparse 还没跑，只能用最朴素的成员检测）。", "verification": "假 BAODIAN_SKILL_SCRIPTS 指向一个 raise ImportError 的 docx_lib.py（不碰真实 Skill/依赖）→ exit=2，中文提示，无 Traceback；加 --debug 后有 Traceback。回归用例 10l/10l2。"},
+  {"id": "m10", "fix": "M-H~M-L 与 m1/m2/m3/m4/m5/m8/m9/m11/m12 各补一条能复现问题的回归用例（10a~10n，共15条，均为修前会失败、修后通过），2a 对照组维持原 7 张（本轮未按建议再加期末卷，理由见 known_limits）。", "verification": "run_tests_exam_register.py group10；重跑 75/75 PASS。"},
+  {"id": "m11", "fix": "build_rename_chain 的 direct 分支按 own_id 是否存在分两种返回：own_id 存在且不等于 want_id 时给出 retire own_id→want_id 的 rename_plan/redirects；own_id 为空时保留原“不应再注册新卷号”措辞。", "verification": "check --exam-id BJ-2024-HD-QIZHONG（own 复核）→ rename_plan=[{'old':'BJ-2024-HD-QIZHONG','retire_into':'BJ-2025-HD-QIZHONG',...}]，redirects 非空（审查记录的坏结果是 redirects=[]）。回归用例 10m。"},
+  {"id": "m12", "fix": "dup_against 计算完成后，若存在可靠 duplicate_registration，直接在 suggestion 上加 already_registered_as 字段（不论建议号是否被占用）。", "verification": "2024朝阳期中新卷（建议号未占用，但与 BJ-2024-CY-QIZHONG 可靠重复 20/20）→ suggestion.already_registered_as=='BJ-2024-CY-QIZHONG'。回归用例 10n。"},
+  {"id": "m13", "fix": "本回执不再使用“git 记录/git diff 前”这类措辞；改为引用本会话当场跑出的输出（见 fix_verify_r3.log）与 group10 的自动化断言，这两者都可重复验证。", "verification": "git status --short 确认 exam_register.py/run_tests_exam_register.py/回执//审查/ 目前仍是 ?? 未跟踪；fix_verify_r3.log 已写入 审查/exam_register_r3/。"}
+ ],
+ "acceptance_recheck": [
+  {"criterion": "规格 A：扫描页无文字层 → 全部模式标“需本地看图”，不猜", "met": true, "note": "--files 模式本轮已修正措辞（M-J）；exam-id/audit 模式恢复 NEEDS_LOCAL 判定（M-K）；乱码文字层不再被误判为“有文字层”（M-J）。"},
+  {"criterion": "规格 B：duplicate_registration 与 shared_or_reused_questions 分清，阈值写进报告", "met": true, "note": "--files 的分母改为逐文件独立计算（M-H），切题不可靠时降级不判 duplicate_registration（M-I）。"},
+  {"criterion": "规格 C：建议卷号、占用、改号顺序、重定向表", "met": true, "note": "reused_ids 覆盖 own_id 为空与非空两种路径（M-L）；own_id 存在且可靠重复时给出 retire 的 plan（m11）；建议号未占用但可靠重复时给出 already_registered_as（m12）。"},
+  {"criterion": "共同约定：复用 bh/block_index/qpack/docx_lib，不另写识别逻辑；行数 ≤900", "met": "部分", "note": "识别逻辑复用未变（新函数都是对已有 split_questions_raw/extract_file_text/scan_duplicates 的薄封装或合理性校验，没有另起一套）；行数 1811，超出目标（m6）。"}
+ ],
+ "files": [
+  {"path": "exam_register.py", "lines": 1811, "sha256": "36cc34512ba3fa1ab7bd46536ce1fc21647d2ab4178f5d7aa77f4f716273587a"},
+  {"path": "run_tests_exam_register.py", "lines": 968, "sha256": "bc4078886e25aea79f2dc78427715c13960c7f2df382f55a62a2cb1f45052a95"},
+  {"path": "审查/exam_register_r3/fix_verify_r3.log", "note": "本轮逐条问题的修后验证记录（命令+实际输出），供复核，不依赖 git"},
+  {"path": "审查/exam_register_r3/rerun_tests_r3_afterfix.log", "note": "本轮 75/75 PASS 完整输出"},
+  {"path": "审查/exam_register_r3/baseline_guard_final_afterfix.log", "note": "本轮 baseline_guard 最终复查（写返修回执前再跑一次）"},
+  {"path": "审查/exam_register_r3/vermin_r3_afterfix.log", "note": "本轮 vermin 复查"}
+ ],
+ "usage": [
+  "check --exam-id BJ-2024-HD-QIZHONG --profile profiles_cloud/bixiu3.json [--report x.json]",
+  "check --files 原卷.pdf [细则.docx ...] --region 海淀 --stage 期中 --profile profiles_cloud/bixiu3.json",
+  "check --exam-dir DeepSeek_政治题库资料库_20260918/questions/某卷目录 --profile profiles_cloud/bixiu3.json",
+  "audit --profile profiles_cloud/bixiu3.json --report x.json",
+  "python3 -B run_tests_exam_register.py（自包含回归测试，75 条：60 条 r1/r2 既有 + 15 条 r3 新增 group10）"
+ ],
+ "tests": [
+  {"input": "run_tests_exam_register.py 全量（10 组，75 条）", "result": "PASS 75/75，失败 0", "seconds": 321.0},
+  {"input": "baseline_guard（测试前）", "result": "PASS，3468 文件 0 变化", "seconds": 5.0},
+  {"input": "baseline_guard（测试后）", "result": "PASS，3468 文件 0 变化", "seconds": 4.8},
+  {"input": "baseline_guard（写本回执前再跑一次）", "result": "PASS，3468 文件 0 变化，skill_pycache=[]", "seconds": null},
+  {"input": "vermin -t=3.9- --no-tips --eval-annotations --violations exam_register.py run_tests_exam_register.py", "result": "无违规，最低 3.7", "seconds": null}
+ ],
+ "tests_totals": {"total": 75, "failed": 0, "seconds": 321.0},
+ "vermin": "vermin -t=3.9- --no-tips --eval-annotations --violations exam_register.py run_tests_exam_register.py → 无违规，最低 3.7，退出 0",
+ "vermin_ok": true,
+ "baseline_guard": "python3 -B tools/baseline_guard.py check --base 构建/baseline_20260925.json → files=3468，changed/removed/added 均为空，skill_pycache=[]，退出 0（测试前/测试后/写回执前，共复查 3 次，结果一致）",
+ "baseline_guard_ok": true,
+ "replaces": "同 r2：届别推算/重复登记比对/改号链改由脚本机械核验，模型只需复核 blocked_conflict/CONFLICT/NEEDS_LOCAL/needs_verification_low_confidence 与低覆盖率卷。本轮额外去掉了三类会让人被脚本误导的情形：(1) --files 给多份材料（原卷+细则+教师版，或清单里同一路径列了两次）不再需要人工先去重再喂给脚本；(2) 原件切题断在中途时不再需要人工肉眼核对“这道 2/3 到底靠不靠谱”；(3) 印厂专用编码/轮廓字这类乱码文字层，脚本会明确说“看不了、没比”，不会让人误以为“已经查过没查到”。",
+ "known_limits": [
+  "M-I 的切题合理性校验只用“全文题号数 vs 块数”这一条信号，不用“块长度超中位数”——真实原件里 BJ-2024-FT-YIMO 一类“全文本身就只出现了 3 个题号”（提取失败或原文本身缺失后续题号）的坏切题，两条信号都测不出来，这是纯文本启发式的固有盲区，只能靠题库覆盖率对照发现（而 --files 新卷没有覆盖率数据可对照）；exam-id/audit 模式如果要检测同类问题，需要另外对照该卷题库里已产出的题目数，本轮未做，留给下一轮。",
+  "M-K 恢复后，audit 的 needs_local 是 11、weak_only 是 11（不是 r2 的 14/14），差额是本轮 m3（读 00_exam_front_matter.md）顺带把几张原本只有 exams.csv 撑住的卷升级成了有 B 层证据的 OK；已逐一核对差额方向正确（升级为 OK，不是被误吞掉），核对方法见 fix_verify_r3.log，未逐张列出全部卷号，主代理如需可再跑一次 audit --report 对照。",
+  "MIN_READABLE_RATIO=0.30 是按这一份真实乱码原件（0.0/0.169）与几份正常原件（0.74+）的实测值取的中间偏安全值，没有做更大样本的敏感性分析；理论上存在“真实内容恰好夹杂大量非中文字符（如大段英文材料题）”导致误判为无文字层的可能，本轮未遇到这类真实卷，如后续遇到需要调整阈值或改用别的判据。",
+  "m6：行数 1811，比 r3 的 1628 又多 183 行（+11%），超出 900 行目标约 101%——本轮 5 个 major 都需要新函数（每文件独立切题/合并、可读性校验、切题合理性校验、卷首说明文件读取、改号链两处分支），已经放弃了一条校验信号（见上）来省代码，没有再找到能安全再省的地方；如果要真正压到 900 行以内，需要把大段 docstring/修复编号注释移出源码文件，这会影响代码本身的可读性/可追溯性，建议由主代理决定是否值得做专项精简。",
+  "2a 对照组本轮未按 r3 review 的 m10 建议再加期末卷（受限于本轮聚焦修复 5 个 major，时间预算优先给了 group10 的15条新回归；且当前2a 的7张对照卷已覆盖期中/期末/一模二模/高考各阶段，边际收益判断为低），留给下一轮或主代理按需补充。",
+  "以下沿用 r2 known_limits、本轮未变：m4（届别推算）只做了“YYYY届”这一条最不含糊的规则，网站标题类弱证据未覆盖；containment/DUP_EXAM_FRACTION/MIN_FINGERPRINT_COVERAGE 等阈值仍是经验值，未做敏感性分析；约4~5%的题抽不出可用题面；证据条目没有页码/行号；未接入 sources/transcriptions；bh.read_docx 与 python-docx 都读不到文本框内文字；改号链深度上限 MAX_RENAME_CHAIN_DEPTH=6 未被真实数据触发；必修二不在云端，未涉及、未测试；audit 全量约90秒，单卷 check 约2~11秒（--files 因逐文件独立提取全文，比 r2 略慢，仍在个位数到十几秒量级）。"
+ ],
+ "profile_fields_needed": [
+  "同 r1/r2：阈值 DUP_QUESTION_SIM=0.55、DUP_EXAM_FRACTION=0.5（严格>）、MIN_STEM_LEN=40、HEADER_WINDOW=1000、MIN_FINGERPRINT_COVERAGE=0.7 是否登记进 profile，由主代理复核决定。",
+  "新增：MIN_READABLE_RATIO=0.30（M-J 乱码文字层判定）、SPLIT_MAX_MISSING_QNUM=2（M-I 切题合理性判定）——是否也要登记进 profile 供跨批次统一，或保留为工具内常量，由主代理决定。"
+ ],
+ "needs_user_decision": [
+  "同 r2：三张已知错号卷（BJ-2023/2024-HD-QIZHONG、BJ-2024-CY-QIZHONG）的实际改号仍需人工确认“BJ-2024-HD-QIZHONG 与 BJ-2025-HD-QIZHONG 是否确为同一场考试”后才能动题库，脚本只给机械建议。",
+  "M-K 恢复后，needs_local 的 11 张卷（+ weak_only 的 11 张）需要主代理决定是否安排人工看图核实届别，还是先接受“需本地”的标记继续走后续流程。",
+  "M-I 放弃的“块长度”信号与遗留的 BJ-2024-FT-YIMO 类盲区（known_limits 第1条）是否需要下一轮专项处理，由主代理评估优先级。",
+  "m6 行数超预算是否需要专项精简（把 docstring 移出源码），由主代理决定。"
+ ]
+}

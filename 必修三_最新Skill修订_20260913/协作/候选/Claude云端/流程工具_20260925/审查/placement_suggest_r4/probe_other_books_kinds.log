@@ -1,0 +1,8 @@
+philosophy 1119 [('choice', 565), ('subjective', 554)] no_method_or_group= 1119 with_key= 1119 parts= [('P1', 1119)]
+culture 70 [('subjective', 70)] no_method_or_group= 70 with_key= 70 parts= [('P1', 70)]
+xuanbi1 353 [('subjective', 204), ('choice', 149)] no_method_or_group= 353 with_key= 340 parts= [('P1', 353)]
+xuanbi2 769 [('subjective', 247), ('choice', 228), ('drill_card_a1', 146), ('drill_card_a2', 146), ('other_例外题', 2)] no_method_or_group= 292 with_key= 769 parts= [('P1', 477), ('APPX1', 146), ('APPX2', 146)]
+mind 174 [('subjective', 113), ('choice', 61)] no_method_or_group= 174 with_key= 174 parts= [('P1', 174)]
+reasoning 480 [('choice', 145), ('drill_card_a1', 144), ('drill_card_a2', 144), ('subjective', 47)] no_method_or_group= 288 with_key= 480 parts= [('P1', 192), ('A1', 144), ('A2', 144)]
+choice [] 0 0
+{'n_queries': 1, 'n_with_flags': 0, 'flag_category_counts': {}, 'by_query': [{'source': 'BJ-2020-BJ-GAOKAO-Q3', 'kind': 'choice', 'top_candidate': None, 'has_flags': False}]}

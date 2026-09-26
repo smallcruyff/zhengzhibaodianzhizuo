@@ -1,0 +1,21 @@
+== img
+ pPr '建设韧性城市是以习近平同' only-orig set() only-new {('keepNext', ()), ('ind', (('firstLine', '0'),))}
+ rPr '建设韧性城市是以习近' only-orig set() only-new {('rFonts', (('eastAsia', 'Songti SC'),)), ('bCs', ()), ('b', ()), ('color', (('val', '1F4E79'),))}
+ pPr '北京市委坚决贯彻落实党中' only-orig set() only-new {('keepNext', ()), ('ind', (('firstLine', '0'),))}
+ rPr '北京市委坚决贯彻落实' only-orig set() only-new {('rFonts', (('eastAsia', 'Songti SC'),)), ('bCs', ()), ('b', ()), ('color', (('val', '1F4E79'),))}
+ pPr '西城区某街道直面老旧平房' only-orig set() only-new {('keepNext', ()), ('ind', (('firstLine', '0'),))}
+ rPr '西城区某街道直面老旧' only-orig set() only-new {('rFonts', (('eastAsia', 'Songti SC'),)), ('bCs', ()), ('b', ()), ('color', (('val', '1F4E79'),))}
+ pPr '结合材料，运用《政治与法' only-orig set() only-new {('keepNext', ()), ('ind', (('firstLine', '0'),))}
+ rPr '结合材料，运用《政治' only-orig set() only-new {('bCs', ()), ('b', ()), ('color', (('val', '1F4E79'),))}
+ runs '从材料选知识：“市委、街' orig segs [('从材料选知识：', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('“市委、街道党工', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('从材料选知识：“',)]
+ runs '从设问定层次：“说明如何' orig segs [('从设问定层次：', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('“说明如何”按主', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('从设问定层次：“',)]
+ runs '④（综合概括）市委统筹、' orig segs [('④（综合概括）', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('市委统筹、居民共', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('④（综合概括）市',)]
+ runs '【细则说明】 综合概括写' orig segs [('【细则说明】', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), (' ', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('综合概括写出坚持', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('【细则说明】 ',), ('综合概括写出坚持',)]
+== tbl
+ rPr '2024年国务院《政' only-orig set() only-new {('rFonts', (('eastAsia', 'Songti SC'),)), ('bCs', ()), ('color', (('val', '1F4E79'),))}
+ pPr '结合材料，运用《政治与法' only-orig set() only-new {('keepNext', ()), ('ind', (('firstLine', '0'),))}
+ rPr '结合材料，运用《政治' only-orig set() only-new {('bCs', ()), ('b', ()), ('color', (('val', '1F4E79'),))}
+ runs '从材料选知识：“习近平总' orig segs [('从材料选知识：', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('“习近平总书记重', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('从材料选知识：“',)]
+ runs '从设问定层次：“如何体现' orig segs [('从设问定层次：', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('“如何体现”把形', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('从设问定层次：“',)]
+ runs '④（总述）政府工作报告形' orig segs [('④（总述）', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('政府工作报告形成', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('④（总述）政府工',)]
+ runs '【细则说明】 政府工作报' orig segs [('【细则说明】', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), (' ', dict_keys(['b', 'bCs', 'color', 'rFonts', 'sz', 'szCs'])), ('政府工作报告形成', dict_keys(['color', 'rFonts', 'sz', 'szCs']))] -> new segs [('【细则说明】 ',), ('政府工作报告形成',)]

@@ -1,0 +1,3 @@
+in-book keys whose MD-parsed kind differs from the book kind: 2
+   BJ-2025-CY-YIMO-Q18 query_kind=choice book=['subj'] field='选择题' conflict_flag=True e1_present=True
+   BJ-2026-XC-YIMO-Q16 query_kind=choice book=['subj'] field='选择题' conflict_flag=True e1_present=True

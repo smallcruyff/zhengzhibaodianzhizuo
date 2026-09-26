@@ -1,0 +1,25 @@
+{"('choice', True)": 15, "('subjective', True)": 9}
+BJ-2024-XC-YIMO-Q1	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q10	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q11	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q12	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q13	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q14	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q15	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q16	subjective	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q17	subjective	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q18	subjective	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q19	subjective	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q2	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q3	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q4	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q5	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q6	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q7	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q8	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2024-XC-YIMO-Q9	choice	e1=True	directive=[('正式评分优先读取', '正式评分材料（Sf7bcf000f212）')]	tool_e1_header=参考答案层（来自正式评分材料中的答案键或答案段）	same=False	directive_exists=False
+BJ-2025-YQ-YIMO-Q17	subjective	e1=True	directive=[('采用评分小节', '正式评分材料原文（候选物化；未晋升）')]	tool_e1_header=正式评分材料原文（候选物化；未晋升）	same=True	directive_exists=True
+BJ-2025-YQ-YIMO-Q18	subjective	e1=True	directive=[('采用评分小节', '正式评分材料原文（候选物化；未晋升）')]	tool_e1_header=正式评分材料原文（候选物化；未晋升）	same=True	directive_exists=True
+BJ-2025-YQ-YIMO-Q19	subjective	e1=True	directive=[('采用评分小节', '正式评分材料原文（候选物化；未晋升）')]	tool_e1_header=正式评分材料原文（候选物化；未晋升）	same=True	directive_exists=True
+BJ-2025-YQ-YIMO-Q20	subjective	e1=True	directive=[('采用评分小节', '正式评分材料原文（候选物化；未晋升）')]	tool_e1_header=正式评分材料原文（候选物化；未晋升）	same=True	directive_exists=True
+BJ-2025-YQ-YIMO-Q21	subjective	e1=True	directive=[('采用评分小节', '正式评分材料原文（候选物化；未晋升）')]	tool_e1_header=正式评分材料原文（候选物化；未晋升）	same=True	directive_exists=True

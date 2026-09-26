@@ -1,0 +1,25 @@
+OK  symlink_to_book: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  C_root: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  C_review: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  cloud_dir: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  logistics_dir: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  raw_dir: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  report_in_book: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）
+OK  report_over_skill_json: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/profiles/bixiu2.json
+   skill json unchanged: True
+OK  batch_second_fails: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：N2：template_block.title_contains="不存在的样板_xyz" 命中 0 个题块（须恰好 1 个）
+OK  dup_id: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：插入单里 id 重复：N1
+OK  title_exists: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：N1：标题 "例题 3　2024朝阳二模第18题" 已在书稿里存在——本工具不做已插入检测/幂等重放，请先确认是否真的还没插入
+OK  bad_kind: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：N1.content[0]：kind 只能是 "stem"（设问）或 "material"（材料）
+OK  from_docx_is_pdf: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 错误：File is not a zip file
+OK  image_file_is_pdf: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：图片文件无法解析（可能已损坏）：code=7: unknown image file format
+OK  out_exists: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r4/work/adv/exists.docx
+   existing untouched: True
+OK  out_dir_missing: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r4/work/adv/nope
+OK  frozen_apply: rc=3 expect=3 out_left=False tmp_left=[] tb=False | 拒绝写出：必修二《经济与社会》 已冻结（2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝））
+OK  sha_wrong: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 父稿不符：父稿 SHA 不符：期望 ffffffffffffffff…，实际 c007d7198422050c…（parent.docx）
+OK  parent_not_zip: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 错误：File is not a zip file
+OK  two_anchor_kinds: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 中止：anchor 必须且只能给 after_block/before_block/method_end 之一
+OK  method_contains_int: rc=2 expect=2 out_left=False tmp_left=[] tb=False | 错误：'in <string>' requires string as left operand, not int
+OK  control_ok: rc=0 expect=0 out_left=True tmp_left=[] tb=False | 
+leftover in C (should be none): [] []

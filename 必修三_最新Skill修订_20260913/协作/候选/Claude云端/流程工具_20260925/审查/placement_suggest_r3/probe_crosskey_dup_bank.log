@@ -1,0 +1,9 @@
+bank questions NOT in book (by key) scanned: 1345
+... whose stem is >=80% contained in an existing book block of another key: 6
+by exam: [('BJ-2025-HD-QIZHONG', 6)]
+   ('BJ-2025-HD-QIZHONG-Q10', 0.9, 'B0415', 'BJ-2024-HD-QIZHONG-Q10', '选择例题 10\u30002024海淀期中第10题（跨模块）')
+   ('BJ-2025-HD-QIZHONG-Q18', 0.87, 'B0684', 'BJ-2024-HD-QIZHONG-Q18', '例2\u30002024海淀期中第18题（8分）')
+   ('BJ-2025-HD-QIZHONG-Q19', 0.89, 'B0584', 'BJ-2024-HD-QIZHONG-Q19', '例2\u30002024海淀期中第19题（7分）')
+   ('BJ-2025-HD-QIZHONG-Q21', 0.83, 'B0405', 'BJ-2024-HD-QIZHONG-Q21', '例题 31\u30002024海淀期中第21(1)题')
+   ('BJ-2025-HD-QIZHONG-Q7', 0.87, 'B0126', 'BJ-2024-HD-QIZHONG-Q7', '选择例题 4\u30002024海淀期中第7题')
+   ('BJ-2025-HD-QIZHONG-Q9', 0.86, 'B0347', 'BJ-2024-HD-QIZHONG-Q9', '选择例题 14\u30002024海淀期中第9题')

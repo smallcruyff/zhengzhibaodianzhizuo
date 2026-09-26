@@ -1,0 +1,21 @@
+## atomic.py
+错误：注入：磁盘写满
+中止：写后复核执行异常，已删除输出：注入：写后重开失败
+中止：写后复核不通过，已删除输出：block_index 复核异常：注入：block_index 崩溃
+{
+ "crash_mid_write": {
+  "rc": 2,
+  "files_left": []
+ },
+ "verify_raises": {
+  "rc": 2,
+  "files_left": [
+   "r2.json"
+  ],
+  "report_reason": "写后复核执行异常：注入：写后重开失败"
+ },
+ "block_index_raises": {
+  "rc": 2,
+  "o3_exists": false
+ }
+}

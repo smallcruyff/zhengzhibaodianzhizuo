@@ -1,0 +1,70 @@
+{
+ "ten": [
+  [
+   "BJ-2025-FS-YIMO-Q17",
+   6,
+   5
+  ],
+  [
+   "BJ-2025-CY-ERMO-Q19",
+   24,
+   53
+  ],
+  [
+   "BJ-2022-BJ-GAOKAO-Q20",
+   1,
+   7
+  ],
+  [
+   "BJ-2024-DC-ERMO-Q21",
+   2,
+   2
+  ],
+  [
+   "BJ-2026-DC-ERMO-Q11",
+   1,
+   1
+  ],
+  [
+   "BJ-2024-HD-YIMO-Q8",
+   1,
+   1
+  ],
+  [
+   "BJ-2026-HD-QIZHONG-Q7",
+   8,
+   4
+  ],
+  [
+   "BJ-2024-CY-YIMO-Q16",
+   2,
+   3
+  ],
+  [
+   "BJ-2023-HD-YIMO-Q16",
+   1,
+   1
+  ],
+  [
+   "BJ-2025-FT-QIMO-Q18",
+   20,
+   20
+  ]
+ ],
+ "ten_tool_hit1_hit3": [
+  4,
+  6
+ ],
+ "ten_trueLOO_hit1_hit3": [
+  3,
+  5
+ ],
+ "sample120_seed4": {
+  "n": 120,
+  "tool_hit1": 19,
+  "tool_hit3": 39,
+  "trueLOO_hit1": 25,
+  "trueLOO_hit3": 53
+ },
+ "seconds": 225.7
+}

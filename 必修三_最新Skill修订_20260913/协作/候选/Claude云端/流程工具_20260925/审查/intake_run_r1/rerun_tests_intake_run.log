@@ -1,0 +1,66 @@
+PASS baseline_guard（真实输入未变，全部测试前） 5.0s 
+PASS 1a normalize_qid：#N → (N)  - BJ-2023-HD-QIZHONG-Q18(1)
+PASS 1b normalize_qid：无小问原样返回  
+PASS 1c load_attribution 去重：exam_id_raw==exam_id_canonical 的卷不重复计入（BJ-2023-HD-QIZHONG 在 attribution_ruled.csv 里恰好 24 行——Q1..Q17、Q19..Q23 各1行+Q18 拆 #1/#2 共2行，且 unit_id 不重复——修前曾因 raw/canonical 都命中同一 key 被 append 两次，会变成48行）  - len=24 unique=24
+PASS 1d load_attribution 返回 attribution_ruled.csv 的 sha256  - 19e3760f4a670efd
+PASS 1e-0 load_manifest 负例（期望含“schema 不是 baodian_intake_v1”）  - 清单 schema 不是 baodian_intake_v1（实际：'x'）
+PASS 1e-1 load_manifest 负例（期望含“exams”）  - exams 必须是非空数组
+PASS 1e-2 load_manifest 负例（期望含“书名未知”）  - 书名未知：'no_such_book'（已知书名：bixiu3, philosophy, culture, xuanbi1, xuanbi2, mind, reasoning, bixiu2）
+PASS 1e-3 load_manifest 负例（期望含“profiles.bixiu3”）  - 缺少 profiles.bixiu3（配置路径）
+PASS 1f load_manifest 正例：bixiu2 不要求 profiles.bixiu2  
+PASS 2a init：清单骨架 + 9 个 workdir 子目录 0.2s - exit=0 err=清单骨架已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/init1/manifest.json
+workdir 子目录已建：/tmp/claude-0/-home-user-zhengzhibaodian
+PASS 2b init 重跑（目标已存在）→ 拒绝覆盖，退出3  - exit=3
+PASS 2c init：workdir 落受保护目录 → 拒绝，退出3，且不留下清单骨架（约定4：不留半成品）  - exit=3 out_exists=False workdir_exists=False
+PASS 3a status 真实5卷×8书（40组合）成功跑完，退出码1（有待处理） 6.3s - exit=1 err=报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/real_report_stage0.json
+PASS 3a-summary  - combos=40 pending=35
+PASS 3b bixiu2 五行全部 9 步 SKIP（冻结且不在云端）  
+PASS 3c 已知事实：5 张卷均已在题库 questions/ 下 → 第1步 source_intake DONE  
+PASS 3d 已知事实：5 张卷×7书归属判定均已完成 → 第4步全部 DONE  - []
+PASS 3e 已知事实：必修三当前稿里已能用 block_index 查到部分应收题（DONE，或 TODO 但 evidence.found 非空）  - [('TODO', 6), ('TODO', 8), ('DONE', 0), ('TODO', 0), ('TODO', 8)]
+PASS 3f exam_register 真实登记检查：BJ-2023-HD-QIZHONG（intake_run 第2步要读的真实证据） 12.0s - exit=1
+PASS 3f exam_register 真实登记检查：BJ-2024-HD-QIZHONG（intake_run 第2步要读的真实证据） 11.5s - exit=1
+PASS 3f exam_register 真实登记检查：BJ-2024-CY-QIZHONG（intake_run 第2步要读的真实证据） 5.5s - exit=1
+PASS 3f exam_register 真实登记检查：BJ-2026-CY-QIZHONG（intake_run 第2步要读的真实证据） 3.2s - exit=0
+PASS 3f exam_register 真实登记检查：BJ-2026-HD-QIZHONG（intake_run 第2步要读的真实证据） 2.5s - exit=0
+PASS 3g status 重跑（有真实登记结果）成功 6.6s - exit=1
+PASS 3h 已知事实：BJ-2023/2024-HD-QIZHONG、BJ-2024-CY-QIZHONG 第2步 BLOCKED（届别/重复登记）  - ['BJ-2023-HD-QIZHONG', 'BJ-2024-HD-QIZHONG', 'BJ-2024-CY-QIZHONG']
+PASS 3i 已知事实：BJ-2026-CY/HD-QIZHONG 第2步 DONE（登记检查通过）  - ['BJ-2026-CY-QIZHONG', 'BJ-2026-HD-QIZHONG']
+PASS 3j 第2步状态与目标书无关：BLOCKED 的卷在全部7本书上都是 BLOCKED  
+PASS baseline_guard（真实输入未变，组3真实数据测试后） 4.9s 
+PASS 4a 阶段0（空 workdir）：1/3/4=DONE，2/5=TODO，6/7=NEEDS_MODEL，8=TODO，next=[2] 2.0s - {1: 'DONE', 2: 'TODO', 3: 'DONE', 4: 'DONE', 5: 'TODO', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}
+PASS 4b 真实跑 exam_register（阶段1输入） 3.1s - exit=0
+PASS 4c 阶段1：登记检查报告出现后，第2步 TODO→DONE，next 前进到 [5]（3/4 本就已 DONE） 2.0s - {1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'TODO', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'} next={'step': 5, 'status': 'TODO', 'reason': "1 道 IN 题尚无插入位置建议：['BJ-2026-CY-QIZHONG-Q9']", 'command': 'python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/placement_suggest.py --docx /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --profile /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json --key BJ-2026-CY-QIZHONG-Q9 --top-k 3 --report /tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_sandbox/05_placement/bixiu3/BJ-2026-CY-QIZHONG.json'}
+PASS 4d 真实跑 placement_suggest（阶段2输入） 4.2s - exit=0
+PASS 4e 阶段2：placement 报告出现后，第5步 TODO→DONE，next 前进到 [6] 2.0s - {1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'NEEDS_MODEL', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}
+PASS 4f 阶段3：approved_by 非空的 baodian_insert_v1 改动单出现后，第6步 NEEDS_MODEL→DONE，next 前进到 [7] 2.2s - {1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'DONE', 7: 'NEEDS_MODEL', 8: 'TODO', 9: 'TODO'}
+PASS 4g 真实跑 check_drill_admission（阶段4输入，既有 SK 工具） 0.0s - exit=0 err=
+PASS 4h 阶段4：check_drill_admission status=pass 报告出现后，第7步 NEEDS_MODEL→DONE，next 前进到 [8]（第8步保持 TODO——Q9 确实尚未在书中，不假装完成，见 4i） 1.9s - {1: 'DONE', 2: 'DONE', 3: 'DONE', 4: 'DONE', 5: 'DONE', 6: 'DONE', 7: 'DONE', 8: 'TODO', 9: 'TODO'}
+PASS 4i 第8步如实保持 TODO：Q9 真的不在 bixiu3 当前稿（block_index 查不到），未被前面几步的完成误判为 DONE  - {'missing': ['BJ-2026-CY-QIZHONG-Q9'], 'found': [], 'docx': '/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx'}
+PASS 4j 真实跑 layout_prepare check（第9步部分证据） 2.2s - exit=0
+PASS 4k 真实跑 batch_health（第9步部分证据） 2.3s - exit=1
+PASS 4l 阶段5：layout(0待改)+health 报告都出现后，第9步仍 TODO，下一条命令指向 publish_review dry-run（尚缺 publish 预检报告）——云端从不把第9步报 DONE，最多到 NEEDS_LOCAL（见组3/组5其它证据） 2.0s - {'step': 9, 'name': 'layout/health/publish 预检', 'status': 'TODO', 'reason': 'layout/health 已具备，尚未跑 publish_review dry-run 预检', 'evidence': {}, 'next_command': 'python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/publish_review.py --profile /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json --batch <批次号> --docx /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx --pdf <候选PDF> --acceptance <验收.json> --actor <actor> --report /tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_sandbox/09_publish/bixiu3.json'}
+PASS baseline_guard（真实输入未变，组4沙盒测试后） 4.9s 
+PASS 5a 清单不是合法 JSON → 退出2  - exit=2
+PASS 5b 书名未知 → 退出2  - exit=2 err=输入/参数错误：书名未知：'not_a_real_book'（已知书名：bixiu3, philosophy, culture, xuanbi1, xuanbi2, mind, reasoning, bixiu2）
+PASS 5c 配置文件找不到 → 退出2  - exit=2 err=输入/参数错误：配置找不到或无法加载：profiles.bixiu3='/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scr
+PASS 5d --report 落受保护目录 → 退出3，且未写出  - exit=3 exists=False
+PASS 5e --md 落受保护目录（审阅入口） → 退出3，且未写出  - exit=3 exists=False
+PASS 6-step2 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_202609... 2.6s - rc=0 报告已写：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_cmdcheck/02_exam_register/BJ-2026-HD-QIZHONG.json
+
+PASS 6-step3 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/ba... 0.2s - rc=2 
+PASS 6-step5 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_202609... 0.2s - rc=3 拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/intake_run_test_scratch/入书_cmdcheck/05_placement/bixiu3
+
+PASS 6-step6 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/qp... 0.1s - rc=2 输入错误：FileNotFoundError: [Errno 2] No such file or directory: '/Users/wanglifei/Desktop/gpt和claude共同的小窝/DeepSeek_政治题库资料库_20260918/scripts/bank.py'
+
+PASS 6-step8 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_202609... 0.2s - rc=2 中止：插入单文件不存在：<06_insert改动单路径.json>
+
+PASS 6-step9 下一条命令能被目标脚本 argparse 接受：python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/la... 2.3s - rc=0 
+PASS baseline_guard（真实输入未变，全部测试后） 5.0s 
+
+合计 54 条，失败 0 条，用时 104.1s
+
+real	1m44.332s
+user	1m35.600s
+sys	0m7.383s
+exit=0

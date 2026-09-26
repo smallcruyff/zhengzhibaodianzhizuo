@@ -1,0 +1,271 @@
+{
+ "tool": "placement_suggest.py",
+ "round": "r4",
+ "reviewer": "claude-cloud 子代理（Opus，对抗审查，非负责人，只写候选目录）",
+ "date": "2026-09-25",
+ "reviewed_files": [
+  {
+   "path": "placement_suggest.py",
+   "lines": 1500,
+   "sha256": "ce621c4814f26f4b854ba3f627f167772fbad1aeaf1b0026fd16da1a95ebacbe"
+  },
+  {
+   "path": "run_tests_placement_suggest.py",
+   "lines": 1567,
+   "sha256": "22bb6d273cacbbb924db923cf64063e79ab736c50752f6e7323347e92ee4175d"
+  },
+  {
+   "path": "回执/placement_suggest_返修_r3.json",
+   "note": "files[] 的两个 SHA 与实际文件一致；tests[] 数字与本轮重跑一致"
+  }
+ ],
+ "verdict": "FAIL",
+ "verdict_reason": "1 个 blocker，1 个 major。r3 的三个 major 都已核实修好：三种 E1 节名已收，独立扫描没找到新的漏判节名；错号重卷 --key 查询能报出疑似重复，全书比对没有误报；7b 用例和回执数字与实跑一致。但本轮发现评测口径有泄漏：留出题（同题键）的题块虽然不进候选池，却仍在 BM25 索引和每个字段的归一化分母里，所以十题、留一、调参三项验收的数字都不是“新题”情形下的真实表现。十题按生产口径是前1 3/10、前3 5/10，回执写 4/10、6/10；BJ-2022-BJ-GAOKAO-Q20 报的“第1名”，把它自己的题块移出索引后是第7名。留一按生产口径是 133/690、266/690，回执写 80/690、184/690，低估很多。另有一个 major：候选为空，或配置缺核心字段时，工具退出 0 且没有任何提示。",
+ "tests_rerun": {
+  "command": "python3 run_tests_placement_suggest.py",
+  "result": "90 条：PASS 90 / SKIP 0 / FAIL 0，用时 126.2s，退出码 0（日志：审查/placement_suggest_r4/rerun_tests.log）",
+  "numbers_reproduced": "十题（默认）前1 4/10、前3 6/10；留一（默认）80/690、184/690；调参最优 11/40、22/40；调后留一 76/690、183/690；哲学草案 3/12、7/12。与回执 tests[] 一致",
+  "caveat": "这些数字都在 B1-r4 所说的泄漏口径下测得，不代表生产表现"
+ },
+ "adversarial_probe": {
+  "dir": "审查/placement_suggest_r4/（探针脚本与日志）；CLI 探针 adv_cli_r4.sh / adv_cli_r4.log；临时产物在 scratchpad/review_placement_suggest_r4/",
+  "cli_B01_B29": "错号重卷：BJ-2025-HD-QIZHONG-Q7/Q9/Q19 都退出 1，并报“疑似题库重复”，对方分别是 B0126/B0347/B0098，包含度 0.86–0.89。E1：DC-ERMO-Q17、FT-ERMO-Q18 退出 0，不再误标“不收”。冻结册配 --out 退出 3、没有落盘；冻结册只读退出 0。构建/ 下软链目录指向 云端/、构建/../../审查、.claude/skills 这三种写法都被拒，退出 3。目标已存在退出 3。--out 合法而 --report 非法时退出 3，两个文件都没写。SHA 不符配 --report 退出 2、无残留。--keys-file 第 2 行是坏键时退出 2，报出行号，没有报告残留。二进制 MD、路径穿越题键、空 profile、--top-k 0、docx 是目录，都退出 2 并给中文提示。29 个探针的 traceback 全为 0。问题：B14/B15（空或全空白 --text）退出 1，没按输入错误处理；B19（profile 缺 styles）退出 0 且没有候选，见 M1-r4",
+  "atomicity": "probe_atomic.log：用 monkeypatch 让第二个文件（--report）写入失败，工具退出 2，已写的 a.md 被回滚，目录为空。probe_tmp_symlink.log：临时文件名可以预测，预置的同名符号链接会被写穿（m7）",
+  "eval_leak": "probe_eval_leak.log（全量 690 块，1219s）、probe_eval_leak_A.log、probe_eval_leak_B10.log：见 B1-r4",
+  "e1_audit": "probe_e1_fn_indep.log 不依赖工具的正则：在工具判无 E1 的 145 道主观题里，找标题带“评分/细则/答案/SCORING/阅卷/E1”且正文有 ≥3 个分值标记的节，共 44 道。逐类看过：“评分材料来源块（原样保留，配对状态见下）”19 道，MD 自己的“正式评分材料原文”写“未找到已确认的正式评分材料；见下方候选区”，rubric_status=存在候选，工具判无 E1 与题库一致；其余是 E3、参考答案、候选、教师版、讲评类节。没有发现新的漏认节名。probe_rubric_directive.log：MD 里机读的“采用评分小节/正式评分优先读取”共 24 个，工具判定全部为 True",
+  "dup_scan": "probe_dup_scan.log：不在书中的 1345 道可解析题库题里，被报疑似重复的有 7 道，全是 BJ-2025-HD-QIZHONG，零误报。probe_twin_coverage.log：这对错号重卷在书中有 8 道孪生题，漏报 1 道（Q8）。probe_dup_recall.log：假设在书题以异键再来，召回 282/343",
+  "template_e2e": "probe_template_e2e.log：746 种“最像块”情形里，template_unique 的标注与 block_insert 按 title_contains 实际命中的数量 0 处不符（742 个唯一、4 个如实标不唯一）。但 template_block 字典原样放进插入单会被 block_insert 的 _check_keys 拒收（m3）",
+  "guard": "probe_guard_choice.log：跨模块守卫共命中 123 次，全是主观题，选择题 0 次误触发"
+ },
+ "blockers": [
+  {
+   "id": "B1-r4",
+   "title": "评测口径泄漏：留出题的题块仍在 BM25 索引和逐字段归一化分母里，十题、留一、调参的数字都不是“新题”情形；十题前1/前3 按生产口径是 3/10、5/10，不是 4/10、6/10",
+   "detail": "规格验收 1 要求“把与该题同一题键的全部题块从候选池剔除，防止自己命中自己”，目的是模拟书里本来没有这道题。工具只在 aggregate_methods 里跳过 exclude 题块，不让它们当候选；打分却在 score_blocks 里完成：每个字段按“本次查询在全部题块上的最高分”归一化，mx = max(raw.values()) 把被剔除的本题题块也算了进去。本题题块和题库 MD 几乎逐字相同，于是它成了 material/ask 两个字段的最高分，其他题块在这两个字段上的归一化分被压得很低，method（考法名+说明）和 rubric 字段的相对权重被放大。此外，索引 idf/avgdl 是用整本书（含本题）一次建好的。生产中新题不在书里，每个字段的最高分来自别的题块，所以评测里的打分行为和生产不同。实测对照三种口径：tool 是工具现口径；A 是归一化分母只取未剔除题块，这正是生产口径；B 是把同题键题块从书中删掉后重建索引，即真留一。全书留一：tool 80/690、184/690；A 132/690、262/690；B 133/690、266/690。十题：tool 名次 [6,24,1,2,1,1,8,2,1,20]，前1 4、前3 6；B 名次 [5,53,7,2,1,1,4,3,1,20]，前1 3、前3 5。BJ-2022-BJ-GAOKAO-Q20 在工具评测里是第1名，重建索引去掉它自己的题块后是第7名，这个“命中”完全是留出题自身造成的。BJ-2025-CY-ERMO-Q19 从第 24 名掉到第 53 名。所以：（1）验收 1 的十题命中率偏高 1 题；（2）验收 2 的全书留一大幅低估，前1 实际约 19.3%，不是 11.6%，前3 约 38.6%，不是 26.7%；（3）验收 3 的调参网格和“调后参数不如默认参数”的结论，是在这个失真目标上得出的，要重做。验收要的正是一个有效的“假装新题”模拟，现口径下三项验收数字都不成立。四轮回执都说“同题键已剔除”，前几轮审查也只核了候选池剔除，没有核打分口径。",
+   "evidence": "代码：placement_suggest.py 第844–856行 score_blocks 里 mx = max(raw.values())，没有排除 exclude；第1028–1039行 rank_for_query 先 score_blocks 全书，再 aggregate_methods(…, exclude …)；run_tests 的 lenient_eval/strict_eval_block 调用 rank_for_query，索引由 load_book_and_indices 对整本书建一次。复现：python3 审查/placement_suggest_r4/probe_eval_leak.py（全量三口径，约 20 分钟）→ probe_eval_leak.log：{\"loo\": {\"tool\": {\"n\": 690, \"hit1\": 80, \"hit3\": 184}, \"A\": {\"hit1\": 132, \"hit3\": 262}, \"B\": {\"hit1\": 133, \"hit3\": 266}}, \"ten_ranks\": {\"tool\": [6,24,1,2,1,1,8,2,1,20], \"B\": [5,53,7,2,1,1,4,3,1,20]}}；快速版：probe_eval_leak_A.py（22s）、probe_eval_leak_B10.py（十题加 120 块样本真留一，226s）",
+   "fix_hint": "rank_for_query 的逐字段归一化分母只取未剔除题块，一行改动，等于生产口径。更严格的做法是评测时把同题键题块从索引里去掉重建，或至少说明 idf 的残余影响（A 与 B 只差 1–4 题）。改完重跑十题、留一、调参三项，回执数字全部重出，“调后不如默认”的结论也要重新判。加一条回归：同一留出题，工具评测名次应等于从去掉该题块的索引算出的名次，或至少等于 A 口径。"
+  }
+ ],
+ "majors": [
+  {
+   "id": "M1-r4",
+   "title": "候选为空、或配置缺核心字段时，工具退出 0 且没有任何提示；规格点名的负例“配置缺字段→退出2”只覆盖了 sources.bank.root",
+   "detail": "约定 6 规定退出码 0 表示“成功/无待办”；验收 5 要求“配置缺字段→退出 2，中文提示”。工具只在 0 个题块或缺 bank.root 时报错。当 profile 缺 styles、styles.example_title 或 styles.method，或者草案配置只认出一部分题型时，工具照常退出 0，flags 为空。（a）profile 缺 styles.example_title 时，必修三 746 块只认出 12 块（全是 topic_case）：选择题查询输出“未找到候选考法”，退出 0；主观题查询只在 12 个专题块里给候选，退出 0，没有任何提示。（b）缺 styles.method 时，考法名变成“【易混提醒】”这类栏目标签，照样退出 0 或 1。（c）用云端现成的 culture.draft.json（只认出 70 个主观块）查选择题：退出 0，stdout 的 any_flag=false、top=null，报告 summary 的 n_with_flags=0。批量流水线（intake_run 按退出码判下一步）会把“没有任何候选”当成功；只看 JSON flags 的人也看不出这题没法放。",
+   "evidence": "probe_degraded_profile.log：no_example_title/nostyles 配 BJ-2026-DC-ERMO-Q11 → exit=0，“未找到候选考法”；配 BJ-2024-DC-ERMO-Q17 → exit=0，第一候选是 TOPIC 专题三；no_method → 考法标签“【易混提醒】”。probe_other_books_kinds.log：culture 草案 70 块全是 subjective；--key BJ-2020-BJ-GAOKAO-Q3 --report … → exit=0，results[0].flags=[]，candidates=0，summary.n_with_flags=0。adv_cli_r4.log B19：缺 styles → exit=0，top=null，flags=[]。代码：run() 第1407、1474行 any_flag 只看 flags，build_query_result 候选为空时不加 flag",
+   "fix_hint": "候选为空时加一条 flag（如“本书按此配置没有该题型的可选考法”），退出 1。启动时校验必需的 profile 字段（styles.example_title、styles.method 或 group_heading、structure），缺失退出 2。另可加一道健全性检查：认出的题块数远少于 example_title 样式段落数时，退出 2 或加 flag。给这几种情况各补一条负例测试。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "m1",
+   "title": "重复检测召回约 82%，已知错号重卷在书的 8 道孪生题漏 1 道（BJ-2025-HD-QIZHONG-Q8）；stem_full 夹带题库说明行和页脚；回执 replaces 说得过满，known_limits 没有披露召回",
+   "detail": "M2-r3 修好后，对不在书的题零误报（1345 题只报 7 道，全是真孪生）。但把在书题当作异键新题再查，只检出 282/343（主观 100/139，选择 182/204）。漏报主要有两类：书中只摘了其中一小问（例如 18(2)），单向“新题 ⊂ 书块”的包含度偏低；题库题面带噪声。BJ-2025-HD-QIZHONG-Q8 的题库题面被截断，只剩首行，stem_full 首行又是题库说明“本节只放原卷角色的原生文字层；OCR 候选与其它角色另列下方各节。”，再加一个页脚，包含度只有 0.50，工具只报了题型冲突，没报重复。474 个 MD 的 stem_full 首行是这句说明，90 个含“第x页/共y页”页脚，103 个是含答案的教师版题面，读取指引写明“含答案风险”，工具没有提示。去掉说明行和页脚后召回升到 291/343。exam_register 才是错号重卷的主防线（任务文档第 1 个工具），本项降为 minor；但回执 replaces 写“人工核对新题题键是否已经入书…现在…都会…比一遍”，容易被读成可以替代人工核对。",
+   "evidence": "probe_twin_coverage.log（BJ-2025-HD-QIZHONG-Q8 flag=NONE，containment 0.50）；probe_dup_recall.log（282/343；去噪后 291/343）；probe_stem_noise.log；probe_dup_scan.log（误报 0）",
+   "fix_hint": "清洗 stem_full 里的题库说明行（本节…/OCR 候选存在…/教师版把题面…/来源：…）和页脚。包含度改成双向取大：新题 ⊂ 书块，以及书块的题面栏 ⊂ 新题。known_limits 写明自模拟召回。读取指引标“含答案风险”时加提示。"
+  },
+  {
+   "id": "m2",
+   "title": "具名例外卷 2026北京高考：题库已有“正式评分材料原文”节，工具判 e1_present=True，一句提示都没有；profile 写的是“E3方向性，不拆E1”",
+   "detail": "no_e1_exception_hit 只在 e1_present=False 时查。2026北京高考 Q16–Q21 在题库里都有“正式评分材料原文”（来自 2026北京高考政治细则.docx），工具判 True。其中 Q16、Q19 不在书里：--key 查询退出 0，flags 为空。profile 的 sources.no_e1_exceptions.use_as 是“E3方向性，不拆E1”，book-bixiu-3.md 写“三套具名例外只作 E3，不拆 E1”，user-requirements-ledger 最新条目也说这类例外“不变”。题库和规则在这里冲突，该由主代理或用户裁定，工具不该悄悄替它选一边。",
+   "evidence": "probe_exception_papers.log：BJ-2026-BJ-GAOKAO-Q16..Q21 均为 e1_present=True、exception_hit=True；BJ-2026-BJ-GAOKAO-Q19 → exit=0、flags=[]",
+   "fix_hint": "命中具名例外卷、但题库有 E1 候选节时，加一条“口径冲突”flag（不改 e1_present），并写进回执的 needs_user_decision。"
+  },
+  {
+   "id": "m3",
+   "title": "template_block 字典不能原样放进 block_insert 插入单：多出 id/title/kind/template_unique 四个键，会被 _check_keys 拒收",
+   "detail": "anchor 可以原样照抄，template_block 却只能取其中的 title_contains，两处用法不一致，照抄会 Abort（安全失败）。template_unique 的标注本身准确：746 种情形里 0 处与 block_insert 实际命中数不符。",
+   "evidence": "probe_template_e2e.log：“Abort: I001.template_block：出现未知字段 ['id', 'kind', 'template_unique', 'title'] … 允许的字段：['title_contains']”；mismatch 0",
+   "fix_hint": "把插入单要的形状单独放一个字段（如 template_block_spec: {title_contains}），说明信息挪到旁边；或在文档里明写“只取 title_contains”。"
+  },
+  {
+   "id": "m4",
+   "title": "跨模块守卫提示里的“命中句”只截句首 60 字，可能不含命中词；句中有换行时，Markdown 里一条“注意”会被拆成多行",
+   "detail": "BJ-2026-BJ-GAOKAO-Q17 的提示是“（命中句：）\\n箭头编号与指向（按原页）：\\n① 框A → 框D…”。按句号切句时，图示说明被并进了设问句，真正含“《经济与社会》”的那句在截断范围以外。",
+   "evidence": "probe_flags_cli.log；repr(flags) 见审查过程",
+   "fix_hint": "以命中词为中心截取前后若干字，并把换行替换掉。"
+  },
+  {
+   "id": "m5",
+   "title": "--format md 里题库索引冲突的提示显示成“注意：注意：题库索引…”",
+   "detail": "这条 flag 文本自带“注意：”，format_md 又加了一次前缀。",
+   "evidence": "probe_flags_cli.log（BJ-2026-FT-YIMO-Q17）",
+   "fix_hint": "去掉 flag 文本里的前缀；FLAG_CATEGORY_PREFIXES 同步修改。"
+  },
+  {
+   "id": "m6",
+   "title": "空文件或全空白的 --text 退出 1（报“无相似信号”和“无细则”），没有按输入错误退出 2",
+   "detail": "输入为空显然是输入错误，按约定应退出 2。",
+   "evidence": "adv_cli_r4.log B14/B15：exit=1",
+   "fix_hint": "--text/--md 解析出的题面去空白后为空时，抛 InputError。"
+  },
+  {
+   "id": "m7",
+   "title": "_atomic_write_text 的临时文件名 .<name>.tmp<pid> 可以预测，写入时不用 O_EXCL；预置的同名符号链接会被顺着写穿",
+   "detail": "guard_write 只核最终路径，不核临时路径。在系统临时目录这种多人可写的地方，理论上可以借此写到守卫之外（需要猜中 pid）。本环境单用户，风险低。",
+   "evidence": "probe_tmp_symlink.log：victim 的内容由 ORIGINAL 变成报告内容，报告本身落成一个符号链接",
+   "fix_hint": "用 tempfile.mkstemp(dir=目标目录) 生成临时文件，再 os.replace。"
+  },
+  {
+   "id": "m8",
+   "title": "残留的已披露限制：插入点一律“考法末尾”（r1 m1）；ask 字段只含最后一小问（r3 m5）；E1 同层择优会选到“参考答案层”（r3 m3）",
+   "detail": "这三项都已写进 known_limits 或 needs_user_decision，维持 minor。",
+   "evidence": "回执 known_limits",
+   "fix_hint": "同前几轮 fix_hint。"
+  },
+  {
+   "id": "m9",
+   "title": "评测的固有乐观偏差没有披露：考法字段（考法名+说明）是作者按组内例题写的，留出题本身参与了措辞",
+   "detail": "例如“考法6 对条型：给法条判位阶与良法（2题）”。按生产口径（A），method 权重设为 0 时，留一前1 从 132 降到 113，前3 从 262 降到 235。这是“假装新题”评测本身的局限，不算泄漏，但应在回执说明。",
+   "evidence": "probe_method_field.log",
+   "fix_hint": "回执 known_limits 写明这项偏差，并同时报 method=0 的对照数字。"
+  },
+  {
+   "id": "m10",
+   "title": "行数 1500（去掉空行和注释 1210）超过约定 9 的 900 行",
+   "detail": "回执已说明原因。",
+   "evidence": "wc -l",
+   "fix_hint": "返修叙述移出代码；truncate_slice 可以薄封装 block_index 的同口径截断。"
+  },
+  {
+   "id": "m11",
+   "title": "（配置内容，不是工具缺陷）bixiu3 的 stem_module_guard 只列了三个模块，没有《逻辑与思维》《哲学与文化》《法律与生活》",
+   "detail": "BJ-2025-YQ-YIMO-Q18 的设问是“运用《逻辑与思维》知识”，对必修三查询时退出 0，没有提示。",
+   "evidence": "probe_flags_cli.log；profiles_cloud/bixiu3.json sources.stem_module_guard",
+   "fix_hint": "写进回执的 profile_fields_needed 和 needs_user_decision，由主代理决定是否补全。"
+  },
+  {
+   "id": "m12",
+   "title": "测试有效性的小缺口",
+   "detail": "t_m2r3_template_block 只断言字段存在，是弱断言（本审查全量核对 0 处不符）。t_M1r3_bank 的 FN 侧只看索引，索引过时而 MD 有 E1 的情况覆盖不到（本审查另做了独立扫描，没有发现）。run_tests 依赖 block_insert.py，这个文件本审查期间又被另一条线改过（12:44）。没有测试核对打分口径与生产一致（见 B1-r4）。",
+   "evidence": "run_tests_placement_suggest.py 第1314–1338行；ls -la block_insert.py",
+   "fix_hint": "补 B1-r4 的口径回归；template_block 改为全量核对唯一性。"
+  },
+  {
+   "id": "m13",
+   "title": "重复检测每条查询都重新渲染全书题块、重复计算查询的 3-gram 集合，每题约 0.4–0.6 秒",
+   "detail": "批量几十题尚可，几百题以上会累积。",
+   "evidence": "find_suspected_duplicate 第695–706行",
+   "fix_hint": "按书缓存每块的正文和 3-gram 集合，查询集合只算一次。"
+  },
+  {
+   "id": "m14",
+   "title": "范围外观察",
+   "detail": "C/__pycache__/block_insert.cpython-311.pyc 在 12:44 由 block_insert 线重新生成，不是本工具及其测试产生的；SK（.claude/）下没有 __pycache__。",
+   "evidence": "ls -la --time-style=full-iso C/__pycache__；find .claude -name __pycache__ 为空",
+   "fix_hint": "提请 block_insert 线处理。"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "验收1：十题“假装新题”，选法固定可复现，剔除同题键全部题块，报告真实考法名次和前1/前3命中率",
+   "met": false,
+   "evidence": "选法可复现（seed=20260925，分层 4/3/3），同题键已从候选池剔除，名次和真实考法标签都打印了。但留出题的题块仍在索引和归一化分母里（B1-r4），生产口径下是 3/10、5/10，回执写 4/10、6/10；BJ-2022-BJ-GAOKAO-Q20 的第1名来自自身影响"
+  },
+  {
+   "criterion": "验收2：全书留一（全部有题库 MD 的题块，同样剔除同题键），报告总体和分题型命中率",
+   "met": false,
+   "evidence": "690 块，按题型分了组。但数字是泄漏口径下的 80/184；真留一是 133/266（B1-r4）"
+  },
+  {
+   "criterion": "验收3：调参只在与十题不相交的调参集上做，报告用调好后的固定参数",
+   "met": false,
+   "evidence": "调参集与十题不相交（40 题，seed=20260926），这点成立。但网格目标是在失真口径下算的，“调后不如默认”的结论要在修正口径下重做（B1-r4）"
+  },
+  {
+   "criterion": "验收4：至少一本其他书跑通并出候选，命中率能算就报",
+   "met": true,
+   "evidence": "哲学 R10 草案 1119 块，前1 3/12、前3 7/12（泄漏口径，仅供参考）；本审查另跑选必一草案，退出 0，能出候选（B25）"
+  },
+  {
+   "criterion": "验收5：负例（题键不在题库、书稿无题块、配置缺字段）→ 退出 2，中文提示",
+   "met": false,
+   "evidence": "题键不在题库、0 题块、缺 bank.root 这三种都退出 2。缺 styles、styles.example_title、styles.method 时退出 0 且没有提示；候选为空也退出 0（M1-r4）"
+  },
+  {
+   "criterion": "规格过滤：主观题无正式细则 → 标“按规则不收”（E1 节名按实际 MD 核对）",
+   "met": true,
+   "evidence": "r3 的三种节名已收；独立扫描 145 道判无的题，没有发现新的漏认节名；与索引冲突时会提示。具名例外卷有 E1 节时不提示（m2）"
+  },
+  {
+   "criterion": "规格过滤：设问限定其他模块 → CANDIDATE“不作本册例题”",
+   "met": true,
+   "evidence": "123 次命中全在主观题的设问句上，选择题 0 次误触发；提示截句有瑕疵（m4）；守卫名单只有三个模块（m11，配置内容）"
+  },
+  {
+   "criterion": "输出：前 3 候选的各项字段、样板题块、插入点、样例切片；能被 block_insert 插入单引用",
+   "met": true,
+   "evidence": "字段齐全。anchor 可原样使用（测试 M4-r2 端到端 122 组，0 处落点错误）；template_unique 全量 0 处不符。template_block 字典不能原样放进插入单，只能取 title_contains（m3）"
+  },
+  {
+   "criterion": "已入书/重复识别（回执 replaces 自述）",
+   "met": true,
+   "evidence": "同题键能识别；错号重卷 --key 查询能报出；零误报。召回约 82%，漏报 BJ-2025-HD-QIZHONG-Q8，也没有披露（m1）"
+  },
+  {
+   "criterion": "约定：只读；--report/--out 过 guard_write；冻结册写模式拒绝并退出 3；失败不留半成品",
+   "met": true,
+   "evidence": "B06–B13、B22、B23 与 probe_atomic.log 都通过；临时文件的符号链接问题见 m7（minor）"
+  },
+  {
+   "criterion": "约定：退出码 0/1/2/3；中文提示；没有 traceback",
+   "met": false,
+   "evidence": "29 个 CLI 探针 traceback 全为 0，提示都是中文。但候选为空时退出 0（M1-r4），空 --text 退出 1（m6）"
+  },
+  {
+   "criterion": "约定：--report 含 tool/version/mode/inputs（路径+SHA）/profile/summary/逐条明细",
+   "met": true,
+   "evidence": "r4_ok.json 顶层有 tool、version、mode、generated_at、summary、inputs（docx+sha、questions 各自 path+sha）、profile（含 sha256）、params、results"
+  },
+  {
+   "criterion": "约定：复用 docx_lib/batch_health/block_index；SK 定位顺序；dont_write_bytecode 在导入之前",
+   "met": true,
+   "evidence": "题块来自 block_index.walk/finish_blocks，渲染用 render_recs，豁免用 _exempt；第87行在 import 之前；截断逻辑是同口径复制（m10）"
+  },
+  {
+   "criterion": "约定：兼容 Python 3.9（vermin）",
+   "met": true,
+   "evidence": "vermin -t=3.9- … 结果为 Minimum required versions: 3.7，无违规；ast.parse(feature_version=(3,9)) 两个文件都通过"
+  },
+  {
+   "criterion": "约定：行数 ≤ 900，超出须说明",
+   "met": false,
+   "evidence": "1500 行，回执已说明（m10，minor）"
+  },
+  {
+   "criterion": "测试纪律：自包含可重跑，逐条 PASS/FAIL 与用时，失败数为退出码，前后跑 baseline_guard",
+   "met": true,
+   "evidence": "重跑 90/90 PASS，126.2s，退出 0，前后两次 baseline_guard 都 PASS；缺打分口径回归（m12）"
+  },
+  {
+   "criterion": "真实文件未变（baseline_guard）；SK 下无 __pycache__",
+   "met": true,
+   "evidence": "审查中途和结束时各跑一次 baseline_guard，都退出 0：files 3468，changed/removed/added/skill_pycache 全空"
+  }
+ ],
+ "r3_items_recheck": {
+  "M1-r3": "已修：DC-ERMO-Q17/Q19/Q21、FT-ERMO-Q18、DC-YIMO-Q16–Q21 都判 True，CLI 退出 0。FN 自检改用索引作信号；本审查另用不依赖工具正则的扫描核对，没有新的漏认节名。剩下 m2（具名例外卷）",
+  "M2-r3": "已修：错号重卷 --key 查询能报出，全书比对零误报；召回约 82%，Q8 漏报（m1）",
+  "M3-r3": "已修：7b 的细则共 106 字，7b0 断言 e1_present=True；回执数字与重跑一致"
+ },
+ "baseline_guard": {
+  "command": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": "退出 0：{files: 3468, changed: [], removed: [], added: [], skill_pycache: []}。审查中途跑一次，结束时再跑一次；测试套件自带的前后两次也 PASS"
+ },
+ "vermin": {
+  "command": "vermin -t=3.9- --no-tips --eval-annotations --violations placement_suggest.py run_tests_placement_suggest.py",
+  "result": "Minimum required versions: 3.7；Incompatible versions: 2.x；无 violations"
+ },
+ "pycache": "SK（.claude/）下 0 个 __pycache__。C/__pycache__ 里只有 block_insert 线 12:44 生成的 pyc；本审查的探针都先设 sys.dont_write_bytecode，没有产生 pyc",
+ "what_is_fine": [
+  "r3 的三个 major 都真修好了，回执与实跑一致",
+  "输出守卫、冻结册、原子回滚、中文提示、--report 字段都经对抗测试核实",
+  "重复检测零误报；anchor 和 template_unique 与 block_insert 的判定一致",
+  "跨模块守卫不误伤选择题和材料句"
+ ],
+ "rerun_order_for_fix_round": [
+  "1. B1-r4：rank_for_query 的归一化分母排除 exclude（必要时评测时去掉题块重建索引）；重跑十题、留一、调参，回执数字全部重出，调参结论重判；加口径回归",
+  "2. M1-r4：候选为空时加 flag 并退出 1；校验必需的 profile 字段，缺失退出 2；补负例测试",
+  "3. minor：m1（清洗题面说明行、双向包含度、披露召回）、m2（具名例外卷冲突提示）、m4/m5/m6、m3、m7，其余视时间处理",
+  "4. 重跑 run_tests、vermin、baseline_guard，确认 SK 下无 __pycache__"
+ ]
+}

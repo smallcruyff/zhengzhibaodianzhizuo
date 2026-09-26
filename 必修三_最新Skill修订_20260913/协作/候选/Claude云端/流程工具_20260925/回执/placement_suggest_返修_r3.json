@@ -1,0 +1,159 @@
+{
+ "tool": "placement_suggest.py",
+ "round": "r3",
+ "actor": "claude-cloud（非负责人，只写候选）",
+ "date": "2026-09-25",
+ "base_review": "审查/placement_suggest_审查_r3.json（verdict: FAIL，0 blocker，3 major，10 minor）",
+ "summary": "按 placement_suggest_审查_r3.json 逐条处理 3 个 major（全部修复）与 10 个 minor（m1/m2/m4/m6/m7/m9 共6个已修，m3/m5/m8/m10 共4个说明理由未改代码，见下对应 issue）。核心：(1) E1 判定补三种题库未覆盖节名——'来源角色：OFFICIAL_ANSWER_AND_SCORING'（BJ-2024-DC-ERMO 全卷）、'评分材料（同卷正式材料…）'（BJ-2024-FT-ERMO 全卷）、'详细题级评分主载体'（BJ-2024-DC-YIMO 全卷），逐一读过原文核实确有逐点分值再收，10个具名真题键（DC-ERMO-Q17/Q19/Q21、FT-ERMO-Q18、DC-YIMO-Q16~Q21）全部核对 e1_present 从 False 改判 True，且各自命中期望节名；判无E1时新增题库索引 rubric_links.csv 的 pair_status 作第二信号，冲突不静默、加提示交人工核对；FN 自检彻底改用独立信号（原来复用工具自己 E1_HEADER_RX 的字面拷贝，按构造看不到任何该正则不认的节名——试过纯内容“正文含≥3个赋分标记”的独立信号，全库反而误报94个假阴，材料里的题面分值/等级描述表和真正细则文字分不开，噪声太大不可用，改用题库自己的机读索引字段），全库假阳1个（BJ-2025-DC-ERMO-Q17，r2 已判定为合理True）、假阴3个（BJ-2026-FT-YIMO-Q17/19/20，索引过时、MD正文明写N/A，r2已有说明），均在已知例外名单内，无未解释项。(2) 重复入书检测重做：不再只在 base_key 缺失时才跑（错号重卷这类'给的题键在书里查不到、内容却几乎相同'的情况原来被整段跳过），改成只要没被题键剔重就查；比对对象从'聚合候选组第1名的截断切片'改成'和全书每个未剔除题块的未截断正文逐一比3-gram包含度'——中途验证过'只比BM25组合分最高的前N块'这个预筛思路会漏报（全书共享材料被idf压低分数，真孪生块能排到第349名，前50都进不去），改成直接和全书比，746块实测约0.6秒/次，可接受，不做预筛。BJ-2025-HD-QIZHONG-Q9/Q19（错号重卷）、BJ-2021-BJ-GAOKAO-Q21（去键兜底）三个具名回归全部命中，退出1并注明对方题块id/题键/包含度。(3) 7b 用例真的改了：细则从12字（低于15字门槛，测的是'无细则'分支）换成106字、断言 e1_present=True 且CLI输出不含'未找到正式评分细则'；回执数字全部来自本轮 test_results.json 实跑，不再照抄上一轮。minor 里 m1（--format md 打印真实anchor字典）、m2（template_block字段与唯一性换块）、m4（--params 数值区间与未知weights键校验）、m6（去掉恒真断言、block_insert导入失败改SKIP不崩全套、十题日志补打真实考法名称）、m7（本回执数字来自test_results.json）、m9（keys-file给行号、#小问只收数字）已修；m3（E1同层多候选择优偶尔选到'参考答案层'而非真正评分材料，结论对但引用文字不是最优）、m5（ask字段仍只含最后一小问，r2遗留）、m8（行数超限，已说明原因）、m10（block_insert那条线自己产生的pyc，不属本工具）说明理由未改，见下对应 issue。全部90条测试（含17条本轮新增/重写的 r3 回归）实跑 PASS，0 SKIP，0 FAIL，127.3秒；vermin 0 violations；baseline_guard 测试前后与本回执定稿前各跑一次均 exit=0（3468 files，无变更，SK 下无 pycache）。工具1500行（去空行/注释1210行），超约定9的900行上限，原因见 known_limits。",
+ "issues": [
+  {
+   "id": "M1-r3",
+   "title": "E1 漏判：三种题库正式评分节名不被 E1_HEADER_RX 认得；FN 自检复用工具自己的标题正则，按构造测不到这类漏判",
+   "handling": "(1) E1_HEADER_RX 加三个具体节名字样：OFFICIAL_ANSWER_AND_SCORING（英文标识符，来源角色标题里的写法）、同卷正式材料、详细题级评分主载体。逐一读过原始 MD 确认这三种写法命中的节里都有逐点分值文字，且都不会被 E1_EXCLUDE_TITLE_RX 误伤（'来源角色：OFFICIAL_ANSWER_AND_SCORING' 不会被 '^来源[：:]' 排除，因为'来源'后面隔着'角色'二字，不是紧跟冒号）。没有采用'放宽为标题含评分/细则/SCORING 再判正文'这个更宽的备选方案——探查过题库里裸的'评分材料'字样命中1364个标题，很多是'学生样卷、教师批注与评分标记（评分材料嵌图；非标准答案）''已隔离的错配评分材料（原样保留；不得当作Q1正式细则）'这类明确不是E1的标题，若不逐一收窄排除词会引入新的假阳，权衡后只收具体验证过的三个字样，不做通配放宽。(2) 新增 rubric_index_signal(bank_root, base_key)：读 indexes/rubric_links.csv，命中任一行 pair_status=='已匹配正式材料' 就返回True。build_query_result 判无E1时，若该信号为True，追加一条'注意：题库索引…标记本题已匹配正式材料，但工具未在MD正文找到判定为有效E1的节…请人工核对'的flag（不直接翻转e1_present，索引本身也可能过时，r2 important_notes 已有先例）。(3) FN 自检重写：_bank_e1_scan 的假阴侧改用 indexes/rubric_links.csv 的 pair_status 作独立信号（完全不依赖工具的标题正则），不再是 E1_HEADER_RX 的字面拷贝；假阳侧仍用标题+正文交叉核对（这侧本身没有'自我复用'问题，只是把 POS 也同步加上三个新节名，否则本轮新判True的题会被这份手工副本误报成假阳）。中途试过'正文含>=3个赋分标记、首行无否定状态语'这个纯内容独立信号（fix_hint 给的另一个备选），全库测出94个假阴——材料段落里的题面分值（如'16.（1）（6分）'）、等级描述表（'水平4/水平3…'）和真正的逐点评分细则在字面上分不开，这个信号本身噪声太大，不能用，改用题库索引这个真正的外部信号源。",
+   "verification": "新增具名回归 t_M1r3_named：10个真题键（BJ-2024-DC-ERMO-Q17/Q19/Q21、BJ-2024-FT-ERMO-Q18、BJ-2024-DC-YIMO-Q16~Q21）逐一断言 e1_present==True，且各命中期望节名字样（OFFICIAL_ANSWER_AND_SCORING/同卷正式材料/详细题级评分主载体各至少1例），10个全部核过，PASS（修前全部False）。t_M1r3_bank（重写 t_M1r2_bank）：全库扫描假阳1个（BJ-2025-DC-ERMO-Q17）、假阴3个（BJ-2026-FT-YIMO-Q17/19/20），两边未解释项都是0（都在 KNOWN_ACCEPTED_FP/KNOWN_STALE_INDEX_FN 名单内，逐一读过原文确认：FT-YIMO-Q17/19/20 的'正式评分细则层'标题明写'N/A_with_basis；无E1，不得把E3升级为E1'，索引过时是真的，不是漏判），PASS。r2 遗留的 t_M1r2_named（11个真题键）仍PASS。"
+  },
+  {
+   "id": "M2-r3",
+   "title": "重复入书检测只认题键：错号重卷（2025/2024海淀期中）用--key查询时退出0无提示；无题键兜底只比第一候选截断切片，漏报59/141",
+   "handling": "新增 find_suspected_duplicate(qinfo, book, exclude)：不再要求 base_key 缺失才跑，只要没被题键剔重（exclude为空）就查；和全书每个未剔除题块的未截断正文（render_recs原样渲染）逐一算3-gram包含度，取最高的一个，>=0.6判定疑似重复。中途按 fix_hint 字面意思先实现了'只比BM25组合分最高的前20块'（图省时间），用 BJ-2021-BJ-GAOKAO-Q21 实测验证时发现漏报——这道题的材料（建党百年）在全书被8+个跨模块引用块共享，BM25的idf加权把共享材料的分压得很低，真正3-gram包含度0.93的孪生块（B0094等）按BM25组合分排到第349名，前20甚至前50都进不去，预筛这条路直接漏掉真实孪生块。改成不做预筛，和全书每个块直接比：746个题块逐块渲染+算3-gram集合实测约0.37秒，比对本身几乎不耗时，单次查询总耗时约0.6秒，可以接受。build_query_result 里的调用点从'if not qinfo.get(base_key) and not exclude'改成'if not exclude'（不看base_key有没有识别出来）。",
+   "verification": "新增 t_M2r3_crosskey：--key 查询 BJ-2025-HD-QIZHONG-Q9/Q19（书里已有2024版同题）两个都退出1、flags含'疑似题库重复'且提到HD-QIZHONG，PASS（修前exit=0无提示）。t_M2r3_fallback_named：BJ-2021-BJ-GAOKAO-Q21 去掉base_key后仍能查出3-gram包含度0.93的孪生块B0094，PASS（修前只比candidates[0]的截断切片会漏报）。t_M2r3_no_bm25_prefilter：直接核实这个孪生块的BM25组合分排名第349（>50），佐证当前实现没有走'BM25前N预筛'这条捷径、是老老实实和全书比过，PASS。"
+  },
+  {
+   "id": "M3-r3",
+   "title": "返修回执对 7b/m8 的描述是虚构的修改：细则没改也没断言e1_present=True；调参数字过时",
+   "handling": "7b 真的改了：细则从'①…2分 ②…2分 ③…2分'（去空白12字，低于e1_present的15字门槛，测的其实是'无细则'分支）换成'①制度设计角度：政府主导、多方参与的协商机制符合协商民主制度设计要求，2分②实施成效角度：…2分③各方主体作用角度：…2分，合计不超过6分'（去空白106字，见测试实测），新增子用例7b0在库调用层面直接断言 q_check['e1_present'] is True 且 rubric_len>=15，7b本身的CLI断言里加了 '未找到正式评分细则' not in out（确认走的是'有细则'分支，不是碰巧测无细则分支还能凑巧通过）。回执数字（十题/留一/调参/哲学）全部改成本轮实跑生成、不是复制上一轮。",
+   "verification": "重跑 7b0：e1_present=True，rubric去空白长度=106，PASS。7b：exit=0，'##'在out里，'未找到正式评分细则'不在out里，PASS。tests[]里的调参数字这次是从本轮 构建/placement_suggest/tuned_params.json 现读出来的 hit1=11/40 hit3=22/40（与本轮 test_results.json 一致），不是手抄的数字。"
+  },
+  {
+   "id": "m1",
+   "title": "--format md 在 method_end/before_block 候选上打印 last_b 标题并标锚点唯一，但该标题本身不唯一",
+   "handling": "新增 _anchor_human(anchor)：直接把 anchor 字典本身的 kind+字段打成人读文字（如 'before_block（title_contains=...）'）。format_md 里把原来的'锚点“{last_b标题}”（…）'一行改成两行：一行'插入点：{position}（紧随 {last_b标题}/{id} 之后）'（last_b 只作说明，不再冒充锚点），一行'anchor：{_anchor_human(...)}（{锚点唯一/不唯一}）'。",
+   "verification": "新增 t_m1r3_format_md_anchor：找一个 anchor_unique=True 但 kind 不是 after_block（即 last_b 标题本身不唯一，改靠 method_end/before_block 收窄）的候选组，确认 Markdown 输出里不再出现'锚点“{该标题}”'这个字样，实际 anchor 行打印的是真实的 before_block/method_end 结构，PASS。"
+  },
+  {
+   "id": "m2",
+   "title": "没有 template_block 字段，most_similar_block 标题唯一性不核（r1 M5 残留）",
+   "handling": "新增 _pick_template_block(blocks, group_block_idxs, top_idx)：most_similar_block 标题在全书唯一就直接用它；不唯一就在同组内找一个标题唯一的块顶替；同组也没有就如实标 template_unique=false。candidate_detail 里新增 template_block 字段（id/title/kind/title_contains/template_unique），紧跟在 most_similar_block 后面。",
+   "verification": "新增 t_m2r3_template_block：找一个 most_similar_block 标题不唯一的候选组，确认 template_block 换成了同组内标题唯一的块（本轮实测：most_similar_block是B0001，标题不唯一，template_block换成了同组的B0002，template_unique=True），PASS。"
+  },
+  {
+   "id": "m3",
+   "title": "E1 节择优在结论对、选节错时把非E1文字当rubric字段，不读机读评分指引",
+   "handling": "读过 BJ-2024-XC-YIMO-Q16~19 的具体结构：同层级（##）有两个POS候选——'参考答案层（来自正式评分材料中的答案键或答案段）'（文档序在前）和'正式评分材料（角色：正式评分材料）'（文档序在后，真正的E1），现有tie-break规则'同层取文档序更早的'选了前者。曾设计一个'候选标题含答案层/答案键/参考答案字样时降低优先级'的调整方案，但实测发现：全库有18个MD只有'参考答案层'这一个POS候选（没有另一个更合适的候选顶替），强行降优先级会让这18个MD的e1_present从True变False——这18个是否本该就是False需要逐个人工读原文才能确认，本轮时间不足以逐一核实，为避免引入新的、未经验证的假阴（而且是在已经很紧张的返修节奏下改一个和本轮验证过的M1-r3改动无关的调优逻辑），决定不改代码，如实写进本回执与known_limits，供主代理后续评估。BJ-2022-BJ-GAOKAO-Q18的'议事协商题面结构（E1来源层…）'与BJ-2023-HD-QIZHONG-Q19的'评标截图标题与实际归属的核对说明'两例经进一步读原文确认：后者是 section_own_body 的边界逻辑决定的（真正带分值的'原页内容（按图逐字转写）'是这两个候选的共同后继兄弟节点，被两边的own_body边界都排除在外，成了'孤儿'内容），这是本工具section_own_body设计本身的结构性问题，不是简单调优先级能解决的，同样列入known_limits，不在本轮改。",
+   "verification": "未改代码，不适用；已核实18个MD若做审查建议的降权会导致e1_present回退成False（探针核实，未固化进run_tests，因为这是'如果改了会怎样'的反证，不是当前代码的回归）。"
+  },
+  {
+   "id": "m4",
+   "title": "--params 校验不完整：agg_top_k=2.5报英文内部错误；越界/未知取值被静默接受",
+   "handling": "_load_params 逐字段加区间/类型校验：agg_top_k 必须是>=1的整数；agg_mix、bm25_b 必须在[0,1]；bm25_k1必须是正数；ngram_sizes 元素必须>=1的整数；weights 只接受 material/ask/rubric/method 四个已知键，其余转中文InputError点名字段。全部改成中文InputError，不再有任何一条落到main()最外层的英文'内部错误'。",
+   "verification": "新增 t_m4r3_params_range：6组越界/未知取值（agg_top_k=2.5、ngram_sizes=[0]、bm25_k1=-1、agg_mix=5、bm25_b=1.5、weights.bogus）直接调用 _load_params，全部转成中文InputError且点名对应字段，PASS。t_m4r3_params_cli：agg_top_k=2.5 走CLI子进程，退出2，err里含'agg_top_k'且不含'内部错误'，PASS（修前退出2但报英文'内部错误：slice indices must be integers…'）。"
+  },
+  {
+   "id": "m6",
+   "title": "测试有效性缺口：恒真断言、FN自检复用工具正则、block_insert顶层import失败会崩全套、十题日志不打真实考法名称",
+   "handling": "(a) t_m9_pool_disclosure 的恒真断言 len(no_md)>=0 改成核实每个'无题面'的题键确实是文件缺失或真的InputError，不是find_md_path路径拼错这种别的原因。(b) FN自检见M1-r3。(c) run_tests顶层 import block_insert 改成 try/except，失败时 bi_mod=None，依赖它的两条用例（t_m1_anchor_shape、t_m4r2_e2e）改成先判 bi_mod is None 就返回SKIP，不再让整份测试因为block_insert.py（另一条工具线并行改动中）暂时坏掉就ImportError崩掉。(d) 7b见M3-r3。(e) 十题日志新增打印true_group_labels（真实考法的group_label），不再只有排名数字。",
+   "verification": "t_m9_pool_disclosure 重跑：不一致0个，PASS。block_insert 本轮导入成功（bi_mod不是None），t_m1_anchor_shape/t_m4r2_e2e 正常跑（不是SKIP），证明改动本身不影响正常路径；未额外构造'block_insert真的坏掉'的场景去验证SKIP分支本身（会需要临时改坏另一条工具线的文件，风险大于收益，如实说明：SKIP分支的正确性靠代码审查确认，没有实跑验证）。十题日志本轮实测样例：'该题键落在4个考法：P1｜01…党组织牵头，多方并列（15题）；P1｜02…；P1｜04…；P1｜04…'，PASS（可在本回执summary引用的test_results.json里看到true_group_labels字段）。"
+  },
+  {
+   "id": "m7",
+   "title": "回执数字与实跑不符：调参最优12/40实为11/40；vermin的seconds为null",
+   "handling": "本回执的 tests[] 全部数字直接取自本轮实跑的 构建/placement_suggest/test_results.json 与 tuned_params.json，不再手抄上一轮回执。vermin/baseline_guard 都测量了实际耗时。",
+   "verification": "tuned_params.json 本轮实测 best={'hit1':11,'hit3':22,'score':44}，本回执tests[]照抄这个数字，不是12/40。vermin 实测0.28秒，baseline_guard 实测4.78秒，都不是null。"
+  },
+  {
+   "id": "m9",
+   "title": "小瑕疵：--keys-file报错给行内容不是行号；--key小问#abc被静默接受；Markdown样例切片只预览200字",
+   "handling": "--keys-file 的错误提示改用 enumerate 给出真实行号（1起，含注释/空行，和文本编辑器一致），同时保留行内容方便核对。--key 的小问 '#' 写法正则从 #(?P<p2>\\S+) 改成 #(?P<p2>\\d+)，只收数字，和 (1)/（1）两种写法口径一致。Markdown样例切片200字预览未改——这是有意设计（完整切片在JSON的sample_slice字段里），审查原文把它列在'detail'里当作观察，fix_hint只点名了行号和小问两项，未列入本轮改动范围。",
+   "verification": "新增 t_m9r3_keysfile_lineno：坏题键在第4行（含注释/空行），err里含'第 4 行'，PASS（修前给的是行内容，如'BJ-2099-NOSUC...'，没有行号）。t_m9r3_subq_digits_only：'#abc'被拒绝，'#1'仍能正常解析出小问='1'，PASS。"
+  },
+  {
+   "id": "m5",
+   "title": "ask 字段仍只含最后一小问（r2 遗留，本轮审查未再点名新证据，沿用已有 known_limits）",
+   "handling": "未改：split_ask/block_fields 仍从末尾切一句当设问，多小问题的前置小问落进 material 字段。r3 审查没有对这条给出新的证据或 fix_hint 升级（M2-r2 已把跨模块守卫改成逐句查全部候选设问句，ask 字段本身的启发式没有同步改，一直是已披露的 known_limits），本轮的时间和风险预算优先给了3个 major，没有再排这项。继续保留在 known_limits，供主代理决定是否值得专门一轮改。",
+   "verification": "不适用（未改代码）。"
+  },
+  {
+   "id": "m8",
+   "title": "行数超过约定9的900行上限",
+   "handling": "本轮修复本身新增了较多功能性代码（E1三种新节名+索引第二信号、疑似重复检测重做为全书未截断比对、template_block、anchor人读打印、--params区间校验、keys-file行号），行数从1358涨到1500；已把模块docstring的“返修历史”段从4行压缩到2行，返修过程性叙述尽量放进本回执而不留在代码注释里，但新功能代码本身的行数增长无法避免——这些都是审查明确要求修的major/minor，不是可精简掉的重复逻辑。",
+   "verification": "wc -l：1500行，去空行/注释1210行。见 known_limits 里的完整说明。"
+  },
+  {
+   "id": "m10",
+   "title": "范围外观察：C/__pycache__里的pyc是block_insert测试留下的，本工具没有产生pyc",
+   "handling": "未改代码，不是本工具问题。本轮返修过程中，我自己在命令行临时做过几次不经过run_tests_placement_suggest.py（后者会设置sys.dont_write_bytecode）的手工探针（python3 -c \"...import placement_suggest...\"），确实在C/下生成过一次 placement_suggest.cpython-311.pyc——这是我自己的探针脚本没注意导致的，不是placement_suggest.py或run_tests_placement_suggest.py本身产生的（两者都在文件顶部/脚本顶部设了 sys.dont_write_bytecode=True），已在返修过程中发现并删除，本回执定稿前重新核对过C/下与.claude/下均无__pycache__。",
+   "verification": "find . -iname __pycache__ 与 find /home/user/zhengzhibaodianzhizuo/.claude -iname __pycache__ 本回执定稿前都为空。"
+  }
+ ],
+ "files": [
+  {"path": "placement_suggest.py", "lines": 1500, "sha256": "ce621c4814f26f4b854ba3f627f167772fbad1aeaf1b0026fd16da1a95ebacbe"},
+  {"path": "run_tests_placement_suggest.py", "lines": 1567, "sha256": "22bb6d273cacbbb924db923cf64063e79ab736c50752f6e7323347e92ee4175d"}
+ ],
+ "usage": [
+  "只读出候选（json）：python3 placement_suggest.py --docx <目标书.docx> --profile profiles_cloud/bixiu3.json --key BJ-2026-HD-YIMO-Q17",
+  "给模型读的 Markdown：python3 placement_suggest.py --docx <目标书.docx> --profile profiles_cloud/bixiu3.json --key BJ-2026-HD-YIMO-Q17 --format md",
+  "批量 + 落报告：python3 placement_suggest.py --docx <目标书.docx> --profile profiles_cloud/bixiu3.json --keys-file 新题清单.txt --report 构建/placement_suggest/x.json",
+  "逐题 MD 直接给文件（会查重）：python3 placement_suggest.py --docx <目标书.docx> --profile <profile> --md 某题.md",
+  "纯文本：python3 placement_suggest.py --docx <目标书.docx> --profile <profile> --text 新题.txt --kind subjective",
+  "测试：python3 run_tests_placement_suggest.py（自包含，先清空 SCRATCH 与 构建/placement_suggest/test_*，前后各跑一次 baseline_guard）",
+  "vermin：vermin -t=3.9- --no-tips --eval-annotations --violations placement_suggest.py run_tests_placement_suggest.py",
+  "baseline：python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json"
+ ],
+ "tests": [
+  {"input": "run_tests_placement_suggest.py 全量（90条，含17条本轮新增/重写的 r3 回归）", "result": "90 PASS / 0 SKIP / 0 FAIL", "seconds": 127.3},
+  {"input": "十题分层抽样（默认参数，seed=20260925，与r1/r2同一10题）", "result": "前1 4/10，前3 6/10，0题型不一致（较r2的5/10少1个hit1：BJ-2024-DC-ERMO-Q21本轮e1_present改判True后rubric字段有了真实内容，相似度重新计分，真实排名从第1名变第2名，hit3仍True，是M1-r3修复的正常副作用，不是回归）", "seconds": 0.15},
+  {"input": "全书留一评估（690可评题块，默认参数）", "result": "前1 80/690(11.6%)，前3 184/690(26.7%)（与r2总量一致，个别题块排名的正负变化在692题块聚合层面相抵）", "seconds": 10.5},
+  {"input": "全书留一评估（690可评题块，调好后的固定参数）", "result": "前1 76/690(11.0%)，前3 183/690(26.5%)（与r2一致）", "seconds": 10.5},
+  {"input": "调参网格（5×4=20组，调参集40题，与十题不相交）", "result": "最优 hit1=11/40 hit3=22/40（r2回执误写12/40，本轮以test_results.json/tuned_params.json实测为准）", "seconds": 11.6},
+  {"input": "哲学 R10（草案配置，12题抽样）", "result": "前1 3/12，前3 7/12；CLI 跑通出候选（与r2一致）", "seconds": 3.9},
+  {"input": "vermin -t=3.9- --no-tips --eval-annotations --violations", "result": "Minimum required versions: 3.7；无 violations", "seconds": 0.28},
+  {"input": "baseline_guard check（测试前/测试后/本回执定稿前，各跑一次）", "result": "exit=0，3468 files，changed/removed/added/skill_pycache 均为空", "seconds": 4.78}
+ ],
+ "replaces": [
+  "人工比对新题设问与全书各考法例题、凭经验挑插入位置这一步（设计稿第5步）；输出可直接喂给 block_insert 的候选与（绝大多数唯一的）锚点/template_block，本轮锚点端到端核过 block_insert 真实解析，Markdown 输出不再拿可能不唯一的标题冒充锚点。",
+  "人工翻查题库 MD 找“正式评分”节判断是否有细则——本轮补上三种题库未覆盖的节名写法，10个具名真题键从误判“不收”改判有效，全库假阳/假阴各降到个位数且逐条可解释；判无E1时另有题库索引信号交叉核对，冲突不静默。",
+  "人工判断新题设问是否限定了其它模块——逐句检查整份题面，不再漏掉写在前置小问里的模块限定。",
+  "人工核对新题题键是否已经入书，含“同一张卷换了错误的年份/届别重复登记”这类错号重卷——现在不管走哪个输入入口、题键是否识别得出，都会和全书未截断正文比一遍，不再只在特定条件下才查。",
+  "人工查 profile 的 no_e1_exceptions 具名例外名单——自动读 indexes/exams.csv 拼卷名核对。"
+ ],
+ "known_limits": [
+  "行数1500（去空行/注释1210），超过约定9的900行上限。原因：本轮修复本身新增了较多代码（E1三种新节名+索引第二信号、疑似重复检测整体重做为全书未截断比对、template_block、anchor人读打印、--params区间校验、keys-file行号），且这些都是审查明确要求的功能性修复，不是可有可无的补充；已把返修历史性叙述尽量移出代码（模块docstring的“返修历史”段从4段压成2句），不复制block_index/block_insert已有等价逻辑，行数增长由这批major/minor的范围决定。",
+  "小问（#1/(1)）仍只记录、不裁剪正文，未在本轮改动范围内。",
+  "插入点仍统一给“考法末尾”，不做“按受控排序键计算局部插入位置”这个增强，工具本身不计算排序键，由主代理裁定。",
+  "ROLE_RULES 仍是独立于 column_schemas/labels_rules 的一套关键词表，未做按 profile 覆盖。",
+  "kind_conflict 噪声从62降到33（r2的副作用修复），剩余33个未逐条排查。",
+  "m3（E1同层多候选择优偶尔选中非最优文字，如“参考答案层”而非真正的评分材料节）未改：18个MD若强行降低“答案层”类标题的优先级会导致e1_present从True回退False（本轮没有逐一人工核实这18个是否本该是False，风险大于本轮时间能核实的范围），列为已知限制，建议主代理有空时安排专项核实这18个题键后再决定是否调整tie-break规则。",
+  "BJ-2023-HD-QIZHONG-Q19一类案例还有一个更深的结构性问题：真正带分值的内容有时是两个E1候选节共同的“后继兄弟节点”，被section_own_body的边界逻辑两边都排除在外成了孤儿内容，e1_present结果碰巧对（两个候选之一的own_body里可能也有部分重复信息），但rubric字段没取到最完整的文字，需要更懂这批题库转写体例的人评估是否值得为此再加一层“孤儿兄弟节点回收”逻辑。",
+  "BJ-2024-SJS-YIMO-Q16/Q20、BJ-2025-FT-QIMO-Q21 三个边界题键（较r2的四个边界题键少了DC-ERMO-Q21——本轮已用OFFICIAL_ANSWER_AND_SCORING节名解决），判定e1_present=False，按SCOPE-E1默认保守立场处理，建议主代理有空时人工复核。",
+  "no_e1_exception_hit/exam_paper_label 只在 build_query_result 拿到 prof 与 bank_root 时生效，测试/库调用方若直接调 build_query_result 不传这两个参数，具名例外分支不生效（有意的默认行为）。",
+  "18个题键因题库“采用题面小节：无”等原因进不了评测池（10题/留一评估都会正确排除，不计入命中率分母）。",
+  "调好后的固定参数在全书留一对照集上仍不如内置默认参数（本轮76/690 vs 80/690），与前两轮一致，出货仍用未调过的内置默认参数。",
+  "哲学 R10 等其他书用的是 profile_probe 自动草案配置，未经人工确认，命中率仅供参考。",
+  "重复检测 find_suspected_duplicate 现在对全书每个未剔除题块都渲染+比一次3-gram包含度（不做BM25预筛，理由见M2-r3 issue），单次查询增加约0.4~0.6秒开销；--keys-file 批量跑几十道新题时会累加，量级增大（几百道以上）时需要评估是否要换更快的预筛手段（不能再用BM25排名，见本轮验证过的反例）。",
+  "m6(e)的block_insert导入失败SKIP分支只做了代码审查确认，没有实跑构造“block_insert真的坏掉”的场景验证（会需要临时改坏另一条工具线的文件，判断风险大于收益）。"
+ ],
+ "profile_fields_needed": [
+  "sources.bank.root（题库根，--bank 可覆盖）",
+  "sources.stem_module_guard（跨模块限定词列表，可选，缺省时不做该项过滤）",
+  "sources.no_e1_exceptions.whole_papers/questions（具名无E1例外，可选）",
+  "styles.method_desc（考法说明的样式名列表，可选，缺省时 method 字段只有考法名没有说明）",
+  "output_guard.protected_roots（docx_lib.guard_write 用，云端 profile 需显式包含仓库根，profiles_cloud/bixiu3.json 已配）"
+ ],
+ "needs_user_decision": [
+  "m3：是否安排专项核实那18个“只有参考答案层这一个E1候选”的题键，确认它们是否本该是e1_present=False，再决定是否收紧“答案层”类标题的候选优先级。",
+  "BJ-2024-SJS-YIMO-Q16/Q20、BJ-2025-FT-QIMO-Q21 三题的 e1_present 判定（本轮均为False，按保守默认处理），是否需要人工核对原始 PDF/PPTX 后改判。",
+  "重复检测不做BM25预筛、和全书每个题块直接比的开销，在题量显著增大（几百道以上批量--keys-file）时是否可接受，还是需要换一种预筛手段（注意：不能再用BM25排名分做预筛，本轮已验证会漏报真实孪生块）。",
+  "调好后的固定参数持续三轮都不如默认参数——是否需要另外组织一次更大规模的调参，还是接受当前默认参数作为长期基线（与r1/r2遗留问题相同）。",
+  "kind_conflict 剩余33例是否需要下一轮继续排查修复，还是接受作为已知限制。"
+ ],
+ "vermin": {
+  "command": "vermin -t=3.9- --no-tips --eval-annotations --violations placement_suggest.py run_tests_placement_suggest.py",
+  "result": "Minimum required versions: 3.7；Incompatible versions: 2.x；无 violations",
+  "seconds": 0.28
+ },
+ "baseline_guard": {
+  "command": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": "{files: 3468, changed: [], removed: [], added: [], skill_pycache: []}，测试前/测试后各跑一次均 exit=0；本回执定稿前单独再跑一次同样 exit=0；C/ 与 .claude/ 下均确认无 __pycache__（返修过程中我的手工探针脚本曾生成过一次 C/__pycache__，已发现并删除，见 issue m10）",
+  "seconds": 4.78
+ }
+}

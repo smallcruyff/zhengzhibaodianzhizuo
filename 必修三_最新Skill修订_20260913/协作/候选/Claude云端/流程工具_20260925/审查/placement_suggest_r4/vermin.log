@@ -1,0 +1,10 @@
+Detecting python files..
+Analyzing 2 files using 4 processes..
+Minimum required versions: 3.7
+Incompatible versions:     2.x
+
+real	0m0.325s
+user	0m0.366s
+sys	0m0.113s
+ast feature_version=(3,9) OK placement_suggest.py
+ast feature_version=(3,9) OK run_tests_placement_suggest.py

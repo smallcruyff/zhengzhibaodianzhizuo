@@ -1,0 +1,32 @@
+no_e1_exceptions = {'whole_papers': ['2024顺义二模', '2026石景山期末', '2026北京高考'], 'questions': [], 'use_as': 'E3方向性，不拆E1'}
+BJ-2026-BJ-GAOKAO-Q16 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2026-BJ-GAOKAO-Q17 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2026-BJ-GAOKAO-Q18 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2026-BJ-GAOKAO-Q19 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2026-BJ-GAOKAO-Q20 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2026-BJ-GAOKAO-Q21 kind= subjective e1_present= True e1_header= 正式评分材料原文 
+BJ-2024-SY-ERMO-Q16 kind= subjective e1_present= True e1_header= 正式评分边界 
+BJ-2024-SY-ERMO-Q17 kind= subjective e1_present= True e1_header= 正式评分边界 
+BJ-2024-SY-ERMO-Q18 kind= subjective e1_present= True e1_header= 正式评分边界 
+BJ-2024-SY-ERMO-Q19 kind= subjective e1_present= True e1_header= 正式评分边界 
+BJ-2024-SY-ERMO-Q20 kind= subjective e1_present= True e1_header= 正式评分边界 
+BJ-2026-SJS-QIMO-Q1 InputError BJ-2026-SJS-QIMO-Q1：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q2 InputError BJ-2026-SJS-QIMO-Q2：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q3 InputError BJ-2026-SJS-QIMO-Q3：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q4 InputError BJ-2026-SJS-QIMO-Q4：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q5 InputError BJ-2026-SJS-QIMO-Q5：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q6 InputError BJ-2026-SJS-QIMO-Q6：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q7 InputError BJ-2026-SJS-QIMO-Q7：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q8 InputError BJ-2026-SJS-QIMO-Q8：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q9 InputError BJ-2026-SJS-QIMO-Q9：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题
+BJ-2026-SJS-QIMO-Q10 InputError BJ-2026-SJS-QIMO-Q10：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q11 InputError BJ-2026-SJS-QIMO-Q11：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q12 InputError BJ-2026-SJS-QIMO-Q12：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q13 InputError BJ-2026-SJS-QIMO-Q13：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q14 InputError BJ-2026-SJS-QIMO-Q14：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q15 InputError BJ-2026-SJS-QIMO-Q15：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q16 InputError BJ-2026-SJS-QIMO-Q16：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q17 InputError BJ-2026-SJS-QIMO-Q17：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q18 InputError BJ-2026-SJS-QIMO-Q18：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q19 InputError BJ-2026-SJS-QIMO-Q19：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标
+BJ-2026-SJS-QIMO-Q20 InputError BJ-2026-SJS-QIMO-Q20：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标

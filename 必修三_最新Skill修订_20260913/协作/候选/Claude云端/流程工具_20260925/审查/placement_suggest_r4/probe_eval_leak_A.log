@@ -1,0 +1,53 @@
+{
+ "loo": {
+  "tool": {
+   "n": 690,
+   "hit1": 80,
+   "hit3": 184
+  },
+  "A": {
+   "n": 690,
+   "hit1": 132,
+   "hit3": 262
+  }
+ },
+ "ten_ranks": {
+  "tool": [
+   6,
+   24,
+   1,
+   2,
+   1,
+   1,
+   8,
+   2,
+   1,
+   20
+  ],
+  "A": [
+   5,
+   53,
+   7,
+   2,
+   1,
+   1,
+   5,
+   3,
+   1,
+   21
+  ]
+ },
+ "ten_keys": [
+  "BJ-2025-FS-YIMO-Q17",
+  "BJ-2025-CY-ERMO-Q19",
+  "BJ-2022-BJ-GAOKAO-Q20",
+  "BJ-2024-DC-ERMO-Q21",
+  "BJ-2026-DC-ERMO-Q11",
+  "BJ-2024-HD-YIMO-Q8",
+  "BJ-2026-HD-QIZHONG-Q7",
+  "BJ-2024-CY-YIMO-Q16",
+  "BJ-2023-HD-YIMO-Q16",
+  "BJ-2025-FT-QIMO-Q18"
+ ],
+ "seconds": 22.1
+}

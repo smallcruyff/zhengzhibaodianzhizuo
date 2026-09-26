@@ -1,0 +1,28 @@
+PASS baseline_guard（真实输入未变，测试前） 
+PASS 1a BJ-2023-HD-QIZHONG → 届别2024，建议号被占用+链式改号 
+PASS 1b BJ-2024-HD-QIZHONG → 届别2025，识别与BJ-2025-HD-QIZHONG重复登记 
+PASS 1c BJ-2024-CY-QIZHONG → 届别2025，建议BJ-2025-CY-QIZHONG（未占用） 
+PASS 2a 对照组（2026期中+若干期末/一模二模/高考）届别无误、不误报重复 
+PASS 2b bank_duplicate_exams.csv 的 shared_or_reused 对：报了就必须是复用、不能是重复登记 
+PASS 3a audit 全库可运行并写出报告 
+PASS 3b audit 命中 3 张已知错号卷；不与 ledger“2026期中/期末无误”结论冲突 
+PASS 3d 全库 CONFLICT 数量在可解释范围内（逐条已人工复核，见回执 known_limits） 
+PASS 4a --files 把 BJ-2025-HD-QIZHONG 原卷当新卷 → 届别2025，两张已有登记都命中 
+PASS 4b 合成“确实新”的卷 → 届别正确、不报重复、给出未占用的建议卷号 
+PASS 5a 卷号格式错 → 退出2 
+PASS 5b 文件不存在 → 退出2 
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+PASS 5c 无文字层 PDF → NEEDS_LOCAL，不猜（退出1，按规格“有待处理”桶） 
+PASS 5d --report 落受保护目录（书稿目录（仓库根））→ 退出3，且未落盘 
+PASS 5d --report 落受保护目录（题库目录）→ 退出3，且未落盘 
+PASS 5d --report 落受保护目录（Skill目录）→ 退出3，且未落盘 
+PASS 5e 冻结册配置 --report → 退出3（附加负例，非规格必测但同规则） 
+PASS 5f 正例：--report 落候选目录 构建/ 下 → 成功写出 
+PASS baseline_guard（真实输入未变，测试后） 
+
+合计 20 条，失败 0 条，用时 103.1s
+
+real	1m43.220s
+user	1m34.502s
+sys	0m7.753s
+EXIT=0

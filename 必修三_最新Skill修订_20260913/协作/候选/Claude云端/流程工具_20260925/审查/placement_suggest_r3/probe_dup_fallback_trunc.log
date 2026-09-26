@@ -1,0 +1,12 @@
+in-book subjective MDs re-fed as keyless --md: 141 suspected-duplicate flag fired: 82 missed: 59
+missed examples: ['BJ-2020-BJ-GAOKAO-Q19', 'BJ-2021-BJ-GAOKAO-Q21', 'BJ-2023-BJ-GAOKAO-Q18', 'BJ-2023-DC-YIMO-Q20', 'BJ-2023-HD-YIMO-Q17', 'BJ-2023-XC-YIMO-Q18', 'BJ-2024-CY-YIMO-Q18', 'BJ-2024-DC-ERMO-Q18', 'BJ-2024-DC-ERMO-Q21', 'BJ-2024-DC-YIMO-Q18']
+BJ-2020-BJ-GAOKAO-Q19 top_block B0722 own? False slice=0.02 top_full=0.02 best_own_full=0.68
+BJ-2021-BJ-GAOKAO-Q21 top_block B0074 own? False slice=0.10 top_full=0.10 best_own_full=0.93
+BJ-2023-BJ-GAOKAO-Q18 top_block B0071 own? False slice=0.01 top_full=0.01 best_own_full=0.60
+BJ-2023-DC-YIMO-Q20 top_block B0707 own? True slice=0.39 top_full=0.39 best_own_full=0.39
+BJ-2023-HD-YIMO-Q17 top_block B0030 own? True slice=0.27 top_full=0.27 best_own_full=0.27
+BJ-2023-XC-YIMO-Q18 top_block B0587 own? True slice=0.27 top_full=0.27 best_own_full=0.27
+BJ-2024-CY-YIMO-Q18 top_block B0609 own? False slice=0.05 top_full=0.06 best_own_full=0.44
+BJ-2024-DC-ERMO-Q18 top_block B0738 own? True slice=0.01 top_full=0.01 best_own_full=0.01
+BJ-2024-DC-ERMO-Q21 top_block B0076 own? False slice=0.00 top_full=0.00 best_own_full=0.00
+BJ-2024-DC-YIMO-Q18 top_block B0072 own? False slice=0.01 top_full=0.01 best_own_full=0.31

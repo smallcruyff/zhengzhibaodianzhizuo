@@ -1,0 +1,2 @@
+table 1 nested before grid/tcW rows: (7604, [7604, 7604, 7604]) outer (8522, [8522, 8522, 8522])
+   after nested grid/tcW rows: (7604, [8296, 8296, 8296]) outer (9298, [9298, 9298, 9298])

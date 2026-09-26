@@ -1,0 +1,300 @@
+{
+ "tool": "block_insert",
+ "stage": "对抗审查 r1",
+ "reviewer": "claude-cloud 子代理（审查者，非负责人，只写候选）",
+ "date": "2026-09-25",
+ "verdict": "FAIL",
+ "targets": {
+  "block_insert.py": {
+   "lines": 1490,
+   "sha256": "cb8c2511c8054254e299e839162f724d04e95f3a1278634194a6dd29f5633fe1"
+  },
+  "run_tests_block_insert.py": {
+   "lines": 716,
+   "sha256": "956b02cbec56fdf5891e08cf6f96ce2793995199b22dc6f23941ec08859cbdfc"
+  },
+  "回执/block_insert_编写.json": "已读；SHA 与文件一致"
+ },
+ "tests_rerun": {
+  "cmd": "python3 run_tests_block_insert.py（在 C/ 下）",
+  "result": "18/18 PASS，退出码 0，用时 4m41s；与回执一致。日志：审查/block_insert_r1/rerun_tests.log",
+  "note": "测试本身能复现通过，但下列 blocker 说明这些用例不检查格式、不检查整篇位置，18/18 PASS 不能证明验收成立。"
+ },
+ "baseline_guard": {
+  "cmd": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": {
+   "files": 3468,
+   "changed": [],
+   "removed": [],
+   "added": [],
+   "skill_pycache": []
+  },
+  "exit_code": 0,
+  "note": "审查全部探针跑完后执行。baseline_guard 不覆盖仓库根目录散文件，见 M6。"
+ },
+ "vermin": {
+  "block_insert.py": "Minimum 3.8，无 violation",
+  "run_tests_block_insert.py": "Minimum 3.7，无 violation"
+ },
+ "skill_pycache": "find .claude -name __pycache__ → 0；另把 block_insert.py 拷进一份 SK 副本（临时区）运行 check 通过、未生成 __pycache__",
+ "blockers": [
+  {
+   "id": "B1",
+   "title": "默认样式复制把【题目】标签 run 的格式套进整段正文：插入的材料/设问整段加粗深蓝，教学正文整段加粗，rows 表格整表加粗；测试不查格式，所以 18/18 PASS 掩盖了这个问题",
+   "detail": "find_role_template 在 source 桶里取模板块中“第一段非纯标签段”，在必修三里就是“【题目】17．（8分）”（标签＋正文同段）。ap._build_paragraph 复制该段首个 run 的 rPr（【题目】标签：b/bCs、color 1F4E79、eastAsia Songti SC）和该段 pPr（keepNext、ind firstLine=0）。_auto_split_label_runs 只在新文字本身以【…】开头时才生效，所以后面每段材料/设问都被做成加粗深蓝并带 keepNext。教学段用 like:'从材料选知识' 做模板，模板首个 run 是加粗引导词，于是整段加粗；原稿只有引导词加粗。rows 生成表格时，样板表头单元格 rPr（加粗）被套到所有单元格。bh.run_health 没有对应规则，--health 报 0 新增 FAIL；测试只比文字、图片字节和 health，没有比格式。这违背任务说明“按相邻样板题块复制样式”和规格“role→样式以样板题块中同角色段的 pPr/rPr 为准”。",
+   "evidence": "审查/block_insert_r1/fmt_block_output.txt（逐段 zone/样式/run 格式）：原稿 B0005 第150段材料 run 无 b/color；T1a 输出 163/165/166/167/168 段全部为 'B/1F4E79'，170、172 段教学正文整段 'B/000000'；T1b 输出表格 128–133 段所有单元格加粗（原 B0003 表只有表头 94–96 加粗，97–118 不加粗），134 段设问 'B/1F4E79'；T1c 129 段设问 'B/1F4E79'。金标回归同样出现（gold_cmp3_output.txt）：T2a 重插的“建设韧性城市…”“北京市委…”“西城区某街道…”“结合材料…”4 段 pPr 比原稿多 keepNext 与 ind firstLine=0，rPr 多 b/bCs/color 1F4E79/Songti SC；“从材料选知识：”“从设问定层次：”“④（综合概括）”等 4 段原稿的两段式 run 被压成整段一种格式。",
+   "fix_hint": "正文段的模板 rPr 应取模板段中标签之后第一个 run（或优先选不以【】开头的同样式正文段，例如 B0005 第150段），不要取首个 run；正文段的 pPr 不应继承标签段的 keepNext/firstLine。rows 表格第 0 行用表头 rPr，其余行用样板表体行的 rPr。在 run_tests 里加格式断言：新段与样板同角色正文段的 rPr/pPr 签名一致；金标回归逐段列出格式差异。"
+  },
+  {
+   "id": "B2",
+   "title": "写后“rel 完整性”复核是死代码；从原件复制表格时，外来 r:id 原样带入，超链接被悄悄改绑到本书的 endnotes 和图片关系上，退出码仍是 0",
+   "detail": "_scan_rids 遍历的是 W+'blip' 和 W+'imagedata'，命名空间写错了：a:blip 在 drawingml 命名空间，v:imagedata 在 VML 命名空间。结果它在真实输出上恒返回 0 个，规格要求的“所有 r:embed/r:id 都有 rel、rel 目标成员都在包里”从来没有检查过；回执却写了“写后七项复核（…rel完整性…）”。build_table_from_source 只重建 a:blip r:embed，w:hyperlink r:id、v:imagedata r:id、asvg:svgBlip r:embed 等都原样复制。原件的 rId7–rId10 在本书里正好对应别的关系，于是被改绑到错误部件上，而写后复核放行。",
+   "evidence": "probe_out.py 跑 T1a 输出：bi._scan_rids(root) -> 0，同一文档实际 a:blip r:embed 101 个。adv_tables.py 用真实原件 00_共同资料/原材料/2024模拟题/东城二模/细则/分题细则/阅卷总结/21题/21.docx 的 table_index=1（原件内 4 个 External 超链接 rId7–rId10）插入必修三副本：rc=0，verify 通过；输出里 w:hyperlink r:id 为 rId7→endnotes.xml、rId8→media/image1.png、rId9→media/image2.svg、rId10→media/image3.jpg（adv_tables_result.json 的 hyperlink_21）。",
+   "fix_hint": "_scan_rids 改为遍历全树中所有 r: 命名空间属性（r:embed/r:link/r:id），逐一核对 rel 存在、类型相符、目标成员在包内。表格复制时，对所有 r:* 引用按原件 rel 类型重建：图片新建成员，超链接新建 External rel，其余无法重建的一律 Abort。"
+  },
+  {
+   "id": "B3",
+   "title": "验收 2（金标回归）不成立：T2a 重插位置与原稿不同，整篇文字流不一致；格式差异也没有逐处列出",
+   "detail": "T2a 用 method_end 考法3 把 B0005 插到考法3 末尾，也就是例题 6 之后；原稿中 B0005 在例题 4 与例题 6 之间。用 before_block '例题 6' 本可以还原原位。测试只拿重插块自身的段落文字与原块比较，回执据此写“段落文字流 13/13 一致”，实际整篇文字流与原稿不同。规格要求的“格式差异逐处列出并判断”在测试和回执里都没有；逐处比对就能看到 B1 的问题。T2b 位置正确，但同样有 1 处 pPr 与 6 处 run 格式差异未列出。",
+   "evidence": "gold_cmp.py：img whole-doc text flow equal: False，difflib 结果为 delete [148,161) 且在 163 处 insert 13 段；块序原稿为 [例题4, 例题5, 例题6]，重插后为 [例题6, 例题5(重插), 例题7]。tbl whole-doc text flow equal: True。格式差异见 gold_cmp3_output.txt。",
+   "fix_hint": "金标回归用 before_block 还原原位，比较整篇 d.items 文字流是否与原稿全等（重排前），逐段输出 pPr/rPr 差异清单并在回执里逐条判断。"
+  }
+ ],
+ "majors": [
+  {
+   "id": "M1",
+   "title": "复制表格中的 docPr id 没有重新分配，与全文冲突；表内 wp:anchor 也没有转成 inline",
+   "detail": "规格要求“docPr id 全文唯一（重新分配）”“表内图片同样重建关系”。relink_table_images 只改 r:embed，不改表内 wp:docPr id，也不处理表内 wp:anchor。verify_output 只核对 image 角色新分配的 id，所以冲突不会被发现。",
+   "evidence": "adv_docpr.py 用真实原件 2024模拟题/东城二模/细则/分题细则/阅卷总结/17题/17(1).docx 的 table 1（docPr id 1、2）插入：rc=0；父稿 id=1、id=2 各 1 个，输出各 2 个。昌平二模教师版 table 1 的 id 4–7 原样带入。",
+   "fix_hint": "复制表格后，用 IdAllocator 重新分配表内全部 docPr id，必要时连同 pic:cNvPr；写后复核检查全文 docPr 相对父稿不新增重复。"
+  },
+  {
+   "id": "M2",
+   "title": "block_index 写后复核（题块完整、栏目齐全、media/tables 计数）只写进报告、不中止；表内图片不计入 media_expect，合法输入也会报不匹配",
+   "detail": "规格把“新题块被 block_index 认成完整题块（题型、栏目齐全、media/tables 计数与插入单一致）”列为写后复核项，工具却把它降成只报告：栏目缺失或 media 不符时仍然退出 0。relink_table_images 追加的 media 条目没有 kind 字段，所以 n_img 不计表内图，带图表格必然 media_match=false。",
+   "evidence": "adv_tables_result.json：dc_teacher_tbl4 media_count 2 / expect 0，hyperlink_21 为 3 / 0，cp_teacher_tbl1 为 4 / 0，均 media_match=false、missing=['【思维链条】','【答案落点】','【细则说明】']，rc 全部为 0。",
+   "fix_hint": "found_blocks≠1 或 media/tables 不符时判为硬失败，删除输出、退出 2；栏目缺失按书册 column_schemas 判断，或至少退出 1。表内图片计入 media_expect。"
+  },
+  {
+   "id": "M3",
+   "title": "anchor.method_end 命中多个考法时不中止，静默落到全书最后一个匹配",
+   "detail": "method_contains 只做子串匹配。不给 node_contains 时，“考法1”在必修三命中 20 个不同的 (node, method)，工具取全书 title_i 最大的一个，违反“0 或多命中 → 整批中止”。",
+   "evidence": "adv_misc.py：method_end {'method_contains':'考法1'} → rc=1（check 通过），anchor_block_title='例题 7　2024西城二模第18(2)题'。probe_book.py：包含“考法1”的不同 (node, method) 共 20 个。",
+   "fix_hint": "按 (node, method) 分组，命中组数≠1 时 Abort，并列出候选。"
+  },
+  {
+   "id": "M4",
+   "title": "词表检查与 apply_patch 口径不一致：title 从不检查，approved_edit 下 table.rows 文字也不检查",
+   "detail": "只有 source/teaching/rubric 文字段过词表。apply_patch 对 title/source 区的新文字，只要不是 restore 就必须过词表；本工具的例题标题在任何 source_zone 下都不检查，rows 表格文字在 approved_edit 下也不检查。",
+   "evidence": "adv_misc.py：title 末尾加“待核/占位/测试/TODO/候选”→ check 全部 rc=1、无中止；同一个“待核”放在 teaching 段 → rc=2 “命中禁用词表 工程标签:待核”；rows [['待核','占位']] + approved_edit → rc=1。",
+   "fix_hint": "title 与 rows 单元格纳入 _forbidden_hit，豁免口径与 source 相同，只在 restore 时豁免。"
+  },
+  {
+   "id": "M5",
+   "title": "报告里缺少规格要求的两个标记：外部图片文件没有标“需本地核图”，原件 wp:anchor 转 inline 也没有写明",
+   "detail": "规格：PDF 原件的图只接受显式图片文件，并标“需本地核图”；原件 wp:anchor 浮动图转 inline，需在报告里写明。代码中“需本地核图”只出现在文件头 docstring，locate_source_image 不返回 anchor/inline 信息，media_report 也没有相应字段。",
+   "evidence": "T1a 原件 rId14 实为 wp:anchor（extent 1842135×1230630）；T1a 报告的 media 条目只有 kind/from/new_rid/bytes/sha256/extent_emu/docpr_id。grep '需本地' block_insert.py 只命中第 35 行 docstring。",
+   "fix_hint": "media_report 增加 source_layout: anchor→inline 标记，file 来源的图增加 needs_local_check: '需本地核图'，并在 summary 汇总。"
+  },
+  {
+   "id": "M6",
+   "title": "候选目录外遗留测试产物：仓库根目录的 insert_table_q.json",
+   "detail": "硬规则：辅助脚本、探针和测试产物只能放在 C/ 或系统临时目录。仓库根目录的 insert_table_q.json 未入库，创建于 2026-09-25 05:56:53，approved_by 为 'claude:block_insert-real-test'，内容就是 T1b 的插入单。baseline_guard 不扫描仓库根目录散文件，所以回执中的 baseline 结果证明不了没有越界写。主会话若 git add -A，会把它提交进去。",
+   "evidence": "git status --short 显示 '?? insert_table_q.json'；ls --time-style=full-iso 与 head 输出见审查过程。",
+   "fix_hint": "主会话提交前删除该文件（审查者按权限不代删）；baseline_guard 可以增加“仓库根目录顶层文件集合不变”的检查。"
+  },
+  {
+   "id": "M7",
+   "title": "run_tests 不跑 baseline_guard，但文件头 docstring 声称会跑",
+   "detail": "共同约定第 10 条要求测试前后用 baseline_guard 核真实输入 SHA。run_tests_block_insert.py 的 docstring 写着“每条用例结束都用 baseline_guard 的思路核对一次（…见 main() 末尾）”，但 main() 只在开头核了必修三父稿一个 SHA，全文没有调用 baseline_guard。回执里的 baseline 结果是另外手工跑的。",
+   "evidence": "grep -n baseline run_tests_block_insert.py 只命中第 10–11 行 docstring。",
+   "fix_hint": "main() 首尾各 subprocess 调用 tools/baseline_guard.py check，失败计入 FAIL；docstring 与实际行为保持一致。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "m1",
+   "title": "表格含文本框（w:txbxContent / w:pict）时，以“内部错误”中止",
+   "detail": "do_insert 用 e.iter(W+'p') 收集新段，会把文本框内的段落算进去；d.paras 不含文本框段，于是计数对不上，报“内部错误：新段落身份换算失败”并中止。结果安全，没有留下输出，但提示有误导性，这一限制也未写进 known_limits。",
+   "evidence": "adv_tables.py 用真实原件 2024东城二模/16题二模阅卷总结.docx 的 table 1 → rc=2，'应 77 段，换算出 61 段'。"
+  },
+  {
+   "id": "m2",
+   "title": "--renumber 失败时退出码仍为 0",
+   "detail": "只在 stderr 提示并给出下一条命令；流水线按退出码会把它当成功。另外 stdout 打印的 out 在 --renumber 成功时是重排文件，但 sha256 是重排前文件的。",
+   "evidence": "renum_fail.py：预先占住 *_renumbered.docx，让 layout_prepare 守卫拒写 → block_insert rc=0。"
+  },
+  {
+   "id": "m3",
+   "title": "同一锚点的多条 insert 落位顺序与插入单顺序相反",
+   "detail": "after_block 每次都从锚点元素往后挂，后一条会落在前一条前面；文档和报告里都没写。",
+   "evidence": "bm_order.py：插入单顺序 A1(例题90)、A2(例题91) → 输出顺序为 例题91、例题90。"
+  },
+  {
+   "id": "m4",
+   "title": "apply 模式报告缺 summary，inputs 缺插入单 SHA 与原件 SHA",
+   "detail": "共同约定第 7 条要求 inputs 给出路径＋SHA，并有 summary；apply 报告只有 docx 的 SHA，没有 summary 键。",
+   "evidence": "T1a_report.json 顶层键：tool/version/mode/inputs/profile/plan/output/verify/health/renumber。"
+  },
+  {
+   "id": "m5",
+   "title": "--health 出异常时被吞掉，仍退出 0",
+   "detail": "health_diff 外层 except 只把 {'error':…} 写进报告，exit_code 保持 0。",
+   "evidence": "代码 cmd_apply 第 1434–1435 行。"
+  },
+  {
+   "id": "m6",
+   "title": "写后复核若抛异常（而不是写入 problems），输出会残留",
+   "detail": "verify_output 在 os.replace 之后运行，外面没有 try/except 包裹；dl.open_docx 等抛异常时，由 main 转成退出码 2，但输出文件不删除。实测没有触发，属于代码层面的原子性缺口。",
+   "evidence": "cmd_apply 第 1401–1414 行。"
+  },
+  {
+   "id": "m7",
+   "title": "--renumber 额外带了 --keepnext，超出编号/考法题数的范围",
+   "detail": "在 keepNext 本就不全的书上，会改到与插入无关的段落。T1 实测 keepnext 改动为 0。",
+   "evidence": "run_renumber 第 1233–1235 行。"
+  },
+  {
+   "id": "m8",
+   "title": "行数 1490，超过 1200 行目标",
+   "detail": "回执已说明原因。_top_tables 与 docx_lib.para_elements 的 tag 派发重复，health_diff 抄自 apply_patch 内嵌函数（后者不可复用，可以理解）。"
+  },
+  {
+   "id": "m9",
+   "title": "sanitize_table_styles 注释说“保留能查到的 tblStyle”，代码却总是删掉",
+   "detail": "文档与实现不一致。"
+  },
+  {
+   "id": "m10",
+   "title": "新图的 pic:cNvPr id 固定为 0",
+   "detail": "规格写的是“重新分配、全文唯一”；回执已如实说明沿用书稿现状，是否接受需要主代理确认。"
+  },
+  {
+   "id": "m11",
+   "title": "C/__pycache__/run_tests_block_insert.cpython-311.pyc 遗留在候选目录",
+   "detail": "不在 SK 里，但会被 pull 回本地；建议删除。时间戳 06:28:33，与 run_tests 最后修改时间一致。"
+  },
+  {
+   "id": "m12",
+   "title": "云端不给 --profile 时回退到 unit.book，会用上指向 Mac 路径的 SK profile，守卫认不出仓库根",
+   "detail": "只探测了 guard_write 的返回值，没有实际写文件：用 SK bixiu3 profile 时，必修三_最新Skill修订_20260913/ 与 原材料/ 下的路径都被判为允许。这是 docx_lib/SK profile 的环境问题，但 apply 模式应要求 --profile，或在 paths.root 不存在时拒绝。",
+   "evidence": "审查过程中的 python 探针：'ALLOWED (guard_write returned, nothing written)'；随后 ls 确认文件不存在。"
+  },
+  {
+   "id": "m13",
+   "title": "书中有完全同名的题块标题，anchor 和 template 没法用 node/method 消歧",
+   "detail": "例如“例题 1　2026丰台一模第17题”等出现不止一次，这些块无法当锚点或样板（会安全中止）。",
+   "evidence": "probe：exact duplicate full titles ['例题 1\\u30002026丰台一模第17题', '例题 21\\u30002026朝阳一模第21题（跨模块）', …]"
+  },
+  {
+   "id": "m14",
+   "title": "验收 1 第三题是纯文字题；“原件 DOCX 取表”和“显式图片文件（PDF 取图）”两条正向路径都没在真实新题上跑过",
+   "detail": "T1c 无图无表，只满足“至少 1 图、1 表”，不满足“3 道带图或表”。B3 漏收候选里还有 DOCX 原件带图的题，如 BJ-2024-SJS-YIMO-Q1/Q7（石景山一模 试卷.docx 内含图），回执没有说明为什么不选。T1b 的“18.（8分）”比题库 MD 多了分值，用的也是半角点，属于书稿格式约定，应在回执中说明。"
+  },
+  {
+   "id": "m15",
+   "title": "T4b 的其他书写入用例太弱",
+   "detail": "只插了一段 source，没有 --health；该输出相对父稿实际新增 7 个 FAIL（栏目缺失×5、编号×2），回执却写“写入成功；未出现缺字段情形”。审查者自己在哲学副本上用草案配置插入带图＋教学＋细则的一题，只新增 1 个编号 FAIL（可由 --renumber 修复），说明草案配置本身够用。",
+   "evidence": "t4_health.py；phil_apply.py → rc=1，block_index 认块完整，media_match=true。"
+  },
+  {
+   "id": "m16",
+   "title": "soffice 粗查在云端做不了（环境限制，回执说法属实）",
+   "detail": "云端只装了 libreoffice-core，没有 libreoffice-writer，连 .txt 都报 'source file could not be loaded'。“soffice 能转 PDF”这一验收项需回本地验证。"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "验收1 真实新题：3 道带图或表的漏收候选插入必修三副本，链路（--renumber）后 bh.run_health 不新增 FAIL",
+   "met": true,
+   "evidence": "重跑 T1a/b/c 均 new_FAIL=0，--renumber 成功（numbering 7、method_counts 1、keepnext 0）"
+  },
+  {
+   "criterion": "验收1 未点名段落不变",
+   "met": true,
+   "evidence": "unchanged.py 独立比对：父稿与输出的段落 C14N 序列只有一处连续 insert（T1a 161–173、T1b 126–139、T1c 126–134），其余 ZIP 成员逐字节相同"
+  },
+  {
+   "criterion": "验收1 图/表在输出中存在且关系正确",
+   "met": true,
+   "evidence": "probe_out.py：T1a 新图 word/media/image61.png 在包内，rId87 类型为 image，Content_Types 已覆盖扩展名，docPr 176 不冲突；T1b 表格存在（tables_match）。但工具自己的 rel 复核是死代码，见 B2"
+  },
+  {
+   "criterion": "验收1 按样板题块复制样式（任务说明第3条核心要求）",
+   "met": false,
+   "evidence": "B1：三道题的材料/设问段整段加粗深蓝并带 keepNext，教学段整段加粗，rows 表格整表加粗"
+  },
+  {
+   "criterion": "验收1 3 道都带图或表（至少 1 图 1 表，优先 DOCX 原件）",
+   "met": false,
+   "evidence": "T1c 为纯文字题；只有 T1a 带图（DOCX 原件）、T1b 带表（PDF 原件，用 rows 生成），见 m14"
+  },
+  {
+   "criterion": "验收1 soffice 能转 PDF（粗查，云端渲染引擎）",
+   "met": false,
+   "evidence": "云端缺 libreoffice-writer，做不了，需本地（m16）；测试没有传 --render-check"
+  },
+  {
+   "criterion": "验收2 金标回归：删 B0005（图）/B0003（表）后重插，段落文字流、图片字节、表格行列与文字一致，格式差异逐处列出并判断",
+   "met": false,
+   "evidence": "B3：T2a 位置变了，整篇文字流不一致；格式差异没有列出（实际 T2a 有 4 处 pPr、8 处 run 差异，T2b 有 1 处、6 处）。图片字节一致、T2b 表格文字一致，这两项成立"
+  },
+  {
+   "criterion": "验收3 负例：父稿 SHA 错、锚点 0/多命中、样板找不到、原件缺图/缺表、图片损坏、输出落书稿/审阅入口/题库/Skill、冻结册 → 全拒、不留输出、退出码正确",
+   "met": true,
+   "evidence": "重跑 T3a–k 全部 PASS；审查补测：输出落 00_必修三最新审查稿、00_共同资料/原材料、云端、C 根目录、C/回执，均 rc=3 且无残留；冻结册 check 模式可跑（rc=1）。例外：method_end 多命中不中止，见 M3"
+  },
+  {
+   "criterion": "验收4 其他书（哲学草案配置）check 跑通并在副本上写入 1 题",
+   "met": true,
+   "evidence": "T4a/T4b PASS；审查者用草案配置在哲学副本上插入带图题，结果 rc=1，只新增 1 个编号 FAIL，block_index 认块完整。原测试偏弱，见 m15"
+  },
+  {
+   "criterion": "共同约定：只读承诺、Skill 无改动、SK 无 __pycache__",
+   "met": true,
+   "evidence": "baseline_guard exit 0（3468 个文件无变化，skill_pycache 为空）。但仓库根目录遗留测试产物，见 M6"
+  },
+  {
+   "criterion": "共同约定：Python 3.9 兼容（vermin）",
+   "met": true,
+   "evidence": "两个文件均无 violation"
+  },
+  {
+   "criterion": "共同约定：退出码 0/1/2/3、中文提示、无 traceback",
+   "met": true,
+   "evidence": "负例退出码正确，错误提示为中文。瑕疵：--renumber 失败退出 0、health 异常退出 0，见 m2、m5"
+  },
+  {
+   "criterion": "共同约定：--report 字段（tool/version/mode/inputs 路径＋SHA/profile/summary/明细），过 guard_write",
+   "met": false,
+   "evidence": "apply 报告缺 summary，缺插入单与原件 SHA（m4）；guard_write 已正确使用"
+  },
+  {
+   "criterion": "共同约定：复用 bh/block_index/docx_lib/apply_patch，不另写识别逻辑",
+   "met": true,
+   "evidence": "题块、区位用 ap.zones_of/bh.walk；段落构造、词表判断用 ap；写出为 write_docx 的等价薄封装"
+  },
+  {
+   "criterion": "共同约定：精简 ≤1200 行",
+   "met": false,
+   "evidence": "1490 行，回执已说明原因（m8）"
+  },
+  {
+   "criterion": "共同约定：测试纪律（测试内前后跑 baseline_guard）",
+   "met": false,
+   "evidence": "M7"
+  }
+ ],
+ "probe_files": {
+  "dir_copy": "审查/block_insert_r1/（探针脚本副本与输出；脚本写出路径指向云端临时区，本地重跑需改路径）",
+  "scratch": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r1",
+  "key_outputs": [
+   "审查/block_insert_r1/fmt_block_output.txt",
+   "审查/block_insert_r1/gold_cmp3_output.txt",
+   "审查/block_insert_r1/adv_tables_result.json",
+   "审查/block_insert_r1/rerun_tests.log",
+   "审查/block_insert_r1/baseline_guard.log"
+  ]
+ },
+ "summary": "重跑测试 18/18 通过，真实文件未变，vermin 通过，未点名段落确实没有被改。但有 3 个 blocker：(B1) 默认样式复制会把【题目】标签的加粗深蓝和 keepNext 套进每段材料/设问，教学段和 rows 表格也整段/整表加粗，三道真实新题与金标回归全部中招，测试不查格式所以没发现；(B2) 写后 rel 复核因命名空间写错而从不生效，从原件复制带超链接的表格时，r:id 被静默改绑到 endnotes 和图片关系上，退出码仍为 0；(B3) 金标回归 T2a 插回的位置与原稿不同，没有比较整篇文字流，也没有列出格式差异。另有 7 个 major：表内 docPr 冲突、block_index 复核不中止、method_end 多命中不中止、title 和 rows 不过词表、报告缺“需本地核图”和 anchor→inline 标记、仓库根目录遗留 insert_table_q.json、run_tests 不跑 baseline_guard。"
+}

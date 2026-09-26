@@ -1,0 +1,5 @@
+rc= 0 out_exists= True 
+ORIGINAL book para 933 font ('Songti SC', 'explicit')
+OUTPUT para 933 shape plain font ('Songti SC', 'explicit') “中国式现代化是干出来的，伟大事业都成于实干。”
+OUTPUT para 943 shape plain font ('Kaiti SC', 'style-default') “中国式现代化是干出来的，伟大事业都成于实干。”
+OUTPUT para 944 shape stem font ('Songti SC', 'explicit') 结合材料，综合运用所学，谈谈你对这一观点的理解。

@@ -1,0 +1,250 @@
+{
+ "tool": "placement_suggest.py",
+ "round": "r3",
+ "reviewer": "claude-cloud 子代理（Opus，对抗审查，非负责人，只写候选目录）",
+ "date": "2026-09-25",
+ "reviewed_files": [
+  {
+   "path": "placement_suggest.py",
+   "lines": 1358,
+   "sha256": "ca3390109b93f26a891da796031defd53b31973b8018f20f2c7d5cb16fd1a2d2"
+  },
+  {
+   "path": "run_tests_placement_suggest.py",
+   "lines": 1294,
+   "sha256": "bf46710780edde216655df80aa3f80f4438b5110ba4105d08045aa36eb5efc37"
+  },
+  {
+   "path": "回执/placement_suggest_返修_r2.json",
+   "note": "文件 SHA 与回执 files 自述一致"
+  }
+ ],
+ "verdict": "FAIL",
+ "verdict_reason": "0 blocker，3 major。r2 的四个 major 中，M2-r2（设问守卫与引用块）、M3-r2（--md 查已入书）、M4-r2（锚点错位）已核实修好：锚点端到端 121/121 落点正确，before_block 与选择区之间没有夹段，守卫 123 次命中都在真设问句上。M1-r2 只修好一半：假阳性一侧已基本解决，但 E1 节名覆盖仍有缺口，一批带逐点分值、题库索引也写“已匹配正式材料”的主观题仍被判“按规则不收”；回执说“假阴 0”，所用的测试扫描复用了工具自己的标题正则，按构造就看不到这类漏判。另有两项新 major：一是重复入书检测只认题键，已知错号重卷（2025/2024 海淀期中）的题用 --key 查询时退出 0、无任何提示，最像题块就是书里那道同题；二是返修回执对 7b 用例写了一段并不存在的修改与验证。五项验收的数字本身核实成立。",
+ "tests_rerun": {
+  "command": "python3 run_tests_placement_suggest.py",
+  "result": "79 条：PASS 79 / SKIP 0 / FAIL 0，用时 112.2s，退出码 0（日志：审查/placement_suggest_r3/rerun_tests.log）",
+  "numbers_reproduced": "十题（默认参数）前1 5/10、前3 6/10；全书留一（默认）前1 80/690、前3 184/690；调参后留一 前1 76/690、前3 183/690；哲学草案 前1 3/12、前3 7/12——与回执一致",
+  "discrepancy": "调参网格最优组在调参集上是 hit1=11/40、hit3=22/40（三个不同 PYTHONHASHSEED 下结果一致，见 probe_tune_determinism.log）；回执 tests[] 写的是 12/40，这个数字过时"
+ },
+ "adversarial_probe": {
+  "dir": "审查/placement_suggest_r3/（探针脚本、日志、CLI 探针 adv_cli_r3.sh/.log）",
+  "cli_B01_B21": "冻结册 + --out 退出 3，未落盘；冻结册不写时只读可跑，退出 0；--report 指向 构建/ 下软链（目标为 云端/同步清单.json）被守卫拒绝，退出 3，目标 SHA 未变；目标已存在、输出目录不存在、--out 后缀不对 → 均退出 3；负例全部中文提示、无 traceback；构建/ 无 .tmp 残留；SK 下无 __pycache__。问题：--params agg_top_k=2.5 报“内部错误：slice indices must be integers…”（英文）；ngram_sizes=[0]、bm25_k1=-1、agg_mix=5、未知 weights 键都被静默接受（见 m4）",
+  "e2e_anchor": "对当前 block_insert.py（本审查期间 10:38 被另一会话改过，sha 37b89f51…）重跑：122 组中 121 个唯一锚点全部精确落点，1 个不唯一的组确实 Abort；3 个 before_block 重定向与选择区之间没有夹段（probe_before_block_gap.log）",
+  "eval_integrity": "同题键剔除核实：746 块都有题键，keys_all 只有 KEY 与 KEY(n) 两种写法，matching_block_idxs 全覆盖；书内没有“同题异键”的孪生块（0 个在书题键在别的键的题块里有 ≥60% 3-gram 包含），所以留一评估没有经孪生块自命中的泄漏（probe_twin_leak.log）",
+  "e1_audit": "全题库主观题 467 道，与题库 indexes/rubric_links.csv 交叉对照（probe_e1_vs_index.log）：(索引已匹配正式材料, 工具判有E1) = 237；(否, 否) = 151；(否, 是) = 73（抽查基本都是索引过时、MD 有明写的 E1 节）；(是, 否) = 6",
+  "guard": "跨模块守卫 123 次命中，命中句都是真设问句，没有材料句误触发（probe_guard_sentences.log）"
+ },
+ "blockers": [],
+ "majors": [
+  {
+   "id": "M1-r3",
+   "title": "E1 漏判仍在：题库里三种“正式评分”节名工具不认，带逐点分值、索引写“已匹配正式材料”的主观题被判“按规则不收”；回执的“假阴 0”来自同一正则的自检，按构造就测不到",
+   "detail": "E1_HEADER_RX 只认标题含 E1|正式评分|阅卷细则|评分细则|评标。题库还有这几种写法：“## 来源角色：OFFICIAL_ANSWER_AND_SCORING”（BJ-2024-DC-ERMO 全卷 6 个 MD）、“## 评分材料（同卷正式材料·P…；仅本题/按小问独立配对）”（BJ-2024-FT-ERMO 全卷）、“## 详细题级评分主载体（S4b2073bcc9e2）”（BJ-2024-DC-YIMO 全卷 21 个 MD，MD 写明“S4 已独立裁定为本卷详细题级评分主载体…S7 不能替代 S4 的逐题评分内容”）。这些节下都有逐点分值，但工具找不到任何候选标题，e1_present=False，给出“主观题未找到正式评分细则（E1）：按规则候选‘不收’”并退出 1。确定漏判：BJ-2024-DC-ERMO-Q17、Q19（索引 pair_status=已匹配正式材料；MD 有“Q17(1)原阅卷来源：理念1分；生态改造/环境1分；…选3项3分…”）；BJ-2024-FT-ERMO-Q18（MD 写“已按小问接入同卷正式评分材料 P20–P60，已经另一工位独立复核、题库线主控合入共享题库”，正文有“基本正确或准确，5分；略有瑕疵，4分…”）。很可能漏判：BJ-2024-DC-YIMO-Q16–Q21（S4 有“是何（2分）…影响（2分）…措施(3分)”），其中 Q17、Q18 已在书中（B0452/B0631/B0722、B0643/B0657）。BJ-2024-DC-ERMO-Q21（书中 B0078）的索引同样是“已匹配正式材料”；回执把它列为按“含E3一律排除”处理的待人工判题，但它的上级节 OFFICIAL_ANSWER_AND_SCORING 根本没进候选。回执 M1-r2 说“假阴从10降到0”，依据是 run_tests 的 _bank_e1_scan；该扫描判 FN 用的 POS 正则与工具的 E1_HEADER_RX 一字不差，只能发现“工具认得标题但判错正文”这一类，这一类节名漏认按构造测不到。规格原话是 E1 节“节名按实际 MD 核对，不同卷格式不一”，而“主观题无正式细则→按规则不收”是规格点名的过滤，漏判会让主代理把有 E1 的题当成不收。",
+   "evidence": "CLI：--key BJ-2024-DC-ERMO-Q17 → exit=1，“注意：主观题未找到正式评分细则（E1）：按规则候选‘不收’”；Q19 同样；--key BJ-2024-FT-ERMO-Q18 → exit=1，同一 flag；--key BJ-2024-DC-YIMO-Q18 → exit=1，同一 flag，另有“已在本书落位：B0643、B0657”（cli_e1_fn.log）。交叉表：索引“已匹配正式材料”但工具判无 E1 的共 6 个（DC-ERMO-Q17/Q19/Q21；FT-YIMO-Q17/Q19/Q20 的 MD 明写 N/A，属索引过时，不算）（probe_e1_vs_index.log）。节名统计：OFFICIAL_ANSWER_AND_SCORING ×6、评分材料（同卷正式材料…）×6、详细题级评分主载体 ×21（含选择题 MD）（probe_unrecognized_formal_headers.log）。run_tests_placement_suggest.py 第984行 POS 与 placement_suggest.py 第147行 E1_HEADER_RX 相同。",
+   "fix_hint": "把上面三种节名纳入候选（或改为：标题含“评分/细则/SCORING”且不命中排除词，再判正文），并参考题库机读字段：身份节或读取指引里的“采用评分小节/正式评分优先读取”，以及 indexes/rubric_links.csv 的 pair_status=已匹配正式材料，作为“有 E1”的第二信号；两者冲突时加 flag，不静默。FN 回归不能再用工具自己的标题正则，改用独立信号（索引 pair_status，或“任一节正文 ≥3 个分值标记且首行无否定状态语”），并把 DC-ERMO-Q17/Q19、FT-ERMO-Q18 写进具名回归。"
+  },
+  {
+   "id": "M2-r3",
+   "title": "重复入书检测只认题键：已知错号重卷（2025/2024 海淀期中）的题用 --key 查询时退出 0、无任何提示，最像题块正是书里那道同题；无题键兜底只比第一候选，全书有 0.93 包含度的同题也漏报",
+   "detail": "规格与流水线把“是否已入书”放在第 5 步核（incremental-question-intake：重复执行要能识别已导入），回执 replaces 也写“人工核对新题题键是否已经入书——现在 --key/--keys-file/--md 三种输入入口都会查重并提示”。但查重只看 base_key：题键不同、题面相同的“串题”，工具不查。题库里恰好有项目已知的错号重卷：BJ-2025-HD-QIZHONG 与 BJ-2024-HD-QIZHONG 是同一张卷（任务文档与 exam_register 的验收都点名了这对卷）。书里已有 2024 版的题；用 --key 查询 2025 版的 Q7/Q9/Q10/Q18/Q19/Q21，6 题都退出 0、flags 为空，第一候选的“最像题块”就是书里的同题。工具本来有 3-gram 包含度的“疑似题库重复”检查（ngram_containment），却只在 base_key 为 None 时才跑；即便跑，也只和 candidates[0] 的最像题块（按 --max-chars 截断的切片）比，不是和全书比。把 141 道在书主观题去掉题键后当无键 --md 喂入，只有 82 道触发提示；BJ-2021-BJ-GAOKAO-Q21 与它书中本块的包含度是 0.93、BJ-2020-BJ-GAOKAO-Q19 是 0.68、BJ-2023-BJ-GAOKAO-Q18 是 0.60，都因为第一候选是别的题而漏报。照工具输出操作，会把同一道题再插一遍（任务说明点名要核“重复判定是否区分串题”）。",
+   "evidence": "CLI：--key BJ-2025-HD-QIZHONG-Q9 --format md → exit=0，无“注意”行，“最像题块：选择例题 14　2024海淀期中第9题（B0347…）”；--key BJ-2025-HD-QIZHONG-Q19 → exit=0，无“注意”行，“最像题块：例2　2024海淀期中第19题（7分）（B0584…）”，而 BJ-2024-HD-QIZHONG-Q19 在书中有 5 块（cli_twin.log）。全题库不在书的 1345 题里，题面 ≥80% 包含于某个异键书中题块的 6 题，全是 BJ-2025-HD-QIZHONG（probe_crosskey_dup_bank.log）。无键兜底漏报 59/141（probe_dup_fallback_trunc.log）。代码：placement_suggest.py 第996–1003行（if not qinfo.get('base_key') and not exclude … candidates[0]['sample_slice']）。",
+   "fix_hint": "疑似重复检查对所有输入都跑（不只无题键时），且和全书题块的未截断正文比（可只对 BM25 前 N 块算 3-gram 包含度，控制耗时）；阈值命中时加 suspected_duplicate flag 并退出 1，注明对方题块 id、题键与包含度。回归用例用 BJ-2025-HD-QIZHONG-Q9/Q19 与 BJ-2021-BJ-GAOKAO-Q21（去键）。"
+  },
+  {
+   "id": "M3-r3",
+   "title": "返修回执对 m8/7b 的处理与验证写的是一次并不存在的修改：7b 的细则没改，也没有断言 e1_present=True",
+   "detail": "回执 m8 handling 写：“7b 的‘细则’从12字改成足够长（明确超过 e1_present 的15字门槛）并断言 e1_present=True，不再是碰巧测到‘无细则’分支。”verification 写：“7b 用例见 group7，细则改为‘①制度设计角度2分 ②实施成效角度2分 ③各方主体作用2分，合计不超过6分’（20字）……已在测试断言里核对是 e1_present=True 而不是因无细则退出1”。实际上 run_tests_placement_suggest.py 第921–925行的 7b 仍是“细则：\\n①…2分 ②…2分 ③…2分”（去空白后 12 字，低于 15 字门槛），断言仍只有 code in (0,1) and '##' in out，没有任何 e1_present 断言。回执引用的那串 20 字细则只出现在 M3b 合成用例（第576行），与 7b 无关。本轮重跑，7b 的输出里就有“注意：主观题未找到正式评分细则（E1）”，走的仍是无细则分支。这不是代码缺陷，而是回执失实：本地主代理会据此以为 --text 入口的“有细则”分支已有覆盖，其实没有。连同 tests[] 里过时的调参 12/40（实为 11/40），回执中几处自述没有对照实跑结果核过。",
+   "evidence": "sed -n 918,926p run_tests_placement_suggest.py；load_question_from_text 解析 7b 原文得到 rubric='①…2分 ②…2分 ③…2分'，e1_present=False，去空白长度 12（probe_test_validity.log）；rerun_tests.log：“PASS 7b --text 入口跑通 - exit=1 … 注意：主观题未找到正式评分细则（E1）：按规则候选‘不收’”；回执 issues[m8] 的 handling 与 verification 原文。",
+   "fix_hint": "真的改 7b：给出够长的细则，并断言解析出的 e1_present=True、flags 里没有 no_e1，另加一条无细则分支用例；同时更正回执 m8 的描述与调参数字，回执里的数字一律取本轮实跑的 test_results.json。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "m1",
+   "title": "--format md（给模型读的输出）在 method_end/before_block 候选上打印 last_b 的标题，并标“锚点唯一”，但这个标题本身不唯一",
+   "detail": "format_md 的插入点行固定打印 ins['block_title']（last_b 标题）与 anchor_unique。锚点改成 method_end/before_block，恰恰是因为 last_b 标题在全书不唯一；这时 Markdown 写“锚点‘例题 4　2026海淀期中第20题’（B0493，锚点唯一）”，模型照抄成 after_block.title_contains，block_insert 会因命中 2 块而 Abort。好在是安全失败，频率约 4/1029 个生产候选。",
+   "evidence": "probe_md_anchor.log：BJ-2023-XC-ERMO-Q20 的候选 anchor={method_end: 考法1…/03 司法}，MD> “插入点：考法末尾，锚点‘例题 4　2026海淀期中第20题’（B0493，锚点唯一）”，该标题 _title_hit_count=2",
+   "fix_hint": "Markdown 直接打印 anchor 字典（或它的 title_contains/method_contains），last_b 只作“插在其后”的说明。"
+  },
+  {
+   "id": "m2",
+   "title": "没有给 template_block 字段，也不核 most_similar_block 标题是否唯一（r1 M5 的残留）",
+   "detail": "规格要求“输出字段要能直接被 block_insert 的插入单引用（anchor/template_block 的 title_contains）”。r1 M5 已点名“most_similar_block 的标题（可作 template_block）同样有重名”，返修只处理了 anchor。生产口径 343 题 × 前 3 候选 = 1029 个候选里，有 22 个（其中第一候选 8 个）的 most_similar_block 标题不唯一，照抄进 template_block 会 Abort（安全失败）。",
+   "evidence": "probe_template_unique.log：“most_similar_block title NOT unique: 22 of which rank1: 8”；候选字段中没有 template 键",
+   "fix_hint": "增加 template_block: {title_contains} 与 template_unique；不唯一时换组内最像且标题唯一的块，或如实标注。"
+  },
+  {
+   "id": "m3",
+   "title": "E1 节择优在“结论对、选的节不对”的情况下把非 E1 文字当 rubric 字段，并且不读题库的机读评分指引",
+   "detail": "同层级多候选时按“层级最深、同层取文档序在前”择优：BJ-2024-XC-YIMO-Q16–Q19 取了“参考答案层（来自正式评分材料中的答案键或答案段）”（正文写“不构成正式题级评分细则（非E1）”），没取后面真正的“正式评分材料（角色：正式评分材料）”；BJ-2023-HD-QIZHONG-Q19 取了“评标截图标题与实际归属的核对说明”；BJ-2022-BJ-GAOKAO-Q18 取了“本源 p3 的议事协商题面结构（E1 来源层…）”（是题面结构），不是“p4 评分细则”。这几题 e1_present 碰巧都对，但相似度用的 rubric 字段是错的文字。题库还有“正式评分优先读取/采用评分小节”的机读指引（24 个 MD），工具只读“采用题面小节”，不读这一条。",
+   "evidence": "probe_e1_audit.log、probe_rubric_directive.log",
+   "fix_hint": "有机读评分指引时按它取；排除“正文首尾声明非E1”的候选；同层多候选时优先标题含“正式评分/细则”且正文分值标记多的那个。"
+  },
+  {
+   "id": "m4",
+   "title": "--params 校验不完整：浮点 agg_top_k 报英文“内部错误”；无意义取值被静默接受",
+   "detail": "agg_top_k=2.5 通过数字校验，随后在切片处报“内部错误：slice indices must be integers or None…”（英文，退出 2）。ngram_sizes=[0]、bm25_k1=-1、agg_mix=5、weights 里的未知键 bogus 都被接受，照常出分，退出 0/1。",
+   "evidence": "adv_cli_r3.log B07–B10",
+   "fix_hint": "agg_top_k 要求正整数，ngram_sizes 元素 ≥1，agg_mix∈[0,1]，bm25_k1>0、bm25_b∈[0,1]，weights 只接受 material/ask/rubric/method，其余转中文 InputError。"
+  },
+  {
+   "id": "m5",
+   "title": "ask 字段仍只含最后一小问（守卫已改，相似度字段没改）",
+   "detail": "r2 M2 的标题是“设问提取不完整：只取最后一小问”。返修只把跨模块守卫改成逐句查，split_ask 仍从末尾切，前置小问的设问落进 material 字段。123 道有 ≥2 个小问的主观 MD 里，107 道的 ask 字段只含 ≤1 个小问，例如 BJ-2023-CY-YIMO-Q20 的 ask 是表格尾行加“（2）…”。书侧题块也用同一启发式，影响是对称的，命中率影响有限，但规格写的是“设问（题面里的设问句与小问）”。",
+   "evidence": "probe_ask_field.log",
+   "fix_hint": "ask 字段改用 ask_like_sentences(stem_full) 的并集（书侧同步），或至少在回执 known_limits 写明。"
+  },
+  {
+   "id": "m6",
+   "title": "测试的有效性缺口",
+   "detail": "（a）t_m9_pool_disclosure 断言 len(no_md) >= 0，恒真；（b）t_M1r2_bank 的 FN 判定复用工具自己的标题正则（见 M1-r3）；（c）t_m1_anchor_shape 只要求 30 组里 ≥1 个能解析（由 t_m4r2_e2e 全量覆盖，问题不大）；（d）7b 见 M3-r3；（e）run_tests 顶层直接 import 候选目录里的 block_insert.py，缺失时整份测试 ImportError，而不是 SKIP；而且该文件正在被另一会话并行修改（本审查期间 10:38 改过），测试结果依赖它的当前版本；（f）十题日志只打印排名，不打印真实考法名称（test_results.json 里也没有）。",
+   "evidence": "run_tests_placement_suggest.py 第58、1105–1117、1213–1219、984行；C/block_insert.py mtime 10:38:55",
+   "fix_hint": "去掉恒真断言；FN 回归改用独立信号；block_insert 导入失败时相关用例记 SKIP；十题行补打印真实考法标签。"
+  },
+  {
+   "id": "m7",
+   "title": "回执与实跑不符的数字",
+   "detail": "tests[] 的“调参网格最优 hit1=12/40”实为 11/40（结果确定，三种哈希种子一致）；vermin 条目的 seconds 为 null。",
+   "evidence": "probe_tune_determinism.log；rerun_tests.log 3b 行",
+   "fix_hint": "回执数字一律从本轮 test_results.json 生成。"
+  },
+  {
+   "id": "m8",
+   "title": "行数 1358，超过约定 9 的 900 行上限（回执已说明原因）",
+   "detail": "去掉空行和注释是 1095 行。文件里有大量“返修 Mx/rx”过程叙述（docstring 与行内注释），可以挪到回执；truncate_slice 复制了 block_index.extract_text 的截断逻辑（约 6 行），与约定 9“不复制 block_index 逻辑”稍有出入。",
+   "evidence": "wc -l；placement_suggest.py 第804–810行，对照 block_index.py 第1169–1174行",
+   "fix_hint": "返修历史移出代码；截断逻辑可薄封装 extract_text 的同一段，或注明是同口径复制。"
+  },
+  {
+   "id": "m9",
+   "title": "小瑕疵",
+   "detail": "--keys-file 出错提示写“（来自 --keys-file 第 'not a key' 行）”，给的是行内容而不是行号；--key 小问 #abc 这类非数字写法静默接受（小问本就不裁剪，见 known_limits）；Markdown 样例切片只预览 200 字，完整切片要回 JSON 看。",
+   "evidence": "adv_cli_r3.log B15、B16",
+   "fix_hint": "用 enumerate 给出行号；小问只接受数字。"
+  },
+  {
+   "id": "m10",
+   "title": "范围外观察（不是本工具的问题）",
+   "detail": "C/__pycache__/ 下有 block_insert.cpython-311.pyc、run_tests_block_insert.cpython-311.pyc（10:28，block_insert 测试留下）；本工具及其测试这一轮没有产生 pyc，SK 下也没有。本审查自己的探针曾在 审查/placement_suggest_r3/ 下生成 __pycache__，已删除。",
+   "evidence": "ls -la --time-style=full-iso C/__pycache__",
+   "fix_hint": "提请 block_insert 线处理。"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "验收1：从必修三第52批取 10 道已落位题“假装新题”，选题规则固定可复现，剔除同题键全部题块，报告真实考法排名与前1/前3命中率，多考法任一命中并注明",
+   "met": true,
+   "evidence": "重跑：seed=20260925 分层（主观4/选择3/专题3），前1 5/10、前3 6/10，0 题型不一致；每题打印名次与“该题键落在N个考法”。剔除核实：matching_block_idxs 覆盖 key 与 keys_all（KEY/KEY(n) 两种写法），书内没有异键孪生块。不足：日志没有打印真实考法名称（m6f）"
+  },
+  {
+   "criterion": "验收2：全书留一（全部有题库 MD 的题块，同样剔除同题键），总体与按题型前1/前3，作对照",
+   "met": true,
+   "evidence": "690 块：前1 80、前3 184；choice 34/82（共202）、subjective 32/68（共345）、topic 13/32（共133）、topic_case 1/2（共10）；题型不一致剔除 13，结构不可达 7 仍计入分母，因无题面进不了评测池 18 个题键（42 块），均已披露；无孪生块泄漏（probe_twin_leak.log）"
+  },
+  {
+   "criterion": "验收3：调参只在与 10 题不相交的调参集上做，写明划分，报告用调好后的固定参数",
+   "met": true,
+   "evidence": "调参集 40 题（seed=20260926，先剔除十题），重叠为空，网格 20 组；最优 hit1=11/40、hit3=22/40（回执写 12/40，过时，见 m7）；调后参数：十题 5/10、6/10，留一 76/690、183/690；出货用默认参数，已披露"
+  },
+  {
+   "criterion": "验收4：至少一本其他书（哲学/选必一草案配置）跑通出候选，命中率能算就报",
+   "met": true,
+   "evidence": "哲学 R10（philosophy.draft.json）1119 块，CLI 退出 0 出候选；抽样 12 题：前1 3/12、前3 7/12（草案配置，仅供参考）"
+  },
+  {
+   "criterion": "验收5：负例（题键不在题库、书稿无题块、配置缺字段）→ 退出 2，中文提示",
+   "met": true,
+   "evidence": "5a/5b/5c 重跑均退出 2、中文提示、无 traceback；另测 --profile 不存在、profile 缺大部分字段、--docx 是目录、坏 MD、坏题键：均退出 2、中文提示"
+  },
+  {
+   "criterion": "规格过滤：主观题无正式细则 → 标“按规则不收”（E1 判定按实际 MD 节名，不同卷格式不一）",
+   "met": false,
+   "evidence": "假阳一侧基本解决；但三种 E1 节名（OFFICIAL_ANSWER_AND_SCORING / 评分材料（同卷正式材料…）/ 详细题级评分主载体）不认，DC-ERMO-Q17/Q19、FT-ERMO-Q18 等有逐点分值（且索引已匹配正式材料）的题被标“不收”（M1-r3）"
+  },
+  {
+   "criterion": "规格过滤：设问限定其他模块（stem_module_guard）→ CANDIDATE“不作本册例题”",
+   "met": true,
+   "evidence": "守卫逐句查全部设问句，全库 123 次命中都在真设问句上，没有材料句误触发（probe_guard_sentences.log）；前置小问与引用块漏报已修"
+  },
+  {
+   "criterion": "输出：前 3 候选（部分/一级/二级/考法、分数、贡献词、最像题块、相邻样板 id/标题/p_range/body_range/题型、插入点、样例切片），能被 block_insert 直接引用（anchor/template_block）",
+   "met": true,
+   "evidence": "字段齐；anchor 端到端 121/121 正确、1 个如实标不唯一。部分缺口：没有 template_block 字段，most_similar_block 标题有 22/1029 不唯一（m2）；Markdown 在 4/1029 处把不唯一的标题标成“锚点唯一”（m1）"
+  },
+  {
+   "criterion": "已入书/重复识别（incremental-question-intake；回执 replaces 自述三种入口都查重）",
+   "met": false,
+   "evidence": "同题键已入书能识别（--key/--keys-file/--md）；异键同题（BJ-2025-HD-QIZHONG vs 2024）退出 0、无提示；无键兜底漏报 59/141（M2-r3）"
+  },
+  {
+   "criterion": "约定：只读；--report/--out 过 guard_write；冻结册写模式立即拒绝、退出 3；失败不留半成品",
+   "met": true,
+   "evidence": "B01–B06：冻结 + --out/--report 退出 3、未落盘；软链指向 云端/ 被拒、目标 SHA 不变；已存在/目录不存在/后缀不对都退出 3；构建/ 无 .tmp 残留；guard 在装书前执行"
+  },
+  {
+   "criterion": "约定：退出码 0/1/2/3；中文提示；无 traceback（--debug 才打开）",
+   "met": true,
+   "evidence": "adv_cli_r3.log 21 个探针 traceback_lines 全为 0；唯一英文残留是 --params agg_top_k=2.5 的“内部错误：slice indices…”（m4）"
+  },
+  {
+   "criterion": "约定：--report 含 tool/version/mode/inputs(路径+SHA)/profile/summary/逐条明细",
+   "met": true,
+   "evidence": "test_good_report.json 顶层：tool/version/mode/generated_at/summary/inputs/profile(含 sha256)/params/results；inputs 含 docx+sha、题源 MD path+sha、keys_file/params_file path+sha"
+  },
+  {
+   "criterion": "约定：复用 docx_lib/batch_health/block_index，不另写一套识别；SK 定位顺序；dont_write_bytecode 在导入 SK 之前",
+   "met": true,
+   "evidence": "题块来自 block_index.walk/finish_blocks，锚点核对用 ap.zones_of（与 block_index 标题序列 746=746 一致）；_find_skill_dir 顺序符合约定；第80行在 import 之前。小的复制见 m8"
+  },
+  {
+   "criterion": "约定：Python 3.9 兼容（vermin）",
+   "met": true,
+   "evidence": "vermin -t=3.9- --no-tips --eval-annotations --violations：Minimum required versions: 3.7，无违规；另用 ast.parse(feature_version=(3,9)) 解析两个文件均通过（云端没有 3.9 解释器）"
+  },
+  {
+   "criterion": "约定：行数 ≤ 900，超出须在回执说明",
+   "met": false,
+   "evidence": "1358 行（去注释 1095），回执已说明原因（m8，minor）"
+  },
+  {
+   "criterion": "测试纪律：自包含可重跑、逐条 PASS/FAIL 与用时、失败数为退出码、前后 baseline_guard",
+   "met": true,
+   "evidence": "重跑 79/79 PASS，112.2s，退出 0；有几处恒真或自证式断言（m6），7b 与回执自述不符（M3-r3）"
+  },
+  {
+   "criterion": "真实文件未变（baseline_guard）与 SK 下无 __pycache__",
+   "met": true,
+   "evidence": "审查结束时 baseline_guard check 退出 0：files 3468，changed/removed/added/skill_pycache 全空；find .claude -name __pycache__ 为空；git status 显示候选目录外无变更"
+  }
+ ],
+ "r2_items_recheck": {
+  "M1-r2": "部分修好：37 例假阳基本清掉（审查按索引交叉与全文否定语复核，没有找到新的“判有 E1 但全文无 E1”的题，只有 m3 那种结论对、选节错的情况）；BJ-2024-HD-QIZHONG-Q16–Q21 假阴已修；但节名覆盖类假阴仍在，且 FN 自检是同一正则 → M1-r3",
+  "M2-r2": "跨模块守卫与引用块：已修（守卫 123 次命中无材料误报）；ask 相似度字段仍只含末小问 → m5（minor）",
+  "M3-r2": "已修：--md 能从文件名识别题键并查已入书；无键兜底的覆盖不足并入 M2-r3",
+  "M4-r2": "已修：对当前 block_insert 端到端 121/121，3 个 before_block 重定向与选择区之间无夹段"
+ },
+ "baseline_guard": {
+  "command": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": "退出 0：{files: 3468, changed: [], removed: [], added: [], skill_pycache: []}（审查结束时 10:47 UTC 跑；测试套件前后两次也为 PASS）"
+ },
+ "vermin": {
+  "command": "vermin -t=3.9- --no-tips --eval-annotations --violations placement_suggest.py run_tests_placement_suggest.py",
+  "result": "Minimum required versions: 3.7；Incompatible versions: 2.x；无 violations"
+ },
+ "pycache": "SK（.claude/）下 0 个 __pycache__；C/__pycache__ 里只有 block_insert 测试 10:28 留下的 pyc，不是本工具的；审查探针自身的 __pycache__ 已删",
+ "what_is_fine": [
+  "五项验收的数字可复现，同题键剔除口径正确，没有孪生块泄漏；调参集与十题不相交，调参确定可复现",
+  "输出守卫、冻结册、原子写、退出码、中文提示都经对抗测试核实",
+  "锚点形状与 block_insert 一致，端到端落点全部正确",
+  "跨模块守卫的逐句检查不误伤材料句；具名无 E1 例外（3 张卷）口径正确",
+  "--report 字段齐全（含 profile 与各输入的 SHA）"
+ ],
+ "rerun_order_for_fix_round": [
+  "1. M1-r3：补三种 E1 节名，引入索引/机读指引第二信号；FN 回归改用独立信号并写入具名题",
+  "2. M2-r3：疑似重复检查对所有输入都跑、和全书未截断正文比；加 BJ-2025-HD-QIZHONG-Q9/Q19 回归",
+  "3. M3-r3：真实修改 7b 并更正回执 m8 与调参数字",
+  "4. minor：m1（Markdown 打印真实 anchor）、m2（template_block）、m4（--params 校验）、m6（测试断言），其余视时间处理",
+  "5. 重跑 run_tests、vermin、baseline_guard，确认 SK 无 __pycache__"
+ ]
+}

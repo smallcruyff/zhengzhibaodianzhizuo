@@ -1,0 +1,288 @@
+{
+ "tool": "block_insert",
+ "stage": "对抗审查 r3",
+ "reviewer": "claude-cloud 子代理（审查者，非负责人，只写候选）",
+ "date": "2026-09-25",
+ "verdict": "FAIL",
+ "targets": {
+  "block_insert.py": {
+   "lines": 2364,
+   "sha256": "1f1c7e25e22fe8d739e27f6ecf5cd9cbe251a97209f67028308ab045c87a6bf9",
+   "note": "与返修回执 r2 files[0] 一致，审查期间未变"
+  },
+  "run_tests_block_insert.py": {
+   "lines": 2197,
+   "sha256": "25a67d58a6e495e00c7cf53c60739c6bfe1e46ddf007f31b4084745f30ad63e6",
+   "note": "与返修回执 r2 一致"
+  },
+  "回执/block_insert_返修_r2.json": "ed1a4c0545ca9bfbac895334d73710b1baa24a30650297ed0585f820777a6b45（已读全文）"
+ },
+ "tests_rerun": {
+  "cmd": "cd C && python3 run_tests_block_insert.py",
+  "result": "55/55 PASS，EXIT=0，用时 8m55s（baseline_guard 测试前、测试后都通过）",
+  "log": "审查/block_insert_r3/rerun_tests.log；逐条明细 审查/block_insert_r3/test_results_rerun.json",
+  "note": "测试能复现回执结果。但以下三处说明 PASS 不能证明对应验收成立：①设问字体断言只检查能被工具自己的 _STEM_LEAD_RX 认出的段，与工具同一判据，属于循环验证，认不出的设问天然不在断言范围（R3-B1）；②金标 T2_tbl 的格式差异从 r2 时的 4 处涨到 25 处，测试只打印前 8 处，也没有断言；回执 r2 没有列出这些差异，也没有逐条判断（R3-M1）；③T4b 只插 1 段 source，被栏目硬判拦下（rc=2，不写出）也记 PASS，验收 4 要求的“在副本上写入 1 题”在测试里实际没有发生（R3-M2）。"
+ },
+ "baseline_guard": {
+  "cmd": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+  "result": {
+   "files": 3468,
+   "changed": [],
+   "removed": [],
+   "added": [],
+   "skill_pycache": []
+  },
+  "exit_code": 0,
+  "when": "全部重跑与探针结束后执行。另查：.claude 下没有 __pycache__。C 下有 1 个 __pycache__/placement_suggest.cpython-311.pyc，生成时间 12:01:16，与另一会话在 12:01:03 改写 placement_suggest.py 的时间吻合。本审查的探针与 block_insert 的测试都不导入 placement_suggest，所以不是 block_insert 产生的；它不是审查者的文件，审查者没有删。git status 显示候选目录之外没有新增文件"
+ },
+ "vermin": {
+  "block_insert.py": "Minimum required 3.8，无 violation（rc=0）",
+  "run_tests_block_insert.py": "Minimum required 3.7，无 violation（rc=0）",
+  "extra": "ast.parse(feature_version=(3,9)) 两个文件都能通过"
+ },
+ "sk_copy_run": "把 block_insert.py 拷进临时区的 SK 副本（skcopy/）后，check 能跑（rc=1，stdout 是 JSON summary），副本里没有生成 __pycache__；验证后已删除副本",
+ "r2_followup": {
+  "R2-B1": "顶层表格已修好。进程内对 83 份原材料 DOCX 的全部 245 张顶层表格调用 build_table_from_source（sim_raw_tables2.py）：243 张构建成功，2 张安全中止（文本框、svgBlip）；单元格段落的 pStyle/rStyle 都换成了样板带来的本书引用，tblStyle 按 (type,name) 映射。残留：嵌套表格不经过 sanitize/reformat，4 处嵌套 tblStyle 撞号（源 Table Grid/Normal Table 被绑到本书段落样式 heading 5/6），全部在 2025丰台二模细则里，列为 minor R3-m2",
+  "R2-B2": "部分修复。金标比对器现在按继承链比较有效字体，这一点真修好了；表格单元格段已从模板候选里排除，开场【题目】标签也不再被材料内【】标签借用（T1c 颜色断言属实）。但设问“宋体变楷体”只修好了能被 _STEM_LEAD_RX 认出的 79%，全书 453 个主观题宋体设问里有 94 个仍会变成楷体，测试断言与工具共用同一正则，属于循环验证，见 R3-B1。另外材料内【X】正文段在样板块里找不到同形状段时，会退化到设问段格式（宋体），见 R3-m1",
+  "R2-M1": "已修。第一道防线（style 必须在角色桶内）由测试覆盖。第二道防线（写后区位复核）回执说没有实测，审查者补测 probe_zone_leak.py：role=source+restore 的段落放在【思维链条】之后（题目材料样式不属于 source_style_reenter，bh.walk 判为 teaching 区），文字带 TODO。结果 rc=2，输出已删除，报告 wordlist_leak 写明 zone=teaching、命中工程标签 TODO；对照组不带工程词，rc=0。两道防线都成立",
+  "R2-M2": "已修（栏目缺失即 rc=2、删输出，T4b 报告 missing 五个栏目）。副作用是 T4b 从此不写出任何东西却仍记 PASS，见 R3-M2",
+  "R2-M3": "已修。审查者用 check --report 分别指向 构建/baseline_20260925.json、placement_suggest 与 exam_register 的旧报告，三者都是 rc=3，文件 SHA 和 mtime 不变（probe_report_guard.txt）；报告改为原子写出",
+  "R2-M4": "部分修复。以 B0003 为样板时，真实 DOCX 表格（海淀期中教师版第 5 表）的宽度、字体、表头加粗都正确（R2_M4 用例属实）。但引入两个新问题：①_template_row_fmt 只取样板每行“首格首段”，套到整行所有段落上；样板是“小标题段带 keepNext＋内容段”的表时，新表每个单元格段都带上 keepNext，表头的加粗和居中也丢了，金标 T2_tbl 差异从 4 处升到 25 处（R3-M1）；②整行 rPr 覆盖会抹掉有语义的 run 格式，真实题卷里填空用的下划线空格被删掉（R3-M3）。宽度等比缩放只在样板 tblW 为 dxa 时正确（R3-m4）",
+  "R2-m1": "已修（代码核对）",
+  "R2-m2": "未修，已写进 known_limits",
+  "R2-m3": "已修（rc=1，stderr 有提示；提示文字把 note 和 returncode 连在一起，显示成“loaded1”，属琐碎问题）",
+  "R2-m4": "未修，已写进 known_limits",
+  "R2-m5": "大部分已修。第 1491–1494 行注释仍说“check 模式可以做到和 apply 完全一样彻底的校验”，与实际不符，见 R3-m8",
+  "R2-m6": "部分修复：文件不存在、JSON 损坏、配置名不存在这三种情况已是中文提示；插入单类型错误（顶层是数组、title 是数字、like 是数组、width_cm 是字符串）仍然输出英文 Python 异常文字，退出码 2 正确、没有 traceback（probe_errors.txt）",
+  "R2-m7": "未修：2364 行，超出 1200 行目标 97%；含 383 行 docstring、139 行纯注释，另有约 129 行写的是返修过程（“R2-xx 修复”“实测踩过”）",
+  "R2-m8": "已修",
+  "R2-m9": "部分修复：顶层、insert、anchor、content、from 都做了未知键校验；runs 里的键不校验，例如 {'text':..,'bogus':1} 会被静默接受（probe_errors.txt “runs里未知键” rc=1）",
+  "R2-m10": "已修（测试属实）",
+  "R2-m11": "pic:cNvPr 已修，独立核对 b2m1、m1docpr 两个输出，cNvPr 与 docPr 一致（176/177/178）；wp14:anchorId 仍原样沿用原件",
+  "R2-m12": "情况变差：见 R3-M2",
+  "R2-m13": "已修",
+  "R2-m14": "未修（设计边界）",
+  "R2-m15": "维持可接受",
+  "R2-m16": "已修"
+ },
+ "blockers": [
+  {
+   "id": "R3-B1",
+   "title": "R2-B2 只修了一部分：设问段是否识别为“设问”，完全取决于正则 _STEM_LEAD_RX（要求以 结合/运用/根据/依据/针对 开头）。全书主观题里 94/453（20.8%）个宋体设问不符合这个开头，默认路径下即便以原块本身为样板，也会整段变成楷体。测试断言用的是同一个正则，属于循环验证，永远查不出来；回执却写“三处残留全部处理”",
+   "detail": "_para_shape 只有文字以设问引导词开头时才判为 'stem'。北京卷里大量设问以引语或背景句开头：“‘十五五’开局之年……”结合材料……、“中国式现代化是干出来的……”结合材料……、有人说……综合运用所学……、（2）从法治角度谈谈……、（3）如何更好地解决居民分歧……、以材料中的一个重要战略为例……、参考资料包，运用……、要求：观点鲜明……。这些段在全书都显式写了 Songti SC，工具却判为 'plain'，于是按块内材料段的多数格式（楷体，样式默认）造段。审查者做了两项实测。(1) 全书模拟（stem_selftemplate.py）：对 452 个主观题块里每个宋体非标签题面段，都用该块自己作样板（最有利情形），按默认路径调用 find_role_template 和 build_text_paragraph。结果：stem 形状 358 个全部正确；plain 形状 95 个中 94 个变成楷体。(2) 端到端（probe_stem_e2e.py）：以 例题 40　2026通州一模第21题（跨模块）为样板和锚点，apply 插入原书第 933 段的原文设问（原书显式宋体），输出第 943 段有效字体为 Kaiti SC（取自样式默认），rc=0；对照组“结合材料，综合运用所学……”在输出第 944 段是 Songti SC。反方向也有误判：8 个楷体材料/引导段因为以“运用/针对”开头被判成 stem，会被套上宋体（例如“运用《法律与生活》和《政治与法治》知识，完成下列任务。”，stem_coverage2.py）。测试方面，run_tests 的 _assert_stem_font_at 先用 bi._STEM_LEAD_RX.match 过滤段落，金标的 stem_diffs 也用 bi._STEM_LEAD_RX 选段，所以正则认不出的设问从来不在断言范围里；T1a/b/c 与金标 B0005/B0003 的设问又恰好都以“结合/运用”开头。bh 体检不查字体，--health 也拦不住。结论：“按相邻样板题块复制样式”这一核心要求，对约五分之一的真实设问形态仍不成立，而测试结构上无法发现。",
+   "evidence": "审查/block_insert_r3/stem_selftemplate.txt（Counter({('stem','ok'):358, ('plain','FLIP->Kaiti SC'):94, ('plain','ok'):1})，附前 30 例）；审查/block_insert_r3/stem_plain_list.txt（94 段原文清单）；审查/block_insert_r3/probe_stem_e2e.txt（ORIGINAL 933 Songti explicit → OUTPUT 943 Kaiti style-default；对照 944 Songti）；审查/block_insert_r3/stem_coverage2.txt（反向误判 8 例）",
+   "repro": "cd C/审查/block_insert_r3 && python3 stem_selftemplate.py && python3 probe_stem_e2e.py（common.py 中 WORK 指向任意临时目录）",
+   "fix_hint": "不要只靠开头正则认设问。可以用样板块自身的格式判断：块内同样式的 source 段按有效字体分成“宋体组”（设问、要求）和“楷体组”（材料），新段按位置或内容归组，例如最后一个材料段之后、【思维链条】之前的 source 段归宋体组，或者文字里含“结合材料/运用…知识/综合运用所学/谈谈/说明/分析/阐述/要求：”等关键词的归宋体组；另外给插入单增加显式字段（如 \"kind\":\"stem\"/\"material\"），在文件头写明默认规则的边界。测试断言不能再复用工具自己的正则：改为按原稿有效字体（宋体）选择要比对的段；把 stem_plain_list.txt 里的引语开头设问加进金标或 T1 用例；把本探针的全书模拟做成回归测试，要求 FLIP 数为 0。"
+  }
+ ],
+ "majors": [
+  {
+   "id": "R3-M1",
+   "title": "R2-M4 的整表重排引入新的格式偏差：_template_row_fmt 只取样板每行首格首段；当样板首格是带 keepNext 的小标题段时，新表每个单元格段都带上 keepNext，表头的加粗和居中也丢了。金标 T2_tbl 差异由 4 处升到 25 处（21 处在表格内），测试只打印前 8 处、没有断言，回执 r2 没有列出、也没有判断。验收 2 要求的“格式差异逐处列出并判断”本轮不成立",
+   "detail": "_reformat_table_cells 把样板第 0 行“首格首段”的 pPr 与多数 rPr 套到新表第 0 行的所有段落，把第 1 行“首格首段”的格式套到其余所有行的所有段落。金标 T2_tbl 的样板块是 例题 4　2026朝阳一模第21题（跨模块），它的表格每行首格都是“夯基固本/着眼长远”这类 keepNext=True 的小标题段，后面跟着内容段，没有表头行。结果重插的 B0003 表格出现三类变化：①全部 21 个单元格段都带上 keepNext；②表头“主要阶段/工作内容”丢了加粗，对齐从居中变成两端对齐；③空表头格也被改成两端对齐加 keepNext。整表 keepNext 会让 Word 把整张表和下一段绑在同一页，长表格只能整体换页。r1 返修回执曾列出 7 处差异并逐条判断；r2 返修回执全文没有出现 fmt_diffs、keepNext、B3 等字样，差异数从 4 升到 25 也没有说明。测试的 detail 只截取 fmt_diffs[:8]，第 9–25 处在任何产物里都看不到。另有 3 处教学段差异属于 R2-m4 的已知限制（T2_img 3 处、T2_tbl 3 处）。",
+   "evidence": "审查/block_insert_r3/probe_gold_tbl_alldiffs.txt（全部 25+3 处逐条列出，21 处 in_table=True）；审查/block_insert_r3/probe_gold_tbl_template.txt（样板 例题4 表 r0/r1 首格首段 keepNext=True、不加粗、both；B0003 表头 center＋加粗）；审查/block_insert_r3/test_results_rerun.json（T2_tbl detail：fmt_diffs_n=25，只列前 8）",
+   "fix_hint": "行格式不要只取首格首段：可以按列（或按段在格内的位置）取样板对应段；样板某行首段带 keepNext 而其他段不带时，不要把 keepNext 扩散到整行；判断样板有没有真正的表头（首行加粗或居中）后，再决定源表首行是否按表头处理。金标用例对表格格式给出硬断言，或者至少把全部差异写进报告文件，并在回执中逐条判断；差异数明显变化时要在回执里说明原因。"
+  },
+  {
+   "id": "R3-M2",
+   "title": "验收 4 的“在副本上写入 1 题”已退化为空断言：T4b 只插 1 段 source，被 R2-M2 的栏目硬判拦下（rc=2、不写出）也记 PASS；回执把 T4b 记为“apply最小写入 PASS”，没有说明验收 4 实际没有写出任何东西。审查者实测工具本身可以在哲学草案配置上写入带图题",
+   "detail": "T4b 的判定分两支：missing 非空时要求 rc=2 且没有输出，否则要求写出。本次重跑走的是前一支：缺 ['【材料原文】','【设问】','【为什么能想到】','【答案落点】','【细则说明】']，rc=2，out_exists=False，结果 PASS；m15 也因此跳过。也就是说，这条测试无论写没写出都会通过，不能证明验收 4。缺栏目的原因是测试内容只给了 1 段，与“草案配置缺字段”无关。审查者按哲学书的真实栏目，以 例题 1　2026年东城二模第16题（带图）为样板和内容，逐段给 role/style，图按原书第几个图形取，apply --health（probe_philosophy_write.py）：rc=1，只新增 1 条编号不连续 FAIL，block_index 认块完整、media_match=true；加 --renumber 后 rc=0，new_FAIL_count=0（probe_philosophy_renumber.txt）。可见工具在其他书上能写入带图题，是测试和回执没有做到、也没有如实说明。",
+   "evidence": "审查/block_insert_r3/test_results_rerun.json（T4b detail）；审查/block_insert_r3/probe_philosophy_write.txt；审查/block_insert_r3/probe_philosophy_renumber.txt；构建外临时区 other_book_apply_report.json（aborted=True，reason=栏目缺失）",
+   "fix_hint": "T4b 改为按哲学书真实栏目构造完整插入（可以直接用 probe_philosophy_write.py 的做法），断言 rc∈{0,1}、输出存在、block_index 认块完整、media_match；再加一条 --renumber --health 的链路断言。回执里如实写明本轮之前 T4b 并未写出。"
+  },
+  {
+   "id": "R3-M3",
+   "title": "整行 rPr 覆盖会抹掉原件表格里有语义的 run 格式：真实题卷里用来表示填空的“下划线空格”会被删掉，文字校验照样通过，退出码 0",
+   "detail": "_reformat_table_cells 删除每个 run 的原 rPr，换成样板行 rPr（docstring 称“不保留局部加粗，这是可接受的代价”），但同时丢掉了下划线、上下标、着重号等会改变题意呈现的格式。审查者扫描 83 份原材料 DOCX（scan_table_semantic_fmt.py）：2026朝阳二模教师版（试卷）第 7、9 表是填空式题面，“答：以上行为可能涉及<u>    ①    </u>等人身权利……适用“<u>    ②    </u>”原则”，空格上的下划线就是空位（scan_underline_detail.txt）。进程内调用 build_table_from_source 后，下划线 run 从 2 个变成 0 个，文字逐字相同（probe_underline_loss.txt），所以题面零改写的文字校验、block_index、health 都拦不住，读者看到的是一段没有空位的文字。另外 51 张表有局部加粗（多数是细则），也会被抹平。",
+   "evidence": "审查/block_insert_r3/scan_table_semantic_fmt.txt；审查/block_insert_r3/scan_underline_detail.txt；审查/block_insert_r3/probe_underline_loss.txt（source underlined runs: ['    ①    ','    ②    '] → after: []；text identical: True）",
+   "fix_hint": "覆盖格式时保留语义属性：至少保留 w:u、w:vertAlign、w:em、w:strike，局部加粗可以视作语义保留，只替换字体、字号、颜色、行距、缩进。或者检测到这类属性时在报告里列为 CANDIDATE，写明“需人工核对”。补一条用例：用 2026朝阳二模教师版第 7 表，断言空位下划线仍在。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "R3-m1",
+   "title": "_SHAPE_PREF['label_prefix'] 把 'stem' 排在 'plain' 前面：样板块里没有材料内【X】段时，材料段（如【裁判结果】…）会退到设问段格式（整段宋体、不加粗）",
+   "detail": "T1c 输出第 128 段“【裁判结果】法院认为……”是单个 run，不加粗，有效字体 Songti SC，模板取的是 B0003 的设问段（第 119 段）。全书 source 区非【题目】的【X】正文段中，楷体 29 个、宋体 13 个；style-spec 规定材料正文用楷体。以原块自身作样板时结果正确（label_selftemplate.txt），问题出在样板块没有同形状段、需要退化的时候。T1c 的断言只检查颜色不是 1F4E79，所以没有发现。",
+   "evidence": "审查/block_insert_r3/probe_T1c_label.txt；审查/block_insert_r3/label_selftemplate.txt"
+  },
+  {
+   "id": "R3-m2",
+   "title": "嵌套表格不经过 sanitize/reformat：嵌套 tblStyle 仍按 styleId 保留并撞号（R2-B1 残留），嵌套单元格段也不套样板格式",
+   "detail": "245 张原件表格中 7 张含嵌套表；其中 4 处嵌套 tblStyle 撞号：源 'Table Grid'/'Normal Table' → 本书 'heading 6'/'heading 5'（段落样式），均在 2025丰台二模细则。",
+   "evidence": "审查/block_insert_r3/sim_raw_tables2.txt"
+  },
+  {
+   "id": "R3-m3",
+   "title": "原件浮动表格的 w:tblpPr 原样保留，没有按“套样板 tblPr”去掉",
+   "detail": "245 张原件表格中 43 张是浮动表（tblpXSpec=right/center 等）。实测这 43 张里只有 1 张有内容（2024届各区一模试题分类汇编必修4 第 7 表，3 张图），其余是空的版式框，影响有限；本书自身 347 张表里只有 2 张浮动。",
+   "evidence": "审查/block_insert_r3/scan_raw_tables.txt；审查/block_insert_r3/floating_tables_content.txt"
+  },
+  {
+   "id": "R3-m4",
+   "title": "样板 tblW 不是 dxa 时，等比缩放不生效或单位混用",
+   "detail": "样板为 pct 5000（如 例题 2　2026昌平期末第17题）时，gridCol/tcW 被缩放到合计 5000 twips（约 8.8cm），tblW 却是 100%；样板为 auto 0（本书 15 张、哲学 19 张、选必二 144 张）时完全不缩放，源表 9742 twips 原样保留。",
+   "evidence": "审查/block_insert_r3/probe_tbl_width_units.txt；审查/block_insert_r3/probe_tblw.txt"
+  },
+  {
+   "id": "R3-m5",
+   "title": "width_cm 不校验：负数或近 0 值会写出非法 wp:extent（cx/cy≤0），写后复核放行，rc=0",
+   "detail": "width_cm=-5 → extent -1800000/-1202482；width_cm=1e-9 → 0/0；python-docx 能打开，verify_output 不查 extent。OOXML 的 ST_PositiveCoordinate 不允许负值。width_cm 为字符串 \"5\" 时会报英文 TypeError，rc=2。",
+   "evidence": "审查/block_insert_r3/probe_width.txt"
+  },
+  {
+   "id": "R3-m6",
+   "title": "用到 fitz 时，PyMuPDF 的弃用警告打印到 stdout，stdout 不再是合法 JSON",
+   "detail": "check 带 'file' 图（正是 PDF 原件裁图的路径）时，stdout 首行是 \"warning: The `fitz` API is deprecated…\"，json.loads(stdout) 失败。下游按 stdout 解析 summary 的脚本（如 intake_run）会出错。改用 import pymupdf，或在导入时重定向。",
+   "evidence": "审查/block_insert_r3/probe_fitz_stdout.txt"
+  },
+  {
+   "id": "R3-m7",
+   "title": "插入单类型错误仍输出英文异常文字；runs 内键不校验",
+   "detail": "顶层是数组、inserts 元素不是对象、title 是数字、like 是数组时，提示为 \"错误：'list' object has no attribute 'get'\" 之类；退出码 2 正确，没有 traceback。runs 里的未知键被静默接受。",
+   "evidence": "审查/block_insert_r3/probe_errors.txt"
+  },
+  {
+   "id": "R3-m8",
+   "title": "check 不做写后才能发现的校验（栏目缺失、media 计数、区位泄漏），会给出 rc=1“可插入”，apply 却 rc=2；第 1491–1494 行注释称 check 与 apply“完全一样彻底”，与实际不符",
+   "detail": "T4a check rc=1，同一插入单 T4b apply rc=2（栏目缺失）。建议 check 也在内存树上挂载一次，跑 block_index 与 zones_of（不落盘），至少把这类问题提前报出，或者改正注释。"
+  },
+  {
+   "id": "R3-m9",
+   "title": "--health 异常时退出码 2，但输出文件仍然保留",
+   "detail": "按共同约定，“2＝中止”应当不留输出。可以删输出，或者改用 1 并写明“体检未完成”。"
+  },
+  {
+   "id": "R3-m10",
+   "title": "行数 2364，超出 1200 行目标 97%，注释里大量返修过程叙述会原样进入 Skill",
+   "detail": "383 行 docstring、139 行纯注释，另有约 129 行提到“R2-xx 修复”“实测踩过”；_top_tables 与 docx_lib.para_elements 的派发逻辑重复，health_diff 抄自 apply_patch。"
+  },
+  {
+   "id": "R3-m11",
+   "title": "表内图片的 wp14:anchorId/editId 仍原样沿用原件（R2-m11 的另一半）"
+  },
+  {
+   "id": "R3-m12",
+   "title": "回执 r2 的若干表述无法核实或不完整",
+   "detail": "称“修前失败、修后通过，已用 git diff 前后对照实测确认”，但这些文件在 git 中是未跟踪文件（??），git diff 看不到；没有列出金标差异（见 R3-M1）；没有说明 T4b 不再写出（见 R3-M2）；R2-B2 写“三处残留全部处理”（见 R3-B1）。"
+  },
+  {
+   "id": "R3-m13",
+   "title": "--render-check 失败提示把 note 和 returncode 直接拼接，显示成“source file could not be loaded1”"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "验收1：真实新题插入必修三副本（至少 1 图 1 表，优先 DOCX 原件），链路 --renumber 后 bh.run_health 不新增 FAIL",
+   "met": true,
+   "evidence": "重跑 T1a（DOCX 图）、T1b（rows 表，原件 PDF）、T1c（纯文字）、R2_M4（DOCX 原件第 5 表，真实漏收候选 BJ-2023-HD-QIZHONG-Q18#1）：rc=0，new_FAIL=0，renumber ok"
+  },
+  {
+   "criterion": "验收1：未点名段落不变",
+   "met": true,
+   "evidence": "indep_verify.py 独立核对 T1a/b/c、b2m1、m1docpr、r2m4 等 11 个输出：段落 SHA 序列相对原稿只有一处连续 insert；除 document.xml、rels、Content_Types 外，其余成员逐字节相同"
+  },
+  {
+   "criterion": "验收1：图/表在输出中存在且关系正确",
+   "met": true,
+   "evidence": "全部 r: 引用都有关系，目标成员都在包里；blip 对应 image 类型，hyperlink 对应 hyperlink 类型；Content_Types 全覆盖；书签配对。表内图片的 docPr 与 cNvPr 一致；唯一重复的 docPr 140 是原稿就有的"
+  },
+  {
+   "criterion": "验收1/任务核心：按相邻样板题块复制样式",
+   "met": false,
+   "evidence": "约 21% 的真实设问形态仍会从宋体变成楷体（R3-B1）；样板首格是小标题段时，整表带上 keepNext、表头丢加粗（R3-M1）；表内填空下划线被抹掉（R3-M3）；材料内【X】段会退化到设问格式（R3-m1）"
+  },
+  {
+   "criterion": "验收1：soffice 转 PDF（粗查，云端渲染引擎）",
+   "met": false,
+   "evidence": "云端 soffice 缺 writer 组件，转换失败；工具现在给出 rc=1 和 stderr 提示（R2-m3 已修）。需要回本地验证，属于环境限制，已如实披露"
+  },
+  {
+   "criterion": "验收2：金标回归（原位复原、整篇文字流、图片字节、表格单元格一致）",
+   "met": true,
+   "evidence": "重跑 T2_img/T2_tbl：whole_doc_text_flow_match=True，image_bytes_match=True，table_cells_match=True，health 0 新增"
+  },
+  {
+   "criterion": "验收2：格式差异逐处列出并判断",
+   "met": false,
+   "evidence": "T2_tbl 共 25 处差异（r2 时为 4 处），测试只打印 8 处，回执 r2 没有列出也没有判断（R3-M1）；设问断言是循环验证（R3-B1）"
+  },
+  {
+   "criterion": "验收3：负例全拒、不留输出、退出码正确",
+   "met": true,
+   "evidence": "T3a–T3q 重跑全部通过；审查者另补：--report 指向 baseline 或其他工具报告时 rc=3 且文件不变；插入单类型错误 rc=2，没有 traceback；写后区位泄漏 rc=2 并删除输出"
+  },
+  {
+   "criterion": "验收4：其他书 check 跑通、副本写入 1 题",
+   "met": false,
+   "evidence": "check 通过（T4a rc=1）。写入部分：T4b 被栏目缺失拦下、没有写出，却记 PASS（R3-M2）。审查者实测工具本身可以在哲学草案配置上写入带图题（renumber 后 0 新增 FAIL），但提交物没有做到"
+  },
+  {
+   "criterion": "共同约定：只读承诺、Skill 无改动、SK 无 __pycache__、候选目录外无产物",
+   "met": true,
+   "evidence": "baseline_guard：3468 个文件 0 变化，skill_pycache=[]；SK 副本运行没有产生 __pycache__；git status 显示候选目录外干净（C 下的 placement_suggest pyc 来自另一会话，与本工具无关）"
+  },
+  {
+   "criterion": "共同约定：Python 3.9 兼容（vermin）",
+   "met": true,
+   "evidence": "两个文件都没有 violation（3.8/3.7）"
+  },
+  {
+   "criterion": "共同约定：退出码 0/1/2/3、中文提示、无 traceback",
+   "met": true,
+   "evidence": "各路径退出码正确，不带 --debug 时没有 traceback；部分类型错误的提示是英文（R3-m7），--health 异常时 rc=2 仍保留输出（R3-m9）"
+  },
+  {
+   "criterion": "共同约定：--report 字段齐全、过 guard_write、不覆盖他人文件",
+   "met": true,
+   "evidence": "R2-M3 已修，审查者探针复核通过"
+  },
+  {
+   "criterion": "共同约定：复用 bh/block_index/docx_lib，不另写识别逻辑",
+   "met": true,
+   "evidence": "题块和区位用 ap.zones_of/bh.walk，写后认块用 block_index.build_index，词表用 ap._forbidden_hit，段落与守卫用 docx_lib"
+  },
+  {
+   "criterion": "共同约定：精简 ≤1200 行",
+   "met": false,
+   "evidence": "2364 行（R3-m10）"
+  },
+  {
+   "criterion": "共同约定：测试纪律（自包含、可重跑、首尾 baseline_guard、以失败数为退出码）",
+   "met": true,
+   "evidence": "重跑 55/55，EXIT=0。但部分断言无效，见 R3-B1、R3-M2"
+  }
+ ],
+ "probe_files": {
+  "dir_copy": "审查/block_insert_r3/（探针脚本与输出副本；common.py 的 WORK 指向云端临时区，本地重跑时改成任意临时目录即可）",
+  "scratch": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r3",
+  "key_outputs": [
+   "审查/block_insert_r3/stem_selftemplate.txt",
+   "审查/block_insert_r3/stem_plain_list.txt",
+   "审查/block_insert_r3/probe_stem_e2e.txt",
+   "审查/block_insert_r3/stem_coverage2.txt",
+   "审查/block_insert_r3/probe_gold_tbl_alldiffs.txt",
+   "审查/block_insert_r3/probe_gold_tbl_template.txt",
+   "审查/block_insert_r3/probe_philosophy_write.txt",
+   "审查/block_insert_r3/probe_philosophy_renumber.txt",
+   "审查/block_insert_r3/scan_table_semantic_fmt.txt",
+   "审查/block_insert_r3/scan_underline_detail.txt",
+   "审查/block_insert_r3/probe_underline_loss.txt",
+   "审查/block_insert_r3/probe_T1c_label.txt",
+   "审查/block_insert_r3/label_selftemplate.txt",
+   "审查/block_insert_r3/sim_raw_tables2.txt",
+   "审查/block_insert_r3/scan_raw_tables.txt",
+   "审查/block_insert_r3/floating_tables_content.txt",
+   "审查/block_insert_r3/probe_tbl_width_units.txt",
+   "审查/block_insert_r3/probe_tblw.txt",
+   "审查/block_insert_r3/probe_width.txt",
+   "审查/block_insert_r3/probe_fitz_stdout.txt",
+   "审查/block_insert_r3/probe_errors.txt",
+   "审查/block_insert_r3/probe_zone_leak.txt",
+   "审查/block_insert_r3/probe_report_guard.txt",
+   "审查/block_insert_r3/indep_verify.txt",
+   "审查/block_insert_r3/rerun_tests.log",
+   "审查/block_insert_r3/test_results_rerun.json"
+  ]
+ },
+ "summary": "重跑测试 55/55 通过；真实文件 3468 个没有变化；vermin 通过；Skill 下没有 __pycache__；SK 副本能直接运行。r2 的 R2-M1（两道防线，审查者补测了第二道）、R2-M2、R2-M3 已真实修好；R2-B1 修好了顶层表格（只剩嵌套表 4 处撞号，列为 minor）。结论仍是 FAIL。1 个 blocker：R2-B2 的“设问宋体变楷体”只修好了能被开头正则认出的 79%，全书 94/453 个主观题宋体设问（引语开头、“有人说”、“要求：”、“（2）从…谈谈”等）在默认路径下即便以原块自身为样板，也会变成楷体；端到端实测属实，而测试断言与工具共用同一正则，属于循环验证，结构上查不出来。3 个 major：R2-M4 的整表重排取“首格首段”套整行，金标表格差异从 4 处升到 25 处（整表 keepNext、表头丢加粗居中），回执没有列出也没有判断；T4b 被栏目硬判拦下、没有写出却记 PASS，验收 4 的写入实际没有发生（审查者实测工具能在哲学书写入带图题）；整行 rPr 覆盖抹掉真实题卷表格里的填空下划线，文字校验照样通过、退出码 0。另有 13 条 minor。"
+}

@@ -1,0 +1,152 @@
+{
+ "tool": "exam_register",
+ "version": "1.3.0",
+ "mode": "check",
+ "generated_at": "2026-09-25T12:11:01.144804+00:00",
+ "thresholds": {
+  "ngram_n": 10,
+  "dup_question_sim": 0.55,
+  "dup_exam_fraction": 0.5,
+  "min_text_len": 60,
+  "min_stem_len": 40,
+  "header_window": 1000,
+  "min_fingerprint_coverage": 0.7
+ },
+ "inputs": {
+  "bank": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918",
+  "raw_root": "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料",
+  "profile": "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json",
+  "exams_csv_sha256": "8c3452f07ddaa91f3cbb48623737e66b9644415cc3a44706eda43bd10cf2552f",
+  "exam_files_csv_sha256": "cf300fec94aa0caa155adb23db4c4952805288217ec72ce7194f034b68818159",
+  "profile_sha256": "398e76441509a554627969b7d53ab6a63d924d8bb14832b080b23ab1e0781749",
+  "profile_book_id": "bixiu3"
+ },
+ "items": [
+  {
+   "exam_id": "BJ-2026-HD-QIZHONG",
+   "claimed_id": "BJ-2026-HD-QIZHONG",
+   "region": "海淀",
+   "stage": "期中",
+   "self_id": null,
+   "evidence": [
+    {
+     "tier": "A",
+     "source": "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx",
+     "kind": "exam_date",
+     "raw": "2025.11\n",
+     "cohort_year": 2026,
+     "grade2": false,
+     "month": 11,
+     "snippet": "2025北京海淀高三(上)期中 政 治 2025.11 本试卷共8页,100分。考试时长90分钟。考生务"
+    },
+    {
+     "tier": "A",
+     "source": "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx",
+     "kind": "webtitle_qizhong",
+     "raw": "2025北京海淀高三(上)期中",
+     "cohort_year": 2026,
+     "grade2": false,
+     "snippet": "2025北京海淀高三(上)期中 政 治 2025.11 本试卷共8页,1"
+    },
+    {
+     "tier": "C",
+     "source": "exams.csv school_year",
+     "kind": "school_year",
+     "raw": "2025-2026学年",
+     "cohort_year": 2026,
+     "grade2": false,
+     "snippet": "2025-2026学年"
+    },
+    {
+     "tier": "C",
+     "source": "exams.csv year",
+     "kind": "bare_year",
+     "raw": "2026",
+     "cohort_year": null,
+     "grade2": false,
+     "snippet": "2026"
+    }
+   ],
+   "raw_files": [
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/00_共同资料/原材料/2026模拟题/2026各区期末和期中/2026海淀期中/试卷/试卷.docx",
+     "role": "原卷",
+     "engine": "docx_lib(bh.read_docx)",
+     "has_text_layer": true,
+     "chars": 8342,
+     "readable_ratio": 0.8,
+     "sha256": "11cac42f979196cd879bb2d88efd7984e64cc0c19cdb57cbe1b0a6121ae13e3c"
+    }
+   ],
+   "readme": null,
+   "front_matter": null,
+   "md_sources": [
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2026-HD-QIZHONG/BJ-2026-HD-QIZHONG-Q1.md",
+     "sha256": "fb1c0dcb31fe6da998a505b1d647f29cf1025503f8d178b8febb237e04e36742"
+    },
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2026-HD-QIZHONG/BJ-2026-HD-QIZHONG-Q10.md",
+     "sha256": "1321d11493ce42bdefa8d1e6ff0683cba43aed4400f69c1b6d37c2e55638e92d"
+    },
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2026-HD-QIZHONG/BJ-2026-HD-QIZHONG-Q11.md",
+     "sha256": "f2cdf9ddb2531c0981cc97f8b89e0e91579609e9c88cd0062a37a95e8a282214"
+    },
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2026-HD-QIZHONG/BJ-2026-HD-QIZHONG-Q12.md",
+     "sha256": "f92b93d9ffdd9a2fff4582c73a6a52d56b0f947290dde78cce7767cdedecdbd9"
+    },
+    {
+     "path": "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2026-HD-QIZHONG/BJ-2026-HD-QIZHONG-Q13.md",
+     "sha256": "0dc61f390947740faa82a06d1d9d8066694aa292316372ff11f2868152c7a600"
+    }
+   ],
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "grade2": false,
+   "cohort_outliers": [],
+   "cohort_weak_hint": null,
+   "exams_csv_row": {
+    "year": "2026",
+    "school_year": "2025-2026学年",
+    "region": "海淀",
+    "stage": "期中"
+   },
+   "retired": null,
+   "id_mismatch": null,
+   "suggestion": {
+    "suggested_id": "BJ-2026-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain": null,
+   "chain_note": null,
+   "duplicates": [],
+   "duplicates_skipped_no_stem": [],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 22
+    }
+   },
+   "issues": []
+  }
+ ],
+ "summary": {
+  "cohort_status": "OK",
+  "has_id_mismatch": false,
+  "duplicate_count": 0,
+  "issue_count": 0,
+  "fingerprint_coverage": {
+   "total": 22,
+   "found": 22,
+   "ratio": 1.0,
+   "by_basis": {
+    "bank_guide": 22
+   }
+  }
+ }
+}

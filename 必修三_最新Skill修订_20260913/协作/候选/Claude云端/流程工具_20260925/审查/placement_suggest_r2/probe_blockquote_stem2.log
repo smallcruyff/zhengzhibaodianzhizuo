@@ -1,0 +1,7 @@
+选中题面节里引用块文字>=40字（被 clean_prose 丢弃）的 MD: 185
+  其中清洗后只剩来源/页图元数据（题目文字全丢）: 18
+  题型: Counter({'choice': 120, 'subjective': 65})
+  在必修三书中的题键 45 题块 86
+  按卷: [('BJ-2024-DC-YIMO', 21), ('BJ-2025-SY-YIMO', 21), ('BJ-2026-BJ-GAOKAO', 21), ('BJ-2026-FT-YIMO', 21), ('BJ-2024-XC-ERMO', 19), ('BJ-2026-DC-YIMO', 15), ('BJ-2025-DC-ERMO', 12), ('BJ-2025-BJ-GAOKAO', 10), ('BJ-2024-HD-YIMO', 8), ('BJ-2025-FT-ERMO', 7), ('BJ-2023-FT-YIMO', 4), ('BJ-2024-HD-ERMO', 4), ('BJ-2023-HD-QIZHONG', 3), ('BJ-2023-HD-YIMO', 2), ('BJ-2026-CP-ERMO', 2), ('BJ-2026-CY-QIZHONG', 2), ('BJ-2026-HD-QIMO', 2), ('BJ-2026-MTG-YIMO', 2), ('BJ-2023-DC-ERMO', 1), ('BJ-2023-XC-ERMO', 1)]
+  留一（默认参数）题面被丢的题块 n/前1/前3: (86, 10, 24)
+  留一（默认参数）其余题块       n/前1/前3: (604, 69, 164)

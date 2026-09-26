@@ -1,0 +1,1 @@
+Counter({('Kaiti SC', 'Kaiti SC', 'tpl=label_prefix'): 29, ('Songti SC', 'Songti SC', 'tpl=label_prefix'): 11, ('Songti SC', 'Songti SC', 'tpl=plain'): 1, ('Songti SC', 'Songti SC', 'tpl=stem'): 1})

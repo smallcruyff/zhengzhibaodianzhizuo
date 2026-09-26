@@ -1,0 +1,70 @@
+PASS baseline_guard（真实输入未变，测试前） 4.7s 
+PASS 1a BJ-2023-HD-QIZHONG → 届别2024，占用+链式改号顺序（先2024→2025去重，再2023→2024），redirects 含本卷自己的旧→新（M-B），reused_ids 标出 BJ-2024-HD-QIZHONG 前后指不同的考试 11.5s - cohort=2024 plan=[{'old': 'BJ-2024-HD-QIZHONG', 'retire_into': 'BJ-2025-HD-QIZHONG', 'reason': '与 BJ-2025-HD-QIZHONG 判定为重复登记（21/21 题匹配，BJ-20
+PASS 1b BJ-2024-HD-QIZHONG → 届别2025，与BJ-2025-HD-QIZHONG重复登记21/21，占用链判"已登记不要重复注册"，id_mismatch 键真实存在（M-G） 11.1s - cohort=2025 dup={'exam_id': 'BJ-2025-HD-QIZHONG', 'kind': 'duplicate_registration', 'matched': 21, 'total': 21, 'fraction_reliable': True, 'low_confidence_count': 0} chain_kind=already_registered id_mismatch={'registered_year'
+PASS 1c BJ-2024-CY-QIZHONG → 届别2025，建议BJ-2025-CY-QIZHONG（未占用） 5.4s - cohort=2025
+PASS 2a 对照组（2026期中/期末/一模二模/高考）cohort_status=OK、不误报 id_mismatch（M-G：断言现在查真实存在的键）、不误报重复登记 21.7s 
+PASS 2b M-C 修复：BJ-2022~2024-BJ-GAOKAO（曾被 r1 误称“真实复用”）实为 OCR 串题，单列needs_verification_low_confidence，不计入正式 kind、matched=0 3.2s - hit={'exam_id': 'BJ-2024-BJ-GAOKAO', 'kind': 'needs_verification_low_confidence', 'matched': 0, 'total': 21, 'fraction_reliable': False, 'low_confidence_count': 3}
+PASS 2c BJ-2024-BJ-GAOKAO 的全部复用对都不误判为 duplicate_registration 3.2s - duplicates=[{'exam_id': 'BJ-2022-BJ-GAOKAO', 'kind': 'needs_verification_low_confidence', 'matched': 0, 'total': 21, 'fraction_reliable': False, 'low_confidence_count': 3}, {'exam_id': 'BJ-2023-BJ-GAOKAO', 'kind': 'needs_verification_low_confidence', 'matched': 0, 'total': 21, 'fraction_reliable': False, 'low
+PASS 3a audit 全库可运行并写出报告 91.8s - {'exams_scanned': 85, 'id_year_mismatches': 3, 'has_duplicate_or_reuse': 2, 'conflicts': 0, 'needs_local': 0, 'weak_only': 25, 'retired': 1, 'low_fingerprint_coverage': 5, 'verified_by_A': 53, 'verified_by_B': 6, 'needs_verification_low_confidence_only': 3}
+PASS 3b audit 命中且仅命中 3 张已知错号卷；不与 ledger“2026期中/期末无误”结论冲突（M1 修复前会多报）  - 漏报=[] 多报=[] 违反ledger=[]
+PASS 3c summary 含 weak_only/retired/verified_by_A/verified_by_B/low_fingerprint_coverage/needs_verification_low_confidence_only（M4/M-C）  - {'exams_scanned': 85, 'id_year_mismatches': 3, 'has_duplicate_or_reuse': 2, 'conflicts': 0, 'needs_local': 0, 'weak_only': 25, 'retired': 1, 'low_fingerprint_coverage': 5, 'verified_by_A': 53, 'verified_by_B': 6, 'needs_verification_low_confidence_only': 
+PASS 3d BJ-2023-HD-QIMO（exams.csv 标记已撤销登记）被识别为 retired，不当普通 OK 报（m10）  - retired={'extract_status': 'retired_duplicate_registration', 'notes': '重复登记已撤销：本登记的两份来源实为2023海淀二模（第二学期期末练习）原卷与答案，已归 BJ-2023-HD-ERMO；不存在2023海淀高三第一学期期末原件（见 claude_bank_202
+PASS 3e 全库 CONFLICT=0（此前 BJ-2026-YQ-YIMO 的假冲突已随 M1 头部窗口修复消失，人工复核见回执）  - conflicts=[]
+PASS 3f audit 全库口径下 BJ-2022-BJ-GAOKAO 与 2024 高考那对也只落 needs_verification_low_confidence（M-C）  - kinds={'needs_verification_low_confidence'}
+PASS 4a --files 把 BJ-2025-HD-QIZHONG 原卷当新卷 → 届别2025，两张已有登记都判 duplicate_registration 3.8s - cohort=2025 dup={'BJ-2024-HD-QIZHONG': {'exam_id': 'BJ-2024-HD-QIZHONG', 'kind': 'duplicate_registration', 'matched': 21, 'total': 21, 'fraction_reliable': True, 'low_confidence_count': 0}, 'BJ-2025-HD-QIZHONG': {'exam_id': 'BJ-2025-HD-QIZHONG', 'kind': 'duplicate_registra
+PASS 4b PYTHONHASHSEED 11/23/97 三次结果一致（B2 修复前会有一张被误标为 shared_or_reused） 10.3s - [('11', [('BJ-2024-HD-QIZHONG', 'duplicate_registration'), ('BJ-2025-HD-QIZHONG', 'duplicate_registration')]), ('23', [('BJ-2024-HD-QIZHONG', 'duplicate_registration'), ('BJ-2025-HD-QIZHONG', 'duplicate_registration')]), ('97', [('BJ-2024-HD-QIZHONG', 'duplicate_registration'), ('B
+PASS 4c 合成“确实新”的卷 → 届别正确、不报重复、给出未占用的建议卷号 2.4s - cohort=2027 dup=[]
+PASS 4d M6 正例：9 题中 1 题复用 → 切出 9 题、判 shared_or_reused_questions 1/9（不是整卷 1/1 duplicate_registration），low_confidence_count=0（不是 M-C 的串题，是真复用） 2.5s - hit={'exam_id': 'BJ-2026-HD-QIZHONG', 'kind': 'shared_or_reused_questions', 'matched': 1, 'total': 9, 'fraction_reliable': True, 'low_confidence_count': 0}
+PASS 4e M6/M-G 正例：复用题在第 4712 字之后（确实 4500 字上限，m5 修复前 4000 字窗口读不到）仍能检出 2.5s - hit={'exam_id': 'BJ-2026-HD-QIZHONG', 'kind': 'shared_or_reused_questions', 'matched': 1, 'total': 41, 'fraction_reliable': True, 'low_confidence_count': 0} offset=4712
+PASS 5a 卷号格式错 → 退出2 0.2s - exit=2 err=输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'BJ-NOTYEAR-XX-YIMO'
+PASS 5a2 高考卷号区县位必须是 BJ（HD 应拒绝）→ 退出2 0.2s - exit=2 err=输入/参数错误：高考卷号区县位固定为 BJ（本市统考，不分区县）：'BJ-2025-HD-GAOKAO'
+PASS 5b 文件不存在 → 退出2 0.2s - exit=2 err=输入/参数错误：文件不存在：/no/such/exam.pdf
+PASS 5c 无文字层 PDF（文件名不含日期）→ NEEDS_LOCAL，退出1 3.0s - status=NEEDS_LOCAL exit=1
+PASS 5d M3 修复：无文字层 PDF 即使文件名带日期也判 NEEDS_LOCAL，不据文件名下断（不给建议卷号） 3.0s - status=NEEDS_LOCAL suggestion=None
+PASS 5e m6(r1) 修复：损坏的 PDF（--files 直接给的文件）→ 输入错误退出2，不当“需本地看图” 2.8s - exit=2 err=输入/参数错误：PDF 打不开（损坏或非本格式）：/tmp/exam_register_test_scratch/synth/corrupt.pdf
+PASS 5f m6(r1) 修复：.txt 输入 → 退出2（CLI 层直接拒绝，不再当“不支持的格式”走到需本地看图） 0.2s - exit=2 err=输入/参数错误：不支持的文件格式（只认 .pdf/.docx）：/tmp/exam_register_test_scratch/synth/note.txt
+PASS 5g m4(r1) 修复：--files 不给 --region 也能跑（region 是可选的，只是不生成建议卷号） 3.6s - exit=1 suggestion=None
+PASS 5h --report 落受保护目录（书稿目录（仓库根），带 --profile）→ 退出3，且未落盘 2.6s - exit=3 wrote=False
+PASS 5h --report 落受保护目录（题库目录，带 --profile）→ 退出3，且未落盘 2.5s - exit=3 wrote=False
+PASS 5h --report 落受保护目录（Skill目录，带 --profile）→ 退出3，且未落盘 2.4s - exit=3 wrote=False
+PASS 5i M8 修复：不传 --profile 时 --report 落题库目录仍退出3（修复前会放行写入） 2.4s - exit=3 wrote=False
+PASS 5j 冻结册配置 --report → 退出3（附加负例，非规格必测但同规则） 2.5s - exit=3 wrote=False
+PASS 5k M9/m11 修复：--report 含 inputs SHA（含 profile_sha256/profile_book_id）/ summary（check 模式）/ 完整 thresholds / raw_files 各自的 sha256 2.5s - exit=0 exists=True
+PASS 5l --report 时 stdout 是纯 JSON（“报告已写”改到 stderr，m6(r1) 修复）  - {
+ "exam_id": "BJ-2026-HD-QIZHONG",
+ "cohort_year": 2026,
+ "
+PASS 6a M1 修复：卷首写“高三”，Q1 题干出现“高二”（题干引用）→ 按高三算，届别2025，不误判高二 3.1s - cohort=2025 grade2=False
+PASS 6b M1 修复：真高二卷（卷首本身写“高二”）→ 届别2026（比同期高三卷晚一届），且 grade2=true 写进结果 2.7s - cohort=2026 grade2=True
+PASS 6c M1 修复：“高三卷首+题干提高二”与“真高二卷”不再输出相同结果（修复前两者完全一样） 3.2s 
+PASS 6d M1 修复：网站式标题“2025北京朝阳高三（上）期中”+题干引用2024年10月 → 届别2026（标题年+1），不被题干日期带成2025 3.2s - cohort=2026 issues=['建议卷号 BJ-2026-CY-QIZHONG 已被占用', '占用链存在无法机械判定的真实冲突（见 rename_plan 最后一步），改号顺序只给到冲突点为止，冲突解决前不建议把本卷
+PASS 6e M7 修复：--exam-dir 指向题库自身目录 → 不自占用、不自重复（修复前退出1，报“已被占用”） 3.5s - exit=0 issues=[]
+PASS 6f M7 修复：同目录换 --claimed-id 仍不与自身数据重复比对（修复前会报 22/22 自重复） 3.5s - dup=[]
+PASS 6g m4(r1) 修复：--files 不给 --stage 也不给 --claimed-id → 退出2（不再静默按“期中”处理） 2.4s - exit=2 err=输入/参数错误：无法确定阶段（期中/期末/一模/二模/高考）：请给 --exam-id、--claimed-id 或 --stage
+PASS 7a M-A 修复：内容全新的候选卷、建议号落在 BJ-2025-HD-QIZHONG（正确登记）→ chain_kind=blocked_conflict（不是 chain），redirects 里不出现以 2025 为 old 的条目（不再把正确卷号并入错号） 3.0s - chain_kind=blocked_conflict redirects=[]
+PASS 7b M-A 修复：规格点名的高二卷（届别按学年末年+1 推出，恰好落在 BJ-2025-HD-QIZHONG）同样不触发反向改号 3.1s - cohort=2025 grade2=True chain_kind=blocked_conflict redirects=[]
+PASS 7c M-E 修复：有文字层但卷首无日期/学年，文件名带日期 → NEEDS_LOCAL，不生成建议号、不展开改号链（修复前会单凭文件名定届别） 2.5s - cohort=None status=NEEDS_LOCAL suggestion=None
+PASS 7d M-D 修复：低覆盖率卷（题库 BJ-2025-CY-YIMO 类似情形）只复用 1 题不再判 duplicate_registration 1/1，分母改用覆盖率 total、fraction_reliable=False 3.4s - hit={'exam_id': 'BJ-2026-HD-QIZHONG', 'kind': 'shared_or_reused_questions', 'matched': 1, 'total': 21, 'fraction_reliable': False, 'low_confidence_count': 0} target_file=/tmp/exam_register_test_scratch/examdi
+PASS 7e M-F 修复：--exam-dir 指向题库外副本（README 写明学年）→ 读到 B 层证据，cohort_status=OK（修复前 NEEDS_LOCAL，还误称“题库无可查文字证据”） 2.6s - status=OK cohort=2026 issues=['建议卷号 BJ-2026-HD-QIMO 已被占用', 'duplicate_registration：与 BJ-2026-HD-QIMO 匹配 21/21 题（占比 1.0）', 'BJ-2026-HD-QIMO 已登记为同一场考试�
+PASS 7f M-F 修复：--exam-dir 下同一份错号副本也能查出届别不符（修复前 --exam-dir 查不出，只有 --exam-id 能） 2.5s - id_mismatch={'registered_year': 2024, 'evidence_cohort_year': 2025}
+PASS m10 修复：占用卷号是已撤销登记（BJ-2023-HD-QIMO）时，rename_plan 的说明里点明“已撤销”，不是笼统的“真实冲突” 2.6s - suggestion={'suggested_id': 'BJ-2023-HD-QIMO', 'occupied': True, 'occupant': {'exam_id': 'BJ-2023-HD-QIMO', 'occupied': True}} plan=[{'old': 'BJ-2023-HD-QIMO', 'new': None, 'reason': 'BJ-2023-HD-QIMO 在 exams.csv 中已标记为撤销�
+PASS 8a m7 修复：占比恰好 0.5 → shared_or_reused_questions（阈值改用严格 >，不是 >=）  - {'exam_id': 'BJ-OPP', 'total_questions': 10, 'pairs': [{'qid': 'Q1', 'against_qid': 'OQ1', 'sim': 0.9, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}, {'qid': 'Q2', 'against_qid': 'OQ2', 'sim': 0.9, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}, {'qid': 
+PASS 8a2 m7 对照：占比 0.6（超过一半）→ duplicate_registration（阈值本身没被误改宽）  - {'exam_id': 'BJ-OPP', 'total_questions': 10, 'pairs': [{'qid': 'Q1', 'against_qid': 'OQ1', 'sim': 0.9, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}, {'qid': 'Q2', 'against_qid': 'OQ2', 'sim': 0.9, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}, {'qid
+PASS 8b m6 修复：两道候选题抢同一道对手题时一对一匹配，只取分数更高的一对，另一对计入 contested_matches（不再让匹配数超过对手卷题数）  - {'exam_id': 'BJ-OPP2', 'total_questions': 2, 'pairs': [{'qid': 'C1', 'against_qid': 'O1', 'sim': 0.99, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}], 'low_confidence_pairs': [], 'matched_ques
+PASS 8c M-C 单测：候选题一侧标 fallback_low_confidence 时该配对单列 low_confidence_pairs，不计入 matched_questions  - {'exam_id': 'BJ-OPP3', 'total_questions': 2, 'pairs': [{'qid': 'C1', 'against_qid': 'O1', 'sim': 0.99, 'candidate_basis': 'bank_alias', 'opponent_basis': 'bank_alias'}], 'low_confidence_pairs': [{'qid': 'C2', 'against_qid': 'O2', 'sim': 0.99, 'candidate_basis': '
+PASS 8d m2 修复：卷首日期/学年放在表格单元格里也能识别（改走 bh.read_docx，不再只用 python-docx 直读段落） 2.5s - cohort=2027 status=OK
+PASS 8e m5 修复：日期排在“考生须知 1．2．3．”之后仍能取到（不再在须知处截断丢掉日期） 2.6s - cohort=2027 status=OK
+PASS 8f m8 修复：--files 与 --report 都在候选 构建/ 同一子目录下也放行，不再把“输入所在目录”当成需要再嵌套一层的受保护根 2.5s - exit=0 err=报告已写：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/exam_register/m8_probe/r.json
+PASS 9a m9 修复：--profile 路径不存在 → 输入错误退出2（不是“内部错误”） 0.2s - exit=2 err=输入/参数错误：--profile 无法加载（/no/such/profile.json）：[Errno 2] No such file or directory: '/no/such/profile.json'
+PASS 9b m9 修复：--raw-root 不存在 → 输入错误退出2（修复前静默降级为 NEEDS_LOCAL、退出1） 0.2s - exit=2 err=输入/参数错误：原材料根不存在：/no/such/raw（m9：不再静默降级为 NEEDS_LOCAL）
+PASS 9c m9 修复：--exam-dir 空目录（无逐题 MD）→ 输入错误退出2（修复前 NEEDS_LOCAL、退出1） 0.2s - exit=2 err=输入/参数错误：--exam-dir 目录下没有任何逐题 MD（只有/没有 README.md 也算）：/tmp/exam_register_test_scratch/empty_examdir
+PASS 9d m9 修复：audit --limit -1 → 输入错误退出2（修复前静默当“不限”跑全库 84 张） 0.2s - exit=2 err=输入/参数错误：--limit 不能为负数：-1（m9：修复前会被当成“不限”，静默跑全库）
+PASS 9e m9 修复：--exam-dir 模式下 --region 非法值也要报输入错误（此前不校验，照样跑） 0.2s - exit=2 err=输入/参数错误：--region 不在 block_index.REGION 表中：火星
+PASS baseline_guard（真实输入未变，测试后） 5.0s 
+
+合计 60 条，失败 0 条，用时 258.1s
+
+real	4m18.430s
+user	4m0.598s
+sys	0m14.937s
+exit=0

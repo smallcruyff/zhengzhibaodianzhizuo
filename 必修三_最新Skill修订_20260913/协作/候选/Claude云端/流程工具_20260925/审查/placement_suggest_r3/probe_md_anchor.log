@@ -1,0 +1,7 @@
+production candidates (in-book keys x top3): 1029 ; with anchor kind != after_block: 4
+   ('BJ-2023-XC-ERMO-Q20', 'method_end', '例题 4\u30002026海淀期中第20题', 2, {'method_end': OrderedDict([('method_contains', '考法1\u3000接力型：检察建议督促履职（5题）'), ('node_contains', '03\u3000司法：公正司法')])})
+   ('BJ-2025-BJ-GAOKAO-Q17', 'method_end', '例题 4\u30002026顺义一模第17题', 2, {'method_end': OrderedDict([('method_contains', '考法1\u3000明写型：机制已写，四权一串写（4题）'), ('node_contains', '02\u3000公民的政治权利：三大权与四小权')])})
+   ('BJ-2026-XC-QIMO-Q21', 'method_end', '例题 8\u30002023西城二模第19题', 2, {'method_end': OrderedDict([('method_contains', '考法3\u3000一体型：一个动作写成一整句（2题）'), ('node_contains', '05\u3000一根：人民代表大会制度')])})
+MD>    - 插入点：考法末尾，锚点“例题 4　2026海淀期中第20题”（B0493，锚点唯一）
+MD>    - 插入点：考法末尾，锚点“例12　2024西城一模第18题第（3）问（6分）”（B0671，锚点唯一）
+MD>    - 插入点：考法末尾，锚点“例25　2026顺义一模第17题（7分）”（B0646，锚点唯一）

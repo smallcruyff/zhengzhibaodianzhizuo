@@ -1,0 +1,47 @@
+工具：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py
+父稿：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/必修三政治与法治宝典_R31续修_第52批_阶段审查稿.docx（期望 SHA c007d7198422050c…，实际 c007d7198422050c…）
+[PASS] baseline_guard_测试前 (4.86s) 
+[PASS] T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16 (44.92s) 
+[PASS] T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18 (45.33s) 
+[PASS] T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19 (42.93s) 
+[PASS] T2_img_金标回归_before_block还原原位_整篇比对 (33.74s) 
+[PASS] T2_tbl_金标回归_before_block还原原位_整篇比对 (33.05s) 
+[PASS] T3a_负例_父稿SHA错 (2.67s) 
+[PASS] T3b_负例_锚点0命中 (2.81s) 
+[PASS] T3c_负例_锚点多命中 (2.76s) 
+[PASS] T3d_负例_样板题块找不到 (2.67s) 
+[PASS] T3e_负例_原件里找不到指定图 (2.99s) 
+[PASS] T3f_负例_原件里找不到指定表 (2.88s) 
+[PASS] T3g_负例_图片文件损坏 (3.04s) 
+[PASS] T3h_负例_输出落到书稿目录 (2.89s) 
+[PASS] T3i_负例_输出落到Skill目录 (2.81s) 
+[PASS] T3j_负例_输出落到题库目录 (2.98s) 
+[PASS] T3k_负例_冻结册配置 (0.19s) 
+[PASS] T3l_负例_method_end命中多个考法分组 (2.89s) 
+[PASS] T3m_负例_标题命中禁用词表 (2.96s) 
+[PASS] T3n_负例_表格rows命中禁用词表 (2.85s) 
+[PASS] T4a_其他书_哲学_check (3.69s) 
+[PASS] T4b_其他书_哲学_apply最小写入 (12.62s) 
+[PASS] m15_其他书哲学apply_health如实记录新增FAIL (16.13s) 
+[PASS] B2_M1_表格超链接图片关系重建_真实原件 (20.12s) 
+[PASS] M1_表内docPr去重_真实原件 (17.48s) 
+[PASS] m1_表格含文本框安全中止 (2.86s) 
+[PASS] m3_同锚点多条insert顺序保持 (19.14s) 
+[PASS] m2_renumber失败退出码不再是0 (20.08s) 
+注意：--health 执行异常，未能确认体检结果：m5 复现用：模拟 --health 内部异常
+{"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m5health_out.docx", "sha256": "856f561191eb0dfbe4118142a9b1f1a831778965d78b9fa1b60afb94a31c54dc"}
+[PASS] m5_health异常不再静默退出0 (16.89s) 
+中止：写后复核不通过，已删除输出：N1：block_index 认出的图片数 1 与插入单预期 0 不符
+[PASS] M2_block_index写后复核硬失败_人工造媒体数不符 (16.36s) 
+[PASS] m9_sanitize_table_styles保留可查到的tblStyle (0.01s) 
+[PASS] m12a_apply缺省--profile被argparse拒绝 (0.21s) 
+[PASS] m12b_profile指向本环境不存在的root被拒绝 (0.2s) 
+[PASS] baseline_guard_测试后 (4.8s) 
+
+合计：34 条，PASS 34，FAIL 0
+详情：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/test_results.json
+
+real	6m33.957s
+user	6m9.993s
+sys	0m19.504s
+EXIT=0

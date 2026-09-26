@@ -1,0 +1,90 @@
+## fmt_dump.py：T1a/T1b/T1c 新块与样板块逐段格式（样式|pPr|run段(加粗,颜色,eastAsia,字号)）
+##### T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16_out.docx 例题 5　2026门头沟一模第17题 at 148
+  148 tbl=None headin | sp{'after': '60'}                                                      | [[('', '', '', ''), 18]] | 例题 5　2026门头沟一模第17题
+  149 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 4], [('', '', '', ''), 7]] | 【题目】17．（8分）
+  150 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 49]] | 建设韧性城市是以习近平同志为核心的党中央深刻
+  151 tbl=None Normal | jc=center sp{'line': '240', 'lineRule': 'auto'}                        | [] | 
+  152 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 65]] | 北京市委坚决贯彻落实党中央决策部署，坚持“全
+  153 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 193]] | 西城区某街道直面老旧平房区“防汛难、停车难”
+  154 tbl=None 题目材料   | jc=both                                                                | [[('', '', 'Songti SC', ''), 35]] | 结合材料，运用《政治与法治》知识，说明北京市
+  155 tbl=None 分析过程   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【思维链条】
+  156 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 77]] | 从材料选知识：“市委、街道党工委牵头”提示党
+  157 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 67]] | 从设问定层次：“说明如何”按主体、做法、效果
+  158 tbl=None 答案落点   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【答案落点】
+  159 tbl=None 答案落点   |                                                                        | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 46]] | ④（综合概括）市委统筹、居民共商共议和执法队
+  160 tbl=None 细则说明   |                                                                        | [[('B', '1F3864', 'Songti SC', '21'), 6], [('', '000000', 'Songti SC', '21'), 98]] | 【细则说明】 综合概括写出坚持党的领导、人民
+##### T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16_out.docx 例题 90　2023西城二模第16题 at 161
+  161 tbl=None headin | sp{'after': '60'}                                                      | [[('', '', '', ''), 18]] | 例题 90　2023西城二模第16题
+  162 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 4], [('', '', '', ''), 8]] | 【题目】16．（10分）
+  163 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 107]] | 北京公交集团主导的“公交便民驿栈”来了！和平
+  164 tbl=None Normal | jc=center sp{'line': '240', 'lineRule': 'auto'}                        | [] | 
+  165 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 172]] | 打通公共交通和基层社区、覆盖全城的首都智慧便
+  166 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 31]] | （1）结合材料，分析北京市推广便民服务栈点的
+  167 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 82]] | 《首都功能核心区控制性详细规划（街区层面）（
+  168 tbl=None 题目材料   | jc=both                                                                | [[('', '', '', ''), 27]] | （2）运用所学，针对上述目标提出两条具体建议
+  169 tbl=None 分析过程   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【思维链条】
+  170 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 89]] | 从材料选知识：便民驿栈利用退役公交车与场站边
+  171 tbl=None 答案落点   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【答案落点】
+  172 tbl=None 答案落点   |                                                                        | [[('', '000000', 'Songti SC', '21'), 93]] | ①推广便民服务栈有利于促进就业，保障和改善民
+  173 tbl=None 细则说明   |                                                                        | [[('B', '1F3864', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 168]] | 【细则说明】 （1）推广便民服务栈有利于促进
+##### T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18_out.docx 例题 3　2024朝阳二模第18题 at 91
+   91 tbl=None headin | sp{'after': '60'}                                                      | [[('', '', '', ''), 17]] | 例题 3　2024朝阳二模第18题
+   92 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 4], [('', '', '', ''), 7]] | 【题目】18.(8分)
+   93 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '', '', ''), 21]] | 2024年国务院《政府工作报告》的形成过程
+   94 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [] | 
+   95 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [[('B', '', '', ''), 4]] | 主要阶段
+   96 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [[('B', '', '', ''), 4]] | 工作内容
+   97 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 1]] | 一
+   98 tbl=1 题目材料   | keepNext keepLines ind{'firstLine': '0'} jc=both                       | [[('-',), 4]] | 起草准备
+   99 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 5]] | 形成讨论稿
+  100 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 73]] | ✧ 《政府工作报告》起草组认真学习习近平总书
+  101 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 1]] | 二
+  102 tbl=1 题目材料   | keepNext keepLines ind{'firstLine': '0'} jc=both                       | [[('-',), 4]] | 征求意见
+  103 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 4]] | 修改完善
+  104 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 40]] | ✧ 国务院常务会议讨论修改报告初稿，形成提交
+  105 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 30]] | ✧ 根据中共中央政治局常委会议意见进行修改，
+  106 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 57]] | ✧ 汇总各地方、各部门、社会各界的意见及网民
+  107 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 22]] | ✧ 根据中共中央政治局会议意见再次进行修改。
+  108 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 1]] | 三
+  109 tbl=1 题目材料   | keepNext keepLines ind{'firstLine': '0'} jc=both                       | [[('-',), 4]] | 提交大会
+  110 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 4]] | 正式审议
+  111 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 43]] | ✧ 2024年3月5日，第十四届全国人民代表
+  112 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 55]] | ✧ 国务院有关负责人、起草组工作人员分赴各代
+  113 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 20]] | ✧ 起草组整理意见和建议，再度修改报告。
+  114 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 1]] | 四
+  115 tbl=1 题目材料   | keepNext keepLines ind{'firstLine': '0'} jc=both                       | [[('-',), 4]] | 大会会议
+  116 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 2]] | 批准
+  117 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 30]] | ✧ 全国人民代表大会主席团听取国务院总理关于
+  118 tbl=1 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('', '', '', ''), 56]] | ✧ 2024年3月11日，十四届全国人大二次
+  119 tbl=None 题目材料   | jc=both                                                                | [[('', '', 'Songti SC', ''), 46]] | 结合材料，运用《政治与法治》知识，说明《政府
+  120 tbl=None 分析过程   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【思维链条】
+  121 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 105]] | 从材料选知识：“习近平总书记重要指示”“中共
+  122 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 57]] | 从设问定层次：“如何体现”把形成过程中的主体
+  123 tbl=None 答案落点   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【答案落点】
+  124 tbl=None 答案落点   |                                                                        | [[('B', '000000', 'Songti SC', '21'), 5], [('', '000000', 'Songti SC', '21'), 54]] | ④（总述）政府工作报告形成过程把党的主张、国
+  125 tbl=None 细则说明   |                                                                        | [[('B', '1F3864', 'Songti SC', '21'), 6], [('', '000000', 'Songti SC', '21'), 58]] | 【细则说明】 政府工作报告形成过程把党的主张
+##### T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18_out.docx 例题 91　2026朝阳一模第18题 at 126
+  126 tbl=None headin | sp{'after': '60'}                                                      | [[('', '', '', ''), 18]] | 例题 91　2026朝阳一模第18题
+  127 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 4], [('', '', '', ''), 92]] | 【题目】18.（8分）2026年是“十五五”
+  128 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [[('B', '', '', ''), 8]] | 【以“调”解纷】
+  129 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [[('B', '', '', ''), 8]] | 【以“惩”亮剑】
+  130 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=center                              | [[('B', '', '', ''), 8]] | 【以“辩”正风】
+  131 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 91]] | 针对生物医药领域科研人员的专利权归属纠纷，为
+  132 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 97]] | 对故意侵害植物新品种权、商业秘密等行为，依法
+  133 tbl=2 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 96]] | 针对假借“维权”之名实施的恶意诉讼、权利滥用
+  134 tbl=None 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 46]] | 结合材料，运用《法律与生活》知识，谈谈人民法
+  135 tbl=None 分析过程   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【思维链条】
+  136 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 86]] | 从材料选知识：“邀请第三方调停促成和解”提示
+  137 tbl=None 答案落点   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【答案落点】
+  138 tbl=None 答案落点   |                                                                        | [[('', '000000', 'Songti SC', '21'), 79]] | ①坚持调解优先，高效化解知识产权纠纷，激发创
+  139 tbl=None 细则说明   |                                                                        | [[('B', '1F3864', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 298]] | 【细则说明】 措施类：人民法院做了什么+做得
+##### T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19_out.docx 例题 92　2024海淀二模第19题 at 126
+  126 tbl=None headin | sp{'after': '60'}                                                      | [[('', '', '', ''), 18]] | 例题 92　2024海淀二模第19题
+  127 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 4], [('', '', '', ''), 255]] | 【题目】19．（6分）遗赠扶养协议纠纷案宣判
+  128 tbl=None 题目材料   | keepNext ind{'firstLine': '0'} jc=both                                 | [[('B', '1F4E79', 'Songti SC', ''), 6], [('', '', '', ''), 101]] | 【裁判结果】法院认为，案涉协议符合法律有关遗
+  129 tbl=None 题目材料   | keepLines ind{'firstLine': '0'} jc=both                                | [[('-',), 29]] | 结合材料，运用《法律与生活》知识，分析本案判
+  130 tbl=None 分析过程   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【思维链条】
+  131 tbl=None 分析过程   | keepNext                                                               | [[('B', '000000', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 102]] | 从材料选知识：居委会长期履行照看、生活费、医
+  132 tbl=None 答案落点   | keepNext                                                               | [[('B', '1F3864', 'Songti SC', '21'), 6]] | 【答案落点】
+  133 tbl=None 答案落点   |                                                                        | [[('', '000000', 'Songti SC', '21'), 76]] | ①认定遗赠扶养协议合法有效，维护居委会合法权
+  134 tbl=None 细则说明   |                                                                        | [[('B', '1F3864', 'Songti SC', '21'), 7], [('', '000000', 'Songti SC', '21'), 143]] | 【细则说明】 判决内容：居委会尽到扶养义务，

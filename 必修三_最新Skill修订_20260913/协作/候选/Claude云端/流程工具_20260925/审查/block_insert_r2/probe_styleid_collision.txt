@@ -1,0 +1,57 @@
+## style_collide.py
+{
+ "21.docx": {
+  "p:a9": {
+   "source": [
+    "paragraph",
+    "List Paragraph"
+   ],
+   "book_same_id": [
+    "character",
+    "标题 字符"
+   ],
+   "kept_by_tool": true
+  },
+  "r:ab": {
+   "source": [
+    "character",
+    "Hyperlink"
+   ],
+   "book_same_id": [
+    "character",
+    "副标题 字符"
+   ],
+   "kept_by_tool": true
+  }
+ },
+ "17(1).docx": {
+  "p:a6": {
+   "source": [
+    "paragraph",
+    "List Paragraph"
+   ],
+   "book_same_id": [
+    "paragraph",
+    "header"
+   ],
+   "kept_by_tool": true
+  }
+ },
+ "海淀期中教师版": {
+  "tbl:af0": {
+   "source": [
+    "table",
+    "Table Grid"
+   ],
+   "book_same_id": [
+    "paragraph",
+    "macro"
+   ],
+   "kept_by_tool": true
+  }
+ }
+}
+## cell styles in tool's own test outputs
+test_outputs/b2m1_out.docx 表内段落样式（bh 读回）: {'Normal': 51, '标题 字符': 6} rStyle: {'ab': 4}
+test_outputs/m1docpr_out.docx 表内段落样式（bh 读回）: {'Normal': 29, 'header': 1} rStyle: {}
+work/real_docx_tbl_out.docx 表内段落样式（bh 读回）: {'Normal': 12} rStyle: {}

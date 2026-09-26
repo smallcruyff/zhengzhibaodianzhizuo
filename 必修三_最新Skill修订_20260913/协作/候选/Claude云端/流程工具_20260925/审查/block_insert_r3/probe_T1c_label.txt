@@ -1,0 +1,7 @@
+127 【题目】19．（6分）遗赠扶养协议纠纷案 runs(len,bold,color)= [(4, True, '1F4E79'), (255, False, None)] eff_fonts= [('Songti SC', '21'), ('Kaiti SC', '21')]
+128 【裁判结果】法院认为，案涉协议符合法律有 runs(len,bold,color)= [(107, False, None)] eff_fonts= [('Songti SC', '21')]
+book in-material label_prefix (source zone, not 【题目】) first-run (bold,color): [((False, None), 25), ((True, None), 14), ((True, '1F3864'), 2), ((True, '000000'), 1)]
+book in-material 【X】+text paragraphs, body-part effective font: {'Kaiti SC': 29, 'Songti SC': 13}
+  Kaiti SC ['【实干诠释信念】广大党员干部，坚持正确政绩观，摒弃形象工程与', '【实干贵在品质】航天工程团队，数十年深耕攻关，以精益求精的实', '【实干优在方法】“河长制”全国推行，各级党政负责人牵头压实责', '【实干铸就结果】中国高铁，从“追赶”到“领跑”，密织成网的高']
+  Songti SC ['【缘起】外卖小哥给12345打电话反映“社区太大，楼号不清，', '【响应】社区迅速回电沟通，再召开居民大会征求意见，大家一致决', '【后续】6个月后，外卖小哥发现，新号牌装上了，样式也是他推荐', '【亮点一】对16至18周岁初次违反治安管理但情节严重、影响恶']
+template picked idx 119 结合材料，运用《政治与法治》知识，说明《政府工作报告》的形成过程是如何体现全过程 fallbacks []

@@ -1,0 +1,6 @@
+width_cm= -5 rc= 0 out_exists= True stdout= {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r3/work/w_out.docx", "sha256": "0757c093380c4886c951fb1f7680206f27a5014fac2f stderr= 
+   INVALID extent in output: -1800000 -1202482
+   python-docx opens OK (verify_output passed)
+width_cm= 1e-09 rc= 0 out_exists= True stdout= {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r3/work/w_out.docx", "sha256": "68f846a41dc516cefc0d97a292181f388ef03b870d36 stderr= 
+   INVALID extent in output: 0 0
+   python-docx opens OK (verify_output passed)

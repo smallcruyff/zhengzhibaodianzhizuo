@@ -1,0 +1,16 @@
+## report_overwrite.py
+{
+ "approved_patch_victim.json": {
+  "rc": 1,
+  "now_tool": "block_insert",
+  "now_schema": null,
+  "overwritten": true
+ },
+ "approved_insert_victim.json": {
+  "rc": 1,
+  "now_tool": "block_insert",
+  "now_schema": null,
+  "overwritten": true
+ }
+}
+guard_write(构建/baseline_20260925.json, overwrite=True) -> ALLOWED（只调守卫、未写） /home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/baseline_20260925.json

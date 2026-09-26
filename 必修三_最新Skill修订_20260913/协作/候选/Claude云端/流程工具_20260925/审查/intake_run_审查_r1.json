@@ -1,0 +1,293 @@
+{
+ "tool": "intake_run",
+ "stage": "对抗审查",
+ "round": 1,
+ "date": "2026-09-25",
+ "reviewer": "claude-cloud 子代理（审查者，非负责人）",
+ "reviewed": [
+  {
+   "path": "intake_run.py",
+   "lines": 827,
+   "sha256": "697dffeda8f2c7b046a227c19a54f6e8cc1c395c51a4fdceb2d41ffc84234ef3"
+  },
+  {
+   "path": "run_tests_intake_run.py",
+   "lines": 475,
+   "sha256": "2cb9e2c686184e37cbd8c9b39fc3d34a476d938c939739ffd2e3d9078795911c"
+  },
+  {
+   "path": "回执/intake_run_编写.json"
+  }
+ ],
+ "verdict": "FAIL",
+ "summary": "工具是只读的，没有动真实文件：baseline_guard 前后 0 变化，Skill 下没有 __pycache__，vermin 兼容 3.9。测试可以复跑，54/54 PASS。第2步 BLOCKED 的判据正确读取了 exam_register 的卷首证据结论，也区分了串题。第1、4步与负例退出码都对。但判定本身有 7 个 major：孪生别名没按 canonical_qid 去重，第8步把 11/19 报成缺题，实际只缺 2 道（M1）；新卷或未判卷第8步报 DONE（M2）；装进 Skill 母版后，或题库、归属表路径不对时，静默给出“题库尚无/需模型判定”这类错误结论，退出 1 而不是 2（M3）；该收清单不看准入，把“不收-无E1”的主观题列为待插入（M4）；输出守卫传 prof=None，_house 列的受保护根失效，init 在仓库外任意建目录（M5）；按本工具自己的 workdir 布局照抄第5步、第9步命令会失败，测试把这种失败记成 PASS（M6）；3e 是空断言，验收②没跑 block_insert，第8、9步的终态没测到，4f 的插入单被 block_insert 拒收（M7）。另有 12 个 minor。没有 blocker。",
+ "tests_rerun": {
+  "command": "python3 -B 必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/run_tests_intake_run.py",
+  "result": "合计 54 条，失败 0 条，用时 104.1s，退出码 0",
+  "log": "审查/intake_run_r1/rerun_tests_intake_run.log"
+ },
+ "vermin": {
+  "command": "vermin -t=3.9- --no-tips --eval-annotations --violations intake_run.py run_tests_intake_run.py",
+  "result": "无违例；Minimum required versions: 3.7",
+  "ok": true
+ },
+ "pycache": {
+  "skill": [],
+  "candidate_dir": []
+ },
+ "baseline_guard": {
+  "command": "python3 C/tools/baseline_guard.py check --base C/构建/baseline_20260925.json",
+  "files": 3468,
+  "changed": [],
+  "removed": [],
+  "added": [],
+  "skill_pycache": [],
+  "rc": 0,
+  "when": "审查全部探针结束后"
+ },
+ "blockers": [],
+ "majors": [
+  {
+   "id": "M1",
+   "title": "孪生/别名卷的题没按 canonical_qid 去重，第5/8步把同一道题算两次，报出大量假的“尚未在书中”",
+   "detail": "load_attribution 把 exam_id_raw 与 exam_id_canonical 都当键，BJ-2024-HD-QIZHONG 因此拿到 48 行：23 行 raw=2024，另 25 行 raw=BJ-2025-HD-QIZHONG、canonical=BJ-2024-HD-QIZHONG（重复登记的孪生卷）。qids_by_attr 用 unit_id 原样取题，没用归属表自带的 canonical_qid 列（归属表 README v3 明写要按 (canonical_qid, subq) 去重）。结果：①第5步要求对 BJ-2024-HD-QIZHONG-Q12 与 BJ-2025-HD-QIZHONG-Q12（同一道题）各跑一次落位建议；BJ-2025-HD-QIZHONG-Q18 归属 IN，但它的 canonical 题 BJ-2024-HD-QIZHONG-Q18 归属 COLLECTED，书里 B0050/B0119/B0677/B0684 已经有了，工具仍列为待落位、待插入。②第8步报“11/19 应收题尚未在 bixiu3 当前稿中”，其中 BJ-2025-HD-QIZHONG-Q7/Q8/Q9/Q10/Q11/Q19/Q21#1/Q18 这 8 道的 canonical 题都在同一报告的 found 列表里。按 canonical 去重后真正缺的只有 Q12、Q21(2) 两道。xuanbi1 同卷报 13/13，也把两套卷号各列一遍。使用者会被引导去插重复题。验收明确要求识别重复登记，这一步却在 5/8 步把重复又带了回来。",
+   "evidence": "scratch intake_run_test_scratch/real_report_stage1.json（重跑 run_tests 生成）BJ-2024-HD-QIZHONG×bixiu3：s8 missing=[BJ-2024-HD-QIZHONG-Q12, BJ-2024-HD-QIZHONG-Q21#2, BJ-2025-HD-QIZHONG-Q18, -Q19, -Q21#1, -Q7, -Q8, -Q9, -Q10, -Q11, -Q12]，found=[BJ-2024-HD-QIZHONG-Q7..Q11, -Q18, -Q19, -Q21#1]；s5 to_place=[BJ-2024-HD-QIZHONG-Q12, BJ-2025-HD-QIZHONG-Q18, BJ-2025-HD-QIZHONG-Q12]。attribution_ruled.csv 中 BJ-2025-HD-QIZHONG-Q18 的 canonical_qid=BJ-2024-HD-QIZHONG-Q18；block_index 探针（审查/intake_run_r1/probe_keys.py HD-QIZHONG）显示 B0050/B0119 key=BJ-2024-HD-QIZHONG-Q18。",
+   "fix_hint": "按 (canonical_qid, subq) 归并再判定，孪生任一侧在书里就算在书里；evidence 里保留 alias→canonical 映射；exam_register 判为 duplicate_registration 时第5-8步只按 canonical 卷计。补一条回归：BJ-2024-HD-QIZHONG×bixiu3 第8步 missing 只剩 Q12、Q21(2)。"
+  },
+  {
+   "id": "M2",
+   "title": "卷不在归属表或归属没判完时，第8步报 DONE（“应收题为空”），新卷这个主场景下状态就错",
+   "detail": "check_step8 只看 qids_by_attr(rows, IN/COLLECTED) 是否为空，不看第4步状态。卷根本不在归属表（新卷，也就是本流水线的主场景）、files 模式还没有 exam_id、归属列有空值时，target 都是空，于是报 DONE“本卷本书应收题为空（全部 OUT/MAYBE，或归属尚未判定）”。规格要求“没有判定的列为 NEEDS_MODEL”，第5/6/7步也都按 step4_status 报 NEEDS_MODEL，只有第8步漏了这个判断。状态表里“插入整道题”一格就对新卷显示 DONE。",
+   "evidence": "题库里唯一不在归属表的卷 BJ-2023-HD-QIMO：status 终端输出 `BJ-2023-HD-QIMO x bixiu3 1=DONE 2=TODO 3=TODO 4=NEEDS_MODEL 5=NEEDS_MODEL 6=NEEDS_MODEL 7=NEEDS_MODEL 8=DONE 9=TODO`（philosophy 同样）。审查/intake_run_r1/probe_adv_log.json A15（files 模式）、A10（非法 exam_id）第8步也是 DONE；审查/intake_run_r1/probe_install_layout.py 模拟装进 Skill 后同样是 8=DONE。",
+   "fix_hint": "step4_status != 'DONE'（或 exam_id 为空）时第8步报 NEEDS_MODEL/BLOCKED，与第5-7步口径一致；补测试：不在归属表的卷第8步不得 DONE。"
+  },
+  {
+   "id": "M3",
+   "title": "题库/归属表路径不对时不报错，照样给出错误结论：原样装进 Skill 母版后默认路径就会错",
+   "detail": "DEFAULT_BANK、DEFAULT_ATTRIBUTION_CSV 只从 REPO_ROOT 推，REPO_ROOT 又只从 SK 目录往上找名叫 .claude 的祖先，找不到就取 sk_dir.parents[3]。按 00_规格.md 一、1，工具要装进 ~/.codex/skills/beijing-gaokao-politics/scripts，这时 REPO_ROOT 会变成用户主目录，默认题库和归属表都不存在。工具不读已加载 profile 的 paths.root / sources.bank.root（exam_register 的 _default_bank_raw 读了）；load_attribution 遇到 csv 不存在时直接返回 {}；bank_root 也不校验。结果：退出 1，所有卷都报“题库尚无 questions/…，需先跑 source_intake”“未出现在归属表，需先走归属表流水线（模型判定）”，没有任何错误提示。--attribution-csv/--bank 写错也一样。这违反共同约定 6（输入/配置错误 → 2），也违反“原样拷进 SK 就能跑”，还会让模型去重做早已做完的归属判定。",
+   "evidence": "审查/intake_run_r1/probe_install_layout.py：模拟 fakehome/.codex/skills/beijing-gaokao-politics/scripts（SK 副本+四个新工具）→ REPO_ROOT=fakehome，DEFAULT_BANK is_dir=False，归属表 exists=False；status rc=1，BJ-2026-HD-QIZHONG×bixiu3 = 1 TODO“题库尚无 questions/BJ-2026-HD-QIZHONG/”、4 NEEDS_MODEL“未出现在归属表”、8 DONE。审查/intake_run_r1/probe_adv_log.json：A1 --attribution-csv 不存在 → rc=1，step4 NEEDS_MODEL；A2 --bank 不存在 → rc=1，steps=[TODO,TODO,TODO,…]。",
+   "fix_hint": "根目录优先取 profile paths.root，题库优先取 sources.bank.root（与 exam_register 同口径）；显式给的或推算出的题库根、归属表不存在时抛 InputError（退出 2）；报告 inputs 写明实际用到的根。补一条用例：模拟 ~/.codex/skills 布局。"
+  },
+  {
+   "id": "M4",
+   "title": "“该收清单”= 归属表里所有 IN，不看准入（admission）和各书清单_v4 的类别，把明确“不收-无E1”的主观题列为待落位、待插入",
+   "detail": "设计稿第5步写的是“每本书的‘该收’清单，按规则过滤：选择题照收，主观题须有细则”，任务说明也要求应收题取自归属表（各书清单/attribution_ruled.csv）。qids_by_attr 只取 归属_<码>=='IN'，admission 列和 各书清单_v4/<码>_漏收候选.csv 的“类别”（漏收 / 不收-无E1 / 待核证据）都没读。例子：BJ-2026-HD-QIZHONG-Q22#2 在 attribution_ruled.csv 里是 IN，admission=待裁决-证据未核实；各书清单_v4/B3_漏收候选.csv 已把它定为“不收-无E1”。intake_run 仍列为 bixiu3 第5步待落位，第8步报 TODO 并指向 block_insert。主观题没有正式细则不入书，这是项目红线，工具却在引导插题。",
+   "evidence": "审查/intake_run_r1/probe_admission.py：5 张验收卷×7 本书里，intake_run 当成该收、但归属表 admission 或各书清单_v4 不是“漏收”的有 7 条，含 BJ-2026-HD-QIZHONG×bixiu3 [{unit_id: BJ-2026-HD-QIZHONG-Q22#2, admission: 待裁决-证据未核实, 类别(各书清单_v4): 不收-无E1}]、BJ-2023-HD-QIZHONG×xuanbi2 Q21（待裁决-证据未核实）。real_report_stage1.json：BJ-2026-HD-QIZHONG×bixiu3 s5 TODO“1 道 IN 题尚无插入位置建议：['BJ-2026-HD-QIZHONG-Q22#2']”，s8 TODO。",
+   "fix_hint": "该收清单至少过滤 admission 以“不收”“身份”开头的行，“待裁决”单列为 NEEDS_MODEL/CANDIDATE；有各书清单_v4 时以它的类别为准（或两者不一致时标 CANDIDATE），并在 evidence 里写明依据。"
+  },
+  {
+   "id": "M5",
+   "title": "输出守卫比同伴工具弱：guard_write 传 prof=None，_house.json 列的受保护根失效；init 在仓库外任意位置都会建目录",
+   "detail": "write_guarded 调 dl.guard_write(Path(path), None, …)，_extra_guard_check 只补上仓库根。_house.json output_guard.protected_roots 里的 ~/GaokaoPolitics（本地六本书工作区）、~/.codex/skills、~/.claude/skills、~/Desktop 因此都不受保护。exam_register、placement_suggest、block_insert 都把 profile 传给 guard_write，本工具手里已经加载了 profile 却没传。init 的 _check_workdir_allowed 对仓库根以外的路径一律放行，随后 mkdir -p 九个子目录。文件头说 workdir“受 guard_write 同款守卫”，实际做不到。守卫不会覆盖已有文件，所以没有数据损坏；但路径一旦写错，--report/--md/init 会把新文件或空目录落进受保护目录。",
+   "evidence": "审查/intake_run_r1/probe_guard_prof.py（只调守卫函数，不写盘）：/root/.claude/skills/intake_probe_never_written.json → intake_run 同款守卫“放行”；带 profile 的 guard_write“拒绝：落在受保护目录 /root/.claude/skills 内”。init workdir /root/.claude/skills/x_workdir → _check_workdir_allowed 放行。实写探针 probe_init.py A17：init --workdir /home/user/intake_review_probe_outside_repo rc=0，目录真的建出来了（已随即删除）。",
+   "fix_hint": "write_guarded 传入已加载的 profile（多本书时逐本过一遍，或至少合并 _house 的 protected_roots）；init 的 workdir 在任何受保护根内都用同一套 allow 正则判，不只看 REPO_ROOT。"
+  },
+  {
+   "id": "M6",
+   "title": "“下一条命令”argparse 能通过，但按本工具自己的 workdir 布局照抄会失败；测试把失败记成 PASS",
+   "detail": "init 只建 05_placement/、06_insert/、07_drill/ 这一层，不建 <书>/ 子目录。第5步给出的 placement_suggest 命令 --report 指向 05_placement/<书>/<卷>.json，照抄执行退出 3“拒绝写出：输出目录不存在”。第9步给出的 batch_health 命令 --out 指向 <workdir>/09_health/<书>.json；回执 usage 推荐的 workdir 在 构建/入书_<批次>/ 下，而 batch_health 在受保护目录内只放行 …/构建/体检/，这条命令会被拒写。第8步 block_insert 命令写死了 `--profile <书册配置>` 占位，可是本书的配置路径工具明明知道，不满足“参数齐全”。run_tests 组6把 rc=3“输出目录不存在”算作“argparse 接受”判 PASS；组4在跑 placement_suggest 前手动 ps_path.parent.mkdir，第9步用的是 /tmp 下的 workdir，问题因此都没暴露。",
+   "evidence": "重跑日志 审查/intake_run_r1/rerun_tests_intake_run.log：`PASS 6-step5 … rc=3 拒绝写出：输出目录不存在：…/入书_cmdcheck/05_placement/bixiu3`。实操复现（scratch flow/）：init → status → exam_register → status，照抄 next_action.command（placement_suggest）→ rc=3“拒绝写出：输出目录不存在：…/入书_flow/05_placement/bixiu3”。审查/intake_run_r1/probe_bh_guard.py：bh._unsafe_out(C/构建/入书_demo/09_health/bixiu3.json) → “落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/构建/体检/…）”。审查/intake_run_r1/probe_cmds.json：第8步 placeholders=['<06_insert改动单路径.json>', '<书册配置>']。",
+   "fix_hint": "init 按清单里的 books 建 05_placement/<书>、06_insert/<书>、07_drill/<书>；health 报告改放 <workdir>/构建/体检/ 这类 batch_health 放行的位置，或在命令前加 mkdir；step8 传 book_profile_path；组6改为照抄命令实跑，并把“拒绝写出/目录不存在”判 FAIL。"
+  },
+  {
+   "id": "M7",
+   "title": "测试有效性不足：3e 是空断言；验收②没真跑 block_insert，第8步转 DONE、第9步转 NEEDS_LOCAL 两个分支都没测到；4f 自称“格式合法”的插入单其实被 block_insert 拒收",
+   "detail": "①3e（“部分题已在必修三第52批里”）的判据是 any(DONE 或 TODO 且 found 非空)。BJ-2024-CY-QIZHONG×bixiu3 应收为空，天然是 DONE，所以 block_index 查找整体坏掉时 3e 照样 PASS，这条已知事实没有被真正断言。②验收②要求“尽量真的跑 exam_register / placement_suggest / block_insert 生成”，测试没调用过 block_insert；第8步在沙盒里从头到尾是 TODO，TODO→DONE（插入后被 block_index 认出）从没测过；第9步 NEEDS_LOCAL 分支也没进过测试（4l 停在 TODO）。③4f 合成的插入单 anchor={'template_block': …}、content=[]、parent_docx_sha256='x'*64，注释写“合成但格式合法”，但 block_insert check 以退出 2 拒收（anchor 出现未知字段）。intake_run 仍据此把第6步判 DONE，下一条命令再把这份不可用的插入单交给 block_insert。这里的实际问题是：第6步判据不核插入单是否覆盖该收题、是否对得上当前稿 SHA。回执写的“第4/8步正确报 DONE”“组6对真实5卷×7书状态表逐类取命令”也比实际测到的多（组6只跑了 BJ-2026-HD-QIZHONG×bixiu3 一个组合）。我独立核实过，查找本身能用（bixiu3 COLLECTED 召回 93.8%），所以结论不算造假，这里定为 major 而不是 blocker。",
+   "evidence": "审查/intake_run_r1/probe_3e_vacuous.py：has_key 全部改成查不到后，各卷第8步=[('TODO',0),('TODO',0),('DONE',0),('TODO',0),('TODO',0)]，“3e 判据仍然成立（测试照样 PASS）：True”。block_insert check --insert <scratch>/入书_sandbox/06_insert/bixiu3/BJ-2026-CY-QIZHONG.json → rc=2“中止：IT01.anchor：出现未知字段 ['template_block']”。run_tests_intake_run.py 第 316-329、428-450 行。",
+   "fix_hint": "3e 改为断言具体题键在 found 里（如 BJ-2026-HD-QIZHONG-Q7/Q18、BJ-2023-HD-QIZHONG-Q7）；沙盒里用 block_insert apply 在 scratch 副本上插入 BJ-2026-CY-QIZHONG-Q9（profile 副本的 central_state 指向副本），验证第8步 TODO→DONE；再补齐 09_publish 验证 NEEDS_LOCAL；4f 改用能过 block_insert check 的真实插入单；第6步至少核 parent_docx_sha256 与当前稿一致、inserts 覆盖该收题。"
+  }
+ ],
+ "minors": [
+  {
+   "id": "m1",
+   "title": "MAYBE 一律当“已判定”，模型明确“暂缓(证据不足)”的格子和“身份错误-不计入分母”的行也算进第4步 DONE",
+   "detail": "5 张验收卷里有 10 个格子的最后一条 ruling 是 chk=暂缓(证据不足)（如 BJ-2026-CY-QIZHONG-Q9×PH、BJ-2025-HD-QIZHONG-Q21#2×B3），另有 2 行 admission=身份错误-不计入分母。第4步仍报“N 题归属已全部判定”。规格写的是“没有判定的列为 NEEDS_MODEL”。至少应在 evidence 里单列暂缓数。",
+   "evidence": "对 rulings.jsonl 取每格最后一条 ruling 统计：10 格“暂缓”；admission Counter 含 '身份错误-不计入分母': 2。",
+   "fix_hint": "evidence 里给出 deferred 计数；暂缓格子报 NEEDS_MODEL 或 CANDIDATE。"
+  },
+  {
+   "id": "m2",
+   "title": "第8步把只出现在题肢单练附录（drill_items）的命中也当作“整题已在书里”",
+   "detail": "bidx.select 默认 with_drill=True。设计稿第7步（题肢）排在第8步（插入整题）前面；按这个顺序先重建单练，第8步就会在例题题块没插的情况下变成 DONE。evidence 也不区分命中的是题块还是单练条目。culture 草案配置下，COLLECTED 命中里有 141/199 只靠单练条目。",
+   "evidence": "审查/intake_run_r1/probe_3e_vacuous.py：往 bixiu3 索引注入一条 key=BJ-2026-CY-QIZHONG-Q9 的单练条目，第8步 TODO→DONE。审查/intake_run_r1/probe_collected_recall.json：culture found_only_via_drill_item=141。",
+   "fix_hint": "第8步分开统计 block 命中和 drill 命中；只有 drill 命中时报 TODO 或 CANDIDATE，并写进 evidence。"
+  },
+  {
+   "id": "m3",
+   "title": "status 写出不是原子的；同一个 --report 不能重写",
+   "detail": "先写 --report，再写 --md。--md 被守卫拒绝时退出 3，但 --report 已经落盘，不符合约定4“任一校验失败不留输出”。另外 status 本来就要每推进一步重跑一次，重写同名 --report 却一律退出 3“目标已存在”。",
+   "evidence": "审查/intake_run_r1/probe_adv_log.json A4：rc=3，report_left_behind=True；A3：rc=3“拒绝写出：目标已存在，不覆盖”。",
+   "fix_hint": "两个输出路径都先过守卫再写；对本工具自己以前写的报告（tool=='intake_run'）允许覆盖。"
+  },
+  {
+   "id": "m4",
+   "title": "第6/7步 DONE 判据不绑定本卷该收题与当前稿",
+   "detail": "第6步只看 schema 与 approved_by，不核 inserts 是否覆盖该收题、parent_docx_sha256 是否等于当前稿 SHA。第7步只看 check_drill_admission 报告 status=='pass'，不核候选是否来自本卷的 IN 选择题。放一份过期的、或别的题的产物也会判 DONE。",
+   "evidence": "run_tests 4f 用的就是 parent_docx_sha256='x'*64、content=[] 的插入单，第6步 DONE。",
+   "fix_hint": "第6步核 SHA 与覆盖；第7步核 candidates 的 source 覆盖 to_place_choice。"
+  },
+  {
+   "id": "m5",
+   "title": "第9步永远到不了 DONE，本地装进 Skill 后也一样；“同版身份”没核",
+   "detail": "第9步写死最高 NEEDS_LOCAL，所以任何非必修二组合都到不了 DONE，退出码 0 实际上达不到。本地环境同样如此，而工具就是要装进本地 Skill 用的。规格第9步点名的“同版身份”完全没核；layout check 命令也不带 --pdf，目录页码核不了；batch_health 报告只看文件在不在，不看 FAIL。",
+   "evidence": "check_step9 代码第 560-564 行；probe_cmds.py 9e：全部报告齐了 status=NEEDS_LOCAL。",
+   "fix_hint": "本地（或加 --local-final 这类显式开关）核 render_book 的同版身份、page_delta 账本、publish_review --apply 回执后可报 DONE；云端保留 NEEDS_LOCAL。"
+  },
+  {
+   "id": "m6",
+   "title": "--report 的 inputs 缺 SHA",
+   "detail": "只有清单、归属表带 SHA。各书当前稿 docx（第8步结论依赖它）、profile、各步证据文件都没有 SHA，也没有顶层 profile 字段。current_docx_for_book 只取 working_head 的文件名去 workspace 下找，不核 central_state.working_head_sha256。",
+   "evidence": "报告 inputs 键：manifest/attribution_csv/bank_root/workdir/profiles（只有路径）。",
+   "fix_hint": "inputs 里加 books[{docx, sha256, profile, profile_sha256}]，并核对 working_head_sha256。"
+  },
+  {
+   "id": "m7",
+   "title": "输入校验薄弱",
+   "detail": "exam_id 不校验格式，'../indexes' 会解析到 题库/indexes，第1步报“已在题库 questions/ 下”DONE；exam_id 不是字符串时报“内部错误”；books/exams 有重复时生成重复行；init 不校验 --book/--exam-id（未知书名照写进清单）；清单里的相对 workdir 按 CWD 解析，而不是按清单所在目录。",
+   "evidence": "审查/intake_run_r1/probe_adv_log.json A10、A11、A12；probe_init.py A16（未知书名 rc=0 并写出清单）、A20。",
+   "fix_hint": "exam_id 用 exam_register 的 EXAM_ID_RX 校验；books、exams 去重或报错；init 复用 load_manifest 的校验；相对 workdir 按清单目录解析。"
+  },
+  {
+   "id": "m8",
+   "title": "files 模式的条目永远过不了第3步",
+   "detail": "exam_id 只从清单读，不从 exam_register 报告的 suggestion 或 claimed_id 取，所以第1、2步都 DONE 之后，第3步仍是 BLOCKED“exam_id 尚未确定（第1/2步未完成）”。原因写错了，也没提示要回清单补 exam_id。",
+   "evidence": "check_step3 第 386-388 行；probe_adv_log.json A15。",
+   "fix_hint": "第2步 DONE 后取 claimed_id 或 suggestion 作为候选 exam_id，或在原因里明确写“请在清单补 exam_id”。"
+  },
+  {
+   "id": "m9",
+   "title": "--md 总表的分隔行只有 11 列，表头有 12 列，按 GFM 渲染不成表格",
+   "detail": "render_md 里 sep = '|---' * 11 + '|'；表头列为 卷、书、1-9、下一条命令，共 12 列。",
+   "evidence": "newexam/r.md 第 7-8 行。",
+   "fix_hint": "改成 '|---' * 12 + '|'。"
+  },
+  {
+   "id": "m10",
+   "title": "回执有几处说法不准",
+   "detail": "①组6写“对真实5卷×7书状态表里出现的 next_command 逐类各取一条”，实际只跑了 BJ-2026-HD-QIZHONG×bixiu3 一个组合；第1步 source_intake、第7步、第9步 repair/batch_health/publish 这几类命令测试都没解析验证过（我用只解析不执行的 harness 补测，14 类全部能被 argparse 接受）。②known_limits 说“qpack.py get 不接受 --profile/--bank”，不对：get 有 --profile，--bank 是顶层参数。云端跑不了的真正原因是缺 后勤管理/MD全库流水线_20260921/conversion_manifest.json。③summary 说“已知的部分已插入题在第8步正确报 DONE”：必修三五张卷里，第8步报 DONE 的只有应收为空的 BJ-2024-CY-QIZHONG。",
+   "evidence": "审查/intake_run_r1/probe_cmds.json；`qpack.py --bank <题库> get …` 实跑 → FileNotFoundError …/conversion_manifest.json。",
+   "fix_hint": "按实际测到的范围改写回执。"
+  },
+  {
+   "id": "m11",
+   "title": "第2步不核登记报告是不是本卷的",
+   "detail": "只按文件名 <key>.json 读 items[0]，不核 items[0].exam_id/claimed_id 是否等于 key。报告文件放错或来自 audit 模式（多卷）时，会拿别的卷的结论判状态。",
+   "evidence": "check_step2 第 369 行。",
+   "fix_hint": "核身份与 mode=='check'，不符报 TODO 并要求重跑。"
+  },
+  {
+   "id": "m12",
+   "title": "第7步用的工具与设计稿不一致",
+   "detail": "设计稿和任务说明写的都是 drill_tool（准入决定文件），工具改用 check_drill_admission 的三元组。回执 needs_user_decision 里已经如实列出，这里只作记录。",
+   "evidence": "新卷入书流水线_设计.md 第7行；intake_run.py 第 31-32、491 行。",
+   "fix_hint": "请本地主代理定口径。"
+  }
+ ],
+ "acceptance": [
+  {
+   "criterion": "验收①真实数据：5 卷×8 书（必修二列出且 SKIP）出状态表，并与已知事实对照：已在题库→第1步 DONE；归属已判→第4步 DONE；部分题已在必修三第52批→第8步能认出；前三张卷有届别/重复问题→先跑 exam_register 后第2步 BLOCKED",
+   "met": true,
+   "evidence": "重跑 3a-3j 全部 PASS；我逐项核对 real_report_stage1.json：必修二 5 行 9 步全 SKIP；三张卷 BLOCKED 的原因分别是 BJ-2023-HD-QIZHONG id_mismatch(2023→2024)、BJ-2024-HD-QIZHONG duplicate_registration→BJ-2025-HD-QIZHONG、BJ-2024-CY-QIZHONG id_mismatch(2024→2025)，都来自 exam_register 基于卷首证据的结论，串题（shared_or_reused）不会 BLOCKED；bixiu3 第8步 found 分别为 6/8/8。不过同一张表第5/8步对孪生卷（M1）和不收题（M4）给出的结论是错的，3e 这条断言本身也是空的（M7）。"
+  },
+  {
+   "criterion": "验收②沙盒：逐步放入各步产物（尽量真跑 exam_register/placement_suggest/block_insert），状态依次推进，下一条命令随之变化",
+   "met": false,
+   "evidence": "第2→5→6→7步的推进确实测到了（4a-4h）；但 block_insert 没跑过，第8步 TODO→DONE、第9步→NEEDS_LOCAL 两个分支都没测；第6步用的插入单被 block_insert check 以退出 2 拒收（M7）；第5步命令是靠测试手动 mkdir 才跑通的（M6）。"
+  },
+  {
+   "criterion": "验收③负例：清单格式错/书名未知/配置找不到→退出2；报告落受保护目录→退出3",
+   "met": true,
+   "evidence": "重跑 5a-5e PASS；我补的 A5（输出=输入）、A6（符号链接指向 后勤管理/）、A7（非 .json）、A8（Skill 目录）、A9（C/审查/）都是退出 3 且没写出。但守卫没覆盖 _house 列的受保护根（M5）。"
+  },
+  {
+   "criterion": "下一条命令完整可复制、参数齐全、指向真实脚本，并能被目标脚本 argparse 接受",
+   "met": false,
+   "evidence": "argparse 层面：probe_cmds.py 用只解析不执行的 harness 验了 14 类命令，全部 PARSED。可复制执行层面：第5步在本工具 init 出的 workdir 里退出 3，第9步 batch_health 在 构建/入书_* 下被拒写，第8步 --profile 是占位，第6步 qpack/第3步 bank_compile 在云端跑不了（回执已说明）（M6）。"
+  },
+  {
+   "criterion": "约定1 SK 定位与 dont_write_bytecode；原样拷进 SK 能跑",
+   "met": false,
+   "evidence": "SK 定位顺序正确，文件开头设了 dont_write_bytecode，Skill 与候选目录下都没有 __pycache__；但装进 ~/.codex/skills 后 REPO_ROOT 退回主目录，题库和归属表找不到，工具静默给出错误结论（M3）。"
+  },
+  {
+   "criterion": "约定2 Python 3.9 兼容（vermin）",
+   "met": true,
+   "evidence": "vermin -t=3.9- --no-tips --eval-annotations --violations：两个文件都没有违例，Minimum required versions: 3.7。"
+  },
+  {
+   "criterion": "约定3 复用 docx_lib/block_index，不另写识别逻辑",
+   "met": true,
+   "evidence": "题键查找用 bidx.build_index/select，写出用 dl.guard_write，没有复制 bh/block_index 的逻辑（第8步 with_drill 的口径问题见 m2）。"
+  },
+  {
+   "criterion": "约定4 默认只读；失败不留输出",
+   "met": false,
+   "evidence": "对题库、书稿、归属表只读（baseline_guard 0 变化）；status 的 --md 被拒时 --report 已经落盘（m3）；init 在失败时的原子性做对了（2c、A16-A19）。"
+  },
+  {
+   "criterion": "约定5 冻结册",
+   "met": true,
+   "evidence": "必修二全流程 SKIP，不加载配置；A14 用 bixiu3 书名配冻结册配置，只读能跑；本工具没有写书模式。"
+  },
+  {
+   "criterion": "约定6 退出码与中文提示无 traceback",
+   "met": false,
+   "evidence": "0/1/2/3 基本对，各负例都没有打印 traceback；但题库根、归属表路径错误时退出 1 而不是 2，也不提示（M3）。"
+  },
+  {
+   "criterion": "约定7 --report 字段（tool/version/mode/inputs 路径+SHA/profile/summary/明细）",
+   "met": false,
+   "evidence": "tool/version/mode/summary/rows 都有；inputs 只给清单和归属表的 SHA，书稿 docx 与 profile 没有 SHA，也没有 profile 字段（m6）。"
+  },
+  {
+   "criterion": "约定8 不做教学判断",
+   "met": true,
+   "evidence": "第4/6/7步都交给 NEEDS_MODEL，placement 的 flags 原样转述。"
+  },
+  {
+   "criterion": "约定9 行数 ≤900",
+   "met": true,
+   "evidence": "intake_run.py 827 行，SHA 697dffed… 与回执一致。"
+  },
+  {
+   "criterion": "约定10 测试纪律（自包含、可重跑、逐条 PASS/FAIL、前后 baseline_guard）",
+   "met": true,
+   "evidence": "我重跑：54 条全 PASS，104.1s，退出码 0；前、组3后、组4后、结束时共 4 次 baseline_guard 均 PASS。测试有效性问题见 M6、M7。"
+  },
+  {
+   "criterion": "约定11 回执字段齐全且属实",
+   "met": false,
+   "evidence": "字段齐全；有几处说法不准（m10），3e 支撑的说法比实际测到的强（M7）。"
+  },
+  {
+   "criterion": "真实文件未变（baseline_guard）",
+   "met": true,
+   "evidence": "审查结束后跑 baseline_guard check：files=3468，changed=[]，removed=[]，added=[]，skill_pycache=[]，rc=0。"
+  }
+ ],
+ "probes": {
+  "dir": "审查/intake_run_r1/",
+  "scratch": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_intake_run_r1/",
+  "files": [
+   "probe_adv.py（A1-A19 负例、守卫、原子性、输入校验）",
+   "probe_init.py（init 未知书名、仓库外 workdir、目录骨架、相对 workdir）",
+   "probe_guard_prof.py（prof=None 守卫缺口，只调函数不写盘）",
+   "probe_install_layout.py（模拟装进 ~/.codex/skills）",
+   "probe_admission.py（该收清单与 admission/各书清单_v4 对照）",
+   "probe_collected_recall.py（各书 COLLECTED 题第8步召回：bixiu3 0.938、philosophy 0.959、culture 0.957、xuanbi1 0.92、xuanbi2 0.973、mind 0.979、reasoning 0.994）",
+   "probe_drill_only.py",
+   "probe_3e_vacuous.py（3e 空断言与单练条目冒充整题）",
+   "argparse_harness.py + probe_cmds.py（14 类下一条命令只解析不执行）",
+   "probe_bh_guard.py（batch_health 输出守卫）",
+   "probe_keys.py（block_index 题键普查）"
+  ],
+  "note": "探针只写 scratch 与本目录；A17 为验证 init 仓库外建目录，在 /home/user/intake_review_probe_outside_repo 实建后已立即删除；审查后 baseline_guard 0 变化。"
+ },
+ "positives": [
+  "第2步读 exam_register 报告：duplicate_registration 只在 fraction_reliable 时出现，串题 shared_or_reused 不会 BLOCKED；届别冲突用的是 id_mismatch（卷首证据年份与登记号不一致），不是目录名。",
+  "必修二全 SKIP，不读配置。",
+  "init 先校验 workdir 位置再写清单骨架，失败时不留半成品（2c 与我的 A16-A19）。",
+  "第8步复用 block_index，COLLECTED 召回 92%-99%，漏掉的主要是小问粒度与孪生别名（M1）。",
+  "终端、JSON、MD 三种输出齐全，5×8 真实矩阵约 6 秒跑完。"
+ ]
+}

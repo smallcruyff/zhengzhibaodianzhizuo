@@ -1,0 +1,2 @@
+exit 2 calls ['a.md', 'a.json'] left_files []
+stderr: 内部错误：[Errno 28] 模拟：No space left on device

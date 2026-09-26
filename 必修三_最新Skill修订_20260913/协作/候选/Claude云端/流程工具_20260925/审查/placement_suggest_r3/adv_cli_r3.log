@@ -1,0 +1,68 @@
+== B01 frozen + --out (md) exit=3
+拒绝写出：必修二《经济与社会》 已冻结，拒绝写出：2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝） 
+   traceback_lines=0
+== B02 frozen read-only (no write) exit=0
+
+   traceback_lines=0
+== B03 --report = symlink in 构建/ -> 云端/同步清单.json exit=3
+拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/云端/同步清单.json 
+   traceback_lines=0
+   sync manifest sha before=0e76e89f92cda8a9 after=0e76e89f92cda8a9; link still symlink: yes
+== B04 --report existing file exit=3
+拒绝写出：目标已存在，不覆盖：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/placement_suggest/r3adv_exists.json 
+   traceback_lines=0
+   content now: x
+== B05 --report nonexistent subdir exit=3
+拒绝写出：输出目录不存在：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/placement_suggest/no_such_dir 
+   traceback_lines=0
+== B06 --out with .json suffix under --format md exit=3
+拒绝写出：输出必须是 .md 文件：r3adv_x.json 
+   traceback_lines=0
+== B07 --params agg_top_k=2.5 (float) exit=2
+内部错误：slice indices must be integers or None or have an __index__ method 
+   traceback_lines=0
+== B08 --params bm25_k1=-1 exit=1
+
+   traceback_lines=0
+== B09 --params ngram_sizes=[0] exit=0
+
+   traceback_lines=0
+== B10 --params agg_mix=5 + unknown weight key exit=0
+
+   traceback_lines=0
+== B11 --text empty file exit=1
+
+   traceback_lines=0
+== B12 --md binary garbage exit=2
+输入/参数错误：MD:bin.md：读取指引未点名题面小节，关键词（题面|题干|题目原文|原题保真|原卷题面 等，已排除“不得当作题面/讲评/含答案”类标题）在本 MD 的二级/三级标题里也未命中，需人工核对该 MD 格式 
+   traceback_lines=0
+== B13 wrong profile (philosophy draft) on bixiu3 book exit=1
+
+   traceback_lines=0
+== B14 --key lowercase exit=2
+输入/参数错误：--key 格式不像题库题键（应形如 BJ-2026-HD-YIMO-Q17，可带 (1)/（1）或 #1）：'bj-2020-bj-gaokao-q1' 
+   traceback_lines=0
+== B15 --key with subq #abc exit=0
+
+   traceback_lines=0
+== B16 --keys-file with a bad line exit=2
+输入/参数错误：--key 格式不像题库题键（应形如 BJ-2026-HD-YIMO-Q17，可带 (1)/（1）或 #1）：'not a key'（来自 --keys-file 第 'not a key' 行） 
+   traceback_lines=0
+== B17 --expect-sha correct exit=0
+
+   traceback_lines=0
+== B18 --docx is a directory exit=2
+输入/参数错误：--docx 文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r3/adv 
+   traceback_lines=0
+== B19 --profile nonexistent exit=2
+输入/参数错误：--profile 加载失败（/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_placement_suggest_r3/adv/nope.json）：FileNotFoundError: [Errno 2] No such file or directory: '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817
+   traceback_lines=0
+== B20 --profile missing most fields exit=2
+输入/参数错误：该书稿按此 --profile 未识别到任何题块（配置可能不适用这本书，或正文为空） 
+   traceback_lines=0
+== B21 stdout closed early (| head -c 10) + --report: # 新题�
+pipestatus=0
+报告已写：/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/placement_suggest/r3adv_pipe.json 
+/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/构建/placement_suggest/r3adv_pipe.json
+== leftover tmp in 构建/: 
+== SK __pycache__: 0

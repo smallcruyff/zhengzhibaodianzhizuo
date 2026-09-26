@@ -1,0 +1,4 @@
+rc 1
+STDOUT>>> 'warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.\n{"media_images": 1, "media_tables": 0, "needs_local_check": 1, "anchor_converted": 0, "fallbacks": 0, "total": 1, "pending": 1}\n'
+STDERR>>> ''
+stdout NOT valid JSON: Expecting value: line 1 column 1 (char 0)

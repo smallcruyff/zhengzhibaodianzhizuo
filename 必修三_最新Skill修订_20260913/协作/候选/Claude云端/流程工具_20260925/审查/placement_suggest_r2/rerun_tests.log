@@ -1,0 +1,84 @@
+PASS baseline_guard（真实输入未变，测试前）    [5.02s]
+PASS 0 必修三第52批 SHA 与同步清单一致 - 实际=c007d7198422050c… 期望=c007d7198422050c…（读自 云端/同步清单.json） 
+PASS 0b 题键分层池非空 - {'主观题块': 64, '选择题块': 202, '专题题块': 77} 
+PASS 1a 十题分层抽样可复现（seed=20260925，固定种子+按题键排序后 shuffle+截取，主观4/选择3/专题3） - picked={'主观题块': ['BJ-2025-FS-YIMO-Q17', 'BJ-2025-CY-ERMO-Q19', 'BJ-2022-BJ-GAOKAO-Q20', 'BJ-2024-DC-ERMO-Q21'], '选择题块': ['BJ-2026-DC-ERMO-Q11', 'BJ-2024-HD-YIMO-Q8', 'BJ-2026-HD-QIZHONG-Q7'], '专题题块': ['BJ-2024-CY-YIMO-Q16', 'BJ-2023-HD-YIMO-Q16', 'BJ-2025-FT-QIMO-Q18']} 
+    BJ-2025-FS-YIMO-Q17 kind=['subjective'] query_kind=subjective 真实考法第13名（候选总数102） hit1=False hit3=False
+    BJ-2025-CY-ERMO-Q19 kind=['subjective'] query_kind=subjective 真实考法第16名（候选总数102） hit1=False hit3=False
+    BJ-2022-BJ-GAOKAO-Q20 kind=['subjective'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2024-DC-ERMO-Q21 kind=['subjective'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2026-DC-ERMO-Q11 kind=['choice'] query_kind=choice 真实考法第1名（候选总数20） hit1=True hit3=True
+    BJ-2024-HD-YIMO-Q8 kind=['choice'] query_kind=choice 真实考法第1名（候选总数20） hit1=True hit3=True
+    BJ-2026-HD-QIZHONG-Q7 kind=['choice'] query_kind=choice 真实考法第8名（候选总数20） hit1=False hit3=False
+    BJ-2024-CY-YIMO-Q16 kind=['subjective', 'topic'] query_kind=subjective 真实考法第2名（候选总数101） hit1=False hit3=True
+    BJ-2023-HD-YIMO-Q16 kind=['subjective', 'topic'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2025-FT-QIMO-Q18 kind=['subjective', 'topic'] query_kind=subjective 真实考法第20名（候选总数102） hit1=False hit3=False
+PASS 1b 十题命中率（内置默认参数）：前1 5/10，前3 6/10 - hit1=5/10 hit3=6/10 mismatched=[]   [0.13s]
+PASS 2a 全书留一评估（内置默认参数，703 题块，10.8s）：题块级严格口径，作十题结果的对照 - 总体 79/690 (前1) 188/690 (前3)；题型不一致剔除 13（M2）；结构上不可能命中 7（m8，仍计入分母）；choice: 35/202(前1) 87/202(前3)；subjective: 27/345(前1) 64/345(前3)；topic: 15/133(前1) 34/133(前3)；topic_case: 2/10(前1) 3/10(前3)   [10.77s]
+PASS 3a 调参集与十题评估集不相交（先从题键池里剔除十题的 key 再抽样） - 调参集40题，重叠=set() 
+PASS 3b 调参网格（5×4=20 组，调参集40题）跑通，选出最优组合 - 最优: weights={'material': 0.6, 'ask': 2.2, 'rubric': 1.0, 'method': 0.4} agg_top_k=5 agg_mix=0.5 → hit1=8/40 hit3=23/40   [11.21s]
+PASS 1a 十题分层抽样可复现（seed=20260925，固定种子+按题键排序后 shuffle+截取，主观4/选择3/专题3） - picked={'主观题块': ['BJ-2025-FS-YIMO-Q17', 'BJ-2025-CY-ERMO-Q19', 'BJ-2022-BJ-GAOKAO-Q20', 'BJ-2024-DC-ERMO-Q21'], '选择题块': ['BJ-2026-DC-ERMO-Q11', 'BJ-2024-HD-YIMO-Q8', 'BJ-2026-HD-QIZHONG-Q7'], '专题题块': ['BJ-2024-CY-YIMO-Q16', 'BJ-2023-HD-YIMO-Q16', 'BJ-2025-FT-QIMO-Q18']} 
+    BJ-2025-FS-YIMO-Q17 kind=['subjective'] query_kind=subjective 真实考法第8名（候选总数102） hit1=False hit3=False
+    BJ-2025-CY-ERMO-Q19 kind=['subjective'] query_kind=subjective 真实考法第22名（候选总数102） hit1=False hit3=False
+    BJ-2022-BJ-GAOKAO-Q20 kind=['subjective'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2024-DC-ERMO-Q21 kind=['subjective'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2026-DC-ERMO-Q11 kind=['choice'] query_kind=choice 真实考法第1名（候选总数20） hit1=True hit3=True
+    BJ-2024-HD-YIMO-Q8 kind=['choice'] query_kind=choice 真实考法第1名（候选总数20） hit1=True hit3=True
+    BJ-2026-HD-QIZHONG-Q7 kind=['choice'] query_kind=choice 真实考法第9名（候选总数20） hit1=False hit3=False
+    BJ-2024-CY-YIMO-Q16 kind=['subjective', 'topic'] query_kind=subjective 真实考法第2名（候选总数101） hit1=False hit3=True
+    BJ-2023-HD-YIMO-Q16 kind=['subjective', 'topic'] query_kind=subjective 真实考法第1名（候选总数102） hit1=True hit3=True
+    BJ-2025-FT-QIMO-Q18 kind=['subjective', 'topic'] query_kind=subjective 真实考法第21名（候选总数102） hit1=False hit3=False
+PASS 1b 十题命中率（调好后的固定参数）：前1 5/10，前3 6/10 - hit1=5/10 hit3=6/10 mismatched=[]   [0.13s]
+PASS 2a 全书留一评估（调好后的固定参数，703 题块，10.7s）：题块级严格口径，作十题结果的对照 - 总体 76/690 (前1) 185/690 (前3)；题型不一致剔除 13（M2）；结构上不可能命中 7（m8，仍计入分母）；choice: 35/202(前1) 84/202(前3)；subjective: 25/345(前1) 63/345(前3)；topic: 13/133(前1) 35/133(前3)；topic_case: 3/10(前1) 3/10(前3)   [10.72s]
+PASS 4a 哲学 R10（草案配置 philosophy.draft.json）能装书、切出题块、建索引 - blocks=1119 by_kind={'subjective': 554, 'choice': 565}   [3.81s]
+PASS 4b 哲学题块能在题库（module_hint=哲学与文化）里找到对应 MD - 有MD的题键数：{'主观题块': 107, '选择题块': 238, '专题题块': 0} 
+PASS 4c CLI 对哲学书跑一条真实题键、能出候选（不保证命中，只要求流程走通） - exit=0（code_ok=True） out_ok=True out[:200]='# 新题插入位置建议（2026 北京高考政治哲学宝典）\n\n## BJ-2020-BJ-GAOKAO-Q3（choice）\n- 题库题型字段：选择题\n1. **P1｜22\u3000实践与认识（总）｜节点选择区**（分 1.7926，组内 34 题，一级 三、认识论／二级 22\u3000实践与认识（总））\n   - 最像题块：例题 64\u30002026年门头沟一模第7题（B0778，choice，贡献词：劳动的、劳动、的艰' err=''   [3.90s]
+PASS 4d 哲学书命中率能算就报（12 题抽样，非正式配置，仅供参考） - hit1=3/12 hit3=5/12 
+PASS 5a 题键不在题库 → 退出2 - exit=2 err=输入/参数错误：题库没有这个题键的 MD：BJ-2099-NOSUCH-YIMO-Q1（找的路径：/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918/questions/BJ-2099-NOSUCH-YIMO/BJ-2099-NOSUCH-YIMO-Q1.md）   [1.83s]
+PASS 5b 书稿按此配置 0 题块 → 退出2 - exit=2 err=输入/参数错误：该书稿按此 --profile 未识别到任何题块（配置可能不适用这本书，或正文为空）   [0.19s]
+PASS 5c 配置缺 sources.bank.root 且未给 --bank → 退出2 - exit=2 err=输入/参数错误：要用 --key/--keys-file 但既没给 --bank，profile 的 sources.bank.root 也解析不出题库根   [1.82s]
+PASS 5d 父稿 SHA 不符（--expect-sha 给错）→ 退出2 - exit=2 err=输入/参数错误：父稿 SHA 不符：期望 0000000000000000…，实际 c007d7198422050c…   [0.21s]
+PASS 5e --report 落受保护目录（书稿工作区根，不在 构建/ 下）→ 退出3，且未落盘 - exit=3 wrote=False   [0.16s]
+PASS 5f 冻结配置 + --report → 退出3（docx_lib.guard_write 对 frozen profile 一律拒写，且返修 M8 后这一步挪到装书之前，属于“立即”拒绝；不给 --report 时仍可只读出候选，见 known_limits） - exit=3 wrote=False   [0.22s]
+PASS 5g 正例：--report 落候选目录 构建/ 下 → 成功写出 - exit=0 exists=True   [3.33s]
+PASS 5h 一个新题输入都不给 → 退出2 - exit=2 err=输入/参数错误：未给任何新题输入：至少给一个 --key / --keys-file / --md / --text   [1.78s]
+PASS M1a 题型字段“非选择题”优先于题面里的 A/B/C/D 选项行启发式（修前会被判成 choice、e1_present 被强制 True） - kind=subjective conflict=True e1_present=False   [0.00s]
+PASS M1b 列表式选项“- **A**: …”（无“A．”标准写法）也能被选项行启发式认出为选择题 - kind=choice   [0.00s]
+PASS M1c 实题 BJ-2026-HD-ERMO-Q21（题型字段“非选择题（由同卷结构推断…）”）判为 subjective - kind=subjective kind_field='非选择题（由同卷结构推断：inferred_from_exam_structure(同卷选择题最大题号=15)）'（审查 R01：修前=choice）   [0.00s]
+PASS M2 BJ-2026-BJ-GAOKAO-Q18 修 M1 后查询题型与书中题型一致，不再是选择题伪命中 - query_kind=subjective true_kinds={'subjective'}（审查 R15：修前 query_kind=choice，在 20 个选择组里伪命中第1名；真实考法按主观题排第8）   [0.00s]
+PASS M3a 同一 MD 先有空的“正式评分材料原文”、后有带等级分值的“正式评分材料（E1）”——取后者 - e1_present=True e1_header='正式评分材料（E1，限同题等级标准）'   [0.00s]
+PASS M3b 节名“E1阅卷细则原文”（不含“正式评分”字样）被认作 E1 - e1_present=True e1_header='E1阅卷细则原文（原栏：阅卷细则）'   [0.00s]
+PASS M3c 实题 BJ-2023-DC-ERMO-Q21（第76行空节在前，第122行有内容的 E1 节在后）e1_present=True - e1_present=True e1_header='正式评分材料（E1，限同题等级标准）'（审查 R05：修前 False）   [0.00s]
+PASS M4a 读取指引“采用题面小节: 无”（无反引号）如实报 InputError，不再拿讲评块当题面（审查 R06） - BJ-2025-CY-YIMO-Q1：题库读取指引标注“采用题面小节：无”——题库本身没有可用题面，如实报错，不猜   [0.00s]
+PASS M4b 合成 MD：读取指引“无”（无反引号写法）+ 只有讲评块可退——确认走的是“无”分支而不是关键词兜底命中讲评块 - synthM4b：题库读取指引标注“采用题面小节：无”——题库本身没有可用题面，如实报错，不猜   [0.00s]
+PASS M5a 标题本身不唯一的考法组，锚点一律改给 method_end（不再无条件给 after_block） - 7 个组的末题标题本身不唯一，其中 0 个仍被错误地给了 after_block 锚点（审查 probe8：全书 746 个标题里 50 个不唯一，原代码没有这层检查、一律给 anchor_title_contains）   [0.02s]
+PASS M5b 全书 102 个考法组的锚点唯一性如实统计（绝大多数唯一，个别如实标不唯一） - 考法组共 102，anchor_unique=True 的 101 个，False 的 1 个（如实报告，不强求全部唯一）   [0.01s]
+PASS M6 题键已在本书落位时 build_query_result 的 flags 里有“已在本书落位”提示 - flags=['该题键已在本书落位：B0046（考法3\u3000并列型：党组织牵头，多方并列（15题））、B0224（考法1\u3000对号型：诉求与做法一一对应（7题））、B0432（考法2\u3000并列型：分块各贴一个特征（9题））、B0566（考法3\u3000并列型：普法是多项举措之一（7题））——候选已排除这些题块，注意核对是否已经入书、避免重复插入'] excluded=['B0046', 'B0224', 'B0432']（审查 R08：修前无提示、退出0）   [0.03s]
+PASS M7 --report 含 summary、题源 path+sha256、候选 h1/h2、题块 body_range - summary=True source_path/sha=True h1/h2=True body_range=True（审查 R10：这几项修前都没有）   [3.42s]
+PASS M8 --report 落受保护目录时，同批的 --out（合法路径）也不落盘——原子性 - exit=3 out_md存在=False bad_report存在=False（审查 R09：修前 out_md 会先写出）   [0.17s]
+PASS M8b 中止后 构建/ 目录不留 .tmp 临时文件 - exit=3 leftover_tmp=set()   [0.18s]
+PASS m2 与全书零重合的查询加“无相似信号”flag - flags=['查询与全书候选考法均无相似信号（BM25 各字段零命中）：以下候选按内置顺序排列、分数均为 0，不构成有效候选，需人工核对输入']（审查 R11：修前退出0、给3个0分候选、无任何提示）   [0.00s]
+PASS m3a --top-k -1 → 退出2 - exit=2（审查 R12：修前=0，给19个候选）   [0.17s]
+PASS m3b --top-k 0 → 退出2 - exit=2   [0.16s]
+PASS m3c --max-chars -5 → 退出2 - exit=2   [0.18s]
+PASS m4a 找不到 Skill 脚本目录 → 退出2（原来 raise SystemExit(字符串) 退出1） - exit=2 err=找不到 Skill 脚本目录（docx_lib.py）：本文件同目录、环境变量 BAODIAN_SKILL_SCRIPTS、向上逐级 .claude/skills/beijing-gaokao-politics/scripts 均未找到（审查 A01：修前=1）   [0.06s]
+PASS m4b 不给任何参数（缺 --docx/--profile）→ argparse 报错，退出2且中文提示前缀 - exit=2 err=usage: placement_suggest.py [-h] --docx DOCX --profile PROFILE
+                            [--expect-sha EXPECT_SHA] [--bank BANK]
+                            [--key KEY] [--keys-file KEYS_FILE] [--md   [0.16s]
+PASS m4c --docx 文件不存在 → 退出2，中文提示“文件不存在”而非英文系统异常 - exit=2 err=输入/参数错误：--docx 文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/placement_suggest/no_such_file.docx（审查 m4：修前是英文系统信息、算“内部错误”）   [0.17s]
+PASS m4d --docx 不是合法 zip → 退出2，中文提示 - exit=2 err=输入/参数错误：--docx 不是有效的 .docx（zip）文件：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/placement_suggest/not_a_docx.docx   [0.22s]
+PASS m4e --keys-file 带 UTF-8 BOM 时第一个题键仍能正确解析 - exit=0 err=（审查 m4：修前 BOM 混进题键，报“题库没有这个题键”）   [3.44s]
+PASS m4f 全角括号“（1）”小问写法被接受 - base=BJ-2020-BJ-GAOKAO-Q1 sub=1   [0.00s]
+PASS m9 跨模块守卫只查设问，材料里出现《经济与社会》不再误标 - flags=[]（材料命中守卫词但设问没有，不应触发；审查 m9）   [0.01s]
+PASS m9b 守卫词真的出现在设问里时仍正常触发（确认没有矫枉过正） - flags=['设问含跨模块限定“《经济与社会》”：CANDIDATE 不作本册例题，最终由主代理裁定']   [0.00s]
+PASS m10 B0737（主键 2022，keys_all 含 2026 Q18(2)）查询 2026 Q18 时也被剔除 - B0737 key=BJ-2022-BJ-GAOKAO-Q18 keys_all=['BJ-2022-BJ-GAOKAO-Q18(2)', 'BJ-2026-BJ-GAOKAO-Q18(2)']（审查 probe4：修前不剔除）   [0.00s]
+PASS m11 --key 里带 .. 被拒绝（防越出题库 questions/ 目录） - 题键里不能含路径分隔符或 ..：'../../etc/passwd-Q1'   [0.00s]
+PASS 7a --md 入口跑通（逐题 MD 直接给文件，不经题库题键） - exit=0 out[:120]='# 新题插入位置建议（必修三《政治与法治》）\n\n## MD:BJ-2020-BJ-GAOKAO-Q1.md（choice）\n- 题库题型字段：选择题\n1. **P1｜08\u3000二基：民族区域自治制度｜节点选择区（书内挂在“考法1\u3000补出型：成就在'   [3.26s]
+PASS 7b --text 入口跑通（纯文本设问+细则） - exit=1 out[:120]='# 新题插入位置建议（必修三《政治与法治》）\n\n## TEXT:new_q.txt（subjective）\n- 注意：主观题未找到正式评分细则（E1）：按规则候选“不收”，最终由主代理核 E1 后裁定\n1. **TOPIC｜专题一\u3000主体专题'   [3.28s]
+PASS 7c --keys-file 入口跑通，报告 inputs.keys_file 记了路径+SHA - exit=0   [3.35s]
+PASS 7d --params 入口跑通（覆盖内置默认参数） - exit=0   [3.34s]
+PASS 7e --format md --out 落盘到候选目录 构建/ 下 - exit=0 exists=True   [3.45s]
+PASS 7f json 模式下给 --out：不报错，stderr 有提示（返修 m11） - exit=0 err=提示：--out 只在 --format md 时落盘；当前 --format json，本次 --out 不生效   [3.72s]
+PASS baseline_guard（真实输入未变，测试后）    [4.74s]
+
+合计 59 条，失败 0 条，用时 92.6s
+exit=0

@@ -1,0 +1,108 @@
+{
+ "N1 --profile 不存在": {
+  "exit": 2,
+  "short": null,
+  "stderr": "内部错误：[Errno 2] No such file or directory: '/no/such/profile.json'",
+  "seconds": 0.1
+ },
+ "N2 冻结册 无 --report（应可只读运行）": {
+  "exit": 0,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-HD-QIZHONG",
+   "dups": [],
+   "issues": []
+  },
+  "stderr": "",
+  "seconds": 2.8
+ },
+ "N3 两种输入同时给": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：check 需要且只能给一种输入：--exam-id / --files / --exam-dir",
+  "seconds": 2.2
+ },
+ "N4 合法格式但题库无此卷": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：题库无此卷号：BJ-2019-HD-QIZHONG",
+  "seconds": 2.2
+ },
+ "N5 未知区县码": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：卷号区县代码未知（block_index.REGION 无此代码）：'XX'（BJ-2025-XX-YIMO）",
+  "seconds": 2.1
+ },
+ "N6 --report 后缀非 .json": {
+  "exit": 3,
+  "short": null,
+  "stderr": "拒绝写出：输出必须是 .json 文件：x.txt",
+  "seconds": 2.3
+ },
+ "N7 --report 已存在不覆盖": {
+  "exit": 3,
+  "short": null,
+  "stderr": "拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r1/exists.json",
+  "seconds": 2.3
+ },
+ "N8 --report 目录不存在": {
+  "exit": 3,
+  "short": null,
+  "stderr": "拒绝写出：输出目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r1/nodir",
+  "seconds": 2.2
+ },
+ "N9 --files 给目录": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r1/synth",
+  "seconds": 2.3
+ },
+ "N10 --files 给 .txt": {
+  "exit": 1,
+  "short": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggested": null,
+   "dups": [],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.2
+ },
+ "N11 --stage 非法": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：--stage 不在 block_index.STAGE 表中：三模",
+  "seconds": 2.3
+ },
+ "N12 --bank 不存在": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：题库根不存在：/no/bank",
+  "seconds": 0.2
+ },
+ "N13 ASM 汇编卷号": {
+  "exit": 2,
+  "short": null,
+  "stderr": "输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'ASM-2024届各区一模试题分类汇编必修1'",
+  "seconds": 2.2
+ },
+ "N14 损坏 PDF": {
+  "exit": 1,
+  "short": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggested": null,
+   "dups": [],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+   ]
+  },
+  "stderr": "EOF marker not found\nEOF marker not found",
+  "seconds": 2.4
+ }
+}

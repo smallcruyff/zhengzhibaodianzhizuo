@@ -1,0 +1,331 @@
+[
+ {
+  "case": "N1 profile 不存在",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--profile",
+   "/no/such.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "内部错误：[Errno 2] No such file or directory: '/no/such.json'",
+  "out": ""
+ },
+ {
+  "case": "N2 冻结册只读",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu2_frozen_test.json"
+  ],
+  "exit": 0,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": {
+    "suggested_id": "BJ-2026-HD-QIZHONG",
+    "occupied": false,
+    "occupant": null
+   },
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 22
+    }
+   }
+  }
+ },
+ {
+  "case": "N3 exam-dir 指向文件",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：目录不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+  "out": ""
+ },
+ {
+  "case": "N4 exam-dir 空目录",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/emptydir",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+   ],
+   "fingerprint_coverage": {
+    "total": 0,
+    "found": 0,
+    "ratio": 1.0,
+    "by_basis": {}
+   }
+  }
+ },
+ {
+  "case": "N5 files 给目录",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth",
+  "out": ""
+ },
+ {
+  "case": "N6 audit --limit -1",
+  "args": [
+   "audit",
+   "--limit",
+   "-1",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json",
+   "--bank",
+   "/home/user/zhengzhibaodianzhizuo/DeepSeek_政治题库资料库_20260918"
+  ],
+  "exit": 1,
+  "sec": 85.6,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": "{\n \"exams_scanned\": 84,\n \"id_year_mismatches\": 3,\n \"has_duplicate_or_reuse\": 5,\n \"conflicts\": 0,\n \"needs_local\": 14,\n \"weak_only\": 14,\n \"retired\": 1,\n \"low_fingerprint_coverage\": 5,\n \"verified_by_A\": 50,\n \"verified_by_B\": 5\n}\n届别不符： BJ-2023-HD-QIZHONG(→2024), BJ-2024-CY-QIZHONG(→2025), BJ-2024-HD-QIZHONG(→2025)\n重复/复用： BJ-2022-BJ-GAOKAO→['BJ-2024-BJ-GAOKAO'], BJ-2023-BJ-GAOKAO→['BJ-2024-BJ-GAOKAO'], BJ-2024-BJ-GAOKAO→['BJ-2022-BJ-GAOKAO', 'BJ-2023-BJ-GAOKAO'], BJ-2024-HD-QIZHONG→['BJ-2025-HD-QIZHONG'], BJ-2025-HD-QIZHONG→['BJ-2024-HD-QIZHONG']\n弱证据（未取得原件/题库文字层佐证）： BJ-2023-FT-ERMO, BJ-2023-FT-YIMO"
+ },
+ {
+  "case": "N7 files --claimed-id 乱写",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/r6_half_reuse.docx",
+   "--claimed-id",
+   "hello",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": 2027,
+   "cohort_status": "OK",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [
+    {
+     "exam_id": "BJ-2026-HD-QIZHONG",
+     "kind": "duplicate_registration",
+     "matched": 11,
+     "total": 22,
+     "fraction_reliable": true
+    }
+   ],
+   "issues": [
+    "claimed_id 格式问题（仅作参考，不影响推算）：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'hello'",
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 11/22 题（占比 0.5）"
+   ],
+   "fingerprint_coverage": null
+  }
+ },
+ {
+  "case": "N8 ASM 卷号",
+  "args": [
+   "check",
+   "--exam-id",
+   "ASM-2024届各区一模试题分类汇编必修1",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'ASM-2024届各区一模试题分类汇编必修1'",
+  "out": ""
+ },
+ {
+  "case": "N9 小写卷号",
+  "args": [
+   "check",
+   "--exam-id",
+   "bj-2026-hd-qizhong",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'bj-2026-hd-qizhong'",
+  "out": ""
+ },
+ {
+  "case": "N10 --debug 在子命令后+错误卷号",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-XX",
+   "--debug",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": true,
+  "stderr": "输入/参数错误：卷号格式不符合 BJ-<年>-<区县代码>-<阶段代码>：'BJ-XX'\nTraceback (most recent call last):\n  File \"/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/exam_register.py\", line 1355, in main\n    return args.func(args)\n           ^^^^^^^^^^^^^^^\n  File \"/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/exam_register.py\", line 1188, in cmd_check",
+  "out": ""
+ },
+ {
+  "case": "N11 伪 docx",
+  "args": [
+   "check",
+   "--files",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/fake.docx",
+   "--stage",
+   "期中",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 2,
+  "sec": 2.5,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：DOCX 打开失败（损坏或非本格式）：Package not found at '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/synth/fake.docx'",
+  "out": ""
+ },
+ {
+  "case": "N12 --stage 非法值 exam-dir",
+  "args": [
+   "check",
+   "--exam-dir",
+   "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_exam_register_r2/emptydir",
+   "--stage",
+   "春季",
+   "--region",
+   "火星",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.4,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+   ],
+   "fingerprint_coverage": {
+    "total": 0,
+    "found": 0,
+    "ratio": 1.0,
+    "by_basis": {}
+   }
+  }
+ },
+ {
+  "case": "N13 --bank 不存在",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--bank",
+   "/no/bank"
+  ],
+  "exit": 2,
+  "sec": 0.2,
+  "traceback_in_stderr": false,
+  "stderr": "输入/参数错误：题库根不存在：/no/bank",
+  "out": ""
+ },
+ {
+  "case": "N14 --raw-root 不存在",
+  "args": [
+   "check",
+   "--exam-id",
+   "BJ-2026-HD-QIZHONG",
+   "--raw-root",
+   "/no/raw",
+   "--profile",
+   "/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json"
+  ],
+  "exit": 1,
+  "sec": 2.3,
+  "traceback_in_stderr": false,
+  "stderr": "",
+  "out": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "grade2": false,
+   "suggestion": null,
+   "chain_kind": null,
+   "rename_plan": null,
+   "redirects": null,
+   "duplicates": [],
+   "issues": [
+    "原件无文字层且题库无可查文字证据，需本地看图核实届别"
+   ],
+   "fingerprint_coverage": {
+    "total": 22,
+    "found": 22,
+    "ratio": 1.0,
+    "by_basis": {
+     "bank_guide": 22
+    }
+   }
+  }
+ }
+]

@@ -1,0 +1,106 @@
+{
+ "bixiu3": {
+  "blocks": 746,
+  "collected": 388,
+  "found": 364,
+  "recall": 0.938,
+  "found_only_via_drill_item": 25,
+  "miss_sample": [
+   "BJ-2023-CY-YIMO-Q19#1",
+   "BJ-2022-BJ-GAOKAO-Q21",
+   "BJ-2024-HD-QIZHONG-Q21#2",
+   "BJ-2025-HD-QIZHONG-Q19",
+   "BJ-2025-HD-QIZHONG-Q21#1",
+   "BJ-2025-HD-QIZHONG-Q7",
+   "BJ-2025-HD-QIZHONG-Q8",
+   "BJ-2025-HD-QIZHONG-Q9"
+  ]
+ },
+ "philosophy": {
+  "blocks": 1119,
+  "collected": 344,
+  "found": 330,
+  "recall": 0.959,
+  "found_only_via_drill_item": 0,
+  "miss_sample": [
+   "BJ-2024-FT-YIMO-Q18#2",
+   "BJ-2025-FS-YIMO-Q20#2",
+   "BJ-2025-FS-YIMO-Q20#3",
+   "BJ-2025-SY-YIMO-Q16#1",
+   "BJ-2025-SY-YIMO-Q16#2",
+   "BJ-2025-FT-QIMO-Q17#1",
+   "BJ-2025-FT-QIMO-Q17#2",
+   "BJ-2025-FT-QIMO-Q17#3"
+  ]
+ },
+ "culture": {
+  "blocks": 70,
+  "collected": 208,
+  "found": 199,
+  "recall": 0.957,
+  "found_only_via_drill_item": 141,
+  "miss_sample": [
+   "BJ-2025-SY-YIMO-Q16#1",
+   "BJ-2025-SY-YIMO-Q16#2",
+   "BJ-2026-FS-ERMO-Q21#1",
+   "BJ-2026-FS-ERMO-Q21#2",
+   "BJ-2026-FS-ERMO-Q16#2",
+   "BJ-2026-CY-QIZHONG-Q19#1",
+   "BJ-2026-CY-QIZHONG-Q19#2",
+   "BJ-2026-CY-QIZHONG-Q19#3"
+  ]
+ },
+ "xuanbi1": {
+  "blocks": 353,
+  "collected": 200,
+  "found": 184,
+  "recall": 0.92,
+  "found_only_via_drill_item": 0,
+  "miss_sample": [
+   "BJ-2024-HD-QIZHONG-Q12",
+   "BJ-2024-HD-QIZHONG-Q14",
+   "BJ-2024-HD-QIZHONG-Q15",
+   "BJ-2024-HD-QIZHONG-Q16#2",
+   "BJ-2024-HD-QIZHONG-Q21#2",
+   "BJ-2025-HD-QIZHONG-Q21#2",
+   "BJ-2025-HD-QIZHONG-Q12",
+   "BJ-2025-HD-QIZHONG-Q14"
+  ]
+ },
+ "xuanbi2": {
+  "blocks": 769,
+  "collected": 221,
+  "found": 215,
+  "recall": 0.973,
+  "found_only_via_drill_item": 0,
+  "miss_sample": [
+   "BJ-2024-HD-ERMO-Q19#1",
+   "BJ-2024-HD-ERMO-Q19#2",
+   "BJ-2025-CP-ERMO-Q20#1",
+   "BJ-2025-CP-ERMO-Q20#2",
+   "BJ-2025-FT-QIMO-Q19#1",
+   "BJ-2026-SY-ERMO-Q18#2"
+  ]
+ },
+ "mind": {
+  "blocks": 174,
+  "collected": 97,
+  "found": 95,
+  "recall": 0.979,
+  "found_only_via_drill_item": 0,
+  "miss_sample": [
+   "BJ-2026-DC-YIMO-Q19#1",
+   "BJ-2026-CY-QIZHONG-Q13"
+  ]
+ },
+ "reasoning": {
+  "blocks": 480,
+  "collected": 181,
+  "found": 180,
+  "recall": 0.994,
+  "found_only_via_drill_item": 0,
+  "miss_sample": [
+   "BJ-2023-DC-YIMO-Q20#1"
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "S1 无任何日期的新卷（有文字层）": {
+  "exit": 0,
+  "short": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggested": null,
+   "dups": [],
+   "issues": []
+  },
+  "stderr": "",
+  "seconds": 4.1
+ },
+ "S2 高三卷首+题干含“高二”": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-HD-QIZHONG",
+   "dups": [],
+   "issues": [
+    "建议卷号 BJ-2026-HD-QIZHONG 已被占用",
+    "BJ-2026-HD-QIZHONG 已被占用，占用卷本身是否也需改号需另行核实。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 3.4
+ },
+ "S3 真高二卷": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-HD-QIZHONG",
+   "dups": [],
+   "issues": [
+    "建议卷号 BJ-2026-HD-QIZHONG 已被占用",
+    "BJ-2026-HD-QIZHONG 已被占用，占用卷本身是否也需改号需另行核实。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.7
+ },
+ "S4 网站标题(考试年)+题干上年日期": {
+  "exit": 0,
+  "short": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "suggested": "BJ-2025-CY-QIZHONG",
+   "dups": [],
+   "issues": []
+  },
+  "stderr": "",
+  "seconds": 2.3
+ },
+ "S5 全角数字卷首日期": {
+  "exit": 0,
+  "short": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggested": null,
+   "dups": [],
+   "issues": []
+  },
+  "stderr": "",
+  "seconds": 2.2
+ }
+}

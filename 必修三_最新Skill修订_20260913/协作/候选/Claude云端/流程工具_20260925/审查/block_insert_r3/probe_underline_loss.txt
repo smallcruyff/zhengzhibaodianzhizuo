@@ -1,0 +1,3 @@
+source underlined runs: ['    ①    ', '    ②    ']
+after build_table_from_source underlined runs: []
+text identical: True

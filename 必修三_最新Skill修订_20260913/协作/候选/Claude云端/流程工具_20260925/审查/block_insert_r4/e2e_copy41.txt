@@ -1,0 +1,13 @@
+rc 0 renumber True new_FAIL 0 fallbacks [] 
+943->958 题目材料 '北京市人才工作局面向青年开展专项调研，梳理就'
+   orig (('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 98),))
+   new  (('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 98),))
+945->960 题目材料 '上海市人大通过“十五五”规划，首次写入打造2'
+   orig (('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 97),))
+   new  (('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 97),))
+947->962 题目材料 '北京、上海、重庆等地分别落实“青创十条”、扩'
+   orig (('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 124),))
+   new  (('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 124),))
+951->966 分析过程 '从设问定层次：设问问青年“心事”如何转化为治'
+   orig (('aff9', None, True, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 60)))
+   new  (('aff9', None, True, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 67),))

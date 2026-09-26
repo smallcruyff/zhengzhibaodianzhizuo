@@ -1,0 +1,114 @@
+{
+ "S7 一模原卷 --files 不给 --stage": {
+  "exit": 1,
+  "short": {
+   "cohort_year": null,
+   "cohort_status": "NEEDS_LOCAL",
+   "suggested": null,
+   "dups": [
+    [
+     "BJ-2025-XC-YIMO",
+     "duplicate_registration",
+     3,
+     3
+    ]
+   ],
+   "issues": [
+    "duplicate_registration：与 BJ-2025-XC-YIMO 匹配 3/3 题（占比 1.0）"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.4
+ },
+ "S7b 一模原卷 --files --stage 一模": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "suggested": "BJ-2025-XC-YIMO",
+   "dups": [
+    [
+     "BJ-2025-XC-YIMO",
+     "duplicate_registration",
+     3,
+     3
+    ]
+   ],
+   "issues": [
+    "建议卷号 BJ-2025-XC-YIMO 已被占用",
+    "duplicate_registration：与 BJ-2025-XC-YIMO 匹配 3/3 题（占比 1.0）",
+    "BJ-2025-XC-YIMO 现由 BJ-2025-XC-YIMO 占用，且 BJ-2025-XC-YIMO 与本卷判定为重复登记（3/3 题匹配）。改号顺序建议：先确认二者为同一场考试并裁定去重（保留证据更完整的一方，退回/合并另一方），腾出 BJ-2025-XC-YIMO 后再把本卷改为该号；不要在未去重前直接改号造成新的重复登记。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.6
+ },
+ "S6a --exam-dir 题库自身目录（默认 claim=目录名）": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-HD-QIZHONG",
+   "dups": [],
+   "issues": [
+    "建议卷号 BJ-2026-HD-QIZHONG 已被占用",
+    "BJ-2026-HD-QIZHONG 已被占用，占用卷本身是否也需改号需另行核实。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.2
+ },
+ "S6b --exam-dir 题库自身目录 + --claimed-id 另一号": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-HD-QIZHONG",
+   "dups": [
+    [
+     "BJ-2026-HD-QIZHONG",
+     "duplicate_registration",
+     22,
+     22
+    ]
+   ],
+   "issues": [
+    "登记号年份（2027）与证据推算届别（2026）不符",
+    "建议卷号 BJ-2026-HD-QIZHONG 已被占用",
+    "duplicate_registration：与 BJ-2026-HD-QIZHONG 匹配 22/22 题（占比 1.0）",
+    "BJ-2026-HD-QIZHONG 现由 BJ-2026-HD-QIZHONG 占用，且 BJ-2026-HD-QIZHONG 与本卷判定为重复登记（22/22 题匹配）。改号顺序建议：先确认二者为同一场考试并裁定去重（保留证据更完整的一方，退回/合并另一方），腾出 BJ-2026-HD-QIZHONG 后再把本卷改为该号；不要在未去重前直接改号造成新的重复登记。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.2
+ },
+ "S6c --exam-dir BJ-2024-CY-QIZHONG（已知错号）": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2025,
+   "cohort_status": "OK",
+   "suggested": "BJ-2025-CY-QIZHONG",
+   "dups": [],
+   "issues": [
+    "登记号年份（2024）与证据推算届别（2025）不符"
+   ]
+  },
+  "stderr": "",
+  "seconds": 3.1
+ },
+ "S6d --exam-dir BJ-2026-FT-QIMO（全 OCR 题面）": {
+  "exit": 1,
+  "short": {
+   "cohort_year": 2026,
+   "cohort_status": "OK",
+   "suggested": "BJ-2026-FT-QIMO",
+   "dups": [],
+   "issues": [
+    "建议卷号 BJ-2026-FT-QIMO 已被占用",
+    "BJ-2026-FT-QIMO 已被占用，占用卷本身是否也需改号需另行核实。"
+   ]
+  },
+  "stderr": "",
+  "seconds": 2.5
+ }
+}

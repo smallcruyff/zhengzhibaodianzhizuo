@@ -1,0 +1,84 @@
+{
+  "tool": "block_insert",
+  "version": "1.0.0",
+  "stage": "编写",
+  "author": "claude-cloud（本会话，非负责人，只写候选）",
+  "date": "2026-09-25",
+  "summary": "新写 block_insert.py：按插入单（baodian_insert_v1）把一道连图带表的整题插到书稿指定位置——按相邻样板题块的 pPr/首个 run rPr 构造新段（source/teaching/rubric 三类角色），图从原件 DOCX 按 rId/序号/邻近文字取（或直接给图片文件），表从原件 DOCX 复制 w:tbl 并清掉本书查不到的样式引用、套样板表格的边框/宽度（或给 rows 数组生成简单表），自动分配新 docPr id/媒体成员/关系/Content_Types，写后逐条复核（未点名段落不变、新块被 block_index 认出、rel/成员完整、docPr 不冲突、书签配对、Content_Types 覆盖、python-docx 能打开、可选 soffice 粗查）；--renumber 串联 layout_prepare.py 修编号与考法题数，--health 跑 bh.run_health 比对新增 FAIL。18 条测试全部实跑通过（3 条真实漏收候选新题、2 条金标回归——均含 --health/--renumber 全链路、11 条负例、2 条其他书 check/apply）。过程中实跑发现并修复三个真实 bug：(1) 模板段是'纯标签段'时会把标签的专属颜色带进正文（细则说明/思维链条/答案落点等栏目标签深蓝、正文黑，同段两种格式）——不论走角色桶默认匹配还是显式 style 指定，都改成按'标签形状'两趟挑模板段（_pick_by_label_shape：内容本身是纯标签就优先配标签模板，是正文就优先配正文模板），不再随手挑到第一段；(2) 表格内段落用 e.iter() 拿到的 lxml 代理对象只在函数局部变量里，函数返回后可能被垃圾回收、id() 被后续对象复用，导致写后'未点名段落是否变化'的核对认错人——改成 do_insert() 返回并让调用方一直持有元素列表本身，不再只留 id() 集合；(3) 金标回归实测发现 lxml Element 的 __bool__ 按子节点数判真假，`x or 默认值` 这种写法对元素类型不安全（FutureWarning），改用专门的哨兵对象区分'还没算过'与'算出来是 None'。第三处实测教训：anchor 用 after_block/before_block 紧邻某个题块时，新内容落点由紧邻关系决定考法归属，与目标题原本考法可能不一致（相邻题块可能属于不同考法段）——金标回归改用 anchor.method_end 按考法分组定位，验证后两次金标回归写后体检都是 0 新增 FAIL。",
+  "files": [
+    {
+      "path": "必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py",
+      "lines": 1490,
+      "sha256": "cb8c2511c8054254e299e839162f724d04e95f3a1278634194a6dd29f5633fe1",
+      "note": "超出设计稿目标上限（≤1200 行）约 24%，原因：图/表插入比纯文字补丁天然复杂——wp:inline 绘图 XML 从零构造、docx_lib.write_docx 不支持新增 ZIP 成员另写了保原子写出+写后逐成员复核承诺的 _write_with_new_media()、表格样式清洗与套模板 tblPr、docPr/书签 id 分配、写后七项复核（未点名段落/rel完整性/docPr唯一/书签配对/Content_Types覆盖/python-docx开箱/可选soffice粗查）、按标签形状选模板段的两趟匹配、--renumber 与 --health 两套串联逻辑，均为本工具独有、apply_patch/docx_lib/batch_health 都没有对应实现可复用。已尽量把可复用的部分（段落构造 ap._build_paragraph、锚点定位思路 ap.zones_of/resolve_anchor、词表检查 ap._forbidden_hit、写后复核骨架）按 import 复用自 apply_patch，没有另起一套。"
+    },
+    {
+      "path": "必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/run_tests_block_insert.py",
+      "lines": 716,
+      "sha256": "956b02cbec56fdf5891e08cf6f96ce2793995199b22dc6f23941ec08859cbdfc",
+      "note": "自包含、可重跑；每次运行先清空 SCRATCH（系统临时目录 …/scratchpad/block_insert/）；对真实书稿/原件只读，任何写入只落到 SCRATCH。全套 18 条约 4.5 分钟（金标回归两条各带 --health+--renumber，各约 55 秒，主要花在 bh.run_health 两遍扫 811 页全书）。"
+    }
+  ],
+  "usage": [
+    "python3 block_insert.py check --docx 父稿.docx --insert i.json --profile bixiu3.json [--report r.json]",
+    "python3 block_insert.py apply --docx 父稿.docx --insert i.json --out 候选.docx --profile bixiu3.json [--report r.json] [--health] [--renumber] [--render-check]",
+    "云端实跑示例（真实必修三第52批副本 + 真实漏收候选 BJ-2023-XC-ERMO-Q16 带图）：python3 必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py apply --docx <副本.docx> --insert insert_image_q.json --out out.docx --profile 必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json --health --renumber"
+  ],
+  "tests": [
+    {"input": "真实新题·带图·BJ-2023-XC-ERMO-Q16（原件 DOCX rId14→media/image6.png，SHA 与题库精简版记录的 5d6b37d8… 逐字节一致；apply --health --renumber）", "result": "PASS", "seconds": 41.63},
+    {"input": "真实新题·带表·BJ-2026-CY-YIMO-Q18（题库无原件 DOCX，只有原卷 PDF；表格按官方转写内容用 rows 数组生成，已标注测试用途；apply --health --renumber）", "result": "PASS", "seconds": 43.76},
+    {"input": "真实新题·纯文字·BJ-2024-HD-ERMO-Q19（原件 DOCX，无图无表；apply --health --renumber）", "result": "PASS", "seconds": 42.04},
+    {"input": "金标回归·带图·删掉 B0005 后按原文+原图（用全书第几个图形定位，避免 811 页合订本里同图同段文字跨章节重复导致 rId/near_text 不唯一；锚点改用 anchor.method_end 按考法3分组定位，避免落进相邻考法区间）重插，apply --health --renumber：段落文字流 13/13 一致，图片字节逐位一致，写后体检 0 新增 FAIL", "result": "PASS", "seconds": 54.85},
+    {"input": "金标回归·带表·删掉 B0003 后按原文+原表（anchor.method_end 按考法1分组定位）重插，apply --health --renumber：段落文字流 35/35 一致，表格单元格 25/25 一致，写后体检 0 新增 FAIL", "result": "PASS", "seconds": 55.54},
+    {"input": "负例：父稿 SHA 错", "result": "PASS（正确拒绝，退出码2，不留输出）", "seconds": 2.58},
+    {"input": "负例：锚点 0 命中", "result": "PASS（退出码2）", "seconds": 2.94},
+    {"input": "负例：锚点多命中（7个）", "result": "PASS（退出码2）", "seconds": 2.86},
+    {"input": "负例：样板题块找不到", "result": "PASS（退出码2）", "seconds": 2.94},
+    {"input": "负例：原件里找不到指定图（rId999）", "result": "PASS（退出码2）", "seconds": 2.82},
+    {"input": "负例：原件里找不到指定表（table_index=999）", "result": "PASS（退出码2）", "seconds": 2.74},
+    {"input": "负例：图片文件损坏（非图片字节，.png 扩展名）", "result": "PASS（fitz 解析失败即中止，退出码2）", "seconds": 2.88},
+    {"input": "负例：输出落到书稿目录（必修三_最新Skill修订_20260913/）", "result": "PASS（guard_write 拒绝，退出码3，不留输出）", "seconds": 2.81},
+    {"input": "负例：输出落到 Skill 目录（.claude/skills/…）", "result": "PASS（退出码3）", "seconds": 2.92},
+    {"input": "负例：输出落到题库目录（DeepSeek_政治题库资料库_20260918/）", "result": "PASS（退出码3）", "seconds": 2.89},
+    {"input": "负例：冻结册配置（profiles_cloud/bixiu2_frozen_test.json，frozen=true）", "result": "PASS（apply 立即拒绝，早于打开父稿/解析插入单，退出码3）", "seconds": 0.18},
+    {"input": "其他书·哲学（草案配置 philosophy.draft.json）check 模式", "result": "PASS（走通，草案配置切出题块可用）", "seconds": 3.48},
+    {"input": "其他书·哲学 副本上 apply 最小写入 1 题", "result": "PASS（写入成功；未出现缺字段情形）", "seconds": 12.27}
+  ],
+  "tests_summary": {"total": 18, "pass": 18, "fail": 0},
+  "vermin": {
+    "cmd": "vermin -t=3.9- --no-tips --eval-annotations --violations <文件>",
+    "block_insert.py": {"minimum_required": "3.8", "incompatible": "2.x", "violations": []},
+    "run_tests_block_insert.py": {"minimum_required": "3.7", "incompatible": "2.x", "violations": []}
+  },
+  "baseline_guard": {
+    "cmd": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+    "files_tracked": 3468,
+    "changed": [],
+    "removed": [],
+    "added": [],
+    "skill_pycache": [],
+    "exit_code": 0,
+    "note": "编写、实跑 18 条测试、多轮迭代修 bug 之后再核一次：核书稿/审阅入口/其他书/题库/Skill/原材料/后勤/云端 共 3468 个文件的 SHA+mtime 与基线一致，且 .claude/skills 下无 __pycache__ 残留（Skill 母版未被本工具/测试污染；探索阶段的临时交互脚本曾意外生成过 pycache，已清理并复核）。"
+  },
+  "replaces": [
+    "手工/一次性脚本现写图表插入（每批重写、容易丢图/丢书签/漏关系）——本工具把'按样板复制样式、原件取图表、重建媒体关系与图形 id'这条链路固定为一个按配置运行、写后自证的工具，不再每批现写。"
+  ],
+  "known_limits": [
+    "云端 soffice --headless 在本容器里对任意 DOCX（含全新生成的最小文档、纯文本文件）转换都失败（Error: source file could not be loaded），已确认是云端环境限制而非本工具或候选 DOCX 的缺陷（手工用 --render-check 验证过该代码路径能正常运行、优雅降级为 {ran:true, ok:false, ...}，不影响 apply 主流程的成功判定，该项本就只作报告不构成硬失败，未计入自动化测试套件是为了不让每条用例都背上这个已知会失败的粗查）；渲染与页码定稿仍须按 CLAUDE.md 要求回本地做。",
+    "pic:cNvPr 的 id：本工具沿用书稿现状（这个 id 在现有第52批书稿里绝大多数就是 0，且已有 11 处 wp:docPr 重复但 Word 正常渲染），只保证'本工具新分配的 wp:docPr id 不与全文任何既有 id 冲突'，不去修补书稿里既存的重复——那不是本工具插入动作造成的，修补也超出'只机械落地插入单'的范围。",
+    "原件 wp:anchor 浮动图：本工具只取图片字节与 wp:extent 尺寸，统一转成 wp:inline 单独一段（套用样板图片段的居中/间距格式），不保留浮动定位；实测 T1a 的真实原件（西城二模试卷）里该图确为 wp:anchor 浮动图、与文字同段混排，转换后单独成段、居中，已在文件头与本条如实注明。",
+    "原件是 PDF（无 DOCX）时，本工具不做任何裁图/取表——按设计要求，图片文件须由调用方（人工或另一工具，如 fitz 取页内嵌位图）显式给出，本工具只接手 'file' 字段；测试里 T1b 的表格因题库无原件 DOCX（原卷是 PDF），改用官方转写文字生成的 rows 数组，已在插入单 reason 与本回执如实注明，未回避。",
+    "表格样式清洗：只按'目标书 word/styles.xml 里能否查到同名 styleId'判定去留，不做更细的语义映射；pStyle 缺失时回退到样板表格首个单元格的 pStyle，样板也没有表格时用无样式的默认段落，已在函数注释与本条写明。",
+    "content 数组里 role='teaching'/'rubric' 不给 like/style 时默认取模板题块内该角色桶'doc 序第一个非纯标签段'——多种具体样式共享一个角色桶（如 teaching 桶同时有'分析过程'与'答案落点'）时，要落到非默认的那种正文必须显式给 like 或 style；'标签形状'匹配（_pick_by_label_shape）只解决'别把标签颜色带进正文'这一件事，不解决'桶内多种具体样式该选哪个'——这条仍要插入单作者自己用 like/style 点名，已在文件头详细说明并给出例子。",
+    "anchor.method_end 语义是'落在该考法（method_contains，必要时配 node_contains 收窄）最后一个匹配题块之后'，不要求恰好命中 1 个既有题块（一个考法下天然有多个例题）——与 after_block/before_block 的'锚点必须恰好命中 1 个位置'要求不同；金标回归两条用例都改用它按考法分组精确落位，验证有效（见 tests 里两条金标回归的 0 新增 FAIL）。",
+    "不支持同一次 insert 里对表格做合并单元格、嵌套表格新增行列等复杂结构——表格要么整表从原件复制（清洗样式+套模板边框），要么用 rows 数组生成规则表格，不支持部分行列级别的精细拼接。",
+    "gold_content_from_span（测试脚本内部的金标回归内容生成器）用显式 style 覆盖逐段还原原文时，若模板题块与被还原段落的具体样式格式不完全一致（比如模板题块缺某个具体样式的实例），会静默回退到全书首个同形状实例并记入 fallbacks——两次金标回归实测都没有触发回退（B0004/B0008 作模板时该有的具体样式都齐全），但这不是本工具做过的普遍性保证，只是这次测试数据恰好齐全。"
+  ],
+  "profile_fields_needed": [
+    "（无新增必填字段）本工具读取的 styles.source/teaching/rubric、column_schemas、example_titles、labels_rules、student_text.* 均是 batch_health/apply_patch 已经在用的既有字段，云端 profiles_cloud/bixiu3.json 已具备；如需要给'合成表格找不到任何样板表格时的兜底总宽'一个可配置项，建议登记 layout.table_default_width_twips（本工具当前硬编码 9026，取自必修三现有表格实测宽度量级），以及'无样板图片时的兜底最大图宽（EMU）'建议登记 layout.image_default_max_width_emu（当前硬编码 5000000，约 13.9cm）；均为可选加固项，不影响本轮验收。"
+  ],
+  "needs_user_decision": [
+    "本工具'按标签形状选模板段'（_pick_by_label_shape）与'like/style 未给时取角色桶 doc 序第一个非标签段'两条默认行为，建议随本回执一并交主代理审阅，确认是否符合后续大规模插入时的实际使用习惯，再决定要不要把这两条默认行为写进 references/incremental-question-intake.md 供其他子代理对照。",
+    "run_tests 里 3 道真实新题（BJ-2023-XC-ERMO-Q16、BJ-2026-CY-YIMO-Q18、BJ-2024-HD-ERMO-Q19）的教学栏目文字是本工具验收测试临时拼的，已在每条插入单的 approval_ref/reason 里写明'测试用，未经教学审定'，且从未写入任何书稿工作头、只落在候选目录与系统临时目录——不构成对这三道题该不该收、该收进必修三哪个考法的教学判断，仍待主代理按归属表流程正式裁定。"
+  ]
+}

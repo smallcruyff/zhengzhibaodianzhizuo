@@ -1,0 +1,22 @@
+rc 0 {"out": "/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/review_block_insert_r4/work/choice_out.docx", "sha256": "75262ffa550225663f82a564a253820c477608b 
+fallbacks [{"role": "source", "reason": "样板题块无该角色样式段落，回退到全书首个同形状实例", "index": 15297}]
+health new_FAIL 0 []
+text flow same: True
+   245 heading 3->heading 3 font Kaiti SC->Kaiti SC ind None->None '选择例题 1\u30002026朝阳一模第9题'
+   246 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '“十五五”规划纲要的编制与出台，是我国社会主义民'
+   247 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '①法治政府在构筑法治国家中的基础性作用'
+   248 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '②依法治国、依法执政、依法行政共同推进'
+   249 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '③党的领导、人民当家作主、依法治国的有机统一'
+   250 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} '④科学立法、严格执法、公正司法、全民守法的一体建'
+   251 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'} 'A．①②\u3000\u3000B．①④'
+   252 题目材料->题目材料 font Songti SC->Songti SC ind {'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}firstLine': '0'}->None 'C．②③\u3000\u3000D．③④'  <<DIFF
+   253 分析过程->分析过程 font Songti SC->Songti SC ind None->None '【答案】 C'
+   254 分析过程->分析过程 font Songti SC->Songti SC ind None->None '【分析过程】 材料从党提建议到人大批准，正是“三'  <<DIFF
+   255 分析过程->分析过程 font Songti SC->Songti SC ind None->None '①法治政府在构筑法治国家中的基础性作用\u3000（错误）'  <<DIFF
+   256 分析过程->分析过程 font Songti SC->Songti SC ind None->None '纠正：法治政府是建设法治国家的主体，法治社会才是'  <<DIFF
+   257 分析过程->分析过程 font Songti SC->Songti SC ind None->None '②依法治国、依法执政、依法行政共同推进\u3000（正确）'
+   258 分析过程->分析过程 font Songti SC->Songti SC ind None->None '党中央提建议是依法执政，国务院编制草案是依法行政'
+   259 分析过程->分析过程 font Songti SC->Songti SC ind None->None '③党的领导、人民当家作主、依法治国的有机统一\u3000（'
+   260 分析过程->分析过程 font Songti SC->Songti SC ind None->None '党提出建议、人大依法批准、人民意愿融入其中，正是'
+   261 分析过程->分析过程 font Songti SC->Songti SC ind None->None '④科学立法、严格执法、公正司法、全民守法的一体建'
+   262 分析过程->分析过程 font Songti SC->Songti SC ind None->None '提示：材料只涉及规划从建议到审查批准这一环节，没'  <<DIFF

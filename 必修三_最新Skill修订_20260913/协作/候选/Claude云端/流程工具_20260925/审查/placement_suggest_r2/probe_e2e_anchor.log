@@ -1,0 +1,8 @@
+block_index blocks 746 bh.walk blocks 746
+titles identical in order: True
+raw anchor dict accepted by block_insert as-is: 0 / 102
+groups 102
+  (kind, claimed_unique, resolved, resolved_is_last_b)= ('after_block', True, True, True) 95
+  (kind, claimed_unique, resolved, resolved_is_last_b)= ('method_end', False, False, False) 1
+  (kind, claimed_unique, resolved, resolved_is_last_b)= ('method_end', True, True, True) 6
+mismatches: 0

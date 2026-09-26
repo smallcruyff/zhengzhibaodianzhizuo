@@ -1,0 +1,23 @@
+装书+建索引 3.1s
+FAIL R01 题型字段“非选择题”被选项行启发式覆盖 (0.0s) - kind=choice kind_field='非选择题（由同卷结构推断：inferred_from_exam_structure(同卷选择题最大题号=15)）'
+FAIL R02 无细则主观题绕过 SCOPE-E1 过滤 (3.4s) - exit=0 kind=choice e1_present=True flags=[]
+FAIL R03 选择题（列表式选项）被认成主观题 (0.0s) - kind=subjective e1_present=False
+FAIL R04 E1 节漏认 → 误标“按规则不收”（BJ-2024-DC-ERMO-Q18） (0.0s) - e1_header=None e1_present=False rubric[:40]=''
+FAIL R05 E1 节漏认 → 误标“按规则不收”（BJ-2023-DC-ERMO-Q21） (0.0s) - e1_header='正式评分材料原文' e1_present=False rubric[:40]='（未找到已确认的正式评分材料；见下方候选区）'
+FAIL R06 题库标“采用题面小节: 无”时仍拿“不得当作题面”的讲评块当题面 (3.3s) - exit=0 stem_header='讲评来源块（含答案与解析，不得当作题面）' stem[:30]='1、2、6、11、13、14、15'
+FAIL R07 “考法末尾”锚点 anchor_title_contains 在 block_insert 里须恰好命中 1 块 (2.6s) - 10 个组的锚点命中≠1 块，例：[('P1｜03\u3000党员：先锋模范作用｜考法2\u3000补出型：材料没点党员作用，自己补（2题）', '例题 4\u30002024海淀期中第19题', 2), ('P1｜06\u3000党纪：纪律建设与依规治党｜考法1\u3000一体型：国法党规并写，讲透统一（1', '例题 1\u30002026房山一模第20题（跨模块）', 2), ('P1｜02\u3000公民的政治权利：三大权与四小权｜考法1\u3000明写型：机制已写，四权一串写', '例题 4\u30002026顺义一模第17题', 2)]
+FAIL R08 题键已在本书落位时无任何提示 (3.6s) - exit=0 md 输出未提已落位：'# 新题插入位置建议（必修三《政治与法治》）\n\n## BJ-2026-HD-ERMO-Q11（choice）\n1. **P1｜03\u3000司法：公正司法｜考法6\u3000一环型：司法只是法治链条一环（6题）**（分 1.0819，组内 34 题）——最像：选择例题 8\u30002026昌平期末第11题（跨模块）（B0520）；插入点：考法末'
+FAIL R09 一处写出被拒时另一输出已落盘（不留半成品） (3.6s) - exit=3 md_left=True
+FAIL R10 --report 缺 summary 与题源 MD 路径/SHA (3.5s) - 顶层键=['tool', 'version', 'mode', 'generated_at', 'inputs', 'profile', 'params', 'results']；题源 MD 路径出现=False
+FAIL R11 与全书零重合的输入仍给出 3 个 0 分候选、退出 0 (3.6s) - exit=0 scores=[0.0, 0.0, 0.0]
+FAIL R12 --top-k -1 未校验 (3.5s) - exit=0 候选数=19
+PASS R13 守卫（符号链接绕行/Skill 目录/冻结册写出拒绝；冻结册只读可跑） (13.7s) - codes=(3, 3, 3, 0) leaked=False
+FAIL R14 找不到 Skill 脚本目录时退出码 (0.1s) - exit=1 err=找不到 Skill 脚本目录（docx_lib.py）：本文件同目录、环境变量 BAODIAN_SKILL_SCRIPTS、向上逐级 .claude/skill
+FAIL R15 十题验收里有题型误判的“命中” (0.0s) - 伪命中=[('BJ-2026-BJ-GAOKAO-Q18', ['subjective'], 'choice', 1)]
+PASS R16 Skill scripts 下无 __pycache__ (0.0s) - []
+PASS R17 vermin -t=3.9- 无违规 (0.2s) - exit=0 cting python files..
+Analyzing 2 files using 4 processes..
+Minimum required versions: 3.7
+Incompatible versions:     2.x
+
+合计 17 条，FAIL 14 条（FAIL＝被审工具不符合规格），用时 44.2s

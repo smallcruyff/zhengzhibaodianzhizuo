@@ -1,0 +1,3 @@
+PYTHONHASHSEED 0 best (44, 11, 22, {'material': 0.6, 'ask': 2.2, 'rubric': 1.0, 'method': 0.4}, 3, 0.6) n_tune 40
+PYTHONHASHSEED 1 best (44, 11, 22, {'material': 0.6, 'ask': 2.2, 'rubric': 1.0, 'method': 0.4}, 3, 0.6) n_tune 40
+PYTHONHASHSEED 12345 best (44, 11, 22, {'material': 0.6, 'ask': 2.2, 'rubric': 1.0, 'method': 0.4}, 3, 0.6) n_tune 40

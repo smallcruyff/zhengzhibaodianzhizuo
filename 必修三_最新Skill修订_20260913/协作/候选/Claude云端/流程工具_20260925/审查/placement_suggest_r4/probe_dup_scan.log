@@ -1,0 +1,10 @@
+not-in-book parseable bank questions: 1345; flagged (>=0.6): 7; scan 13.4s
+same question number as matched block key: 7
+flagged but ask containment < 0.5 (same material, different ask?): 0
+{"key": "BJ-2025-HD-QIZHONG-Q10", "kind": "choice", "block": "B0415", "block_key": "BJ-2024-HD-QIZHONG-Q10", "ratio": 0.902, "ask_containment": null, "ask": ""}
+{"key": "BJ-2025-HD-QIZHONG-Q11", "kind": "choice", "block": "B0488", "block_key": "BJ-2024-HD-QIZHONG-Q11", "ratio": 0.752, "ask_containment": null, "ask": ""}
+{"key": "BJ-2025-HD-QIZHONG-Q18", "kind": "subjective", "block": "B0050", "block_key": "BJ-2024-HD-QIZHONG-Q18", "ratio": 0.867, "ask_containment": 0.962, "ask": "街道围着社区转，社区围着小院转，小院围着居民转，通过多方参与形成合力，有效解决了垃圾分类、院落改善、文明养犬等难点问题，大大增强了社区居民的获得感和幸福感，促进"}
+{"key": "BJ-2025-HD-QIZHONG-Q19", "kind": "subjective", "block": "B0098", "block_key": "BJ-2024-HD-QIZHONG-Q19", "ratio": 0.889, "ask_containment": 1.0, "ask": "结合材料，运用《政治与法治》知识，分析上述条款修订的原因。"}
+{"key": "BJ-2025-HD-QIZHONG-Q21", "kind": "subjective", "block": "B0405", "block_key": "BJ-2024-HD-QIZHONG-Q21", "ratio": 0.83, "ask_containment": 0.682, "ask": "（1）运用法治知识，对小海的观点进行评析。\n第7页/共10页"}
+{"key": "BJ-2025-HD-QIZHONG-Q7", "kind": "choice", "block": "B0126", "block_key": "BJ-2024-HD-QIZHONG-Q7", "ratio": 0.871, "ask_containment": null, "ask": ""}
+{"key": "BJ-2025-HD-QIZHONG-Q9", "kind": "choice", "block": "B0347", "block_key": "BJ-2024-HD-QIZHONG-Q9", "ratio": 0.864, "ask_containment": null, "ask": ""}

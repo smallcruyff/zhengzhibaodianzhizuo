@@ -1,0 +1,332 @@
+[
+  {
+    "name": "baseline_guard_测试前",
+    "result": "PASS",
+    "seconds": 4.95,
+    "detail": "rc=0 files=3468 changed=0 removed=0 added=0 skill_pycache=0"
+  },
+  {
+    "name": "T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16",
+    "result": "PASS",
+    "seconds": 45.64,
+    "detail": "rc=0 new_FAIL=0 block_index=[{'id': 'I001', 'title': '例题 90\\u30002023西城二模第16题', 'found_blocks': 1, 'schema': 'subj4', 'missing': [], 'media_count': 1, 'tables_count': 0, 'media_expect': 1, 'tables_expect': 0, 'media_match': True, 'tables_match': True}] B1格式检查=OK stderr="
+  },
+  {
+    "name": "T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18",
+    "result": "PASS",
+    "seconds": 46.25,
+    "detail": "rc=0 new_FAIL=0 block_index=[{'id': 'I001', 'title': '例题 91\\u30002026朝阳一模第18题', 'found_blocks': 1, 'schema': 'subj4', 'missing': [], 'media_count': 0, 'tables_count': 1, 'media_expect': 0, 'tables_expect': 1, 'media_match': True, 'tables_match': True}] B1格式检查=OK stderr="
+  },
+  {
+    "name": "T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19",
+    "result": "PASS",
+    "seconds": 45.68,
+    "detail": "rc=0 new_FAIL=0 block_index=[{'id': 'I001', 'title': '例题 92\\u30002024海淀二模第19题', 'found_blocks': 1, 'schema': 'subj4', 'missing': [], 'media_count': 0, 'tables_count': 0, 'media_expect': 0, 'tables_expect': 0, 'media_match': True, 'tables_match': True}] B1格式检查=OK stderr="
+  },
+  {
+    "name": "T2_img_金标回归_before_block还原原位_整篇比对",
+    "result": "PASS",
+    "seconds": 34.32,
+    "detail": "rc=0 stderr= whole_doc_text_flow_match=True block_text_match=True orig_n=13 new_n=13 fmt_diffs_n=3 fmt_diffs=[{'offset': 9, 'text': '从设问定层次：“说明如何”按主体、做法、效果展开：市委统筹、', 'orig': (('aff9', None, True, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 67))), 'new': (('aff9', None, True, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 74),))}, {'offset': 11, 'text': '④（综合概括）市委统筹、居民共商共议和执法队依法治理相贯通，', 'orig': (('affa', None, False, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 46))), 'new': (('affa', None, False, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 53),))}, {'offset': 12, 'text': '【细则说明】 综合概括写出坚持党的领导、人民当家作主和依法治', 'orig': (('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 6), ((False, False, False, '000000', 'Songti SC', '21'), 98))), 'new': (('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 97)))}] stem设问段格式差异=[] image_bytes_match=True new_media=['word/media/image61.jpg'] health_new_FAIL=0"
+  },
+  {
+    "name": "T2_tbl_金标回归_before_block还原原位_整篇比对",
+    "result": "PASS",
+    "seconds": 33.06,
+    "detail": "rc=0 stderr= whole_doc_text_flow_match=True block_text_match=True orig_n=35 new_n=35 fmt_diffs_n=25 fmt_diffs=[{'offset': 2, 'text': '2024年国务院《政府工作报告》的形成过程', 'orig': (('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 21),)), 'new': (('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 21),))}, {'offset': 3, 'text': '', 'orig': (('aff6', 'center', False, None, '0', None, None, None, None), ()), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), ())}, {'offset': 4, 'text': '主要阶段', 'orig': (('aff6', 'center', False, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 4),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))}, {'offset': 5, 'text': '工作内容', 'orig': (('aff6', 'center', False, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 4),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))}, {'offset': 6, 'text': '一', 'orig': (('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))}, {'offset': 8, 'text': '形成讨论稿', 'orig': (('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 5),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 5),))}, {'offset': 9, 'text': '✧ 《政府工作报告》起草组认真学习习近平总书记关于起草工作的', 'orig': (('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 73),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 73),))}, {'offset': 10, 'text': '二', 'orig': (('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),)), 'new': (('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))}] stem设问段格式差异=[] table_cells_match=True orig_cells_n=25 new_cells_n=25 health_new_FAIL=0"
+  },
+  {
+    "name": "T3a_负例_父稿SHA错",
+    "result": "PASS",
+    "seconds": 2.75,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=父稿不符：父稿 SHA 不符：期望 0000000000000000…，实际 c007d7198422050c…（T3a_负例_父稿SHA错_parent.docx）\n"
+  },
+  {
+    "name": "T3b_负例_锚点0命中",
+    "result": "PASS",
+    "seconds": 2.99,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：anchor.after_block.title_contains=\"这个标题在书里不存在_xyz\" 命中 0 个题块（须恰好 1 个）；候选：[]\n"
+  },
+  {
+    "name": "T3c_负例_锚点多命中",
+    "result": "PASS",
+    "seconds": 2.82,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=': 365}, {'title': '例题 4\\u30002026朝阳二模第21题（跨模块）', 'title_i': 376}, {'title': '例题 5\\u30002026丰台期末第22题（跨模块）', 'title_i': 397}, {'title': '例题 6\\u30002026通州期末第21题（跨模块）', 'title_i': 414}, {'title': '例题 7\\u30002025西城一模第22题（跨模块）', 'title_i': 429}, {'title': '例题 8\\u30002025年北京高考第21题（跨模块）', 'title_i': 439}]\n"
+  },
+  {
+    "name": "T3d_负例_样板题块找不到",
+    "result": "PASS",
+    "seconds": 2.93,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：N1：template_block.title_contains=\"这个模板不存在_xyz\" 命中 0 个题块（须恰好 1 个）\n"
+  },
+  {
+    "name": "T3e_负例_原件里找不到指定图",
+    "result": "PASS",
+    "seconds": 3.13,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：原件里 rId=\"rId999\" 的图形命中 0 处（须恰好 1 处）\n"
+  },
+  {
+    "name": "T3f_负例_原件里找不到指定表",
+    "result": "PASS",
+    "seconds": 3.03,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：原件里第 999 个表格不存在（共 1 个）\n"
+  },
+  {
+    "name": "T3g_负例_图片文件损坏",
+    "result": "PASS",
+    "seconds": 3.04,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：图片文件无法解析（可能已损坏）：code=7: unknown image file format\n"
+  },
+  {
+    "name": "T3h_负例_输出落到书稿目录",
+    "result": "PASS",
+    "seconds": 2.83,
+    "detail": "rc=3（期望3） 输出未残留=True stderr=拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  {
+    "name": "T3i_负例_输出落到Skill目录",
+    "result": "PASS",
+    "seconds": 2.96,
+    "detail": "rc=3（期望3） 输出未残留=True stderr=拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  {
+    "name": "T3j_负例_输出落到题库目录",
+    "result": "PASS",
+    "seconds": 2.99,
+    "detail": "rc=3（期望3） 输出未残留=True stderr=拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  {
+    "name": "T3k_负例_冻结册配置",
+    "result": "PASS",
+    "seconds": 0.21,
+    "detail": "rc=3（期望3） 输出未残留=True stderr=拒绝写出：必修二《经济与社会》 已冻结（2026-09-15用户确认修订230为最终交付版并送印；工具对本册只允许只读（写操作一律拒绝））\n"
+  },
+  {
+    "name": "T3l_负例_method_end命中多个考法分组",
+    "result": "PASS",
+    "seconds": 2.87,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=od': '考法1\\u3000全程型：立法环节逐个对原则（5题）', 'n_blocks': 5}, {'node': '02\\u3000执法：法治政府', 'method': '考法1\\u3000独做型：一个部门做一件事（10题）', 'n_blocks': 10}, {'node': '03\\u3000司法：公正司法', 'method': '考法1\\u3000接力型：检察建议督促履职（5题）', 'n_blocks': 5}, {'node': '04\\u3000全民守法', 'method': '考法1\\u3000以案释法型：个案推向全社会（7题）', 'n_blocks': 7}]\n"
+  },
+  {
+    "name": "T3m_负例_标题命中禁用词表",
+    "result": "PASS",
+    "seconds": 2.94,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：N1：标题命中禁用词表 工程词:模板\n"
+  },
+  {
+    "name": "T3n_负例_表格rows命中禁用词表",
+    "result": "PASS",
+    "seconds": 2.81,
+    "detail": "rc=2（期望2） 输出未残留=True stderr=中止：N1.content[1]：表格文字命中禁用词表 编校口吻:本落位（单元格：本落位）\n"
+  },
+  {
+    "name": "T3o_负例_输出落到审阅入口",
+    "result": "PASS",
+    "seconds": 2.89,
+    "detail": "rc=3（期望3） 输出未残留=True stderr=拒绝写出：落在受保护目录 /home/user/zhengzhibaodianzhizuo 内（只允许 …/协作/候选/<谁>/<批次>/构建/ 之下或系统临时目录）\n"
+  },
+  {
+    "name": "T3p_负例_输出与输入是同一个文件",
+    "result": "PASS",
+    "seconds": 2.97,
+    "detail": "rc=3（期望3） 输入文件未被覆盖=True stderr=拒绝写出：输出与输入是同一个文件（T3p_same_file.docx）\n"
+  },
+  {
+    "name": "T3q_正例_冻结册check模式可以跑",
+    "result": "PASS",
+    "seconds": 2.86,
+    "detail": "rc=1（期望0/1，冻结册 check 模式应该能跑） stderr="
+  },
+  {
+    "name": "T4a_其他书_哲学_check",
+    "result": "PASS",
+    "seconds": 3.38,
+    "detail": "rc=1（0/1 视为 check 走通） stdout={\"media_images\": 0, \"media_tables\": 0, \"needs_local_check\": 0, \"anchor_converted\": 0, \"fallbacks\": 0, \"total\": 1, \"pending\": 1} stderr="
+  },
+  {
+    "name": "T4b_其他书_哲学_apply最小写入",
+    "result": "PASS",
+    "seconds": 12.54,
+    "detail": "缺栏目=['【材料原文】', '【设问】', '【为什么能想到】', '【答案落点】', '【细则说明】']，rc=2（期望2，R2-M2 硬失败） out_exists=False"
+  },
+  {
+    "name": "m15_其他书哲学apply_health如实记录新增FAIL",
+    "result": "PASS",
+    "seconds": 0.0,
+    "detail": "该最小写入已被 R2-M2 栏目缺失拦下（见 T4b），--health 不会执行到，跳过"
+  },
+  {
+    "name": "B2_M1_表格超链接图片关系重建_真实原件",
+    "result": "PASS",
+    "seconds": 17.75,
+    "detail": "rc=0 stderr= bad_rel=[] urls_ok=True（['http://dangshi.people.com.cn/n1/2021/0914/c436975-32226432.html', 'http://xh.xhby.net/pc/con/202109/14/content_971499.html', 'https://epaper.gmw.cn/gmrb/html/2021-07/16/nw.D110000gmrb_20210716_1-07.htm', 'https://theory.gmw.cn/2021-10/14/content_35231056.htm'] vs ['http://dangshi.people.com.cn/n1/2021/0914/c436975-32226432.html', 'http://xh.xhby.net/pc/con/202109/14/content_971499.html', 'https://epaper.gmw.cn/gmrb/html/2021-07/16/nw.D110000gmrb_20210716_1-07.htm', 'https://theory.gmw.cn/2021-10/14/content_35231056.htm']） new_docpr_ids=['176', '177', '178'] bad_new_ids=[] n_docpr_total=103 r2b1_cell_style_names=['题目材料'] bad_hit=[]"
+  },
+  {
+    "name": "M1_表内docPr去重_真实原件",
+    "result": "PASS",
+    "seconds": 19.22,
+    "detail": "rc=0 stderr= n_docpr_total=103 new_docpr_ids=['176', '177', '178'] bad_new_ids=[] r2b1_cell_style_names=['题目材料'] bad_hit=[]"
+  },
+  {
+    "name": "m1_表格含文本框安全中止",
+    "result": "PASS",
+    "seconds": 3.01,
+    "detail": "rc=2（期望2） 输出未残留=True 提示含\"文本框\"=True stderr=中止：原件表格内含 6 个文本框（w:txbxContent），本工具不支持复制文本框内容（已知限制，见回执 known_limits），整批中止\n"
+  },
+  {
+    "name": "m3_同锚点多条insert顺序保持",
+    "result": "PASS",
+    "seconds": 23.02,
+    "detail": "rc=0 stderr= 例题96位于176 例题97位于181 order_ok=True"
+  },
+  {
+    "name": "m2_renumber失败退出码不再是0",
+    "result": "PASS",
+    "seconds": 20.01,
+    "detail": "rc=1（期望1） renumber.ok=False stdout={'out': '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m2renum_out.docx', 'sha256': '3da98d0eddf1686bdd975c9afc9dc7274f4a595820face79d7bf4cce67750861'} pre-renumber-sha=3da98d0eddf1686bdd975c9afc9dc7274f4a595820face79d7bf4cce67750861"
+  },
+  {
+    "name": "m5_health异常不再静默退出0",
+    "result": "PASS",
+    "seconds": 16.8,
+    "detail": "rc=2（期望2） health={'error': 'm5 复现用：模拟 --health 内部异常'} out_exists=True"
+  },
+  {
+    "name": "M2_block_index写后复核硬失败_人工造媒体数不符",
+    "result": "PASS",
+    "seconds": 16.32,
+    "detail": "rc=2（期望2） 输出未残留=True"
+  },
+  {
+    "name": "m12a_apply缺省--profile被argparse拒绝",
+    "result": "PASS",
+    "seconds": 0.32,
+    "detail": "rc=2（期望2） stderr=usage: block_insert.py apply [-h] --docx DOCX --insert INSERT --out OUT\n                             --profile PROFILE [--report REPORT] [--health]\n                             [--renumber] [--render-check]\nblock_insert.py apply: error: the following arguments are required: --profile\n"
+  },
+  {
+    "name": "m12b_profile指向本环境不存在的root被拒绝",
+    "result": "PASS",
+    "seconds": 0.23,
+    "detail": "rc=2（期望2） stderr=load_prof\n    raise Abort(f'书册配置 paths.root 在本环境不存在：{root}（本环境须用指向本仓库根的配置，'\napply_patch.Abort: 书册配置 paths.root 在本环境不存在：/Users/wanglifei/Desktop/gpt和claude共同的小窝（本环境须用指向本仓库根的配置，云端见 profiles_cloud/）\n中止：书册配置 paths.root 在本环境不存在：/Users/wanglifei/Desktop/gpt和claude共同的小窝（本环境须用指向本仓库根的配置，云端见 profiles_cloud/）\n"
+  },
+  {
+    "name": "R2_B1_sanitize_table_styles按名字映射不按styleId",
+    "result": "PASS",
+    "seconds": 0.01,
+    "detail": "本书真正的 Table Grid styleId=afff1（不是 af0） 撞号场景重映射到=afff1 未知名删除=True"
+  },
+  {
+    "name": "R2_M4_真实DOCX原件带表新题_BJ-2023-HD-QIZHONG-Q18",
+    "result": "PASS",
+    "seconds": 44.98,
+    "detail": "rc=0 new_FAIL=0 tables_match=True tblStyle解析名=Table Grid（期望Table Grid） gridCol总宽=9298（应<=9298） 残留直接楷体=False 表头全加粗=True 表体不加粗=True 文字逐字一致=True"
+  },
+  {
+    "name": "R2_M1_词表豁免被style覆盖绕过_role=source配教学桶样式必须中止",
+    "result": "PASS",
+    "seconds": 2.94,
+    "detail": "rc=2（期望2，不需要 --health） 输出未残留=True stderr=中止：style=\"分析过程\" 不在角色 \"source\" 的样式桶内（styles.source），不允许用 style 覆盖到桶外样式（R2-M1 修复）\n"
+  },
+  {
+    "name": "R2_M1_控制组_role=teaching配桶内样式应正常通过",
+    "result": "PASS",
+    "seconds": 17.28,
+    "detail": "rc=0（期望0/1） out_exists=True stderr="
+  },
+  {
+    "name": "R2_M2_栏目缺失写后复核硬失败",
+    "result": "PASS",
+    "seconds": 17.07,
+    "detail": "rc=2（期望2） 输出未残留=True missing=['【思维链条】', '【答案落点】', '【细则说明】'] stderr=中止：写后复核不通过，已删除输出：N1：block_index 认出的题块缺少栏目：['【思维链条】', '【答案落点】', '【细则说明】']\n"
+  },
+  {
+    "name": "R2_M3_report不覆盖已批准补丁",
+    "result": "PASS",
+    "seconds": 2.9,
+    "detail": "rc=3（期望3） 文件未变=True stderr=拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/R2_M3_report不覆盖已批准补丁_report.json\n"
+  },
+  {
+    "name": "R2_M3_report不覆盖插入单本身",
+    "result": "PASS",
+    "seconds": 2.84,
+    "detail": "rc=3（期望3） 文件未变=True stderr=拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/R2_M3_report不覆盖插入单本身_report.json\n"
+  },
+  {
+    "name": "R2_M3_report不覆盖不相干json",
+    "result": "PASS",
+    "seconds": 2.7,
+    "detail": "rc=3（期望3） 文件未变=True stderr=拒绝写出：目标已存在，不覆盖：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/R2_M3_report不覆盖不相干json_report.json\n"
+  },
+  {
+    "name": "R2_M3_report可覆盖自己以前的同类报告",
+    "result": "PASS",
+    "seconds": 2.75,
+    "detail": "rc=1（期望0/1） 文件已更新=True"
+  },
+  {
+    "name": "R2_M3_report原子写出_写失败不破坏旧内容",
+    "result": "PASS",
+    "seconds": 0.0,
+    "detail": "os.replace失败后仍向外抛出=True 旧内容保留={'marker': 'old-untouched'} 残留临时文件=[]"
+  },
+  {
+    "name": "R2_m3_render_check转换失败退出码提到1",
+    "result": "PASS",
+    "seconds": 16.6,
+    "detail": "rc=1（期望1，不阻断写出） out_exists=True"
+  },
+  {
+    "name": "R2_m9_插入单未知字段被拒绝",
+    "result": "PASS",
+    "seconds": 0.2,
+    "detail": "rc=2（期望2） 提示含未知字段名=True stderr=—见 R2-m9 修复；允许的字段：['file', 'from', 'like', 'name', 'role', 'rows', 'runs', 'style', 'text', 'width_cm']）\n中止：N1.content[0]：出现未知字段 ['lik']（写错字段名会被静默忽略——比如把 \"like\" 拼成 \"lik\"，回退到默认匹配还照样能跑，只是不是作者想要的那段——见 R2-m9 修复；允许的字段：['file', 'from', 'like', 'name', 'role', 'rows', 'runs', 'style', 'text', 'width_cm']）\n"
+  },
+  {
+    "name": "R2_m9_插入单book字段与profile不一致被拒绝",
+    "result": "PASS",
+    "seconds": 0.21,
+    "detail": "rc=2（期望2） stderr=三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/block_insert.py\", line 246, in _load_prof\n    raise Abort(f'插入单 book 字段（{book_field}）与 --profile 实际书册（{prof.get(\"book_id\")}）'\napply_patch.Abort: 插入单 book 字段（philosophy）与 --profile 实际书册（bixiu3）不一致\n中止：插入单 book 字段（philosophy）与 --profile 实际书册（bixiu3）不一致\n"
+  },
+  {
+    "name": "R2_m10_renumber_next_command路径带空格可原样往返",
+    "result": "PASS",
+    "seconds": 21.07,
+    "detail": "rc=1（期望1） next_command=\"/usr/local/bin/python3 /home/user/zhengzhibaodianzhizuo/.claude/skills/beijing-gaokao-politics/scripts/layout_prepare.py repair --docx '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m10 目录 带空格/m10quote out.docx' --out '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m10 目录 带空格/m10quote out_renumbered_retry.docx' --numbering --method-counts --profile '/home/user/zhengzhibaodianzhizuo/必修三_最新Skill修订_20260913/协作/候选/Claude云端/流程工具_20260925/profiles_cloud/bixiu3.json' --expect-sha 3da98d0eddf1686bdd975c9afc9dc7274f4a595820face79d7bf4cce67750861 --report '/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m10 目录 带空格/m10quote out_renumber.json'\" retry_out=/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/m10 目录 带空格/m10quote out_renumbered_retry.docx 不沿用占用路径=True 带空格路径可原样往返=True"
+  },
+  {
+    "name": "R2_m6_插入单文件不存在_中文提示无traceback",
+    "result": "PASS",
+    "seconds": 0.2,
+    "detail": "rc=2 无traceback=True 中文提示=True stderr=中止：插入单文件不存在：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/不存在的插入单.json\n"
+  },
+  {
+    "name": "R2_m6_插入单JSON损坏_中文提示无traceback",
+    "result": "PASS",
+    "seconds": 0.22,
+    "detail": "rc=2 无traceback=True 中文提示=True stderr=中止：插入单不是合法 JSON（第 1 行第 1 列）：/tmp/claude-0/-home-user-zhengzhibaodianzhizuo/2415817c-761f-5954-bb79-9bc9fa3464ca/scratchpad/block_insert/r2m6_badjson_insert.json\n"
+  },
+  {
+    "name": "R2_m6_配置名不存在_中文提示无traceback",
+    "result": "PASS",
+    "seconds": 0.21,
+    "detail": "rc=2 无traceback=True 中文提示=True stderr=中止：书册配置不存在：\"这个配置名在本书不存在_xyz\"（--profile 后跟配置名或配置文件路径）\n"
+  },
+  {
+    "name": "R2_m1_只有外部关系无新图片时也要写rels",
+    "result": "PASS",
+    "seconds": 2.12,
+    "detail": "new_rels=[('rId87', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink', 'https://example.com/test', 'External')] new_media为空=True（旧版只看 new_media 会漏判该写 rels）"
+  },
+  {
+    "name": "R2_m16_source_cache进程内多次调用不串味且句柄关闭",
+    "result": "PASS",
+    "seconds": 4.72,
+    "detail": "第一次调用打开的原件数=1（调用刚结束时仍开着=True） 第二次调用开始后第一次的句柄已关闭=True 第二次调用后缓存为空=True（旧版会带着第一次的原件）"
+  },
+  {
+    "name": "baseline_guard_测试后",
+    "result": "PASS",
+    "seconds": 4.76,
+    "detail": "rc=0 files=3468 changed=0 removed=0 added=0 skill_pycache=0"
+  }
+]

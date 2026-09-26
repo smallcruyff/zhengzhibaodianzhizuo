@@ -1,0 +1,152 @@
+## unchanged.py（独立核未点名段落/成员/关系）
+{
+"T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16_out": {
+"para_ops": [
+[
+"insert",
+161,
+161,
+161,
+174
+]
+],
+"changed_members": [
+"word/document.xml",
+"word/_rels/document.xml.rels"
+],
+"added": [
+"word/media/image61.png"
+],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18_out": {
+"para_ops": [
+[
+"insert",
+126,
+126,
+126,
+140
+]
+],
+"changed_members": [
+"word/document.xml"
+],
+"added": [],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19_out": {
+"para_ops": [
+[
+"insert",
+126,
+126,
+126,
+135
+]
+],
+"changed_members": [
+"word/document.xml"
+],
+"added": [],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"b2m1_out": {
+"para_ops": [
+[
+"insert",
+161,
+161,
+161,
+220
+]
+],
+"changed_members": [
+"word/document.xml",
+"word/_rels/document.xml.rels"
+],
+"added": [
+"word/media/image61.jpeg",
+"word/media/image62.jpeg",
+"word/media/image63.jpeg"
+],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"m1docpr_out": {
+"para_ops": [
+[
+"insert",
+176,
+176,
+176,
+208
+]
+],
+"changed_members": [
+"word/document.xml",
+"word/_rels/document.xml.rels"
+],
+"added": [
+"word/media/image61.jpeg",
+"word/media/image62.jpeg",
+"word/media/image63.jpeg"
+],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"gold_img_out": {
+"para_ops": [
+[
+"insert",
+148,
+148,
+148,
+161
+]
+],
+"changed_members": [
+"word/document.xml",
+"word/_rels/document.xml.rels"
+],
+"added": [
+"word/media/image61.jpg"
+],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+},
+"gold_tbl_out": {
+"para_ops": [
+[
+"insert",
+91,
+91,
+91,
+126
+]
+],
+"changed_members": [
+"word/document.xml"
+],
+"added": [],
+"rel_bad": [],
+"ct_uncovered": [
+"svg"
+]
+}
+}

@@ -1,0 +1,9 @@
+2024 HD-QIZHONG in book: ['BJ-2024-HD-QIZHONG-Q7', 'BJ-2024-HD-QIZHONG-Q8', 'BJ-2024-HD-QIZHONG-Q9', 'BJ-2024-HD-QIZHONG-Q10', 'BJ-2024-HD-QIZHONG-Q11', 'BJ-2024-HD-QIZHONG-Q18', 'BJ-2024-HD-QIZHONG-Q19', 'BJ-2024-HD-QIZHONG-Q21']
+BJ-2025-HD-QIZHONG-Q7 flag=B0126 0.87 containment_vs_2024_twin=0.87 kind choice
+BJ-2025-HD-QIZHONG-Q8 flag=NONE containment_vs_2024_twin=0.50 kind choice
+BJ-2025-HD-QIZHONG-Q9 flag=B0347 0.86 containment_vs_2024_twin=0.86 kind choice
+BJ-2025-HD-QIZHONG-Q10 flag=B0415 0.90 containment_vs_2024_twin=0.90 kind choice
+BJ-2025-HD-QIZHONG-Q11 flag=B0488 0.75 containment_vs_2024_twin=0.75 kind choice
+BJ-2025-HD-QIZHONG-Q18 flag=B0050 0.87 containment_vs_2024_twin=0.87 kind subjective
+BJ-2025-HD-QIZHONG-Q19 flag=B0098 0.89 containment_vs_2024_twin=0.89 kind subjective
+BJ-2025-HD-QIZHONG-Q21 flag=B0405 0.83 containment_vs_2024_twin=0.83 kind subjective

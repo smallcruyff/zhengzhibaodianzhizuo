@@ -1,0 +1,86 @@
+== tbl n_diffs 25
+  off=2 in_table=False text='2024年国务院《政府工作报告》的形成过程'
+     orig=(('aff6', 'both', True, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 21),))
+     new =(('aff6', 'both', False, None, None, None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 21),))
+  off=3 in_table=True text=''
+     orig=(('aff6', 'center', False, None, '0', None, None, None, None), ())
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), ())
+  off=4 in_table=True text='主要阶段'
+     orig=(('aff6', 'center', False, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 4),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+  off=5 in_table=True text='工作内容'
+     orig=(('aff6', 'center', False, None, '0', None, None, None, None), (((True, False, False, None, 'Kaiti SC', '21'), 4),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+  off=6 in_table=True text='一'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+  off=8 in_table=True text='形成讨论稿'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 5),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 5),))
+  off=9 in_table=True text='✧ 《政府工作报告》起草组认真学习习近平总书记关于起草工作的'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 73),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 73),))
+  off=10 in_table=True text='二'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+  off=12 in_table=True text='修改完善'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+  off=13 in_table=True text='✧ 国务院常务会议讨论修改报告初稿，形成提交中共中央政治局常'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 40),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 40),))
+  off=14 in_table=True text='✧ 根据中共中央政治局常委会议意见进行修改，形成征求意见稿。'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 30),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 30),))
+  off=15 in_table=True text='✧ 汇总各地方、各部门、社会各界的意见及网民建言，讨论修改征'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 57),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 57),))
+  off=16 in_table=True text='✧ 根据中共中央政治局会议意见再次进行修改。'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 22),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 22),))
+  off=17 in_table=True text='三'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+  off=19 in_table=True text='正式审议'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 4),))
+  off=20 in_table=True text='✧ 2024年3月5日，第十四届全国人民代表大会第二次会议开'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 43),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 43),))
+  off=21 in_table=True text='✧ 国务院有关负责人、起草组工作人员分赴各代表团，听取人大代'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 55),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 55),))
+  off=22 in_table=True text='✧ 起草组整理意见和建议，再度修改报告。'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 20),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 20),))
+  off=23 in_table=True text='四'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 1),))
+  off=25 in_table=True text='批准'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 2),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 2),))
+  off=26 in_table=True text='✧ 全国人民代表大会主席团听取国务院总理关于报告修改的说明。'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 30),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 30),))
+  off=27 in_table=True text='✧ 2024年3月11日，十四届全国人大二次会议表决通过关于'
+     orig=(('aff6', 'both', False, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 56),))
+     new =(('aff6', 'both', True, None, '0', None, None, None, None), (((False, False, False, None, 'Kaiti SC', '21'), 56),))
+  off=31 in_table=False text='从设问定层次：“如何体现”把形成过程中的主体和做法与全过程人'
+     orig=(('aff9', None, True, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 57)))
+     new =(('aff9', None, True, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 64),))
+  off=33 in_table=False text='④（总述）政府工作报告形成过程把党的主张、国家意志和人民意愿'
+     orig=(('affa', None, False, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 5), ((False, False, False, '000000', 'Songti SC', '21'), 54)))
+     new =(('affa', None, False, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 59),))
+  off=34 in_table=False text='【细则说明】 政府工作报告形成过程把党的主张、国家意志、人民'
+     orig=(('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 6), ((False, False, False, '000000', 'Songti SC', '21'), 58)))
+     new =(('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 57)))
+== img n_diffs 3
+  off=9 in_table=False text='从设问定层次：“说明如何”按主体、做法、效果展开：市委统筹、'
+     orig=(('aff9', None, True, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 67)))
+     new =(('aff9', None, True, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 74),))
+  off=11 in_table=False text='④（综合概括）市委统筹、居民共商共议和执法队依法治理相贯通，'
+     orig=(('affa', None, False, None, None, None, None, None, None), (((True, False, False, '000000', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 46)))
+     new =(('affa', None, False, None, None, None, None, None, None), (((False, False, False, '000000', 'Songti SC', '21'), 53),))
+  off=12 in_table=False text='【细则说明】 综合概括写出坚持党的领导、人民当家作主和依法治'
+     orig=(('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 6), ((False, False, False, '000000', 'Songti SC', '21'), 98)))
+     new =(('affb', None, False, None, None, None, None, None, None), (((True, False, False, '1F3864', 'Songti SC', '21'), 7), ((False, False, False, '000000', 'Songti SC', '21'), 97)))

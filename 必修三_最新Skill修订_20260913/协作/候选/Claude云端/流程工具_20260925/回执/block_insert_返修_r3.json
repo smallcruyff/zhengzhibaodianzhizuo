@@ -1,0 +1,622 @@
+{
+  "tool": "block_insert",
+  "stage": "返修 r3",
+  "date": "2026-09-25",
+  "identity": "claude-cloud 子代理（返修，非负责人，只写候选）",
+  "summary": "对审查 r3（FAIL：1 blocker + 3 major + 13 minor）逐条返修。R3-B1（设问字体识别只覆盖约79%写法）重新设计为\"文字判据（开头引导词+独立题号题头）+位置信号（块内/插入单最后一个source项多半是设问）\"两层，全书 self-template 回归 FLIP 数从 94/453 降到 0/453，反向误判从 8 个降到 1 个（唯一残留见 known_limits），另给插入单加显式 kind 字段做逃生口。R3-M1（整表 keepNext 扩散、表头丢加粗居中）改成按列取样板格式、判断样板是否真有独立表头，keepNext 永远镜像源段落自己的状态、不从样板借；金标表格差异从25处（21处在表内）回落到4处、表内差异归零。R3-M2（T4b 空断言）改成用哲学书真实带图题块的真实内容写入并断言写出成功+block_index认块完整+media_match，加一条 renumber+health 链路测试。R3-M3（表格填空下划线丢失）改成整体覆盖 run 格式时保留 u/vertAlign/em/strike 语义属性。9 条 minor 修复（嵌套表格样式撞号、浮动表定位、pct/auto 表宽换算、width_cm 校验、fitz 弃用警告、插入单类型错误提示、--health 异常退出码语义、wp14 图形 id 重分配、render-check 提示拼接），1 条 minor（label_prefix 形状块内异常值残留）部分修复并如实说明原因，1 条 minor（行数）未修并如实说明原因、无为了凑行数删校验。重跑全部测试（含本轮新增 12 条 R3 专属回归 + 1 条更新断言）：67/67 PASS；vermin 通过；baseline_guard 测试前后 3468 个真实文件 0 变化。",
+  "counts": {
+    "blockers": {
+      "total": 1,
+      "fixed": 1
+    },
+    "majors": {
+      "total": 3,
+      "fixed": 3
+    },
+    "minors": {
+      "total": 13,
+      "fixed": 11,
+      "partial": 1,
+      "not_fixed_reasoned": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "R3-B1",
+      "title": "设问字体识别只覆盖约79%的真实写法，剩余94/453个宋体设问会被造成楷体",
+      "severity": "blocker",
+      "disposition": "已修复",
+      "fix": "重新设计设问/材料形状判据为两层：(1) 文字判据 _para_shape 只保留最精确的两条——开头引导词（_STEM_LEAD_RX，去掉了会误判的\"针对\"）与独立成段的题号题头（_SCORE_HEADER_RX 新增，覆盖\"21．（10分）\"这类无【】的题头）；(2) 位置信号 _stem_position_index/_para_shape_ctx——本书\"材料在前、设问在后\"几乎是硬规律，把每个题块（排除选择题块）里最后一个 source 角色、仍判 plain 的段落升级成 stem，插入单自己 content 列表里同样按\"最后一个 source 项\"取同一信号。find_role_template/_pick_by_shape 全线改用位置感知的 _para_shape_ctx，_pick_majority_format 新增 prefer_last 参数（stem 形状打平时取块内位置最靠后的一个，不取先出现的，因为本书这几个引导词偶尔会被材料收尾句借用、恰好排在真正设问之前）。另给插入单 content[] 新增可选字段 kind:\"stem\"/\"material\"，跳过自动判断，供作者在一条 insert 里连着给两个都像\"设问收尾\"的 source 段这类少见情形显式指出。曾经试过更激进的\"全段任意位置命中关键词\"路线（_STEM_CONTAIN_RX），穷举关键词后把材料收尾句也误判成设问，全书新增 25 处回归，已实测放弃，改用位置信号（证据见 stem_contain_regression 系列 probe）。",
+      "evidence": "R3_B1_全书self-template回归_FLIP必须为0：对全书 1078 个 Songti source 段（含所有主观题块，排除选择题），用各自所在块作样板走默认路径重建，FLIP 数=0（审查 r3 原始探针 94/453，本轮同一方法验证归零；这里的 1078 是放宽到\"任意 Songti source 段\"而非仅审查子集后的全量，不是缩小样本凑数）。R3_B1_端到端_引号开头设问不给kind也应落地为宋体：复现审查 r3 probe_stem_e2e.py 原场景——以 例题40 为样板，插入原书第933段引号开头的真实设问原文，不给 kind，重建段有效字体=Songti SC（旧版会变 Kaiti SC）。反向：全书 1275 个 Kaiti source 段里，仍被误判成 stem 的从 8 个降到 1 个（唯一残留见 known_limits，去掉\"针对\"、排除\"完成下列任务\"式共用开场白两处目标修复后，7/8 已解决）。",
+      "test_ids": [
+        "R3_B1_全书self-template回归_FLIP必须为0",
+        "R3_B1_端到端_引号开头设问不给kind也应落地为宋体"
+      ]
+    },
+    {
+      "id": "R3-M1",
+      "title": "整表重排只取样板\"首格首段\"套整行，金标表格格式差异从4处升到25处",
+      "severity": "major",
+      "disposition": "已修复",
+      "fix": "_template_row_fmt 新增 col_index 参数，按列（不再是固定首列）取样板对应格式，列数不够时clamp到样板最后一列。新增 _template_header_distinct 判断样板是不是真的有一行区别于表体的表头（按第0列 bold/居中 与表体是否不同）；样板没有真正表头时（如例题4这类整表退化成单列\"小标题格\"的样板），源表真正的表头行改用样板表体格式打底，但通过 _apply_cell_paragraph_fmt 的 preserve_emphasis 保留源表自己原有的居中对齐与加粗，不因为样板没有表头格式就把源表真正的表头强调也抹平。keepNext 改成永远不从样板借，只原样镜像源段落自己有没有——这是本次回归的根因：样板退化成单列后，_template_row_fmt 原来的实现让每一列都拿到同一个带 keepNext 的单元格，整表被强行绑定连页。",
+      "evidence": "R3_M1_金标表格回归_表内格式差异必须为0：删 B0003 带表题块、以例题4为样板重插，表格内格式差异数=0（审查 r3 实测 21/25 处在表格内；本轮修复前用同一探针复测也是 25 处，与审查一致，修复后归零）。T2_tbl_金标回归 整体差异数=4，与 r1/r2 的历史基线一致（图注加粗这类已知、已在 r1/r2 判断过的差异，非表格内、非本轮范围）。",
+      "test_ids": [
+        "R3_M1_金标表格回归_表内格式差异必须为0",
+        "T2_tbl_金标回归_before_block还原原位_整篇比对"
+      ]
+    },
+    {
+      "id": "R3-M2",
+      "title": "验收4\"在副本上写入1题\"退化成空断言，T4b缺栏目被拦下也记PASS",
+      "severity": "major",
+      "disposition": "已修复",
+      "fix": "T4b 改成不再手写最小内容，而是从哲学书草案配置切出的真实块（找块内至少一段带图的题块）逐段复制自己的 role/style/text（图片按它自己的 wp:inline/anchor 定位取回），插成一道\"同题复制\"的新题块——栏目天然齐全、图片来自真实原书，断言 rc∈{0,1}、输出存在、block_index 认块恰好1个、missing为空、media_match=True。新增 T4c：同一插入单加 --renumber，断言 rc==0、renumber.ok=True、写后体检 new_FAIL_count==0，覆盖 fix_hint 要求的完整链路。",
+      "evidence": "T4b_其他书_哲学_apply真实写入带图题：rc=1（不传 --renumber 时的例题编号不连续，预期内），out_exists=True，block_index={found_blocks:1, missing:[], media_match:True}——与审查者probe_philosophy_write.py 的独立实测完全一致。T4c_其他书_哲学_renumber后体检0新增FAIL：rc=0，renumber_ok=True，new_FAIL_count=0，与 probe_philosophy_renumber.txt 一致。",
+      "test_ids": [
+        "T4b_其他书_哲学_apply真实写入带图题",
+        "T4c_其他书_哲学_renumber后体检0新增FAIL"
+      ]
+    },
+    {
+      "id": "R3-M3",
+      "title": "整行rPr覆盖抹掉表格里有语义的run格式，真实题卷填空下划线消失",
+      "severity": "major",
+      "disposition": "已修复",
+      "fix": "_apply_cell_paragraph_fmt 覆盖 run 的 rPr 时，原样保留原 run 自己的 w:u/vertAlign/em/strike 这几项语义属性（新格式里同名的会被原 run 值覆盖，原 run 没有的不会无端生出这几项），按 OOXML CT_rPr 的元素顺序插入（新增 _insert_ordered 工具函数，_RPR_ORDER/_PPR_ORDER 两张顺序表），不是随手 append/insert(0)。",
+      "evidence": "R3_M3_表格下划线填空空位保留：真实原件 2026北京朝阳高三二模政治（教师版）第7、9表（填空题面，空位是带下划线的空格）过 build_table_from_source 后，下划线 run 从2个/1个变成……仍是2个/1个（审查 r3 实测过build 后变成0个），文字逐字一致。",
+      "test_ids": [
+        "R3_M3_表格下划线填空空位保留"
+      ]
+    },
+    {
+      "id": "R3-m1",
+      "title": "_SHAPE_PREF 把 stem 排在 plain 前面，材料内标签会退化到设问格式",
+      "severity": "minor",
+      "disposition": "部分修复",
+      "fix": "_SHAPE_PREF['label']/['label_prefix'] 的退化顺序改成 plain 在 stem 前面（原来是 stem 在前）。T1c 的【裁判结果】材料内标签不再落到设问的宋体，有效字体正确落到楷体（沿样式继承链）。残留：块内退化匹配到 plain 形状时，如果块内唯一的非表格 plain 候选恰好是个格式异常段（如B0003 表格上方全段加粗的图注），仍会带出这份加粗——本工具的\"块内/全书按形状挑多数格式\"设计不识别\"这段是不是异常值\"；而 doc-wide 兜底对 label_prefix 形状会混进全书\"块开场标题\"（大多加粗+深蓝）与\"材料内子标签\"两种角色，选不出一份干净的\"材料子标签\"专属样本，真正分开需要能区分这两种角色（比如按段号是否等于块自己的 opening 排除），超出本轮篇幅，未做，已如实体现在 T1c 断言与 known_limits 里（断言字体族已修好，不强行断言不加粗）。",
+      "evidence": "T1c_真实新题_纯文字 的 _b1_format_checks：材料内标签【裁判结果】有效字体不是 Songti SC（已通过）；bold 仍可能为 True（已知残留，测试不再用弱断言掩盖，如实允许）。",
+      "test_ids": [
+        "T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19"
+      ]
+    },
+    {
+      "id": "R3-m2",
+      "title": "嵌套表格不经过 sanitize/reformat，tblStyle 撞号残留",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "build_table_from_source 对每个嵌套表格（tbl.findall('.//w:tbl')）补做 sanitize_table_styles 按名字映射与 _reformat_table_cells 统一格式，不套宽度缩放（嵌套表格贴合父格宽度，缩放到整页宽会显著变形）。",
+      "evidence": "R3_m2_嵌套表格tblStyle按名字映射：真实原件 2025丰台二模评标细则17题.docx 的嵌套表 tblStyle 从原样保留的 '6'（撞号成本书段落样式）重映射为 'afff1'（本书真正的 Table Grid），文字逐字一致。",
+      "test_ids": [
+        "R3_m2_嵌套表格tblStyle按名字映射"
+      ]
+    },
+    {
+      "id": "R3-m3",
+      "title": "原件浮动表格的 w:tblpPr 原样保留",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "apply_template_tblpr_for_source 删除源表格的 w:tblpPr（浮动定位/环绕），书稿里的表格都应随文流动。",
+      "evidence": "R3_m3_浮动表tblpPr剥离：真实原件 2024届各区一模试题分类汇编必修4.docx 第7张浮动表（带3张图），重建后 tblpPr 已删除，3张图仍正确重建关系。",
+      "test_ids": [
+        "R3_m3_浮动表tblpPr剥离"
+      ]
+    },
+    {
+      "id": "R3-m4",
+      "title": "样板 tblW 为 pct 时缩放单位混用，为 auto 时不缩放",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "新增 _template_target_width_twips：按 w:type 区分 dxa（原值）/pct（换算成 值/5000×兜底总宽）/auto或缺失（直接用兜底总宽 DEFAULT_TABLE_WIDTH_TWIPS），新 tblW 统一写成 type=dxa，不再照抄样板原始 type。build_table_from_rows 的宽度计算改用同一个函数，不再各写一套。",
+      "evidence": "R3_m4_样板tblW为pct或auto时按绝对宽度换算：例题2（pct 5000）与例题33（auto/0）两个真实样板都换算出 9026 twips（合理版心量级），不再是 5000（把百分数当 twips）或 9742（完全不缩放）。",
+      "test_ids": [
+        "R3_m4_样板tblW为pct或auto时按绝对宽度换算"
+      ]
+    },
+    {
+      "id": "R3-m5",
+      "title": "width_cm 为负数或近0时写出非法 extent，rc=0",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "_fit_extent 显式校验 width_cm 必须是正数，且换算出的 EMU 宽度必须是正整数，否则 Abort（不再走到写出/复核阶段才可能出问题）。",
+      "evidence": "R3_m5_width_cm非正值拒绝：width_cm=-5 与 1e-9 都 Abort，width_cm=5 正常换算出正数 extent。",
+      "test_ids": [
+        "R3_m5_width_cm非正值拒绝"
+      ]
+    },
+    {
+      "id": "R3-m6",
+      "title": "PyMuPDF 弃用警告打印到 stdout，破坏 check 的 JSON 输出",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "_image_px_size 改 `import pymupdf`，不再 `import fitz`（同一个包的新名字，不产生弃用警告）。",
+      "evidence": "R3_m6_fitz弃用警告不再混进stdout：check 带 file 图时 stdout 能被 json.loads 直接解析，不含 'deprecated' 字样。",
+      "test_ids": [
+        "R3_m6_fitz弃用警告不再混进stdout"
+      ]
+    },
+    {
+      "id": "R3-m7",
+      "title": "插入单类型错误仍输出英文异常文字；runs 内键不校验",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "_validate_unit_schema/_check_type 新增全面的类型校验：顶层/inserts元素/anchor/template_block 必须是对象，title/source_zone/reason/like/style/text/name/kind/file 必须是字符串，width_cm 必须是 int/float（拒绝 bool），runs 必须是对象数组且键名限定 {text,bold,color}、值类型校验。_load_unit 顶层非 dict 时也转中文提示。--docx 不存在新增 _require_docx_exists 中文提示。",
+      "evidence": "R3_m7_插入单类型错误改中文提示：审查 r3 probe_errors.py 全部8个场景（顶层数组、inserts元素非对象、runs元素非对象、width_cm字符串、anchor非对象、runs未知键、title非字符串、like数组）都是 rc=2、无 traceback、中文提示。",
+      "test_ids": [
+        "R3_m7_插入单类型错误改中文提示"
+      ]
+    },
+    {
+      "id": "R3-m8",
+      "title": "check 与 apply 并非同样彻底，但代码注释这么写",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "改写 plan_inserts 前的模块注释，明确写后复核（block_index 重新认块、media/tables 计数、栏目、restore 区位）只有 apply 落盘后才能做，check 天然做不到，不是疏漏。",
+      "evidence": "代码检视：block_insert.py plan_inserts 函数前注释已更新，不再写\"完全一样彻底\"。",
+      "test_ids": []
+    },
+    {
+      "id": "R3-m9",
+      "title": "--health 异常时退出码2但输出文件仍保留，与\"2=不留输出\"约定不符",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "--health 执行异常时退出码从 2 改为 1（插入本身已写出、写后复核已通过，只是体检这一步没跑成，不算\"整批中止\"），不删除已通过复核的输出，报告如实写 health.error。",
+      "evidence": "m5_R3-m9_health异常改为1且不删已写出的输出（原 test_m5_health_exception_not_swallowed 更新断言）：monkeypatch health_diff 抛异常，rc=1，out.exists()=True，report.health.error 有内容。",
+      "test_ids": [
+        "m5_R3-m9_health异常改为1且不删已写出的输出",
+        "R3_m9_health异常与新增FAIL退出码语义一致"
+      ]
+    },
+    {
+      "id": "R3-m10",
+      "title": "2364行超出1200行目标97%，含返修过程叙述",
+      "severity": "minor",
+      "disposition": "未修复（如实说明）",
+      "fix": "本轮又新增 1 个 blocker + 3 个 major + 9 个 minor 的实打实修复代码与文档（位置信号、列感知表格格式、语义属性保留、类型校验、wp14 重分配等），行数从 2364 涨到 2808。没有为了压行数删除必要的校验/注释——共同约定第9条明确说\"超出要在回执说明原因\"，本轮延续 r1/r2 的做法：把\"为什么这么做、踩过什么坑\"写在紧邻代码处，供本地主代理审核每一段改动是否必要，而不是把审计线索都删掉换一个好看的行数。",
+      "evidence": "wc -l block_insert.py = 2808；vermin/baseline_guard 见下文，不受行数影响。",
+      "test_ids": []
+    },
+    {
+      "id": "R3-m11",
+      "title": "表内图片的 wp14:anchorId/editId 原样沿用原件（R2-m11 只修了一半）",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "新增 _regen_wp14_ids：在 rebuild_table_rels 处理每个图片时，把 wp:inline/wp:anchor 上的 wp14:anchorId/editId 重新分配成随机值，不再原样沿用原件。",
+      "evidence": "R3_m11_表内图片wp14id重分配：真实原件17(1).docx 表内3张图片的 wp14 id 集合，重建前后没有交集。",
+      "test_ids": [
+        "R3_m11_表内图片wp14id重分配"
+      ]
+    },
+    {
+      "id": "R3-m12",
+      "title": "回执 r2 的若干表述无法核实或不完整（git diff、金标差异、T4b未写出）",
+      "severity": "minor",
+      "disposition": "已修复（本轮回执改正）",
+      "fix": "本轮回执不再声称\"用 git diff 前后对照实测确认\"（文件本就是候选目录下未跟踪文件，git diff 看不到，这一表述本身就不成立）；金标表格差异改成逐条列出并判断（见 R3-M1）；T4b 是否真的写出、写出了什么，本回执如实描述（见 R3-M2）。",
+      "evidence": "见本回执 R3-M1/R3-M2 两条 evidence 字段本身。",
+      "test_ids": []
+    },
+    {
+      "id": "R3-m13",
+      "title": "--render-check 失败提示拼接成\"loaded1\"",
+      "severity": "minor",
+      "disposition": "已修复",
+      "fix": "拼接 note 与 returncode 时改成分开列出、用中文顿号/分号连接，不再让数字紧贴在文字后面。",
+      "evidence": "代码检视：cmd_apply 里 rc_bits 列表 + '；'.join 组装，不再是裸的 f-string 拼接。云端 soffice 缺 writer 组件、--render-check 实际走不到这条分支验证真实输出，已如实说明（known_limits，环境限制，非本轮范围）。",
+      "test_ids": []
+    }
+  ],
+  "files": [
+    {
+      "path": "block_insert.py",
+      "lines": 2808,
+      "sha256": "110c6d5db8e84aafdd26b467354ed701d941d592afa521d1f867290f2bc69785"
+    },
+    {
+      "path": "run_tests_block_insert.py",
+      "lines": 2807,
+      "sha256": "175da25460b9c7c164f767b89b894b2d9ab8aaaf25ee391420365b35b81f5a2c"
+    }
+  ],
+  "usage": [
+    "python3 block_insert.py check --docx 父稿.docx --insert i.json --profile profiles_cloud/bixiu3.json --report r.json",
+    "python3 block_insert.py apply --docx 父稿.docx --insert i.json --out 候选.docx --profile profiles_cloud/bixiu3.json --report r.json --health --renumber",
+    "python3 run_tests_block_insert.py"
+  ],
+  "replaces": [
+    "手工核对原件表格 tblStyle/pStyle/rStyle、嵌套表格是否与目标书样式撞号",
+    "手工判断新插入设问段该是宋体还是楷体（尤其引语/背景句开头、不带常见引导词的设问）",
+    "手工核对整表重排后有没有整表被强行绑定连页、表头强调有没有丢",
+    "手工核对表格里的下划线填空空位、上下标、着重号是否被格式覆盖抹掉",
+    "手工判断插入单字段名/类型是否手误",
+    "手工核对表内图片的图形 id（docPr/cNvPr/wp14 anchorId/editId）是否与本书已有 id 冲突"
+  ],
+  "known_limits": [
+    "顶层 VML 老式图（w:pict）无法定位（沿用 r1/r2 既有限制，未扩展）。",
+    "完全同名的题块不能作锚点/样板（title_contains 定位机制的设计边界，未改，同 R2-m14）。",
+    "云端 soffice 缺 writer 组件，--render-check 转换实际失败（环境限制，非本轮范围）；提示拼接的 bug 已修（R3-m13），但没有一个能真正转换成功的环境来验证\"提示格式对不对\"之外的内容，定稿渲染仍需回本地。",
+    "R3-B1 修复后仍有 1 处孤例：\"结合材料，综合运用所学，围绕'愚公移山'……撰写一篇短文。\"这句本身读起来像设问引导句，但原书格式是楷体（材料），与同块另一句\"要求：观点鲜明……\"（宋体）并存——无法判断这是书稿的刻意惯例（共用开场白+独立要求两件事分开标记）还是原稿格式疏漏，需要人工看原稿判断；工具默认路径下这一句仍会被判成材料。用插入单新增的content[].kind:\"stem\"/\"material\" 字段可以显式指定，绕开这个孤例。",
+    "R3-m1 部分修复：块内退化匹配到 'plain' 形状、块内唯一候选恰好是个格式异常段（如表格上方全段加粗的图注）时，仍会带出这份异常格式；doc-wide 兜底对 label_prefix 形状混杂\"块开场标题\"与\"材料内子标签\"两种角色，选不出干净样本，需要能分辨这两种角色（比如按段号是否等于所在块自己的 opening 排除）才能彻底解决，本轮未做，已在测试里如实反映（只断言字体族，不假装 bold 也修好了）。",
+    "R3-m4 的 pct→dxa 换算用 DEFAULT_TABLE_WIDTH_TWIPS（9026 twips，本书表格宽度量级）做近似兜底，没有读文档 sectPr 的实际页边距——多数场景够用，个别页边距特殊的原件可能仍有几毫米误差。",
+    "block_insert.py 当前 2808 行，超出 1200 行目标较多（见 R3-m10）——本轮新增的都是实打实的修复代码/校验/文档，没有可裁掉又不影响这些修复的部分。",
+    "R2 阶段遗留的未修项（R2-m2 顶层 VML 图、R2-m4 部分答案落点默认路径丢加粗、R2-m14 同名题块）本轮未重新展开，维持 r2 回执里的说明，优先级排在 r3 的 blocker/major 之后。",
+    "过程记录（不是残留问题，供审查核实测试方法时参考）：本轮调试期间用过几次不经过run_tests_block_insert.py 测试框架、直接在候选目录下 `python3 -c \"import block_insert\"` 的临时诊断脚本——这种直接 import（不是像 run_tests 那样把 block_insert.py 当 __main__ 子进程跑）会在模块自己执行\"sys.dont_write_bytecode=True\"这行之前就已经被 Python 的导入机制缓存成 .pyc，在候选目录下（不是 Skill 目录）生成过一次 __pycache__/。这不违反\"SK 下无 __pycache__\"这条硬规则（SK 目录下确认过干净），但发现后已删除，并在删除后单独重跑一次baseline_guard 确认候选目录本身也干净（见本回执 baseline_guard.runs 最后一条）。"
+  ],
+  "profile_fields_needed": [
+    "styles.source/teaching/rubric 三个样式名桶（bixiu3.json 已配；哲学草案配置本轮 T4b/T4c 已用真实带图题验证过够用）。",
+    "本轮新逻辑（_template_header_distinct、_template_target_width_twips）不需要新的 profile 字段，纯粹从目标书 word/styles.xml 与样板表格自己的 XML 结构推断，不依赖 profile 配置。"
+  ],
+  "needs_user_decision": [
+    "R3-B1 修复引入的\"位置信号\"（块内/插入单最后一个 source 项默认当设问）是一条新的、影响全书默认匹配行为的启发式规则——建议本地主代理在装进 Skill 母版前，额外抽查几个真实新题插入场景（尤其是这次全书回归里没有触达的书，如哲学/选必二等）确认这条规则不会在其他书上引入新的误判；已提供 content[].kind 字段作为逃生口。",
+    "唯一残留的孤例（\"结合材料，综合运用所学，围绕'愚公移山'……\"这句楷体设问式材料）建议人工核对原稿——是刻意惯例还是格式疏漏，会影响以后遇到类似句式该不该也当材料处理。",
+    "R3-m1 的部分修复（doc-wide label_prefix 混杂两种角色）是否值得单独排期彻底解决，还是接受现状（只在块内候选是异常值时才会踩到，概率较低）——本轮判断优先级低于 blocker/major，只做了不引入新问题的最小改动（调整退化顺序），未做更大改动。",
+    "block_insert.py 行数（2808）持续增长，是否接受这个规模，还是要求拆分成多个文件/模块——与 r2 回执提出的同一个问题，本轮规模又变大了，需要主代理定调。"
+  ],
+  "vermin": {
+    "block_insert.py": "Minimum required 3.8，无 violation（rc=0）",
+    "run_tests_block_insert.py": "Minimum required 3.7，无 violation（rc=0）",
+    "cmd": "vermin -t=3.9- --no-tips --eval-annotations --violations block_insert.py run_tests_block_insert.py"
+  },
+  "tests": [
+    {
+      "input": "baseline_guard_测试前",
+      "result": "PASS",
+      "seconds": 5.14
+    },
+    {
+      "input": "T1a_真实新题_带图_BJ-2023-XC-ERMO-Q16",
+      "result": "PASS",
+      "seconds": 46.32
+    },
+    {
+      "input": "T1b_真实新题_带表_BJ-2026-CY-YIMO-Q18",
+      "result": "PASS",
+      "seconds": 46.45
+    },
+    {
+      "input": "T1c_真实新题_纯文字_BJ-2024-HD-ERMO-Q19",
+      "result": "PASS",
+      "seconds": 46.77
+    },
+    {
+      "input": "T2_img_金标回归_before_block还原原位_整篇比对",
+      "result": "PASS",
+      "seconds": 34.62
+    },
+    {
+      "input": "T2_tbl_金标回归_before_block还原原位_整篇比对",
+      "result": "PASS",
+      "seconds": 34.23
+    },
+    {
+      "input": "T3a_负例_父稿SHA错",
+      "result": "PASS",
+      "seconds": 2.71
+    },
+    {
+      "input": "T3b_负例_锚点0命中",
+      "result": "PASS",
+      "seconds": 3.17
+    },
+    {
+      "input": "T3c_负例_锚点多命中",
+      "result": "PASS",
+      "seconds": 3.08
+    },
+    {
+      "input": "T3d_负例_样板题块找不到",
+      "result": "PASS",
+      "seconds": 3.18
+    },
+    {
+      "input": "T3e_负例_原件里找不到指定图",
+      "result": "PASS",
+      "seconds": 3.03
+    },
+    {
+      "input": "T3f_负例_原件里找不到指定表",
+      "result": "PASS",
+      "seconds": 3.14
+    },
+    {
+      "input": "T3g_负例_图片文件损坏",
+      "result": "PASS",
+      "seconds": 3.32
+    },
+    {
+      "input": "T3h_负例_输出落到书稿目录",
+      "result": "PASS",
+      "seconds": 3.4
+    },
+    {
+      "input": "T3i_负例_输出落到Skill目录",
+      "result": "PASS",
+      "seconds": 3.11
+    },
+    {
+      "input": "T3j_负例_输出落到题库目录",
+      "result": "PASS",
+      "seconds": 3.07
+    },
+    {
+      "input": "T3k_负例_冻结册配置",
+      "result": "PASS",
+      "seconds": 0.2
+    },
+    {
+      "input": "T3l_负例_method_end命中多个考法分组",
+      "result": "PASS",
+      "seconds": 3.15
+    },
+    {
+      "input": "T3m_负例_标题命中禁用词表",
+      "result": "PASS",
+      "seconds": 3.23
+    },
+    {
+      "input": "T3n_负例_表格rows命中禁用词表",
+      "result": "PASS",
+      "seconds": 3.11
+    },
+    {
+      "input": "T3o_负例_输出落到审阅入口",
+      "result": "PASS",
+      "seconds": 3.1
+    },
+    {
+      "input": "T3p_负例_输出与输入是同一个文件",
+      "result": "PASS",
+      "seconds": 3.28
+    },
+    {
+      "input": "T3q_正例_冻结册check模式可以跑",
+      "result": "PASS",
+      "seconds": 3.14
+    },
+    {
+      "input": "T4a_其他书_哲学_check",
+      "result": "PASS",
+      "seconds": 3.64
+    },
+    {
+      "input": "T4b_其他书_哲学_apply真实写入带图题",
+      "result": "PASS",
+      "seconds": 19.58
+    },
+    {
+      "input": "T4c_其他书_哲学_renumber后体检0新增FAIL",
+      "result": "PASS",
+      "seconds": 30.68
+    },
+    {
+      "input": "B2_M1_表格超链接图片关系重建_真实原件",
+      "result": "PASS",
+      "seconds": 18.81
+    },
+    {
+      "input": "M1_表内docPr去重_真实原件",
+      "result": "PASS",
+      "seconds": 18.25
+    },
+    {
+      "input": "m1_表格含文本框安全中止",
+      "result": "PASS",
+      "seconds": 3.22
+    },
+    {
+      "input": "m3_同锚点多条insert顺序保持",
+      "result": "PASS",
+      "seconds": 20.25
+    },
+    {
+      "input": "m2_renumber失败退出码不再是0",
+      "result": "PASS",
+      "seconds": 21.72
+    },
+    {
+      "input": "m5_R3-m9_health异常改为1且不删已写出的输出",
+      "result": "PASS",
+      "seconds": 16.67
+    },
+    {
+      "input": "M2_block_index写后复核硬失败_人工造媒体数不符",
+      "result": "PASS",
+      "seconds": 16.29
+    },
+    {
+      "input": "m12a_apply缺省--profile被argparse拒绝",
+      "result": "PASS",
+      "seconds": 0.35
+    },
+    {
+      "input": "m12b_profile指向本环境不存在的root被拒绝",
+      "result": "PASS",
+      "seconds": 0.22
+    },
+    {
+      "input": "R2_B1_sanitize_table_styles按名字映射不按styleId",
+      "result": "PASS",
+      "seconds": 0.01
+    },
+    {
+      "input": "R2_M4_真实DOCX原件带表新题_BJ-2023-HD-QIZHONG-Q18",
+      "result": "PASS",
+      "seconds": 49.92
+    },
+    {
+      "input": "R2_M1_词表豁免被style覆盖绕过_role=source配教学桶样式必须中止",
+      "result": "PASS",
+      "seconds": 3.04
+    },
+    {
+      "input": "R2_M1_控制组_role=teaching配桶内样式应正常通过",
+      "result": "PASS",
+      "seconds": 17.51
+    },
+    {
+      "input": "R2_M2_栏目缺失写后复核硬失败",
+      "result": "PASS",
+      "seconds": 17.73
+    },
+    {
+      "input": "R2_M3_report不覆盖已批准补丁",
+      "result": "PASS",
+      "seconds": 3.11
+    },
+    {
+      "input": "R2_M3_report不覆盖插入单本身",
+      "result": "PASS",
+      "seconds": 3.18
+    },
+    {
+      "input": "R2_M3_report不覆盖不相干json",
+      "result": "PASS",
+      "seconds": 2.94
+    },
+    {
+      "input": "R2_M3_report可覆盖自己以前的同类报告",
+      "result": "PASS",
+      "seconds": 2.94
+    },
+    {
+      "input": "R2_M3_report原子写出_写失败不破坏旧内容",
+      "result": "PASS",
+      "seconds": 0.0
+    },
+    {
+      "input": "R2_m3_render_check转换失败退出码提到1",
+      "result": "PASS",
+      "seconds": 16.72
+    },
+    {
+      "input": "R2_m9_插入单未知字段被拒绝",
+      "result": "PASS",
+      "seconds": 0.22
+    },
+    {
+      "input": "R2_m9_插入单book字段与profile不一致被拒绝",
+      "result": "PASS",
+      "seconds": 0.23
+    },
+    {
+      "input": "R2_m10_renumber_next_command路径带空格可原样往返",
+      "result": "PASS",
+      "seconds": 24.46
+    },
+    {
+      "input": "R2_m6_插入单文件不存在_中文提示无traceback",
+      "result": "PASS",
+      "seconds": 0.21
+    },
+    {
+      "input": "R2_m6_插入单JSON损坏_中文提示无traceback",
+      "result": "PASS",
+      "seconds": 0.28
+    },
+    {
+      "input": "R2_m6_配置名不存在_中文提示无traceback",
+      "result": "PASS",
+      "seconds": 0.26
+    },
+    {
+      "input": "R2_m1_只有外部关系无新图片时也要写rels",
+      "result": "PASS",
+      "seconds": 2.12
+    },
+    {
+      "input": "R2_m16_source_cache进程内多次调用不串味且句柄关闭",
+      "result": "PASS",
+      "seconds": 5.31
+    },
+    {
+      "input": "R3_B1_全书self-template回归_FLIP必须为0",
+      "result": "PASS",
+      "seconds": 3.29
+    },
+    {
+      "input": "R3_B1_端到端_引号开头设问不给kind也应落地为宋体",
+      "result": "PASS",
+      "seconds": 23.24
+    },
+    {
+      "input": "R3_M1_金标表格回归_表内格式差异必须为0",
+      "result": "PASS",
+      "seconds": 30.27
+    },
+    {
+      "input": "R3_M3_表格下划线填空空位保留",
+      "result": "PASS",
+      "seconds": 2.75
+    },
+    {
+      "input": "R3_m2_嵌套表格tblStyle按名字映射",
+      "result": "PASS",
+      "seconds": 2.53
+    },
+    {
+      "input": "R3_m3_浮动表tblpPr剥离",
+      "result": "PASS",
+      "seconds": 2.43
+    },
+    {
+      "input": "R3_m4_样板tblW为pct或auto时按绝对宽度换算",
+      "result": "PASS",
+      "seconds": 2.49
+    },
+    {
+      "input": "R3_m5_width_cm非正值拒绝",
+      "result": "PASS",
+      "seconds": 0.0
+    },
+    {
+      "input": "R3_m6_fitz弃用警告不再混进stdout",
+      "result": "PASS",
+      "seconds": 3.6
+    },
+    {
+      "input": "R3_m7_插入单类型错误改中文提示",
+      "result": "PASS",
+      "seconds": 1.77
+    },
+    {
+      "input": "R3_m9_health异常与新增FAIL退出码语义一致",
+      "result": "PASS",
+      "seconds": 0.0
+    },
+    {
+      "input": "R3_m11_表内图片wp14id重分配",
+      "result": "PASS",
+      "seconds": 2.74
+    },
+    {
+      "input": "baseline_guard_测试后",
+      "result": "PASS",
+      "seconds": 4.86
+    }
+  ],
+  "tests_summary": {
+    "total": 67,
+    "pass": 67,
+    "fail": 0,
+    "total_seconds": 663.8
+  },
+  "baseline_guard": {
+    "cmd": "python3 tools/baseline_guard.py check --base 构建/baseline_20260925.json",
+    "runs": [
+      {
+        "when": "测试前",
+        "result": "PASS",
+        "detail": "rc=0 files=3468 changed=0 removed=0 added=0 skill_pycache=0"
+      },
+      {
+        "when": "测试后",
+        "result": "PASS",
+        "detail": "rc=0 files=3468 changed=0 removed=0 added=0 skill_pycache=0"
+      },
+      {
+        "when": "返修最终确认（测试跑完+清理候选目录下误生成的 __pycache__ 之后单独再跑一次）",
+        "result": "PASS",
+        "detail": "rc=0 files=3468 changed=0 removed=0 added=0 skill_pycache=0"
+      }
+    ]
+  }
+}
